@@ -1441,7 +1441,7 @@ elif st.session_state.step == 4:
         use_container_width=True,
         type="primary"
     ):
-        if WHATSAPP_NUMBER == "212XXXXXXXXX":
+        if WHATSAPP_NUMBER == "212603983800":
             st.error("Configure ton numéro WhatsApp dans app.py avant de continuer.")
         else:
             try:
