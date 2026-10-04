@@ -3,6 +3,7 @@ import os
 from datetime import datetime
 from pathlib import Path
 import re
+import time
 
 import streamlit as st
 from supabase import create_client
@@ -73,19 +74,61 @@ def get_supabase_client():
     return create_client(url, key)
 
 
+def _is_transient_network_error(exc):
+    text = str(exc).lower()
+    return (
+        "winerror 10035" in text
+        or "operation non bloquante" in text
+        or "would block" in text
+        or "temporarily unavailable" in text
+        or "connection reset" in text
+        or "connection aborted" in text
+        or "timeout" in text
+    )
+
+
+def _retry_storage(operation, label: str, attempts: int = 4):
+    last_error = None
+    for attempt in range(1, attempts + 1):
+        try:
+            return operation()
+        except Exception as exc:
+            last_error = exc
+            if not _is_transient_network_error(exc) or attempt == attempts:
+                raise
+            wait = attempt * 2
+            st.warning(
+                f"🌐 Connexion temporairement indisponible pendant {label}. "
+                f"Nouvelle tentative {attempt + 1}/{attempts} dans {wait}s..."
+            )
+            time.sleep(wait)
+    raise last_error
+
+
 def storage_download(supabase, storage_path: str, local_path: Path):
     local_path.parent.mkdir(parents=True, exist_ok=True)
-    data = supabase.storage.from_(SUPABASE_BUCKET).download(storage_path)
+
+    data = _retry_storage(
+        lambda: supabase.storage.from_(SUPABASE_BUCKET).download(storage_path),
+        f"le téléchargement de {Path(storage_path).name}",
+    )
+
     local_path.write_bytes(data)
     return local_path
 
 
 def storage_upload(supabase, storage_path: str, local_path: Path, content_type: str):
-    supabase.storage.from_(SUPABASE_BUCKET).upload(
-        storage_path,
-        local_path.read_bytes(),
-        file_options={"content-type": content_type, "upsert": "true"},
+    data = local_path.read_bytes()
+
+    _retry_storage(
+        lambda: supabase.storage.from_(SUPABASE_BUCKET).upload(
+            storage_path,
+            data,
+            file_options={"content-type": content_type, "upsert": "true"},
+        ),
+        f"l'envoi de {Path(storage_path).name}",
     )
+
     return storage_path
 
 
