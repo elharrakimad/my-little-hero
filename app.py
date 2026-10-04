@@ -8,6 +8,7 @@ import uuid
 import io
 from datetime import datetime
 from openai import OpenAI
+from supabase import create_client
 
 # ============================================================
 # MY LITTLE HERO — V3
@@ -31,6 +32,47 @@ LOGO = ASSETS / "logo.png"
 # Remplace par ton numéro WhatsApp au format international.
 # Exemple Maroc : 2126XXXXXXXX
 WHATSAPP_NUMBER = "212XXXXXXXXX"
+
+SUPABASE_BUCKET = "my-little-hero-files"
+
+
+def get_supabase_client():
+    """Create the server-side Supabase client from Streamlit Secrets."""
+    url = st.secrets.get("SUPABASE_URL", "").strip()
+    key = (
+        st.secrets.get("SUPABASE_SECRET_KEY", "")
+        or st.secrets.get("SUPABASE_SERVICE_KEY", "")
+    ).strip()
+
+    if not url or not key:
+        raise RuntimeError(
+            "Supabase n'est pas configuré. Ajoute SUPABASE_URL et "
+            "SUPABASE_SECRET_KEY dans les Secrets Streamlit."
+        )
+
+    return create_client(url, key)
+
+
+def upload_private_file(supabase, storage_path, data, content_type):
+    """Upload a file into the private My Little Hero bucket."""
+    supabase.storage.from_(SUPABASE_BUCKET).upload(
+        storage_path,
+        data,
+        file_options={
+            "content-type": content_type,
+            "upsert": "true",
+        },
+    )
+    return storage_path
+
+
+def get_order_number():
+    if not st.session_state.get("order_number"):
+        st.session_state.order_number = (
+            f"MLH-{datetime.now().strftime('%Y%m%d')}-"
+            f"{(st.session_state.preview_id or uuid.uuid4().hex)[-6:].upper()}"
+        )
+    return st.session_state.order_number
 
 PRICES = {
     1: {"digital": 69, "print": 99, "both": 129},
@@ -109,6 +151,9 @@ if "adventures" not in st.session_state:
 
 if "preview_id" not in st.session_state:
     st.session_state.preview_id = None
+
+if "order_number" not in st.session_state:
+    st.session_state.order_number = None
 if "reference_path" not in st.session_state:
     st.session_state.reference_path = None
 if "cover_paths" not in st.session_state:
@@ -246,22 +291,45 @@ Ne pas ajouter d'autres textes.
 
 
 def save_order_metadata():
-    """Enregistre la commande avec les titres déjà choisis dans l'aperçu.
-
-    Le PDF n'est pas généré ici : la production finale intervient après
-    confirmation du paiement.
-    """
+    """Save the order in Supabase and keep a local copy for compatibility."""
     if not st.session_state.preview_id:
         raise ValueError("Aucun aperçu n'est disponible pour cette commande.")
 
+    if not st.session_state.reference_path:
+        raise ValueError("La référence du personnage est introuvable.")
+
+    supabase = get_supabase_client()
     preview_dir = Path("orders") / f"preview_{st.session_state.preview_id}"
     preview_dir.mkdir(parents=True, exist_ok=True)
 
     selected_adventures = list(st.session_state.adventures[:st.session_state.pack])
+    order_number = get_order_number()
+    storage_root = f"orders/{order_number}"
+
+    # Upload the reference and covers to the private Supabase bucket.
+    reference_local = Path(st.session_state.reference_path)
+    reference_storage_path = f"{storage_root}/reference/character_reference.png"
+    upload_private_file(
+        supabase,
+        reference_storage_path,
+        reference_local.read_bytes(),
+        "image/png",
+    )
+
+    remote_cover_paths = []
+    for i, cover_path in enumerate(st.session_state.cover_paths, start=1):
+        cover_storage_path = f"{storage_root}/covers/cover_{i:02d}.png"
+        upload_private_file(
+            supabase,
+            cover_storage_path,
+            Path(cover_path).read_bytes(),
+            "image/png",
+        )
+        remote_cover_paths.append(cover_storage_path)
 
     order = {
         "preview_id": st.session_state.preview_id,
-        "order_number": f"MLH-{datetime.now().strftime('%Y%m%d')}-{st.session_state.preview_id[-6:].upper()}",
+        "order_number": order_number,
         "created_at": datetime.now().isoformat(timespec="seconds"),
         "status": "WAITING_FOR_PAYMENT",
         "child_name": st.session_state.child_name,
@@ -272,7 +340,7 @@ def save_order_metadata():
         "pack": st.session_state.pack,
         "format": st.session_state.format,
         "price": PRICES[st.session_state.pack][st.session_state.format],
-        "reference_path": str(Path(st.session_state.reference_path).resolve()),
+        "reference_path": reference_storage_path,
         "adventures": [],
     }
 
@@ -290,6 +358,41 @@ def save_order_metadata():
             "title": adventure.get("title", ""),
         })
 
+    order["cover_paths"] = remote_cover_paths
+
+    # Supabase is now the source of truth for online orders.
+    row = {
+        "order_ref": order_number,
+        "parent_name": None,
+        "parent_phone": st.session_state.customer_phone,
+        "parent_email": st.session_state.customer_email,
+        "child_name": st.session_state.child_name,
+        "child_age": st.session_state.age,
+        "language": st.session_state.language,
+        "pack": PACK_NAMES[st.session_state.pack],
+        "adventure_count": st.session_state.pack,
+        "total_price": PRICES[st.session_state.pack][st.session_state.format],
+        "status": "WAITING_FOR_PAYMENT",
+        "adventures": order["adventures"],
+        "reference_path": reference_storage_path,
+        "cover_paths": remote_cover_paths,
+        "generated_files": [],
+    }
+
+    existing = (
+        supabase.table("orders")
+        .select("id")
+        .eq("order_ref", order_number)
+        .limit(1)
+        .execute()
+    )
+
+    if existing.data:
+        supabase.table("orders").update(row).eq("order_ref", order_number).execute()
+    else:
+        supabase.table("orders").insert(row).execute()
+
+    # Keep a local JSON copy only as a temporary compatibility layer.
     (preview_dir / "order.json").write_text(
         json.dumps(order, ensure_ascii=False, indent=2),
         encoding="utf-8"
@@ -301,6 +404,9 @@ def save_order_metadata():
 def create_preview_covers():
     if not st.session_state.photo:
         raise ValueError("Photo manquante.")
+
+    # Verify the shared backend before spending AI credits.
+    get_supabase_client()
 
     preview_id = st.session_state.preview_id or uuid.uuid4().hex[:12]
     preview_dir = Path("orders") / f"preview_{preview_id}"
@@ -1028,7 +1134,7 @@ elif st.session_state.step == 3:
                     st.rerun()
                 except Exception as error:
                     st.error(f"La création des couvertures n’a pas pu être terminée : {error}")
-                    st.info("Vérifie que OPENAI_API_KEY est bien configurée dans PowerShell.")
+                    st.info("Vérifie les secrets OPENAI_API_KEY, SUPABASE_URL et SUPABASE_SECRET_KEY dans Streamlit.")
 
 # ============================================================
 # ETAPE 4 — APERCU & COMMANDE
@@ -1335,7 +1441,7 @@ elif st.session_state.step == 4:
         use_container_width=True,
         type="primary"
     ):
-        if WHATSAPP_NUMBER == "212773775998":
+        if WHATSAPP_NUMBER == "212XXXXXXXXX":
             st.error("Configure ton numéro WhatsApp dans app.py avant de continuer.")
         else:
             try:
@@ -1375,10 +1481,10 @@ elif st.session_state.step == 4:
                 + "\n\nJe souhaite valider ma commande."
             )
 
-            url = f"https://wa.me/{212773775998}?text={urllib.parse.quote(message)}"
+            url = f"https://wa.me/{WHATSAPP_NUMBER}?text={urllib.parse.quote(message)}"
 
             st.success("Votre commande est prête et enregistrée.")
-            st.caption(f"Référence de commande : MLH-{datetime.now().strftime('%Y%m%d')}-{st.session_state.preview_id[-6:].upper()}")
+            st.caption(f"Référence de commande : {get_order_number()}")
             st.markdown(
                 f'<a href="{url}" target="_blank" style="display:block;text-align:center;'
                 'background:#25D366;color:white;padding:14px;border-radius:14px;'
