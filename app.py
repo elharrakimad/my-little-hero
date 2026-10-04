@@ -87,17 +87,50 @@ FORMAT_NAMES = {
 }
 
 THEMES = [
-    "🎮 Monde de jeu vidéo",
-    "🚀 Voyage dans l'espace",
-    "🐉 Chevalier et dragon",
-    "🦸 Super héros",
-    "🏴‍☠️ Aventure de pirates",
+    # 🌟 Aventures fantastiques
     "🧙 Monde magique",
+    "🧚 Royaume des fées",
+    "🦄 Aventure avec une licorne",
+    "👑 Royaume enchanté",
+    "🐉 Dragon et royaume fantastique",
+    "🏴‍☠️ Aventure de pirates",
+    "🗺️ Chasse au trésor",
+    
+    # 🚀 Exploration & science
+    "🚀 Voyage dans l'espace",
+    "🤖 Mission avec des robots",
+    "🧪 Mission scientifique",
+    "⏳ Voyage dans le temps",
     "🦖 Aventure avec les dinosaures",
-    "⚽ Aventure football",
-    "🏎️ Course et vitesse",
+    
+    # 🌊 Nature & animaux
     "🌊 Aventure sous-marine",
+    "🧜‍♀️ Royaume des sirènes",
     "🌳 Forêt mystérieuse",
+    "🦁 Safari et animaux sauvages",
+    "🐾 Mission de sauvetage des animaux",
+    "🌸 Jardin enchanté",
+    
+    # 🦸 Action & aventure
+    "🦸 Super héros",
+    "🕵️ Jeune détective",
+    "🥷 Mission secrète",
+    "🏰 Chevalier et château",
+    
+    # ⚽ Sports & défis
+    "⚽ Aventure football",
+    "🏀 Défi de basket",
+    "🏎️ Course et vitesse",
+    "🏆 Défi sportif",
+    
+    # 🎨 Créativité & passions
+    "🎨 Aventure artistique",
+    "🎵 Aventure musicale",
+    "💃 Danse et spectacle",
+    "🍰 Aventure de pâtisserie",
+    "👗 Création de mode",
+    
+    # ✨ Personnalisation
     "✨ Mon propre thème",
 ]
 
