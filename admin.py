@@ -52,7 +52,6 @@ STATUS_BADGES = {
 # SUPABASE
 # ------------------------------------------------------------
 
-@st.cache_resource
 def get_supabase_client():
     url = (
         os.getenv("SUPABASE_URL", "").strip()
@@ -87,7 +86,7 @@ def _is_transient_network_error(exc):
     )
 
 
-def _retry_storage(operation, label: str, attempts: int = 4):
+def _retry_storage(operation, label: str, attempts: int = 6):
     last_error = None
     for attempt in range(1, attempts + 1):
         try:
@@ -133,8 +132,20 @@ def storage_upload(supabase, storage_path: str, local_path: Path, content_type: 
 
 
 def update_order_fields(order_ref: str, fields: dict):
-    supabase = get_supabase_client()
-    supabase.table("orders").update(fields).eq("order_ref", order_ref).execute()
+    def operation():
+        supabase = get_supabase_client()
+        return (
+            supabase.table("orders")
+            .update(fields)
+            .eq("order_ref", order_ref)
+            .execute()
+        )
+
+    return _retry_storage(
+        operation,
+        "la mise à jour de la commande",
+        attempts=6,
+    )
 
 
 # ------------------------------------------------------------
@@ -677,12 +688,17 @@ for order in filtered:
                     error_text = str(exc)
                     now = datetime.now().isoformat(timespec="seconds")
 
-                    update_order_fields(
-                        order_ref,
-                        {
-                            "status": "GENERATION_INTERRUPTED",
-                        },
-                    )
+                    try:
+                        update_order_fields(
+                            order_ref,
+                            {
+                                "status": "GENERATION_INTERRUPTED",
+                            },
+                        )
+                    except Exception:
+                        # Si Supabase est momentanément indisponible, on conserve
+                        # l'erreur principale sans la masquer par une seconde erreur.
+                        pass
 
                     st.error(
                         "❌ La génération a été interrompue. "
