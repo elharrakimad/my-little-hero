@@ -253,7 +253,7 @@ def update_status(order, status):
     now = datetime.now().isoformat(timespec="seconds")
     update_order_fields(
         order["order_ref"],
-        {"status": status, "updated_at": now},
+        {"status": status},
     )
     order["status"] = status
     order["updated_at"] = now
@@ -389,7 +389,6 @@ def generate_order(order):
             {
                 "generated_files": generated_files,
                 "status": "GENERATING",
-                "updated_at": datetime.now().isoformat(timespec="seconds"),
             },
         )
 
@@ -402,7 +401,6 @@ def generate_order(order):
         {
             "generated_files": generated_files,
             "status": "BOOKS_READY",
-            "updated_at": datetime.now().isoformat(timespec="seconds"),
         },
     )
 
@@ -640,8 +638,6 @@ for order in filtered:
                         order_ref,
                         {
                             "status": "GENERATION_INTERRUPTED",
-                            "updated_at": now,
-                            "last_error": error_text,
                         },
                     )
 
