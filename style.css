@@ -34,3 +34,5 @@ footer{padding:55px 7% 25px;background:#fff;border-top:1px solid var(--line)}.fo
 .hero-books-3d .hero-book img{object-fit:cover;object-position:center}
 .hero-books-3d:after{left:80px;bottom:18px;width:360px;height:24px}
 @media(max-width:700px){.hero-books-3d{width:420px;height:360px;transform:scale(.78);transform-origin:center}.hero-books-3d .hero-book{width:195px;height:285px;left:112px;top:35px}.hero-books-3d .book-back{transform:translate3d(-100px,18px,-50px) rotate(-7deg) scale(.9)}.hero-books-3d .book-front{transform:translate3d(100px,18px,-35px) rotate(7deg) scale(.9)}}
+
+.step-icon-illustration svg{width:44px;height:44px;display:block;color:#282541}.step-icon-illustration{color:#282541}.steps article:nth-child(2) .step-icon-illustration{color:#2f6cc9}.steps article:nth-child(3) .step-icon-illustration{color:#5b4bdb}.steps article:nth-child(4) .step-icon-illustration{color:#6b4f9d}.step-icon-illustration svg circle,.step-icon-illustration svg path,.step-icon-illustration svg rect{vector-effect:non-scaling-stroke}
