@@ -22,3 +22,13 @@ footer{padding:55px 7% 25px;background:#fff;border-top:1px solid var(--line)}.fo
 
 /* Real personalized book covers in hero */
 .hero-books-3d .hero-book{padding:0!important;overflow:hidden!important;border:8px solid #fff;border-radius:18px 24px 24px 14px;background:#fff}.hero-books-3d .hero-book:after{display:none}.hero-books-3d .hero-book img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}.hero-books-3d .book-back{transform:translate3d(-35px,18px,-80px) rotate(-8deg)}.hero-books-3d .book-middle{transform:translate3d(15px,5px,-30px) rotate(2deg)}.hero-books-3d .book-front{transform:translate3d(35px,0,20px) rotate(8deg)}
+
+/* Hero composition — three covers, smaller and fully visible */
+.hero-books-3d{width:520px;height:430px;margin:auto;perspective:1400px;transform-style:preserve-3d}
+.hero-books-3d .hero-book{width:205px;height:300px;left:157px;top:58px;border:6px solid #fff!important;border-radius:14px 18px 18px 10px!important;box-shadow:12px 18px 28px rgba(48,40,100,.18)!important}
+.hero-books-3d .book-back{transform:translate3d(-145px,22px,-60px) rotate(-8deg) scale(.94)}
+.hero-books-3d .book-middle{transform:translate3d(0,0,0) rotate(0deg) scale(1)}
+.hero-books-3d .book-front{transform:translate3d(145px,22px,-40px) rotate(8deg) scale(.94)}
+.hero-books-3d .hero-book img{object-fit:cover;object-position:center}
+.hero-books-3d:after{left:80px;bottom:18px;width:360px;height:24px}
+@media(max-width:700px){.hero-books-3d{width:420px;height:360px;transform:scale(.78);transform-origin:center}.hero-books-3d .hero-book{width:195px;height:285px;left:112px;top:35px}.hero-books-3d .book-back{transform:translate3d(-100px,18px,-50px) rotate(-7deg) scale(.9)}.hero-books-3d .book-front{transform:translate3d(100px,18px,-35px) rotate(7deg) scale(.9)}}
