@@ -92,11 +92,17 @@
         <label>Langue<select id="language"><option>Français</option><option>العربية</option></select></label>
         <label>Photo<input id="childPhoto" type="file" accept="image/*"></label>
       </div>
+      <div class="photo-preview" id="photoPreview" hidden>
+        <img id="photoPreviewImg" alt="Aperçu de la photo">
+        <div><b>Photo sélectionnée</b><span>Elle sera utilisée uniquement pour créer le personnage.</span></div>
+      </div>
       <div class="wizard-actions"><button class="btn back">← Retour</button><button class="btn primary next">Continuer →</button></div>
     </div>
 
     <div class="wizard-card" data-step="3" hidden>
       <small>ÉTAPE 3 SUR 4</small><h3>Choisissez son aventure</h3>
+      <p class="muted" id="themeInstruction">Choisissez 1 aventure.</p>
+      <div class="adventure-slots" id="adventureSlots"></div>
       <div class="theme-choice-grid">
         <button data-theme="🧙 Monde magique">🧙 <span>Monde magique</span></button>
         <button data-theme="🦄 Aventure avec une licorne">🦄 <span>Licorne</span></button>
@@ -105,6 +111,8 @@
         <button data-theme="🏴‍☠️ Aventure de pirates">🏴‍☠️ <span>Pirates</span></button>
         <button data-theme="🧜‍♀️ Royaume des sirènes">🧜‍♀️ <span>Sirènes</span></button>
         <button data-theme="⚽ Aventure football">⚽ <span>Football</span></button>
+        <button data-theme="🕵️ Jeune détective">🕵️ <span>Détective</span></button>
+        <button data-theme="🎨 Aventure artistique">🎨 <span>Art</span></button>
         <button data-theme="✨ Mon propre thème">✨ <span>Mon propre thème</span></button>
       </div>
       <div class="wizard-actions"><button class="btn back">← Retour</button><button class="btn primary next">Voir mon aperçu →</button></div>
@@ -119,6 +127,7 @@
           <p><b>Âge :</b> <span id="summaryAge">—</span></p>
           <p><b>Langue :</b> <span id="summaryLang">Français</span></p>
           <p><b>Pack :</b> <span id="summaryPack">Little Hero</span></p>
+          <div class="summary-adventures" id="summaryAdventures"></div>
           <p class="total"><b>Total :</b> <span id="summaryPrice">69 DH</span></p>
         </div>
       </div>
