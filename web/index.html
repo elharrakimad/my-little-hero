@@ -1,143 +1,158 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>My Little Hero — Une histoire rien qu'à lui</title>
+<meta name="description" content="My Little Hero — des histoires personnalisées où chaque enfant devient le héros de sa propre aventure.">
+<title>My Little Hero — Ton enfant devient le héros</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <a class="brand" href="#">⭐ My Little <b>Hero</b></a>
-  <nav><a href="#how">Comment ça marche</a><a href="#themes">Aventures</a><a href="#packs">Packs</a></nav>
-  <a class="navbtn" href="#packs">Créer mon aventure</a>
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="My Little Hero">
+    <span class="brand-star">★</span><span>My Little <b>Hero</b></span>
+  </a>
+  <nav>
+    <a href="#how">Comment ça marche</a>
+    <a href="#adventures">Aventures</a>
+    <a href="#packs">Packs</a>
+  </nav>
+  <button class="btn btn-dark nav-cta" data-open-creation>Créer mon aventure</button>
 </header>
 
-<main>
+<main id="top">
 <section class="hero">
-  <div>
-    <small>✨ UNE AVENTURE CRÉÉE POUR LUI / ELLE</small>
-    <h1>Chaque enfant devient le <em>héros</em> de sa propre histoire.</h1>
-    <p>Une histoire personnalisée à son prénom, son âge et ses passions… puis une aventure à colorier qu’il pourra garder comme un souvenir unique.</p>
-    <div class="actions">
-      <a class="btn primary" href="#packs">Créer mon aventure →</a>
-      <a class="btn" href="#how">Découvrir le concept</a>
+  <div class="hero-copy">
+    <div class="eyebrow">✨ UNE AVENTURE RIEN QU'À LUI</div>
+    <h1>Et si votre enfant devenait <span>le héros</span> de sa propre histoire&nbsp;?</h1>
+    <p class="hero-text">Une histoire personnalisée, inspirée de sa photo et de ses passions, puis transformée en aventure à colorier.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary btn-large" data-open-creation>Créer son aventure <span>→</span></button>
+      <a class="text-link" href="#how">Découvrir le concept ↓</a>
     </div>
-    <div class="trust">🔒 Photo protégée　 🎨 Illustration personnalisée　 🇲🇦 Créé au Maroc</div>
+    <div class="trust-row">
+      <span>✓ Personnalisé</span><span>✓ À partir de 69 DH</span><span>✓ Digital ou imprimé</span>
+    </div>
   </div>
-  <div class="hero-art">
-    <div class="book"><span>MON AVENTURE</span><strong>🧒</strong><h2>Mon<br>Grand Voyage</h2><b>✦ ✦ ✦</b></div>
-    <i>⭐</i><i>🚀</i><i>🦄</i>
-  </div>
-</section>
-
-<section id="how">
-  <small>COMMENT ÇA MARCHE ?</small>
-  <h2>De sa photo à son aventure en quelques étapes.</h2>
-  <div class="grid four">
-    <article>📸<b>01 · Son portrait</b><p>Ajoutez une photo de votre enfant.</p></article>
-    <article>🗺️<b>02 · Son aventure</b><p>Choisissez le thème qui lui ressemble.</p></article>
-    <article>✨<b>03 · Son histoire</b><p>Notre système crée son aventure personnalisée.</p></article>
-    <article>🎨<b>04 · Son livre</b><p>Il découvre puis colorie son propre univers.</p></article>
-  </div>
-</section>
-
-<section id="themes" class="light">
-  <small>🌈 DES UNIVERS POUR TOUS</small>
-  <h2>Quelle aventure fera rêver votre enfant ?</h2>
-  <div class="themes">
-    <div>🧙 Monde magique</div><div>🦄 Licorne</div><div>🚀 Voyage spatial</div><div>🦖 Dinosaures</div>
-    <div>🏴‍☠️ Pirates</div><div>🧜‍♀️ Sirènes</div><div>⚽ Football</div><div>🕵️ Jeune détective</div>
-    <div>🎨 Art</div><div>💃 Danse</div><div>🍰 Pâtisserie</div><div>✨ Mon propre thème</div>
+  <div class="hero-visual">
+    <div class="spark spark-a">✦</div><div class="spark spark-b">✧</div>
+    <div class="book-scene">
+      <div class="book-cover">
+        <div class="book-top">MY LITTLE HERO</div>
+        <div class="book-star">★</div>
+        <strong>Mon aventure<br>commence ici</strong>
+        <small>Une histoire créée rien que pour moi</small>
+      </div>
+      <div class="pencil">✎</div>
+    </div>
+    <div class="hero-badge"><b>100%</b><span>personnalisé</span></div>
   </div>
 </section>
 
-<section id="packs">
-  <small>🎁 NOS PACKS</small>
-  <h2>Choisissez son niveau d’aventure.</h2>
-  <div class="pricing">
-    <article><span>🌟</span><h3>LITTLE HERO</h3><p>1 aventure</p><strong>69 <small>DH</small></strong><button type="button" class="btn" data-pack="1" data-price="69">Choisir</button></article>
-    <article class="featured"><label>LE PLUS CHOISI</label><span>⭐</span><h3>SUPER HERO</h3><p>2 aventures</p><strong>119 <small>DH</small></strong><button type="button" class="btn primary" data-pack="2" data-price="119">Choisir ce pack</button></article>
-    <article><span>👑</span><h3>HERO GIFT</h3><p>3 aventures</p><strong>159 <small>DH</small></strong><button type="button" class="btn" data-pack="3" data-price="159">Choisir</button></article>
+<section class="section how" id="how">
+  <div class="section-heading"><div class="eyebrow">COMMENT ÇA MARCHE</div><h2>Simple pour vous.<br><span>Magique pour lui.</span></h2><p>En quelques étapes, nous créons une aventure unique à son image.</p></div>
+  <div class="steps">
+    <article><i>01</i><div class="step-icon">📸</div><h3>Son prénom & sa photo</h3><p>Vous nous donnez les informations de votre petit héros.</p></article>
+    <article><i>02</i><div class="step-icon">🗺️</div><h3>Son aventure</h3><p>Choisissez son univers : espace, dinosaures, magie, football et plus.</p></article>
+    <article><i>03</i><div class="step-icon">✨</div><h3>Nous créons son livre</h3><p>Son personnage devient le héros d'une histoire originale et illustrée.</p></article>
+    <article><i>04</i><div class="step-icon">🎨</div><h3>Il donne vie à l'histoire</h3><p>Il reçoit son aventure et peut colorier chaque page.</p></article>
   </div>
-  <p>Imprimé à partir de 99 DH · Digital + Imprimé à partir de 129 DH</p>
 </section>
 
-<section id="creation" class="creation-section" hidden>
-  <div class="creation-head">
-    <small>✨ CRÉEZ SON AVENTURE</small>
-    <h2>Construisons son livre ensemble.</h2>
-    <div class="progress"><span id="progressBar"></span></div>
-    <div class="steps-labels"><span class="active" data-label="1">1. Pack</span><span data-label="2">2. Enfant</span><span data-label="3">3. Aventure</span><span data-label="4">4. Aperçu</span></div>
+<section class="section adventures" id="adventures">
+  <div class="section-heading center"><div class="eyebrow">CHOISIS SON UNIVERS</div><h2>Une aventure pour <span>chaque enfant</span></h2><p>Et si son imagination choisissait la prochaine mission&nbsp;?</p></div>
+  <div class="theme-showcase">
+    <button class="theme-pill">🧙 Monde magique</button><button class="theme-pill">🦄 Licorne</button><button class="theme-pill">🚀 Espace</button><button class="theme-pill">🦖 Dinosaures</button>
+    <button class="theme-pill">🏴‍☠️ Pirates</button><button class="theme-pill">🌊 Sous-marin</button><button class="theme-pill">⚽ Football</button><button class="theme-pill">🕵️ Détective</button>
+    <button class="theme-pill">🤖 Robots</button><button class="theme-pill">🏰 Chevalier</button><button class="theme-pill">🎨 Art</button><button class="theme-pill">✨ Son propre thème</button>
   </div>
+  <div class="adventure-note"><span>💡</span><div><b>Plus de 30 univers possibles</b><br><small>Le choix complet sera disponible pendant la création.</small></div></div>
+</section>
 
+<section class="section packs" id="packs">
+  <div class="section-heading center"><div class="eyebrow">NOS PACKS</div><h2>Choisissez son <span>niveau d'aventure</span></h2><p>Une aventure, plusieurs aventures, ou le cadeau qui fait vraiment plaisir.</p></div>
+  <div class="pricing-grid">
+    <article class="price-card">
+      <div class="pack-icon">🌟</div><h3>LITTLE HERO</h3><p>1 aventure personnalisée</p><div class="price">69 <small>DH</small></div><ul><li>✓ Livre digital</li><li>✓ 10 pages personnalisées</li><li>✓ Illustrations à colorier</li></ul><button class="btn btn-outline full" data-pack="1">Choisir ce pack</button></article>
+    <article class="price-card featured"><div class="popular">LE PLUS CHOISI</div><div class="pack-icon">⭐</div><h3>SUPER HERO</h3><p>2 aventures personnalisées</p><div class="price">119 <small>DH</small></div><ul><li>✓ 2 livres personnalisés</li><li>✓ 20 pages d'aventures</li><li>✓ Deux univers au choix</li></ul><button class="btn btn-primary full" data-pack="2">Choisir ce pack</button></article>
+    <article class="price-card"><div class="pack-icon">👑</div><h3>HERO GIFT</h3><p>3 aventures personnalisées</p><div class="price">159 <small>DH</small></div><ul><li>✓ 3 livres personnalisés</li><li>✓ 30 pages d'aventures</li><li>✓ Le cadeau ultime</li></ul><button class="btn btn-outline full" data-pack="3">Choisir ce pack</button></article>
+  </div>
+  <p class="pricing-footnote">💜 Imprimé et Digital + Imprimé disponibles lors de la commande.</p>
+</section>
+
+<section class="section emotional">
+  <div class="emotional-card">
+    <div><div class="eyebrow">PLUS QU'UN COLORIAGE</div><h2>Un souvenir qu'il pourra<br><span>garder longtemps.</span></h2><p>Son prénom. Son visage. Son imagination. Son histoire. Une création pensée pour lui, et un moment de complicité à partager.</p><button class="btn btn-light" data-open-creation>Créer son histoire →</button></div>
+    <div class="quote-card"><span>“</span><p>Dans cette histoire, c'est moi le héros !</p><small>— votre petit héros</small></div>
+  </div>
+</section>
+
+<section class="section creation-section" id="creation">
+  <div class="creation-heading"><div class="eyebrow">✨ CRÉEZ SON AVENTURE</div><h2>Construisons son livre <span>ensemble.</span></h2><p>Vous choisissez. Nous créons. Il s'évade.</p></div>
   <div class="wizard">
+    <div class="wizard-progress"><div class="progress-track"><span id="progressBar"></span></div><div class="steps-labels"><span class="active">1. Pack</span><span>2. Héros</span><span>3. Aventure</span><span>4. Aperçu</span></div></div>
+
     <div class="wizard-card" data-step="1">
-      <small>ÉTAPE 1 SUR 4</small><h3>Votre pack</h3><p class="muted">Vous pouvez changer votre choix à tout moment.</p>
+      <div class="step-kicker">ÉTAPE 1 SUR 4</div><h3>Choisissez votre pack</h3><p class="muted">Vous pourrez modifier votre choix à tout moment.</p>
       <div class="choice-grid">
         <button type="button" class="choice" data-wizard-pack="1"><b>🌟 Little Hero</b><span>1 aventure · 69 DH</span></button>
         <button type="button" class="choice" data-wizard-pack="2"><b>⭐ Super Hero</b><span>2 aventures · 119 DH</span></button>
         <button type="button" class="choice" data-wizard-pack="3"><b>👑 Hero Gift</b><span>3 aventures · 159 DH</span></button>
       </div>
-      <button type="button" class="btn primary next">Continuer →</button>
+      <div class="wizard-actions"><span></span><button type="button" class="btn btn-primary next">Continuer →</button></div>
     </div>
 
     <div class="wizard-card" data-step="2" hidden>
-      <small>ÉTAPE 2 SUR 4</small><h3>Parlez-nous de votre héros</h3>
+      <div class="step-kicker">ÉTAPE 2 SUR 4</div><h3>Parlez-nous de son héros</h3><p class="muted">Ces informations servent à personnaliser son aventure.</p>
       <div class="form-grid">
         <label>Prénom<input id="childName" placeholder="Ex. Yassir"></label>
         <label>Âge<select id="childAge"><option value="">Choisir</option><option>3 ans</option><option>4 ans</option><option>5 ans</option><option>6 ans</option><option>7 ans</option><option>8 ans</option><option>9 ans</option><option>10 ans</option><option>11 ans</option><option>12 ans</option></select></label>
         <label>Langue<select id="language"><option>Français</option><option>العربية</option></select></label>
-        <label>Photo<input id="childPhoto" type="file" accept="image/*"></label>
+        <label>Photo de l'enfant<input id="childPhoto" type="file" accept="image/jpeg,image/png,image/webp"></label>
       </div>
-      <div class="photo-preview" id="photoPreview" hidden>
-        <img id="photoPreviewImg" alt="Aperçu de la photo">
-        <div><b>Photo sélectionnée</b><span>Elle sera utilisée uniquement pour créer le personnage.</span></div>
-      </div>
-      <div class="wizard-actions"><button type="button" class="btn back">← Retour</button><button type="button" class="btn primary next">Continuer →</button></div>
+      <div class="photo-preview" id="photoPreview" hidden><img id="photoPreviewImg" alt="Aperçu"><div><b>Photo sélectionnée ✓</b><span>Elle servira à créer son personnage.</span></div></div>
+      <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Retour</button><button type="button" class="btn btn-primary next">Continuer →</button></div>
     </div>
 
     <div class="wizard-card" data-step="3" hidden>
-      <small>ÉTAPE 3 SUR 4</small><h3>Choisissez son aventure</h3>
-      <p class="muted" id="themeInstruction">Choisissez 1 aventure.</p>
+      <div class="step-kicker">ÉTAPE 3 SUR 4</div><h3>Quelle sera sa mission&nbsp;?</h3><p class="muted" id="themeInstruction">Choisissez 1 aventure.</p>
       <div class="adventure-slots" id="adventureSlots"></div>
       <div class="theme-choice-grid">
-        <button type="button" data-theme="🧙 Monde magique">🧙 <span>Monde magique</span></button>
-        <button type="button" data-theme="🦄 Aventure avec une licorne">🦄 <span>Licorne</span></button>
-        <button type="button" data-theme="🚀 Voyage dans l'espace">🚀 <span>Espace</span></button>
-        <button type="button" data-theme="🦖 Aventure avec les dinosaures">🦖 <span>Dinosaures</span></button>
-        <button type="button" data-theme="🏴‍☠️ Aventure de pirates">🏴‍☠️ <span>Pirates</span></button>
-        <button type="button" data-theme="🧜‍♀️ Royaume des sirènes">🧜‍♀️ <span>Sirènes</span></button>
-        <button type="button" data-theme="⚽ Aventure football">⚽ <span>Football</span></button>
-        <button type="button" data-theme="🕵️ Jeune détective">🕵️ <span>Détective</span></button>
-        <button type="button" data-theme="🎨 Aventure artistique">🎨 <span>Art</span></button>
-        <button type="button" data-theme="✨ Mon propre thème">✨ <span>Mon propre thème</span></button>
+        <button type="button" data-theme="🧙 Monde magique">🧙<span>Monde magique</span></button><button type="button" data-theme="🧚 Royaume des fées">🧚<span>Fées</span></button><button type="button" data-theme="🦄 Aventure avec une licorne">🦄<span>Licorne</span></button><button type="button" data-theme="👑 Royaume enchanté">👑<span>Royaume</span></button>
+        <button type="button" data-theme="🐉 Dragon et royaume fantastique">🐉<span>Dragon</span></button><button type="button" data-theme="🏴‍☠️ Aventure de pirates">🏴‍☠️<span>Pirates</span></button><button type="button" data-theme="🗺️ Chasse au trésor">🗺️<span>Trésor</span></button><button type="button" data-theme="🚀 Voyage dans l'espace">🚀<span>Espace</span></button>
+        <button type="button" data-theme="🤖 Mission avec des robots">🤖<span>Robots</span></button><button type="button" data-theme="🦖 Aventure avec les dinosaures">🦖<span>Dinosaures</span></button><button type="button" data-theme="🌊 Aventure sous-marine">🌊<span>Sous-marin</span></button><button type="button" data-theme="🧜‍♀️ Royaume des sirènes">🧜‍♀️<span>Sirènes</span></button>
+        <button type="button" data-theme="🌳 Forêt mystérieuse">🌳<span>Forêt</span></button><button type="button" data-theme="🦁 Safari et animaux sauvages">🦁<span>Safari</span></button><button type="button" data-theme="⚽ Aventure football">⚽<span>Football</span></button><button type="button" data-theme="🏀 Défi de basket">🏀<span>Basket</span></button>
+        <button type="button" data-theme="🏎️ Course et vitesse">🏎️<span>Course</span></button><button type="button" data-theme="🕵️ Jeune détective">🕵️<span>Détective</span></button><button type="button" data-theme="🥷 Mission secrète">🥷<span>Mission secrète</span></button><button type="button" data-theme="🏰 Chevalier et château">🏰<span>Chevalier</span></button>
+        <button type="button" data-theme="🎨 Aventure artistique">🎨<span>Art</span></button><button type="button" data-theme="🎵 Aventure musicale">🎵<span>Musique</span></button><button type="button" data-theme="💃 Danse et spectacle">💃<span>Danse</span></button><button type="button" data-theme="🍰 Aventure de pâtisserie">🍰<span>Pâtisserie</span></button>
+        <button type="button" data-theme="👗 Création de mode">👗<span>Mode</span></button><button type="button" data-theme="🧪 Mission scientifique">🧪<span>Science</span></button><button type="button" data-theme="⏳ Voyage dans le temps">⏳<span>Temps</span></button><button type="button" data-theme="✨ Mon propre thème">✨<span>Mon propre thème</span></button>
       </div>
-      <div class="wizard-actions"><button type="button" class="btn back">← Retour</button><button type="button" class="btn primary next">Voir mon aperçu →</button></div>
+      <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Retour</button><button type="button" class="btn btn-primary next">Voir mon aperçu →</button></div>
     </div>
 
     <div class="wizard-card preview-card" data-step="4" hidden>
-      <small>ÉTAPE 4 SUR 4</small><h3>Voici votre aventure</h3>
-      <div class="preview">
-        <div class="preview-book">⭐<b id="previewTitle">Mon aventure</b><span id="previewTheme">Choisissez un univers</span></div>
+      <div class="step-kicker">ÉTAPE 4 SUR 4</div><h3>Son aventure est prête à être créée ✨</h3><p class="muted">Vérifiez les informations avant de valider.</p>
+      <div class="preview-layout">
+        <div class="preview-book"><span class="preview-star">★</span><b id="previewTitle">Mon aventure</b><small id="previewTheme">Choisissez un univers</small></div>
         <div class="summary">
-          <p><b>Héros :</b> <span id="summaryName">Votre enfant</span></p>
-          <p><b>Âge :</b> <span id="summaryAge">—</span></p>
-          <p><b>Langue :</b> <span id="summaryLang">Français</span></p>
-          <p><b>Pack :</b> <span id="summaryPack">Little Hero</span></p>
-          <div class="summary-adventures" id="summaryAdventures"></div>
-          <p class="total"><b>Total :</b> <span id="summaryPrice">69 DH</span></p>
+          <div><span>Héros</span><b id="summaryName">Votre enfant</b></div><div><span>Âge</span><b id="summaryAge">—</b></div><div><span>Langue</span><b id="summaryLang">Français</b></div><div><span>Pack</span><b id="summaryPack">Little Hero</b></div>
+          <div class="summary-adventures" id="summaryAdventures"></div><div class="total"><span>Total estimé</span><b id="summaryPrice">69 DH</b></div>
         </div>
       </div>
-      <div class="wizard-actions"><button type="button" class="btn back">← Modifier</button><button type="button" class="btn primary">💬 Valider ma commande</button></div>
+      <div class="privacy-note">🔒 Vos informations et la photo de votre enfant sont utilisées uniquement pour préparer sa commande.</div>
+      <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Modifier</button><button type="button" class="btn btn-primary" id="orderButton">💬 Valider ma commande</button></div>
+      <p class="order-hint">La validation finale se fera avec notre équipe sur WhatsApp.</p>
     </div>
   </div>
 </section>
 </main>
 
-<footer>⭐ My Little <b>Hero</b><p>Des histoires personnalisées où chaque enfant devient le héros de son propre monde.</p><small>© 2026 My Little Hero</small></footer>
+<footer>
+  <div class="footer-inner"><a class="brand" href="#top"><span class="brand-star">★</span><span>My Little <b>Hero</b></span></a><p>Des histoires personnalisées où chaque enfant devient le héros de son propre monde.</p><div class="footer-links"><a href="#how">Comment ça marche</a><a href="#packs">Packs</a><a href="#creation">Créer</a></div></div>
+  <small>© 2026 My Little Hero · Tous droits réservés</small>
+</footer>
 <script src="script.js"></script>
 </body>
 </html>
