@@ -1,0 +1,1 @@
+document.querySelectorAll('[data-pack]').forEach(b=>b.addEventListener('click',()=>localStorage.setItem('mlh_pack',b.dataset.pack)));
