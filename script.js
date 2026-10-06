@@ -166,3 +166,21 @@ document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:69,n
   setInterval(apply,700);
   apply();
 })();
+// Arabic text normalization and spacing
+(function(){
+ const A={
+ "اختر":"اختر","اختر مغامرة واحدة.":"اختر مغامرة واحدة.","اختر بالضبط":"اختر بالضبط",
+ "المغامرة":"المغامرة","مغامرة":"مغامرة","مغامرات":"مغامرات",
+ "ابتداءً من 69 درهم":"ابتداءً من 69 درهمًا","ابتداءً من 119 درهم":"ابتداءً من 119 درهمًا","ابتداءً من 159 درهم":"ابتداءً من 159 درهمًا",
+ "العالم السحري":"العالم السحري","المملكة":"المملكة","اليونيكورن":"اليونيكورن","القراصنة":"القراصنة",
+ "الديناصورات":"الديناصورات","الفضاء":"الفضاء","الروبوتات":"الروبوتات","كرة القدم":"كرة القدم",
+ "المحقق":"المحقق","الفارس":"الفارس","العلوم":"العلوم","الحلويات":"الحلويات"
+ };
+ function clean(s){return s.replace(/[ ]{2,}/g," ").replace(/\s+([،.!؟:؛])/g,"$1").replace(/([،.!؟:؛])(?=[^\s])/g,"$1 ");}
+ function run(){
+   if(localStorage.getItem("mlh-site-language")!=="ar")return;
+   const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+   while(w.nextNode()){const n=w.currentNode;if(n.nodeValue&&/[\u0600-\u06FF]/.test(n.nodeValue))n.nodeValue=clean(n.nodeValue);}
+ }
+ setInterval(run,500); run();
+})();
