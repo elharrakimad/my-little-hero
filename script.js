@@ -133,3 +133,36 @@ document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:69,n
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",bind);else bind();
 })();
+/* Arabic dynamic UI helpers */
+(function(){
+  const themeAr={"Monde magique":"العالم السحري","Fées":"الجنيات","Licorne":"اليونيكورن","Royaume":"المملكة","Dragon":"التنين","Pirates":"القراصنة","Trésor":"الكنز","Espace":"الفضاء","Robots":"الروبوتات","Dinosaures":"الديناصورات","Sous-marin":"العالم تحت الماء","Sirènes":"حوريات البحر","Forêt":"الغابة","Safari":"السفاري","Sauvetage":"إنقاذ الحيوانات","Football":"كرة القدم","Basket":"كرة السلة","Course":"السباق","Détective":"المحقق","Mission secrète":"مهمة سرية","Chevalier":"الفارس","Art":"الفن","Musique":"الموسيقى","Danse":"الرقص","Pâtisserie":"الحلويات","Mode":"الأزياء","Science":"العلوم","Temps":"السفر عبر الزمن","Mon propre thème":"موضوعي الخاص"};
+  const apply=()=>{
+    if(localStorage.getItem("mlh-site-language")!=="ar")return;
+    const n=document.querySelectorAll(".adventure-slot").length||1;
+    const instr=document.getElementById("themeInstruction");
+    if(instr)instr.textContent="اختر بالضبط "+n+" "+(n>1?"مغامرات":"مغامرة")+" للمتابعة.";
+    document.querySelectorAll(".adventure-slot").forEach((el,i)=>{
+      const done=el.classList.contains("done");
+      const txt=done?(el.textContent.split("·")[1]||"").trim():"للاختيار";
+      const base=Object.keys(themeAr).find(k=>txt.includes(k))||txt;
+      el.textContent="المغامرة "+(i+1)+" · "+(themeAr[base]||"للاختيار");
+    });
+    document.querySelectorAll("#summaryAdventures div").forEach((el,i)=>{
+      const raw=el.textContent.replace(/^Aventure\s*\d+\s*:\s*/,"").trim();
+      el.innerHTML="<b>المغامرة "+(i+1)+":</b> "+(themeAr[raw]||raw);
+    });
+  };
+  const oldAlert=window.alert;
+  window.alert=function(msg){
+    if(localStorage.getItem("mlh-site-language")!=="ar")return oldAlert(msg);
+    let m=String(msg);
+    m=m.replace("Veuillez renseigner le prénom et l'âge de votre enfant.","يرجى إدخال اسم طفلك وعمره.")
+      .replace(/Votre pack contient (\d+) aventure(s)? \.?/,"الباقة تحتوي على $1 "+(RegExp.$1>1?"مغامرات":"مغامرة")+" .")
+      .replace(/Choisissez exactement (\d+) aventure(s)? pour continuer\./,"اختر بالضبط $1 "+(RegExp.$1>1?"مغامرات":"مغامرة")+" للمتابعة.")
+      .replace("La photo doit faire moins de 8 Mo.","يجب ألا يتجاوز حجم الصورة 8 ميغابايت.");
+    return oldAlert(m);
+  };
+  new MutationObserver(()=>requestAnimationFrame(apply)).observe(document.body,{childList:true,subtree:true});
+  setInterval(apply,700);
+  apply();
+})();
