@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:69,name:"",age:"",language:"Français",photo:"",themes:[]};const packNames={1:"Little Hero",2:"Super Hero",3:"Hero Gift"};const prices={1:69,2:119,3:159};const phone="212603983800";const creation=document.getElementById("creation");const cards=[...document.querySelectorAll(".wizard-card")];const labels=[...document.querySelectorAll(".steps-labels span")];const bar=document.getElementById("progressBar");let step=1;const maxThemes=()=>state.pack;function render(){cards.forEach((c,i)=>c.hidden=i+1!==step);bar.style.width=(step*25)+"%";labels.forEach((x,i)=>x.classList.toggle("active",i+1===step))}function openCreation(pack=1){state.pack=Number(pack);state.price=prices[state.pack];state.themes=[];document.querySelectorAll(".choice").forEach(x=>x.classList.toggle("selected",Number(x.dataset.wizardPack)===state.pack));creation.hidden=false;creation.scrollIntoView({behavior:"smooth",block:"start"});step=1;updateAdventureUI();updatePreview();render()}document.querySelectorAll("[data-open-creation]").forEach(b=>b.addEventListener("click",()=>openCreation(state.pack)));document.querySelectorAll("[data-pack]").forEach(b=>b.addEventListener("click",()=>openCreation(b.dataset.pack)));document.querySelectorAll("[data-wizard-pack]").forEach(b=>b.addEventListener("click",()=>{state.pack=Number(b.dataset.wizardPack);state.price=prices[state.pack];state.themes=[];document.querySelectorAll(".choice").forEach(x=>x.classList.toggle("selected",x===b));updateAdventureUI();updatePreview()}));const photoInput=document.getElementById("childPhoto");photoInput.addEventListener("change",e=>{const file=e.target.files[0];if(!file)return;if(file.size>8*1024*1024){alert("La photo doit faire moins de 8 Mo.");photoInput.value="";return}const reader=new FileReader();reader.onload=()=>{state.photo=reader.result;document.getElementById("photoPreviewImg").src=state.photo;document.getElementById("photoPreview").hidden=false};reader.readAsDataURL(file)});document.querySelectorAll(".theme-choice-grid button").forEach(b=>b.addEventListener("click",()=>{const theme=b.dataset.theme;if(state.themes.includes(theme)){state.themes=state.themes.filter(x=>x!==theme)}else{if(state.themes.length>=maxThemes()){alert("Votre pack contient "+maxThemes()+" aventure"+(maxThemes()>1?"s":"")+" .");return}state.themes.push(theme)}document.querySelectorAll(".theme-choice-grid button").forEach(x=>x.classList.toggle("selected",state.themes.includes(x.dataset.theme)));updateAdventureUI();updatePreview()}));function themeLabel(v){return v.replace(/^\s*[\p{Extended_Pictographic}\p{Emoji_Presentation}\uFE0F]+\s*/u,"").trim()}function updateAdventureUI(){const n=maxThemes();document.getElementById("themeInstruction").textContent="Choisissez exactement "+n+" aventure"+(n>1?"s":"")+".";document.getElementById("adventureSlots").innerHTML=Array.from({length:n},(_,i)=>'<span class="adventure-slot '+(state.themes[i]?"done":"")+'">Aventure '+(i+1)+(state.themes[i]?" · "+themeLabel(state.themes[i]):" · à choisir")+"</span>").join("")}document.querySelectorAll(".next").forEach(b=>b.addEventListener("click",()=>{if(step===2){state.name=document.getElementById("childName").value.trim();state.age=document.getElementById("childAge").value;state.language=document.getElementById("language").value;if(!state.name||!state.age){alert("Veuillez renseigner le prénom et l'âge de votre enfant.");return}}if(step===3&&state.themes.length!==maxThemes()){alert("Choisissez exactement "+maxThemes()+" aventure"+(maxThemes()>1?"s":"")+" pour continuer.");return}if(step<4)step++;updatePreview();render()}));document.querySelectorAll(".back").forEach(b=>b.addEventListener("click",()=>{if(step>1)step--;render()}));function updatePreview(){document.getElementById("summaryName").textContent=state.name||"Votre enfant";document.getElementById("summaryAge").textContent=state.age||"—";document.getElementById("summaryLang").textContent=state.language;document.getElementById("summaryPack").textContent=packNames[state.pack];document.getElementById("summaryPrice").textContent=state.price+" DH";document.getElementById("previewTitle").textContent=state.name?state.name+" et ses aventures":"Mon aventure";document.getElementById("previewTheme").textContent=state.themes.length?state.themes.map(themeLabel).join(" · "):"Choisissez un univers";document.getElementById("summaryAdventures").innerHTML=state.themes.map((x,i)=>"<div><b>Aventure "+(i+1)+":</b> "+x+"</div>").join("")}document.getElementById("orderButton").addEventListener("click",()=>{const msg="Bonjour My Little Hero\nJe souhaite commander une aventure personnalisée.\n\nHéros : "+(state.name||"À préciser")+"\nÂge : "+(state.age||"À préciser")+"\nLangue : "+state.language+"\nPack : "+packNames[state.pack]+"\nAventures : "+(state.themes.map(themeLabel).join(", ")||"À choisir")+"\nPrix digital : "+state.price+" DH\nPhoto : je l'enverrai dans cette conversation WhatsApp.\n\nJe souhaite valider ma commande.";window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(msg),"_blank")});updateAdventureUI();updatePreview();render()});
-/* Bilingual site layer — preserves the existing visual design */
-(function(){
-  const T={
+const T={
     "Comment ça marche":"كيف يعمل؟","Aventures":"المغامرات","Packs":"الباقات","FAQ":"الأسئلة الشائعة",
     "Créer son aventure":"أنشئ مغامرته","Créer mon aventure":"أنشئ مغامرتك","UNE HISTOIRE CRÉÉE RIEN QUE POUR LUI":"قصة صُنعت خصيصًا له","✨ UNE HISTOIRE CRÉÉE RIEN QUE POUR LUI":"قصة صُنعت خصيصًا له",
     "UNE AVENTURE RIEN QU'À LUI":"مغامرة صُنعت خصيصًا له","Votre enfant devient":"طفلك يصبح","le héros":"البطل",
@@ -61,157 +59,83 @@ document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:69,n
     "1 aventure · 69 DH":"مغامرة واحدة · 69 درهم","2 aventures · 119 DH":"مغامرتان · 119 درهم","3 aventures · 159 DH":"3 مغامرات · 159 درهم"
   };
   const themeAr={"Monde magique":"العالم السحري","Fées":"الجنيات","Licorne":"اليونيكورن","Royaume":"المملكة","Dragon":"التنين","Pirates":"القراصنة","Trésor":"الكنز","Espace":"الفضاء","Robots":"الروبوتات","Dinosaures":"الديناصورات","Sous-marin":"العالم تحت الماء","Sirènes":"حوريات البحر","Forêt":"الغابة","Safari":"السفاري","Sauvetage":"إنقاذ الحيوانات","Football":"كرة القدم","Basket":"كرة السلة","Course":"السباق","Détective":"المحقق","Mission secrète":"مهمة سرية","Chevalier":"الفارس","Art":"الفن","Musique":"الموسيقى","Danse":"الرقص","Pâtisserie":"الحلويات","Mode":"الأزياء","Science":"العلوم","Temps":"السفر عبر الزمن","Mon propre thème":"موضوعي الخاص"};
+
+(function(){
   const originals=new WeakMap();
-  function norm(s){return s.replace(/\s+/g," ").trim()}
+  let translating=false;
+  const norm=s=>String(s||"").replace(/\s+/g," ").trim();
+  const applyHeadings=(ar)=>{
+    const h=document.querySelector(".hero-copy h1");
+    if(h){h.classList.toggle("ar-spaced-heading",ar);h.innerHTML=ar?'طفلك يصبح <span class="purple">البطل</span> في قصته الخاصة.':'Votre enfant devient <span>le héros</span> de sa propre histoire.';}
+    const a=document.querySelector("#adventures .section-heading h2");
+    if(a){a.classList.toggle("ar-spaced-heading",ar);a.innerHTML=ar?'مغامرة لكل <span class="purple">خيال</span>':'Une aventure pour <span>chaque imagination</span>';}
+    const e=document.querySelector(".emotional-card h2");
+    if(e){e.classList.toggle("ar-spaced-heading",ar);e.innerHTML=ar?'ذكرى يمكنه الاحتفاظ بها <span class="purple">طويلًا.</span>':"Un souvenir qu'il pourra <span>garder longtemps.</span>";}
+  };
   function translate(lang){
+    if(translating)return;
+    translating=true;
     const ar=lang==="ar";
     document.documentElement.lang=ar?"ar":"fr";
     document.body.dir=ar?"rtl":"ltr";
     document.body.classList.toggle("site-ar",ar);
+    localStorage.setItem("mlh-site-language",ar?"ar":"fr");
     document.title=ar?"My Little Hero — طفلك يصبح بطل قصته":"My Little Hero — Ton enfant devient le héros";
-    document.querySelector('meta[name="description"]')?.setAttribute("content",ar?"My Little Hero — قصص مخصصة يصبح فيها كل طفل بطل قصته الخاصة.":"My Little Hero — des histoires personnalisées où chaque enfant devient le héros de sa propre aventure.");
-    const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
-    const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+    const meta=document.querySelector('meta[name="description"]');
+    if(meta)meta.content=ar?"My Little Hero — قصص مخصصة يصبح فيها كل طفل بطل قصته الخاصة.":"My Little Hero — des histoires personnalisées où chaque enfant devient le héros de sa propre aventure.";
+    const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+    const nodes=[];while(w.nextNode())nodes.push(w.currentNode);
     nodes.forEach(n=>{
-      if(!originals.has(n)) originals.set(n,n.nodeValue);
-      const base=norm(originals.get(n)||"");
-      if(!base)return;
-      n.nodeValue=ar?(T[base]||base):(base);
+      if(!originals.has(n))originals.set(n,n.nodeValue);
+      const base=norm(originals.get(n));
+      if(base)n.nodeValue=ar?(T[base]||base):base;
     });
-    const heroTitle=document.querySelector(".hero-copy h1");
-    if(heroTitle){
-      heroTitle.classList.toggle("ar-spaced-heading",ar);
-      heroTitle.innerHTML=ar?'طفلك يصبح <span class="purple">البطل</span> في قصته الخاصة.':'Votre enfant devient <span>le héros</span> de sa propre histoire.';
-    }
-    const adventureHeading=document.querySelector("#adventures .section-heading h2");
-    if(adventureHeading){
-      adventureHeading.classList.toggle("ar-spaced-heading",ar);
-      adventureHeading.innerHTML=ar?'مغامرة لكل <span class="purple">خيال</span>':'Une aventure pour <span>chaque imagination</span>';
-    }
-    const emotionalHeading=document.querySelector(".emotional-card h2");
-    if(emotionalHeading){
-      emotionalHeading.classList.toggle("ar-spaced-heading",ar);
-      emotionalHeading.innerHTML=ar?'ذكرى يمكنه الاحتفاظ بها <span class="purple">طويلًا.</span>':'Un souvenir qu'il pourra <span>garder longtemps.</span>';
-    }
+    applyHeadings(ar);
     document.querySelectorAll("[data-theme-label]").forEach(b=>{
-      const label=b.dataset.themeLabel;
-      const s=b.querySelector("span:last-child");
+      const label=b.dataset.themeLabel,s=b.querySelector("span:last-child");
       if(s)s.textContent=ar?(themeAr[label]||label):label;
     });
-    const langSel=document.getElementById("language");
-    if(langSel){
-      [...langSel.options].forEach(o=>{ if(o.value==="Français"||o.textContent==="Français")o.textContent=ar?"الفرنسية":"Français"; if(o.value==="العربية"||o.textContent==="العربية")o.textContent="العربية";});
-    }
     const toggle=document.getElementById("siteLanguageToggle");
-    if(toggle){toggle.querySelector("[data-lang='fr']").classList.toggle("active",!ar);toggle.querySelector("[data-lang='ar']").classList.toggle("active",ar);}
-    localStorage.setItem("mlh-site-language",ar?"ar":"fr");
+    if(toggle){
+      const fr=toggle.querySelector("[data-lang='fr']"),a=toggle.querySelector("[data-lang='ar']");
+      if(fr)fr.classList.toggle("active",!ar);if(a)a.classList.toggle("active",ar);
+    }
+    translating=false;
   }
-  window.setMyLittleHeroLanguage=(lang)=>translate(lang);
-  function addToggle(){
-    const header=document.querySelector(".site-header");
-    if(!header)return;
+  window.setMyLittleHeroLanguage=translate;
+  function setup(){
     let el=document.getElementById("siteLanguageToggle");
     if(!el){
-      el=document.createElement("div");
-      el.id="siteLanguageToggle";
-      el.setAttribute("aria-label","Choisir la langue");
-      el.innerHTML='<button type="button" data-lang="fr">FR</button><span></span><button type="button" data-lang="ar">العربية</button>';
-      header.insertBefore(el,header.querySelector(".nav-cta"));
+      const header=document.querySelector(".site-header");
+      if(header){
+        el=document.createElement("div");el.id="siteLanguageToggle";
+        el.innerHTML='<button type="button" data-lang="fr">FR</button><span></span><button type="button" data-lang="ar">العربية</button>';
+        header.insertBefore(el,header.querySelector(".nav-cta"));
+      }
     }
-    const fr=el.querySelector("[data-lang='fr']");
-    const ar=el.querySelector("[data-lang='ar']");
-    if(fr&&!fr.dataset.bound){fr.onclick=()=>window.setMyLittleHeroLanguage("fr");fr.dataset.bound="1";}
-    if(ar&&!ar.dataset.bound){ar.onclick=()=>window.setMyLittleHeroLanguage("ar");ar.dataset.bound="1";}
-  }
-  function injectStyle(){
-    if(document.getElementById("mlh-i18n-style"))return;
-    const s=document.createElement("style");s.id="mlh-i18n-style";s.textContent=`
-      #siteLanguageToggle{display:flex;align-items:center;gap:8px;margin-left:auto;margin-right:12px;padding:5px 8px;border:1px solid rgba(91,75,219,.14);border-radius:999px;background:rgba(255,255,255,.88);box-shadow:0 5px 16px rgba(48,43,82,.05)}
-      #siteLanguageToggle button{border:0;background:transparent;padding:4px 7px;border-radius:999px;font:800 10px Nunito;cursor:pointer;color:#77738a}
-      #siteLanguageToggle button.active{background:#5b4bdb;color:#fff}
-      #siteLanguageToggle span{width:1px;height:14px;background:#ddd9ea}
-      body.site-ar{direction:rtl}
-      body.site-ar .site-header nav,body.site-ar .hero-actions,body.site-ar .trust-row,body.site-ar .wizard-actions{direction:rtl}
-      body.site-ar .hero-copy,body.site-ar .section-heading,body.site-ar .creation-heading,body.site-ar .wizard-card,body.site-ar .price-card,body.site-ar .faq-grid,body.site-ar footer{text-align:right}
-      body.site-ar .choice{text-align:right}
-      body.site-ar .price-options span{flex-direction:row-reverse}
-      body.site-ar .footer-links{justify-content:flex-start}
-      body.site-ar .form-grid input,body.site-ar .form-grid select{direction:rtl}
-      body.site-ar .ar-spaced-heading{font-family:"Noto Kufi Arabic",sans-serif!important;direction:rtl!important;unicode-bidi:plaintext!important;letter-spacing:0!important;word-spacing:normal!important}
-      body.site-ar .ar-spaced-heading .purple{color:var(--purple)!important}
-      body.site-ar .hero-copy h1.ar-spaced-heading{font-size:clamp(34px,4.3vw,58px)!important;line-height:1.55!important}
-      body.site-ar #adventures .section-heading h2.ar-spaced-heading{font-size:clamp(34px,4.5vw,58px)!important;line-height:1.5!important}
-      body.site-ar .emotional-card h2.ar-spaced-heading{font-size:clamp(34px,4.5vw,58px)!important;line-height:1.5!important}
-      body.site-ar .brand-logo{direction:ltr}
-      @media(max-width:900px){#siteLanguageToggle{margin-left:0;margin-right:8px}}
-      @media(max-width:600px){#siteLanguageToggle{margin-right:auto}#siteLanguageToggle button{padding:3px 6px}}
-    `;document.head.appendChild(s);
-  }
-  function bind(){
-    addToggle();injectStyle();
-    const saved=localStorage.getItem("mlh-site-language")||"fr";translate(saved);
-    const obs=new MutationObserver(()=>{ if(!document.body.dataset.mlhTranslating){document.body.dataset.mlhTranslating="1";requestAnimationFrame(()=>{translate(localStorage.getItem("mlh-site-language")||"fr");delete document.body.dataset.mlhTranslating})}});
+    if(el){
+      const fr=el.querySelector("[data-lang='fr']"),a=el.querySelector("[data-lang='ar']");
+      if(fr&&!fr.dataset.bound){fr.onclick=()=>translate("fr");fr.dataset.bound="1";}
+      if(a&&!a.dataset.bound){a.onclick=()=>translate("ar");a.dataset.bound="1";}
+    }
+    const style=document.createElement("style");style.id="mlh-clean-i18n-style";
+    style.textContent='body.site-ar{direction:rtl}body.site-ar .hero-copy,body.site-ar .section-heading,body.site-ar .creation-heading,body.site-ar .wizard-card,body.site-ar .price-card,body.site-ar .faq-grid,body.site-ar footer{text-align:right}body.site-ar .site-header nav,body.site-ar .hero-actions,body.site-ar .trust-row,body.site-ar .wizard-actions{direction:rtl}body.site-ar .form-grid input,body.site-ar .form-grid select{direction:rtl}body.site-ar .ar-spaced-heading{font-family:"Noto Kufi Arabic",sans-serif!important;direction:rtl!important;unicode-bidi:plaintext!important;letter-spacing:0!important;word-spacing:normal!important}body.site-ar .hero-copy h1.ar-spaced-heading{font-size:clamp(34px,4.3vw,58px)!important;line-height:1.55!important}body.site-ar #adventures .section-heading h2.ar-spaced-heading,body.site-ar .emotional-card h2.ar-spaced-heading{font-size:clamp(34px,4.5vw,58px)!important;line-height:1.5!important}';
+    document.head.appendChild(style);
+    translate(localStorage.getItem("mlh-site-language")||"fr");
+    let scheduled=false;
+    const obs=new MutationObserver(()=>{
+      if(scheduled)return;scheduled=true;
+      requestAnimationFrame(()=>{scheduled=false;translate(localStorage.getItem("mlh-site-language")||"fr");});
+    });
     obs.observe(document.body,{childList:true,subtree:true});
     const order=document.getElementById("orderButton");
     if(order)order.addEventListener("click",e=>{
       if(localStorage.getItem("mlh-site-language")!=="ar")return;
       e.preventDefault();e.stopImmediatePropagation();
       const g=id=>document.getElementById(id)?.textContent?.trim()||"";
-      const themes=[...document.querySelectorAll("#summaryAdventures div")].map(x=>x.textContent.replace(/^Aventure\s*\d+\s*:\s*/,"").trim()).map(x=>themeAr[x]||x);
-      const msg="مرحبًا My Little Hero\nأرغب في طلب مغامرة مخصصة لطفلي.\n\nالبطل: "+(g("summaryName")||"يحدد لاحقًا")+"\nالعمر: "+(g("summaryAge")||"يحدد لاحقًا")+"\nاللغة: العربية\nالباقة: "+g("summaryPack")+"\nالمغامرات: "+(themes.join("، ")||"تحدد لاحقًا")+"\nالسعر الرقمي: "+g("summaryPrice")+"\n\nأرغب في تأكيد طلبي.";
+      const msg="مرحبًا My Little Hero\nأرغب في طلب مغامرة مخصصة لطفلي.\n\nالبطل: "+(g("summaryName")||"يحدد لاحقًا")+"\nالعمر: "+(g("summaryAge")||"يحدد لاحقًا")+"\nاللغة: العربية\nالباقة: "+g("summaryPack")+"\nالسعر الرقمي: "+g("summaryPrice")+"\n\nأرغب في تأكيد طلبي.";
       window.open("https://wa.me/212603983800?text="+encodeURIComponent(msg),"_blank");
     },true);
   }
-  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",bind);else bind();
-})();
-/* Arabic dynamic UI helpers */
-(function(){
-  const themeAr={"Monde magique":"العالم السحري","Fées":"الجنيات","Licorne":"اليونيكورن","Royaume":"المملكة","Dragon":"التنين","Pirates":"القراصنة","Trésor":"الكنز","Espace":"الفضاء","Robots":"الروبوتات","Dinosaures":"الديناصورات","Sous-marin":"العالم تحت الماء","Sirènes":"حوريات البحر","Forêt":"الغابة","Safari":"السفاري","Sauvetage":"إنقاذ الحيوانات","Football":"كرة القدم","Basket":"كرة السلة","Course":"السباق","Détective":"المحقق","Mission secrète":"مهمة سرية","Chevalier":"الفارس","Art":"الفن","Musique":"الموسيقى","Danse":"الرقص","Pâtisserie":"الحلويات","Mode":"الأزياء","Science":"العلوم","Temps":"السفر عبر الزمن","Mon propre thème":"موضوعي الخاص"};
-  const apply=()=>{
-    if(localStorage.getItem("mlh-site-language")!=="ar")return;
-    const n=document.querySelectorAll(".adventure-slot").length||1;
-    const instr=document.getElementById("themeInstruction");
-    if(instr)instr.textContent="اختر بالضبط "+n+" "+(n>1?"مغامرات":"مغامرة")+" للمتابعة.";
-    document.querySelectorAll(".adventure-slot").forEach((el,i)=>{
-      const done=el.classList.contains("done");
-      const txt=done?(el.textContent.split("·")[1]||"").trim():"للاختيار";
-      const base=Object.keys(themeAr).find(k=>txt.includes(k))||txt;
-      el.textContent="المغامرة "+(i+1)+" · "+(themeAr[base]||"للاختيار");
-    });
-    document.querySelectorAll("#summaryAdventures div").forEach((el,i)=>{
-      const raw=el.textContent.replace(/^Aventure\s*\d+\s*:\s*/,"").trim();
-      el.innerHTML="<b>المغامرة "+(i+1)+":</b> "+(themeAr[raw]||raw);
-    });
-  };
-  const oldAlert=window.alert;
-  window.alert=function(msg){
-    if(localStorage.getItem("mlh-site-language")!=="ar")return oldAlert(msg);
-    let m=String(msg);
-    m=m.replace("Veuillez renseigner le prénom et l'âge de votre enfant.","يرجى إدخال اسم طفلك وعمره.")
-      .replace(/Votre pack contient (\d+) aventure(s)? \.?/,"الباقة تحتوي على $1 "+(RegExp.$1>1?"مغامرات":"مغامرة")+" .")
-      .replace(/Choisissez exactement (\d+) aventure(s)? pour continuer\./,"اختر بالضبط $1 "+(RegExp.$1>1?"مغامرات":"مغامرة")+" للمتابعة.")
-      .replace("La photo doit faire moins de 8 Mo.","يجب ألا يتجاوز حجم الصورة 8 ميغابايت.");
-    return oldAlert(m);
-  };
-  new MutationObserver(()=>requestAnimationFrame(apply)).observe(document.body,{childList:true,subtree:true});
-  setInterval(apply,700);
-  apply();
-})();
-// Arabic text normalization and spacing
-(function(){
- const A={
- "اختر":"اختر","اختر مغامرة واحدة.":"اختر مغامرة واحدة.","اختر بالضبط":"اختر بالضبط",
- "المغامرة":"المغامرة","مغامرة":"مغامرة","مغامرات":"مغامرات",
- "ابتداءً من 69 درهم":"ابتداءً من 69 درهمًا","ابتداءً من 119 درهم":"ابتداءً من 119 درهمًا","ابتداءً من 159 درهم":"ابتداءً من 159 درهمًا",
- "العالم السحري":"العالم السحري","المملكة":"المملكة","اليونيكورن":"اليونيكورن","القراصنة":"القراصنة",
- "الديناصورات":"الديناصورات","الفضاء":"الفضاء","الروبوتات":"الروبوتات","كرة القدم":"كرة القدم",
- "المحقق":"المحقق","الفارس":"الفارس","العلوم":"العلوم","الحلويات":"الحلويات"
- };
- function clean(s){return s.replace(/[ ]{2,}/g," ").replace(/\s+([،.!؟:؛])/g,"$1").replace(/([،.!؟:؛])(?=[^\s])/g,"$1 ");}
- function run(){
-   if(localStorage.getItem("mlh-site-language")!=="ar")return;
-   const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
-   while(w.nextNode()){const n=w.currentNode;if(n.nodeValue&&/[\u0600-\u06FF]/.test(n.nodeValue))n.nodeValue=clean(n.nodeValue);}
- }
- setInterval(run,500); run();
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",setup);else setup();
 })();
