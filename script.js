@@ -205,3 +205,33 @@ document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:69,n
  }
  setInterval(run,500); run();
 })();
+/* Precise Arabic spacing for the three main headings */
+(function(){
+  function setArabicHeadings(){
+    const ar=localStorage.getItem("mlh-site-language")==="ar";
+    const hero=document.querySelector(".hero-copy h1");
+    const adventures=document.querySelector("#adventures .section-heading h2");
+    const emotional=document.querySelector(".emotional-card h2");
+    if(ar){
+      if(hero){
+        hero.classList.add("ar-spaced-heading");
+        hero.innerHTML='<span>طفلك</span><span>يصبح</span><span class="purple">البطل</span><span>في</span><span>قصته</span><span>الخاصة.</span>';
+      }
+      if(adventures){
+        adventures.classList.add("ar-spaced-heading");
+        adventures.innerHTML='<span>مغامرة</span><span>لكل</span><span class="purple">خيال</span>';
+      }
+      if(emotional){
+        emotional.classList.add("ar-spaced-heading");
+        emotional.innerHTML='<span>ذكرى</span><span>يمكنه</span><span>الاحتفاظ</span><span>بها</span><span class="purple">طويلًا.</span>';
+      }
+    }else{
+      if(hero){hero.classList.remove("ar-spaced-heading");hero.innerHTML='Votre enfant devient <span>le héros</span> de sa propre histoire.';}
+      if(adventures){adventures.classList.remove("ar-spaced-heading");adventures.innerHTML='Une aventure pour <span>chaque imagination</span>';}
+      if(emotional){emotional.classList.remove("ar-spaced-heading");emotional.innerHTML='Un souvenir qu\'il pourra <span>garder longtemps.</span>';}
+    }
+  }
+  setArabicHeadings();
+  new MutationObserver(()=>requestAnimationFrame(setArabicHeadings)).observe(document.body,{childList:true,subtree:true});
+  setInterval(setArabicHeadings,1000);
+})();
