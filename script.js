@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:69,n
     if(toggle){toggle.querySelector("[data-lang='fr']").classList.toggle("active",!ar);toggle.querySelector("[data-lang='ar']").classList.toggle("active",ar);}
     localStorage.setItem("mlh-site-language",ar?"ar":"fr");
   }
+  window.setMyLittleHeroLanguage=(lang)=>translate(lang);
   function addToggle(){
     const header=document.querySelector(".site-header");
     if(!header)return;
@@ -119,8 +120,8 @@ document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:69,n
     }
     const fr=el.querySelector("[data-lang='fr']");
     const ar=el.querySelector("[data-lang='ar']");
-    if(fr&&!fr.dataset.bound){fr.onclick=()=>translate("fr");fr.dataset.bound="1";}
-    if(ar&&!ar.dataset.bound){ar.onclick=()=>translate("ar");ar.dataset.bound="1";}
+    if(fr&&!fr.dataset.bound){fr.onclick=()=>window.setMyLittleHeroLanguage("fr");fr.dataset.bound="1";}
+    if(ar&&!ar.dataset.bound){ar.onclick=()=>window.setMyLittleHeroLanguage("ar");ar.dataset.bound="1";}
   }
   function injectStyle(){
     if(document.getElementById("mlh-i18n-style"))return;
