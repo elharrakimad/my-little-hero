@@ -71,6 +71,17 @@ document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:69,n
     document.title=ar?"My Little Hero — طفلك يصبح بطل قصته":"My Little Hero — Ton enfant devient le héros";
     document.querySelector('meta[name="description"]')?.setAttribute("content",ar?"My Little Hero — قصص مخصصة يصبح فيها كل طفل بطل قصته الخاصة.":"My Little Hero — des histoires personnalisées où chaque enfant devient le héros de sa propre aventure.");
     const heroTitle=document.querySelector(".hero-copy h1");
+    const adventureHeading=document.querySelector("#adventures .section-heading h2");
+    if(adventureHeading){
+      if(ar){
+        adventureHeading.classList.add("ar-heading");
+        adventureHeading.innerHTML="مغامرة لكل <span>خيال</span>";
+      }else{
+        adventureHeading.classList.remove("ar-heading");
+        adventureHeading.innerHTML="Une aventure pour <span>chaque imagination</span>";
+      }
+    }
+    
     if(heroTitle){
       if(ar){
         heroTitle.classList.add("ar-title");
