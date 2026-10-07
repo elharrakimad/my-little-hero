@@ -98,7 +98,7 @@ updateAdventureUI();updatePreview();render();
     if(heroTitle){
       if(ar){
         heroTitle.classList.add("ar-title");
-        heroTitle.innerHTML='<span class="ar-word">طفلك</span><span class="ar-word">يصبح</span><span class="ar-word purple">البطل</span><span class="ar-word">في</span><span class="ar-word">قصته</span><span class="ar-word">الخاصة.</span>';
+        heroTitle.innerHTML="طفلك يصبح <span class=\"ar-word purple\">البطل</span> في قصته الخاصة.";
       }else{
         heroTitle.classList.remove("ar-title");
         heroTitle.innerHTML="Votre enfant devient <span>le héros</span> de sa propre histoire.";
