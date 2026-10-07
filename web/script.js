@@ -123,6 +123,21 @@ updateAdventureUI();updatePreview();render();
       if(!base)return;
       n.nodeValue=ar?(T[base]||base):(base);
     });
+    const heroTitle=document.querySelector(".hero-copy h1");
+    if(heroTitle){
+      heroTitle.classList.toggle("ar-spaced-heading",ar);
+      heroTitle.innerHTML=ar?'طفلك يصبح <span class="purple">البطل</span> في قصته الخاصة.':'Votre enfant devient <span>le héros</span> de sa propre histoire.';
+    }
+    const adventureHeading=document.querySelector("#adventures .section-heading h2");
+    if(adventureHeading){
+      adventureHeading.classList.toggle("ar-spaced-heading",ar);
+      adventureHeading.innerHTML=ar?'مغامرة لكل <span class="purple">خيال</span>':'Une aventure pour <span>chaque imagination</span>';
+    }
+    const emotionalHeading=document.querySelector(".emotional-card h2");
+    if(emotionalHeading){
+      emotionalHeading.classList.toggle("ar-spaced-heading",ar);
+      emotionalHeading.innerHTML=ar?'ذكرى يمكنه الاحتفاظ بها <span class="purple">طويلًا.</span>':'Un souvenir qu'il pourra <span>garder longtemps.</span>';
+    }
     document.querySelectorAll("[data-theme-label]").forEach(b=>{
       const label=b.dataset.themeLabel;
       const s=b.querySelector("span:last-child");
@@ -156,6 +171,11 @@ updateAdventureUI();updatePreview();render();
       body.site-ar .price-options span{flex-direction:row-reverse}
       body.site-ar .footer-links{justify-content:flex-start}
       body.site-ar .form-grid input,body.site-ar .form-grid select{direction:rtl}
+      body.site-ar .ar-spaced-heading{font-family:"Noto Kufi Arabic",sans-serif!important;direction:rtl!important;unicode-bidi:plaintext!important;letter-spacing:0!important;word-spacing:normal!important}
+      body.site-ar .ar-spaced-heading .purple{color:var(--purple)!important}
+      body.site-ar .hero-copy h1.ar-spaced-heading{font-size:clamp(34px,4.3vw,58px)!important;line-height:1.55!important}
+      body.site-ar #adventures .section-heading h2.ar-spaced-heading{font-size:clamp(34px,4.5vw,58px)!important;line-height:1.5!important}
+      body.site-ar .emotional-card h2.ar-spaced-heading{font-size:clamp(34px,4.5vw,58px)!important;line-height:1.5!important}
       body.site-ar .brand-logo{direction:ltr}
       @media(max-width:900px){#siteLanguageToggle{margin-left:0;margin-right:8px}}
       @media(max-width:600px){#siteLanguageToggle{margin-right:auto}#siteLanguageToggle button{padding:3px 6px}}
@@ -228,34 +248,4 @@ updateAdventureUI();updatePreview();render();
    while(w.nextNode()){const n=w.currentNode;if(n.nodeValue&&/[\u0600-\u06FF]/.test(n.nodeValue))n.nodeValue=clean(n.nodeValue);}
  }
  setInterval(run,500); run();
-})();
-/* Precise Arabic spacing for the three main headings */
-(function(){
-  function setArabicHeadings(){
-    const ar=localStorage.getItem("mlh-site-language")==="ar";
-    const hero=document.querySelector(".hero-copy h1");
-    const adventures=document.querySelector("#adventures .section-heading h2");
-    const emotional=document.querySelector(".emotional-card h2");
-    if(ar){
-      if(hero){
-        hero.classList.add("ar-spaced-heading");
-        hero.innerHTML='<span>طفلك</span><span>يصبح</span><span class="purple">البطل</span><span>في</span><span>قصته</span><span>الخاصة.</span>';
-      }
-      if(adventures){
-        adventures.classList.add("ar-spaced-heading");
-        adventures.innerHTML='<span>مغامرة</span><span>لكل</span><span class="purple">خيال</span>';
-      }
-      if(emotional){
-        emotional.classList.add("ar-spaced-heading");
-        emotional.innerHTML='<span>ذكرى</span><span>يمكنه</span><span>الاحتفاظ</span><span>بها</span><span class="purple">طويلًا.</span>';
-      }
-    }else{
-      if(hero){hero.classList.remove("ar-spaced-heading");hero.innerHTML='Votre enfant devient <span>le héros</span> de sa propre histoire.';}
-      if(adventures){adventures.classList.remove("ar-spaced-heading");adventures.innerHTML='Une aventure pour <span>chaque imagination</span>';}
-      if(emotional){emotional.classList.remove("ar-spaced-heading");emotional.innerHTML='Un souvenir qu\'il pourra <span>garder longtemps.</span>';}
-    }
-  }
-  setArabicHeadings();
-  new MutationObserver(()=>requestAnimationFrame(setArabicHeadings)).observe(document.body,{childList:true,subtree:true});
-  setInterval(setArabicHeadings,1000);
 })();
