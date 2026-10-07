@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:69,n
 (function(){
   const T={
     "Comment ça marche":"كيف يعمل؟","Aventures":"المغامرات","Packs":"الباقات","FAQ":"الأسئلة الشائعة",
-    "Créer son aventure":"أنشئ مغامرته","Créer mon aventure":"أنشئ مغامرتك","UNE HISTOIRE CRÉÉE RIEN QUE POUR LUI":"قصة صُنعت خصيصًا له",
+    "Créer son aventure":"أنشئ مغامرته","Créer mon aventure":"أنشئ مغامرتك","UNE HISTOIRE CRÉÉE RIEN QUE POUR LUI":"قصة صُنعت خصيصًا له","✨ UNE HISTOIRE CRÉÉE RIEN QUE POUR LUI":"قصة صُنعت خصيصًا له",
     "UNE AVENTURE RIEN QU'À LUI":"مغامرة صُنعت خصيصًا له","Votre enfant devient":"طفلك يصبح","le héros":"البطل",
     "de sa propre histoire.":"في قصته الخاصة.","À partir de son prénom, de son âge et de sa photo, nous imaginons une aventure originale qu'il pourra ensuite colorier et garder comme souvenir.":"انطلاقًا من اسمه وعمره وصورته، نصمم له مغامرة أصلية يمكنه تلوينها والاحتفاظ بها كذكرى.",
     "Une histoire personnalisée, inspirée de sa photo et de ses passions, puis transformée en aventure à colorier.":"قصة مخصصة مستوحاة من صورته واهتماماته، ثم تتحول إلى مغامرة يمكنه تلوينها.",
@@ -70,6 +70,10 @@ document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:69,n
     document.body.classList.toggle("site-ar",ar);
     document.title=ar?"My Little Hero — طفلك يصبح بطل قصته":"My Little Hero — Ton enfant devient le héros";
     document.querySelector('meta[name="description"]')?.setAttribute("content",ar?"My Little Hero — قصص مخصصة يصبح فيها كل طفل بطل قصته الخاصة.":"My Little Hero — des histoires personnalisées où chaque enfant devient le héros de sa propre aventure.");
+    const heroTitle=document.querySelector(".hero-copy h1");
+    if(heroTitle){
+      heroTitle.innerHTML=ar?"طفلك يصبح <span>البطل</span> في قصته الخاصة.":"Votre enfant devient <span>le héros</span> de sa propre histoire.";
+    }
     const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
     const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach(n=>{
