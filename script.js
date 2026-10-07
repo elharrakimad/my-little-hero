@@ -107,10 +107,20 @@ document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:69,n
     localStorage.setItem("mlh-site-language",ar?"ar":"fr");
   }
   function addToggle(){
-    const header=document.querySelector(".site-header"); if(!header||document.getElementById("siteLanguageToggle"))return;
-    const el=document.createElement("div");el.id="siteLanguageToggle";el.innerHTML='<button type="button" data-lang="fr">FR</button><span></span><button type="button" data-lang="ar">العربية</button>';
-    el.querySelector("[data-lang='fr']").onclick=()=>translate("fr");el.querySelector("[data-lang='ar']").onclick=()=>translate("ar");
-    header.insertBefore(el,header.querySelector(".nav-cta"));
+    const header=document.querySelector(".site-header");
+    if(!header)return;
+    let el=document.getElementById("siteLanguageToggle");
+    if(!el){
+      el=document.createElement("div");
+      el.id="siteLanguageToggle";
+      el.setAttribute("aria-label","Choisir la langue");
+      el.innerHTML='<button type="button" data-lang="fr">FR</button><span></span><button type="button" data-lang="ar">العربية</button>';
+      header.insertBefore(el,header.querySelector(".nav-cta"));
+    }
+    const fr=el.querySelector("[data-lang='fr']");
+    const ar=el.querySelector("[data-lang='ar']");
+    if(fr&&!fr.dataset.bound){fr.onclick=()=>translate("fr");fr.dataset.bound="1";}
+    if(ar&&!ar.dataset.bound){ar.onclick=()=>translate("ar");ar.dataset.bound="1";}
   }
   function injectStyle(){
     if(document.getElementById("mlh-i18n-style"))return;
