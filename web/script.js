@@ -94,27 +94,6 @@ updateAdventureUI();updatePreview();render();
     document.body.classList.toggle("site-ar",ar);
     document.title=ar?"My Little Hero — طفلك يصبح بطل قصته":"My Little Hero — Ton enfant devient le héros";
     document.querySelector('meta[name="description"]')?.setAttribute("content",ar?"My Little Hero — قصص مخصصة يصبح فيها كل طفل بطل قصته الخاصة.":"My Little Hero — des histoires personnalisées où chaque enfant devient le héros de sa propre aventure.");
-    const heroTitle=document.querySelector(".hero-copy h1");
-    const adventureHeading=document.querySelector("#adventures .section-heading h2");
-    if(adventureHeading){
-      if(ar){
-        adventureHeading.classList.add("ar-heading");
-        adventureHeading.innerHTML="مغامرة لكل <span>خيال</span>";
-      }else{
-        adventureHeading.classList.remove("ar-heading");
-        adventureHeading.innerHTML="Une aventure pour <span>chaque imagination</span>";
-      }
-    }
-    
-    if(heroTitle){
-      if(ar){
-        heroTitle.classList.add("ar-title");
-        heroTitle.innerHTML="طفلك يصبح <span class=\"ar-word purple\">البطل</span> في قصته الخاصة.";
-      }else{
-        heroTitle.classList.remove("ar-title");
-        heroTitle.innerHTML="Votre enfant devient <span>le héros</span> de sa propre histoire.";
-      }
-    }
     const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
     const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach(n=>{
