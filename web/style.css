@@ -46,3 +46,30 @@ body.site-ar .hero h1.ar-title .ar-word.purple{color:var(--purple)}
 
 body.site-ar #adventures .section-heading h2.ar-heading{font-family:"Noto Kufi Arabic",sans-serif;direction:rtl;unicode-bidi:plaintext;letter-spacing:0;word-spacing:normal;line-height:1.5}
 body.site-ar #adventures .section-heading h2.ar-heading span{color:var(--purple)}
+
+/* Precise Arabic spacing */
+
+body.site-ar .ar-spaced-heading{
+  font-family:"Noto Kufi Arabic",sans-serif !important;
+  direction:rtl !important;
+  unicode-bidi:plaintext !important;
+  letter-spacing:0 !important;
+  word-spacing:0 !important;
+}
+body.site-ar .ar-spaced-heading > span{
+  display:inline-block !important;
+  white-space:nowrap !important;
+  margin-left:.30em !important;
+}
+body.site-ar .ar-spaced-heading > span:last-child{margin-left:0 !important}
+body.site-ar .hero-copy h1.ar-spaced-heading{
+  font-size:clamp(34px,4.3vw,58px) !important;
+  line-height:1.55 !important;
+}
+body.site-ar #adventures .section-heading h2.ar-spaced-heading{
+  line-height:1.5 !important;
+}
+body.site-ar .emotional-card h2.ar-spaced-heading{
+  line-height:1.45 !important;
+}
+body.site-ar .ar-spaced-heading .purple{color:var(--purple) !important}
