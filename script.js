@@ -72,7 +72,13 @@ document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:69,n
     document.querySelector('meta[name="description"]')?.setAttribute("content",ar?"My Little Hero — قصص مخصصة يصبح فيها كل طفل بطل قصته الخاصة.":"My Little Hero — des histoires personnalisées où chaque enfant devient le héros de sa propre aventure.");
     const heroTitle=document.querySelector(".hero-copy h1");
     if(heroTitle){
-      heroTitle.innerHTML=ar?"طفلك يصبح <span>البطل</span> في قصته الخاصة.":"Votre enfant devient <span>le héros</span> de sa propre histoire.";
+      if(ar){
+        heroTitle.classList.add("ar-title");
+        heroTitle.innerHTML='<span class="ar-word">طفلك</span><span class="ar-word">يصبح</span><span class="ar-word purple">البطل</span><span class="ar-word">في</span><span class="ar-word">قصته</span><span class="ar-word">الخاصة.</span>';
+      }else{
+        heroTitle.classList.remove("ar-title");
+        heroTitle.innerHTML="Votre enfant devient <span>le héros</span> de sa propre histoire.";
+      }
     }
     const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
     const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
