@@ -115,20 +115,36 @@
         <button type="button" data-theme="🍰 Aventure de pâtisserie" data-theme-label="Pâtisserie"><span class="theme-icon" aria-hidden="true">🍰</span><span>Pâtisserie</span></button><button type="button" data-theme="👗 Création de mode" data-theme-label="Mode"><span class="theme-icon" aria-hidden="true">👗</span><span>Mode</span></button><button type="button" data-theme="🧪 Mission scientifique" data-theme-label="Science"><span class="theme-icon" aria-hidden="true">🧪</span><span>Science</span></button><button type="button" data-theme="⏳ Voyage dans le temps" data-theme-label="Temps"><span class="theme-icon" aria-hidden="true">⏳</span><span>Temps</span></button>
         <button type="button" data-theme="✨ Mon propre thème" data-theme-label="Mon propre thème"><span class="theme-icon" aria-hidden="true">✨</span><span>Mon propre thème</span></button>
       </div>
-      <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Retour</button><button type="button" class="btn btn-primary next">Voir mon aperçu →</button></div>
+      <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Retour</button><button type="button" class="btn btn-primary next">Commencer mon histoire →</button></div>
     </div>
 
     <div class="wizard-card preview-card" data-step="4" hidden>
-      <div class="step-kicker">ÉTAPE 4 SUR 4</div><h3>Son aventure est prête à être créée</h3><p class="muted">Vérifiez les informations avant d'envoyer votre demande.</p>
-      <div class="preview-layout">
-        <div class="preview-book"><span class="preview-star">★</span><b id="previewTitle">Mon aventure</b><small id="previewTheme">Choisissez un univers</small></div>
-        <div class="summary"><div><span>Héros</span><b id="summaryName">Votre enfant</b></div><div><span>Âge</span><b id="summaryAge">—</b></div><div><span>Langue</span><b id="summaryLang">Français</b></div><div><span>Pack</span><b id="summaryPack">Little Hero</b></div><div class="summary-adventures" id="summaryAdventures"></div><div class="total"><span>Total digital</span><b id="summaryPrice">69 DH</b></div></div>
+      <div class="step-kicker">ÉTAPE 4 SUR 4</div>
+      <h3>Vos livres sont prêts</h3>
+      <p class="muted" id="coverStatus">Nous avons créé l’aperçu de votre aventure.</p>
+
+      <div id="generatedCoverBox" class="generated-cover-box" hidden>
+        <div class="generated-books-3d" id="generatedBooks"></div>
+        <div class="generated-cover-title-list" id="generatedCoverTitleList"></div>
       </div>
-      <div id="generatedCoverBox" class="generated-cover-box" hidden><div class="generated-cover-heading"><b>Aperçu de sa couverture</b><span id="coverStatus">Création de la couverture...</span></div><img id="generatedCoverImage" alt="Couverture personnalisée" hidden><strong id="generatedCoverTitle"></strong></div>
+
+      <div class="summary">
+        <div><span>Héros</span><b id="summaryName">Votre enfant</b></div>
+        <div><span>Âge</span><b id="summaryAge">—</b></div>
+        <div><span>Langue</span><b id="summaryLang">Français</b></div>
+        <div><span>Pack</span><b id="summaryPack">Little Hero</b></div>
+        <div class="summary-adventures" id="summaryAdventures"></div>
+        <div class="total"><span>Total digital</span><b id="summaryPrice">69 DH</b></div>
+      </div>
+
       <div class="privacy-note">🔒 La photo et les informations de votre enfant sont utilisées uniquement pour préparer sa commande.</div>
-      <div class="whatsapp-note">💬 Après avoir cliqué, WhatsApp s'ouvrira avec votre récapitulatif. Vous pourrez confirmer le format (digital, imprimé ou les deux) avec notre équipe.</div>
-      <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Modifier</button><button type="button" class="btn btn-primary" id="generateCoverButton">Générer la couverture</button><button type="button" class="btn btn-whatsapp" id="orderButton" disabled>💬 Valider ma commande sur WhatsApp</button></div>
-    </div>
+      <div class="whatsapp-note">💬 Votre aperçu est prêt. Validez maintenant votre commande sur WhatsApp pour confirmer le format et finaliser avec notre équipe.</div>
+
+      <div class="wizard-actions">
+        <button type="button" class="btn btn-ghost back">← Modifier</button>
+        <button type="button" class="btn btn-whatsapp" id="orderButton" disabled>💬 Valider ma commande sur WhatsApp</button>
+      </div>
+    </div>    </div>
   </div>
 </section>
 
