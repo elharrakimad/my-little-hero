@@ -72,7 +72,7 @@ Le titre doit :
 
 Réponds uniquement avec le titre final, sur une seule ligne.
 """
-    response = client.responses.create(model="gpt-5.6-luna", input=prompt)
+    response = client.responses.create(model="gpt-6-luna", input=prompt)
     title = response.output_text.strip().replace("\n", " ").strip('"“”')
     if not title:
         raise ValueError("L'IA n'a pas généré de titre.")
