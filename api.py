@@ -203,7 +203,8 @@ async def preview_cover(
 ):
     name = child_name.strip()
     age = child_age.strip()
-    match = re.search(r"\\d+", age)\n    age_value = int(match.group()) if match else None
+    match = re.search(r"\\d+", age)
+    age_value = int(match.group()) if match else None
     selected_theme = theme.strip()
     selected_themes = []
     if themes.strip():
