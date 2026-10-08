@@ -40,7 +40,7 @@ def get_supabase_client():
     return create_client(url, key)
 
 
-def save_order_to_supabase(order_ref, name, age, language, pack, themes, reference_bytes, cover_files):
+def save_order_to_supabase(order_ref, name, age, language, pack, covers, reference_bytes, cover_files):
     supabase = get_supabase_client()
     bucket = "my-little-hero-files"
     root = f"orders/{order_ref}"
@@ -59,14 +59,13 @@ def save_order_to_supabase(order_ref, name, age, language, pack, themes, referen
         cover_paths.append(path)
 
     adventures = []
-    for index, theme_value in enumerate(themes, start=1):
-        clean_theme = theme_value
+    for index, cover in enumerate(covers, start=1):
         adventures.append({
             "number": index,
-            "theme": clean_theme,
+            "theme": cover.get("theme", ""),
             "idea": "",
             "quality": "",
-            "title": "",
+            "title": cover.get("title", ""),
         })
 
     row = {
@@ -78,7 +77,7 @@ def save_order_to_supabase(order_ref, name, age, language, pack, themes, referen
         "child_age": age_value,
         "language": language,
         "pack": {1: "LITTLE HERO", 2: "SUPER HERO", 3: "HERO GIFT"}.get(pack, "LITTLE HERO"),
-        "adventure_count": len(themes),
+        "adventure_count": len(covers),
         "total_price": {1: 69, 2: 119, 3: 159}.get(pack, 69),
         "status": "WAITING_FOR_PAYMENT",
         "adventures": adventures,
@@ -204,7 +203,7 @@ async def preview_cover(
 ):
     name = child_name.strip()
     age = child_age.strip()
-    age_value = int(re.search(r"\\d+", age).group()) if re.search(r"\\d+", age) else None
+    match = re.search(r"\\d+", age)\n    age_value = int(match.group()) if match else None
     selected_theme = theme.strip()
     selected_themes = []
     if themes.strip():
@@ -269,7 +268,7 @@ Aucun texte, logo ou watermark. Aucun personnage ou univers protégé.
             })
 
         order_ref = datetime.now().strftime("MLH-%Y%m%d-%H%M%S-") + uuid.uuid4().hex[:6].upper()
-        save_order_to_supabase(order_ref, name, age, language, len(selected_themes), selected_themes, reference_bytes, cover_bytes_list)
+        save_order_to_supabase(order_ref, name, age_value, language, len(selected_themes), covers, reference_bytes, cover_bytes_list)
 
         return {
             "ok": True,
