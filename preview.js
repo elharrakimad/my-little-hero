@@ -1,63 +1,76 @@
 document.addEventListener("DOMContentLoaded",()=>{
   const API_BASE="https://my-little-hero.onrender.com";
-  const generateButton=document.getElementById("generateCoverButton");
   const orderButton=document.getElementById("orderButton");
   const coverBox=document.getElementById("generatedCoverBox");
-  const coverImage=document.getElementById("generatedCoverImage");
-  const coverTitle=document.getElementById("generatedCoverTitle");
+  const booksBox=document.getElementById("generatedBooks");
+  const titleList=document.getElementById("generatedCoverTitleList");
   const coverStatus=document.getElementById("coverStatus");
-  const photoInput=document.getElementById("childPhoto");
 
-  if(!generateButton||!orderButton||!photoInput)return;
+  if(!orderButton||!coverBox||!booksBox||!coverStatus)return;
 
   orderButton.disabled=true;
   orderButton.setAttribute("aria-disabled","true");
 
-  generateButton.addEventListener("click",async()=>{
-    const name=document.getElementById("childName")?.value.trim();
-    const age=document.getElementById("childAge")?.value;
-    const language=document.getElementById("language")?.value||"Français";
-    const themeButtons=[...document.querySelectorAll(".theme-choice-grid button.selected")];
-    const theme=themeButtons[0]?.dataset.theme||"";
-    const photo=photoInput.files?.[0];
-
-    if(!name||!age||!photo||!theme){
-      alert("Veuillez renseigner le prénom, l'âge, la photo et choisir une aventure.");
-      return;
-    }
+  window.generateStoryPreview=async({name,age,language,themes,photoFile})=>{
+    if(!name||!age||!photoFile||!themes?.length)return false;
 
     const form=new FormData();
     form.append("child_name",name);
     form.append("child_age",age);
-    form.append("language",language);
-    form.append("theme",theme);
-    form.append("photo",photo);
+    form.append("language",language||"Français");
+    form.append("themes",JSON.stringify(themes));
+    form.append("theme",themes[0]||"");
+    form.append("photo",photoFile);
 
-    generateButton.disabled=true;
+    const button=document.querySelector('[data-step="3"] .next');
+    const originalLabel=button?.textContent||"Commencer mon histoire →";
+    if(button){button.disabled=true;button.textContent=document.documentElement.lang==="ar"?"جارٍ إنشاء قصته…":"Création de son histoire…";}
+
+    coverStatus.textContent=document.documentElement.lang==="ar"?"نحن ننشئ كتبه…":"Nous créons ses livres…";
     orderButton.disabled=true;
-    coverBox.hidden=false;
-    coverStatus.textContent="Création de la couverture...";
-    coverImage.hidden=true;
-    coverTitle.textContent="";
+    orderButton.setAttribute("aria-disabled","true");
+    coverBox.hidden=true;
+    booksBox.innerHTML="";
+    titleList.innerHTML="";
 
     try{
       const response=await fetch(API_BASE+"/api/preview-cover",{method:"POST",body:form});
-      const data=await response.json();
+      let data={};
+      try{data=await response.json();}catch(_){data={};}
       if(!response.ok)throw new Error(data.detail||"Erreur de génération.");
+      if(!Array.isArray(data.covers)||!data.covers.length)throw new Error("Aucune couverture générée.");
 
-      coverImage.src=data.cover_data_url;
-      coverImage.hidden=false;
-      coverTitle.textContent=data.title||"";
-      coverStatus.textContent="Votre couverture est prête.";
+      data.covers.forEach((cover,index)=>{
+        const book=document.createElement("div");
+        book.className="generated-book generated-book-"+data.covers.length+" book-index-"+index;
+        const img=document.createElement("img");
+        img.src=cover.cover_data_url;
+        img.alt=cover.title||"Livre personnalisé";
+        book.appendChild(img);
+        booksBox.appendChild(book);
+
+        const title=document.createElement("div");
+        title.className="generated-cover-title-item";
+        title.innerHTML="<b>"+(index+1)+"</b><span>"+escapeHtml(cover.title||"")+"</span>";
+        titleList.appendChild(title);
+      });
+
+      coverBox.hidden=false;
+      coverStatus.textContent=document.documentElement.lang==="ar"?"كتبك جاهزة للمعاينة.":"Vos livres sont prêts à être découverts.";
       orderButton.disabled=false;
       orderButton.removeAttribute("aria-disabled");
-      coverBox.scrollIntoView({behavior:"smooth",block:"center"});
+      return true;
     }catch(error){
       console.error(error);
-      coverStatus.textContent="Impossible de générer l'aperçu. Veuillez réessayer.";
-      alert("La génération de la couverture a échoué. Vérifiez que le backend est en ligne puis réessayez.");
+      coverStatus.textContent=document.documentElement.lang==="ar"?"تعذر إنشاء المعاينة.":"Impossible de créer l’aperçu."; 
+      alert(document.documentElement.lang==="ar"?"تعذر إنشاء الكتب الآن. يرجى المحاولة مرة أخرى.":"La création des livres a échoué. Veuillez réessayer.");
+      return false;
     }finally{
-      generateButton.disabled=false;
+      if(button){button.disabled=false;button.textContent=originalLabel;}
     }
-  });
+  };
+
+  function escapeHtml(value){
+    return String(value).replace(/[&<>'"]/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;","\"":"&quot;"}[char]));
+  }
 });
