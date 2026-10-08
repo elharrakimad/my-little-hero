@@ -1,5 +1,6 @@
 import base64
 import io
+import json
 import os
 from typing import Optional
 
@@ -134,14 +135,26 @@ async def preview_cover(
     child_name: str = Form(...),
     child_age: str = Form(...),
     language: str = Form("Français"),
-    theme: str = Form(...),
+    theme: str = Form(""),
+    themes: str = Form(""),
     photo: UploadFile = File(...),
 ):
     name = child_name.strip()
     age = child_age.strip()
     selected_theme = theme.strip()
+    selected_themes = []
+    if themes.strip():
+        try:
+            parsed = json.loads(themes)
+            if isinstance(parsed, list):
+                selected_themes = [str(x).strip() for x in parsed if str(x).strip()]
+        except Exception:
+            selected_themes = []
+    if not selected_themes and selected_theme:
+        selected_themes = [selected_theme]
+    selected_themes = selected_themes[:3]
 
-    if not name or not age or not selected_theme:
+    if not name or not age or not selected_themes:
         raise HTTPException(status_code=400, detail="Informations incomplètes.")
 
     data = await photo.read()
@@ -177,16 +190,21 @@ Aucun texte, logo ou watermark. Aucun personnage ou univers protégé.
         )
         reference_bytes = base64.b64decode(reference_result.data[0].b64_json)
 
-        title = generate_title(client, name, age, selected_theme, language)
-        cover_bytes = generate_cover(
-            client, reference_bytes, name, age, selected_theme, language, title
-        )
+        covers = []
+        for selected_theme in selected_themes:
+            title = generate_title(client, name, age, selected_theme, language)
+            cover_bytes = generate_cover(
+                client, reference_bytes, name, age, selected_theme, language, title
+            )
+            covers.append({
+                "title": title,
+                "theme": selected_theme,
+                "cover_data_url": "data:image/png;base64," + base64.b64encode(cover_bytes).decode("ascii"),
+            })
 
         return {
             "ok": True,
-            "title": title,
-            "theme": selected_theme,
-            "cover_data_url": "data:image/png;base64," + base64.b64encode(cover_bytes).decode("ascii"),
+            "covers": covers,
         }
 
     except HTTPException:
