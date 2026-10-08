@@ -162,3 +162,8 @@ const T={
  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",applyThemeIcons);else applyThemeIcons();
  new MutationObserver(applyThemeIcons).observe(document.body,{childList:true,subtree:true});
 })();
+(function(){
+function bindThemeClicks(){document.querySelectorAll(".theme-choice-grid button").forEach(b=>{b.style.pointerEvents="auto";const i=b.querySelector(".theme-icon");if(i){i.style.pointerEvents="none";i.querySelectorAll("*").forEach(x=>x.style.pointerEvents="none");}})}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",bindThemeClicks);else bindThemeClicks();
+new MutationObserver(bindThemeClicks).observe(document.body,{childList:true,subtree:true});
+})();
