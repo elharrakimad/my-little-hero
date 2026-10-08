@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded",()=>{
-  const API_BASE="https://my-little-hero-api.onrender.com";
+  const API_BASE="https://my-little-hero.onrender.com";
   const generateButton=document.getElementById("generateCoverButton");
   const orderButton=document.getElementById("orderButton");
   const coverBox=document.getElementById("generatedCoverBox");
