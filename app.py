@@ -134,7 +134,7 @@ THEMES = [
     "✨ Mon propre thème",
 ]
 
-LANGUAGES = ["Français", "English", "Español"]
+LANGUAGES = ["Français", "English", "Español", "العربية"]
 
 PACK_NAMES = {
     1: "LITTLE HERO",
@@ -237,6 +237,7 @@ def generate_adventure_title(name, age, theme, idea, quality, language):
         "Français": "Écris le titre en français.",
         "English": "Write the title in English.",
         "Español": "Escribe el título en español.",
+        "العربية": "اكتب عنوان الكتاب باللغة العربية.",
     }.get(language, "Écris le titre dans la langue demandée.")
 
     prompt = f"""
@@ -284,6 +285,8 @@ def generate_cover(reference_bytes, name, age, theme, idea, quality, language, b
         subtitle_text = "Personalized Coloring Book"
     elif language == "Español":
         subtitle_text = "Libro de colorear personalizado"
+    elif language == "العربية":
+        subtitle_text = "كتاب تلوين مخصص"
     else:
         subtitle_text = "Livre de coloriage personnalisé"
 
