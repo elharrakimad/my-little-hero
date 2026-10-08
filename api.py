@@ -3,6 +3,7 @@ import io
 import json
 import os
 import uuid
+import re
 from datetime import datetime
 from typing import Optional
 
@@ -74,7 +75,7 @@ def save_order_to_supabase(order_ref, name, age, language, pack, themes, referen
         "parent_phone": None,
         "parent_email": None,
         "child_name": name,
-        "child_age": age,
+        "child_age": age_value,
         "language": language,
         "pack": {1: "LITTLE HERO", 2: "SUPER HERO", 3: "HERO GIFT"}.get(pack, "LITTLE HERO"),
         "adventure_count": len(themes),
@@ -203,6 +204,7 @@ async def preview_cover(
 ):
     name = child_name.strip()
     age = child_age.strip()
+    age_value = int(re.search(r"\\d+", age).group()) if re.search(r"\\d+", age) else None
     selected_theme = theme.strip()
     selected_themes = []
     if themes.strip():
@@ -216,7 +218,7 @@ async def preview_cover(
         selected_themes = [selected_theme]
     selected_themes = selected_themes[:3]
 
-    if not name or not age or not selected_themes:
+    if not name or not age or age_value is None or not selected_themes:
         raise HTTPException(status_code=400, detail="Informations incomplètes.")
 
     data = await photo.read()
