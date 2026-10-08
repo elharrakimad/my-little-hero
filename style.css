@@ -87,3 +87,21 @@ body.site-ar .ar-spaced-heading .purple{color:var(--purple) !important}
 #generatedCoverImage{width:min(100%,360px);display:block;margin:0 auto 14px;border-radius:16px;box-shadow:0 16px 32px rgba(48,40,100,.16)}
 #generatedCoverTitle{display:block;color:#5b4bdb;font-size:20px;margin-top:8px}
 #generateCoverButton:disabled,#orderButton:disabled{opacity:.55;cursor:not-allowed}
+
+
+/* Generated personalized books preview */
+.generated-cover-box{margin:28px auto 20px;padding:18px 10px 10px;border:1px solid rgba(91,75,219,.12);border-radius:26px;background:linear-gradient(180deg,#fff,#faf9ff);box-shadow:0 16px 40px rgba(48,40,100,.08)}
+.generated-books-3d{position:relative;width:min(100%,720px);height:410px;margin:0 auto;perspective:1400px;transform-style:preserve-3d;display:flex;align-items:center;justify-content:center}
+.generated-book{position:absolute;width:190px;height:300px;top:42px;border:6px solid #fff;border-radius:12px 20px 20px 9px;overflow:hidden;background:#fff;box-shadow:14px 22px 35px rgba(48,40,100,.2);transform-style:preserve-3d;transition:transform .35s ease,box-shadow .35s ease}
+.generated-book img{width:100%;height:100%;display:block;object-fit:cover}
+.generated-book-1{left:calc(50% - 95px);transform:translate3d(0,0,20px) rotate(0deg);z-index:4}
+.generated-book-2.book-index-0{left:calc(50% - 190px);transform:translate3d(-90px,24px,-35px) rotate(-8deg) scale(.92);z-index:3}
+.generated-book-2.book-index-1{left:calc(50% - 0px);transform:translate3d(90px,24px,-35px) rotate(8deg) scale(.92);z-index:3}
+.generated-book-3.book-index-0{left:calc(50% - 95px);transform:translate3d(-165px,28px,-60px) rotate(-9deg) scale(.88);z-index:2}
+.generated-book-3.book-index-1{left:calc(50% - 95px);transform:translate3d(0,0,20px) rotate(0deg) scale(1);z-index:4}
+.generated-book-3.book-index-2{left:calc(50% - 95px);transform:translate3d(165px,28px,-40px) rotate(9deg) scale(.88);z-index:2}
+.generated-cover-title-list{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:4px auto 8px;max-width:680px}
+.generated-cover-title-item{display:flex;align-items:center;gap:7px;padding:7px 11px;border-radius:999px;background:#f5f2ff;color:#4b4271;font-size:11px}
+.generated-cover-title-item b{width:21px;height:21px;display:grid;place-items:center;border-radius:50%;background:#6551d9;color:#fff;font-size:10px}
+.generated-cover-title-item span{font-weight:700}
+@media(max-width:700px){.generated-books-3d{height:330px;transform:scale(.78);transform-origin:top center;margin-bottom:-65px}.generated-cover-title-list{margin-top:0}.generated-cover-title-item{font-size:10px}}
