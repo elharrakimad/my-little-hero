@@ -172,3 +172,8 @@ function a(){document.querySelectorAll("[data-theme-label] .theme-icon").forEach
 const s=document.createElement("style");s.textContent=".theme-choice-grid .theme-icon{display:flex;align-items:center;justify-content:center;color:#5b4bdb;font-size:25px;font-weight:700}.theme-choice-grid .theme-icon{font-family:Arial,sans-serif}";document.head.appendChild(s);
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",a);else a();
 })();
+(function(){
+function bindThemeClicks(){document.querySelectorAll(".theme-choice-grid button").forEach(b=>{b.style.pointerEvents="auto";const i=b.querySelector(".theme-icon");if(i){i.style.pointerEvents="none";i.querySelectorAll("*").forEach(x=>x.style.pointerEvents="none");}})}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",bindThemeClicks);else bindThemeClicks();
+new MutationObserver(bindThemeClicks).observe(document.body,{childList:true,subtree:true});
+})();
