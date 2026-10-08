@@ -2,11 +2,14 @@ import base64
 import io
 import json
 import os
+import uuid
+from datetime import datetime
 from typing import Optional
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from openai import OpenAI
+from supabase import create_client
 
 app = FastAPI(title="My Little Hero API", version="0.1.0")
 
@@ -25,6 +28,65 @@ app.add_middleware(
 )
 
 MAX_PHOTO_BYTES = 8 * 1024 * 1024
+
+
+def get_supabase_client():
+    url = os.getenv("SUPABASE_URL", "").strip()
+    key = (os.getenv("SUPABASE_SECRET_KEY", "").strip()
+           or os.getenv("SUPABASE_SERVICE_KEY", "").strip())
+    if not url or not key:
+        raise RuntimeError("Supabase is not configured.")
+    return create_client(url, key)
+
+
+def save_order_to_supabase(order_ref, name, age, language, pack, themes, reference_bytes, cover_files):
+    supabase = get_supabase_client()
+    bucket = "my-little-hero-files"
+    root = f"orders/{order_ref}"
+    reference_path = f"{root}/reference/character_reference.png"
+    supabase.storage.from_(bucket).upload(
+        reference_path, reference_bytes,
+        file_options={"content-type": "image/png", "upsert": "true"},
+    )
+    cover_paths = []
+    for index, cover_bytes in enumerate(cover_files, start=1):
+        path = f"{root}/covers/cover_{index:02d}.png"
+        supabase.storage.from_(bucket).upload(
+            path, cover_bytes,
+            file_options={"content-type": "image/png", "upsert": "true"},
+        )
+        cover_paths.append(path)
+
+    adventures = []
+    for index, theme_value in enumerate(themes, start=1):
+        clean_theme = theme_value
+        adventures.append({
+            "number": index,
+            "theme": clean_theme,
+            "idea": "",
+            "quality": "",
+            "title": "",
+        })
+
+    row = {
+        "order_ref": order_ref,
+        "parent_name": None,
+        "parent_phone": None,
+        "parent_email": None,
+        "child_name": name,
+        "child_age": age,
+        "language": language,
+        "pack": {1: "LITTLE HERO", 2: "SUPER HERO", 3: "HERO GIFT"}.get(pack, "LITTLE HERO"),
+        "adventure_count": len(themes),
+        "total_price": {1: 69, 2: 119, 3: 159}.get(pack, 69),
+        "status": "WAITING_FOR_PAYMENT",
+        "adventures": adventures,
+        "reference_path": reference_path,
+        "cover_paths": cover_paths,
+        "generated_files": [],
+    }
+    supabase.table("orders").insert(row).execute()
+    return order_ref, reference_path, cover_paths
 
 
 def get_openai_client():
@@ -191,19 +253,25 @@ Aucun texte, logo ou watermark. Aucun personnage ou univers protégé.
         reference_bytes = base64.b64decode(reference_result.data[0].b64_json)
 
         covers = []
+        cover_bytes_list = []
         for selected_theme in selected_themes:
             title = generate_title(client, name, age, selected_theme, language)
             cover_bytes = generate_cover(
                 client, reference_bytes, name, age, selected_theme, language, title
             )
+            cover_bytes_list.append(cover_bytes)
             covers.append({
                 "title": title,
                 "theme": selected_theme,
                 "cover_data_url": "data:image/png;base64," + base64.b64encode(cover_bytes).decode("ascii"),
             })
 
+        order_ref = datetime.now().strftime("MLH-%Y%m%d-%H%M%S-") + uuid.uuid4().hex[:6].upper()
+        save_order_to_supabase(order_ref, name, age, language, len(selected_themes), selected_themes, reference_bytes, cover_bytes_list)
+
         return {
             "ok": True,
+            "order_ref": order_ref,
             "covers": covers,
         }
 
