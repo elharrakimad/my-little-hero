@@ -148,12 +148,6 @@ const T={
     style.textContent='body.site-ar{direction:rtl}body.site-ar .hero-copy,body.site-ar .section-heading,body.site-ar .creation-heading,body.site-ar .wizard-card,body.site-ar .price-card,body.site-ar .faq-grid,body.site-ar footer{text-align:right}body.site-ar .site-header nav,body.site-ar .hero-actions,body.site-ar .trust-row,body.site-ar .wizard-actions{direction:rtl}body.site-ar .form-grid input,body.site-ar .form-grid select{direction:rtl}body.site-ar .ar-spaced-heading{font-family:"Noto Kufi Arabic",sans-serif!important;direction:rtl!important;unicode-bidi:plaintext!important;letter-spacing:0!important;word-spacing:normal!important}body.site-ar .hero-copy h1.ar-spaced-heading{font-size:clamp(34px,4.3vw,58px)!important;line-height:1.55!important}body.site-ar #adventures .section-heading h2.ar-spaced-heading,body.site-ar .emotional-card h2.ar-spaced-heading{font-size:clamp(34px,4.5vw,58px)!important;line-height:1.5!important}body.site-ar .creation-heading h2.ar-spaced-heading{font-family:"Noto Kufi Arabic",sans-serif!important;direction:rtl!important;unicode-bidi:plaintext!important;letter-spacing:0!important;word-spacing:.22em!important;line-height:1.55!important}';
     document.head.appendChild(style);
     translate(localStorage.getItem("mlh-site-language")||"fr");
-    let scheduled=false;
-    const obs=new MutationObserver(()=>{
-      if(scheduled)return;scheduled=true;
-      requestAnimationFrame(()=>{scheduled=false;translate(localStorage.getItem("mlh-site-language")||"fr");});
-    });
-    obs.observe(document.body,{childList:true,subtree:true});
     const order=document.getElementById("orderButton");
     if(order)order.addEventListener("click",e=>{
       if(localStorage.getItem("mlh-site-language")!=="ar")return;
