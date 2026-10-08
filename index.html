@@ -124,9 +124,10 @@
         <div class="preview-book"><span class="preview-star">★</span><b id="previewTitle">Mon aventure</b><small id="previewTheme">Choisissez un univers</small></div>
         <div class="summary"><div><span>Héros</span><b id="summaryName">Votre enfant</b></div><div><span>Âge</span><b id="summaryAge">—</b></div><div><span>Langue</span><b id="summaryLang">Français</b></div><div><span>Pack</span><b id="summaryPack">Little Hero</b></div><div class="summary-adventures" id="summaryAdventures"></div><div class="total"><span>Total digital</span><b id="summaryPrice">69 DH</b></div></div>
       </div>
+      <div id="generatedCoverBox" class="generated-cover-box" hidden><div class="generated-cover-heading"><b>Aperçu de sa couverture</b><span id="coverStatus">Création de la couverture...</span></div><img id="generatedCoverImage" alt="Couverture personnalisée" hidden><strong id="generatedCoverTitle"></strong></div>
       <div class="privacy-note">🔒 La photo et les informations de votre enfant sont utilisées uniquement pour préparer sa commande.</div>
       <div class="whatsapp-note">💬 Après avoir cliqué, WhatsApp s'ouvrira avec votre récapitulatif. Vous pourrez confirmer le format (digital, imprimé ou les deux) avec notre équipe.</div>
-      <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Modifier</button><button type="button" class="btn btn-whatsapp" id="orderButton">💬 Commander sur WhatsApp</button></div>
+      <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Modifier</button><button type="button" class="btn btn-primary" id="generateCoverButton">Générer la couverture</button><button type="button" class="btn btn-whatsapp" id="orderButton" disabled>💬 Valider ma commande sur WhatsApp</button></div>
     </div>
   </div>
 </section>
@@ -150,5 +151,6 @@
   <small>© 2026 My Little Hero · Tous droits réservés · <a href="https://wa.me/212603983800" target="_blank" rel="noopener">WhatsApp</a></small>
 </footer>
 <script src="script.js"></script>
+<script src="preview.js"></script>
 </body>
 </html>
