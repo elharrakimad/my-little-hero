@@ -2,3 +2,4 @@ fastapi
 uvicorn[standard]
 python-multipart
 openai==3.22.1
+supabase
