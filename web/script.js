@@ -165,3 +165,10 @@ const T={
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",setup);else setup();
 })();
+(function(){
+const m={"Monde magique":"wand","Fées":"star","Licorne":"unicorn","Royaume":"crown","Dragon":"dragon","Pirates":"ship","Trésor":"treasure","Espace":"rocket","Robots":"robot","Dinosaures":"dino","Sous-marin":"wave","Sirènes":"mermaid","Forêt":"tree","Safari":"lion","Sauvetage":"paw","Football":"ball","Basket":"ball","Course":"car","Détective":"search","Mission secrète":"lock","Chevalier":"shield","Art":"palette","Musique":"music","Danse":"music","Pâtisserie":"cake","Mode":"shirt","Science":"flask","Temps":"clock","Mon propre thème":"spark"};
+const p={wand:"✦",star:"★",unicorn:"◇",crown:"♕",dragon:"◈",ship:"⌁",treasure:"◆",rocket:"▲",robot:"▣",dino:"◇",wave:"≈",mermaid:"♢",tree:"♣",lion:"◉",paw:"•",ball:"◉",car:"▰",search:"⌕",lock:"◇",shield:"⬡",palette:"●",music:"♪",cake:"⌂",shirt:"◇",flask:"△",clock:"◷",spark:"✦"};
+function a(){document.querySelectorAll("[data-theme-label] .theme-icon").forEach(e=>{let k=m[e.parentElement?.dataset.themeLabel]||"spark";e.textContent=p[k];e.dataset.iconKey=k;});}
+const s=document.createElement("style");s.textContent=".theme-choice-grid .theme-icon{display:flex;align-items:center;justify-content:center;color:#5b4bdb;font-size:25px;font-weight:700}.theme-choice-grid .theme-icon{font-family:Arial,sans-serif}";document.head.appendChild(s);
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",a);else a();
+})();
