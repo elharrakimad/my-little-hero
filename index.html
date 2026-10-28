@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20261028-01">
 </head>
 <body>
 <header class="site-header">
@@ -95,6 +95,7 @@
       <div class="form-grid">
         <label>Prénom<input id="childName" placeholder="Ex. Yassir"></label>
         <label>Âge<select id="childAge"><option value="">Choisir</option><option>3 ans</option><option>4 ans</option><option>5 ans</option><option>6 ans</option><option>7 ans</option><option>8 ans</option><option>9 ans</option><option>10 ans</option><option>11 ans</option><option>12 ans</option></select></label>
+        <label>Votre enfant<select id="childGender" required><option value="">Choisir</option><option value="girl">Fille</option><option value="boy">Garçon</option></select></label>
         <label>Langue<select id="language"><option>Français</option><option>English</option><option>Español</option><option>العربية</option></select></label>
         <label>Photo de l'enfant<input id="childPhoto" type="file" accept="image/jpeg,image/png,image/webp"></label>
       </div>
@@ -130,6 +131,7 @@
 
       <div class="summary">
         <div><span>Héros</span><b id="summaryName">Votre enfant</b></div>
+        <div><span>Votre enfant</span><b id="summaryGender">—</b></div>
         <div><span>Âge</span><b id="summaryAge">—</b></div>
         <div><span>Langue</span><b id="summaryLang">Français</b></div>
         <div><span>Pack</span><b id="summaryPack">Little Hero</b></div>
@@ -166,7 +168,8 @@
   <div class="footer-inner"><a class="brand" href="#top"><span class="brand-mark">✦</span><span>My Little <b>Hero</b></span></a><p>Des histoires personnalisées où chaque enfant devient le héros de son propre monde.</p><div class="footer-links"><a href="#how">Comment ça marche</a><a href="#packs">Packs</a><a href="#faq">FAQ</a><a href="#creation">Créer</a></div></div>
   <small>© 2026 My Little Hero · Tous droits réservés · <a href="https://wa.me/212603983800" target="_blank" rel="noopener">WhatsApp</a></small>
 </footer>
-<script src="script.js?v=20261008-05"></script>
-<script src="preview.js?v=20261008-05"></script>
+<script src="themes.js?v=20261028-01"></script>
+<script src="script.js?v=20261028-01"></script>
+<script src="preview.js?v=20261028-01"></script>
 </body>
 </html>

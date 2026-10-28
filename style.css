@@ -1,3 +1,4 @@
+.theme-choice-grid button[hidden]{display:none!important}
 :root{--ink:#292744;--muted:#77738d;--purple:#5b4bdb;--purple2:#4033b5;--violet:#eeeaff;--coral:#ff8d83;--peach:#fff0e9;--yellow:#ffd45e;--mint:#e9f8f2;--cream:#fffaf2;--line:#e9e6f2;--white:#fff;--shadow:0 24px 70px rgba(45,39,90,.11)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Nunito,Arial,sans-serif;background:#fff}button,input,select{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}
 .site-header{position:sticky;top:0;z-index:30;height:76px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(233,230,242,.8)}

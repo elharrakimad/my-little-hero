@@ -412,6 +412,7 @@ def generate_order(order):
                 theme=adventure["theme"],
                 language=order["language"],
                 client_idea=adventure.get("idea", ""),
+                child_gender=adventure.get("child_gender", ""),
                 child_quality=adventure.get("quality", ""),
                 book_title=title,
                 reference_path=reference_path,

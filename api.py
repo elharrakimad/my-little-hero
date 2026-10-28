@@ -11,6 +11,7 @@ from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from openai import OpenAI
 from supabase import create_client
+from child_profile import gender_instruction
 
 app = FastAPI(title="My Little Hero API", version="0.1.0")
 
@@ -40,7 +41,7 @@ def get_supabase_client():
     return create_client(url, key)
 
 
-def save_order_to_supabase(order_ref, name, age, language, pack, covers, reference_bytes, cover_files):
+def save_order_to_supabase(order_ref, name, age, language, pack, covers, reference_bytes, cover_files, child_gender=""):
     supabase = get_supabase_client()
     bucket = "my-little-hero-files"
     root = f"orders/{order_ref}"
@@ -62,6 +63,7 @@ def save_order_to_supabase(order_ref, name, age, language, pack, covers, referen
     for index, cover in enumerate(covers, start=1):
         adventures.append({
             "number": index,
+            "child_gender": child_gender,
             "theme": cover.get("theme", ""),
             "idea": "",
             "quality": "",
@@ -112,7 +114,7 @@ def language_instruction(language: str) -> str:
     }.get(language, "Écris le titre dans la langue demandée.")
 
 
-def generate_title(client, name, age, theme, language):
+def generate_title(client, name, age, theme, language, child_gender=""):
     prompt = f"""
 Tu es le directeur éditorial de My Little Hero, une marque de livres
 personnalisés pour enfants.
@@ -121,6 +123,7 @@ Invente UN SEUL titre de livre original pour cette aventure.
 
 ENFANT : {name}, {age} ans
 THÈME : {theme}
+{gender_instruction(child_gender)}
 
 {language_instruction(language)}
 
@@ -142,7 +145,7 @@ Réponds uniquement avec le titre final, sur une seule ligne.
     return title[:120]
 
 
-def generate_cover(client, reference_bytes, name, age, theme, language, title):
+def generate_cover(client, reference_bytes, name, age, theme, language, title, child_gender=""):
     if language == "English":
         subtitle = "Personalized Coloring Book"
     elif language == "Español":
@@ -161,6 +164,7 @@ même coiffure, même âge apparent et même apparence générale.
 
 PERSONNAGE : {name}, {age} ans
 THÈME : {theme}
+{gender_instruction(child_gender)}
 
 Crée une scène de couverture joyeuse, magique et aventureuse,
 avec l'enfant clairement au premier plan et un décor riche inspiré du thème.
@@ -200,7 +204,11 @@ async def preview_cover(
     theme: str = Form(""),
     themes: str = Form(""),
     photo: UploadFile = File(...),
+    child_gender: str = Form(...),
 ):
+    child_gender = child_gender.strip()
+    if child_gender not in {"girl", "boy"}:
+        raise HTTPException(status_code=400, detail="Veuillez choisir fille ou garçon.")
     name = child_name.strip()
     age = child_age.strip()
     match = re.search(r"\d+", age)
@@ -241,6 +249,7 @@ async def preview_cover(
 Crée une référence visuelle cohérente du personnage principal d'un livre jeunesse personnalisé.
 Utilise la photo fournie uniquement comme référence visuelle de l'enfant.
 L'enfant s'appelle {name} et a {age} ans.
+{gender_instruction(child_gender)}
 
 IMPORTANT : conserver les traits généraux du visage, la coiffure,
 l'apparence générale reconnaissable et l'âge apparent.
@@ -257,9 +266,9 @@ Aucun texte, logo ou watermark. Aucun personnage ou univers protégé.
         covers = []
         cover_bytes_list = []
         for selected_theme in selected_themes:
-            title = generate_title(client, name, age, selected_theme, language)
+            title = generate_title(client, name, age, selected_theme, language, child_gender)
             cover_bytes = generate_cover(
-                client, reference_bytes, name, age, selected_theme, language, title
+                client, reference_bytes, name, age, selected_theme, language, title, child_gender
             )
             cover_bytes_list.append(cover_bytes)
             covers.append({
@@ -269,7 +278,7 @@ Aucun texte, logo ou watermark. Aucun personnage ou univers protégé.
             })
 
         order_ref = datetime.now().strftime("MLH-%Y%m%d-%H%M%S-") + uuid.uuid4().hex[:6].upper()
-        save_order_to_supabase(order_ref, name, age_value, language, len(selected_themes), covers, reference_bytes, cover_bytes_list)
+        save_order_to_supabase(order_ref, name, age_value, language, len(selected_themes), covers, reference_bytes, cover_bytes_list, child_gender)
 
         return {
             "ok": True,

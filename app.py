@@ -9,6 +9,7 @@ import io
 from datetime import datetime
 from openai import OpenAI
 from supabase import create_client
+from child_profile import gender_instruction
 
 # ============================================================
 # MY LITTLE HERO — V3
@@ -161,6 +162,8 @@ if "pack" not in st.session_state:
 if "format" not in st.session_state:
     st.session_state.format = "digital"
 
+if "child_gender" not in st.session_state:
+    st.session_state.child_gender = ""
 if "child_name" not in st.session_state:
     st.session_state.child_name = ""
 
@@ -214,6 +217,7 @@ def generate_character_reference(photo_bytes, name, age, photo_filename="enfant.
 Crée une référence visuelle cohérente du personnage principal d'un livre jeunesse personnalisé.
 Utilise la photo fournie uniquement comme référence visuelle de l'enfant.
 L'enfant s'appelle {name} et a {age} ans.
+{gender_instruction(st.session_state.child_gender)}
 
 IMPORTANT : conserver les traits généraux du visage, la coiffure,
 l'apparence générale reconnaissable et l'âge apparent.
@@ -248,6 +252,7 @@ Invente UN SEUL titre de livre original pour cette aventure.
 
 ENFANT : {name}, {age} ans
 THÈME : {theme}
+{gender_instruction(st.session_state.child_gender)}
 IDÉE DU CLIENT : {idea if idea else "Aucune idée supplémentaire."}
 QUALITÉ À METTRE EN VALEUR : {quality if quality else "Aucune demande particulière."}
 
@@ -303,6 +308,7 @@ même coiffure, même âge apparent et même apparence générale.
 
 PERSONNAGE : {name}, {age} ans
 THÈME : {theme}
+{gender_instruction(st.session_state.child_gender)}
 IDÉE DU CLIENT : {idea if idea else 'Aucune idée supplémentaire.'}
 QUALITÉ : {quality if quality else 'Aucune demande particulière.'}
 
@@ -388,6 +394,7 @@ def save_order_metadata():
         )
         order["adventures"].append({
             "number": i,
+            "child_gender": st.session_state.child_gender,
             "theme": theme,
             "idea": adventure["idea"],
             "quality": adventure["quality"],
@@ -998,6 +1005,12 @@ elif st.session_state.step == 2:
             placeholder="Ex. Zayd"
         )
 
+        st.session_state.child_gender = st.selectbox(
+            "Votre enfant", ["", "girl", "boy"],
+            index=["", "girl", "boy"].index(st.session_state.child_gender),
+            format_func=lambda value: {"": "Choisir", "girl": "Fille", "boy": "Garçon"}[value],
+        )
+
         st.session_state.customer_phone = st.text_input(
             "📱 Téléphone / WhatsApp du parent",
             value=st.session_state.customer_phone,
@@ -1051,6 +1064,9 @@ elif st.session_state.step == 2:
         if st.button("Continuer →", use_container_width=True, type="primary"):
             errors = []
 
+            if not st.session_state.child_gender:
+                st.error("Veuillez choisir fille ou garçon.")
+                st.stop()
             if not st.session_state.child_name.strip():
                 errors.append("Veuillez indiquer le prénom de l'enfant.")
 
@@ -1099,7 +1115,15 @@ elif st.session_state.step == 3:
     if len(st.session_state.adventures) > pack:
         st.session_state.adventures = st.session_state.adventures[:pack]
 
+    show_all_themes = st.checkbox("Voir tous les thèmes", value=False)
+    girl_themes = ("fées", "licorne", "enchanté", "sirènes", "artistique", "musicale", "Danse", "pâtisserie", "mode")
+    boy_themes = ("Dragon", "pirates", "espace", "robots", "dinosaures", "football", "basket", "Course", "secrète", "Chevalier", "Super héros", "sportif")
+    excluded = boy_themes if st.session_state.child_gender == "girl" else girl_themes
+    available_themes = THEMES if show_all_themes else [t for t in THEMES if not any(word in t for word in excluded)]
     for i in range(pack):
+        if st.session_state.adventures[i]["theme"] not in available_themes:
+            st.session_state.adventures[i]["theme"] = available_themes[0]
+            st.session_state.pop(f"adventure_theme_{i}", None)
         st.markdown(f"### {'🎮' if i == 0 else '🚀' if i == 1 else '🐉'} Aventure {i + 1}")
 
         c1, c2 = st.columns(2)
@@ -1107,8 +1131,8 @@ elif st.session_state.step == 3:
         with c1:
             theme = st.selectbox(
                 "Thème",
-                THEMES,
-                index=THEMES.index(st.session_state.adventures[i]["theme"]),
+                available_themes,
+                index=available_themes.index(st.session_state.adventures[i]["theme"]),
                 key=f"adventure_theme_{i}"
             )
             st.session_state.adventures[i]["theme"] = theme

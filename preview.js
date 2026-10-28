@@ -11,12 +11,13 @@ document.addEventListener("DOMContentLoaded",()=>{
   orderButton.disabled=true;
   orderButton.setAttribute("aria-disabled","true");
 
-  window.generateStoryPreview=async({name,age,language,themes,photoFile})=>{
-    if(!name||!age||!photoFile||!themes?.length)return false;
+  window.generateStoryPreview=async({name,age,language,gender,themes,photoFile})=>{
+    if(!name||!age||!gender||!photoFile||!themes?.length)return false;
 
     const form=new FormData();
     form.append("child_name",name);
     form.append("child_age",age);
+    form.append("child_gender",gender);
     form.append("language",language||"Français");
     form.append("themes",JSON.stringify(themes));
     form.append("theme",themes[0]||"");
