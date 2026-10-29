@@ -5,6 +5,8 @@ import html
 import re
 from pathlib import Path
 from child_profile import gender_instruction
+from book_layout import build_book_pdf
+from book_content import story_pages, keepsake_congratulations
 
 from reportlab.lib.pagesizes import A4
 from reportlab.platypus import (
@@ -46,6 +48,7 @@ STORY_FILE = "story.txt"
 PAGES_FOLDER = Path("pages")
 COVER_FILE = "cover.png"
 OUTPUT_FILE = f"{NAME}_Livre_Personnalise.pdf"
+KEEPSAKE_IMAGE = "keepsake_medallion_v2.png"
 
 NUMBER_OF_PAGES = 10
 
@@ -317,7 +320,8 @@ Scène à illustrer :
 Continue jusqu'à PAGE 10.
 
 TEXTE
-Le texte de chaque page doit contenir environ 2 à 4 phrases.
+Le texte de chaque page doit contenir environ 2 à 4 phrases, idéalement
+35 à 65 mots, sans dépasser 80 mots. N'appauvris pas le sens de la scène.
 Il doit être suffisamment court pour être placé facilement
 sur une page illustrée.
 
@@ -365,6 +369,10 @@ Cette phrase doit rester amusante et adaptée à l'âge de l'enfant.
 
 N'ajoute aucune explication avant ou après l'histoire.
 Commence directement par PAGE 1.
+Après la scène de PAGE 10, ajoute ce bloc distinct, sans nouvelle page d'histoire :
+SOUVENIR
+Félicitations : une phrase de 110 caractères maximum qui félicite l'enfant
+pour la mission réellement accomplie. Rédige cette phrase dans {LANGUAGE}.
 """
 
     response = client.responses.create(
@@ -385,6 +393,7 @@ Commence directement par PAGE 1.
 # ============================================================
 
 def get_page(story, page_number):
+    story = re.split(r"(?im)^\s*SOUVENIR\s*$", story, maxsplit=1)[0]
     pattern = rf"PAGE\s+{page_number}(.*?)(?=PAGE\s+{page_number + 1}|$)"
     match = re.search(
         pattern, story, re.IGNORECASE | re.DOTALL
@@ -514,12 +523,19 @@ STYLE
 - dessin au trait
 - lignes propres et nettes
 - détails suffisamment riches pour être intéressants
+- détails adaptés à {AGE} ans : formes larges et simples pour les plus jeunes,
+  détails modérés pour les plus grands, jamais de petites zones surchargées
 - espaces suffisamment grands pour être facilement coloriés
 - composition verticale
 - personnage principal clairement visible
 - décor détaillé mais facile à colorier
 - style professionnel de livre pour enfants
 - aucun remplissage de couleur
+- fond blanc pur, aucun aplat gris, aucune ombre, aucun dégradé, aucune hachure
+- cheveux et vêtements non remplis, seulement leurs contours à colorier
+- composition ouverte en vignette : tous les éléments restent à distance des bords
+- aucun cadre rectangulaire, aucune bordure, aucun élément coupé sur le pourtour
+- limiter les ornements à quelques motifs discrets de l'univers du récit
 - aucun effet photographique
 - aucun réalisme photographique
 
@@ -727,275 +743,38 @@ def fit_image_to_box(image_path, max_width, max_height):
     return image
 
 
+def generate_keepsake_medallion():
+    if REUSE_EXISTING_FILES and Path(KEEPSAKE_IMAGE).exists():
+        return
+    pages = story_pages(Path(STORY_FILE).read_text(encoding="utf-8"), NUMBER_OF_PAGES)
+    with open(REFERENCE_IMAGE, "rb") as reference:
+        result = client.images.edit(
+            model="gpt-image-2", image=[reference], size="1024x1024", quality="medium",
+            prompt=f"""Crée uniquement le médaillon souvenir à colorier de {NAME}, {AGE} ans.
+{gender_instruction(CHILD_GENDER)}
+Conserve exactement le personnage de référence : visage, coiffure, âge, apparence.
+Univers : {THEME}. Mission accomplie : {pages[-1]["scene"]}.
+Personnage principal fier et souriant, au centre, buste ou corps en entier dans
+un médaillon circulaire très simple. Ajouter le compagnon uniquement si la scène
+le mentionne et si cela reste lisible. Tous les traits restent dans le cercle.
+Médaillon entier visible et généreuse marge blanche tout autour.
+Noir et blanc pur, contours nets, larges zones à colorier adaptées à {AGE} ans,
+fond blanc, aucun gris, aucune ombre, hachure, texture ou aplat noir.
+AUCUN TEXTE, lettre, numéro, titre, ruban, logo ou watermark.
+Les inscriptions et le ruban seront ajoutés par le système PDF.""")
+    atomic_write_bytes(KEEPSAKE_IMAGE, base64.b64decode(result.data[0].b64_json))
+
+
 def generate_pdf():
-    print("\n" + "=" * 60)
-    print("📄 ÉTAPE 5/5 — GÉNÉRATION DU PDF")
-    print("=" * 60)
-
-    require_file(COVER_FILE, "❌ cover.png est introuvable.")
-    require_file(STORY_FILE, "❌ story.txt est introuvable.")
-
-    if not PAGES_FOLDER.is_dir():
-        raise FileNotFoundError("❌ Le dossier 'pages' est introuvable.")
-
     story = Path(STORY_FILE).read_text(encoding="utf-8")
-
-    styles = getSampleStyleSheet()
-
-    page_title_style = ParagraphStyle(
-        "PageTitle",
-        parent=styles["Heading2"],
-        alignment=TA_CENTER,
-        fontSize=17,
-        leading=20,
-        spaceBefore=0,
-        spaceAfter=0,
-        textColor="#202020",
-    )
-
-    text_style = ParagraphStyle(
-        "StoryText",
-        parent=styles["BodyText"],
-        alignment=TA_CENTER,
-        fontSize=10.5,
-        leading=14,
-        leftIndent=0.5 * cm,
-        rightIndent=0.5 * cm,
-        spaceAfter=3,
-    )
-
-    coloring_style = ParagraphStyle(
-        "Coloring",
-        parent=styles["BodyText"],
-        alignment=TA_CENTER,
-        fontSize=10,
-        leading=12,
-        spaceBefore=2,
-    )
-
-    final_title_style = ParagraphStyle(
-        "FinalTitle",
-        parent=styles["Title"],
-        alignment=TA_CENTER,
-        fontSize=28,
-        leading=34,
-        spaceAfter=20,
-    )
-
-    PAGE_WIDTH, PAGE_HEIGHT = A4
-    MARGIN = 0.7 * cm
-    AVAILABLE_WIDTH = PAGE_WIDTH - (2 * MARGIN)
-
-    def draw_cover(canvas, doc):
-        reader = ImageReader(COVER_FILE)
-        original_width, original_height = reader.getSize()
-
-        scale = min(
-            PAGE_WIDTH / original_width,
-            PAGE_HEIGHT / original_height
-        )
-
-        width = original_width * scale
-        height = original_height * scale
-        x = (PAGE_WIDTH - width) / 2
-        y = (PAGE_HEIGHT - height) / 2
-
-        canvas.drawImage(
-            reader,
-            x,
-            y,
-            width=width,
-            height=height,
-            preserveAspectRatio=True,
-            mask="auto"
-        )
-
-    doc = SimpleDocTemplate(
-        OUTPUT_FILE,
-        pagesize=A4,
-        rightMargin=MARGIN,
-        leftMargin=MARGIN,
-        topMargin=MARGIN,
-        bottomMargin=MARGIN
-    )
-
-    pdf = []
-
-    # Première page : couverture dessinée directement
-    pdf.append(PageBreak())
-
-    for page_number in range(1, NUMBER_OF_PAGES + 1):
-        print(f"📖 Création de la page PDF {page_number}...")
-
-        content = get_pdf_page(story, page_number)
-        title, text = clean_page_content(content)
-
-        image_path = PAGES_FOLDER / f"page_{page_number:02d}.png"
-
-        require_file(
-            image_path,
-            f"❌ Image manquante : {image_path}"
-        )
-
-        pdf.append(Spacer(1, 0.15 * cm))
-
-        pdf.append(
-            HRFlowable(
-                width="32%",
-                thickness=1,
-                color="#555555",
-                spaceBefore=0,
-                spaceAfter=0.08 * cm,
-                hAlign="CENTER"
-            )
-        )
-
-        ornament_style = ParagraphStyle(
-            "Ornament",
-            parent=styles["BodyText"],
-            alignment=TA_CENTER,
-            fontSize=8,
-            leading=9,
-            spaceBefore=0,
-            spaceAfter=0.05 * cm
-        )
-
-        pdf.append(Paragraph("◆", ornament_style))
-
-        if title:
-            pdf.append(Paragraph(
-                html.escape(title),
-                page_title_style
-            ))
-
-        pdf.append(
-            HRFlowable(
-                width="22%",
-                thickness=0.8,
-                color="#777777",
-                spaceBefore=0.12 * cm,
-                spaceAfter=0
-            )
-        )
-
-        pdf.append(Spacer(1, 0.38 * cm))
-
-        image = fit_image_to_box(
-            image_path,
-            AVAILABLE_WIDTH,
-            21.5 * cm
-        )
-
-        pdf.append(image)
-        pdf.append(Spacer(1, 0.22 * cm))
-
-        if text:
-            story_text = Paragraph(
-                html.escape(text),
-                text_style
-            )
-
-            story_box = Table(
-                [[story_text]],
-                colWidths=[AVAILABLE_WIDTH - 1.0 * cm]
-            )
-
-            story_box.setStyle(TableStyle([
-                ("BACKGROUND", (0, 0), (-1, -1),
-                 colors.HexColor("#F7F7F7")),
-                ("BOX", (0, 0), (-1, -1),
-                 0.8, colors.HexColor("#B8B8B8")),
-                ("LEFTPADDING", (0, 0), (-1, -1), 0.35 * cm),
-                ("RIGHTPADDING", (0, 0), (-1, -1), 0.35 * cm),
-                ("TOPPADDING", (0, 0), (-1, -1), 0.18 * cm),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 0.18 * cm),
-                ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-            ]))
-
-            pdf.append(story_box)
-            pdf.append(Spacer(1, 0.10 * cm))
-
-        coloring_message = {
-            "français": "À toi de colorier !",
-            "english": "Time to color!",
-            "español": "¡A colorear!"
-        }.get(LANGUAGE.lower(), "À toi de colorier !")
-
-        pdf.append(
-            Paragraph(
-                coloring_message,
-                coloring_style
-            )
-        )
-
-        pdf.append(
-            Paragraph(
-                f"— {page_number} —",
-                coloring_style
-            )
-        )
-
-        pdf.append(PageBreak())
-
-    final_message = {
-        "français": (
-            f"Ton aventure est terminée...<br/><br/>"
-            f"Mais de nouvelles aventures commencent "
-            f"toujours avec un peu d'imagination !"
-        ),
-        "english": (
-            f"Your adventure is over...<br/><br/>"
-            f"But new adventures always begin "
-            f"with a little imagination!"
-        ),
-        "español": (
-            f"Tu aventura ha terminado...<br/><br/>"
-            f"¡Pero nuevas aventuras siempre comienzan "
-            f"con un poco de imaginación!"
-        )
-    }.get(
-        LANGUAGE.lower(),
-        "Ton aventure est terminée..."
-    )
-
-    bravo = {
-        "français": f"Bravo, {NAME} !",
-        "english": f"Well done, {NAME}!",
-        "español": f"¡Bravo, {NAME}!"
-    }.get(LANGUAGE.lower(), f"Bravo, {NAME} !")
-
-    pdf.append(Spacer(1, 5 * cm))
-    pdf.append(Paragraph(
-        html.escape(bravo),
-        final_title_style
-    ))
-    pdf.append(Paragraph(
-        final_message,
-        text_style
-    ))
-
-    print("📕 Construction du PDF A4...")
-
-    doc.build(
-        pdf,
-        onFirstPage=draw_cover
-    )
-
-    print("\n" + "=" * 60)
-    print("✅ LIVRE COMPLET CRÉÉ !")
-    print("=" * 60)
-    print(f"📕 {OUTPUT_FILE}")
-    print("👤 Personnage : OK")
-    print("📖 Histoire : OK")
-    print("🎨 Illustrations : OK")
-    print("🖼️ Couverture : OK")
-    print("📄 PDF A4 : OK")
-    print("=" * 60)
+    pages = story_pages(story, NUMBER_OF_PAGES)
+    for page in pages:
+        page["image"] = PAGES_FOLDER / f"page_{page["number"]:02d}.png"
+    return build_book_pdf(OUTPUT_FILE, pages, KEEPSAKE_IMAGE, child_name=NAME,
+        congratulations=keepsake_congratulations(story, THEME, LANGUAGE),
+        gender=CHILD_GENDER, language=LANGUAGE, cover=COVER_FILE)
 
 
-# ============================================================
-# PROGRAMME PRINCIPAL
-# ============================================================
 
 def main():
     print("\n" + "#" * 60)
@@ -1020,6 +799,7 @@ def main():
         generate_all_pages()
         generate_cover()
 
+    generate_keepsake_medallion()
     generate_pdf()
 
     print("\n🎉 PROCESSUS TERMINÉ !")

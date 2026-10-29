@@ -63,6 +63,7 @@ def generate_book_from_adventure(
     # est fourni comme nom de fichier. On transmet donc toujours des str.
     engine.PAGES_FOLDER = pages_dir
     engine.COVER_FILE = str(output_dir / "cover.png")
+    engine.KEEPSAKE_IMAGE = str(output_dir / "keepsake_medallion_v2.png")
     engine.OUTPUT_FILE = str(final_pdf.with_suffix(".building.pdf"))
 
     engine.REUSE_EXISTING_FILES = True
@@ -99,7 +100,10 @@ def generate_book_from_adventure(
         engine.generate_cover()
 
     if progress:
-        progress("pdf", "Assemblage des pages et de la couverture dans le PDF", page_index=10, page_total=10)
+        progress("pdf", "Création du médaillon souvenir personnalisé", page_index=10, page_total=10)
+    engine.generate_keepsake_medallion()
+    if progress:
+        progress("pdf", "Assemblage des pages et de la page souvenir dans le PDF", page_index=10, page_total=10)
     engine.generate_pdf()
     Path(engine.OUTPUT_FILE).replace(final_pdf)
     return final_pdf
