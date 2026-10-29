@@ -11,6 +11,27 @@ from child_profile import gender_instruction
 
 
 class BookEngineTests(unittest.TestCase):
+    def test_interrupted_book_reuses_story_and_finishes_pdf_atomically(self):
+        engine = MagicMock()
+        engine.get_book_title.side_effect = lambda: engine.BOOK_TITLE
+        engine.generate_story.side_effect = lambda: Path(engine.STORY_FILE).write_text("PAGE 1", encoding="utf-8")
+        engine.generate_all_pages.side_effect = [RuntimeError("interrupted"), None]
+        engine.generate_pdf.side_effect = lambda: Path(engine.OUTPUT_FILE).write_bytes(b"completed pdf")
+        with patch.dict("sys.modules", {"generate_book": engine}):
+            wrapper = runpy.run_path("book_engine.py")["generate_book_from_adventure"]
+        with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()):
+            args = dict(child_name="Camille", age=7, theme="Science", language="Français",
+                child_gender="girl", client_idea="", child_quality="", book_title="Titre",
+                reference_path="reference.png", output_dir=Path(directory))
+            with self.assertRaises(RuntimeError):
+                wrapper(**args)
+            self.assertFalse(any(Path(directory).glob("*.pdf")))
+            result = wrapper(**args)
+            self.assertEqual(result.read_bytes(), b"completed pdf")
+            self.assertEqual(engine.generate_story.call_count, 1)
+            self.assertTrue(engine.REUSE_EXISTING_FILES)
+            self.assertFalse(any(Path(directory).glob("*.building.pdf")))
+
     def test_gender_reaches_engine_and_resets_for_legacy_order(self):
         engine = MagicMock()
         engine.get_book_title.side_effect = lambda: engine.BOOK_TITLE
@@ -39,6 +60,8 @@ class BookEngineTests(unittest.TestCase):
                         CHILD_GENDER=gender, NAME="Camille", AGE=7, THEME="Science", LANGUAGE=language,
                         CLIENT_IDEA="", CHILD_QUALITY="", BOOK_TITLE="Titre", NUMBER_OF_PAGES=10,
                         STORY_FILE=str(Path(directory) / "story.txt"))
+                    atomic = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == "atomic_write_bytes")
+                    exec(compile(ast.Module(body=[atomic], type_ignores=[]), "generate_book.py", "exec"), namespace)
                     exec(compile(ast.Module(body=[function], type_ignores=[]), "generate_book.py", "exec"), namespace)
                     namespace["generate_story"]()
                     prompt = client.responses.create.call_args.kwargs["input"]

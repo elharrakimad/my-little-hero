@@ -1,4 +1,5 @@
 import json
+import hmac
 import os
 from datetime import datetime
 from pathlib import Path
@@ -8,7 +9,6 @@ import time
 import streamlit as st
 from supabase import create_client
 
-from book_engine import generate_book_from_adventure
 
 # ============================================================
 # MY LITTLE HERO — ADMIN
@@ -191,7 +191,7 @@ def login():
 
     password = st.text_input("Mot de passe administrateur", type="password")
     if st.button("🔓 Se connecter", type="primary", use_container_width=True):
-        if password == configured_password:
+        if hmac.compare_digest(password, configured_password):
             st.session_state.admin_authenticated = True
             st.rerun()
         else:
@@ -365,102 +365,7 @@ def download_existing_pdf_if_needed(order, index, remote_path):
     return storage_download(supabase, remote_path, local_path)
 
 
-def generate_order(order):
-    if not order.get("adventures"):
-        raise ValueError("Aucune aventure dans cette commande.")
 
-    reference_path, preview_covers = ensure_order_assets(order)
-
-    if len(preview_covers) < len(order["adventures"]):
-        raise FileNotFoundError("Une ou plusieurs couvertures sont introuvables.")
-
-    supabase = get_supabase_client()
-    final_dir = order["_dir"] / "final_books"
-    final_dir.mkdir(parents=True, exist_ok=True)
-
-    generated_files = list(order.get("generated_files") or [])
-    total = len(order["adventures"])
-
-    for index, adventure in enumerate(order["adventures"], start=1):
-        title = (adventure.get("title") or "").strip()
-        if not title:
-            raise ValueError(f"Le titre de l'aventure {index} est manquant.")
-
-        st.write(f"**{index}/{total} — {title}**")
-
-        existing_remote = get_remote_generated_for_index(order, index)
-
-        if existing_remote:
-            download_existing_pdf_if_needed(order, index, existing_remote)
-            st.info(f"⏭️ {index}/{total} déjà terminé — aucune régénération.")
-            continue
-
-        adventure_dir = final_dir / f"adventure_{index:02d}"
-        adventure_dir.mkdir(parents=True, exist_ok=True)
-
-        expected_pdf = adventure_dir / (
-            f"{_safe_filename(order['child_name'])}_"
-            f"{_safe_filename(title)}.pdf"
-        )
-
-        if expected_pdf.exists() and expected_pdf.stat().st_size > 0:
-            pdf_path = expected_pdf
-        else:
-            pdf_path = generate_book_from_adventure(
-                child_name=order["child_name"],
-                age=int(order["age"]),
-                theme=adventure["theme"],
-                language=order["language"],
-                client_idea=adventure.get("idea", ""),
-                child_gender=adventure.get("child_gender", ""),
-                child_quality=adventure.get("quality", ""),
-                book_title=title,
-                reference_path=reference_path,
-                output_dir=adventure_dir,
-                preview_cover_path=preview_covers[index - 1],
-            )
-
-        pdf_path = Path(pdf_path)
-
-        remote_pdf_path = (
-            f"orders/{order['order_ref']}/final_books/"
-            f"adventure_{index:02d}/{pdf_path.name}"
-        )
-
-        storage_upload(
-            supabase,
-            remote_pdf_path,
-            pdf_path,
-            "application/pdf",
-        )
-
-        if remote_pdf_path not in generated_files:
-            generated_files.append(remote_pdf_path)
-
-        order["generated_files"] = generated_files
-
-        update_order_fields(
-            order["order_ref"],
-            {
-                "generated_files": generated_files,
-                "status": "GENERATING",
-            },
-        )
-
-        st.success(f"✅ Livre {index}/{total} enregistré dans Supabase.")
-
-    order["generated_files"] = generated_files
-
-    update_order_fields(
-        order["order_ref"],
-        {
-            "generated_files": generated_files,
-            "status": "BOOKS_READY",
-        },
-    )
-
-    order["status"] = "BOOKS_READY"
-    return generated_files
 
 
 # ------------------------------------------------------------
@@ -639,72 +544,36 @@ for order in filtered:
             )
 
             if st.button(
-                "✅ Confirmer la commande",
+                "✅ Valider le paiement et générer",
                 key=f"paid_{order_ref}",
                 type="primary",
                 disabled=not confirm,
                 use_container_width=True,
             ):
-                update_status(order, "PAID")
-                st.success("Commande confirmée. La production peut commencer.")
+                response = (get_supabase_client().table("orders")
+                    .update({"status": "PAID"}).eq("order_ref", order_ref)
+                    .eq("status", "WAITING_FOR_PAYMENT").execute())
+                if not response.data:
+                    st.warning("La commande a déjà été traitée. Actualisez la liste.")
+                    st.stop()
+                st.success("Paiement validé. La génération sera prise en charge par le serveur.")
                 st.rerun()
 
-        elif status in ("PAID", "GENERATING", "GENERATION_INTERRUPTED"):
-            if status == "PAID":
-                st.success("💳 Commande confirmée. Tu peux lancer la production.")
-            elif status == "GENERATING":
-                st.warning(
-                    "⚙️ Cette commande était en cours de génération. "
-                    "Tu peux reprendre la production."
-                )
-            else:
-                st.warning(
-                    "⚠️ La production a été interrompue. "
-                    "Les livres déjà terminés ne seront pas régénérés."
-                )
+        elif status == "PAID":
+            st.info("⏳ Paiement validé. La commande attend le serveur de génération. Vous pouvez fermer cette page.")
 
-            button_label = (
-                "🚀 Générer les livres"
-                if status == "PAID"
-                else "🔄 Reprendre la production"
-            )
+        elif status == "GENERATING":
+            st.info("⚙️ Le serveur génère les livres. Vous pouvez fermer cette page, la production continue.")
 
-            if st.button(
-                button_label,
-                key=f"generate_{order_ref}",
-                type="primary",
-                use_container_width=True,
-            ):
-                try:
-                    update_status(order, "GENERATING")
-                    st.info(
-                        "La production est lancée. "
-                        "Les livres déjà terminés seront ignorés."
-                    )
-                    generated = generate_order(order)
-                    st.success(f"✅ {len(generated)} livre(s) prêt(s).")
-                    st.rerun()
-
-                except Exception as exc:
-                    error_text = str(exc)
-                    now = datetime.now().isoformat(timespec="seconds")
-
-                    try:
-                        update_order_fields(
-                            order_ref,
-                            {
-                                "status": "GENERATION_INTERRUPTED",
-                            },
-                        )
-                    except Exception:
-                        # Si Supabase est momentanément indisponible, on conserve
-                        # l'erreur principale sans la masquer par une seconde erreur.
-                        pass
-
-                    st.error(
-                        "❌ La génération a été interrompue. "
-                        f"Les livres déjà terminés sont conservés. Détail : {error_text}"
-                    )
+        elif status == "GENERATION_INTERRUPTED":
+            st.warning("La production a été interrompue. Les étapes terminées sont conservées sur le serveur.")
+            if st.button("🔄 Remettre en file de génération", key=f"retry_{order_ref}"):
+                response = (get_supabase_client().table("orders")
+                    .update({"status": "PAID"}).eq("order_ref", order_ref)
+                    .eq("status", "GENERATION_INTERRUPTED").execute())
+                if response.data:
+                    st.success("Commande remise en file.")
+                st.rerun()
 
         elif status == "BOOKS_READY":
             st.success("📕 Les livres sont prêts.")

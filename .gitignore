@@ -1,2 +1,6 @@
 __pycache__/
 *.py[cod]
+admin_orders/
+worker_orders/
+.env
+.streamlit/secrets.toml

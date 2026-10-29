@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: my-little-hero-admin
+    region: frankfurt
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run admin.py --server.address 0.0.0.0 --server.port $PORT --server.headless true
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SECRET_KEY
+        sync: false
+      - key: MY_LITTLE_HERO_ADMIN_PASSWORD
+        sync: false
+
+  - type: worker
+    name: my-little-hero-generation
+    region: frankfurt
+    runtime: python
+    plan: starter
+    numInstances: 1
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -u generation_worker.py
+    disk:
+      name: book-progress
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: MLH_WORK_DIR
+        value: /var/data/orders
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SECRET_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false

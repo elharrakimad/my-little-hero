@@ -126,6 +126,13 @@ def require_file(path, message):
         raise FileNotFoundError(message)
 
 
+def atomic_write_bytes(path, data):
+    path = Path(path)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_bytes(data)
+    temporary.replace(path)
+
+
 # ============================================================
 # 1. CRÉATION DE LA RÉFÉRENCE DU PERSONNAGE
 # ============================================================
@@ -187,7 +194,7 @@ Cette image servira de référence pour toutes les illustrations du livre.
         )
 
         image_base64 = result.data[0].b64_json
-        Path(REFERENCE_IMAGE).write_bytes(
+        atomic_write_bytes(REFERENCE_IMAGE,
             base64.b64decode(image_base64)
         )
 
@@ -367,7 +374,7 @@ Commence directement par PAGE 1.
 
     story = response.output_text
 
-    Path(STORY_FILE).write_text(story, encoding="utf-8")
+    atomic_write_bytes(STORY_FILE, story.encode("utf-8"))
 
     print(story)
     print("\n✅ Histoire enregistrée dans story.txt")
@@ -545,7 +552,7 @@ d'un véritable livre de coloriage pour enfants.
         image_base64 = result.data[0].b64_json
         image_bytes = base64.b64decode(image_base64)
 
-        filename.write_bytes(image_bytes)
+        atomic_write_bytes(filename, image_bytes)
 
         print(f"✅ Page {page_number} créée : {filename}")
 
@@ -657,7 +664,7 @@ d'une œuvre existante.
         )
 
         image_base64 = result.data[0].b64_json
-        Path(COVER_FILE).write_bytes(
+        atomic_write_bytes(COVER_FILE,
             base64.b64decode(image_base64)
         )
 

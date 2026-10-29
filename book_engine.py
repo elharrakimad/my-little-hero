@@ -62,21 +62,17 @@ def generate_book_from_adventure(
     # est fourni comme nom de fichier. On transmet donc toujours des str.
     engine.PAGES_FOLDER = pages_dir
     engine.COVER_FILE = str(output_dir / "cover.png")
-    engine.OUTPUT_FILE = str(final_pdf)
+    engine.OUTPUT_FILE = str(final_pdf.with_suffix(".building.pdf"))
 
-    engine.REUSE_EXISTING_FILES = False
-
-    Path(engine.STORY_FILE).unlink(missing_ok=True)
-    Path(engine.COVER_FILE).unlink(missing_ok=True)
-    for image in pages_dir.glob("page_*.png"):
-        image.unlink(missing_ok=True)
+    engine.REUSE_EXISTING_FILES = True
 
     if not engine.BOOK_TITLE:
         raise ValueError("Titre de livre manquant.")
 
     print(f"📚 Titre définitif : {engine.BOOK_TITLE}")
 
-    engine.generate_story()
+    if not Path(engine.STORY_FILE).exists() or not Path(engine.STORY_FILE).stat().st_size:
+        engine.generate_story()
 
     generated_title = engine.get_book_title().strip()
     if generated_title != engine.BOOK_TITLE.strip():
@@ -98,5 +94,5 @@ def generate_book_from_adventure(
         engine.generate_cover()
 
     engine.generate_pdf()
-
-    return Path(engine.OUTPUT_FILE)
+    Path(engine.OUTPUT_FILE).replace(final_pdf)
+    return final_pdf
