@@ -561,7 +561,7 @@ d'un véritable livre de coloriage pour enfants.
             reference_image.close()
 
 
-def generate_all_pages():
+def generate_all_pages(progress=None):
     print("\n" + "=" * 60)
     print("🎨 ÉTAPE 3/5 — GÉNÉRATION DES ILLUSTRATIONS")
     print("=" * 60)
@@ -572,10 +572,13 @@ def generate_all_pages():
         page_content = get_page(story, page_number)
 
         if page_content is None:
-            print(f"❌ PAGE {page_number} introuvable dans story.txt")
-            continue
+            raise ValueError(f"PAGE {page_number} introuvable dans l'histoire.")
 
+        if progress:
+            progress("illustrations", f"Illustration {page_number}/{NUMBER_OF_PAGES} en cours", page_index=page_number-1, page_total=NUMBER_OF_PAGES)
         generate_page(page_number, page_content)
+        if progress:
+            progress("illustrations", f"Illustration {page_number}/{NUMBER_OF_PAGES} terminée", page_index=page_number, page_total=NUMBER_OF_PAGES)
 
     print("\n✅ Les illustrations sont prêtes.")
 

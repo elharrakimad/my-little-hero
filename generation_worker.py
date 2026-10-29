@@ -7,6 +7,7 @@ import signal
 import threading
 
 from order_production import get_supabase_client, normalize_order
+from production_status import failed_progress
 
 
 def save_journal(path, order_ref):
@@ -41,10 +42,11 @@ def process_once(db, journal, generate):
     order = normalize_order(claimed[0])
     try:
         generate(order)
-    except Exception:
+    except Exception as exc:
         logging.exception("Production interrompue pour %s", order["order_ref"])
         # Do not automatically retry costly AI failures. The owner can requeue in Admin.
-        (db.table("orders").update({"status": "GENERATION_INTERRUPTED"})
+        (db.table("orders").update({"status": "GENERATION_INTERRUPTED",
+            "generation_progress": failed_progress(order, exc)})
             .eq("order_ref", order["order_ref"]).eq("status", "GENERATING").execute())
     journal.unlink()
     return True

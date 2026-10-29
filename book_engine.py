@@ -30,6 +30,7 @@ def generate_book_from_adventure(
     output_dir: str | Path,
     preview_cover_path: str | Path | None = None,
     child_gender: str = "",
+    progress=None,
 ) -> Path:
     """Génère le livre complet d'une aventure avec un titre imposé."""
     if child_gender not in {"", "girl", "boy"}:
@@ -72,7 +73,11 @@ def generate_book_from_adventure(
     print(f"📚 Titre définitif : {engine.BOOK_TITLE}")
 
     if not Path(engine.STORY_FILE).exists() or not Path(engine.STORY_FILE).stat().st_size:
+        if progress:
+            progress("story", "Rédaction de l'histoire", page_index=0, page_total=10)
         engine.generate_story()
+    elif progress:
+        progress("story", "Histoire existante conservée", page_index=0, page_total=10)
 
     generated_title = engine.get_book_title().strip()
     if generated_title != engine.BOOK_TITLE.strip():
@@ -80,7 +85,7 @@ def generate_book_from_adventure(
             "Le titre de PAGE 1 ne correspond pas au titre choisi dans l'aperçu."
         )
 
-    engine.generate_all_pages()
+    engine.generate_all_pages(progress=progress)
 
     if preview_cover_path:
         preview_cover = Path(preview_cover_path)
@@ -93,6 +98,8 @@ def generate_book_from_adventure(
     else:
         engine.generate_cover()
 
+    if progress:
+        progress("pdf", "Assemblage des pages et de la couverture dans le PDF", page_index=10, page_total=10)
     engine.generate_pdf()
     Path(engine.OUTPUT_FILE).replace(final_pdf)
     return final_pdf

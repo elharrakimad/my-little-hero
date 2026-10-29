@@ -5,6 +5,7 @@ import os
 import re
 import time
 from pathlib import Path
+from production_status import ProgressTracker
 
 SUPABASE_BUCKET = "my-little-hero-files"
 ADMIN_WORK_DIR = Path(os.getenv("MLH_WORK_DIR", "worker_orders"))
@@ -146,6 +147,7 @@ def normalize_order(row: dict) -> dict:
         "adventures": adventures,
         "generated_files": generated_files,
         "last_error": row.get("last_error"),
+        "generation_progress": row.get("generation_progress") or {},
     }
     order["_dir"] = safe_local_dir(order_ref)
     return order
@@ -205,9 +207,11 @@ def download_existing_pdf_if_needed(order, index, remote_path):
 
 def generate_order(order):
     from book_engine import generate_book_from_adventure
+    report = ProgressTracker(order, lambda fields: update_order_fields(order["order_ref"], fields))
     if not order.get("adventures"):
         raise ValueError("Aucune aventure dans cette commande.")
-
+    total = len(order["adventures"])
+    report("assets", "Récupération de la référence et des couvertures", book_index=1, book_total=total)
     reference_path, preview_covers = ensure_order_assets(order)
 
     if len(preview_covers) < len(order["adventures"]):
@@ -231,6 +235,7 @@ def generate_order(order):
 
         if existing_remote:
             download_existing_pdf_if_needed(order, index, existing_remote)
+            report("upload", f"Livre {index}/{total} déjà enregistré", book_index=index, completed_books=index)
             logging.info(f"⏭️ {index}/{total} déjà terminé — aucune régénération.")
             continue
 
@@ -243,6 +248,7 @@ def generate_order(order):
         )
 
         if expected_pdf.exists() and expected_pdf.stat().st_size > 0:
+            report("pdf", f"PDF du livre {index}/{total} conservé — aucune régénération", book_index=index, page_index=10, page_total=10)
             pdf_path = expected_pdf
         else:
             pdf_path = generate_book_from_adventure(
@@ -257,15 +263,17 @@ def generate_order(order):
                 reference_path=reference_path,
                 output_dir=adventure_dir,
                 preview_cover_path=preview_covers[index - 1],
+                progress=lambda stage, label, **details: report(stage, label, book_index=index, **details),
             )
 
         pdf_path = Path(pdf_path)
 
         remote_pdf_path = (
             f"orders/{order['order_ref']}/final_books/"
-            f"adventure_{index:02d}/{pdf_path.name}"
+            f"adventure_{index:02d}/book_{index:02d}.pdf"
         )
 
+        report("upload", f"Envoi du PDF {index}/{total} vers le stockage privé", book_index=index)
         storage_upload(
             supabase,
             remote_pdf_path,
@@ -277,6 +285,7 @@ def generate_order(order):
             generated_files.append(remote_pdf_path)
 
         order["generated_files"] = generated_files
+        report("upload", f"Livre {index}/{total} enregistré", book_index=index, completed_books=index)
 
         update_order_fields(
             order["order_ref"],
@@ -299,4 +308,5 @@ def generate_order(order):
     )
 
     order["status"] = "BOOKS_READY"
+    report("complete", "Tous les livres sont prêts à télécharger", completed_books=total)
     return generated_files
