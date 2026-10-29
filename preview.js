@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded",()=>{
   orderButton.setAttribute("aria-disabled","true");
 
   window.generateStoryPreview=async({name,age,language,gender,themes,photoFile})=>{
+    if(window.location.protocol==="file:"){
+      alert(document.documentElement.lang==="ar"
+        ?"لإنشاء كتاب، افتح الموقع https://my-little-hero.online بدلاً من ملف HTML على جهازك."
+        :"Pour créer un livre, ouvrez https://my-little-hero.online au lieu du fichier HTML sur votre ordinateur.");
+      return false;
+    }
     if(!name||!age||!gender||!photoFile||!themes?.length)return false;
 
     const form=new FormData();
