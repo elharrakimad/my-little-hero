@@ -61,13 +61,13 @@ test('comic and anime inspirations are searchable and keep the personalized chil
 });
 
 
-test('displayed inspirations are separate from original powers and outfits sent to generation',()=>{
+test('displayed inspirations are separate from powers and visual descriptions sent to generation',()=>{
   const names=['Spider-Man','Iron Man','Thor','Hulk','Captain America','Doctor Strange','Black Panther','Ant-Man','Scarlet Witch','Superman','Batman','Wonder Woman','Flash','Aquaman','Green Lantern','Cyborg','Shazam','Supergirl','Zatanna','Goku','Naruto','Luffy','Tanjiro','Deku','Sailor Moon','Sacha','Pikachu','Sakura','Natsu','Edward Elric','Gon','Killua','Saitama','Ichigo','Yugi','Hinata','Tsubasa','Seiya','Astro Boy','Totoro'];
   const profiles=catalog.filter(t=>['comics','anime'].includes(t.category));
   assert.equal(profiles.length,40);
   assert.equal(new Set(profiles.map(t=>t.theme)).size,40);
   for(const profile of profiles){
-    assert.ok(profile.theme.includes('Tenue originale :'));
+    assert.ok(profile.theme.includes('Tenue et apparence :'));
     for(const name of names)assert.ok(!new RegExp('\\b'+name+'\\b','iu').test(profile.theme),profile.label+' leaked '+name);
   }
   assert.ok(profiles.some(t=>t.label.startsWith('Spider-Man')));
@@ -90,4 +90,20 @@ test('every inspiration includes a distinct world used by cover and story genera
   assert.ok(city.world.setting.includes('métropole verticale'));
   const village=profiles.find(t=>t.label.startsWith('Naruto'));
   assert.ok(village.world.places.includes('académie'));
+});
+
+
+test('the forty written references include clothing, equipment and opponents or appropriate obstacles',()=>{
+  const profiles=catalog.filter(t=>['comics','anime'].includes(t.category));
+  for(const p of profiles){
+    for(const key of ['costume','equipment','adversaries']){
+      assert.ok(p.reference[key].length>40);
+      assert.ok(p.theme.includes(p.reference[key]));
+    }
+    assert.ok(p.theme.includes('visage de l’enfant'));
+    assert.ok(p.theme.includes('sans blessure ni scène sanglante'));
+  }
+  assert.ok(profiles.find(t=>t.label.startsWith('Spider-Man')).reference.costume.includes('rouge et bleue'));
+  assert.ok(profiles.find(t=>t.label.startsWith('Batman')).reference.equipment.includes('grappin'));
+  assert.ok(profiles.find(t=>t.label.startsWith('Totoro')).reference.adversaries.includes('aucun méchant'));
 });

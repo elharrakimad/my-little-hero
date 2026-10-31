@@ -8,6 +8,7 @@ import unittest
 from unittest.mock import MagicMock, patch
 
 from child_profile import gender_instruction
+from story_reference import visual_reference_instruction
 
 
 class BookEngineTests(unittest.TestCase):
@@ -57,6 +58,7 @@ class BookEngineTests(unittest.TestCase):
                 client.responses.create.return_value.output_text = "PAGE 1\nTitre"
                 with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()):
                     namespace = dict(Path=Path, gender_instruction=gender_instruction, client=client,
+                        visual_reference_instruction=visual_reference_instruction,
                         CHILD_GENDER=gender, NAME="Camille", AGE=7, THEME="Science", LANGUAGE=language,
                         CLIENT_IDEA="", CHILD_QUALITY="", BOOK_TITLE="Titre", NUMBER_OF_PAGES=10,
                         STORY_FILE=str(Path(directory) / "story.txt"))

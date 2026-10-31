@@ -5,6 +5,7 @@ import html
 import re
 from pathlib import Path
 from child_profile import gender_instruction
+from story_reference import visual_reference_instruction
 from book_layout import build_book_pdf
 from book_content import story_pages, keepsake_congratulations
 
@@ -182,7 +183,7 @@ IMPORTANT :
 - personnage visible en entier
 - arrière-plan simple
 - aucune personne célèbre
-- aucun personnage ou univers protégé
+- respecter les indications suivantes : {visual_reference_instruction(THEME)}
 - aucun texte, logo ou watermark
 
 Cette image servira de référence pour toutes les illustrations du livre.
@@ -260,8 +261,7 @@ un mot nouveau ou une petite leçon adaptée à son âge.
 
 RÈGLES DE L'HISTOIRE
 - L'histoire doit être totalement originale.
-- Aucun personnage connu ou protégé par le droit d'auteur.
-- Aucun univers provenant d'un film, jeu vidéo, série ou livre existant.
+- Direction visuelle et personnages : {visual_reference_instruction(THEME)}
 - L'histoire doit avoir un début, un développement et une conclusion.
 - Le personnage principal doit rencontrer un problème ou une mission.
 - Il doit rencontrer des obstacles.
@@ -670,8 +670,7 @@ Ne pas écrire « Une aventure de {NAME} » et ne pas inventer un autre titre.
 Les textes doivent être grands, lisibles et bien intégrés
 dans le design.
 
-Ne pas utiliser de personnage ou d'univers provenant
-d'une œuvre existante.
+{visual_reference_instruction(THEME)}
 """
 
         result = client.images.edit(
