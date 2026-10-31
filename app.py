@@ -84,7 +84,7 @@ PRICES = {
 FORMAT_NAMES = {
     "digital": "💻 Digital",
     "print": "📚 Imprimé",
-    "both": "🎁 Digital + Imprimé",
+    "both": "🎁 Coffret cadeau",
 }
 
 THEMES = [
@@ -947,7 +947,7 @@ if st.session_state.step == 1:
                 <div class="offer-desc">{descriptions[number]}</div>
                 <div class="offer-price">💻 Digital — <strong>{PRICES[number]['digital']} DH</strong></div>
                 <div class="offer-price">📚 Imprimé — <strong>{PRICES[number]['print']} DH</strong></div>
-                <div class="offer-price">🎁 Digital + Imprimé — <strong>{PRICES[number]['both']} DH</strong></div>
+                <div class="offer-price">🎁 Coffret cadeau — <strong>{PRICES[number]['both']} DH</strong></div>
             </div>
             """, unsafe_allow_html=True)
 
