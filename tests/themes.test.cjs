@@ -72,3 +72,22 @@ test('displayed inspirations are separate from original powers and outfits sent 
   }
   assert.ok(profiles.some(t=>t.label.startsWith('Spider-Man')));
 });
+
+
+test('every inspiration includes a distinct world used by cover and story generation',()=>{
+  const profiles=catalog.filter(t=>['comics','anime'].includes(t.category));
+  assert.equal(profiles.length,40);
+  assert.equal(new Set(profiles.map(t=>t.world.setting)).size,40);
+  for(const profile of profiles){
+    for(const key of ['setting','places','objects','mission']){
+      assert.ok(profile.world[key].length>20);
+      assert.ok(profile.theme.includes(profile.world[key]));
+    }
+    assert.ok(profile.theme.includes('dès la couverture'));
+    assert.ok(profile.theme.includes('toute l’histoire'));
+  }
+  const city=profiles.find(t=>t.label.startsWith('Spider-Man'));
+  assert.ok(city.world.setting.includes('métropole verticale'));
+  const village=profiles.find(t=>t.label.startsWith('Naruto'));
+  assert.ok(village.world.places.includes('académie'));
+});

@@ -127,320 +127,560 @@ window.MLH_THEME_CATALOG = [
     "ar": "سبايدرمان · الرشاقة والشبكات",
     "category": "comics",
     "icon": "🕷️",
-    "theme": "🕷️ Héros personnalisé : agilité, escalade et filaments souples pour secourir les habitants. Tenue originale : une combinaison vert jade et ivoire, des renforts géométriques et des bracelets à filaments. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🕷️ Héros personnalisé : agilité, escalade et filaments souples pour secourir les habitants. Tenue originale : une combinaison vert jade et ivoire, des renforts géométriques et des bracelets à filaments. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une immense métropole verticale animée, avec des immeubles de briques, des gratte-ciel et des rues très fréquentées. Lieux à explorer : toits avec réservoirs d’eau, escaliers de secours, métro aérien et pont suspendu. Objets du monde : filaments souples, sac de secours et petites radios. Mission possible : retrouver un animal égaré et aider des habitants entre plusieurs quartiers. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une immense métropole verticale animée, avec des immeubles de briques, des gratte-ciel et des rues très fréquentées",
+      "places": "toits avec réservoirs d’eau, escaliers de secours, métro aérien et pont suspendu",
+      "objects": "filaments souples, sac de secours et petites radios",
+      "mission": "retrouver un animal égaré et aider des habitants entre plusieurs quartiers"
+    }
   },
   {
     "label": "Iron Man · armure et inventions",
     "ar": "آيرون مان · الدرع والاختراعات",
     "category": "comics",
     "icon": "🤖",
-    "theme": "🤖 Héros personnalisé : une armure technologique personnelle et des inventions utiles. Tenue originale : une armure légère argentée et céladon, avec des lignes lumineuses angulaires. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🤖 Héros personnalisé : une armure technologique personnelle et des inventions utiles. Tenue originale : une armure légère argentée et céladon, avec des lignes lumineuses angulaires. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une ville côtière futuriste lumineuse où les inventions font partie de la vie quotidienne. Lieux à explorer : atelier panoramique, tour technologique, port et piste d’essai. Objets du monde : plans holographiques, drones d’assistance et outils mécaniques. Mission possible : réparer un système d’énergie pour éclairer le quartier. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une ville côtière futuriste lumineuse où les inventions font partie de la vie quotidienne",
+      "places": "atelier panoramique, tour technologique, port et piste d’essai",
+      "objects": "plans holographiques, drones d’assistance et outils mécaniques",
+      "mission": "réparer un système d’énergie pour éclairer le quartier"
+    }
   },
   {
     "label": "Thor · tonnerre et marteau",
     "ar": "ثور · الرعد والمطرقة",
     "category": "comics",
     "icon": "🔨",
-    "theme": "🔨 Héros personnalisé : un marteau magique original et la maîtrise du tonnerre pour aider le village. Tenue originale : une veste ocre et blanche, des bottes souples et un petit marteau à motifs géométriques. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🔨 Héros personnalisé : un marteau magique original et la maîtrise du tonnerre pour aider le village. Tenue originale : une veste ocre et blanche, des bottes souples et un petit marteau à motifs géométriques. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : un royaume céleste aux paysages nordiques, entre montagnes enneigées et citadelles suspendues. Lieux à explorer : palais de pierre claire, pont lumineux, vallée glacée et jardin des nuages. Objets du monde : marteau personnel, cristaux météo et lanternes de pierre. Mission possible : rétablir un passage entre deux villages après une tempête. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "un royaume céleste aux paysages nordiques, entre montagnes enneigées et citadelles suspendues",
+      "places": "palais de pierre claire, pont lumineux, vallée glacée et jardin des nuages",
+      "objects": "marteau personnel, cristaux météo et lanternes de pierre",
+      "mission": "rétablir un passage entre deux villages après une tempête"
+    }
   },
   {
     "label": "Hulk · force et maîtrise de soi",
     "ar": "هالك · القوة والتحكم في النفس",
     "category": "comics",
     "icon": "💪",
-    "theme": "💪 Héros personnalisé : une force extraordinaire qui devient utile en apprenant à gérer ses émotions. Tenue originale : une salopette de secours ocre et bleu pétrole, des gants renforcés et la peau naturelle de l’enfant. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "💪 Héros personnalisé : une force extraordinaire qui devient utile en apprenant à gérer ses émotions. Tenue originale : une salopette de secours ocre et bleu pétrole, des gants renforcés et la peau naturelle de l’enfant. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une région où une grande ville moderne rencontre une forêt sauvage et des laboratoires de recherche. Lieux à explorer : centre scientifique, pont en réparation, clairière et parc urbain. Objets du monde : blocs de construction, appareils de mesure et matériel de secours. Mission possible : employer sa force avec douceur pour réparer un chemin et protéger les animaux. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une région où une grande ville moderne rencontre une forêt sauvage et des laboratoires de recherche",
+      "places": "centre scientifique, pont en réparation, clairière et parc urbain",
+      "objects": "blocs de construction, appareils de mesure et matériel de secours",
+      "mission": "employer sa force avec douceur pour réparer un chemin et protéger les animaux"
+    }
   },
   {
     "label": "Captain America · bouclier et courage",
     "ar": "كابتن أمريكا · الدرع والشجاعة",
     "category": "comics",
     "icon": "🛡️",
-    "theme": "🛡️ Héros personnalisé : un bouclier personnel, du courage et un grand esprit d’équipe. Tenue originale : une tunique turquoise et crème et un bouclier hexagonal à motif personnel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🛡️ Héros personnalisé : un bouclier personnel, du courage et un grand esprit d’équipe. Tenue originale : une tunique turquoise et crème et un bouclier hexagonal à motif personnel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une grande cité portuaire à l’architecture historique et à l’ambiance d’aventure solidaire. Lieux à explorer : gare monumentale, musée, quai et vieux quartier de briques. Objets du monde : bouclier personnel, cartes du quartier et trousse d’entraide. Mission possible : rassembler une équipe pour retrouver un colis important et aider le quartier. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une grande cité portuaire à l’architecture historique et à l’ambiance d’aventure solidaire",
+      "places": "gare monumentale, musée, quai et vieux quartier de briques",
+      "objects": "bouclier personnel, cartes du quartier et trousse d’entraide",
+      "mission": "rassembler une équipe pour retrouver un colis important et aider le quartier"
+    }
   },
   {
     "label": "Doctor Strange · portails et magie",
     "ar": "دكتور سترينج · البوابات والسحر",
     "category": "comics",
     "icon": "🚪",
-    "theme": "🚪 Héros personnalisé : des portails lumineux et des énigmes magiques à résoudre. Tenue originale : un gilet court bleu nuit, une ceinture ambrée et un carnet de portes magiques. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🚪 Héros personnalisé : des portails lumineux et des énigmes magiques à résoudre. Tenue originale : un gilet court bleu nuit, une ceinture ambrée et un carnet de portes magiques. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une ville aux ruelles anciennes qui cache des passages vers des dimensions merveilleuses. Lieux à explorer : bibliothèque mystique, observatoire, escaliers suspendus et salles aux fenêtres géométriques. Objets du monde : livres anciens, portes lumineuses et boussole magique. Mission possible : retrouver les pages d’un livre pour reconnecter des lieux devenus isolés. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une ville aux ruelles anciennes qui cache des passages vers des dimensions merveilleuses",
+      "places": "bibliothèque mystique, observatoire, escaliers suspendus et salles aux fenêtres géométriques",
+      "objects": "livres anciens, portes lumineuses et boussole magique",
+      "mission": "retrouver les pages d’un livre pour reconnecter des lieux devenus isolés"
+    }
   },
   {
     "label": "Black Panther · agilité et protection",
     "ar": "بلاك بانثر · الرشاقة والحماية",
     "category": "comics",
     "icon": "🐾",
-    "theme": "🐾 Héros personnalisé : des réflexes félins et une mission de protection de la nature. Tenue originale : une tenue d’exploration sable et verte, des bottes silencieuses et un visage découvert. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🐾 Héros personnalisé : des réflexes félins et une mission de protection de la nature. Tenue originale : une tenue d’exploration sable et verte, des bottes silencieuses et un visage découvert. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une cité secrète au cœur d’une savane et d’une forêt, associant artisanat de pierre et technologie discrète. Lieux à explorer : terrasses végétales, cascade, marché d’artisans et laboratoire intégré au paysage. Objets du monde : cristaux d’énergie originaux, tissus géométriques et véhicules silencieux. Mission possible : protéger une réserve naturelle en restaurant ses sources d’eau. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une cité secrète au cœur d’une savane et d’une forêt, associant artisanat de pierre et technologie discrète",
+      "places": "terrasses végétales, cascade, marché d’artisans et laboratoire intégré au paysage",
+      "objects": "cristaux d’énergie originaux, tissus géométriques et véhicules silencieux",
+      "mission": "protéger une réserve naturelle en restaurant ses sources d’eau"
+    }
   },
   {
     "label": "Ant-Man · miniaturisation et entraide",
     "ar": "آنت مان · التصغير والتعاون",
     "category": "comics",
     "icon": "🐜",
-    "theme": "🐜 Héros personnalisé : le pouvoir de devenir minuscule pour aider les insectes. Tenue originale : une combinaison orange et ivoire et des lunettes de protection transparentes. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🐜 Héros personnalisé : le pouvoir de devenir minuscule pour aider les insectes. Tenue originale : une combinaison orange et ivoire et des lunettes de protection transparentes. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : le monde ordinaire observé à une échelle minuscule, où une pelouse devient une jungle. Lieux à explorer : jardin, tunnel de fourmis, établi et laboratoire miniature. Objets du monde : gouttes d’eau géantes, graines et petits outils. Mission possible : aider une colonie à retrouver son chemin à travers un jardin. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "le monde ordinaire observé à une échelle minuscule, où une pelouse devient une jungle",
+      "places": "jardin, tunnel de fourmis, établi et laboratoire miniature",
+      "objects": "gouttes d’eau géantes, graines et petits outils",
+      "mission": "aider une colonie à retrouver son chemin à travers un jardin"
+    }
   },
   {
     "label": "La Guêpe · vol et précision",
     "ar": "الدبورة · الطيران والدقة",
     "category": "comics",
     "icon": "🐝",
-    "theme": "🐝 Héros personnalisé : le vol miniature et la précision pour une mission de secours. Tenue originale : une tenue de vol bleu ciel et blanche et des ailes translucides en forme de feuilles. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🐝 Héros personnalisé : le vol miniature et la précision pour une mission de secours. Tenue originale : une tenue de vol bleu ciel et blanche et des ailes translucides en forme de feuilles. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : un immense jardin vu de très près, avec une vie miniature active entre les fleurs. Lieux à explorer : serre, pétales, rucher paisible et atelier de recherche. Objets du monde : pollen, lentilles transparentes et balises minuscules. Mission possible : guider des pollinisateurs vers une nouvelle floraison. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "un immense jardin vu de très près, avec une vie miniature active entre les fleurs",
+      "places": "serre, pétales, rucher paisible et atelier de recherche",
+      "objects": "pollen, lentilles transparentes et balises minuscules",
+      "mission": "guider des pollinisateurs vers une nouvelle floraison"
+    }
   },
   {
     "label": "Scarlet Witch · objets et énergie",
     "ar": "سكارليت ويتش · الأشياء والطاقة",
     "category": "comics",
     "icon": "✨",
-    "theme": "✨ Héros personnalisé : la télékinésie et une énergie lumineuse pour réparer et protéger. Tenue originale : une veste violette, une écharpe céladon et des bracelets lumineux. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "✨ Héros personnalisé : la télékinésie et une énergie lumineuse pour réparer et protéger. Tenue originale : une veste violette, une écharpe céladon et des bracelets lumineux. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une petite ville paisible bordée d’une forêt enchantée, où des phénomènes lumineux étonnants apparaissent. Lieux à explorer : place centrale, maison aux fenêtres rondes, clairière et ancienne bibliothèque. Objets du monde : rubans d’énergie, objets flottants et fragments de verre lumineux. Mission possible : remettre en place des objets dispersés en apprenant à canaliser ses émotions. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une petite ville paisible bordée d’une forêt enchantée, où des phénomènes lumineux étonnants apparaissent",
+      "places": "place centrale, maison aux fenêtres rondes, clairière et ancienne bibliothèque",
+      "objects": "rubans d’énergie, objets flottants et fragments de verre lumineux",
+      "mission": "remettre en place des objets dispersés en apprenant à canaliser ses émotions"
+    }
   },
   {
     "label": "Superman · vol et super-force",
     "ar": "سوبرمان · الطيران والقوة الخارقة",
     "category": "comics",
     "icon": "🕊️",
-    "theme": "🕊️ Héros personnalisé : le vol et la super-force pour protéger les habitants avec bienveillance. Tenue originale : une tenue moutarde et bleu pétrole, une veste de vol courte et des bottes blanches. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🕊️ Héros personnalisé : le vol et la super-force pour protéger les habitants avec bienveillance. Tenue originale : une tenue moutarde et bleu pétrole, une veste de vol courte et des bottes blanches. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une métropole accueillante et lumineuse qui contraste avec de vastes plaines et un ciel immense. Lieux à explorer : avenue de gratte-ciel, rédaction d’un journal, ferme et station météo. Objets du monde : messages de secours, matériel de réparation et capteurs solaires. Mission possible : aider plusieurs habitants à se préparer à un grand événement météorologique. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une métropole accueillante et lumineuse qui contraste avec de vastes plaines et un ciel immense",
+      "places": "avenue de gratte-ciel, rédaction d’un journal, ferme et station météo",
+      "objects": "messages de secours, matériel de réparation et capteurs solaires",
+      "mission": "aider plusieurs habitants à se préparer à un grand événement météorologique"
+    }
   },
   {
     "label": "Batman · enquête et gadgets",
     "ar": "باتمان · التحقيق والأدوات",
     "category": "comics",
     "icon": "🦇",
-    "theme": "🦇 Héros personnalisé : des talents de détective et des gadgets inventés pour résoudre un mystère. Tenue originale : un manteau d’enquête bleu et jaune, une ceinture à outils et une tête découverte. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🦇 Héros personnalisé : des talents de détective et des gadgets inventés pour résoudre un mystère. Tenue originale : un manteau d’enquête bleu et jaune, une ceinture à outils et une tête découverte. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une ville nocturne d’architecture gothique et art déco, avec une ambiance d’enquête sans violence. Lieux à explorer : toits sous la lune, clocher, vieux musée et atelier souterrain personnel. Objets du monde : lampes de poche, cartes, gadgets d’observation et indices. Mission possible : résoudre la disparition d’un objet du musée en observant et en coopérant. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une ville nocturne d’architecture gothique et art déco, avec une ambiance d’enquête sans violence",
+      "places": "toits sous la lune, clocher, vieux musée et atelier souterrain personnel",
+      "objects": "lampes de poche, cartes, gadgets d’observation et indices",
+      "mission": "résoudre la disparition d’un objet du musée en observant et en coopérant"
+    }
   },
   {
     "label": "Wonder Woman · courage et vérité",
     "ar": "وندر وومان · الشجاعة والحقيقة",
     "category": "comics",
     "icon": "🛡️",
-    "theme": "🛡️ Héros personnalisé : le courage, la protection et la recherche de la vérité dans une quête solidaire. Tenue originale : une tunique vert jade et ocre, des protections simples et un bouclier à motif floral personnel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🛡️ Héros personnalisé : le courage, la protection et la recherche de la vérité dans une quête solidaire. Tenue originale : une tunique vert jade et ocre, des protections simples et un bouclier à motif floral personnel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une île méditerranéenne cachée où l’entraînement, la sagesse et la nature occupent une place centrale. Lieux à explorer : temple de pierre claire, oliveraie, plage et cour d’entraînement. Objets du monde : bouclier personnel, cartes anciennes et cordes de secours. Mission possible : réunir des équipes pour retrouver une source et réconcilier deux villages. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une île méditerranéenne cachée où l’entraînement, la sagesse et la nature occupent une place centrale",
+      "places": "temple de pierre claire, oliveraie, plage et cour d’entraînement",
+      "objects": "bouclier personnel, cartes anciennes et cordes de secours",
+      "mission": "réunir des équipes pour retrouver une source et réconcilier deux villages"
+    }
   },
   {
     "label": "Flash · vitesse et réflexes",
     "ar": "فلاش · السرعة وردود الفعل",
     "category": "comics",
     "icon": "⚡",
-    "theme": "⚡ Héros personnalisé : la super-vitesse et des réflexes rapides pour livrer une aide urgente. Tenue originale : une tenue de course verte et blanche, avec de fines lignes lumineuses pointillées. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "⚡ Héros personnalisé : la super-vitesse et des réflexes rapides pour livrer une aide urgente. Tenue originale : une tenue de course verte et blanche, avec de fines lignes lumineuses pointillées. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une ville moderne énergique, traversée par des avenues, des lignes de transport et un fleuve. Lieux à explorer : laboratoire, gare, grand pont et parc aux fontaines. Objets du monde : chronomètres, balises et matériel de livraison. Mission possible : livrer des objets indispensables à temps sans oublier d’aider les autres. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une ville moderne énergique, traversée par des avenues, des lignes de transport et un fleuve",
+      "places": "laboratoire, gare, grand pont et parc aux fontaines",
+      "objects": "chronomètres, balises et matériel de livraison",
+      "mission": "livrer des objets indispensables à temps sans oublier d’aider les autres"
+    }
   },
   {
     "label": "Aquaman · océan et animaux marins",
     "ar": "أكوامان · المحيط والحيوانات البحرية",
     "category": "comics",
     "icon": "🌊",
-    "theme": "🌊 Héros personnalisé : la communication avec les animaux marins et la protection des océans. Tenue originale : un équipement sous-marin bleu et gris, un masque transparent et des palmes souples. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🌊 Héros personnalisé : la communication avec les animaux marins et la protection des océans. Tenue originale : un équipement sous-marin bleu et gris, un masque transparent et des palmes souples. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : un vaste royaume sous-marin lumineux où l’architecture épouse les récifs et les courants. Lieux à explorer : palais de corail original, canyon marin, jardin d’algues et grotte des tortues. Objets du monde : coquillages messagers, perles lumineuses et cartes des courants. Mission possible : rétablir un courant marin pour permettre aux animaux de retrouver leur refuge. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "un vaste royaume sous-marin lumineux où l’architecture épouse les récifs et les courants",
+      "places": "palais de corail original, canyon marin, jardin d’algues et grotte des tortues",
+      "objects": "coquillages messagers, perles lumineuses et cartes des courants",
+      "mission": "rétablir un courant marin pour permettre aux animaux de retrouver leur refuge"
+    }
   },
   {
     "label": "Green Lantern · imagination et lumière",
     "ar": "غرين لانترن · الخيال والضوء",
     "category": "comics",
     "icon": "💍",
-    "theme": "💍 Héros personnalisé : un anneau personnel qui transforme l’imagination en constructions lumineuses. Tenue originale : une tenue violette et ambrée et un anneau à motif géométrique personnel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "💍 Héros personnalisé : un anneau personnel qui transforme l’imagination en constructions lumineuses. Tenue originale : une tenue violette et ambrée et un anneau à motif géométrique personnel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : un voyage entre plusieurs planètes très différentes, reliées par des routes lumineuses dans l’espace. Lieux à explorer : station orbitale, planète désertique, jardin extraterrestre et atelier d’imagination. Objets du monde : anneau personnel, constructions de lumière et cartes stellaires. Mission possible : inventer des ponts et des abris lumineux pour réunir des voyageurs. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "un voyage entre plusieurs planètes très différentes, reliées par des routes lumineuses dans l’espace",
+      "places": "station orbitale, planète désertique, jardin extraterrestre et atelier d’imagination",
+      "objects": "anneau personnel, constructions de lumière et cartes stellaires",
+      "mission": "inventer des ponts et des abris lumineux pour réunir des voyageurs"
+    }
   },
   {
     "label": "Cyborg · technologie et connexion",
     "ar": "سايبورغ · التكنولوجيا والتواصل",
     "category": "comics",
     "icon": "🦾",
-    "theme": "🦾 Héros personnalisé : des talents technologiques pour communiquer avec les machines et les réparer. Tenue originale : une veste bleue, des accessoires mécaniques cuivrés et des gants technologiques. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🦾 Héros personnalisé : des talents technologiques pour communiquer avec les machines et les réparer. Tenue originale : une veste bleue, des accessoires mécaniques cuivrés et des gants technologiques. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une métropole connectée où humains et machines doivent apprendre à coopérer. Lieux à explorer : centre de maintenance, réseau de transport, atelier et jardin automatisé. Objets du monde : interfaces lumineuses, câbles, outils et petits robots d’assistance. Mission possible : rétablir les communications de la ville en écoutant aussi les besoins des habitants. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une métropole connectée où humains et machines doivent apprendre à coopérer",
+      "places": "centre de maintenance, réseau de transport, atelier et jardin automatisé",
+      "objects": "interfaces lumineuses, câbles, outils et petits robots d’assistance",
+      "mission": "rétablir les communications de la ville en écoutant aussi les besoins des habitants"
+    }
   },
   {
     "label": "Shazam · éclair et esprit d’équipe",
     "ar": "شازام · البرق وروح الفريق",
     "category": "comics",
     "icon": "⚡",
-    "theme": "⚡ Héros personnalisé : une transformation magique originale et la maîtrise des éclairs pour aider ses amis. Tenue originale : une combinaison blanche et violette et des protège-bras à motifs géométriques. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "⚡ Héros personnalisé : une transformation magique originale et la maîtrise des éclairs pour aider ses amis. Tenue originale : une combinaison blanche et violette et des protège-bras à motifs géométriques. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : un quartier familial animé qui dissimule des lieux de magie ancienne. Lieux à explorer : école, station de métro, refuge de pierre et place du quartier. Objets du monde : symboles géométriques originaux, pierres lumineuses et messages secrets. Mission possible : apprendre à utiliser une transformation magique pour aider ses amis ensemble. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "un quartier familial animé qui dissimule des lieux de magie ancienne",
+      "places": "école, station de métro, refuge de pierre et place du quartier",
+      "objects": "symboles géométriques originaux, pierres lumineuses et messages secrets",
+      "mission": "apprendre à utiliser une transformation magique pour aider ses amis ensemble"
+    }
   },
   {
     "label": "Supergirl · énergie solaire et envol",
     "ar": "سوبرغيرل · الطاقة الشمسية والطيران",
     "category": "comics",
     "icon": "☀️",
-    "theme": "☀️ Héros personnalisé : l’énergie solaire, le vol et une force protectrice dans une aventure d’entraide. Tenue originale : une veste de vol vert émeraude et blanche, un pantalon confortable et des lunettes transparentes. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "☀️ Héros personnalisé : l’énergie solaire, le vol et une force protectrice dans une aventure d’entraide. Tenue originale : une veste de vol vert émeraude et blanche, un pantalon confortable et des lunettes transparentes. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une cité côtière moderne baignée de lumière, entre gratte-ciel, collines et ciel ouvert. Lieux à explorer : observatoire solaire, tour scientifique, port et jardin sur un toit. Objets du monde : capteurs solaires, cartes du ciel et équipements de secours. Mission possible : employer l’énergie du soleil pour protéger une fête de quartier. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une cité côtière moderne baignée de lumière, entre gratte-ciel, collines et ciel ouvert",
+      "places": "observatoire solaire, tour scientifique, port et jardin sur un toit",
+      "objects": "capteurs solaires, cartes du ciel et équipements de secours",
+      "mission": "employer l’énergie du soleil pour protéger une fête de quartier"
+    }
   },
   {
     "label": "Zatanna · mots et tours magiques",
     "ar": "زاتانا · الكلمات والخدع السحرية",
     "category": "comics",
     "icon": "🎩",
-    "theme": "🎩 Héros personnalisé : des mots magiques et des tours originaux pour retrouver des objets perdus. Tenue originale : un tablier bleu et rose, des poches à accessoires et un petit carnet de formules. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🎩 Héros personnalisé : des mots magiques et des tours originaux pour retrouver des objets perdus. Tenue originale : un tablier bleu et rose, des poches à accessoires et un petit carnet de formules. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une ville de spectacles où les coulisses des théâtres ouvrent sur de petits mondes magiques. Lieux à explorer : scène de théâtre, loges, atelier d’accessoires et bibliothèque des mots. Objets du monde : cartes illustrées, rubans, miroirs et carnet de formules. Mission possible : retrouver les accessoires d’un spectacle en jouant avec les mots et les illusions. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une ville de spectacles où les coulisses des théâtres ouvrent sur de petits mondes magiques",
+      "places": "scène de théâtre, loges, atelier d’accessoires et bibliothèque des mots",
+      "objects": "cartes illustrées, rubans, miroirs et carnet de formules",
+      "mission": "retrouver les accessoires d’un spectacle en jouant avec les mots et les illusions"
+    }
   },
   {
     "label": "Goku · énergie et dépassement",
     "ar": "غوكو · الطاقة وتجاوز الذات",
     "category": "anime",
     "icon": "🔥",
-    "theme": "🔥 Héros personnalisé : la maîtrise d’une énergie lumineuse et le dépassement de soi par l’entraînement. Tenue originale : une tunique vert menthe et brune, une ceinture tressée et des chaussures souples. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🔥 Héros personnalisé : la maîtrise d’une énergie lumineuse et le dépassement de soi par l’entraînement. Tenue originale : une tunique vert menthe et brune, une ceinture tressée et des chaussures souples. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : un monde d’aventure entre vastes montagnes, plateaux rocheux et villes futuristes arrondies. Lieux à explorer : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages. Objets du monde : capsules de rangement originales, matériel d’entraînement et boussole d’énergie. Mission possible : s’entraîner avec des amis puis utiliser son énergie pour aider un village. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "un monde d’aventure entre vastes montagnes, plateaux rocheux et villes futuristes arrondies",
+      "places": "maison isolée, jardin d’entraînement, arène amicale et vallée de nuages",
+      "objects": "capsules de rangement originales, matériel d’entraînement et boussole d’énergie",
+      "mission": "s’entraîner avec des amis puis utiliser son énergie pour aider un village"
+    }
   },
   {
     "label": "Naruto · énergie et doubles",
     "ar": "ناروتو · الطاقة والنسخ",
     "category": "anime",
     "icon": "🥷",
-    "theme": "🥷 Héros personnalisé : des doubles imaginaires et des talents de ninja pour réaliser une mission d’entraide. Tenue originale : une tenue d’expédition violette et crème, un foulard uni et des poches à outils. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🥷 Héros personnalisé : des doubles imaginaires et des talents de ninja pour réaliser une mission d’entraide. Tenue originale : une tenue d’expédition violette et crème, un foulard uni et des poches à outils. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : un village de jeunes aventuriers dans une vallée boisée, avec des toits de tuiles et une vie d’équipe. Lieux à explorer : académie, terrain d’entraînement, forêt de bambous et cascade. Objets du monde : rouleaux de mission, cordes et balises en bois. Mission possible : réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "un village de jeunes aventuriers dans une vallée boisée, avec des toits de tuiles et une vie d’équipe",
+      "places": "académie, terrain d’entraînement, forêt de bambous et cascade",
+      "objects": "rouleaux de mission, cordes et balises en bois",
+      "mission": "réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires"
+    }
   },
   {
     "label": "Luffy · élasticité et aventure",
     "ar": "لوفي · المرونة والمغامرة",
     "category": "anime",
     "icon": "🌀",
-    "theme": "🌀 Héros personnalisé : un corps élastique et un esprit d’aventure pour explorer une île. Tenue originale : une chemise cyan et crème, un pantalon court de voyage et des chaussures de pont. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🌀 Héros personnalisé : un corps élastique et un esprit d’aventure pour explorer une île. Tenue originale : une chemise cyan et crème, un pantalon court de voyage et des chaussures de pont. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : un archipel d’îles très différentes où chaque port réserve une rencontre et une découverte. Lieux à explorer : bateau d’exploration personnel, marché coloré, crique et île à végétation géante. Objets du monde : cartes marines, boussole, provisions et cordages. Mission possible : réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "un archipel d’îles très différentes où chaque port réserve une rencontre et une découverte",
+      "places": "bateau d’exploration personnel, marché coloré, crique et île à végétation géante",
+      "objects": "cartes marines, boussole, provisions et cordages",
+      "mission": "réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire"
+    }
   },
   {
     "label": "Tanjiro · odorat et compassion",
     "ar": "تانجيرو · حاسة الشم والرحمة",
     "category": "anime",
     "icon": "🌸",
-    "theme": "🌸 Héros personnalisé : un odorat exceptionnel et beaucoup de compassion pour retrouver un animal perdu. Tenue originale : une tenue d’exploration ambrée et blanche, une sacoche d’herboriste et des bottes confortables. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🌸 Héros personnalisé : un odorat exceptionnel et beaucoup de compassion pour retrouver un animal perdu. Tenue originale : une tenue d’exploration ambrée et blanche, une sacoche d’herboriste et des bottes confortables. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : des montagnes japonaises boisées à l’atmosphère traditionnelle et douce. Lieux à explorer : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous. Objets du monde : sac de voyage, plantes odorantes et lanternes. Mission possible : suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "des montagnes japonaises boisées à l’atmosphère traditionnelle et douce",
+      "places": "maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous",
+      "objects": "sac de voyage, plantes odorantes et lanternes",
+      "mission": "suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit"
+    }
   },
   {
     "label": "Deku · force et esprit d’équipe",
     "ar": "ديكو · القوة وروح الفريق",
     "category": "anime",
     "icon": "💪",
-    "theme": "💪 Héros personnalisé : une force grandissante et le travail d’équipe pour une mission de secours. Tenue originale : une tenue de secours orange et ivoire, des protections légères et un sac à matériel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "💪 Héros personnalisé : une force grandissante et le travail d’équipe pour une mission de secours. Tenue originale : une tenue de secours orange et ivoire, des protections légères et un sac à matériel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une grande ville contemporaine où une académie enseigne l’entraide et le secours. Lieux à explorer : salle de classe, parcours d’exercice, stade d’entraînement et quartier urbain. Objets du monde : carnet d’observation, protections et matériel de secours. Mission possible : progresser malgré ses doutes et réussir une mission de sauvetage en équipe. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une grande ville contemporaine où une académie enseigne l’entraide et le secours",
+      "places": "salle de classe, parcours d’exercice, stade d’entraînement et quartier urbain",
+      "objects": "carnet d’observation, protections et matériel de secours",
+      "mission": "progresser malgré ses doutes et réussir une mission de sauvetage en équipe"
+    }
   },
   {
     "label": "Sailor Moon · lumière protectrice",
     "ar": "سيلور مون · الضوء الحامي",
     "category": "anime",
     "icon": "🌙",
-    "theme": "🌙 Héros personnalisé : la lumière de la lune et une transformation personnelle pour protéger ses amis. Tenue originale : un gilet long lavande et turquoise, un pantalon souple et un bracelet de lumière. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🌙 Héros personnalisé : la lumière de la lune et une transformation personnelle pour protéger ses amis. Tenue originale : un gilet long lavande et turquoise, un pantalon souple et un bracelet de lumière. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une ville côtière à l’ambiance scolaire et céleste, entre jardins fleuris et merveilles lunaires. Lieux à explorer : école, jardin de roses, observatoire et palais de lumière imaginé. Objets du monde : bracelets personnels, cartes des étoiles et cristaux de lumière. Mission possible : protéger la lumière d’une fête nocturne grâce à l’amitié. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une ville côtière à l’ambiance scolaire et céleste, entre jardins fleuris et merveilles lunaires",
+      "places": "école, jardin de roses, observatoire et palais de lumière imaginé",
+      "objects": "bracelets personnels, cartes des étoiles et cristaux de lumière",
+      "mission": "protéger la lumière d’une fête nocturne grâce à l’amitié"
+    }
   },
   {
     "label": "Sacha et Pikachu · amitié et électricité",
     "ar": "ساشا وبيكاتشو · الصداقة والكهرباء",
     "category": "anime",
     "icon": "⚡",
-    "theme": "⚡ Héros personnalisé : l’amitié avec un petit compagnon volant à plumage ivoire et turquoise, doté d’une énergie électrique douce. Tenue originale : une veste de randonnée turquoise, un pantalon sable et une sacoche de voyage. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "⚡ Héros personnalisé : l’amitié avec un petit compagnon volant à plumage ivoire et turquoise, doté d’une énergie électrique douce. Tenue originale : une veste de randonnée turquoise, un pantalon sable et une sacoche de voyage. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : un monde de villages accueillants et de routes naturelles peuplées de créatures originales. Lieux à explorer : prairie, forêt, centre de soin animalier et petit laboratoire. Objets du monde : carnet d’observation, gourde et abris pour compagnons. Mission possible : voyager avec son compagnon pour retrouver un habitat adapté à une créature perdue. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "un monde de villages accueillants et de routes naturelles peuplées de créatures originales",
+      "places": "prairie, forêt, centre de soin animalier et petit laboratoire",
+      "objects": "carnet d’observation, gourde et abris pour compagnons",
+      "mission": "voyager avec son compagnon pour retrouver un habitat adapté à une créature perdue"
+    }
   },
   {
     "label": "Cardcaptor Sakura · cartes et magie",
     "ar": "ساكورا · البطاقات والسحر",
     "category": "anime",
     "icon": "🃏",
-    "theme": "🃏 Héros personnalisé : des cartes magiques originales à retrouver grâce à l’amitié et à l’observation. Tenue originale : une robe d’exploration blanche et bleue, des poches à cartes et un carnet géométrique. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🃏 Héros personnalisé : des cartes magiques originales à retrouver grâce à l’amitié et à l’observation. Tenue originale : une robe d’exploration blanche et bleue, des poches à cartes et un carnet géométrique. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une ville scolaire paisible où des phénomènes magiques se cachent dans le quotidien. Lieux à explorer : école, bibliothèque, parc aux cerisiers et tour de l’horloge. Objets du monde : cartes originales, carnet, rubans et clés géométriques. Mission possible : retrouver des cartes égarées en comprenant la particularité de chacune. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une ville scolaire paisible où des phénomènes magiques se cachent dans le quotidien",
+      "places": "école, bibliothèque, parc aux cerisiers et tour de l’horloge",
+      "objects": "cartes originales, carnet, rubans et clés géométriques",
+      "mission": "retrouver des cartes égarées en comprenant la particularité de chacune"
+    }
   },
   {
     "label": "Natsu · flammes et solidarité",
     "ar": "ناتسو · اللهب والتضامن",
     "category": "anime",
     "icon": "🔥",
-    "theme": "🔥 Héros personnalisé : des flammes magiques bienveillantes pour réchauffer et éclairer le village. Tenue originale : une tenue vert pâle et bleue et un foulard uni en tissu souple. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🔥 Héros personnalisé : des flammes magiques bienveillantes pour réchauffer et éclairer le village. Tenue originale : une tenue vert pâle et bleue et un foulard uni en tissu souple. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une cité de fantasy chaleureuse où une maison de compagnons reçoit des missions d’entraide. Lieux à explorer : grande salle de réunion, port, train ancien et forêt magique. Objets du monde : tableau de missions, lanternes et outils de voyage. Mission possible : partir avec des amis pour réchauffer un village et réparer son phare. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une cité de fantasy chaleureuse où une maison de compagnons reçoit des missions d’entraide",
+      "places": "grande salle de réunion, port, train ancien et forêt magique",
+      "objects": "tableau de missions, lanternes et outils de voyage",
+      "mission": "partir avec des amis pour réchauffer un village et réparer son phare"
+    }
   },
   {
     "label": "Edward Elric · transformation de la matière",
     "ar": "إدوارد إلريك · تحويل المادة",
     "category": "anime",
     "icon": "⚗️",
-    "theme": "⚗️ Héros personnalisé : la transformation imaginaire de la matière pour réparer des objets utiles. Tenue originale : une blouse courte bleue et crème et des gants d’inventeur en cuir souple. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "⚗️ Héros personnalisé : la transformation imaginaire de la matière pour réparer des objets utiles. Tenue originale : une blouse courte bleue et crème et des gants d’inventeur en cuir souple. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : un monde de villes industrielles anciennes où sciences imaginaires et artisanat se rencontrent. Lieux à explorer : gare, atelier mécanique, bibliothèque scientifique et village de pierre. Objets du monde : plans de fabrication, instruments de mesure et pièces métalliques. Mission possible : réparer une machine utile en comprenant les matériaux et les conséquences de ses choix. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "un monde de villes industrielles anciennes où sciences imaginaires et artisanat se rencontrent",
+      "places": "gare, atelier mécanique, bibliothèque scientifique et village de pierre",
+      "objects": "plans de fabrication, instruments de mesure et pièces métalliques",
+      "mission": "réparer une machine utile en comprenant les matériaux et les conséquences de ses choix"
+    }
   },
   {
     "label": "Gon · sens et lien avec la nature",
     "ar": "غون · الحواس والارتباط بالطبيعة",
     "category": "anime",
     "icon": "🌿",
-    "theme": "🌿 Héros personnalisé : des sens très développés et un lien avec la nature pour retrouver un chemin. Tenue originale : une veste indigo et ivoire, un pantalon de randonnée et une petite gourde. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🌿 Héros personnalisé : des sens très développés et un lien avec la nature pour retrouver un chemin. Tenue originale : une veste indigo et ivoire, un pantalon de randonnée et une petite gourde. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : un vaste monde d’exploration où la nature et les rencontres guident les apprentissages. Lieux à explorer : île natale, forêt dense, marché de voyageurs et dirigeable. Objets du monde : carnet de traces, canne d’observation et cartes. Mission possible : traverser plusieurs milieux naturels en aidant leurs habitants et en développant ses sens. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "un vaste monde d’exploration où la nature et les rencontres guident les apprentissages",
+      "places": "île natale, forêt dense, marché de voyageurs et dirigeable",
+      "objects": "carnet de traces, canne d’observation et cartes",
+      "mission": "traverser plusieurs milieux naturels en aidant leurs habitants et en développant ses sens"
+    }
   },
   {
     "label": "Killua · vitesse électrique",
     "ar": "كيلوا · السرعة الكهربائية",
     "category": "anime",
     "icon": "⚡",
-    "theme": "⚡ Héros personnalisé : une énergie électrique imaginaire et une grande vitesse pour aider une équipe. Tenue originale : une tenue ocre et sauge, un pantalon ample et des chaussures de course. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "⚡ Héros personnalisé : une énergie électrique imaginaire et une grande vitesse pour aider une équipe. Tenue originale : une tenue ocre et sauge, un pantalon ample et des chaussures de course. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : un voyage entre montagnes et villes lumineuses où l’agilité et la confiance sont essentielles. Lieux à explorer : sentier alpin, pont suspendu, tour d’observation et parcours de précision. Objets du monde : balises électriques douces, protections et cartes. Mission possible : maîtriser son énergie pour franchir un parcours avec ses amis. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "un voyage entre montagnes et villes lumineuses où l’agilité et la confiance sont essentielles",
+      "places": "sentier alpin, pont suspendu, tour d’observation et parcours de précision",
+      "objects": "balises électriques douces, protections et cartes",
+      "mission": "maîtriser son énergie pour franchir un parcours avec ses amis"
+    }
   },
   {
     "label": "Saitama · super-force et simplicité",
     "ar": "سايتاما · القوة الخارقة والبساطة",
     "category": "anime",
     "icon": "💪",
-    "theme": "💪 Héros personnalisé : une immense force employée avec simplicité et modestie pour rendre service. Tenue originale : une tenue sportive bleu pétrole et orange, des gants simples et un visage fidèle à la photo. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "💪 Héros personnalisé : une immense force employée avec simplicité et modestie pour rendre service. Tenue originale : une tenue sportive bleu pétrole et orange, des gants simples et un visage fidèle à la photo. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une ville quotidienne aux quartiers résidentiels simples, où les petits services comptent autant que les exploits. Lieux à explorer : immeuble, supermarché, parc public et centre de secours. Objets du monde : courses, objets à réparer et outils ordinaires. Mission possible : découvrir qu’une grande force ne remplace ni l’écoute ni la gentillesse. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une ville quotidienne aux quartiers résidentiels simples, où les petits services comptent autant que les exploits",
+      "places": "immeuble, supermarché, parc public et centre de secours",
+      "objects": "courses, objets à réparer et outils ordinaires",
+      "mission": "découvrir qu’une grande force ne remplace ni l’écoute ni la gentillesse"
+    }
   },
   {
     "label": "Ichigo · courage et protection",
     "ar": "إيتشيغو · الشجاعة والحماية",
     "category": "anime",
     "icon": "🛡️",
-    "theme": "🛡️ Héros personnalisé : le courage de protéger ses amis et de surmonter une épreuve sans violence. Tenue originale : un manteau bleu et crème, des protections de randonnée et un bracelet personnel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🛡️ Héros personnalisé : le courage de protéger ses amis et de surmonter une épreuve sans violence. Tenue originale : un manteau bleu et crème, des protections de randonnée et un bracelet personnel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une petite ville japonaise traversée par une rivière, où un monde de lumière peut apparaître discrètement. Lieux à explorer : école, pont, ruelle et jardin de passages lumineux. Objets du monde : lanternes personnelles, carnets de messages et rubans. Mission possible : aider des visiteurs imaginaires à retrouver leur chemin en protégeant ses amis. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une petite ville japonaise traversée par une rivière, où un monde de lumière peut apparaître discrètement",
+      "places": "école, pont, ruelle et jardin de passages lumineux",
+      "objects": "lanternes personnelles, carnets de messages et rubans",
+      "mission": "aider des visiteurs imaginaires à retrouver leur chemin en protégeant ses amis"
+    }
   },
   {
     "label": "Yugi · énigmes et stratégie",
     "ar": "يوغي · الألغاز والاستراتيجية",
     "category": "anime",
     "icon": "🧩",
-    "theme": "🧩 Héros personnalisé : des jeux de cartes originaux, des énigmes et de la stratégie coopérative. Tenue originale : une veste terracotta et ivoire, une sacoche à cartes et un carnet d’énigmes. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🧩 Héros personnalisé : des jeux de cartes originaux, des énigmes et de la stratégie coopérative. Tenue originale : une veste terracotta et ivoire, une sacoche à cartes et un carnet d’énigmes. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une ville contemporaine animée par les jeux de réflexion et la découverte d’objets anciens. Lieux à explorer : boutique de jeux, école, musée et salle de tournoi amical. Objets du monde : cartes originales, puzzle géométrique et plateaux de jeu. Mission possible : résoudre des énigmes avec équité et préférer la coopération à la victoire facile. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une ville contemporaine animée par les jeux de réflexion et la découverte d’objets anciens",
+      "places": "boutique de jeux, école, musée et salle de tournoi amical",
+      "objects": "cartes originales, puzzle géométrique et plateaux de jeu",
+      "mission": "résoudre des énigmes avec équité et préférer la coopération à la victoire facile"
+    }
   },
   {
     "label": "Hinata (Haikyū!!) · bonds et volley",
     "ar": "هيناتا · القفز والكرة الطائرة",
     "category": "anime",
     "icon": "🏐",
-    "theme": "🏐 Héros personnalisé : des bonds impressionnants et le sens du collectif dans un tournoi de volley. Tenue originale : un maillot de volley lilas et jade avec le prénom de l’enfant réservé à la mise en page. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🏐 Héros personnalisé : des bonds impressionnants et le sens du collectif dans un tournoi de volley. Tenue originale : un maillot de volley lilas et jade avec le prénom de l’enfant réservé à la mise en page. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : un quotidien scolaire sportif japonais où l’entraînement collectif transforme les progrès individuels. Lieux à explorer : gymnase, cour d’école, vestiaire et salle de tournoi. Objets du monde : ballons, filets, tableau de tactique et gourdes. Mission possible : trouver sa place dans une équipe et réussir une action préparée ensemble. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "un quotidien scolaire sportif japonais où l’entraînement collectif transforme les progrès individuels",
+      "places": "gymnase, cour d’école, vestiaire et salle de tournoi",
+      "objects": "ballons, filets, tableau de tactique et gourdes",
+      "mission": "trouver sa place dans une équipe et réussir une action préparée ensemble"
+    }
   },
   {
     "label": "Tsubasa · football et persévérance",
     "ar": "تسوباسا · كرة القدم والمثابرة",
     "category": "anime",
     "icon": "⚽",
-    "theme": "⚽ Héros personnalisé : la passion du football et la persévérance lors d’un défi sportif amical. Tenue originale : un maillot de football violet et crème et des chaussures personnelles sans marque. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "⚽ Héros personnalisé : la passion du football et la persévérance lors d’un défi sportif amical. Tenue originale : un maillot de football violet et crème et des chaussures personnelles sans marque. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une ville sportive où les terrains de football deviennent des lieux de rencontre et de persévérance. Lieux à explorer : école, terrain de quartier, stade et colline d’entraînement. Objets du monde : ballons personnels, plots et carnet de tactique. Mission possible : surmonter un défi de match grâce à des passes et à l’encouragement mutuel. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une ville sportive où les terrains de football deviennent des lieux de rencontre et de persévérance",
+      "places": "école, terrain de quartier, stade et colline d’entraînement",
+      "objects": "ballons personnels, plots et carnet de tactique",
+      "mission": "surmonter un défi de match grâce à des passes et à l’encouragement mutuel"
+    }
   },
   {
     "label": "Seiya · cosmos et constellations",
     "ar": "سييا · الكون والكوكبات",
     "category": "anime",
     "icon": "🌌",
-    "theme": "🌌 Héros personnalisé : une énergie cosmique et une armure personnelle inspirée des constellations. Tenue originale : une veste protectrice bleu clair et verte avec des motifs géométriques personnels. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🌌 Héros personnalisé : une énergie cosmique et une armure personnelle inspirée des constellations. Tenue originale : une veste protectrice bleu clair et verte avec des motifs géométriques personnels. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : un univers de quête céleste qui associe mythologie, paysages méditerranéens et constellations. Lieux à explorer : temple imaginaire, escalier de montagne, observatoire et jardin étoilé. Objets du monde : cartes des constellations, protections personnelles et cristaux lumineux. Mission possible : rallumer des balises célestes en faisant preuve de courage et de solidarité. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "un univers de quête céleste qui associe mythologie, paysages méditerranéens et constellations",
+      "places": "temple imaginaire, escalier de montagne, observatoire et jardin étoilé",
+      "objects": "cartes des constellations, protections personnelles et cristaux lumineux",
+      "mission": "rallumer des balises célestes en faisant preuve de courage et de solidarité"
+    }
   },
   {
     "label": "Astro Boy · robot et solidarité",
     "ar": "أسترو بوي · الروبوت والتضامن",
     "category": "anime",
     "icon": "🤖",
-    "theme": "🤖 Héros personnalisé : des capacités robotiques et un cœur généreux pour aider les habitants. Tenue originale : une veste technologique ocre et blanche, des gants mécaniques et des chaussures confortables. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🤖 Héros personnalisé : des capacités robotiques et un cœur généreux pour aider les habitants. Tenue originale : une veste technologique ocre et blanche, des gants mécaniques et des chaussures confortables. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une ville futuriste claire où des robots originaux partagent le quotidien des familles. Lieux à explorer : laboratoire, école, parc suspendu et station de transport aérien. Objets du monde : petits robots d’assistance, outils mécaniques et interfaces lumineuses. Mission possible : aider des humains et des robots à résoudre un problème ensemble. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une ville futuriste claire où des robots originaux partagent le quotidien des familles",
+      "places": "laboratoire, école, parc suspendu et station de transport aérien",
+      "objects": "petits robots d’assistance, outils mécaniques et interfaces lumineuses",
+      "mission": "aider des humains et des robots à résoudre un problème ensemble"
+    }
   },
   {
     "label": "Totoro · forêt et bienveillance",
     "ar": "توتورو · الغابة واللطف",
     "category": "anime",
     "icon": "🌳",
-    "theme": "🌳 Héros personnalisé : la rencontre d’un grand compagnon forestier élancé au pelage vert tendre, avec de petites ramures fleuries. Tenue originale : une salopette bleue et crème, un chapeau de promenade uni et une petite sacoche. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
-    "profile": ""
+    "theme": "🌳 Héros personnalisé : la rencontre d’un grand compagnon forestier élancé au pelage vert tendre, avec de petites ramures fleuries. Tenue originale : une salopette bleue et crème, un chapeau de promenade uni et une petite sacoche. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise. Univers et ambiance : une campagne japonaise paisible où la nature semble abriter des présences merveilleuses. Lieux à explorer : vieille maison, rizière, sentier de campagne et grand arbre creux. Objets du monde : graines, parapluie, feuilles et petite lanterne. Mission possible : découvrir un compagnon forestier original et prendre soin d’un lieu de vie partagé. Mettre cet univers en scène dès la couverture et le conserver pendant toute l’histoire. Varier les lieux et les actions, tout en gardant une architecture, une époque, une nature et des objets cohérents. L’enfant reste le héros principal.",
+    "profile": "",
+    "world": {
+      "setting": "une campagne japonaise paisible où la nature semble abriter des présences merveilleuses",
+      "places": "vieille maison, rizière, sentier de campagne et grand arbre creux",
+      "objects": "graines, parapluie, feuilles et petite lanterne",
+      "mission": "découvrir un compagnon forestier original et prendre soin d’un lieu de vie partagé"
+    }
   },
   {
     "label": "Le pouvoir de voler pour secourir les oiseaux",
