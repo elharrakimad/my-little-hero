@@ -442,6 +442,11 @@ footer>small a { color: #ffdf80; }
   .site-ar .hero-copy h1.ar-spaced-heading { font-size: 35px !important; }
   .site-ar #adventures .section-heading h2.ar-spaced-heading { font-size: 32px !important; }
 }
+@media (max-width: 360px) {
+  .inside-art .sample-cover { width: 130px; height: 210px; }
+  .inside-art .sample-page { width: 155px; height: 245px; left: calc(50% - 35px); }
+  .inside-art .sample-page>img { height: 140px; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .magic-site *, .magic-site *:before, .magic-site *:after { animation: none !important; transition: none !important; }
