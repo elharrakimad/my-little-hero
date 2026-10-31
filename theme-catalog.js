@@ -88,7 +88,7 @@ window.MLH_THEME_CATEGORIES = [
     "id": "feelings",
     "label": "Émotions et confiance",
     "ar": "المشاعر والثقة بالنفس",
-    "icon": "🌈"
+    "icon": "😊"
   },
   {
     "id": "celebrate",
