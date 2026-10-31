@@ -13,6 +13,18 @@ window.MLH_THEME_CATEGORIES = [
     "icon": "👧"
   },
   {
+    "id": "comics",
+    "label": "Inspirations Marvel et DC",
+    "ar": "إلهام من أبطال مارفل ودي سي",
+    "icon": "🦸"
+  },
+  {
+    "id": "anime",
+    "label": "Inspirations anime",
+    "ar": "إلهام من أبطال الأنمي",
+    "icon": "🎌"
+  },
+  {
     "id": "magic",
     "label": "Magie et royaumes",
     "ar": "السحر والممالك",
@@ -110,6 +122,326 @@ window.MLH_THEME_CATEGORIES = [
   }
 ];
 window.MLH_THEME_CATALOG = [
+  {
+    "label": "Spider-Man · agilité et toile",
+    "ar": "سبايدرمان · الرشاقة والشبكات",
+    "category": "comics",
+    "icon": "🕷️",
+    "theme": "🕷️ Héros personnalisé — inspiration Spider-Man · agilité et toile : agilité, escalade et filaments souples pour secourir les habitants",
+    "profile": ""
+  },
+  {
+    "label": "Iron Man · armure et inventions",
+    "ar": "آيرون مان · الدرع والاختراعات",
+    "category": "comics",
+    "icon": "🤖",
+    "theme": "🤖 Héros personnalisé — inspiration Iron Man · armure et inventions : une armure technologique personnelle et des inventions utiles",
+    "profile": ""
+  },
+  {
+    "label": "Thor · tonnerre et marteau",
+    "ar": "ثور · الرعد والمطرقة",
+    "category": "comics",
+    "icon": "🔨",
+    "theme": "🔨 Héros personnalisé — inspiration Thor · tonnerre et marteau : un marteau magique original et la maîtrise du tonnerre pour aider le village",
+    "profile": ""
+  },
+  {
+    "label": "Hulk · force et maîtrise de soi",
+    "ar": "هالك · القوة والتحكم في النفس",
+    "category": "comics",
+    "icon": "💪",
+    "theme": "💪 Héros personnalisé — inspiration Hulk · force et maîtrise de soi : une force extraordinaire qui devient utile en apprenant à gérer ses émotions",
+    "profile": ""
+  },
+  {
+    "label": "Captain America · bouclier et courage",
+    "ar": "كابتن أمريكا · الدرع والشجاعة",
+    "category": "comics",
+    "icon": "🛡️",
+    "theme": "🛡️ Héros personnalisé — inspiration Captain America · bouclier et courage : un bouclier personnel, du courage et un grand esprit d’équipe",
+    "profile": ""
+  },
+  {
+    "label": "Doctor Strange · portails et magie",
+    "ar": "دكتور سترينج · البوابات والسحر",
+    "category": "comics",
+    "icon": "🚪",
+    "theme": "🚪 Héros personnalisé — inspiration Doctor Strange · portails et magie : des portails lumineux et des énigmes magiques à résoudre",
+    "profile": ""
+  },
+  {
+    "label": "Black Panther · agilité et protection",
+    "ar": "بلاك بانثر · الرشاقة والحماية",
+    "category": "comics",
+    "icon": "🐾",
+    "theme": "🐾 Héros personnalisé — inspiration Black Panther · agilité et protection : des réflexes félins et une mission de protection de la nature",
+    "profile": ""
+  },
+  {
+    "label": "Ant-Man · miniaturisation et entraide",
+    "ar": "آنت مان · التصغير والتعاون",
+    "category": "comics",
+    "icon": "🐜",
+    "theme": "🐜 Héros personnalisé — inspiration Ant-Man · miniaturisation et entraide : le pouvoir de devenir minuscule pour aider les insectes",
+    "profile": ""
+  },
+  {
+    "label": "La Guêpe · vol et précision",
+    "ar": "الدبورة · الطيران والدقة",
+    "category": "comics",
+    "icon": "🐝",
+    "theme": "🐝 Héros personnalisé — inspiration La Guêpe · vol et précision : le vol miniature et la précision pour une mission de secours",
+    "profile": ""
+  },
+  {
+    "label": "Scarlet Witch · objets et énergie",
+    "ar": "سكارليت ويتش · الأشياء والطاقة",
+    "category": "comics",
+    "icon": "✨",
+    "theme": "✨ Héros personnalisé — inspiration Scarlet Witch · objets et énergie : la télékinésie et une énergie lumineuse pour réparer et protéger",
+    "profile": ""
+  },
+  {
+    "label": "Superman · vol et super-force",
+    "ar": "سوبرمان · الطيران والقوة الخارقة",
+    "category": "comics",
+    "icon": "🕊️",
+    "theme": "🕊️ Héros personnalisé — inspiration Superman · vol et super-force : le vol et la super-force pour protéger les habitants avec bienveillance",
+    "profile": ""
+  },
+  {
+    "label": "Batman · enquête et gadgets",
+    "ar": "باتمان · التحقيق والأدوات",
+    "category": "comics",
+    "icon": "🦇",
+    "theme": "🦇 Héros personnalisé — inspiration Batman · enquête et gadgets : des talents de détective et des gadgets inventés pour résoudre un mystère",
+    "profile": ""
+  },
+  {
+    "label": "Wonder Woman · courage et vérité",
+    "ar": "وندر وومان · الشجاعة والحقيقة",
+    "category": "comics",
+    "icon": "🛡️",
+    "theme": "🛡️ Héros personnalisé — inspiration Wonder Woman · courage et vérité : le courage, la protection et la recherche de la vérité dans une quête solidaire",
+    "profile": ""
+  },
+  {
+    "label": "Flash · vitesse et réflexes",
+    "ar": "فلاش · السرعة وردود الفعل",
+    "category": "comics",
+    "icon": "⚡",
+    "theme": "⚡ Héros personnalisé — inspiration Flash · vitesse et réflexes : la super-vitesse et des réflexes rapides pour livrer une aide urgente",
+    "profile": ""
+  },
+  {
+    "label": "Aquaman · océan et animaux marins",
+    "ar": "أكوامان · المحيط والحيوانات البحرية",
+    "category": "comics",
+    "icon": "🌊",
+    "theme": "🌊 Héros personnalisé — inspiration Aquaman · océan et animaux marins : la communication avec les animaux marins et la protection des océans",
+    "profile": ""
+  },
+  {
+    "label": "Green Lantern · imagination et lumière",
+    "ar": "غرين لانترن · الخيال والضوء",
+    "category": "comics",
+    "icon": "💍",
+    "theme": "💍 Héros personnalisé — inspiration Green Lantern · imagination et lumière : un anneau personnel qui transforme l’imagination en constructions lumineuses",
+    "profile": ""
+  },
+  {
+    "label": "Cyborg · technologie et connexion",
+    "ar": "سايبورغ · التكنولوجيا والتواصل",
+    "category": "comics",
+    "icon": "🦾",
+    "theme": "🦾 Héros personnalisé — inspiration Cyborg · technologie et connexion : des talents technologiques pour communiquer avec les machines et les réparer",
+    "profile": ""
+  },
+  {
+    "label": "Shazam · éclair et esprit d’équipe",
+    "ar": "شازام · البرق وروح الفريق",
+    "category": "comics",
+    "icon": "⚡",
+    "theme": "⚡ Héros personnalisé — inspiration Shazam · éclair et esprit d’équipe : une transformation magique originale et la maîtrise des éclairs pour aider ses amis",
+    "profile": ""
+  },
+  {
+    "label": "Supergirl · énergie solaire et envol",
+    "ar": "سوبرغيرل · الطاقة الشمسية والطيران",
+    "category": "comics",
+    "icon": "☀️",
+    "theme": "☀️ Héros personnalisé — inspiration Supergirl · énergie solaire et envol : l’énergie solaire, le vol et une force protectrice dans une aventure d’entraide",
+    "profile": ""
+  },
+  {
+    "label": "Zatanna · mots et tours magiques",
+    "ar": "زاتانا · الكلمات والخدع السحرية",
+    "category": "comics",
+    "icon": "🎩",
+    "theme": "🎩 Héros personnalisé — inspiration Zatanna · mots et tours magiques : des mots magiques et des tours originaux pour retrouver des objets perdus",
+    "profile": ""
+  },
+  {
+    "label": "Goku · énergie et dépassement",
+    "ar": "غوكو · الطاقة وتجاوز الذات",
+    "category": "anime",
+    "icon": "🔥",
+    "theme": "🔥 Héros personnalisé — inspiration Goku · énergie et dépassement : la maîtrise d’une énergie lumineuse et le dépassement de soi par l’entraînement",
+    "profile": ""
+  },
+  {
+    "label": "Naruto · énergie et doubles",
+    "ar": "ناروتو · الطاقة والنسخ",
+    "category": "anime",
+    "icon": "🥷",
+    "theme": "🥷 Héros personnalisé — inspiration Naruto · énergie et doubles : des doubles imaginaires et des talents de ninja pour réaliser une mission d’entraide",
+    "profile": ""
+  },
+  {
+    "label": "Luffy · élasticité et aventure",
+    "ar": "لوفي · المرونة والمغامرة",
+    "category": "anime",
+    "icon": "🌀",
+    "theme": "🌀 Héros personnalisé — inspiration Luffy · élasticité et aventure : un corps élastique et un esprit d’aventure pour explorer une île",
+    "profile": ""
+  },
+  {
+    "label": "Tanjiro · odorat et compassion",
+    "ar": "تانجيرو · حاسة الشم والرحمة",
+    "category": "anime",
+    "icon": "🌸",
+    "theme": "🌸 Héros personnalisé — inspiration Tanjiro · odorat et compassion : un odorat exceptionnel et beaucoup de compassion pour retrouver un animal perdu",
+    "profile": ""
+  },
+  {
+    "label": "Deku · force et esprit d’équipe",
+    "ar": "ديكو · القوة وروح الفريق",
+    "category": "anime",
+    "icon": "💪",
+    "theme": "💪 Héros personnalisé — inspiration Deku · force et esprit d’équipe : une force grandissante et le travail d’équipe pour une mission de secours",
+    "profile": ""
+  },
+  {
+    "label": "Sailor Moon · lumière protectrice",
+    "ar": "سيلور مون · الضوء الحامي",
+    "category": "anime",
+    "icon": "🌙",
+    "theme": "🌙 Héros personnalisé — inspiration Sailor Moon · lumière protectrice : la lumière de la lune et une transformation personnelle pour protéger ses amis",
+    "profile": ""
+  },
+  {
+    "label": "Sacha et Pikachu · amitié et électricité",
+    "ar": "ساشا وبيكاتشو · الصداقة والكهرباء",
+    "category": "anime",
+    "icon": "⚡",
+    "theme": "⚡ Héros personnalisé — inspiration Sacha et Pikachu · amitié et électricité : l’amitié avec une petite créature originale dotée d’une énergie électrique douce",
+    "profile": ""
+  },
+  {
+    "label": "Cardcaptor Sakura · cartes et magie",
+    "ar": "ساكورا · البطاقات والسحر",
+    "category": "anime",
+    "icon": "🃏",
+    "theme": "🃏 Héros personnalisé — inspiration Cardcaptor Sakura · cartes et magie : des cartes magiques originales à retrouver grâce à l’amitié et à l’observation",
+    "profile": ""
+  },
+  {
+    "label": "Natsu · flammes et solidarité",
+    "ar": "ناتسو · اللهب والتضامن",
+    "category": "anime",
+    "icon": "🔥",
+    "theme": "🔥 Héros personnalisé — inspiration Natsu · flammes et solidarité : des flammes magiques bienveillantes pour réchauffer et éclairer le village",
+    "profile": ""
+  },
+  {
+    "label": "Edward Elric · transformation de la matière",
+    "ar": "إدوارد إلريك · تحويل المادة",
+    "category": "anime",
+    "icon": "⚗️",
+    "theme": "⚗️ Héros personnalisé — inspiration Edward Elric · transformation de la matière : la transformation imaginaire de la matière pour réparer des objets utiles",
+    "profile": ""
+  },
+  {
+    "label": "Gon · sens et lien avec la nature",
+    "ar": "غون · الحواس والارتباط بالطبيعة",
+    "category": "anime",
+    "icon": "🌿",
+    "theme": "🌿 Héros personnalisé — inspiration Gon · sens et lien avec la nature : des sens très développés et un lien avec la nature pour retrouver un chemin",
+    "profile": ""
+  },
+  {
+    "label": "Killua · vitesse électrique",
+    "ar": "كيلوا · السرعة الكهربائية",
+    "category": "anime",
+    "icon": "⚡",
+    "theme": "⚡ Héros personnalisé — inspiration Killua · vitesse électrique : une énergie électrique imaginaire et une grande vitesse pour aider une équipe",
+    "profile": ""
+  },
+  {
+    "label": "Saitama · super-force et simplicité",
+    "ar": "سايتاما · القوة الخارقة والبساطة",
+    "category": "anime",
+    "icon": "💪",
+    "theme": "💪 Héros personnalisé — inspiration Saitama · super-force et simplicité : une immense force employée avec simplicité et modestie pour rendre service",
+    "profile": ""
+  },
+  {
+    "label": "Ichigo · courage et protection",
+    "ar": "إيتشيغو · الشجاعة والحماية",
+    "category": "anime",
+    "icon": "🛡️",
+    "theme": "🛡️ Héros personnalisé — inspiration Ichigo · courage et protection : le courage de protéger ses amis et de surmonter une épreuve sans violence",
+    "profile": ""
+  },
+  {
+    "label": "Yugi · énigmes et stratégie",
+    "ar": "يوغي · الألغاز والاستراتيجية",
+    "category": "anime",
+    "icon": "🧩",
+    "theme": "🧩 Héros personnalisé — inspiration Yugi · énigmes et stratégie : des jeux de cartes originaux, des énigmes et de la stratégie coopérative",
+    "profile": ""
+  },
+  {
+    "label": "Hinata (Haikyū!!) · bonds et volley",
+    "ar": "هيناتا · القفز والكرة الطائرة",
+    "category": "anime",
+    "icon": "🏐",
+    "theme": "🏐 Héros personnalisé — inspiration Hinata (Haikyū!!) · bonds et volley : des bonds impressionnants et le sens du collectif dans un tournoi de volley",
+    "profile": ""
+  },
+  {
+    "label": "Tsubasa · football et persévérance",
+    "ar": "تسوباسا · كرة القدم والمثابرة",
+    "category": "anime",
+    "icon": "⚽",
+    "theme": "⚽ Héros personnalisé — inspiration Tsubasa · football et persévérance : la passion du football et la persévérance lors d’un défi sportif amical",
+    "profile": ""
+  },
+  {
+    "label": "Seiya · cosmos et constellations",
+    "ar": "سييا · الكون والكوكبات",
+    "category": "anime",
+    "icon": "🌌",
+    "theme": "🌌 Héros personnalisé — inspiration Seiya · cosmos et constellations : une énergie cosmique et une armure personnelle inspirée des constellations",
+    "profile": ""
+  },
+  {
+    "label": "Astro Boy · robot et solidarité",
+    "ar": "أسترو بوي · الروبوت والتضامن",
+    "category": "anime",
+    "icon": "🤖",
+    "theme": "🤖 Héros personnalisé — inspiration Astro Boy · robot et solidarité : des capacités robotiques et un cœur généreux pour aider les habitants",
+    "profile": ""
+  },
+  {
+    "label": "Totoro · forêt et bienveillance",
+    "ar": "توتورو · الغابة واللطف",
+    "category": "anime",
+    "icon": "🌳",
+    "theme": "🌳 Héros personnalisé — inspiration Totoro · forêt et bienveillance : la rencontre d’une grande créature forestière originale et bienveillante",
+    "profile": ""
+  },
   {
     "label": "Le pouvoir de voler pour secourir les oiseaux",
     "ar": "قوة الطيران لإنقاذ الطيور",
