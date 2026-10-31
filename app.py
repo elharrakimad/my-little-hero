@@ -76,9 +76,9 @@ def get_order_number():
     return st.session_state.order_number
 
 PRICES = {
-    1: {"digital": 69, "print": 99, "both": 129},
-    2: {"digital": 119, "print": 179, "both": 219},
-    3: {"digital": 159, "print": 249, "both": 299},
+    1: {"digital": 99, "print": 179, "both": 229},
+    2: {"digital": 179, "print": 339, "both": 389},
+    3: {"digital": 249, "print": 479, "both": 529},
 }
 
 FORMAT_NAMES = {

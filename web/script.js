@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded",()=>{
-const state={pack:1,price:69,name:"",age:"",language:"Français",photo:"",themes:[]};
+const state={pack:1,price:99,name:"",age:"",language:"Français",photo:"",themes:[]};
 const packNames={1:"Little Hero",2:"Super Hero",3:"Hero Gift"};
-const prices={1:69,2:119,3:159};
+const prices={1:99,2:179,3:249};
 const creation=document.getElementById("creation");
 const cards=[...document.querySelectorAll(".wizard-card")];
 const labels=[...document.querySelectorAll(".steps-labels span")];
@@ -30,7 +30,7 @@ const T={
     "de sa propre histoire.":"في قصته الخاصة.","À partir de son prénom, de son âge et de sa photo, nous imaginons une aventure originale qu'il pourra ensuite colorier et garder comme souvenir.":"انطلاقًا من اسمه وعمره وصورته، نصمم له مغامرة أصلية يمكنه تلوينها والاحتفاظ بها كذكرى.",
     "Une histoire personnalisée, inspirée de sa photo et de ses passions, puis transformée en aventure à colorier.":"قصة مخصصة مستوحاة من صورته واهتماماته، ثم تتحول إلى مغامرة يمكنه تلوينها.",
     "Créer son livre":"أنشئ كتابه","Créer son aventure":"أنشئ مغامرته","Découvrir le concept ↓":"اكتشف الفكرة ↓",
-    "Personnalisé":"مخصص","Dès 69 DH":"ابتداءً من 69 درهم","À partir de 69 DH":"ابتداءً من 69 درهم","Digital ou imprimé":"رقمي أو مطبوع",
+    "Personnalisé":"مخصص","Dès 99 DH":"ابتداءً من 99 درهم","À partir de 99 DH":"ابتداءً من 99 درهم","Digital ou imprimé":"رقمي أو مطبوع",
     "À colorier":"للتلوين","10 pages par aventure":"10 صفحات لكل مغامرة","aventures possibles":"مغامرات ممكنة",
     "univers possibles":"عوالم ممكنة","pages par aventure":"صفحات لكل مغامرة","packs au choix":"باقات للاختيار",
     "créé avec soin":"مصمم بعناية","COMMENT ÇA MARCHE":"كيف يعمل؟","Simple pour vous.":"بسيط بالنسبة لكم.","Magique pour lui.":"ساحر بالنسبة له.",
@@ -79,8 +79,8 @@ const T={
     "Valider ma commande":"تأكيد طلبي","Valider ma commande sur WhatsApp":"تأكيد طلبي عبر واتساب","La validation finale se fera avec notre équipe sur WhatsApp.":"سيتم تأكيد الطلب النهائي مع فريقنا عبر واتساب.",
     "Créer":"إنشاء","Tous droits réservés":"جميع الحقوق محفوظة",
     "Monde magique":"العالم السحري","Fées":"الجنيات","Licorne":"اليونيكورن","Royaume":"المملكة","Dragon":"التنين","Pirates":"القراصنة","Trésor":"الكنز","Espace":"الفضاء","Robots":"الروبوتات","Dinosaures":"الديناصورات","Sous-marin":"العالم تحت الماء","Sirènes":"حوريات البحر","Forêt":"الغابة","Safari":"السفاري","Sauvetage":"إنقاذ الحيوانات","Football":"كرة القدم","Basket":"كرة السلة","Course":"السباق","Détective":"المحقق","Mission secrète":"مهمة سرية","Chevalier":"الفارس","Art":"الفن","Musique":"الموسيقى","Danse":"الرقص","Pâtisserie":"الحلويات","Mode":"الأزياء","Science":"العلوم","Temps":"السفر عبر الزمن","Mon propre thème":"موضوعي الخاص",
-    "1 aventure · dès 69 DH":"مغامرة واحدة · ابتداءً من 69 درهم","2 aventures · dès 119 DH":"مغامرتان · ابتداءً من 119 درهم","3 aventures · dès 159 DH":"3 مغامرات · ابتداءً من 159 درهم",
-    "1 aventure · 69 DH":"مغامرة واحدة · 69 درهم","2 aventures · 119 DH":"مغامرتان · 119 درهم","3 aventures · 159 DH":"3 مغامرات · 159 درهم"
+    "1 aventure · dès 99 DH":"مغامرة واحدة · ابتداءً من 99 درهم","2 aventures · dès 179 DH":"مغامرتان · ابتداءً من 179 درهم","3 aventures · dès 249 DH":"3 مغامرات · ابتداءً من 249 درهم",
+    "1 aventure · 99 DH":"مغامرة واحدة · 99 درهم","2 aventures · 179 DH":"مغامرتان · 179 درهم","3 aventures · 249 DH":"3 مغامرات · 249 درهم"
   };
   const themeAr={"Monde magique":"العالم السحري","Fées":"الجنيات","Licorne":"اليونيكورن","Royaume":"المملكة","Dragon":"التنين","Pirates":"القراصنة","Trésor":"الكنز","Espace":"الفضاء","Robots":"الروبوتات","Dinosaures":"الديناصورات","Sous-marin":"العالم تحت الماء","Sirènes":"حوريات البحر","Forêt":"الغابة","Safari":"السفاري","Sauvetage":"إنقاذ الحيوانات","Football":"كرة القدم","Basket":"كرة السلة","Course":"السباق","Détective":"المحقق","Mission secrète":"مهمة سرية","Chevalier":"الفارس","Art":"الفن","Musique":"الموسيقى","Danse":"الرقص","Pâtisserie":"الحلويات","Mode":"الأزياء","Science":"العلوم","Temps":"السفر عبر الزمن","Mon propre thème":"موضوعي الخاص"};
 
