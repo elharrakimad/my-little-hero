@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded",()=>{
 const state={pack:1,price:99,name:"",age:"",language:"Français",photo:"",themes:[]};
-const packNames={1:"Little Hero",2:"Super Hero",3:"Hero Gift"};
+const packNames={1:"Little Hero",2:"Super Hero",3:"Ultimate Hero"};
 const prices={1:99,2:179,3:249};
 const creation=document.getElementById("creation");
 const cards=[...document.querySelectorAll(".wizard-card")];

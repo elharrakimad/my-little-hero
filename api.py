@@ -101,7 +101,7 @@ def save_order_to_supabase(order_ref, name, age, language, pack, covers, referen
         "child_name": name,
         "child_age": age,
         "language": language,
-        "pack": {1: "LITTLE HERO", 2: "SUPER HERO", 3: "HERO GIFT"}.get(pack, "LITTLE HERO"),
+        "pack": {1: "LITTLE HERO", 2: "SUPER HERO", 3: "ULTIMATE HERO"}.get(pack, "LITTLE HERO"),
         "adventure_count": len(covers),
         "total_price": {1: 99, 2: 179, 3: 249}.get(pack, 99),
         "status": "WAITING_FOR_PAYMENT",

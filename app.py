@@ -140,7 +140,7 @@ LANGUAGES = ["Français", "English", "Español", "العربية"]
 PACK_NAMES = {
     1: "LITTLE HERO",
     2: "SUPER HERO",
-    3: "HERO GIFT",
+    3: "ULTIMATE HERO",
 }
 
 PACK_ICONS = {
