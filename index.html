@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=20261031-magic">
-<link rel="stylesheet" href="magic.css?v=20261031-contact">
+<link rel="stylesheet" href="magic.css?v=20261031-catalog">
 </head>
 <body class="magic-site">
 <a class="skip-link" href="#creation">Aller à la création</a>
@@ -44,7 +44,7 @@
   </div>
 </section>
 
-<section class="mini-proof" aria-label="Les essentiels"><div><b>01</b><span>Un héros à son image</span></div><div><b>30+</b><span>univers possibles</span></div><div><b>10</b><span>pages par aventure</span></div><div><b>∞</b><span>De l’imagination à colorier</span></div></section>
+<section class="mini-proof" aria-label="Les essentiels"><div><b>01</b><span>Un héros à son image</span></div><div><b>199</b><span>univers possibles</span></div><div><b>10</b><span>pages par aventure</span></div><div><b>∞</b><span>De l’imagination à colorier</span></div></section>
 
 <section class="section adventures" id="adventures">
   <div class="section-heading center"><div class="eyebrow">CHOISIS SON UNIVERS</div><h2>Une aventure pour <span>chaque imagination</span></h2><p>Des mondes très différents pour que chaque enfant trouve son aventure.</p></div>
@@ -56,7 +56,7 @@
   <div class="theme-showcase">
     <button type="button" class="theme-pill" data-open-creation>🧙 Monde magique</button><button type="button" class="theme-pill" data-open-creation>🦄 Licorne</button><button type="button" class="theme-pill" data-open-creation>🚀 Espace</button><button type="button" class="theme-pill" data-open-creation>🦖 Dinosaures</button><button type="button" class="theme-pill" data-open-creation>🏴‍☠️ Pirates</button><button type="button" class="theme-pill" data-open-creation>🌊 Sous-marin</button><button type="button" class="theme-pill" data-open-creation>⚽ Football</button><button type="button" class="theme-pill" data-open-creation>🕵️ Détective</button><button type="button" class="theme-pill" data-open-creation>🤖 Robots</button><button type="button" class="theme-pill" data-open-creation>🏰 Chevalier</button><button type="button" class="theme-pill" data-open-creation>🎨 Art</button><button type="button" class="theme-pill" data-open-creation>🍰 Pâtisserie</button><button type="button" class="theme-pill" data-open-creation>✨ Son propre thème</button>
   </div>
-  <div class="adventure-note"><span>✨</span><div><b>Et ce n'est qu'un aperçu.</b><br><small>Plus de 30 univers sont disponibles pendant la création.</small></div></div>
+  <div class="adventure-note"><span>✨</span><div><b>Et ce n'est qu'un aperçu.</b><br><small>199 univers sont disponibles pendant la création.</small></div></div>
 </section>
 
 <section class="section how" id="how">
@@ -118,6 +118,14 @@
     <div class="wizard-card" data-step="3" hidden>
       <div class="step-kicker">ÉTAPE 3 SUR 4</div><h3>Quelle sera sa mission&nbsp;?</h3><p class="muted" id="themeInstruction">Choisissez 1 aventure.</p>
       <div class="adventure-slots" id="adventureSlots"></div>
+      <div class="theme-catalog-tools">
+        <label for="themeSearch">Rechercher un thème<input id="themeSearch" type="search" autocomplete="off" placeholder="Ex. dragon, football, vétérinaire…"></label>
+        <label for="themeCategory">Choisir une catégorie<select id="themeCategory"><option value="all">Toutes les catégories</option></select></label>
+        <button type="button" class="btn btn-ghost" id="themeScope" aria-pressed="false">Voir tous les thèmes (199)</button>
+      </div>
+      <p id="themeResults" class="theme-results" role="status" aria-live="polite"></p>
+      <p id="themeEmpty" class="theme-empty" hidden>Aucun thème trouvé. Essayez un autre mot ou créez votre propre thème.</p>
+      <button type="button" id="themeReset" class="theme-reset" hidden>Effacer les filtres</button>
       <div class="theme-choice-grid">
         <button type="button" data-theme="🧙 Monde magique" data-theme-label="Monde magique"><span class="theme-icon" aria-hidden="true">🧙</span><span>Monde magique</span></button><button type="button" data-theme="🧚 Royaume des fées" data-theme-label="Fées"><span class="theme-icon" aria-hidden="true">🧚</span><span>Fées</span></button><button type="button" data-theme="🦄 Aventure avec une licorne" data-theme-label="Licorne"><span class="theme-icon" aria-hidden="true">🦄</span><span>Licorne</span></button><button type="button" data-theme="👑 Royaume enchanté" data-theme-label="Royaume"><span class="theme-icon" aria-hidden="true">👑</span><span>Royaume</span></button>
         <button type="button" data-theme="🐉 Dragon et royaume fantastique" data-theme-label="Dragon"><span class="theme-icon" aria-hidden="true">🐉</span><span>Dragon</span></button><button type="button" data-theme="🏴‍☠️ Aventure de pirates" data-theme-label="Pirates"><span class="theme-icon" aria-hidden="true">🏴‍☠️</span><span>Pirates</span></button><button type="button" data-theme="🗺️ Chasse au trésor" data-theme-label="Trésor"><span class="theme-icon" aria-hidden="true">🗺️</span><span>Trésor</span></button><button type="button" data-theme="🚀 Voyage dans l'espace" data-theme-label="Espace"><span class="theme-icon" aria-hidden="true">🚀</span><span>Espace</span></button>
@@ -191,8 +199,9 @@
   <div class="footer-inner"><a class="brand" href="#top"><span class="brand-mark">✦</span><span>My Little <b>Hero</b></span></a><p>Des histoires personnalisées où chaque enfant devient le héros de son propre monde.</p><div class="footer-links"><a href="#how">Comment ça marche</a><a href="#packs">Packs</a><a href="#faq">FAQ</a><a href="#creation">Créer</a></div></div>
   <small>© 2026 My Little Hero · Tous droits réservés · <a href="https://wa.me/212603983800" target="_blank" rel="noopener">WhatsApp</a></small>
 </footer>
-<script src="themes.js?v=20261028-01"></script>
-<script src="script.js?v=20261031-ultimate"></script>
+<script src="theme-catalog.js?v=20261031-01"></script>
+<script src="themes.js?v=20261031-catalog"></script>
+<script src="script.js?v=20261031-catalog"></script>
 <script src="preview.js?v=20261031-contact"></script>
 </body>
 </html>
