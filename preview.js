@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded",()=>{
   orderButton.disabled=true;
   orderButton.setAttribute("aria-disabled","true");
 
-  window.generateStoryPreview=async({name,age,language,gender,themes,photoFile})=>{
+  window.generateStoryPreview=async({name,age,language,gender,themes,photoFile,parentPhone,parentEmail,customTheme})=>{
     if(window.location.protocol==="file:"){
       alert(document.documentElement.lang==="ar"
         ?"لإنشاء كتاب، افتح الموقع https://my-little-hero.online بدلاً من ملف HTML على جهازك."
         :"Pour créer un livre, ouvrez https://my-little-hero.online au lieu du fichier HTML sur votre ordinateur.");
       return false;
     }
-    if(!name||!age||!gender||!photoFile||!themes?.length)return false;
+    if(!name||!age||!gender||!photoFile||!themes?.length||!parentPhone)return false;
 
     const form=new FormData();
     form.append("child_name",name);
@@ -27,6 +27,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     form.append("language",language||"Français");
     form.append("themes",JSON.stringify(themes));
     form.append("theme",themes[0]||"");
+    form.append("parent_phone",parentPhone);
+    form.append("parent_email",parentEmail||"");
+    form.append("custom_theme",customTheme||"");
     form.append("photo",photoFile);
 
     const button=document.querySelector('[data-step="3"] .next');

@@ -41,7 +41,30 @@ def get_supabase_client():
     return create_client(url, key)
 
 
-def save_order_to_supabase(order_ref, name, age, language, pack, covers, reference_bytes, cover_files, child_gender=""):
+def validate_parent_contact(phone, email=""):
+    phone, email = phone.strip(), email.strip()
+    digits = re.sub(r"\D", "", phone)
+    if not re.fullmatch(r"\+?[0-9() .-]+", phone) or not 7 <= len(digits) <= 15:
+        raise HTTPException(status_code=400, detail="Un numéro de téléphone valide est obligatoire.")
+    if email and (len(email) > 254 or not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+", email)):
+        raise HTTPException(status_code=400, detail="Veuillez vérifier votre adresse e-mail.")
+    return ("+" if phone.startswith("+") else "") + digits, email
+
+
+def resolve_order_themes(themes, custom_theme=""):
+    custom_theme = custom_theme.strip()
+    result = []
+    for theme in themes:
+        if theme in {"✨ Mon propre thème", "Mon propre thème"}:
+            if not custom_theme or len(custom_theme) > 600:
+                raise HTTPException(status_code=400, detail="Décrivez votre thème personnalisé (600 caractères maximum).")
+            result.append((f"Thème personnalisé : {custom_theme}", custom_theme))
+        else:
+            result.append((theme, ""))
+    return result
+
+
+def save_order_to_supabase(order_ref, name, age, language, pack, covers, reference_bytes, cover_files, child_gender="", parent_phone="", parent_email=""):
     supabase = get_supabase_client()
     bucket = "my-little-hero-files"
     root = f"orders/{order_ref}"
@@ -65,7 +88,7 @@ def save_order_to_supabase(order_ref, name, age, language, pack, covers, referen
             "number": index,
             "child_gender": child_gender,
             "theme": cover.get("theme", ""),
-            "idea": "",
+            "idea": cover.get("idea", ""),
             "quality": "",
             "title": cover.get("title", ""),
         })
@@ -73,8 +96,8 @@ def save_order_to_supabase(order_ref, name, age, language, pack, covers, referen
     row = {
         "order_ref": order_ref,
         "parent_name": None,
-        "parent_phone": None,
-        "parent_email": None,
+        "parent_phone": parent_phone or None,
+        "parent_email": parent_email or None,
         "child_name": name,
         "child_age": age,
         "language": language,
@@ -205,7 +228,11 @@ async def preview_cover(
     themes: str = Form(""),
     photo: UploadFile = File(...),
     child_gender: str = Form(...),
+    parent_phone: str = Form(...),
+    parent_email: str = Form(""),
+    custom_theme: str = Form(""),
 ):
+    parent_phone, parent_email = validate_parent_contact(parent_phone, parent_email)
     child_gender = child_gender.strip()
     if child_gender not in {"girl", "boy"}:
         raise HTTPException(status_code=400, detail="Veuillez choisir fille ou garçon.")
@@ -228,6 +255,8 @@ async def preview_cover(
 
     if not name or not age or age_value is None or not selected_themes:
         raise HTTPException(status_code=400, detail="Informations incomplètes.")
+
+    resolved_themes = resolve_order_themes(selected_themes, custom_theme)
 
     data = await photo.read()
     if not data:
@@ -265,7 +294,7 @@ Aucun texte, logo ou watermark. Aucun personnage ou univers protégé.
 
         covers = []
         cover_bytes_list = []
-        for selected_theme in selected_themes:
+        for selected_theme, client_idea in resolved_themes:
             title = generate_title(client, name, age, selected_theme, language, child_gender)
             cover_bytes = generate_cover(
                 client, reference_bytes, name, age, selected_theme, language, title, child_gender
@@ -274,11 +303,12 @@ Aucun texte, logo ou watermark. Aucun personnage ou univers protégé.
             covers.append({
                 "title": title,
                 "theme": selected_theme,
+                "idea": client_idea,
                 "cover_data_url": "data:image/png;base64," + base64.b64encode(cover_bytes).decode("ascii"),
             })
 
         order_ref = datetime.now().strftime("MLH-%Y%m%d-%H%M%S-") + uuid.uuid4().hex[:6].upper()
-        save_order_to_supabase(order_ref, name, age_value, language, len(selected_themes), covers, reference_bytes, cover_bytes_list, child_gender)
+        save_order_to_supabase(order_ref, name, age_value, language, len(selected_themes), covers, reference_bytes, cover_bytes_list, child_gender, parent_phone, parent_email)
 
         return {
             "ok": True,

@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=20261031-magic">
-<link rel="stylesheet" href="magic.css?v=20261031-01">
+<link rel="stylesheet" href="magic.css?v=20261031-contact">
 </head>
 <body class="magic-site">
 <a class="skip-link" href="#creation">Aller à la création</a>
@@ -106,8 +106,11 @@
         <label>Âge<select id="childAge"><option value="">Choisir</option><option>3 ans</option><option>4 ans</option><option>5 ans</option><option>6 ans</option><option>7 ans</option><option>8 ans</option><option>9 ans</option><option>10 ans</option><option>11 ans</option><option>12 ans</option></select></label>
         <label>Votre enfant<select id="childGender" required><option value="">Choisir</option><option value="girl">Fille</option><option value="boy">Garçon</option></select></label>
         <label>Langue<select id="language"><option>Français</option><option>English</option><option>Español</option><option>العربية</option></select></label>
+        <label>Téléphone du parent (obligatoire)<input id="parentPhone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="25" placeholder="Ex. +212 6 12 34 56 78" aria-describedby="parentContactHint"></label>
+        <label>E-mail du parent (facultatif)<input id="parentEmail" type="email" autocomplete="email" maxlength="254" placeholder="Ex. parent@exemple.com"></label>
         <label>Photo de l'enfant<input id="childPhoto" type="file" accept="image/jpeg,image/png,image/webp"></label>
       </div>
+      <p class="muted" id="parentContactHint">Votre téléphone nous permet de vous contacter pour votre commande. Ajoutez l’indicatif du pays si nécessaire.</p>
       <div class="photo-preview" id="photoPreview" hidden><img id="photoPreviewImg" alt="Aperçu"><div><b>Photo sélectionnée ✓</b><span>Elle servira à créer son personnage.</span></div></div>
       <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Retour</button><button type="button" class="btn btn-primary next">Continuer →</button></div>
     </div>
@@ -124,6 +127,12 @@
         <button type="button" data-theme="🏰 Chevalier et château" data-theme-label="Chevalier"><span class="theme-icon" aria-hidden="true">🏰</span><span>Chevalier</span></button><button type="button" data-theme="🎨 Aventure artistique" data-theme-label="Art"><span class="theme-icon" aria-hidden="true">🎨</span><span>Art</span></button><button type="button" data-theme="🎵 Aventure musicale" data-theme-label="Musique"><span class="theme-icon" aria-hidden="true">🎵</span><span>Musique</span></button><button type="button" data-theme="💃 Danse et spectacle" data-theme-label="Danse"><span class="theme-icon" aria-hidden="true">💃</span><span>Danse</span></button>
         <button type="button" data-theme="🍰 Aventure de pâtisserie" data-theme-label="Pâtisserie"><span class="theme-icon" aria-hidden="true">🍰</span><span>Pâtisserie</span></button><button type="button" data-theme="👗 Création de mode" data-theme-label="Mode"><span class="theme-icon" aria-hidden="true">👗</span><span>Mode</span></button><button type="button" data-theme="🧪 Mission scientifique" data-theme-label="Science"><span class="theme-icon" aria-hidden="true">🧪</span><span>Science</span></button><button type="button" data-theme="⏳ Voyage dans le temps" data-theme-label="Temps"><span class="theme-icon" aria-hidden="true">⏳</span><span>Temps</span></button>
         <button type="button" data-theme="✨ Mon propre thème" data-theme-label="Mon propre thème"><span class="theme-icon" aria-hidden="true">✨</span><span>Mon propre thème</span></button>
+      </div>
+      <div id="customThemeBox" class="custom-theme-box" hidden>
+        <label for="customTheme">Décrivez son thème personnalisé</label>
+        <p id="customThemeHint">Indiquez l’univers, la mission et les personnages que votre enfant aimerait retrouver.</p>
+        <textarea id="customTheme" rows="4" maxlength="600" aria-describedby="customThemeHint" placeholder="Ex. Une aventure dans un jardin magique pour aider les animaux à retrouver leurs couleurs."></textarea>
+        <small>600 caractères maximum. Cette idée sera utilisée pour sa couverture et son histoire.</small>
       </div>
       <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Retour</button><button type="button" class="btn btn-primary next">Commencer mon histoire →</button></div>
     </div>
@@ -143,6 +152,8 @@
         <div><span>Votre enfant</span><b id="summaryGender">—</b></div>
         <div><span>Âge</span><b id="summaryAge">—</b></div>
         <div><span>Langue</span><b id="summaryLang">Français</b></div>
+        <div><span>Téléphone du parent</span><b id="summaryPhone">—</b></div>
+        <div><span>E-mail du parent</span><b id="summaryEmail">—</b></div>
         <div><span>Pack</span><b id="summaryPack">Little Hero</b></div>
         <div class="summary-adventures" id="summaryAdventures"></div>
         <div class="total"><span>Total digital</span><b id="summaryPrice">99 DH</b></div>
@@ -181,7 +192,7 @@
   <small>© 2026 My Little Hero · Tous droits réservés · <a href="https://wa.me/212603983800" target="_blank" rel="noopener">WhatsApp</a></small>
 </footer>
 <script src="themes.js?v=20261028-01"></script>
-<script src="script.js?v=20261031-magic"></script>
-<script src="preview.js?v=20261029-01"></script>
+<script src="script.js?v=20261031-contact"></script>
+<script src="preview.js?v=20261031-contact"></script>
 </body>
 </html>
