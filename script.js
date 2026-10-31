@@ -1,5 +1,89 @@
-document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:99,name:"",age:"",language:"Français",gender:"",photo:"",themes:[]};const packNames={1:"Little Hero",2:"Super Hero",3:"Hero Gift"};const prices={1:99,2:179,3:249};const phone="212603983800";const creation=document.getElementById("creation");const cards=[...document.querySelectorAll(".wizard-card")];const labels=[...document.querySelectorAll(".steps-labels span")];const bar=document.getElementById("progressBar");let step=1;const maxThemes=()=>state.pack;function render(){cards.forEach((c,i)=>c.hidden=i+1!==step);bar.style.width=(step*25)+"%";labels.forEach((x,i)=>x.classList.toggle("active",i+1===step))}function openCreation(pack=1){state.pack=Number(pack);state.price=prices[state.pack];state.themes=[];document.querySelectorAll(".choice").forEach(x=>x.classList.toggle("selected",Number(x.dataset.wizardPack)===state.pack));creation.hidden=false;creation.scrollIntoView({behavior:"smooth",block:"start"});step=1;updateAdventureUI();updatePreview();render()}document.querySelectorAll("[data-open-creation]").forEach(b=>b.addEventListener("click",()=>openCreation(state.pack)));document.querySelectorAll("[data-pack]").forEach(b=>b.addEventListener("click",()=>openCreation(b.dataset.pack)));document.querySelectorAll("[data-wizard-pack]").forEach(b=>b.addEventListener("click",()=>{state.pack=Number(b.dataset.wizardPack);state.price=prices[state.pack];state.themes=[];document.querySelectorAll(".choice").forEach(x=>x.classList.toggle("selected",x===b));updateAdventureUI();updatePreview()}));document.getElementById("childGender").addEventListener("change",()=>{state.gender=document.getElementById("childGender").value;state.themes=[];document.querySelectorAll(".theme-choice-grid button").forEach(x=>x.classList.remove("selected"));updateAdventureUI();updatePreview()});const photoInput=document.getElementById("childPhoto");photoInput.addEventListener("change",e=>{const file=e.target.files[0];if(!file)return;if(file.size>8*1024*1024){alert("La photo doit faire moins de 8 Mo.");photoInput.value="";return}const reader=new FileReader();reader.onload=()=>{state.photo=reader.result;document.getElementById("photoPreviewImg").src=state.photo;document.getElementById("photoPreview").hidden=false};reader.readAsDataURL(file)});document.querySelectorAll(".theme-choice-grid button").forEach(b=>b.addEventListener("click",()=>{const theme=b.dataset.theme;if(state.themes.includes(theme)){state.themes=state.themes.filter(x=>x!==theme)}else{if(state.themes.length>=maxThemes()){alert("Votre pack contient "+maxThemes()+" aventure"+(maxThemes()>1?"s":"")+" .");return}state.themes.push(theme)}document.querySelectorAll(".theme-choice-grid button").forEach(x=>x.classList.toggle("selected",state.themes.includes(x.dataset.theme)));updateAdventureUI();updatePreview()}));function themeLabel(v){return v.replace(/^\s*[\p{Extended_Pictographic}\p{Emoji_Presentation}\uFE0F]+\s*/u,"").trim()}function updateAdventureUI(){const n=maxThemes();document.getElementById("themeInstruction").textContent="Choisissez exactement "+n+" aventure"+(n>1?"s":"")+".";document.getElementById("adventureSlots").innerHTML=Array.from({length:n},(_,i)=>'<span class="adventure-slot '+(state.themes[i]?"done":"")+'">Aventure '+(i+1)+(state.themes[i]?" · "+themeLabel(state.themes[i]):" · à choisir")+"</span>").join("")}document.querySelectorAll(".next").forEach(b=>b.addEventListener("click",async()=>{const currentStep=Number(b.closest(".wizard-card")?.dataset.step||step);if(currentStep===2){state.name=document.getElementById("childName").value.trim();state.age=document.getElementById("childAge").value;state.language=document.getElementById("language").value;state.gender=document.getElementById("childGender").value;const photoFile=photoInput.files?.[0];if(!state.name||!state.age||!state.gender||!photoFile){alert("Veuillez renseigner le prénom, l'âge, fille ou garçon et la photo de votre enfant.");return}}if(currentStep===3){if(state.themes.length!==maxThemes()){alert("Choisissez exactement "+maxThemes()+" aventure"+(maxThemes()>1?"s":"")+" pour continuer.");return}if(window.generateStoryPreview){b.disabled=true;const ok=await window.generateStoryPreview({name:state.name,age:state.age,language:state.language,gender:state.gender,themes:state.themes,photoFile:photoInput.files?.[0]});b.disabled=false;if(!ok)return;}}if(step<4)step++;updatePreview();render()}));document.querySelectorAll(".back").forEach(b=>b.addEventListener("click",()=>{if(step>1)step--;render()}));function updatePreview(){document.getElementById("summaryGender").textContent=state.gender==="girl"?"Fille":state.gender==="boy"?"Garçon":"—";document.getElementById("summaryName").textContent=state.name||"Votre enfant";document.getElementById("summaryAge").textContent=state.age||"—";document.getElementById("summaryLang").textContent=state.language;document.getElementById("summaryPack").textContent=packNames[state.pack];document.getElementById("summaryPrice").textContent=state.price+" DH";const previewTitle=document.getElementById("previewTitle");if(previewTitle)previewTitle.textContent=state.name?state.name+" et ses aventures":"Mon aventure";const previewTheme=document.getElementById("previewTheme");if(previewTheme)previewTheme.textContent=state.themes.length?state.themes.map(themeLabel).join(" · "):"Choisissez un univers";document.getElementById("summaryAdventures").innerHTML=state.themes.map((x,i)=>"<div><b>Aventure "+(i+1)+":</b> "+x+"</div>").join("")}document.getElementById("orderButton").addEventListener("click",()=>{const msg="Bonjour My Little Hero\nJe souhaite commander une aventure personnalisée.\n\nHéros : "+(state.name||"À préciser")+"\nEnfant : "+(state.gender==="girl"?"Fille":"Garçon")+"\nÂge : "+(state.age||"À préciser")+"\nLangue : "+state.language+"\nPack : "+packNames[state.pack]+"\nAventures : "+(state.themes.map(themeLabel).join(", ")||"À choisir")+"\nPrix digital : "+state.price+" DH\nPhoto : je l'enverrai dans cette conversation WhatsApp.\n\nJe souhaite valider ma commande.";window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(msg),"_blank")});updateAdventureUI();updatePreview();render()});
+document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:99,name:"",age:"",language:"Français",gender:"",photo:"",themes:[]};const packNames={1:"Little Hero",2:"Super Hero",3:"Hero Gift"};const prices={1:99,2:179,3:249};const phone="212603983800";const creation=document.getElementById("creation");const cards=[...document.querySelectorAll(".wizard-card")];const labels=[...document.querySelectorAll(".steps-labels span")];const bar=document.getElementById("progressBar");let step=1;const maxThemes=()=>state.pack;function render(){cards.forEach((c,i)=>c.hidden=i+1!==step);bar.style.width=(step*25)+"%";bar.setAttribute("aria-valuenow",String(step));labels.forEach((x,i)=>x.classList.toggle("active",i+1===step))}function openCreation(pack=1){state.pack=Number(pack);state.price=prices[state.pack];state.themes=[];document.querySelectorAll(".choice").forEach(x=>x.classList.toggle("selected",Number(x.dataset.wizardPack)===state.pack));creation.hidden=false;creation.scrollIntoView({behavior:"smooth",block:"start"});step=1;updateAdventureUI();updatePreview();render()}document.querySelectorAll("[data-open-creation]").forEach(b=>b.addEventListener("click",()=>openCreation(state.pack)));document.querySelectorAll("[data-pack]").forEach(b=>b.addEventListener("click",()=>openCreation(b.dataset.pack)));document.querySelectorAll("[data-wizard-pack]").forEach(b=>b.addEventListener("click",()=>{state.pack=Number(b.dataset.wizardPack);state.price=prices[state.pack];state.themes=[];document.querySelectorAll(".choice").forEach(x=>x.classList.toggle("selected",x===b));updateAdventureUI();updatePreview()}));document.getElementById("childGender").addEventListener("change",()=>{state.gender=document.getElementById("childGender").value;state.themes=[];document.querySelectorAll(".theme-choice-grid button").forEach(x=>x.classList.remove("selected"));updateAdventureUI();updatePreview()});const photoInput=document.getElementById("childPhoto");photoInput.addEventListener("change",e=>{const file=e.target.files[0];if(!file)return;if(file.size>8*1024*1024){alert("La photo doit faire moins de 8 Mo.");photoInput.value="";return}const reader=new FileReader();reader.onload=()=>{state.photo=reader.result;document.getElementById("photoPreviewImg").src=state.photo;document.getElementById("photoPreview").hidden=false};reader.readAsDataURL(file)});document.querySelectorAll(".theme-choice-grid button").forEach(b=>b.addEventListener("click",()=>{const theme=b.dataset.theme;if(state.themes.includes(theme)){state.themes=state.themes.filter(x=>x!==theme)}else{if(state.themes.length>=maxThemes()){alert("Votre pack contient "+maxThemes()+" aventure"+(maxThemes()>1?"s":"")+" .");return}state.themes.push(theme)}document.querySelectorAll(".theme-choice-grid button").forEach(x=>x.classList.toggle("selected",state.themes.includes(x.dataset.theme)));updateAdventureUI();updatePreview()}));function themeLabel(v){return v.replace(/^\s*[\p{Extended_Pictographic}\p{Emoji_Presentation}\uFE0F]+\s*/u,"").trim()}function updateAdventureUI(){const n=maxThemes();document.getElementById("themeInstruction").textContent="Choisissez exactement "+n+" aventure"+(n>1?"s":"")+".";document.getElementById("adventureSlots").innerHTML=Array.from({length:n},(_,i)=>'<span class="adventure-slot '+(state.themes[i]?"done":"")+'">Aventure '+(i+1)+(state.themes[i]?" · "+themeLabel(state.themes[i]):" · à choisir")+"</span>").join("")}document.querySelectorAll(".next").forEach(b=>b.addEventListener("click",async()=>{const currentStep=Number(b.closest(".wizard-card")?.dataset.step||step);if(currentStep===2){state.name=document.getElementById("childName").value.trim();state.age=document.getElementById("childAge").value;state.language=document.getElementById("language").value;state.gender=document.getElementById("childGender").value;const photoFile=photoInput.files?.[0];if(!state.name||!state.age||!state.gender||!photoFile){alert("Veuillez renseigner le prénom, l'âge, fille ou garçon et la photo de votre enfant.");return}}if(currentStep===3){if(state.themes.length!==maxThemes()){alert("Choisissez exactement "+maxThemes()+" aventure"+(maxThemes()>1?"s":"")+" pour continuer.");return}if(window.generateStoryPreview){b.disabled=true;const ok=await window.generateStoryPreview({name:state.name,age:state.age,language:state.language,gender:state.gender,themes:state.themes,photoFile:photoInput.files?.[0]});b.disabled=false;if(!ok)return;}}if(step<4)step++;updatePreview();render();focusCurrentStep()}));document.querySelectorAll(".back").forEach(b=>b.addEventListener("click",()=>{if(step>1)step--;render();focusCurrentStep()}));function focusCurrentStep(){const card=cards[step-1],heading=card?.querySelector("h3");if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});card.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})}}function updatePreview(){document.getElementById("summaryGender").textContent=state.gender==="girl"?"Fille":state.gender==="boy"?"Garçon":"—";document.getElementById("summaryName").textContent=state.name||"Votre enfant";document.getElementById("summaryAge").textContent=state.age||"—";document.getElementById("summaryLang").textContent=state.language;document.getElementById("summaryPack").textContent=packNames[state.pack];document.getElementById("summaryPrice").textContent=state.price+" DH";const previewTitle=document.getElementById("previewTitle");if(previewTitle)previewTitle.textContent=state.name?state.name+" et ses aventures":"Mon aventure";const previewTheme=document.getElementById("previewTheme");if(previewTheme)previewTheme.textContent=state.themes.length?state.themes.map(themeLabel).join(" · "):"Choisissez un univers";document.getElementById("summaryAdventures").innerHTML=state.themes.map((x,i)=>"<div><b>Aventure "+(i+1)+":</b> "+x+"</div>").join("")}document.getElementById("orderButton").addEventListener("click",()=>{const msg="Bonjour My Little Hero\nJe souhaite commander une aventure personnalisée.\n\nHéros : "+(state.name||"À préciser")+"\nEnfant : "+(state.gender==="girl"?"Fille":"Garçon")+"\nÂge : "+(state.age||"À préciser")+"\nLangue : "+state.language+"\nPack : "+packNames[state.pack]+"\nAventures : "+(state.themes.map(themeLabel).join(", ")||"À choisir")+"\nPrix digital : "+state.price+" DH\nPhoto : je l'enverrai dans cette conversation WhatsApp.\n\nJe souhaite valider ma commande.";window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(msg),"_blank")});updateAdventureUI();updatePreview();render()});
 const T={
+    "✓ Personnalisé":"✓ مخصص",
+    "✓ Dès 99 DH":"✓ ابتداءً من 99 درهم",
+    "✓ Digital ou imprimé":"✓ رقمي أو مطبوع",
+    "⭐ LE PLUS CHOISI":"⭐ الأكثر اختيارًا",
+    "✓ 1 aventure de 10 pages":"✓ مغامرة واحدة من 10 صفحات",
+    "✓ 2 aventures de 10 pages":"✓ مغامرتان من 10 صفحات",
+    "✓ 3 aventures de 10 pages":"✓ 3 مغامرات من 10 صفحات",
+    "✓ Son personnage personnalisé":"✓ شخصية مخصصة له",
+    "✓ Illustrations à colorier":"✓ رسومات للتلوين",
+    "✓ Deux univers au choix":"✓ عالمان للاختيار",
+    "✓ Deux livres personnalisés":"✓ كتابان مخصصان",
+    "✓ Trois univers au choix":"✓ ثلاثة عوالم للاختيار",
+    "✓ Trois livres personnalisés":"✓ ثلاثة كتب مخصصة",
+    "Choisir Little Hero →":"اختر Little Hero ←",
+    "Choisir Super Hero →":"اختر Super Hero ←",
+    "Choisir Hero Gift →":"اختر Hero Gift ←",
+    "QUESTIONS FRÉQUENTES":"الأسئلة الشائعة",
+    "Tout ce qu'il faut savoir":"كل ما تحتاج لمعرفته",
+    "avant de créer.":"قبل إنشاء الكتاب.",
+    "Une question ? Vous pouvez aussi nous écrire directement sur WhatsApp.":"لديك سؤال؟ يمكنك مراسلتنا مباشرة عبر واتساب.",
+    "À partir de quel âge ?":"لأي عمر تناسب هذه الكتب؟",
+    "Les aventures sont pensées pour les enfants à partir de 3 ans, avec une histoire adaptée à leur âge.":"المغامرات مخصصة للأطفال من عمر 3 سنوات، بقصص تناسب أعمارهم.",
+    "Quel type de photo dois-je envoyer ?":"ما نوع الصورة التي أرسلها؟",
+    "Une photo claire de votre enfant, de préférence avec le visage bien visible. Les formats JPG, PNG et WEBP sont acceptés.":"صورة واضحة لطفلك، ويفضل أن يظهر الوجه بوضوح. نقبل JPG وPNG وWEBP.",
+    "Quels formats puis-je commander ?":"ما النسخ التي يمكنني طلبها؟",
+    "Vous pouvez choisir le livre digital, le livre imprimé ou la formule Coffret cadeau. Le choix final est confirmé sur WhatsApp.":"يمكنك اختيار الكتاب الرقمي أو المطبوع أو صندوق الهدايا. يتم تأكيد الاختيار عبر واتساب.",
+    "Comment se passe la commande ?":"كيف يتم الطلب؟",
+    "Vous remplissez le formulaire, puis cliquez sur « Commander sur WhatsApp ». Notre équipe vous confirme les détails et la suite de la commande.":"املأ النموذج ثم أكّد طلبك عبر واتساب. يؤكد فريقنا التفاصيل والخطوات التالية.",
+    "Mon enfant peut-il choisir plusieurs univers ?":"هل يمكن لطفلي اختيار أكثر من عالم؟",
+    "Oui. Little Hero contient 1 aventure, Super Hero 2 aventures et Hero Gift 3 aventures. Vous choisissez les univers pendant la création.":"نعم. تتضمن Little Hero مغامرة واحدة، وSuper Hero مغامرتين، وHero Gift ثلاث مغامرات. تختار العوالم أثناء الإنشاء.",
+    "La photo de mon enfant est-elle publique ?":"هل صورة طفلي متاحة للجميع؟",
+    "Non. La photo est utilisée pour préparer la commande et n'est pas destinée à être publiée sur le site.":"لا. تُستخدم الصورة لإعداد الطلب ولا تُنشر على الموقع.",
+    "Vous préférez nous parler directement ?":"هل تفضل التحدث إلينا مباشرة؟",
+    "Notre équipe peut vous accompagner pour choisir le bon pack.":"يمكن لفريقنا مساعدتك في اختيار الباقة المناسبة.",
+    "Des histoires personnalisées où chaque enfant devient le héros de son propre monde.":"قصص مخصصة يصبح فيها كل طفل بطل عالمه الخاص.",
+    "🧙 Monde magique":"🧙 العالم السحري",
+    "🦄 Licorne":"🦄 اليونيكورن",
+    "🚀 Espace":"🚀 الفضاء",
+    "🦖 Dinosaures":"🦖 الديناصورات",
+    "🏴‍☠️ Pirates":"🏴‍☠️ القراصنة",
+    "🌊 Sous-marin":"🌊 العالم تحت الماء",
+    "⚽ Football":"⚽ كرة القدم",
+    "🕵️ Détective":"🕵️ المحقق",
+    "🤖 Robots":"🤖 الروبوتات",
+    "🏰 Chevalier":"🏰 الفارس",
+    "🎨 Art":"🎨 الفن",
+    "🍰 Pâtisserie":"🍰 الحلويات",
+    "✨ Son propre thème":"✨ موضوعه الخاص",
+    "Aller à la création":"الانتقال إلى إنشاء الكتاب",
+    "Le livre":"الكتاب",
+    "Feuilleter la magie":"اكتشف سحر الكتاب",
+    "PETIT HÉROS. GRANDE AVENTURE.":"بطل صغير. مغامرة كبيرة.",
+    "Son prénom.":"اسمه.",
+    "Son aventure.":"مغامرته.",
+    "Un héros à son image":"بطل يشبهه",
+    "De l’imagination à colorier":"خيال ينبض بالألوان",
+    "01 / IMAGINER":"01 / تخيّل",
+    "02 / EXPLORER":"02 / استكشف",
+    "03 / OSER":"03 / انطلق",
+    "Un peu de magie":"لمسة من السحر",
+    "Cap sur l’inconnu":"نحو المجهول",
+    "L’aventure en grand":"مغامرة بلا حدود",
+    "Royaumes, dragons et rencontres enchantées.":"ممالك وتنانين ولقاءات ساحرة.",
+    "Espace, océans et mondes extraordinaires.":"الفضاء والمحيطات وعوالم استثنائية.",
+    "Dinosaures, animaux et défis passionnants.":"ديناصورات وحيوانات وتحديات مشوقة.",
+    "APERÇU ILLUSTRATIF":"مثال توضيحي",
+    "Une mission extraordinaire":"مهمة استثنائية",
+    "DE LA PREMIÈRE À LA DERNIÈRE PAGE":"من أول صفحة إلى آخر صفحة",
+    "Une histoire à vivre.":"قصة تعيشها.",
+    "Un monde à colorier.":"عالم تلوّنه.",
+    "Un livre dont il est le personnage principal, et dont il choisit les couleurs.":"كتاب يكون فيه طفلك الشخصية الرئيسية، ويختار ألوانه بنفسه.",
+    "Son personnage, son histoire":"شخصيته وقصته",
+    "Son prénom et sa photo inspirent une aventure personnalisée.":"اسمه وصورته يلهمان مغامرة مخصصة له.",
+    "La magie continue sur le papier":"السحر يستمر على الورق",
+    "Des illustrations à colorier pour prolonger chaque moment de l’histoire.":"رسومات للتلوين لعيش كل لحظة من القصة.",
+    "À garder, à partager, à offrir":"ذكرى تحتفظ بها أو تشاركها أو تهديها",
+    "PDF à imprimer, livre imprimé ou coffret cadeau : à vous de choisir.":"ملف PDF للطباعة أو كتاب مطبوع أو صندوق هدايا: الخيار لكم.",
+    "Découvrir les formules":"اكتشف الخيارات",
+    "Vos livres sont prêts":"معاينة كتبكم جاهزة",
+    "Vos aperçus sont prêts":"معاينة كتبكم جاهزة",
+    "Total digital":"المجموع الرقمي",
+    "La photo et les informations de votre enfant sont utilisées uniquement pour préparer sa commande.":"تُستخدم صورة طفلك ومعلوماته فقط لإعداد طلبه.",
+    "💬 Votre aperçu est prêt. Validez maintenant votre commande sur WhatsApp pour confirmer le format et finaliser avec notre équipe.":"💬 المعاينة جاهزة. أكّد طلبك عبر واتساب لاختيار النسخة وإتمام الطلب مع فريقنا.",
+    "Nous allons créer la couverture de votre livre. Cela peut prendre quelques instants.":"سننشئ غلاف كتابك. قد يستغرق ذلك بعض الوقت.",
     "Comment ça marche":"كيف يعمل؟","Aventures":"المغامرات","Packs":"الباقات","FAQ":"الأسئلة الشائعة",
     "Créer son aventure":"أنشئ مغامرته","Créer mon aventure":"أنشئ مغامرتك","UNE HISTOIRE CRÉÉE RIEN QUE POUR LUI":"قصة صُنعت خصيصًا له","✨ UNE HISTOIRE CRÉÉE RIEN QUE POUR LUI":"قصة صُنعت خصيصًا له",
     "UNE AVENTURE RIEN QU'À LUI":"مغامرة صُنعت خصيصًا له","Votre enfant devient":"طفلك يصبح","le héros":"البطل",
@@ -90,7 +174,10 @@ const T={
     nodes.forEach(n=>{
       if(!originals.has(n))originals.set(n,n.nodeValue);
       const base=norm(originals.get(n));
-      if(base)n.nodeValue=ar?(T[base]||base):base;
+      if(base){
+        const original=originals.get(n), leading=original.match(/^\s*/)[0], trailing=original.match(/\s*$/)[0];
+        n.nodeValue=leading+(ar?(T[base]||base):base)+trailing;
+      }
     });
     applyHeadings(ar);
     document.querySelectorAll("[data-theme-label]").forEach(b=>{
@@ -135,3 +222,10 @@ const T={
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",setup);else setup();
 })();
+
+// Close the mobile navigation after choosing a destination.
+document.addEventListener("DOMContentLoaded",()=>{
+  const menu=document.querySelector(".mobile-menu");
+  menu?.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{menu.open=false;}));
+  document.addEventListener("keydown",event=>{if(event.key==="Escape"&&menu?.open){menu.open=false;menu.querySelector("summary").focus();}});
+});
