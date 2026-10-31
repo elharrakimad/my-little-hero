@@ -150,7 +150,7 @@ window.MLH_THEME_CATALOG = [
     "label": "L’école des petits magiciens",
     "ar": "مدرسة السحرة الصغار",
     "category": "magic",
-    "icon": "✨",
+    "icon": "🏫",
     "theme": "🪄 L’école des petits magiciens",
     "profile": ""
   },
@@ -158,7 +158,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le château dans les nuages",
     "ar": "القلعة فوق السحاب",
     "category": "magic",
-    "icon": "✨",
+    "icon": "☁️",
     "theme": "🪄 Le château dans les nuages",
     "profile": ""
   },
@@ -166,7 +166,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La forêt des lutins",
     "ar": "غابة الأقزام",
     "category": "magic",
-    "icon": "✨",
+    "icon": "🧝",
     "theme": "🪄 La forêt des lutins",
     "profile": ""
   },
@@ -174,7 +174,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La quête du phénix",
     "ar": "البحث عن طائر العنقاء",
     "category": "magic",
-    "icon": "✨",
+    "icon": "🔥",
     "theme": "🪄 La quête du phénix",
     "profile": ""
   },
@@ -182,7 +182,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le royaume des géants gentils",
     "ar": "مملكة العمالقة الطيبين",
     "category": "magic",
-    "icon": "✨",
+    "icon": "🤗",
     "theme": "🪄 Le royaume des géants gentils",
     "profile": ""
   },
@@ -198,7 +198,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le livre des sortilèges perdus",
     "ar": "كتاب التعويذات المفقودة",
     "category": "magic",
-    "icon": "✨",
+    "icon": "📖",
     "theme": "🪄 Le livre des sortilèges perdus",
     "profile": ""
   },
@@ -238,7 +238,7 @@ window.MLH_THEME_CATALOG = [
     "label": "L’île aux cartes mystérieuses",
     "ar": "جزيرة الخرائط الغامضة",
     "category": "explore",
-    "icon": "🧭",
+    "icon": "🏝️",
     "theme": "🧭 L’île aux cartes mystérieuses",
     "profile": ""
   },
@@ -246,7 +246,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le secret de la pyramide",
     "ar": "سر الهرم",
     "category": "explore",
-    "icon": "🧭",
+    "icon": "🔺",
     "theme": "🧭 Le secret de la pyramide",
     "profile": ""
   },
@@ -254,7 +254,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le temple caché de la jungle",
     "ar": "المعبد المخفي في الأدغال",
     "category": "explore",
-    "icon": "🧭",
+    "icon": "🛕",
     "theme": "🧭 Le temple caché de la jungle",
     "profile": ""
   },
@@ -262,7 +262,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le train des énigmes",
     "ar": "قطار الألغاز",
     "category": "explore",
-    "icon": "🧭",
+    "icon": "🚂",
     "theme": "🧭 Le train des énigmes",
     "profile": ""
   },
@@ -270,7 +270,7 @@ window.MLH_THEME_CATALOG = [
     "label": "L’expédition au pôle Nord",
     "ar": "رحلة إلى القطب الشمالي",
     "category": "explore",
-    "icon": "🧭",
+    "icon": "❄️",
     "theme": "🧭 L’expédition au pôle Nord",
     "profile": ""
   },
@@ -278,7 +278,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Les portes du labyrinthe",
     "ar": "أبواب المتاهة",
     "category": "explore",
-    "icon": "🧭",
+    "icon": "🧩",
     "theme": "🧭 Les portes du labyrinthe",
     "profile": ""
   },
@@ -286,7 +286,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La cité oubliée du désert",
     "ar": "المدينة المنسية في الصحراء",
     "category": "explore",
-    "icon": "🧭",
+    "icon": "🏜️",
     "theme": "🧭 La cité oubliée du désert",
     "profile": ""
   },
@@ -294,7 +294,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le musée aux objets disparus",
     "ar": "متحف الأشياء المفقودة",
     "category": "explore",
-    "icon": "🧭",
+    "icon": "🏛️",
     "theme": "🧭 Le musée aux objets disparus",
     "profile": ""
   },
@@ -302,7 +302,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le message dans la bouteille",
     "ar": "الرسالة داخل الزجاجة",
     "category": "explore",
-    "icon": "🧭",
+    "icon": "📜",
     "theme": "🧭 Le message dans la bouteille",
     "profile": ""
   },
@@ -318,7 +318,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le premier voyage sur la Lune",
     "ar": "الرحلة الأولى إلى القمر",
     "category": "space",
-    "icon": "🚀",
+    "icon": "🌕",
     "theme": "🚀 Le premier voyage sur la Lune",
     "profile": ""
   },
@@ -326,7 +326,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La station spatiale des enfants",
     "ar": "محطة الأطفال الفضائية",
     "category": "space",
-    "icon": "🚀",
+    "icon": "🛰️",
     "theme": "🚀 La station spatiale des enfants",
     "profile": ""
   },
@@ -334,7 +334,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le jardin de la planète Mars",
     "ar": "حديقة كوكب المريخ",
     "category": "space",
-    "icon": "🚀",
+    "icon": "🔴",
     "theme": "🚀 Le jardin de la planète Mars",
     "profile": ""
   },
@@ -342,7 +342,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La chasse aux étoiles filantes",
     "ar": "البحث عن الشهب",
     "category": "space",
-    "icon": "🚀",
+    "icon": "🌠",
     "theme": "🚀 La chasse aux étoiles filantes",
     "profile": ""
   },
@@ -350,7 +350,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le robot perdu sur Saturne",
     "ar": "الروبوت التائه على زحل",
     "category": "space",
-    "icon": "🚀",
+    "icon": "🤖",
     "theme": "🚀 Le robot perdu sur Saturne",
     "profile": ""
   },
@@ -358,7 +358,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Les amis de la planète arc-en-ciel",
     "ar": "أصدقاء كوكب قوس قزح",
     "category": "space",
-    "icon": "🚀",
+    "icon": "🌈",
     "theme": "🚀 Les amis de la planète arc-en-ciel",
     "profile": ""
   },
@@ -366,7 +366,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La course des comètes",
     "ar": "سباق المذنبات",
     "category": "space",
-    "icon": "🚀",
+    "icon": "☄️",
     "theme": "🚀 La course des comètes",
     "profile": ""
   },
@@ -374,7 +374,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le mystère du satellite silencieux",
     "ar": "لغز القمر الصناعي الصامت",
     "category": "space",
-    "icon": "🚀",
+    "icon": "📡",
     "theme": "🚀 Le mystère du satellite silencieux",
     "profile": ""
   },
@@ -382,7 +382,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La bibliothèque des galaxies",
     "ar": "مكتبة المجرات",
     "category": "space",
-    "icon": "🚀",
+    "icon": "📚",
     "theme": "🚀 La bibliothèque des galaxies",
     "profile": ""
   },
@@ -390,7 +390,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le petit astronaute et la nébuleuse",
     "ar": "رائد الفضاء الصغير والسديم",
     "category": "space",
-    "icon": "🚀",
+    "icon": "👨‍🚀",
     "theme": "🚀 Le petit astronaute et la nébuleuse",
     "profile": ""
   },
@@ -398,7 +398,7 @@ window.MLH_THEME_CATALOG = [
     "label": "L’orchestre des constellations",
     "ar": "أوركسترا الكوكبات",
     "category": "space",
-    "icon": "🚀",
+    "icon": "🌌",
     "theme": "🚀 L’orchestre des constellations",
     "profile": ""
   },
@@ -430,7 +430,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le volcan des dinosaures",
     "ar": "بركان الديناصورات",
     "category": "dinos",
-    "icon": "🦕",
+    "icon": "🌋",
     "theme": "🦕 Le volcan des dinosaures",
     "profile": ""
   },
@@ -438,7 +438,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le nid du ptérodactyle",
     "ar": "عش الزاحف الطائر",
     "category": "dinos",
-    "icon": "🦕",
+    "icon": "🪶",
     "theme": "🦕 Le nid du ptérodactyle",
     "profile": ""
   },
@@ -454,7 +454,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La recherche de l’œuf géant",
     "ar": "البحث عن البيضة العملاقة",
     "category": "dinos",
-    "icon": "🦕",
+    "icon": "🥚",
     "theme": "🦕 La recherche de l’œuf géant",
     "profile": ""
   },
@@ -462,7 +462,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le mammouth et le chemin de glace",
     "ar": "الماموث والطريق الجليدي",
     "category": "dinos",
-    "icon": "🦕",
+    "icon": "🐘",
     "theme": "🦕 Le mammouth et le chemin de glace",
     "profile": ""
   },
@@ -470,7 +470,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le musée des fossiles vivants",
     "ar": "متحف الحفريات الحية",
     "category": "dinos",
-    "icon": "🦕",
+    "icon": "🦴",
     "theme": "🦕 Le musée des fossiles vivants",
     "profile": ""
   },
@@ -478,7 +478,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le concours des empreintes géantes",
     "ar": "مسابقة الآثار العملاقة",
     "category": "dinos",
-    "icon": "🦕",
+    "icon": "👣",
     "theme": "🦕 Le concours des empreintes géantes",
     "profile": ""
   },
@@ -494,7 +494,7 @@ window.MLH_THEME_CATALOG = [
     "label": "L’amitié avec un tyrannosaure",
     "ar": "الصداقة مع تيرانوصور",
     "category": "dinos",
-    "icon": "🦕",
+    "icon": "🦖",
     "theme": "🦕 L’amitié avec un tyrannosaure",
     "profile": ""
   },
@@ -502,7 +502,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le premier village préhistorique",
     "ar": "أول قرية في عصور ما قبل التاريخ",
     "category": "dinos",
-    "icon": "🦕",
+    "icon": "🛖",
     "theme": "🦕 Le premier village préhistorique",
     "profile": ""
   },
@@ -510,7 +510,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La forêt des fougères géantes",
     "ar": "غابة السرخس العملاق",
     "category": "dinos",
-    "icon": "🦕",
+    "icon": "🌿",
     "theme": "🦕 La forêt des fougères géantes",
     "profile": ""
   },
@@ -534,7 +534,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La tortue et le récif de corail",
     "ar": "السلحفاة والشعاب المرجانية",
     "category": "ocean",
-    "icon": "🐠",
+    "icon": "🐢",
     "theme": "🐠 La tortue et le récif de corail",
     "profile": ""
   },
@@ -542,7 +542,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le chant de la petite baleine",
     "ar": "أغنية الحوت الصغير",
     "category": "ocean",
-    "icon": "🐠",
+    "icon": "🐋",
     "theme": "🐠 Le chant de la petite baleine",
     "profile": ""
   },
@@ -550,7 +550,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le dauphin et la perle lumineuse",
     "ar": "الدلفين واللؤلؤة المضيئة",
     "category": "ocean",
-    "icon": "🐠",
+    "icon": "🐬",
     "theme": "🐠 Le dauphin et la perle lumineuse",
     "profile": ""
   },
@@ -558,7 +558,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le royaume des hippocampes",
     "ar": "مملكة خيول البحر",
     "category": "ocean",
-    "icon": "🐠",
+    "icon": "🐴",
     "theme": "🐠 Le royaume des hippocampes",
     "profile": ""
   },
@@ -566,7 +566,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le phare des marins perdus",
     "ar": "منارة البحارة التائهين",
     "category": "ocean",
-    "icon": "🐠",
+    "icon": "⚓",
     "theme": "🐠 Le phare des marins perdus",
     "profile": ""
   },
@@ -574,7 +574,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le jardin des méduses brillantes",
     "ar": "حديقة قناديل البحر المضيئة",
     "category": "ocean",
-    "icon": "🐠",
+    "icon": "🪼",
     "theme": "🐠 Le jardin des méduses brillantes",
     "profile": ""
   },
@@ -582,7 +582,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La pieuvre aux huit talents",
     "ar": "الأخطبوط صاحب المواهب الثماني",
     "category": "ocean",
-    "icon": "🐠",
+    "icon": "🐙",
     "theme": "🐠 La pieuvre aux huit talents",
     "profile": ""
   },
@@ -598,7 +598,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le trésor de l’épave endormie",
     "ar": "كنز السفينة الغارقة",
     "category": "ocean",
-    "icon": "🐠",
+    "icon": "🚢",
     "theme": "🐠 Le trésor de l’épave endormie",
     "profile": ""
   },
@@ -606,7 +606,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Les gardiens de la plage propre",
     "ar": "حراس الشاطئ النظيف",
     "category": "ocean",
-    "icon": "🐠",
+    "icon": "🏖️",
     "theme": "🐠 Les gardiens de la plage propre",
     "profile": ""
   },
@@ -614,7 +614,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La cité secrète des profondeurs",
     "ar": "مدينة الأعماق السرية",
     "category": "ocean",
-    "icon": "🐠",
+    "icon": "🐚",
     "theme": "🐠 La cité secrète des profondeurs",
     "profile": ""
   },
@@ -630,7 +630,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le camping sous les étoiles",
     "ar": "التخييم تحت النجوم",
     "category": "nature",
-    "icon": "🌳",
+    "icon": "🏕️",
     "theme": "🌳 Le camping sous les étoiles",
     "profile": ""
   },
@@ -638,7 +638,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La randonnée au sommet",
     "ar": "المشي إلى القمة",
     "category": "nature",
-    "icon": "🌳",
+    "icon": "🏔️",
     "theme": "🌳 La randonnée au sommet",
     "profile": ""
   },
@@ -646,7 +646,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le jardin des papillons",
     "ar": "حديقة الفراشات",
     "category": "nature",
-    "icon": "🌳",
+    "icon": "🦋",
     "theme": "🌳 Le jardin des papillons",
     "profile": ""
   },
@@ -662,7 +662,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La rivière des castors",
     "ar": "نهر القنادس",
     "category": "nature",
-    "icon": "🌳",
+    "icon": "🦫",
     "theme": "🌳 La rivière des castors",
     "profile": ""
   },
@@ -670,7 +670,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le secret des quatre saisons",
     "ar": "سر الفصول الأربعة",
     "category": "nature",
-    "icon": "🌳",
+    "icon": "🍂",
     "theme": "🌳 Le secret des quatre saisons",
     "profile": ""
   },
@@ -678,7 +678,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Les graines du jardin potager",
     "ar": "بذور حديقة الخضروات",
     "category": "nature",
-    "icon": "🌳",
+    "icon": "🌱",
     "theme": "🌳 Les graines du jardin potager",
     "profile": ""
   },
@@ -686,7 +686,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La mission des petites abeilles",
     "ar": "مهمة النحل الصغير",
     "category": "nature",
-    "icon": "🌳",
+    "icon": "🐝",
     "theme": "🌳 La mission des petites abeilles",
     "profile": ""
   },
@@ -694,7 +694,7 @@ window.MLH_THEME_CATALOG = [
     "label": "L’oasis du désert",
     "ar": "واحة الصحراء",
     "category": "nature",
-    "icon": "🌳",
+    "icon": "🏜️",
     "theme": "🌳 L’oasis du désert",
     "profile": ""
   },
@@ -702,7 +702,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le voyage d’une goutte de pluie",
     "ar": "رحلة قطرة مطر",
     "category": "nature",
-    "icon": "🌳",
+    "icon": "💧",
     "theme": "🌳 Le voyage d’une goutte de pluie",
     "profile": ""
   },
@@ -710,7 +710,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le réveil du printemps",
     "ar": "استيقاظ الربيع",
     "category": "nature",
-    "icon": "🌳",
+    "icon": "🌸",
     "theme": "🌳 Le réveil du printemps",
     "profile": ""
   },
@@ -718,7 +718,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La forêt à protéger",
     "ar": "الغابة التي نحميها",
     "category": "nature",
-    "icon": "🌳",
+    "icon": "🌲",
     "theme": "🌳 La forêt à protéger",
     "profile": ""
   },
@@ -742,7 +742,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le refuge des chiots",
     "ar": "ملجأ الجراء",
     "category": "animals",
-    "icon": "🐾",
+    "icon": "🐶",
     "theme": "🐾 Le refuge des chiots",
     "profile": ""
   },
@@ -750,7 +750,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le chaton et les toits du village",
     "ar": "الهر الصغير وأسطح القرية",
     "category": "animals",
-    "icon": "🐾",
+    "icon": "🐱",
     "theme": "🐾 Le chaton et les toits du village",
     "profile": ""
   },
@@ -758,7 +758,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La clinique du petit vétérinaire",
     "ar": "عيادة الطبيب البيطري الصغير",
     "category": "animals",
-    "icon": "🐾",
+    "icon": "🩺",
     "theme": "🐾 La clinique du petit vétérinaire",
     "profile": ""
   },
@@ -766,7 +766,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le cheval et la grande randonnée",
     "ar": "الحصان والرحلة الطويلة",
     "category": "animals",
-    "icon": "🐾",
+    "icon": "🐎",
     "theme": "🐾 Le cheval et la grande randonnée",
     "profile": ""
   },
@@ -774,7 +774,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le panda et la forêt de bambous",
     "ar": "الباندا وغابة الخيزران",
     "category": "animals",
-    "icon": "🐾",
+    "icon": "🐼",
     "theme": "🐾 Le panda et la forêt de bambous",
     "profile": ""
   },
@@ -782,7 +782,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le pingouin qui cherchait sa famille",
     "ar": "البطريق الذي يبحث عن عائلته",
     "category": "animals",
-    "icon": "🐾",
+    "icon": "🐧",
     "theme": "🐾 Le pingouin qui cherchait sa famille",
     "profile": ""
   },
@@ -790,7 +790,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La ferme des animaux complices",
     "ar": "مزرعة الحيوانات الصديقة",
     "category": "animals",
-    "icon": "🐾",
+    "icon": "🐮",
     "theme": "🐾 La ferme des animaux complices",
     "profile": ""
   },
@@ -798,7 +798,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le koala et l’arbre géant",
     "ar": "الكوالا والشجرة العملاقة",
     "category": "animals",
-    "icon": "🐾",
+    "icon": "🐨",
     "theme": "🐾 Le koala et l’arbre géant",
     "profile": ""
   },
@@ -806,7 +806,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La course des petits escargots",
     "ar": "سباق الحلزونات الصغيرة",
     "category": "animals",
-    "icon": "🐾",
+    "icon": "🐌",
     "theme": "🐾 La course des petits escargots",
     "profile": ""
   },
@@ -814,7 +814,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le renard et les lucioles",
     "ar": "الثعلب واليراعات",
     "category": "animals",
-    "icon": "🐾",
+    "icon": "🦊",
     "theme": "🐾 Le renard et les lucioles",
     "profile": ""
   },
@@ -822,7 +822,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La chouette et la nuit étoilée",
     "ar": "البومة والليلة المرصعة بالنجوم",
     "category": "animals",
-    "icon": "🐾",
+    "icon": "🦉",
     "theme": "🐾 La chouette et la nuit étoilée",
     "profile": ""
   },
@@ -854,7 +854,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La première compétition de natation",
     "ar": "أول مسابقة سباحة",
     "category": "sports",
-    "icon": "⚽",
+    "icon": "🏊",
     "theme": "⚽ La première compétition de natation",
     "profile": ""
   },
@@ -862,7 +862,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le tournoi de tennis des amis",
     "ar": "بطولة التنس للأصدقاء",
     "category": "sports",
-    "icon": "⚽",
+    "icon": "🎾",
     "theme": "⚽ Le tournoi de tennis des amis",
     "profile": ""
   },
@@ -870,7 +870,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La gymnastique et le grand spectacle",
     "ar": "الجمباز والعرض الكبير",
     "category": "sports",
-    "icon": "⚽",
+    "icon": "🤸",
     "theme": "⚽ La gymnastique et le grand spectacle",
     "profile": ""
   },
@@ -878,7 +878,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le voyage à vélo",
     "ar": "رحلة بالدراجة",
     "category": "sports",
-    "icon": "⚽",
+    "icon": "🚴",
     "theme": "⚽ Le voyage à vélo",
     "profile": ""
   },
@@ -886,7 +886,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Les premiers pas sur les skis",
     "ar": "الخطوات الأولى على الزلاجات",
     "category": "sports",
-    "icon": "⚽",
+    "icon": "⛷️",
     "theme": "⚽ Les premiers pas sur les skis",
     "profile": ""
   },
@@ -894,7 +894,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le skateboard et le parcours surprise",
     "ar": "لوح التزلج والمسار المفاجئ",
     "category": "sports",
-    "icon": "⚽",
+    "icon": "🛹",
     "theme": "⚽ Le skateboard et le parcours surprise",
     "profile": ""
   },
@@ -902,7 +902,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le judo et le respect de l’adversaire",
     "ar": "الجودو واحترام المنافس",
     "category": "sports",
-    "icon": "⚽",
+    "icon": "🥋",
     "theme": "⚽ Le judo et le respect de l’adversaire",
     "profile": ""
   },
@@ -910,7 +910,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La course d’athlétisme en équipe",
     "ar": "سباق ألعاب القوى الجماعي",
     "category": "sports",
-    "icon": "⚽",
+    "icon": "🏃",
     "theme": "⚽ La course d’athlétisme en équipe",
     "profile": ""
   },
@@ -918,7 +918,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le tournoi de volley sur la plage",
     "ar": "بطولة الكرة الطائرة على الشاطئ",
     "category": "sports",
-    "icon": "⚽",
+    "icon": "🏐",
     "theme": "⚽ Le tournoi de volley sur la plage",
     "profile": ""
   },
@@ -934,7 +934,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le premier vol en avion",
     "ar": "الرحلة الأولى بالطائرة",
     "category": "transport",
-    "icon": "🚂",
+    "icon": "✈️",
     "theme": "🚂 Le premier vol en avion",
     "profile": ""
   },
@@ -942,7 +942,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le voyage en montgolfière",
     "ar": "رحلة بالمنطاد",
     "category": "transport",
-    "icon": "🚂",
+    "icon": "🎈",
     "theme": "🚂 Le voyage en montgolfière",
     "profile": ""
   },
@@ -950,7 +950,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le bateau sur le grand fleuve",
     "ar": "القارب في النهر الكبير",
     "category": "transport",
-    "icon": "🚂",
+    "icon": "⛵",
     "theme": "🚂 Le bateau sur le grand fleuve",
     "profile": ""
   },
@@ -958,7 +958,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le camion qui aide le village",
     "ar": "الشاحنة التي تساعد القرية",
     "category": "transport",
-    "icon": "🚂",
+    "icon": "🚚",
     "theme": "🚂 Le camion qui aide le village",
     "profile": ""
   },
@@ -966,7 +966,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le bus des découvertes",
     "ar": "حافلة الاكتشافات",
     "category": "transport",
-    "icon": "🚂",
+    "icon": "🚌",
     "theme": "🚂 Le bus des découvertes",
     "profile": ""
   },
@@ -974,7 +974,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le rallye des voitures solaires",
     "ar": "رالي السيارات الشمسية",
     "category": "transport",
-    "icon": "🚂",
+    "icon": "🏎️",
     "theme": "🚂 Le rallye des voitures solaires",
     "profile": ""
   },
@@ -982,7 +982,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le petit pilote d’hélicoptère",
     "ar": "طيار المروحية الصغير",
     "category": "transport",
-    "icon": "🚂",
+    "icon": "🚁",
     "theme": "🚂 Le petit pilote d’hélicoptère",
     "profile": ""
   },
@@ -990,7 +990,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le voyage dans le métro",
     "ar": "رحلة في المترو",
     "category": "transport",
-    "icon": "🚂",
+    "icon": "🚇",
     "theme": "🚂 Le voyage dans le métro",
     "profile": ""
   },
@@ -998,7 +998,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le voilier et le vent farceur",
     "ar": "القارب الشراعي والريح المرحة",
     "category": "transport",
-    "icon": "🚂",
+    "icon": "⛵",
     "theme": "🚂 Le voilier et le vent farceur",
     "profile": ""
   },
@@ -1006,7 +1006,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La caravane à travers le désert",
     "ar": "القافلة عبر الصحراء",
     "category": "transport",
-    "icon": "🚂",
+    "icon": "🐪",
     "theme": "🚂 La caravane à travers le désert",
     "profile": ""
   },
@@ -1014,7 +1014,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le tour du monde en dirigeable",
     "ar": "حول العالم بالمنطاد الموجّه",
     "category": "transport",
-    "icon": "🚂",
+    "icon": "🎈",
     "theme": "🚂 Le tour du monde en dirigeable",
     "profile": ""
   },
@@ -1022,7 +1022,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Les pompiers et le chat perché",
     "ar": "رجال الإطفاء والقط فوق الشجرة",
     "category": "jobs",
-    "icon": "🧑‍🚒",
+    "icon": "🚒",
     "theme": "🧑‍🚒 Les pompiers et le chat perché",
     "profile": ""
   },
@@ -1030,7 +1030,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le médecin des doudous",
     "ar": "طبيب الدمى",
     "category": "jobs",
-    "icon": "🧑‍🚒",
+    "icon": "🧸",
     "theme": "🧑‍🚒 Le médecin des doudous",
     "profile": ""
   },
@@ -1038,7 +1038,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le boulanger et le pain du village",
     "ar": "الخباز وخبز القرية",
     "category": "jobs",
-    "icon": "🧑‍🚒",
+    "icon": "🥖",
     "theme": "🧑‍🚒 Le boulanger et le pain du village",
     "profile": ""
   },
@@ -1046,7 +1046,7 @@ window.MLH_THEME_CATALOG = [
     "label": "L’architecte de la maison des rêves",
     "ar": "مهندس بيت الأحلام",
     "category": "jobs",
-    "icon": "🧑‍🚒",
+    "icon": "🏗️",
     "theme": "🧑‍🚒 L’architecte de la maison des rêves",
     "profile": ""
   },
@@ -1054,7 +1054,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le facteur et la lettre importante",
     "ar": "ساعي البريد والرسالة المهمة",
     "category": "jobs",
-    "icon": "🧑‍🚒",
+    "icon": "📮",
     "theme": "🧑‍🚒 Le facteur et la lettre importante",
     "profile": ""
   },
@@ -1062,7 +1062,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le jardinier de la ville fleurie",
     "ar": "بستاني المدينة المزهرة",
     "category": "jobs",
-    "icon": "🧑‍🚒",
+    "icon": "🌷",
     "theme": "🧑‍🚒 Le jardinier de la ville fleurie",
     "profile": ""
   },
@@ -1070,7 +1070,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le photographe des petits bonheurs",
     "ar": "مصور لحظات السعادة الصغيرة",
     "category": "jobs",
-    "icon": "🧑‍🚒",
+    "icon": "📷",
     "theme": "🧑‍🚒 Le photographe des petits bonheurs",
     "profile": ""
   },
@@ -1078,7 +1078,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le gardien du parc naturel",
     "ar": "حارس المحمية الطبيعية",
     "category": "jobs",
-    "icon": "🧑‍🚒",
+    "icon": "🌲",
     "theme": "🧑‍🚒 Le gardien du parc naturel",
     "profile": ""
   },
@@ -1086,7 +1086,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le mécanicien des vélos",
     "ar": "ميكانيكي الدراجات",
     "category": "jobs",
-    "icon": "🧑‍🚒",
+    "icon": "🔧",
     "theme": "🧑‍🚒 Le mécanicien des vélos",
     "profile": ""
   },
@@ -1094,7 +1094,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le bibliothécaire et les livres voyageurs",
     "ar": "أمين المكتبة والكتب المسافرة",
     "category": "jobs",
-    "icon": "🧑‍🚒",
+    "icon": "📚",
     "theme": "🧑‍🚒 Le bibliothécaire et les livres voyageurs",
     "profile": ""
   },
@@ -1102,7 +1102,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le sauveteur de la plage",
     "ar": "منقذ الشاطئ",
     "category": "jobs",
-    "icon": "🧑‍🚒",
+    "icon": "🛟",
     "theme": "🧑‍🚒 Le sauveteur de la plage",
     "profile": ""
   },
@@ -1110,7 +1110,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le journaliste des bonnes nouvelles",
     "ar": "صحفي الأخبار السارة",
     "category": "jobs",
-    "icon": "🧑‍🚒",
+    "icon": "📰",
     "theme": "🧑‍🚒 Le journaliste des bonnes nouvelles",
     "profile": ""
   },
@@ -1118,7 +1118,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Science",
     "ar": "العلوم",
     "category": "science",
-    "icon": "🧪",
+    "icon": "🔬",
     "theme": "🧪 Mission scientifique",
     "profile": ""
   },
@@ -1142,7 +1142,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le laboratoire des bulles géantes",
     "ar": "مختبر الفقاعات العملاقة",
     "category": "science",
-    "icon": "🔬",
+    "icon": "🫧",
     "theme": "🔬 Le laboratoire des bulles géantes",
     "profile": ""
   },
@@ -1150,7 +1150,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La machine à fabriquer des nuages",
     "ar": "آلة صنع السحب",
     "category": "science",
-    "icon": "🔬",
+    "icon": "☁️",
     "theme": "🔬 La machine à fabriquer des nuages",
     "profile": ""
   },
@@ -1158,7 +1158,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le petit ingénieur des ponts",
     "ar": "مهندس الجسور الصغير",
     "category": "science",
-    "icon": "🔬",
+    "icon": "🌉",
     "theme": "🔬 Le petit ingénieur des ponts",
     "profile": ""
   },
@@ -1166,7 +1166,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La découverte des cristaux",
     "ar": "اكتشاف البلورات",
     "category": "science",
-    "icon": "🔬",
+    "icon": "💎",
     "theme": "🔬 La découverte des cristaux",
     "profile": ""
   },
@@ -1174,7 +1174,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le voyage à l’intérieur d’une plante",
     "ar": "رحلة داخل نبتة",
     "category": "science",
-    "icon": "🔬",
+    "icon": "🌱",
     "theme": "🔬 Le voyage à l’intérieur d’une plante",
     "profile": ""
   },
@@ -1182,7 +1182,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le défi des aimants malicieux",
     "ar": "تحدي المغناطيس المرح",
     "category": "science",
-    "icon": "🔬",
+    "icon": "🧲",
     "theme": "🔬 Le défi des aimants malicieux",
     "profile": ""
   },
@@ -1190,7 +1190,7 @@ window.MLH_THEME_CATALOG = [
     "label": "L’invention qui économise l’eau",
     "ar": "الاختراع الذي يوفر الماء",
     "category": "science",
-    "icon": "🔬",
+    "icon": "💧",
     "theme": "🔬 L’invention qui économise l’eau",
     "profile": ""
   },
@@ -1198,7 +1198,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le mystère des lumières du ciel",
     "ar": "لغز أضواء السماء",
     "category": "science",
-    "icon": "🔬",
+    "icon": "🌌",
     "theme": "🔬 Le mystère des lumières du ciel",
     "profile": ""
   },
@@ -1206,7 +1206,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le code secret du petit ordinateur",
     "ar": "الشفرة السرية للحاسوب الصغير",
     "category": "science",
-    "icon": "🔬",
+    "icon": "💻",
     "theme": "🔬 Le code secret du petit ordinateur",
     "profile": ""
   },
@@ -1246,7 +1246,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le cirque des petits artistes",
     "ar": "سيرك الفنانين الصغار",
     "category": "arts",
-    "icon": "🎨",
+    "icon": "🎪",
     "theme": "🎨 Le cirque des petits artistes",
     "profile": ""
   },
@@ -1254,7 +1254,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le théâtre des marionnettes",
     "ar": "مسرح العرائس",
     "category": "arts",
-    "icon": "🎨",
+    "icon": "🎭",
     "theme": "🎨 Le théâtre des marionnettes",
     "profile": ""
   },
@@ -1262,7 +1262,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le film des amis du quartier",
     "ar": "فيلم أصدقاء الحي",
     "category": "arts",
-    "icon": "🎨",
+    "icon": "🎬",
     "theme": "🎨 Le film des amis du quartier",
     "profile": ""
   },
@@ -1270,7 +1270,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La poterie et le vase magique",
     "ar": "الفخار والمزهرية السحرية",
     "category": "arts",
-    "icon": "🎨",
+    "icon": "🏺",
     "theme": "🎨 La poterie et le vase magique",
     "profile": ""
   },
@@ -1278,7 +1278,7 @@ window.MLH_THEME_CATALOG = [
     "label": "L’atelier des origamis vivants",
     "ar": "ورشة الأوريغامي الحي",
     "category": "arts",
-    "icon": "🎨",
+    "icon": "🦢",
     "theme": "🎨 L’atelier des origamis vivants",
     "profile": ""
   },
@@ -1286,7 +1286,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La fresque aux mille mains",
     "ar": "اللوحة ذات الأيدي الألف",
     "category": "arts",
-    "icon": "🎨",
+    "icon": "🖌️",
     "theme": "🎨 La fresque aux mille mains",
     "profile": ""
   },
@@ -1294,7 +1294,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le concert des instruments oubliés",
     "ar": "حفلة الآلات الموسيقية المنسية",
     "category": "arts",
-    "icon": "🎨",
+    "icon": "🎷",
     "theme": "🎨 Le concert des instruments oubliés",
     "profile": ""
   },
@@ -1302,7 +1302,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le carnet du petit écrivain",
     "ar": "دفتر الكاتب الصغير",
     "category": "arts",
-    "icon": "🎨",
+    "icon": "✍️",
     "theme": "🎨 Le carnet du petit écrivain",
     "profile": ""
   },
@@ -1318,7 +1318,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le concours des petits chefs",
     "ar": "مسابقة الطهاة الصغار",
     "category": "food",
-    "icon": "🧑‍🍳",
+    "icon": "👨‍🍳",
     "theme": "🧑‍🍳 Le concours des petits chefs",
     "profile": ""
   },
@@ -1326,7 +1326,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La pizza à partager",
     "ar": "البيتزا التي نتشاركها",
     "category": "food",
-    "icon": "🧑‍🍳",
+    "icon": "🍕",
     "theme": "🧑‍🍳 La pizza à partager",
     "profile": ""
   },
@@ -1334,7 +1334,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le gâteau d’anniversaire surprise",
     "ar": "كعكة عيد الميلاد المفاجئة",
     "category": "food",
-    "icon": "🧑‍🍳",
+    "icon": "🎂",
     "theme": "🧑‍🍳 Le gâteau d’anniversaire surprise",
     "profile": ""
   },
@@ -1342,7 +1342,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le jardin des fruits extraordinaires",
     "ar": "حديقة الفواكه الاستثنائية",
     "category": "food",
-    "icon": "🧑‍🍳",
+    "icon": "🍓",
     "theme": "🧑‍🍳 Le jardin des fruits extraordinaires",
     "profile": ""
   },
@@ -1350,7 +1350,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le marché des saveurs du monde",
     "ar": "سوق نكهات العالم",
     "category": "food",
-    "icon": "🧑‍🍳",
+    "icon": "🧺",
     "theme": "🧑‍🍳 Le marché des saveurs du monde",
     "profile": ""
   },
@@ -1358,7 +1358,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La soupe de l’amitié",
     "ar": "حساء الصداقة",
     "category": "food",
-    "icon": "🧑‍🍳",
+    "icon": "🥣",
     "theme": "🧑‍🍳 La soupe de l’amitié",
     "profile": ""
   },
@@ -1366,7 +1366,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le chocolat et la fève mystérieuse",
     "ar": "الشوكولاتة والحبة الغامضة",
     "category": "food",
-    "icon": "🧑‍🍳",
+    "icon": "🍫",
     "theme": "🧑‍🍳 Le chocolat et la fève mystérieuse",
     "profile": ""
   },
@@ -1374,7 +1374,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le pain qui réunit le village",
     "ar": "الخبز الذي يجمع القرية",
     "category": "food",
-    "icon": "🧑‍🍳",
+    "icon": "🍞",
     "theme": "🧑‍🍳 Le pain qui réunit le village",
     "profile": ""
   },
@@ -1382,7 +1382,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le restaurant des animaux",
     "ar": "مطعم الحيوانات",
     "category": "food",
-    "icon": "🧑‍🍳",
+    "icon": "🍽️",
     "theme": "🧑‍🍳 Le restaurant des animaux",
     "profile": ""
   },
@@ -1390,7 +1390,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le pique-nique aux couleurs de l’arc-en-ciel",
     "ar": "نزهة بألوان قوس قزح",
     "category": "food",
-    "icon": "🧑‍🍳",
+    "icon": "🧺",
     "theme": "🧑‍🍳 Le pique-nique aux couleurs de l’arc-en-ciel",
     "profile": ""
   },
@@ -1398,7 +1398,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Les biscuits des grands-parents",
     "ar": "بسكويت الأجداد",
     "category": "food",
-    "icon": "🧑‍🍳",
+    "icon": "🍪",
     "theme": "🧑‍🍳 Les biscuits des grands-parents",
     "profile": ""
   },
@@ -1414,7 +1414,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le nouvel ami du quartier",
     "ar": "الصديق الجديد في الحي",
     "category": "friends",
-    "icon": "🏫",
+    "icon": "🤝",
     "theme": "🏫 Le nouvel ami du quartier",
     "profile": ""
   },
@@ -1422,7 +1422,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La classe et le jardin partagé",
     "ar": "القسم والحديقة المشتركة",
     "category": "friends",
-    "icon": "🏫",
+    "icon": "🌱",
     "theme": "🏫 La classe et le jardin partagé",
     "profile": ""
   },
@@ -1430,7 +1430,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La chasse au trésor en famille",
     "ar": "البحث عن الكنز مع العائلة",
     "category": "friends",
-    "icon": "🏫",
+    "icon": "🗺️",
     "theme": "🏫 La chasse au trésor en famille",
     "profile": ""
   },
@@ -1438,7 +1438,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La visite chez les grands-parents",
     "ar": "زيارة الأجداد",
     "category": "friends",
-    "icon": "🏫",
+    "icon": "👵",
     "theme": "🏫 La visite chez les grands-parents",
     "profile": ""
   },
@@ -1446,7 +1446,7 @@ window.MLH_THEME_CATALOG = [
     "label": "L’arrivée d’un petit frère ou d’une petite sœur",
     "ar": "قدوم أخ صغير أو أخت صغيرة",
     "category": "friends",
-    "icon": "🏫",
+    "icon": "👶",
     "theme": "🏫 L’arrivée d’un petit frère ou d’une petite sœur",
     "profile": ""
   },
@@ -1454,7 +1454,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le club des amis solidaires",
     "ar": "نادي الأصدقاء المتعاونين",
     "category": "friends",
-    "icon": "🏫",
+    "icon": "🤝",
     "theme": "🏫 Le club des amis solidaires",
     "profile": ""
   },
@@ -1462,7 +1462,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le spectacle de fin d’année",
     "ar": "عرض نهاية السنة",
     "category": "friends",
-    "icon": "🏫",
+    "icon": "🎭",
     "theme": "🏫 Le spectacle de fin d’année",
     "profile": ""
   },
@@ -1470,7 +1470,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La bibliothèque de l’école",
     "ar": "مكتبة المدرسة",
     "category": "friends",
-    "icon": "🏫",
+    "icon": "📚",
     "theme": "🏫 La bibliothèque de l’école",
     "profile": ""
   },
@@ -1478,7 +1478,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le voyage scolaire à la ferme",
     "ar": "الرحلة المدرسية إلى المزرعة",
     "category": "friends",
-    "icon": "🏫",
+    "icon": "🐄",
     "theme": "🏫 Le voyage scolaire à la ferme",
     "profile": ""
   },
@@ -1486,7 +1486,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le cadeau fabriqué pour les parents",
     "ar": "هدية نصنعها للوالدين",
     "category": "friends",
-    "icon": "🏫",
+    "icon": "🎁",
     "theme": "🏫 Le cadeau fabriqué pour les parents",
     "profile": ""
   },
@@ -1494,7 +1494,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Les voisins et la fête du quartier",
     "ar": "الجيران واحتفال الحي",
     "category": "friends",
-    "icon": "🏫",
+    "icon": "🏘️",
     "theme": "🏫 Les voisins et la fête du quartier",
     "profile": ""
   },
@@ -1510,7 +1510,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le courage d’essayer",
     "ar": "شجاعة المحاولة",
     "category": "feelings",
-    "icon": "🌈",
+    "icon": "💪",
     "theme": "🌈 Le courage d’essayer",
     "profile": ""
   },
@@ -1518,7 +1518,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le monstre de la colère qui apprend à respirer",
     "ar": "وحش الغضب الذي يتعلم التنفس",
     "category": "feelings",
-    "icon": "🌈",
+    "icon": "🌬️",
     "theme": "🌈 Le monstre de la colère qui apprend à respirer",
     "profile": ""
   },
@@ -1526,7 +1526,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La petite peur de la nuit",
     "ar": "الخوف الصغير من الليل",
     "category": "feelings",
-    "icon": "🌈",
+    "icon": "🌙",
     "theme": "🌈 La petite peur de la nuit",
     "profile": ""
   },
@@ -1534,7 +1534,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La joie de partager",
     "ar": "فرحة المشاركة",
     "category": "feelings",
-    "icon": "🌈",
+    "icon": "🤲",
     "theme": "🌈 La joie de partager",
     "profile": ""
   },
@@ -1542,7 +1542,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La patience du petit jardinier",
     "ar": "صبر البستاني الصغير",
     "category": "feelings",
-    "icon": "🌈",
+    "icon": "🌱",
     "theme": "🌈 La patience du petit jardinier",
     "profile": ""
   },
@@ -1550,7 +1550,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le droit de se tromper",
     "ar": "من حقنا أن نخطئ",
     "category": "feelings",
-    "icon": "🌈",
+    "icon": "🧩",
     "theme": "🌈 Le droit de se tromper",
     "profile": ""
   },
@@ -1558,7 +1558,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La gentillesse qui fait grandir",
     "ar": "اللطف الذي يجعلنا نكبر",
     "category": "feelings",
-    "icon": "🌈",
+    "icon": "💛",
     "theme": "🌈 La gentillesse qui fait grandir",
     "profile": ""
   },
@@ -1566,7 +1566,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le défi de parler devant les amis",
     "ar": "تحدي الكلام أمام الأصدقاء",
     "category": "feelings",
-    "icon": "🌈",
+    "icon": "🎤",
     "theme": "🌈 Le défi de parler devant les amis",
     "profile": ""
   },
@@ -1574,7 +1574,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La tristesse et le parapluie des câlins",
     "ar": "الحزن ومظلة العناق",
     "category": "feelings",
-    "icon": "🌈",
+    "icon": "☔",
     "theme": "🌈 La tristesse et le parapluie des câlins",
     "profile": ""
   },
@@ -1582,7 +1582,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La différence qui devient une force",
     "ar": "الاختلاف الذي يصبح قوة",
     "category": "feelings",
-    "icon": "🌈",
+    "icon": "🦄",
     "theme": "🌈 La différence qui devient une force",
     "profile": ""
   },
@@ -1590,7 +1590,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Les petites victoires du quotidien",
     "ar": "الانتصارات اليومية الصغيرة",
     "category": "feelings",
-    "icon": "🌈",
+    "icon": "🏆",
     "theme": "🌈 Les petites victoires du quotidien",
     "profile": ""
   },
@@ -1598,7 +1598,7 @@ window.MLH_THEME_CATALOG = [
     "label": "L’anniversaire au pays des étoiles",
     "ar": "عيد الميلاد في بلاد النجوم",
     "category": "celebrate",
-    "icon": "🎉",
+    "icon": "🎂",
     "theme": "🎉 L’anniversaire au pays des étoiles",
     "profile": ""
   },
@@ -1606,7 +1606,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le carnaval des costumes magiques",
     "ar": "كرنفال الأزياء السحرية",
     "category": "celebrate",
-    "icon": "🎉",
+    "icon": "🎭",
     "theme": "🎉 Le carnaval des costumes magiques",
     "profile": ""
   },
@@ -1614,7 +1614,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La fête des lanternes",
     "ar": "احتفال الفوانيس",
     "category": "celebrate",
-    "icon": "🎉",
+    "icon": "🏮",
     "theme": "🎉 La fête des lanternes",
     "profile": ""
   },
@@ -1622,7 +1622,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le village de neige enchanté",
     "ar": "قرية الثلج المسحورة",
     "category": "celebrate",
-    "icon": "🎉",
+    "icon": "☃️",
     "theme": "🎉 Le village de neige enchanté",
     "profile": ""
   },
@@ -1630,7 +1630,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le printemps et le festival des fleurs",
     "ar": "الربيع ومهرجان الزهور",
     "category": "celebrate",
-    "icon": "🎉",
+    "icon": "🌸",
     "theme": "🎉 Le printemps et le festival des fleurs",
     "profile": ""
   },
@@ -1638,7 +1638,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le grand bal des peluches",
     "ar": "الحفل الكبير للدمى",
     "category": "celebrate",
-    "icon": "🎉",
+    "icon": "🧸",
     "theme": "🎉 Le grand bal des peluches",
     "profile": ""
   },
@@ -1646,7 +1646,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La fête de l’Aïd en famille",
     "ar": "احتفال العيد مع العائلة",
     "category": "celebrate",
-    "icon": "🎉",
+    "icon": "🎁",
     "theme": "🎉 La fête de l’Aïd en famille",
     "profile": ""
   },
@@ -1654,7 +1654,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Les soirées lumineuses du Ramadan",
     "ar": "ليالي رمضان المضيئة",
     "category": "celebrate",
-    "icon": "🎉",
+    "icon": "🌙",
     "theme": "🎉 Les soirées lumineuses du Ramadan",
     "profile": ""
   },
@@ -1662,7 +1662,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Le monde miniature du coffre à jouets",
     "ar": "العالم الصغير في صندوق الألعاب",
     "category": "celebrate",
-    "icon": "🎉",
+    "icon": "🧩",
     "theme": "🎉 Le monde miniature du coffre à jouets",
     "profile": ""
   },
@@ -1670,7 +1670,7 @@ window.MLH_THEME_CATALOG = [
     "label": "L’aventure dans un jeu vidéo imaginaire",
     "ar": "مغامرة في لعبة فيديو خيالية",
     "category": "celebrate",
-    "icon": "🎉",
+    "icon": "🎮",
     "theme": "🎉 L’aventure dans un jeu vidéo imaginaire",
     "profile": ""
   },
@@ -1678,7 +1678,7 @@ window.MLH_THEME_CATALOG = [
     "label": "Les super-héros du quartier",
     "ar": "الأبطال الخارقون في الحي",
     "category": "celebrate",
-    "icon": "🎉",
+    "icon": "🦸",
     "theme": "🎉 Les super-héros du quartier",
     "profile": ""
   },
@@ -1686,7 +1686,7 @@ window.MLH_THEME_CATALOG = [
     "label": "La fabrique des arcs-en-ciel",
     "ar": "مصنع أقواس قزح",
     "category": "celebrate",
-    "icon": "🎉",
+    "icon": "🌈",
     "theme": "🎉 La fabrique des arcs-en-ciel",
     "profile": ""
   }
