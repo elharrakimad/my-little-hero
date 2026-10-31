@@ -127,7 +127,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "سبايدرمان · الرشاقة والشبكات",
     "category": "comics",
     "icon": "🕷️",
-    "theme": "🕷️ Héros personnalisé — inspiration Spider-Man · agilité et toile : agilité, escalade et filaments souples pour secourir les habitants",
+    "theme": "🕷️ Héros personnalisé : agilité, escalade et filaments souples pour secourir les habitants. Tenue originale : une combinaison vert jade et ivoire, des renforts géométriques et des bracelets à filaments. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -135,7 +135,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "آيرون مان · الدرع والاختراعات",
     "category": "comics",
     "icon": "🤖",
-    "theme": "🤖 Héros personnalisé — inspiration Iron Man · armure et inventions : une armure technologique personnelle et des inventions utiles",
+    "theme": "🤖 Héros personnalisé : une armure technologique personnelle et des inventions utiles. Tenue originale : une armure légère argentée et céladon, avec des lignes lumineuses angulaires. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -143,7 +143,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "ثور · الرعد والمطرقة",
     "category": "comics",
     "icon": "🔨",
-    "theme": "🔨 Héros personnalisé — inspiration Thor · tonnerre et marteau : un marteau magique original et la maîtrise du tonnerre pour aider le village",
+    "theme": "🔨 Héros personnalisé : un marteau magique original et la maîtrise du tonnerre pour aider le village. Tenue originale : une veste ocre et blanche, des bottes souples et un petit marteau à motifs géométriques. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -151,7 +151,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "هالك · القوة والتحكم في النفس",
     "category": "comics",
     "icon": "💪",
-    "theme": "💪 Héros personnalisé — inspiration Hulk · force et maîtrise de soi : une force extraordinaire qui devient utile en apprenant à gérer ses émotions",
+    "theme": "💪 Héros personnalisé : une force extraordinaire qui devient utile en apprenant à gérer ses émotions. Tenue originale : une salopette de secours ocre et bleu pétrole, des gants renforcés et la peau naturelle de l’enfant. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -159,7 +159,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "كابتن أمريكا · الدرع والشجاعة",
     "category": "comics",
     "icon": "🛡️",
-    "theme": "🛡️ Héros personnalisé — inspiration Captain America · bouclier et courage : un bouclier personnel, du courage et un grand esprit d’équipe",
+    "theme": "🛡️ Héros personnalisé : un bouclier personnel, du courage et un grand esprit d’équipe. Tenue originale : une tunique turquoise et crème et un bouclier hexagonal à motif personnel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -167,7 +167,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "دكتور سترينج · البوابات والسحر",
     "category": "comics",
     "icon": "🚪",
-    "theme": "🚪 Héros personnalisé — inspiration Doctor Strange · portails et magie : des portails lumineux et des énigmes magiques à résoudre",
+    "theme": "🚪 Héros personnalisé : des portails lumineux et des énigmes magiques à résoudre. Tenue originale : un gilet court bleu nuit, une ceinture ambrée et un carnet de portes magiques. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -175,7 +175,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "بلاك بانثر · الرشاقة والحماية",
     "category": "comics",
     "icon": "🐾",
-    "theme": "🐾 Héros personnalisé — inspiration Black Panther · agilité et protection : des réflexes félins et une mission de protection de la nature",
+    "theme": "🐾 Héros personnalisé : des réflexes félins et une mission de protection de la nature. Tenue originale : une tenue d’exploration sable et verte, des bottes silencieuses et un visage découvert. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -183,7 +183,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "آنت مان · التصغير والتعاون",
     "category": "comics",
     "icon": "🐜",
-    "theme": "🐜 Héros personnalisé — inspiration Ant-Man · miniaturisation et entraide : le pouvoir de devenir minuscule pour aider les insectes",
+    "theme": "🐜 Héros personnalisé : le pouvoir de devenir minuscule pour aider les insectes. Tenue originale : une combinaison orange et ivoire et des lunettes de protection transparentes. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -191,7 +191,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "الدبورة · الطيران والدقة",
     "category": "comics",
     "icon": "🐝",
-    "theme": "🐝 Héros personnalisé — inspiration La Guêpe · vol et précision : le vol miniature et la précision pour une mission de secours",
+    "theme": "🐝 Héros personnalisé : le vol miniature et la précision pour une mission de secours. Tenue originale : une tenue de vol bleu ciel et blanche et des ailes translucides en forme de feuilles. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -199,7 +199,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "سكارليت ويتش · الأشياء والطاقة",
     "category": "comics",
     "icon": "✨",
-    "theme": "✨ Héros personnalisé — inspiration Scarlet Witch · objets et énergie : la télékinésie et une énergie lumineuse pour réparer et protéger",
+    "theme": "✨ Héros personnalisé : la télékinésie et une énergie lumineuse pour réparer et protéger. Tenue originale : une veste violette, une écharpe céladon et des bracelets lumineux. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -207,7 +207,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "سوبرمان · الطيران والقوة الخارقة",
     "category": "comics",
     "icon": "🕊️",
-    "theme": "🕊️ Héros personnalisé — inspiration Superman · vol et super-force : le vol et la super-force pour protéger les habitants avec bienveillance",
+    "theme": "🕊️ Héros personnalisé : le vol et la super-force pour protéger les habitants avec bienveillance. Tenue originale : une tenue moutarde et bleu pétrole, une veste de vol courte et des bottes blanches. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -215,7 +215,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "باتمان · التحقيق والأدوات",
     "category": "comics",
     "icon": "🦇",
-    "theme": "🦇 Héros personnalisé — inspiration Batman · enquête et gadgets : des talents de détective et des gadgets inventés pour résoudre un mystère",
+    "theme": "🦇 Héros personnalisé : des talents de détective et des gadgets inventés pour résoudre un mystère. Tenue originale : un manteau d’enquête bleu et jaune, une ceinture à outils et une tête découverte. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -223,7 +223,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "وندر وومان · الشجاعة والحقيقة",
     "category": "comics",
     "icon": "🛡️",
-    "theme": "🛡️ Héros personnalisé — inspiration Wonder Woman · courage et vérité : le courage, la protection et la recherche de la vérité dans une quête solidaire",
+    "theme": "🛡️ Héros personnalisé : le courage, la protection et la recherche de la vérité dans une quête solidaire. Tenue originale : une tunique vert jade et ocre, des protections simples et un bouclier à motif floral personnel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -231,7 +231,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "فلاش · السرعة وردود الفعل",
     "category": "comics",
     "icon": "⚡",
-    "theme": "⚡ Héros personnalisé — inspiration Flash · vitesse et réflexes : la super-vitesse et des réflexes rapides pour livrer une aide urgente",
+    "theme": "⚡ Héros personnalisé : la super-vitesse et des réflexes rapides pour livrer une aide urgente. Tenue originale : une tenue de course verte et blanche, avec de fines lignes lumineuses pointillées. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -239,7 +239,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "أكوامان · المحيط والحيوانات البحرية",
     "category": "comics",
     "icon": "🌊",
-    "theme": "🌊 Héros personnalisé — inspiration Aquaman · océan et animaux marins : la communication avec les animaux marins et la protection des océans",
+    "theme": "🌊 Héros personnalisé : la communication avec les animaux marins et la protection des océans. Tenue originale : un équipement sous-marin bleu et gris, un masque transparent et des palmes souples. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -247,7 +247,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "غرين لانترن · الخيال والضوء",
     "category": "comics",
     "icon": "💍",
-    "theme": "💍 Héros personnalisé — inspiration Green Lantern · imagination et lumière : un anneau personnel qui transforme l’imagination en constructions lumineuses",
+    "theme": "💍 Héros personnalisé : un anneau personnel qui transforme l’imagination en constructions lumineuses. Tenue originale : une tenue violette et ambrée et un anneau à motif géométrique personnel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -255,7 +255,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "سايبورغ · التكنولوجيا والتواصل",
     "category": "comics",
     "icon": "🦾",
-    "theme": "🦾 Héros personnalisé — inspiration Cyborg · technologie et connexion : des talents technologiques pour communiquer avec les machines et les réparer",
+    "theme": "🦾 Héros personnalisé : des talents technologiques pour communiquer avec les machines et les réparer. Tenue originale : une veste bleue, des accessoires mécaniques cuivrés et des gants technologiques. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -263,7 +263,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "شازام · البرق وروح الفريق",
     "category": "comics",
     "icon": "⚡",
-    "theme": "⚡ Héros personnalisé — inspiration Shazam · éclair et esprit d’équipe : une transformation magique originale et la maîtrise des éclairs pour aider ses amis",
+    "theme": "⚡ Héros personnalisé : une transformation magique originale et la maîtrise des éclairs pour aider ses amis. Tenue originale : une combinaison blanche et violette et des protège-bras à motifs géométriques. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -271,7 +271,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "سوبرغيرل · الطاقة الشمسية والطيران",
     "category": "comics",
     "icon": "☀️",
-    "theme": "☀️ Héros personnalisé — inspiration Supergirl · énergie solaire et envol : l’énergie solaire, le vol et une force protectrice dans une aventure d’entraide",
+    "theme": "☀️ Héros personnalisé : l’énergie solaire, le vol et une force protectrice dans une aventure d’entraide. Tenue originale : une veste de vol vert émeraude et blanche, un pantalon confortable et des lunettes transparentes. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -279,7 +279,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "زاتانا · الكلمات والخدع السحرية",
     "category": "comics",
     "icon": "🎩",
-    "theme": "🎩 Héros personnalisé — inspiration Zatanna · mots et tours magiques : des mots magiques et des tours originaux pour retrouver des objets perdus",
+    "theme": "🎩 Héros personnalisé : des mots magiques et des tours originaux pour retrouver des objets perdus. Tenue originale : un tablier bleu et rose, des poches à accessoires et un petit carnet de formules. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -287,7 +287,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "غوكو · الطاقة وتجاوز الذات",
     "category": "anime",
     "icon": "🔥",
-    "theme": "🔥 Héros personnalisé — inspiration Goku · énergie et dépassement : la maîtrise d’une énergie lumineuse et le dépassement de soi par l’entraînement",
+    "theme": "🔥 Héros personnalisé : la maîtrise d’une énergie lumineuse et le dépassement de soi par l’entraînement. Tenue originale : une tunique vert menthe et brune, une ceinture tressée et des chaussures souples. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -295,7 +295,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "ناروتو · الطاقة والنسخ",
     "category": "anime",
     "icon": "🥷",
-    "theme": "🥷 Héros personnalisé — inspiration Naruto · énergie et doubles : des doubles imaginaires et des talents de ninja pour réaliser une mission d’entraide",
+    "theme": "🥷 Héros personnalisé : des doubles imaginaires et des talents de ninja pour réaliser une mission d’entraide. Tenue originale : une tenue d’expédition violette et crème, un foulard uni et des poches à outils. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -303,7 +303,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "لوفي · المرونة والمغامرة",
     "category": "anime",
     "icon": "🌀",
-    "theme": "🌀 Héros personnalisé — inspiration Luffy · élasticité et aventure : un corps élastique et un esprit d’aventure pour explorer une île",
+    "theme": "🌀 Héros personnalisé : un corps élastique et un esprit d’aventure pour explorer une île. Tenue originale : une chemise cyan et crème, un pantalon court de voyage et des chaussures de pont. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -311,7 +311,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "تانجيرو · حاسة الشم والرحمة",
     "category": "anime",
     "icon": "🌸",
-    "theme": "🌸 Héros personnalisé — inspiration Tanjiro · odorat et compassion : un odorat exceptionnel et beaucoup de compassion pour retrouver un animal perdu",
+    "theme": "🌸 Héros personnalisé : un odorat exceptionnel et beaucoup de compassion pour retrouver un animal perdu. Tenue originale : une tenue d’exploration ambrée et blanche, une sacoche d’herboriste et des bottes confortables. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -319,7 +319,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "ديكو · القوة وروح الفريق",
     "category": "anime",
     "icon": "💪",
-    "theme": "💪 Héros personnalisé — inspiration Deku · force et esprit d’équipe : une force grandissante et le travail d’équipe pour une mission de secours",
+    "theme": "💪 Héros personnalisé : une force grandissante et le travail d’équipe pour une mission de secours. Tenue originale : une tenue de secours orange et ivoire, des protections légères et un sac à matériel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -327,7 +327,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "سيلور مون · الضوء الحامي",
     "category": "anime",
     "icon": "🌙",
-    "theme": "🌙 Héros personnalisé — inspiration Sailor Moon · lumière protectrice : la lumière de la lune et une transformation personnelle pour protéger ses amis",
+    "theme": "🌙 Héros personnalisé : la lumière de la lune et une transformation personnelle pour protéger ses amis. Tenue originale : un gilet long lavande et turquoise, un pantalon souple et un bracelet de lumière. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -335,7 +335,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "ساشا وبيكاتشو · الصداقة والكهرباء",
     "category": "anime",
     "icon": "⚡",
-    "theme": "⚡ Héros personnalisé — inspiration Sacha et Pikachu · amitié et électricité : l’amitié avec une petite créature originale dotée d’une énergie électrique douce",
+    "theme": "⚡ Héros personnalisé : l’amitié avec un petit compagnon volant à plumage ivoire et turquoise, doté d’une énergie électrique douce. Tenue originale : une veste de randonnée turquoise, un pantalon sable et une sacoche de voyage. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -343,7 +343,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "ساكورا · البطاقات والسحر",
     "category": "anime",
     "icon": "🃏",
-    "theme": "🃏 Héros personnalisé — inspiration Cardcaptor Sakura · cartes et magie : des cartes magiques originales à retrouver grâce à l’amitié et à l’observation",
+    "theme": "🃏 Héros personnalisé : des cartes magiques originales à retrouver grâce à l’amitié et à l’observation. Tenue originale : une robe d’exploration blanche et bleue, des poches à cartes et un carnet géométrique. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -351,7 +351,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "ناتسو · اللهب والتضامن",
     "category": "anime",
     "icon": "🔥",
-    "theme": "🔥 Héros personnalisé — inspiration Natsu · flammes et solidarité : des flammes magiques bienveillantes pour réchauffer et éclairer le village",
+    "theme": "🔥 Héros personnalisé : des flammes magiques bienveillantes pour réchauffer et éclairer le village. Tenue originale : une tenue vert pâle et bleue et un foulard uni en tissu souple. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -359,7 +359,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "إدوارد إلريك · تحويل المادة",
     "category": "anime",
     "icon": "⚗️",
-    "theme": "⚗️ Héros personnalisé — inspiration Edward Elric · transformation de la matière : la transformation imaginaire de la matière pour réparer des objets utiles",
+    "theme": "⚗️ Héros personnalisé : la transformation imaginaire de la matière pour réparer des objets utiles. Tenue originale : une blouse courte bleue et crème et des gants d’inventeur en cuir souple. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -367,7 +367,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "غون · الحواس والارتباط بالطبيعة",
     "category": "anime",
     "icon": "🌿",
-    "theme": "🌿 Héros personnalisé — inspiration Gon · sens et lien avec la nature : des sens très développés et un lien avec la nature pour retrouver un chemin",
+    "theme": "🌿 Héros personnalisé : des sens très développés et un lien avec la nature pour retrouver un chemin. Tenue originale : une veste indigo et ivoire, un pantalon de randonnée et une petite gourde. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -375,7 +375,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "كيلوا · السرعة الكهربائية",
     "category": "anime",
     "icon": "⚡",
-    "theme": "⚡ Héros personnalisé — inspiration Killua · vitesse électrique : une énergie électrique imaginaire et une grande vitesse pour aider une équipe",
+    "theme": "⚡ Héros personnalisé : une énergie électrique imaginaire et une grande vitesse pour aider une équipe. Tenue originale : une tenue ocre et sauge, un pantalon ample et des chaussures de course. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -383,7 +383,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "سايتاما · القوة الخارقة والبساطة",
     "category": "anime",
     "icon": "💪",
-    "theme": "💪 Héros personnalisé — inspiration Saitama · super-force et simplicité : une immense force employée avec simplicité et modestie pour rendre service",
+    "theme": "💪 Héros personnalisé : une immense force employée avec simplicité et modestie pour rendre service. Tenue originale : une tenue sportive bleu pétrole et orange, des gants simples et un visage fidèle à la photo. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -391,7 +391,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "إيتشيغو · الشجاعة والحماية",
     "category": "anime",
     "icon": "🛡️",
-    "theme": "🛡️ Héros personnalisé — inspiration Ichigo · courage et protection : le courage de protéger ses amis et de surmonter une épreuve sans violence",
+    "theme": "🛡️ Héros personnalisé : le courage de protéger ses amis et de surmonter une épreuve sans violence. Tenue originale : un manteau bleu et crème, des protections de randonnée et un bracelet personnel. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -399,7 +399,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "يوغي · الألغاز والاستراتيجية",
     "category": "anime",
     "icon": "🧩",
-    "theme": "🧩 Héros personnalisé — inspiration Yugi · énigmes et stratégie : des jeux de cartes originaux, des énigmes et de la stratégie coopérative",
+    "theme": "🧩 Héros personnalisé : des jeux de cartes originaux, des énigmes et de la stratégie coopérative. Tenue originale : une veste terracotta et ivoire, une sacoche à cartes et un carnet d’énigmes. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -407,7 +407,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "هيناتا · القفز والكرة الطائرة",
     "category": "anime",
     "icon": "🏐",
-    "theme": "🏐 Héros personnalisé — inspiration Hinata (Haikyū!!) · bonds et volley : des bonds impressionnants et le sens du collectif dans un tournoi de volley",
+    "theme": "🏐 Héros personnalisé : des bonds impressionnants et le sens du collectif dans un tournoi de volley. Tenue originale : un maillot de volley lilas et jade avec le prénom de l’enfant réservé à la mise en page. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -415,7 +415,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "تسوباسا · كرة القدم والمثابرة",
     "category": "anime",
     "icon": "⚽",
-    "theme": "⚽ Héros personnalisé — inspiration Tsubasa · football et persévérance : la passion du football et la persévérance lors d’un défi sportif amical",
+    "theme": "⚽ Héros personnalisé : la passion du football et la persévérance lors d’un défi sportif amical. Tenue originale : un maillot de football violet et crème et des chaussures personnelles sans marque. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -423,7 +423,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "سييا · الكون والكوكبات",
     "category": "anime",
     "icon": "🌌",
-    "theme": "🌌 Héros personnalisé — inspiration Seiya · cosmos et constellations : une énergie cosmique et une armure personnelle inspirée des constellations",
+    "theme": "🌌 Héros personnalisé : une énergie cosmique et une armure personnelle inspirée des constellations. Tenue originale : une veste protectrice bleu clair et verte avec des motifs géométriques personnels. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -431,7 +431,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "أسترو بوي · الروبوت والتضامن",
     "category": "anime",
     "icon": "🤖",
-    "theme": "🤖 Héros personnalisé — inspiration Astro Boy · robot et solidarité : des capacités robotiques et un cœur généreux pour aider les habitants",
+    "theme": "🤖 Héros personnalisé : des capacités robotiques et un cœur généreux pour aider les habitants. Tenue originale : une veste technologique ocre et blanche, des gants mécaniques et des chaussures confortables. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {
@@ -439,7 +439,7 @@ window.MLH_THEME_CATALOG = [
     "ar": "توتورو · الغابة واللطف",
     "category": "anime",
     "icon": "🌳",
-    "theme": "🌳 Héros personnalisé — inspiration Totoro · forêt et bienveillance : la rencontre d’une grande créature forestière originale et bienveillante",
+    "theme": "🌳 Héros personnalisé : la rencontre d’un grand compagnon forestier élancé au pelage vert tendre, avec de petites ramures fleuries. Tenue originale : une salopette bleue et crème, un chapeau de promenade uni et une petite sacoche. Identité, visage et coiffure fidèles à l’enfant. Aucun nom, logo ou emblème de franchise.",
     "profile": ""
   },
   {

@@ -59,3 +59,16 @@ test('comic and anime inspirations are searchable and keep the personalized chil
   assert.ok(search.filter(catalog,{query:'Naruto',showAll:true}).some(t=>t.category==='anime'));
   assert.ok(search.filter(catalog,{query:'ناروتو',showAll:true}).some(t=>t.category==='anime'));
 });
+
+
+test('displayed inspirations are separate from original powers and outfits sent to generation',()=>{
+  const names=['Spider-Man','Iron Man','Thor','Hulk','Captain America','Doctor Strange','Black Panther','Ant-Man','Scarlet Witch','Superman','Batman','Wonder Woman','Flash','Aquaman','Green Lantern','Cyborg','Shazam','Supergirl','Zatanna','Goku','Naruto','Luffy','Tanjiro','Deku','Sailor Moon','Sacha','Pikachu','Sakura','Natsu','Edward Elric','Gon','Killua','Saitama','Ichigo','Yugi','Hinata','Tsubasa','Seiya','Astro Boy','Totoro'];
+  const profiles=catalog.filter(t=>['comics','anime'].includes(t.category));
+  assert.equal(profiles.length,40);
+  assert.equal(new Set(profiles.map(t=>t.theme)).size,40);
+  for(const profile of profiles){
+    assert.ok(profile.theme.includes('Tenue originale :'));
+    for(const name of names)assert.ok(!new RegExp('\\b'+name+'\\b','iu').test(profile.theme),profile.label+' leaked '+name);
+  }
+  assert.ok(profiles.some(t=>t.label.startsWith('Spider-Man')));
+});
