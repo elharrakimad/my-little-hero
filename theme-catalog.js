@@ -1,6 +1,18 @@
 // Shared public catalogue. Stable theme values are also used by orders and generation.
 window.MLH_THEME_CATEGORIES = [
   {
+    "id": "superpowers",
+    "label": "Super-héros et super-pouvoirs",
+    "ar": "الأبطال الخارقون والقوى المميزة",
+    "icon": "🦸"
+  },
+  {
+    "id": "heroines",
+    "label": "Héroïnes : spécial filles",
+    "ar": "بطلات ومغامرات للبنات",
+    "icon": "👧"
+  },
+  {
     "id": "magic",
     "label": "Magie et royaumes",
     "ar": "السحر والممالك",
@@ -98,6 +110,326 @@ window.MLH_THEME_CATEGORIES = [
   }
 ];
 window.MLH_THEME_CATALOG = [
+  {
+    "label": "Le pouvoir de voler pour secourir les oiseaux",
+    "ar": "قوة الطيران لإنقاذ الطيور",
+    "category": "superpowers",
+    "icon": "🕊️",
+    "theme": "🕊️ Le pouvoir de voler pour secourir les oiseaux",
+    "profile": ""
+  },
+  {
+    "label": "La super-force pour réparer le pont du village",
+    "ar": "القوة الخارقة لإصلاح جسر القرية",
+    "category": "superpowers",
+    "icon": "💪",
+    "theme": "💪 La super-force pour réparer le pont du village",
+    "profile": ""
+  },
+  {
+    "label": "La super-vitesse et les messages urgents",
+    "ar": "السرعة الخارقة والرسائل العاجلة",
+    "category": "superpowers",
+    "icon": "⚡",
+    "theme": "⚡ La super-vitesse et les messages urgents",
+    "profile": ""
+  },
+  {
+    "label": "L’invisibilité et le mystère du musée",
+    "ar": "الاختفاء ولغز المتحف",
+    "category": "superpowers",
+    "icon": "👻",
+    "theme": "👻 L’invisibilité et le mystère du musée",
+    "profile": ""
+  },
+  {
+    "label": "Le pouvoir de la glace et la vallée assoiffée",
+    "ar": "قوة الجليد والوادي العطشان",
+    "category": "superpowers",
+    "icon": "❄️",
+    "theme": "❄️ Le pouvoir de la glace et la vallée assoiffée",
+    "profile": ""
+  },
+  {
+    "label": "Le pouvoir du feu pour réchauffer le village enneigé",
+    "ar": "قوة النار لتدفئة القرية الثلجية",
+    "category": "superpowers",
+    "icon": "🔥",
+    "theme": "🔥 Le pouvoir du feu pour réchauffer le village enneigé",
+    "profile": ""
+  },
+  {
+    "label": "Le pouvoir de l’eau et la rivière retrouvée",
+    "ar": "قوة الماء وعودة النهر",
+    "category": "superpowers",
+    "icon": "💧",
+    "theme": "💧 Le pouvoir de l’eau et la rivière retrouvée",
+    "profile": ""
+  },
+  {
+    "label": "Le pouvoir du vent et les cerfs-volants perdus",
+    "ar": "قوة الرياح والطائرات الورقية المفقودة",
+    "category": "superpowers",
+    "icon": "🌬️",
+    "theme": "🌬️ Le pouvoir du vent et les cerfs-volants perdus",
+    "profile": ""
+  },
+  {
+    "label": "Faire pousser les plantes pour sauver le jardin",
+    "ar": "إنماء النباتات لإنقاذ الحديقة",
+    "category": "superpowers",
+    "icon": "🌱",
+    "theme": "🌱 Faire pousser les plantes pour sauver le jardin",
+    "profile": ""
+  },
+  {
+    "label": "Parler aux animaux pour retrouver un petit renard",
+    "ar": "التحدث مع الحيوانات للعثور على ثعلب صغير",
+    "category": "superpowers",
+    "icon": "🐾",
+    "theme": "🐾 Parler aux animaux pour retrouver un petit renard",
+    "profile": ""
+  },
+  {
+    "label": "Devenir minuscule pour aider le peuple des fourmis",
+    "ar": "التحول إلى حجم صغير لمساعدة النمل",
+    "category": "superpowers",
+    "icon": "📏",
+    "theme": "📏 Devenir minuscule pour aider le peuple des fourmis",
+    "profile": ""
+  },
+  {
+    "label": "Devenir géant pour protéger la ville",
+    "ar": "التحول إلى عملاق لحماية المدينة",
+    "category": "superpowers",
+    "icon": "🏙️",
+    "theme": "🏙️ Devenir géant pour protéger la ville",
+    "profile": ""
+  },
+  {
+    "label": "La téléportation et les portes du monde",
+    "ar": "الانتقال الفوري وأبواب العالم",
+    "category": "superpowers",
+    "icon": "🚪",
+    "theme": "🚪 La téléportation et les portes du monde",
+    "profile": ""
+  },
+  {
+    "label": "Le bouclier protecteur et la grande tempête",
+    "ar": "الدرع الواقي والعاصفة الكبيرة",
+    "category": "superpowers",
+    "icon": "🛡️",
+    "theme": "🛡️ Le bouclier protecteur et la grande tempête",
+    "profile": ""
+  },
+  {
+    "label": "Le pouvoir de la lumière et la forêt dans le noir",
+    "ar": "قوة الضوء والغابة المظلمة",
+    "category": "superpowers",
+    "icon": "💡",
+    "theme": "💡 Le pouvoir de la lumière et la forêt dans le noir",
+    "profile": ""
+  },
+  {
+    "label": "Le pouvoir du son et la cloche silencieuse",
+    "ar": "قوة الصوت والجرس الصامت",
+    "category": "superpowers",
+    "icon": "🔊",
+    "theme": "🔊 Le pouvoir du son et la cloche silencieuse",
+    "profile": ""
+  },
+  {
+    "label": "Le magnétisme et le robot en panne",
+    "ar": "المغناطيسية والروبوت المعطل",
+    "category": "superpowers",
+    "icon": "🧲",
+    "theme": "🧲 Le magnétisme et le robot en panne",
+    "profile": ""
+  },
+  {
+    "label": "Ralentir le temps pour réussir une mission de secours",
+    "ar": "إبطاء الوقت لإنجاز مهمة إنقاذ",
+    "category": "superpowers",
+    "icon": "⏸️",
+    "theme": "⏸️ Ralentir le temps pour réussir une mission de secours",
+    "profile": ""
+  },
+  {
+    "label": "Déplacer les objets par la pensée pour aider ses amis",
+    "ar": "تحريك الأشياء بالتفكير لمساعدة الأصدقاء",
+    "category": "superpowers",
+    "icon": "✨",
+    "theme": "✨ Déplacer les objets par la pensée pour aider ses amis",
+    "profile": ""
+  },
+  {
+    "label": "Changer d’apparence pour explorer des mondes secrets",
+    "ar": "تغيير الشكل لاستكشاف عوالم سرية",
+    "category": "superpowers",
+    "icon": "🦎",
+    "theme": "🦎 Changer d’apparence pour explorer des mondes secrets",
+    "profile": ""
+  },
+  {
+    "label": "La princesse qui inventait les solutions",
+    "ar": "الأميرة التي تبتكر الحلول",
+    "category": "heroines",
+    "icon": "👑",
+    "theme": "👑 La princesse qui inventait les solutions",
+    "profile": "girl"
+  },
+  {
+    "label": "L’astronaute et le jardin de la Lune",
+    "ar": "رائدة الفضاء وحديقة القمر",
+    "category": "heroines",
+    "icon": "👩‍🚀",
+    "theme": "👩‍🚀 L’astronaute et le jardin de la Lune",
+    "profile": "girl"
+  },
+  {
+    "label": "La scientifique et l’énergie des étoiles",
+    "ar": "العالمة وطاقة النجوم",
+    "category": "heroines",
+    "icon": "🔬",
+    "theme": "🔬 La scientifique et l’énergie des étoiles",
+    "profile": "girl"
+  },
+  {
+    "label": "La chevalière et le pacte des dragons",
+    "ar": "الفارسة وعهد التنانين",
+    "category": "heroines",
+    "icon": "🛡️",
+    "theme": "🛡️ La chevalière et le pacte des dragons",
+    "profile": "girl"
+  },
+  {
+    "label": "La gardienne des clés du royaume",
+    "ar": "حارسة مفاتيح المملكة",
+    "category": "heroines",
+    "icon": "🔑",
+    "theme": "🔑 La gardienne des clés du royaume",
+    "profile": "girl"
+  },
+  {
+    "label": "La pilote et l’île des nuages",
+    "ar": "الطيارة وجزيرة السحاب",
+    "category": "heroines",
+    "icon": "✈️",
+    "theme": "✈️ La pilote et l’île des nuages",
+    "profile": "girl"
+  },
+  {
+    "label": "La capitaine et les dauphins égarés",
+    "ar": "القبطانة والدلافين التائهة",
+    "category": "heroines",
+    "icon": "⛵",
+    "theme": "⛵ La capitaine et les dauphins égarés",
+    "profile": "girl"
+  },
+  {
+    "label": "La vétérinaire et le refuge de montagne",
+    "ar": "الطبيبة البيطرية وملجأ الجبل",
+    "category": "heroines",
+    "icon": "🩺",
+    "theme": "🩺 La vétérinaire et le refuge de montagne",
+    "profile": "girl"
+  },
+  {
+    "label": "La détective et le collier du musée",
+    "ar": "المحققة وقلادة المتحف",
+    "category": "heroines",
+    "icon": "🔎",
+    "theme": "🔎 La détective et le collier du musée",
+    "profile": "girl"
+  },
+  {
+    "label": "La musicienne qui réveillait les étoiles",
+    "ar": "الموسيقية التي توقظ النجوم",
+    "category": "heroines",
+    "icon": "🎻",
+    "theme": "🎻 La musicienne qui réveillait les étoiles",
+    "profile": "girl"
+  },
+  {
+    "label": "La danseuse et le ballet des saisons",
+    "ar": "الراقصة وباليه الفصول",
+    "category": "heroines",
+    "icon": "🩰",
+    "theme": "🩰 La danseuse et le ballet des saisons",
+    "profile": "girl"
+  },
+  {
+    "label": "La créatrice des costumes enchantés",
+    "ar": "مصممة الأزياء المسحورة",
+    "category": "heroines",
+    "icon": "🧵",
+    "theme": "🧵 La créatrice des costumes enchantés",
+    "profile": "girl"
+  },
+  {
+    "label": "La championne et l’équipe solidaire",
+    "ar": "البطلة الرياضية والفريق المتعاون",
+    "category": "heroines",
+    "icon": "🏅",
+    "theme": "🏅 La championne et l’équipe solidaire",
+    "profile": "girl"
+  },
+  {
+    "label": "La jardinière et la fleur introuvable",
+    "ar": "البستانية والزهرة المفقودة",
+    "category": "heroines",
+    "icon": "🌷",
+    "theme": "🌷 La jardinière et la fleur introuvable",
+    "profile": "girl"
+  },
+  {
+    "label": "La pâtissière et le concours des petits talents",
+    "ar": "صانعة الحلويات ومسابقة المواهب الصغيرة",
+    "category": "heroines",
+    "icon": "🧁",
+    "theme": "🧁 La pâtissière et le concours des petits talents",
+    "profile": "girl"
+  },
+  {
+    "label": "La photographe des merveilles de la nature",
+    "ar": "مصورة عجائب الطبيعة",
+    "category": "heroines",
+    "icon": "📸",
+    "theme": "📸 La photographe des merveilles de la nature",
+    "profile": "girl"
+  },
+  {
+    "label": "La protectrice des animaux de la savane",
+    "ar": "حامية حيوانات السافانا",
+    "category": "heroines",
+    "icon": "🦁",
+    "theme": "🦁 La protectrice des animaux de la savane",
+    "profile": "girl"
+  },
+  {
+    "label": "La jeune maire et la ville des enfants",
+    "ar": "العمدة الصغيرة ومدينة الأطفال",
+    "category": "heroines",
+    "icon": "🏡",
+    "theme": "🏡 La jeune maire et la ville des enfants",
+    "profile": "girl"
+  },
+  {
+    "label": "La conteuse et la bibliothèque des rêves",
+    "ar": "الحكواتية ومكتبة الأحلام",
+    "category": "heroines",
+    "icon": "📖",
+    "theme": "📖 La conteuse et la bibliothèque des rêves",
+    "profile": "girl"
+  },
+  {
+    "label": "La magicienne et la lumière du courage",
+    "ar": "الساحرة ونور الشجاعة",
+    "category": "heroines",
+    "icon": "🧙‍♀️",
+    "theme": "🧙‍♀️ La magicienne et la lumière du courage",
+    "profile": "girl"
+  },
   {
     "label": "Monde magique",
     "ar": "العالم السحري",
