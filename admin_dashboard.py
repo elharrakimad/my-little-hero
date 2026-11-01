@@ -5,6 +5,7 @@ from zoneinfo import ZoneInfo
 import streamlit as st
 from production_status import STAGES
 from order_actions import CANCELLABLE_STATUSES, cancel_order
+from book_style import book_style_label
 
 LABELS = {"WAITING_FOR_PAYMENT": "Paiement à vérifier", "PAID": "En file d'attente",
     "GENERATING": "En production", "GENERATION_INTERRUPTED": "À reprendre",
@@ -139,6 +140,7 @@ def show_dashboard(list_orders, get_db, download_pdf, update_status):
                 st.caption(f"{order.get('pack', '—')} · {order.get('age', '—')} ans · {order.get('language', '—')} · {order.get('adventure_count', 1)} aventure(s)")
                 for adventure in order.get("adventures", []):
                     st.write(f"**{adventure.get('title') or 'Titre à préciser'}** — {adventure.get('theme', '')}")
+                    st.caption("Type de livre : " + book_style_label(adventure.get("book_style", "coloring")))
                 if status == "WAITING_FOR_PAYMENT":
                     st.info("La couverture est enregistrée. La génération complète attend votre validation du paiement.")
                     confirmed = st.checkbox("J’ai vérifié le paiement reçu ou les conditions convenues.", key=f"payment_{ref}")

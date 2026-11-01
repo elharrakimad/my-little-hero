@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   orderButton.disabled=true;
   orderButton.setAttribute("aria-disabled","true");
 
-  window.generateStoryPreview=async({name,age,language,gender,themes,photoFile,parentPhone,parentEmail,customTheme})=>{
+  window.generateStoryPreview=async({name,age,language,gender,themes,photoFile,parentPhone,parentEmail,customTheme,bookStyle="coloring"})=>{
     if(window.location.protocol==="file:"){
       alert(document.documentElement.lang==="ar"
         ?"لإنشاء كتاب، افتح الموقع https://my-little-hero.online بدلاً من ملف HTML على جهازك."
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     form.append("child_name",name);
     form.append("child_age",age);
     form.append("child_gender",gender);
+    form.append("book_style",bookStyle);
     form.append("language",language||"Français");
     form.append("themes",JSON.stringify(themes));
     form.append("theme",themes[0]||"");

@@ -9,6 +9,7 @@ import re
 import shutil
 
 import generate_book as engine
+from book_style import validate_book_style, book_output_dir
 
 
 def _safe_filename(value: str) -> str:
@@ -30,12 +31,14 @@ def generate_book_from_adventure(
     output_dir: str | Path,
     preview_cover_path: str | Path | None = None,
     child_gender: str = "",
+    book_style: str = "coloring",
     progress=None,
 ) -> Path:
     """Génère le livre complet d'une aventure avec un titre imposé."""
     if child_gender not in {"", "girl", "boy"}:
         raise ValueError("Genre invalide : utiliser girl ou boy.")
-    output_dir = Path(output_dir)
+    book_style = validate_book_style(book_style)
+    output_dir = book_output_dir(output_dir, book_style)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     final_pdf = output_dir / f"{_safe_filename(child_name)}_{_safe_filename(book_title)}.pdf"
@@ -51,6 +54,7 @@ def generate_book_from_adventure(
     engine.THEME = theme
     engine.LANGUAGE = language
     engine.CHILD_GENDER = child_gender
+    engine.BOOK_STYLE = book_style
     engine.CLIENT_IDEA = client_idea or ""
     engine.CHILD_QUALITY = child_quality or ""
     engine.BOOK_TITLE = book_title.strip()

@@ -11,7 +11,7 @@ class ProfileTests(unittest.TestCase):
     def api_functions(self, **extra):
         tree = ast.parse(Path("api.py").read_text(encoding="utf-8"))
         names = {"generate_title", "save_order_to_supabase", "language_instruction"}
-        namespace = {"gender_instruction": gender_instruction, **extra}
+        namespace = {"gender_instruction": gender_instruction, "validate_book_style": __import__("book_style").validate_book_style, **extra}
         functions = ast.Module(body=[n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name in names], type_ignores=[])
         exec(compile(functions, "api.py", "exec"), namespace)
         return namespace

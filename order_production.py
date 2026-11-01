@@ -7,6 +7,7 @@ import time
 from pathlib import Path
 from production_status import ProgressTracker
 from order_actions import save_production_fields
+from book_style import book_output_dir
 
 SUPABASE_BUCKET = "my-little-hero-files"
 ADMIN_WORK_DIR = Path(os.getenv("MLH_WORK_DIR", "worker_orders"))
@@ -238,7 +239,7 @@ def generate_order(order):
         adventure_dir = final_dir / f"adventure_{index:02d}"
         adventure_dir.mkdir(parents=True, exist_ok=True)
 
-        expected_pdf = adventure_dir / (
+        expected_pdf = book_output_dir(adventure_dir, adventure.get("book_style", "coloring")) / (
             f"{_safe_filename(order['child_name'])}_"
             f"{_safe_filename(title)}.pdf"
         )
@@ -254,6 +255,7 @@ def generate_order(order):
                 language=order["language"],
                 client_idea=adventure.get("idea", ""),
                 child_gender=adventure.get("child_gender", ""),
+                book_style=adventure.get("book_style", "coloring"),
                 child_quality=adventure.get("quality", ""),
                 book_title=title,
                 reference_path=reference_path,

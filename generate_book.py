@@ -5,9 +5,10 @@ import html
 import re
 from pathlib import Path
 from contextlib import ExitStack
-from character_continuity import CAST_INSTRUCTIONS, CHILD_OUTFIT_INSTRUCTION, cast_from_story, continuity_context, reference_paths, reference_roles
+from character_continuity import CAST_INSTRUCTIONS, CHILD_OUTFIT_INSTRUCTION, child_outfit_instruction, cast_from_story, continuity_context, reference_paths, reference_roles
 from anime_cast import anime_cast_instruction, cast_limit, secondary_reference_folder, secondary_reference_path
 from story_language import story_language_instruction, repair_arabic_story, validate_printed_language
+from book_style import illustration_direction, cover_subtitle
 from child_profile import gender_instruction
 from age_profile import coloring_instruction
 from story_reference import visual_reference_instruction
@@ -34,6 +35,7 @@ NAME = ""
 AGE = 9
 THEME = ""
 LANGUAGE = ""
+BOOK_STYLE = "coloring"
 CHILD_GENDER = ""
 
 # Champs facultatifs du client
@@ -84,7 +86,7 @@ def file_signature():
 
     data = "|".join([
         NAME, str(AGE), THEME, LANGUAGE, CHILD_GENDER, CLIENT_IDEA, CHILD_QUALITY,
-        "dynamic_title_v2", BOOK_TITLE.strip(), photo_hash
+        "dynamic_title_v2", BOOK_TITLE.strip(), photo_hash, BOOK_STYLE
     ])
 
     return hashlib.sha256(data.encode("utf-8")).hexdigest()
@@ -235,7 +237,7 @@ Crée une histoire originale de 10 pages.
 INFORMATIONS SUR L'ENFANT
 - Prénom : {NAME}
 - Âge : {AGE} ans
-- Direction des scènes à colorier : {coloring_instruction(AGE)}
+- Direction des illustrations : {illustration_direction(BOOK_STYLE, AGE)}
 - Thème : {THEME}
 - Langue : {LANGUAGE}
 
@@ -260,7 +262,7 @@ Son prénom doit apparaître naturellement dans l'histoire.
 OBJECTIF
 Créer une histoire amusante, captivante, éducative et adaptée à l'âge
 de l'enfant, qui pourra ensuite être transformée en livre illustré
-et en livre de coloriage.
+selon le type de livre choisi.
 
 L'histoire doit donner envie à l'enfant de lire la page suivante,
 tout en lui faisant découvrir naturellement une valeur, une idée,
@@ -354,7 +356,7 @@ Pour chaque scène, indique si possible :
 - l'ambiance
 
 Les scènes doivent être adaptées à des illustrations
-de livre de coloriage en noir et blanc.
+du type de livre choisi : {illustration_direction(BOOK_STYLE, AGE)}
 
 IMPORTANT POUR LA COHÉRENCE
 Le personnage principal doit rester visuellement cohérent
@@ -363,7 +365,7 @@ d'une page à l'autre.
 Ne change pas son âge, son apparence générale,
 sa coiffure ou ses caractéristiques principales
 entre les différentes scènes.
-{CHILD_OUTFIT_INSTRUCTION}
+{child_outfit_instruction(BOOK_STYLE)}
 N’écris aucune scène exigeant de changer les vêtements ou accessoires portés par l’enfant.
 
 À LA FIN DE L'HISTOIRE
@@ -382,8 +384,8 @@ Après la scène de PAGE 10, ajoute ce bloc distinct, sans nouvelle page d'histo
 SOUVENIR
 Félicitations : une phrase de 110 caractères maximum qui félicite l'enfant
 pour la mission réellement accomplie. Rédige cette phrase dans {LANGUAGE}.
-{CAST_INSTRUCTIONS.replace('six personnages secondaires', 'deux personnages secondaires') if cast_limit(THEME) == 2 else CAST_INSTRUCTIONS}
-{anime_cast_instruction(THEME)}
+{(CAST_INSTRUCTIONS.replace('six personnages secondaires', 'deux personnages secondaires') if cast_limit(THEME) == 2 else CAST_INSTRUCTIONS).replace('visibles en noir et blanc', 'visibles dans les illustrations')}
+{anime_cast_instruction(THEME, BOOK_STYLE)}
 """
 
     response = client.responses.create(
@@ -496,8 +498,8 @@ Une seule vue en pied, visage bien visible, pose neutre, tous les accessoires ca
 Ce n’est pas l’enfant principal. Aucun autre personnage, aucune foule ni silhouette.
 Respecter l’apparence déjà visible sur la couverture ou la première apparition, si ce personnage y est identifiable.
 Cette image restera la référence fixe pour toutes les pages et le médaillon.
-{coloring_instruction(AGE)}
-Fond blanc, aucun décor, ombre, gris, aplat noir, cadre, texte, lettre, numéro ou logo.
+{illustration_direction(BOOK_STYLE, AGE)}
+Fond blanc, aucun décor, cadre, texte, lettre, numéro ou logo.
 """)
         atomic_write_bytes(output, base64.b64decode(result.data[0].b64_json))
 
@@ -526,13 +528,13 @@ def generate_page(page_number, page_content):
 
     story = Path(STORY_FILE).read_text(encoding="utf-8")
     references = reference_paths(story, page_number, REFERENCE_IMAGE, COVER_FILE, PAGES_FOLDER, NUMBER_OF_PAGES,
-        secondary_folder=secondary_reference_folder(THEME, PAGES_FOLDER))
+        secondary_folder=secondary_reference_folder(THEME, PAGES_FOLDER), book_style=BOOK_STYLE)
     with ExitStack() as stack:
         reference_images = [stack.enter_context(path.open("rb")) for path, _ in references]
 
         prompt = f"""
 {gender_instruction(CHILD_GENDER)}
-Crée une illustration verticale pour un livre de coloriage
+Crée une illustration verticale pour un livre d’histoires
 personnalisé destiné aux enfants.
 
 IMPORTANT :
@@ -553,8 +555,8 @@ visuels établis dans les pages précédentes.
 Si des personnages secondaires récurrents apparaissent dans la scène,
 conserve également leur apparence de manière cohérente.
 
-{continuity_context(story, page_number, NUMBER_OF_PAGES)}
-{anime_cast_instruction(THEME)}
+{continuity_context(story, page_number, NUMBER_OF_PAGES, book_style=BOOK_STYLE)}
+{anime_cast_instruction(THEME, BOOK_STYLE)}
 RÔLE DES IMAGES DE RÉFÉRENCE :
 {reference_roles(references)}
 Les références dédiées des secondaires font autorité, puis leurs premières apparitions. Ne remplace pas
@@ -579,24 +581,12 @@ Les expressions doivent être adaptées à l'émotion de la scène.
 Le décor doit correspondre au thème de l'histoire.
 
 STYLE
-- illustration de livre de coloriage pour enfants
-- noir et blanc
-- dessin au trait
-- lignes propres et nettes
-- détails suffisamment riches pour être intéressants
-- {coloring_instruction(AGE)}
-- composition verticale
-- personnage principal clairement visible
-- décor dont la complexité respecte le niveau de coloriage indiqué ci-dessus
-- style professionnel de livre pour enfants
-- aucun remplissage de couleur
-- fond blanc pur, aucun aplat gris, aucune ombre, aucun dégradé, aucune hachure
-- cheveux et vêtements non remplis, seulement leurs contours à colorier
-- composition ouverte en vignette : tous les éléments restent à distance des bords
-- aucun cadre rectangulaire, aucune bordure, aucun élément coupé sur le pourtour
-- limiter les ornements à quelques motifs discrets de l'univers du récit
-- aucun effet photographique
-- aucun réalisme photographique
+{illustration_direction(BOOK_STYLE, AGE)}
+- composition verticale et personnage principal clairement visible
+- composition ouverte en vignette, éléments à distance des bords
+- aucun cadre rectangulaire, aucune bordure, aucun élément coupé
+- limiter les ornements à quelques motifs discrets de l'univers
+- style illustré professionnel, aucun réalisme photographique
 
 RÈGLES IMPORTANTES
 - aucun texte dans l'image
@@ -612,7 +602,7 @@ RÈGLES IMPORTANTES
 - ne pas transformer une scène de l'histoire en couverture
 
 L'image doit être prête à être utilisée comme page
-d'un véritable livre de coloriage pour enfants.
+d'un livre jeunesse personnalisé du type choisi.
 """
 
         result = client.images.edit(
@@ -723,7 +713,7 @@ La couverture doit contenir exactement ces textes :
 
 {NAME}
 
-Livre de coloriage personnalisé
+{cover_subtitle(LANGUAGE, BOOK_STYLE)}
 
 IMPORTANT :
 Le titre principal doit être exactement « {BOOK_TITLE} ».
@@ -733,7 +723,7 @@ Les textes doivent être grands, lisibles et bien intégrés
 dans le design.
 
 {visual_reference_instruction(THEME)}
-{anime_cast_instruction(THEME)}
+{anime_cast_instruction(THEME, BOOK_STYLE)}
 """
 
         result = client.images.edit(
@@ -811,25 +801,24 @@ def generate_keepsake_medallion():
     pages = story_pages(Path(STORY_FILE).read_text(encoding="utf-8"), NUMBER_OF_PAGES)
     story = Path(STORY_FILE).read_text(encoding="utf-8")
     references = reference_paths(story, NUMBER_OF_PAGES+1, REFERENCE_IMAGE, COVER_FILE, PAGES_FOLDER, NUMBER_OF_PAGES,
-        secondary_folder=secondary_reference_folder(THEME, PAGES_FOLDER))
+        secondary_folder=secondary_reference_folder(THEME, PAGES_FOLDER), book_style=BOOK_STYLE)
     with ExitStack() as stack:
         reference_images = [stack.enter_context(path.open("rb")) for path, _ in references]
         result = client.images.edit(
             model="gpt-image-2", image=reference_images, size="1024x1024", quality="medium",
-            prompt=f"""Crée uniquement le médaillon souvenir à colorier de {NAME}, {AGE} ans.
+            prompt=f"""Crée uniquement le médaillon souvenir illustré de {NAME}, {AGE} ans.
 {gender_instruction(CHILD_GENDER)}
 Conserve exactement le personnage de référence : visage, coiffure, âge, apparence.
 Univers : {THEME}. Mission accomplie : {pages[-1]["scene"]}.
-{continuity_context(story, NUMBER_OF_PAGES, NUMBER_OF_PAGES)}
-{anime_cast_instruction(THEME)}
+{continuity_context(story, NUMBER_OF_PAGES, NUMBER_OF_PAGES, book_style=BOOK_STYLE)}
+{anime_cast_instruction(THEME, BOOK_STYLE)}
 {reference_roles(references)}
 Personnage principal fier et souriant, au centre, buste ou corps en entier dans
 un médaillon circulaire très simple. Ajouter le compagnon uniquement si la scène
 le mentionne et si cela reste lisible. Tous les traits restent dans le cercle.
 Médaillon entier visible et généreuse marge blanche tout autour.
-Noir et blanc pur, contours nets, larges zones à colorier adaptées à {AGE} ans,
-{coloring_instruction(AGE)}
-fond blanc, aucun gris, aucune ombre, hachure, texture ou aplat noir.
+{illustration_direction(BOOK_STYLE, AGE)}
+Fond blanc autour du médaillon. Respecter le style choisi ci-dessus.
 AUCUN TEXTE, lettre, numéro, titre, ruban, logo ou watermark.
 Les inscriptions et le ruban seront ajoutés par le système PDF.""")
     atomic_write_bytes(KEEPSAKE_IMAGE, base64.b64decode(result.data[0].b64_json))
@@ -843,7 +832,7 @@ def generate_pdf():
         page["image"] = PAGES_FOLDER / f"page_{page["number"]:02d}.png"
     return build_book_pdf(OUTPUT_FILE, pages, KEEPSAKE_IMAGE, child_name=NAME,
         congratulations=keepsake_congratulations(story, THEME, LANGUAGE),
-        gender=CHILD_GENDER, language=LANGUAGE, cover=COVER_FILE)
+        gender=CHILD_GENDER, language=LANGUAGE, cover=COVER_FILE, book_style=BOOK_STYLE)
 
 
 

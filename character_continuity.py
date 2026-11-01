@@ -18,6 +18,14 @@ CHILD_OUTFIT_INSTRUCTION = (
     "de la référence initiale de l’enfant."
 )
 
+
+def child_outfit_instruction(book_style="coloring"):
+    if book_style == "colored":
+        return CHILD_OUTFIT_INSTRUCTION.replace(
+            "En noir et blanc, traduire les couleurs en zones blanches à colorier, sans changer les motifs ni remplir les vêtements.",
+            "Conserver les couleurs exactes de la tenue de couverture, ses motifs et ses accessoires, sans changer de palette.")
+    return CHILD_OUTFIT_INSTRUCTION
+
 CAST_INSTRUCTIONS = """
 PERSONNAGES SECONDAIRES RÉCURRENTS
 Définis une seule apparence immuable pour chaque compagnon, animal ou adversaire :
@@ -61,7 +69,7 @@ def cast_from_story(story, page_total=10, max_characters=6):
         raise ValueError(f"Fiche des personnages invalide : maximum {max_characters} secondaires. Vérifier PERSONNAGES_JSON avant les illustrations.") from exc
 
 
-def continuity_context(story, page_number, page_total=10):
+def continuity_context(story, page_number, page_total=10, book_style="coloring"):
     cast = cast_from_story(story, page_total)
     if cast is None:
         # Old stories already contain the appearance notes; reuse them verbatim.
@@ -73,15 +81,17 @@ def continuity_context(story, page_number, page_total=10):
         present_ids = [c["id"] for c in cast if min(page_number, page_total) in c["pages"]]
         present = "Secondaires présents dans cette scène : " + (", ".join(present_ids) or "aucun")
     return ("FICHE COMMUNE DES PERSONNAGES (identités fixes, ne pas imprimer ce texte) :\n"
-        + CHILD_OUTFIT_INSTRUCTION + "\n" + profiles + "\n" + present + "\nNe pas fusionner, échanger, rajeunir ou redessiner les identités. "
+        + child_outfit_instruction(book_style) + "\n" + profiles + "\n" + present + "\nNe pas fusionner, échanger, rajeunir ou redessiner les identités. "
         "Les poses et expressions peuvent changer ; les visages, coiffures, silhouettes, tenues et accessoires restent fixes.")
 
 
-def reference_paths(story, page_number, reference, cover, pages_folder, page_total=10, secondary_folder=None):
+def reference_paths(story, page_number, reference, cover, pages_folder, page_total=10, secondary_folder=None, book_style="coloring"):
     """Keep the child's image first; use first appearances instead of drifting copies."""
     result = [(Path(reference), "Identité prioritaire de l’enfant principal : conserver son visage et sa coiffure. Si la couverture est fournie, ses vêtements remplacent la tenue neutre de cette référence.")]
     if cover and Path(cover).is_file() and Path(cover).stat().st_size:
         result.append((Path(cover), "Couverture validée : référence prioritaire et immuable de la tenue de l’enfant, de ses chaussures et accessoires, ainsi que de l’univers et des secondaires visibles. Ignorer le texte ; conserver tous les motifs et détails de la tenue en contours noirs sur fond blanc."))
+        if book_style == "colored":
+            result[-1] = (result[-1][0], result[-1][1].replace("en contours noirs sur fond blanc", "avec exactement les mêmes couleurs"))
     cast = cast_from_story(story, page_total)
     if cast is None:
         anchors = list(range(1, min(page_number, page_total + 1)))

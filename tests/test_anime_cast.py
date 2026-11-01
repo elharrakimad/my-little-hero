@@ -48,7 +48,7 @@ class AnimeCastTests(unittest.TestCase):
             secondary_reference_path=anime_cast.secondary_reference_path,
             cast_from_story=continuity.cast_from_story, reference_roles=continuity.reference_roles,
             coloring_instruction=coloring_instruction, THEME=next(iter(anime_cast.anime_themes())),
-            AGE=12, NUMBER_OF_PAGES=10, PAGES_FOLDER=folder/'pages', STORY_FILE=folder/'story.txt',
+            AGE=12, BOOK_STYLE="coloring", illustration_direction=__import__("book_style").illustration_direction, NUMBER_OF_PAGES=10, PAGES_FOLDER=folder/'pages', STORY_FILE=folder/'story.txt',
             REFERENCE_IMAGE=folder/'child.png', COVER_FILE=folder/'cover.png', client=client)
         exec(compile(functions, 'generate_book.py', 'exec'), ns)
         return ns, client

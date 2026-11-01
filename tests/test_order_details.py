@@ -24,7 +24,7 @@ def production_namespace():
         function.decorator_list = []
     ns = dict(re=re, json=json, HTTPException=RequestError, Form=lambda default: default,
               File=lambda default: default, UploadFile=object, base64=base64,
-              MAX_PHOTO_BYTES=8*1024*1024, datetime=datetime, uuid=uuid)
+              MAX_PHOTO_BYTES=8*1024*1024, datetime=datetime, uuid=uuid, validate_book_style=__import__("book_style").validate_book_style)
     exec(compile(ast.Module(body=functions, type_ignores=[]), "api.py", "exec"), ns)
     return ns
 
@@ -81,6 +81,11 @@ class OrderDetailsTests(unittest.TestCase):
         self.assertIn("Un jardin magique", prompts[0])
         self.assertEqual(row["total_price"], 99)
         self.assertEqual(row["status"], "WAITING_FOR_PAYMENT")
+        self.assertEqual(row["adventures"][0]["book_style"], "coloring")
+        params["book_style"] = "colored"
+        asyncio.run(self.ns["preview_cover"](**params))
+        self.assertEqual(db.rows[1]["adventures"][0]["book_style"], "colored")
+        self.assertEqual(db.rows[1]["total_price"], 99)
         params["parent_phone"] = ""
         self.ns["get_openai_client"] = lambda: self.fail("Invalid contact must fail before paid work")
         with self.assertRaises(RequestError): asyncio.run(self.ns["preview_cover"](**params))
@@ -94,6 +99,12 @@ class OrderDetailsTests(unittest.TestCase):
                 asyncio.run(self.ns["preview_cover"](child_name="Test", child_age=age,
                     theme="Science", photo=None, child_gender="girl", parent_phone="0612345678"))
             self.assertIn("3 et 16", error.exception.detail)
+
+    def test_invalid_book_style_is_rejected_before_any_ai_work(self):
+        self.ns["get_openai_client"] = lambda: self.fail("Invalid style must not start paid work")
+        with self.assertRaises(RequestError):
+            asyncio.run(self.ns["preview_cover"](child_name="Test", child_age="10 ans", theme="Science",
+                photo=None, child_gender="boy", parent_phone="0612345678", book_style="unknown"))
 
 
 if __name__ == "__main__":

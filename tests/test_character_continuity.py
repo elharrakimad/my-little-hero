@@ -98,7 +98,7 @@ class ContinuityTests(unittest.TestCase):
                 gender_instruction=gender_instruction, coloring_instruction=coloring_instruction,
                 visual_reference_instruction=visual_reference_instruction,
                 continuity_context=continuity.continuity_context, reference_paths=continuity.reference_paths,
-                reference_roles=continuity.reference_roles, client=client, CHILD_GENDER='boy', AGE=10, THEME='Forêt',
+                reference_roles=continuity.reference_roles, client=client, CHILD_GENDER='boy', AGE=10, THEME='Forêt', BOOK_STYLE='coloring', illustration_direction=__import__('book_style').illustration_direction,
                 secondary_reference_folder=__import__('anime_cast').secondary_reference_folder,
                 anime_cast_instruction=__import__('anime_cast').anime_cast_instruction,
                 PAGES_FOLDER=folder, STORY_FILE=folder/'story.txt', COVER_FILE=folder/'cover.png',

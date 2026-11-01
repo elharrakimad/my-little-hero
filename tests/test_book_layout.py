@@ -70,7 +70,7 @@ class BookLayoutTests(unittest.TestCase):
                 validate_printed_language=__import__("story_language").validate_printed_language,
                 build_book_pdf=build_book_pdf, STORY_FILE=story, NUMBER_OF_PAGES=1, PAGES_FOLDER=folder,
                 OUTPUT_FILE=folder/"book.pdf", KEEPSAKE_IMAGE=ROOT/"examples/itar/medallion.png", NAME="Itar",
-                THEME="Basket", LANGUAGE="Français", CHILD_GENDER="boy", COVER_FILE=folder/"page_01.png")
+                THEME="Basket", LANGUAGE="Français", BOOK_STYLE="coloring", CHILD_GENDER="boy", COVER_FILE=folder/"page_01.png")
             exec(compile(ast.Module(body=[function], type_ignores=[]), "generate_book.py", "exec"), namespace)
             output = namespace["generate_pdf"]()
             pdf = PdfReader(output)

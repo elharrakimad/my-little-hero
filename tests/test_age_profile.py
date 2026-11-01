@@ -27,4 +27,4 @@ class AgeProfileTests(unittest.TestCase):
         for name in ("generate_story", "generate_page", "generate_keepsake_medallion"):
             function = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == name)
             self.assertTrue(any(isinstance(n, ast.Call) and isinstance(n.func, ast.Name)
-                and n.func.id == "coloring_instruction" for n in ast.walk(function)), name)
+                and n.func.id == "illustration_direction" for n in ast.walk(function)), name)

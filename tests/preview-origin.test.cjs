@@ -38,11 +38,12 @@ test('preview request includes parent contact and the custom description', async
     fetch:async()=>{requested=true;return {ok:false,json:async()=>({detail:'Test: no generation'})};},
   });
   await window.generateStoryPreview({name:'Test',age:7,gender:'girl',themes:['✨ Mon propre thème'],
-    photoFile:{},parentPhone:'+212612345678',parentEmail:'',customTheme:'Un jardin magique'});
+    photoFile:{},parentPhone:'+212612345678',parentEmail:'',customTheme:'Un jardin magique',bookStyle:'colored'});
   assert.equal(requested,true);
   assert.equal(fields.get('parent_phone'),'+212612345678');
   assert.equal(fields.get('parent_email'),'');
   assert.equal(fields.get('custom_theme'),'Un jardin magique');
+  assert.equal(fields.get('book_style'),'colored');
   requested=false;
   await window.generateStoryPreview({name:'Test',age:7,gender:'girl',themes:['Science'],photoFile:{},parentPhone:''});
   assert.equal(requested,false);

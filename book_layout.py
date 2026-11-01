@@ -175,7 +175,13 @@ def draw_story_page(canvas, title, text, image, number, config=DEFAULT_LAYOUT):
     canvas.showPage()
 
 
-def souvenir_copy(name, gender="", language="Français"):
+def souvenir_copy(name, gender="", language="Français", book_style="coloring"):
+    if book_style == "colored":
+        return {
+            "العربية": (f"أحسنت، {name}!", "بطلة صغيرة، خيال كبير" if gender == "girl" else "بطل صغير، خيال كبير", "بشجاعتك وخيالك، عشت مغامرة رائعة.", "تخيّل مغامرتك القادمة…", "قراءة:", "التاريخ:"),
+            "English": (f"Well done, {name}!", "Little hero, big imagination", "With courage and imagination, you lived an amazing adventure.", "Imagine your next adventure…", "Read by:", "Date:"),
+            "Español": (f"¡Bravo, {name}!", "Pequeña heroína, gran imaginación" if gender == "girl" else "Pequeño héroe, gran imaginación", "Con tu valentía e imaginación, has vivido una gran aventura.", "Imagina tu próxima aventura…", "Leído por:", "Fecha:"),
+        }.get(language, (f"Bravo, {name} !", "Petite héroïne, grande imagination" if gender == "girl" else "Petit héros, grande imagination", "Avec ton courage et ton imagination, tu as vécu une belle aventure.", "Imagine ta prochaine aventure…", "Lu par :", "Le :"))
     if language == "العربية":
         return (f"أحسنت، {name}!", "بطلة صغيرة، خيال كبير" if gender == "girl" else "بطل صغير، خيال كبير",
             "بشجاعتك وألوانك، منحت هذه المغامرة الحياة.", "تخيّل مغامرتك القادمة…", "تلوين:", "التاريخ:")
@@ -186,8 +192,8 @@ def souvenir_copy(name, gender="", language="Français"):
     return (f"Bravo, {name} !", "Petite héroïne, grande imagination" if gender == "girl" else "Petit héros, grande imagination", "Avec ton courage et tes couleurs, tu as donné vie à cette aventure.", "Imagine ta prochaine aventure…", "Colorié par :", "Le :")
 
 
-def draw_keepsake_page(canvas, name, congratulations, medal, *, gender="", language="Français", config=DEFAULT_LAYOUT):
-    title, ribbon, message, next_adventure, colored_by, date = souvenir_copy(name, gender, language)
+def draw_keepsake_page(canvas, name, congratulations, medal, *, gender="", language="Français", config=DEFAULT_LAYOUT, book_style="coloring"):
+    title, ribbon, message, next_adventure, colored_by, date = souvenir_copy(name, gender, language, book_style)
     x, w, center = config.binding_margin, config.content_width, config.center
     k = config.keepsake
     draw_centered(canvas, title, config.height-config.top_margin, w, center=center,
@@ -223,7 +229,7 @@ def draw_keepsake_page(canvas, name, congratulations, medal, *, gender="", langu
     canvas.showPage()
 
 
-def build_book_pdf(output, pages, medal, *, child_name, congratulations, gender="", language="Français", cover=None, config=DEFAULT_LAYOUT):
+def build_book_pdf(output, pages, medal, *, child_name, congratulations, gender="", language="Français", cover=None, config=DEFAULT_LAYOUT, book_style="coloring"):
     register_fonts()
     output = Path(output)
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -236,7 +242,7 @@ def build_book_pdf(output, pages, medal, *, child_name, congratulations, gender=
     if config.height-config.top_margin-config.title_band-(config.bottom_margin+config.footer_band+config.narrative_height+config.image_gap) < 220:
         raise ValueError("Le titre ne laisse plus assez d'espace pour l'illustration.")
     canvas = Canvas(str(output), pagesize=(config.width, config.height), pageCompression=1)
-    canvas.setTitle(f"{child_name} - livre de contes à colorier")
+    canvas.setTitle(f"{child_name} - " + ("livre de contes illustrés" if book_style == "colored" else "livre de contes à colorier"))
     canvas.setAuthor("My Little Hero")
     if cover:
         draw_image(canvas, cover, 0, 0, config.width, config.height)
@@ -247,6 +253,6 @@ def build_book_pdf(output, pages, medal, *, child_name, congratulations, gender=
             number += 1
             title = page["title"] + (continuation if part_number else "")
             draw_story_page(canvas, title, text, page["image"], number, config)
-    draw_keepsake_page(canvas, child_name, congratulations, medal, gender=gender, language=language, config=config)
+    draw_keepsake_page(canvas, child_name, congratulations, medal, gender=gender, language=language, config=config, book_style=book_style)
     canvas.save()
     return output

@@ -22,16 +22,17 @@ def cast_limit(theme):
     return 2 if is_anime_theme(theme) else 6
 
 
-def anime_cast_instruction(theme):
+def anime_cast_instruction(theme, book_style="coloring"):
     if not is_anime_theme(theme):
         return ""
-    return ("RÈGLE ANIME : l’enfant est le héros principal. Deux personnages secondaires au maximum "
+    instruction = ("RÈGLE ANIME : l’enfant est le héros principal. Deux personnages secondaires au maximum "
         "dans tout le livre, couverture comprise, et pas seulement par page. Ce total inclut amis, "
         "compagnons, animaux, créatures et adversaires. Aucun figurant supplémentaire, foule, "
         "silhouette humaine ou nouveau personnage anonyme. Ils ne sont présents que si la scène "
         "le demande. Pour chacun, fixer visage, âge apparent, coiffure, silhouette, tenue, chaussures, "
         "accessoires et détails caractéristiques de son univers anime, lisibles en noir et blanc. "
         "Ne jamais transformer l’enfant principal en un personnage secondaire.")
+    return instruction.replace("lisibles en noir et blanc", "cohérents en couleur") if book_style == "colored" else instruction
 
 
 def secondary_reference_folder(theme, pages_folder):

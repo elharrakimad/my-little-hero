@@ -14,6 +14,7 @@ from supabase import create_client
 from child_profile import gender_instruction
 from story_reference import visual_reference_instruction
 from anime_cast import anime_cast_instruction
+from book_style import validate_book_style, cover_subtitle
 
 app = FastAPI(title="My Little Hero API", version="0.1.0")
 
@@ -66,7 +67,7 @@ def resolve_order_themes(themes, custom_theme=""):
     return result
 
 
-def save_order_to_supabase(order_ref, name, age, language, pack, covers, reference_bytes, cover_files, child_gender="", parent_phone="", parent_email=""):
+def save_order_to_supabase(order_ref, name, age, language, pack, covers, reference_bytes, cover_files, child_gender="", parent_phone="", parent_email="", book_style="coloring"):
     supabase = get_supabase_client()
     bucket = "my-little-hero-files"
     root = f"orders/{order_ref}"
@@ -89,6 +90,7 @@ def save_order_to_supabase(order_ref, name, age, language, pack, covers, referen
         adventures.append({
             "number": index,
             "child_gender": child_gender,
+            "book_style": validate_book_style(book_style),
             "theme": cover.get("theme", ""),
             "idea": cover.get("idea", ""),
             "quality": "",
@@ -173,16 +175,8 @@ Réponds uniquement avec le titre final, sur une seule ligne.
     return title[:120]
 
 
-def generate_cover(client, reference_bytes, name, age, theme, language, title, child_gender=""):
-    if language == "English":
-        subtitle = "Personalized Coloring Book"
-    elif language == "Español":
-        subtitle = "Libro de colorear personalizado"
-    elif language == "العربية":
-        subtitle = "كتاب تلوين مخصص"
-    else:
-        subtitle = "Livre de coloriage personnalisé"
-
+def generate_cover(client, reference_bytes, name, age, theme, language, title, child_gender="", book_style="coloring"):
+    subtitle = cover_subtitle(language, book_style)
     prompt = f"""
 Crée la couverture couleur professionnelle d'un livre jeunesse personnalisé.
 
@@ -200,7 +194,7 @@ avec l'enfant clairement au premier plan et un décor riche inspiré du thème.
 STYLE : illustration professionnelle de livre jeunesse, très colorée,
 chaleureuse, joyeuse, composition verticale, rendu premium.
 {visual_reference_instruction(theme)}
-{anime_cast_instruction(theme)}
+{anime_cast_instruction(theme, book_style)}
 Aucun watermark ni texte supplémentaire.
 
 AFFICHER EXACTEMENT CES TEXTES :
@@ -237,7 +231,12 @@ async def preview_cover(
     parent_phone: str = Form(...),
     parent_email: str = Form(""),
     custom_theme: str = Form(""),
+    book_style: str = Form("coloring"),
 ):
+    try:
+        book_style = validate_book_style(book_style)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
     parent_phone, parent_email = validate_parent_contact(parent_phone, parent_email)
     child_gender = child_gender.strip()
     if child_gender not in {"girl", "boy"}:
@@ -305,7 +304,7 @@ Aucun texte, logo ou watermark. Aucun personnage ou univers protégé.
         for selected_theme, client_idea in resolved_themes:
             title = generate_title(client, name, age, selected_theme, language, child_gender)
             cover_bytes = generate_cover(
-                client, reference_bytes, name, age, selected_theme, language, title, child_gender
+                client, reference_bytes, name, age, selected_theme, language, title, child_gender, book_style
             )
             cover_bytes_list.append(cover_bytes)
             covers.append({
@@ -316,7 +315,7 @@ Aucun texte, logo ou watermark. Aucun personnage ou univers protégé.
             })
 
         order_ref = datetime.now().strftime("MLH-%Y%m%d-%H%M%S-") + uuid.uuid4().hex[:6].upper()
-        save_order_to_supabase(order_ref, name, age_value, language, len(selected_themes), covers, reference_bytes, cover_bytes_list, child_gender, parent_phone, parent_email)
+        save_order_to_supabase(order_ref, name, age_value, language, len(selected_themes), covers, reference_bytes, cover_bytes_list, child_gender, parent_phone, parent_email, book_style)
 
         return {
             "ok": True,
