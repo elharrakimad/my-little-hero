@@ -1,4 +1,4 @@
-# Fiches descriptives des 77 inspirations
+# Fiches descriptives des 75 inspirations
 
 Intitulés visibles au client ; descriptions de génération sans les noms. Les versions de référence sont adaptées à un livre jeunesse et conservent les traits de l’enfant.
 
@@ -362,22 +362,6 @@ Intitulés visibles au client ; descriptions de génération sans les noms. Les 
 
 **Exemple de mission :** progresser malgré ses doutes et réussir une mission de sauvetage en équipe.
 
-## Sailor Moon · lumière protectrice
-
-**Série :** Sailor Moon
-
-**Pouvoirs et principe :** la lumière de la lune et une transformation personnelle pour protéger ses amis.
-
-**Vêtements et apparence :** tunique blanche à col marin bleu, jupe plissée bleue sur short opaque, grand nœud rouge, longs gants blancs, bottes rouges et petit diadème doré ; coupe couvrante adaptée à l’enfant.
-
-**Monde et décors :** une ville japonaise moderne aux écoles, jardins et observatoires, reliée à un palais lunaire de pierre claire, miroirs, roses et paysages étoilés. Lieux : école, jardin de roses, observatoire et palais de lumière imaginé.
-
-**Équipements et accessoires :** broche de transformation, sceptre lunaire et lumière protectrice, accessoires de communication étoilés.
-
-**Adversaires ou obstacles :** une souveraine aux cheveux rouges et tenue noire et violette ; créatures d’ombre stylisées.
-
-**Exemple de mission :** protéger la lumière d’une fête nocturne grâce à l’amitié.
-
 ## Sacha et Pikachu · amitié et électricité
 
 **Série :** Pokémon
@@ -393,54 +377,6 @@ Intitulés visibles au client ; descriptions de génération sans les noms. Les 
 **Adversaires ou obstacles :** un trio farceur en uniformes blancs, gants et bottes noirs et insigne rouge, accompagné d’un animal parlant ; leurs pièges restent inoffensifs.
 
 **Exemple de mission :** voyager avec son compagnon pour retrouver un habitat adapté à une créature perdue.
-
-## Cardcaptor Sakura · cartes et magie
-
-**Série :** Cardcaptor Sakura
-
-**Pouvoirs et principe :** des cartes magiques originales à retrouver grâce à l’amitié et à l’observation.
-
-**Vêtements et apparence :** costume de magicienne rouge, rose et blanc avec cape courte, gants et chapeau décoratif ; version adaptée à l’âge de l’enfant, sans modifier son visage.
-
-**Monde et décors :** une ville scolaire japonaise paisible, école à tour d’horloge, bibliothèque, cerisiers, maison familiale et phénomènes magiques cachés dans le quotidien. Lieux : école, bibliothèque, parc aux cerisiers et tour de l’horloge.
-
-**Équipements et accessoires :** sceptre à extrémité ailée ou étoilée, cartes illustrées, petite clé de transformation et carnet.
-
-**Adversaires ou obstacles :** des esprits de cartes incarnant vent, eau, ombre ou illusion plutôt que des méchants ordinaires.
-
-**Exemple de mission :** retrouver des cartes égarées en comprenant la particularité de chacune.
-
-## Natsu · flammes et solidarité
-
-**Série :** Fairy Tail
-
-**Pouvoirs et principe :** des flammes magiques bienveillantes pour réchauffer et éclairer le village.
-
-**Vêtements et apparence :** gilet sombre à bordures claires, pantalon blanc, ceinture et longue écharpe blanche à motif d’écailles ; garder la coiffure de l’enfant.
-
-**Monde et décors :** une cité de fantasy aux toits anciens, grande maison de compagnons avec tableau de missions, ports, trains, forêts et montagnes peuplées de magie. Lieux : grande salle de réunion, port, train ancien et forêt magique.
-
-**Équipements et accessoires :** flammes fantastiques de protection, sens développés, rouleaux de mission et objets de voyage.
-
-**Adversaires ou obstacles :** des groupes de sorciers rivaux en robes sombres ; des dragons et des enchantements désorganisant la ville.
-
-**Exemple de mission :** partir avec des amis pour réchauffer un village et réparer son phare.
-
-## Edward Elric · transformation de la matière
-
-**Série :** Fullmetal Alchemist
-
-**Pouvoirs et principe :** la transformation imaginaire de la matière pour réparer des objets utiles.
-
-**Vêtements et apparence :** long manteau rouge sur tenue noire, gants blancs, ceinture et bottes robustes ; accessoire mécanique argenté sur un avant-bras, sans représenter de blessure.
-
-**Monde et décors :** des villes industrielles anciennes aux gares, trains à vapeur, ateliers, bibliothèques, laboratoires, rues pavées et villages de pierre. Lieux : gare, atelier mécanique, bibliothèque scientifique et village de pierre.
-
-**Équipements et accessoires :** transformation imaginaire des matériaux, figures géométriques d’alchimie, carnets et outils mécaniques.
-
-**Adversaires ou obstacles :** des silhouettes en longs manteaux noirs avec marques rouges ; des automates et des adversaires manipulant la matière.
-
-**Exemple de mission :** réparer une machine utile en comprenant les matériaux et les conséquences de ses choix.
 
 ## Gon · sens et lien avec la nature
 
@@ -474,38 +410,6 @@ Intitulés visibles au client ; descriptions de génération sans les noms. Les 
 
 **Exemple de mission :** maîtriser son énergie pour franchir un parcours avec ses amis.
 
-## Saitama · super-force et simplicité
-
-**Série :** One-Punch Man
-
-**Pouvoirs et principe :** une immense force employée avec simplicité et modestie pour rendre service.
-
-**Vêtements et apparence :** combinaison jaune, gants et bottes rouges, ceinture sombre et cape blanche fixée par deux attaches ; conserver le visage et les cheveux de l’enfant.
-
-**Monde et décors :** une ville japonaise quotidienne avec immeubles simples, supermarchés, parcs, centres de secours et grands quartiers modernes où surgissent des incidents extraordinaires. Lieux : immeuble, supermarché, parc public et centre de secours.
-
-**Équipements et accessoires :** force et vitesse extraordinaires, grands bonds et équipements ordinaires ; aucune arme nécessaire.
-
-**Adversaires ou obstacles :** des monstres de fantaisie comme un géant en forme de crabe ; un rival extraterrestre à œil central, sans scènes effrayantes.
-
-**Exemple de mission :** découvrir qu’une grande force ne remplace ni l’écoute ni la gentillesse.
-
-## Ichigo · courage et protection
-
-**Série :** Bleach
-
-**Pouvoirs et principe :** le courage de protéger ses amis et de surmonter une épreuve sans violence.
-
-**Vêtements et apparence :** longue tenue noire superposée à col blanc, ceinture claire et sandales de voyage ; conserver les cheveux et le visage de l’enfant.
-
-**Monde et décors :** une petite ville japonaise traversée par une rivière, avec école et ponts, reliée à un monde spirituel de portes monumentales, remparts blancs, jardins et ruelles anciennes. Lieux : école, pont, ruelle et jardin de passages lumineux.
-
-**Équipements et accessoires :** grand sabre fantastique à large lame, conservé au fourreau ou utilisé pour protéger sans blesser, et énergie lumineuse.
-
-**Adversaires ou obstacles :** des esprits fantastiques aux masques blancs sur silhouettes sombres ; des rivaux en robes claires, sans effets d’horreur.
-
-**Exemple de mission :** aider des visiteurs imaginaires à retrouver leur chemin en protégeant ses amis.
-
 ## Yugi · énigmes et stratégie
 
 **Série :** Yu-Gi-Oh!
@@ -522,22 +426,6 @@ Intitulés visibles au client ; descriptions de génération sans les noms. Les 
 
 **Exemple de mission :** résoudre des énigmes avec équité et préférer la coopération à la victoire facile.
 
-## Hinata (Haikyū!!) · bonds et volley
-
-**Série :** Haikyū!!
-
-**Pouvoirs et principe :** des bonds impressionnants et le sens du collectif dans un tournoi de volley.
-
-**Vêtements et apparence :** maillot de volley orange et noir, short noir, genouillères et chaussures de salle ; numéro placé par la mise en page si nécessaire.
-
-**Monde et décors :** un quotidien scolaire japonais de gymnases en parquet, cours d’école, vestiaires, trajets en équipe et salles de tournoi, centré sur les efforts collectifs. Lieux : gymnase, cour d’école, vestiaire et salle de tournoi.
-
-**Équipements et accessoires :** ballon de volley, filet, plots et tableau tactique ; bonds et réflexes sportifs, aucune arme.
-
-**Adversaires ou obstacles :** pas de méchant : équipes rivales aux maillots distincts, défis sportifs et appréhension de l’échec.
-
-**Exemple de mission :** trouver sa place dans une équipe et réussir une action préparée ensemble.
-
 ## Tsubasa · football et persévérance
 
 **Série :** Captain Tsubasa
@@ -553,54 +441,6 @@ Intitulés visibles au client ; descriptions de génération sans les noms. Les 
 **Adversaires ou obstacles :** pas de méchant : équipes adverses, gardiens talentueux et rivaux sportifs respectueux.
 
 **Exemple de mission :** surmonter un défi de match grâce à des passes et à l’encouragement mutuel.
-
-## Seiya · cosmos et constellations
-
-**Série :** Saint Seiya
-
-**Pouvoirs et principe :** une énergie cosmique et une armure personnelle inspirée des constellations.
-
-**Vêtements et apparence :** armure argentée à formes de cheval ailé sur sous-vêtement rouge, protections aux épaules, bras et jambes, casque ailé amovible pour montrer le visage.
-
-**Monde et décors :** un univers de mythologie et de cosmos avec temples de pierre claire, escaliers de montagne, douze maisons zodiacales, ciels étoilés et domaines célestes. Lieux : temple imaginaire, escalier de montagne, observatoire et jardin étoilé.
-
-**Équipements et accessoires :** énergie des constellations, protections et gestes de lumière stylisés ; cartes célestes et emblèmes zodiacaux.
-
-**Adversaires ou obstacles :** des chevaliers rivaux en armures dorées représentant les constellations du zodiaque ; gardiens d’épreuves.
-
-**Exemple de mission :** rallumer des balises célestes en faisant preuve de courage et de solidarité.
-
-## Astro Boy · robot et solidarité
-
-**Série :** Astro Boy
-
-**Pouvoirs et principe :** des capacités robotiques et un cœur généreux pour aider les habitants.
-
-**Vêtements et apparence :** tenue robotique rétro avec short noir, large ceinture verte et grandes bottes rouges ; ajouter un haut couvrant adapté à l’enfant et conserver son visage.
-
-**Monde et décors :** une ville futuriste de tours arrondies, routes aériennes, laboratoires, écoles, parcs et robots partageant le quotidien des humains. Lieux : laboratoire, école, parc suspendu et station de transport aérien.
-
-**Équipements et accessoires :** réacteurs dans les bottes, force mécanique, capteurs et outils intégrés présentés comme équipements d’assistance.
-
-**Adversaires ou obstacles :** de grands robots rivaux aux silhouettes métalliques imposantes, dont un robot sombre à cornes, sans destruction réaliste.
-
-**Exemple de mission :** aider des humains et des robots à résoudre un problème ensemble.
-
-## Totoro · forêt et bienveillance
-
-**Série :** Mon voisin Totoro
-
-**Pouvoirs et principe :** la découverte d’un grand compagnon forestier gris et rond, au ventre crème à chevrons, avec de longues oreilles et des moustaches.
-
-**Vêtements et apparence :** l’enfant porte une tenue de promenade rurale et un chapeau de soleil ; son compagnon est une très grande créature grise et ronde, ventre crème à chevrons sombres, longues oreilles et moustaches.
-
-**Monde et décors :** une campagne japonaise paisible avec vieille maison en bois, rizières, chemins, arrêt de bus sous la pluie, grand arbre creux et forêt où se cachent des créatures bienveillantes. Lieux : vieille maison, rizière, sentier de campagne et grand arbre creux.
-
-**Équipements et accessoires :** parapluie, graines, feuilles et petite toupie ; grand véhicule félin fantastique comme moyen de déplacement, aucune arme.
-
-**Adversaires ou obstacles :** aucun méchant : pluie, éloignement, inquiétudes et découverte de l’inconnu constituent les épreuves.
-
-**Exemple de mission :** découvrir un compagnon forestier original et prendre soin d’un lieu de vie partagé.
 
 ## Vegeta · énergie et détermination
 
@@ -762,38 +602,6 @@ Intitulés visibles au client ; descriptions de génération sans les noms. Les 
 
 **Exemple de mission :** progresser malgré ses doutes et réussir une mission de sauvetage en équipe.
 
-## Sailor Mercury · eau et analyse
-
-**Série :** Sailor Moon
-
-**Pouvoirs et principe :** la maîtrise de l’eau et de la brume, l’analyse et la résolution d’énigmes.
-
-**Vêtements et apparence :** tunique blanche à col marin bleu, jupe bleue sur short opaque, nœud bleu, gants blancs et bottes bleues.
-
-**Monde et décors :** une ville japonaise moderne aux écoles, jardins et observatoires, reliée à un palais lunaire de pierre claire, miroirs, roses et paysages étoilés. Lieux : école, jardin de roses, observatoire et palais de lumière imaginé.
-
-**Équipements et accessoires :** petit ordinateur d’analyse, visière transparente, bulles d’eau et brume protectrice.
-
-**Adversaires ou obstacles :** une souveraine aux cheveux rouges et tenue noire et violette ; créatures d’ombre stylisées.
-
-**Exemple de mission :** protéger la lumière d’une fête nocturne grâce à l’amitié.
-
-## Sailor Mars · flammes et intuition
-
-**Série :** Sailor Moon
-
-**Pouvoirs et principe :** des flammes protectrices imaginaires, de l’intuition et une grande détermination.
-
-**Vêtements et apparence :** tunique blanche à col rouge, jupe rouge sur short opaque, nœud violet, gants blancs et chaussures rouges.
-
-**Monde et décors :** une ville japonaise moderne aux écoles, jardins et observatoires, reliée à un palais lunaire de pierre claire, miroirs, roses et paysages étoilés. Lieux : école, jardin de roses, observatoire et palais de lumière imaginé.
-
-**Équipements et accessoires :** rubans de papier illustrés, lumière de feu stylisée et accessoires de cérémonie fantastique.
-
-**Adversaires ou obstacles :** une souveraine aux cheveux rouges et tenue noire et violette ; créatures d’ombre stylisées.
-
-**Exemple de mission :** protéger la lumière d’une fête nocturne grâce à l’amitié.
-
 ## Ondine (Misty) · eau et compagnons
 
 **Série :** Pokémon
@@ -826,102 +634,6 @@ Intitulés visibles au client ; descriptions de génération sans les noms. Les 
 
 **Exemple de mission :** voyager avec son compagnon pour retrouver un habitat adapté à une créature perdue.
 
-## Tomoyo (Tiffany) · costumes et création
-
-**Série :** Cardcaptor Sakura
-
-**Pouvoirs et principe :** l’observation, la création de costumes et le talent de raconter l’aventure en images.
-
-**Vêtements et apparence :** uniforme scolaire bleu marine et blanc, chapeau de promenade et sac contenant des rubans et accessoires.
-
-**Monde et décors :** une ville scolaire japonaise paisible, école à tour d’horloge, bibliothèque, cerisiers, maison familiale et phénomènes magiques cachés dans le quotidien. Lieux : école, bibliothèque, parc aux cerisiers et tour de l’horloge.
-
-**Équipements et accessoires :** petite caméra, carnet de croquis, étoffes et accessoires de spectacle adaptés à l’enfant.
-
-**Adversaires ou obstacles :** des esprits de cartes incarnant vent, eau, ombre ou illusion plutôt que des méchants ordinaires.
-
-**Exemple de mission :** retrouver des cartes égarées en comprenant la particularité de chacune.
-
-## Meiling · agilité et persévérance
-
-**Série :** Cardcaptor Sakura
-
-**Pouvoirs et principe :** l’agilité, la maîtrise de mouvements d’entraînement et la persévérance sans pouvoir magique nécessaire.
-
-**Vêtements et apparence :** tunique rouge de style chinois à bordures dorées, pantalon assorti et chaussures souples ; coupe couvrante adaptée à l’enfant.
-
-**Monde et décors :** une ville scolaire japonaise paisible, école à tour d’horloge, bibliothèque, cerisiers, maison familiale et phénomènes magiques cachés dans le quotidien. Lieux : école, bibliothèque, parc aux cerisiers et tour de l’horloge.
-
-**Équipements et accessoires :** rubans d’entraînement, objets d’équilibre et sac de voyage, aucune arme nécessaire.
-
-**Adversaires ou obstacles :** des esprits de cartes incarnant vent, eau, ombre ou illusion plutôt que des méchants ordinaires.
-
-**Exemple de mission :** retrouver des cartes égarées en comprenant la particularité de chacune.
-
-## Lucy · clés et compagnons célestes
-
-**Série :** Fairy Tail
-
-**Pouvoirs et principe :** des clés magiques qui permettent de rencontrer des compagnons célestes et de résoudre des missions ensemble.
-
-**Vêtements et apparence :** tunique blanche et bleue, short opaque ou leggings, ceinture avec étui à clés et bottes confortables.
-
-**Monde et décors :** une cité de fantasy aux toits anciens, grande maison de compagnons avec tableau de missions, ports, trains, forêts et montagnes peuplées de magie. Lieux : grande salle de réunion, port, train ancien et forêt magique.
-
-**Équipements et accessoires :** trousseau de clés dorées, carnet de missions et compagnons fantastiques liés aux constellations.
-
-**Adversaires ou obstacles :** des groupes de sorciers rivaux en robes sombres ; des dragons et des enchantements désorganisant la ville.
-
-**Exemple de mission :** partir avec des amis pour réchauffer un village et réparer son phare.
-
-## Erza · armures et protection
-
-**Série :** Fairy Tail
-
-**Pouvoirs et principe :** le changement d’équipement fantastique, le courage et la protection de ses partenaires.
-
-**Vêtements et apparence :** armure argentée adaptée à l’enfant, tissu bleu, bottes et protections articulées ; casque amovible.
-
-**Monde et décors :** une cité de fantasy aux toits anciens, grande maison de compagnons avec tableau de missions, ports, trains, forêts et montagnes peuplées de magie. Lieux : grande salle de réunion, port, train ancien et forêt magique.
-
-**Équipements et accessoires :** bouclier et différentes armures, épées fantastiques gardées au fourreau ou utilisées pour protéger sans blesser.
-
-**Adversaires ou obstacles :** des groupes de sorciers rivaux en robes sombres ; des dragons et des enchantements désorganisant la ville.
-
-**Exemple de mission :** partir avec des amis pour réchauffer un village et réparer son phare.
-
-## Alphonse · armure et bienveillance
-
-**Série :** Fullmetal Alchemist
-
-**Pouvoirs et principe :** la compréhension des matériaux, une grande force et une bienveillance constante.
-
-**Vêtements et apparence :** grande armure argentée arrondie avec tablier clair et protections épaisses ; visière ouverte ou casque tenu pour conserver le visage de l’enfant.
-
-**Monde et décors :** des villes industrielles anciennes aux gares, trains à vapeur, ateliers, bibliothèques, laboratoires, rues pavées et villages de pierre. Lieux : gare, atelier mécanique, bibliothèque scientifique et village de pierre.
-
-**Équipements et accessoires :** gants métalliques, outils d’atelier, carnet et figures géométriques de transformation imaginaire.
-
-**Adversaires ou obstacles :** des silhouettes en longs manteaux noirs avec marques rouges ; des automates et des adversaires manipulant la matière.
-
-**Exemple de mission :** réparer une machine utile en comprenant les matériaux et les conséquences de ses choix.
-
-## Winry · mécanique et réparation
-
-**Série :** Fullmetal Alchemist
-
-**Pouvoirs et principe :** la mécanique, l’invention et le talent de réparer des équipements utiles.
-
-**Vêtements et apparence :** salopette de mécanicienne bleue sur tee-shirt clair couvrant, gants de travail, chaussures solides et foulard uni.
-
-**Monde et décors :** des villes industrielles anciennes aux gares, trains à vapeur, ateliers, bibliothèques, laboratoires, rues pavées et villages de pierre. Lieux : gare, atelier mécanique, bibliothèque scientifique et village de pierre.
-
-**Équipements et accessoires :** clés, tournevis, plans d’atelier et pièces mécaniques ; outils utilisés uniquement pour réparer.
-
-**Adversaires ou obstacles :** des silhouettes en longs manteaux noirs avec marques rouges ; des automates et des adversaires manipulant la matière.
-
-**Exemple de mission :** réparer une machine utile en comprenant les matériaux et les conséquences de ses choix.
-
 ## Kurapika · réflexion et chaînes de lumière
 
 **Série :** Hunter × Hunter
@@ -937,70 +649,6 @@ Intitulés visibles au client ; descriptions de génération sans les noms. Les 
 **Adversaires ou obstacles :** un illusionniste de carnaval aux vêtements colorés et motifs de carte sur le visage ; des concurrents d’épreuves.
 
 **Exemple de mission :** traverser plusieurs milieux naturels en aidant leurs habitants et en développant ses sens.
-
-## Genos · technologie et énergie
-
-**Série :** One-Punch Man
-
-**Pouvoirs et principe :** des capacités mécaniques, une énergie protectrice et le désir de progresser grâce à l’apprentissage.
-
-**Vêtements et apparence :** haut sombre couvrant, bras mécaniques argentés et dorés, pantalon sombre et bottes ; visage fidèle à l’enfant.
-
-**Monde et décors :** une ville japonaise quotidienne avec immeubles simples, supermarchés, parcs, centres de secours et grands quartiers modernes où surgissent des incidents extraordinaires. Lieux : immeuble, supermarché, parc public et centre de secours.
-
-**Équipements et accessoires :** bras-outils, capteurs et propulsion lumineuse utilisés pour réparer et secourir.
-
-**Adversaires ou obstacles :** des monstres de fantaisie comme un géant en forme de crabe ; un rival extraterrestre à œil central, sans scènes effrayantes.
-
-**Exemple de mission :** découvrir qu’une grande force ne remplace ni l’écoute ni la gentillesse.
-
-## Tatsumaki · lévitation et télékinésie
-
-**Série :** One-Punch Man
-
-**Pouvoirs et principe :** la lévitation et le déplacement d’objets par la pensée pour aider les habitants.
-
-**Vêtements et apparence :** tenue noire à manches longues, robe ou tunique couvrante sur leggings et chaussures sobres ; conserver les cheveux de l’enfant.
-
-**Monde et décors :** une ville japonaise quotidienne avec immeubles simples, supermarchés, parcs, centres de secours et grands quartiers modernes où surgissent des incidents extraordinaires. Lieux : immeuble, supermarché, parc public et centre de secours.
-
-**Équipements et accessoires :** auras vertes lumineuses, barrières et objets flottants, aucune arme tenue en main.
-
-**Adversaires ou obstacles :** des monstres de fantaisie comme un géant en forme de crabe ; un rival extraterrestre à œil central, sans scènes effrayantes.
-
-**Exemple de mission :** découvrir qu’une grande force ne remplace ni l’écoute ni la gentillesse.
-
-## Rukia · glace et protection
-
-**Série :** Bleach
-
-**Pouvoirs et principe :** une énergie de glace imaginaire, la précision et le courage protecteur.
-
-**Vêtements et apparence :** longue tenue noire à col blanc, ceinture claire, sandales et étoffe blanche utilisée comme accessoire.
-
-**Monde et décors :** une petite ville japonaise traversée par une rivière, avec école et ponts, reliée à un monde spirituel de portes monumentales, remparts blancs, jardins et ruelles anciennes. Lieux : école, pont, ruelle et jardin de passages lumineux.
-
-**Équipements et accessoires :** sabre fantastique blanc gardé au fourreau et flocons stylisés pour créer des passages et des barrières.
-
-**Adversaires ou obstacles :** des esprits fantastiques aux masques blancs sur silhouettes sombres ; des rivaux en robes claires, sans effets d’horreur.
-
-**Exemple de mission :** aider des visiteurs imaginaires à retrouver leur chemin en protégeant ses amis.
-
-## Renji · énergie et lame articulée
-
-**Série :** Bleach
-
-**Pouvoirs et principe :** une grande persévérance et un équipement fantastique articulé pour franchir des obstacles.
-
-**Vêtements et apparence :** tenue noire superposée à ceinture claire, bandeau uni et protections de voyage ; cheveux de l’enfant conservés.
-
-**Monde et décors :** une petite ville japonaise traversée par une rivière, avec école et ponts, reliée à un monde spirituel de portes monumentales, remparts blancs, jardins et ruelles anciennes. Lieux : école, pont, ruelle et jardin de passages lumineux.
-
-**Équipements et accessoires :** arme fantastique segmentée représentée au repos ou dans son fourreau, et énergie lumineuse de protection.
-
-**Adversaires ou obstacles :** des esprits fantastiques aux masques blancs sur silhouettes sombres ; des rivaux en robes claires, sans effets d’horreur.
-
-**Exemple de mission :** aider des visiteurs imaginaires à retrouver leur chemin en protégeant ses amis.
 
 ## Seto Kaiba · stratégie et dragons
 
@@ -1034,38 +682,6 @@ Intitulés visibles au client ; descriptions de génération sans les noms. Les 
 
 **Exemple de mission :** résoudre des énigmes avec équité et préférer la coopération à la victoire facile.
 
-## Tobio Kageyama · précision des passes
-
-**Série :** Haikyū!!
-
-**Pouvoirs et principe :** la précision des passes, l’observation du terrain et l’apprentissage de la confiance en équipe.
-
-**Vêtements et apparence :** maillot de volley noir et orange, short noir, genouillères et chaussures de salle.
-
-**Monde et décors :** un quotidien scolaire japonais de gymnases en parquet, cours d’école, vestiaires, trajets en équipe et salles de tournoi, centré sur les efforts collectifs. Lieux : gymnase, cour d’école, vestiaire et salle de tournoi.
-
-**Équipements et accessoires :** ballon de volley, filet, tableau tactique et exercices de passe, aucune arme.
-
-**Adversaires ou obstacles :** pas de méchant : équipes rivales aux maillots distincts, défis sportifs et appréhension de l’échec.
-
-**Exemple de mission :** trouver sa place dans une équipe et réussir une action préparée ensemble.
-
-## Yū Nishinoya · réflexes et réception
-
-**Série :** Haikyū!!
-
-**Pouvoirs et principe :** les réflexes, les réceptions et le courage de soutenir ses partenaires.
-
-**Vêtements et apparence :** maillot de libéro orange à détails noirs, short de sport, genouillères et chaussures de salle.
-
-**Monde et décors :** un quotidien scolaire japonais de gymnases en parquet, cours d’école, vestiaires, trajets en équipe et salles de tournoi, centré sur les efforts collectifs. Lieux : gymnase, cour d’école, vestiaire et salle de tournoi.
-
-**Équipements et accessoires :** ballon, filet, tapis d’entraînement et exercices de réception, aucune arme.
-
-**Adversaires ou obstacles :** pas de méchant : équipes rivales aux maillots distincts, défis sportifs et appréhension de l’échec.
-
-**Exemple de mission :** trouver sa place dans une équipe et réussir une action préparée ensemble.
-
 ## Kojiro Hyuga · puissance et détermination
 
 **Série :** Captain Tsubasa
@@ -1098,98 +714,450 @@ Intitulés visibles au client ; descriptions de génération sans les noms. Les 
 
 **Exemple de mission :** surmonter un défi de match grâce à des passes et à l’encouragement mutuel.
 
-## Shiryu · dragon et protection
+## Piccolo · sagesse et énergie
 
-**Série :** Saint Seiya
+**Série :** Dragon Ball
 
-**Pouvoirs et principe :** l’énergie d’une constellation de dragon, la patience et une grande capacité de protection.
+**Pouvoirs et principe :** la concentration, une énergie protectrice et le talent d’accompagner les progrès de ses amis.
 
-**Vêtements et apparence :** armure verte et turquoise à motifs de dragon, protections articulées et bouclier rond ; casque amovible et visage de l’enfant conservé.
+**Vêtements et apparence :** tunique violette, large ceinture bleue, cape blanche aux épaules structurées, turban blanc amovible et chaussures souples ; conserver le visage de l’enfant.
 
-**Monde et décors :** un univers de mythologie et de cosmos avec temples de pierre claire, escaliers de montagne, douze maisons zodiacales, ciels étoilés et domaines célestes. Lieux : temple imaginaire, escalier de montagne, observatoire et jardin étoilé.
+**Monde et décors :** un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques. Lieux : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages.
 
-**Équipements et accessoires :** bouclier, protections et énergie céleste stylisée, accessoires utilisés sans blesser.
+**Équipements et accessoires :** énergie lumineuse concentrée dans les mains, vol et accessoires d’entraînement ; aucune arme nécessaire.
 
-**Adversaires ou obstacles :** des chevaliers rivaux en armures dorées représentant les constellations du zodiaque ; gardiens d’épreuves.
+**Adversaires ou obstacles :** un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique.
 
-**Exemple de mission :** rallumer des balises célestes en faisant preuve de courage et de solidarité.
+**Exemple de mission :** s’entraîner avec des amis puis utiliser son énergie pour aider un village.
 
-## Hyoga · cygne et glace
+## Trunks · épée et espoir
 
-**Série :** Saint Seiya
+**Série :** Dragon Ball
 
-**Pouvoirs et principe :** une énergie froide imaginaire, la précision et la persévérance.
+**Pouvoirs et principe :** le courage, la rapidité et l’espoir d’améliorer l’avenir grâce à l’entraide.
 
-**Vêtements et apparence :** armure blanche et bleu clair à formes d’ailes de cygne, protections et casque amovible.
+**Vêtements et apparence :** veste courte bleue, haut sombre, pantalon de voyage, ceinture et bottes robustes ; conserver les cheveux de l’enfant.
 
-**Monde et décors :** un univers de mythologie et de cosmos avec temples de pierre claire, escaliers de montagne, douze maisons zodiacales, ciels étoilés et domaines célestes. Lieux : temple imaginaire, escalier de montagne, observatoire et jardin étoilé.
+**Monde et décors :** un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques. Lieux : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages.
 
-**Équipements et accessoires :** glace lumineuse, cristaux et protections célestes pour créer des barrières et des chemins.
+**Équipements et accessoires :** épée fantastique gardée dans son fourreau, sac de voyage et appareils de navigation.
 
-**Adversaires ou obstacles :** des chevaliers rivaux en armures dorées représentant les constellations du zodiaque ; gardiens d’épreuves.
+**Adversaires ou obstacles :** un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique.
 
-**Exemple de mission :** rallumer des balises célestes en faisant preuve de courage et de solidarité.
+**Exemple de mission :** s’entraîner avec des amis puis utiliser son énergie pour aider un village.
 
-## Uran · curiosité et aide aux animaux
+## Goten · énergie et amitié
 
-**Série :** Astro Boy
+**Série :** Dragon Ball
 
-**Pouvoirs et principe :** des capacités robotiques, la curiosité et une sensibilité aux besoins des animaux.
+**Pouvoirs et principe :** l’énergie lumineuse, le vol et l’envie d’apprendre en s’amusant avec ses partenaires.
 
-**Vêtements et apparence :** tunique orange couvrante, leggings sombres et bottes rouges, petits accessoires mécaniques ; visage de l’enfant conservé.
+**Vêtements et apparence :** tenue d’arts martiaux orange et bleue, ceinture bleue et petites bottes souples ; visage et cheveux de l’enfant conservés.
 
-**Monde et décors :** une ville futuriste de tours arrondies, routes aériennes, laboratoires, écoles, parcs et robots partageant le quotidien des humains. Lieux : laboratoire, école, parc suspendu et station de transport aérien.
+**Monde et décors :** un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques. Lieux : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages.
 
-**Équipements et accessoires :** capteurs de recherche, outils de soin et cartes de la ville, aucune arme nécessaire.
+**Équipements et accessoires :** énergie imaginaire, objets d’entraînement et carnet des petites réussites, aucune arme nécessaire.
 
-**Adversaires ou obstacles :** de grands robots rivaux aux silhouettes métalliques imposantes, dont un robot sombre à cornes, sans destruction réaliste.
+**Adversaires ou obstacles :** un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique.
 
-**Exemple de mission :** aider des humains et des robots à résoudre un problème ensemble.
+**Exemple de mission :** s’entraîner avec des amis puis utiliser son énergie pour aider un village.
 
-## Atlas · électricité et puissance mécanique
+## Krillin · agilité et esprit d’équipe
 
-**Série :** Astro Boy
+**Série :** Dragon Ball
 
-**Pouvoirs et principe :** une grande force mécanique et une énergie électrique à apprendre à maîtriser.
+**Pouvoirs et principe :** l’agilité, l’anticipation et une grande fidélité à ses amis dans les défis collectifs.
 
-**Vêtements et apparence :** armure robotique rouge et sombre, protections articulées et casque amovible montrant le visage de l’enfant.
+**Vêtements et apparence :** tenue d’arts martiaux orange, sous-vêtement bleu couvrant, ceinture et poignets bleus, chaussures souples ; ne pas modifier les cheveux de l’enfant.
 
-**Monde et décors :** une ville futuriste de tours arrondies, routes aériennes, laboratoires, écoles, parcs et robots partageant le quotidien des humains. Lieux : laboratoire, école, parc suspendu et station de transport aérien.
+**Monde et décors :** un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques. Lieux : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages.
 
-**Équipements et accessoires :** propulseurs, capteurs et barrières électriques lumineuses utilisées pour protéger les habitants.
+**Équipements et accessoires :** énergie lumineuse, disques fantastiques de protection et matériel d’entraînement, sans blessure.
 
-**Adversaires ou obstacles :** des machines déréglées, des drones et des obstacles mécaniques ; apprendre à transformer une rivalité en coopération.
+**Adversaires ou obstacles :** un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique.
 
-**Exemple de mission :** aider des humains et des robots à résoudre un problème ensemble.
+**Exemple de mission :** s’entraîner avec des amis puis utiliser son énergie pour aider un village.
 
-## Satsuki · courage et découverte de la forêt
+## C-18 (Android 18) · précision et assurance
 
-**Série :** Mon voisin Totoro
+**Série :** Dragon Ball
 
-**Pouvoirs et principe :** l’observation, la responsabilité et le courage de découvrir une nature merveilleuse, sans super-pouvoir nécessaire.
+**Pouvoirs et principe :** la précision, une endurance mécanique imaginaire et l’assurance pour résoudre une mission.
 
-**Vêtements et apparence :** haut jaune clair, jupe orange sur short opaque ou pantalon adapté, chaussures de promenade et petite sacoche.
+**Vêtements et apparence :** gilet de jean bleu sur haut rayé couvrant, ceinture, jupe ou short sur leggings opaques et bottes ; conserver le visage de l’enfant.
 
-**Monde et décors :** une campagne japonaise paisible avec vieille maison en bois, rizières, chemins, arrêt de bus sous la pluie, grand arbre creux et forêt où se cachent des créatures bienveillantes. Lieux : vieille maison, rizière, sentier de campagne et grand arbre creux.
+**Monde et décors :** un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques. Lieux : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages.
 
-**Équipements et accessoires :** parapluie, graines, carnet et vélo de promenade ; grand compagnon forestier gris comme rencontre de l’histoire.
+**Équipements et accessoires :** capteurs imaginaires, énergie lumineuse et outils de précision pour aider les habitants.
 
-**Adversaires ou obstacles :** aucun méchant : pluie, éloignement, inquiétudes et découverte de l’inconnu constituent les épreuves.
+**Adversaires ou obstacles :** un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique.
 
-**Exemple de mission :** découvrir un compagnon forestier original et prendre soin d’un lieu de vie partagé.
+**Exemple de mission :** s’entraîner avec des amis puis utiliser son énergie pour aider un village.
 
-## Mei · imagination et rencontres merveilleuses
+## Freezer (Frieza) · maîtrise de l’énergie
 
-**Série :** Mon voisin Totoro
+**Série :** Dragon Ball
 
-**Pouvoirs et principe :** la curiosité, l’imagination et la capacité de remarquer les petits signes de la nature.
+**Pouvoirs et principe :** le vol, une énergie puissante et l’apprentissage de son utilisation pour protéger plutôt que dominer.
 
-**Vêtements et apparence :** robe ou tunique rose à col blanc, short opaque, chapeau de soleil jaune et petite sacoche rouge.
+**Vêtements et apparence :** costume fantastique blanc et violet, protections arrondies, gants et longue queue décorative en accessoire ; visage identifiable de l’enfant.
 
-**Monde et décors :** une campagne japonaise paisible avec vieille maison en bois, rizières, chemins, arrêt de bus sous la pluie, grand arbre creux et forêt où se cachent des créatures bienveillantes. Lieux : vieille maison, rizière, sentier de campagne et grand arbre creux.
+**Monde et décors :** un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques. Lieux : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages.
 
-**Équipements et accessoires :** fleurs, graines, feuilles et petit sac ; grand compagnon forestier gris et créatures forestières comme rencontres.
+**Équipements et accessoires :** sphères lumineuses, barrières de protection et vol imaginaire, sans arme ni blessure.
 
-**Adversaires ou obstacles :** aucun méchant : pluie, éloignement, inquiétudes et découverte de l’inconnu constituent les épreuves.
+**Adversaires ou obstacles :** un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique.
 
-**Exemple de mission :** découvrir un compagnon forestier original et prendre soin d’un lieu de vie partagé.
+**Exemple de mission :** s’entraîner avec des amis puis utiliser son énergie pour aider un village.
+
+## Broly · puissance et calme
+
+**Série :** Dragon Ball
+
+**Pouvoirs et principe :** une force immense à canaliser grâce au calme, à la confiance et à l’amitié.
+
+**Vêtements et apparence :** haut sombre couvrant, large étoffe verte à la taille, pantalon violet, bracelets et bottes ; proportions adaptées à l’enfant.
+
+**Monde et décors :** un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques. Lieux : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages.
+
+**Équipements et accessoires :** énergie verte lumineuse et grands blocs à déplacer, accessoires de secours et d’entraînement.
+
+**Adversaires ou obstacles :** un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique.
+
+**Exemple de mission :** s’entraîner avec des amis puis utiliser son énergie pour aider un village.
+
+## Kakashi · observation et stratégie
+
+**Série :** Naruto
+
+**Pouvoirs et principe :** l’observation, la stratégie, l’agilité et le talent d’aider une équipe à coopérer.
+
+**Vêtements et apparence :** tenue bleu sombre, gilet de protection vert, gants, sandales et bandeau métallique ; masque amovible laissant reconnaître l’enfant.
+
+**Monde et décors :** un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers. Lieux : académie, terrain d’entraînement, forêt de bambous et cascade.
+
+**Équipements et accessoires :** petit carnet de stratégie, rouleaux, cordages et énergie électrique de protection.
+
+**Adversaires ou obstacles :** des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent.
+
+**Exemple de mission :** réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires.
+
+## Hinata Hyuga · précision et confiance
+
+**Série :** Naruto
+
+**Pouvoirs et principe :** une observation très fine, des mouvements précis et la confiance qui grandit avec l’entraînement.
+
+**Vêtements et apparence :** veste lavande et crème à col montant, pantalon bleu sombre, sandales et petite sacoche ; conserver les yeux et les cheveux de l’enfant.
+
+**Monde et décors :** un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers. Lieux : académie, terrain d’entraînement, forêt de bambous et cascade.
+
+**Équipements et accessoires :** auras lumineuses aux mains, cartes d’orientation et accessoires d’entraînement, sans arme nécessaire.
+
+**Adversaires ou obstacles :** des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent.
+
+**Exemple de mission :** réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires.
+
+## Rock Lee · effort et persévérance
+
+**Série :** Naruto
+
+**Pouvoirs et principe :** la vitesse, l’équilibre et la persévérance par un entraînement progressif, sans pouvoir magique nécessaire.
+
+**Vêtements et apparence :** tenue verte couvrante, gilet assorti, guêtres orange et ceinture rouge ; visage et coiffure de l’enfant conservés.
+
+**Monde et décors :** un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers. Lieux : académie, terrain d’entraînement, forêt de bambous et cascade.
+
+**Équipements et accessoires :** matériel d’équilibre, plots, cordes souples et carnet d’entraînement adapté à l’âge.
+
+**Adversaires ou obstacles :** des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent.
+
+**Exemple de mission :** réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires.
+
+## Shikamaru · ombres et réflexion
+
+**Série :** Naruto
+
+**Pouvoirs et principe :** la réflexion, l’anticipation et la manipulation fantastique d’ombres pour sécuriser des passages.
+
+**Vêtements et apparence :** haut sombre couvrant, gilet vert, pantalon confortable et sandales, petite pochette de cartes.
+
+**Monde et décors :** un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers. Lieux : académie, terrain d’entraînement, forêt de bambous et cascade.
+
+**Équipements et accessoires :** jeux de stratégie, rouleaux, cartes et ombres imaginaires utilisées pour retenir des objets, pas des personnes.
+
+**Adversaires ou obstacles :** des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent.
+
+**Exemple de mission :** réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires.
+
+## Gaara · sable et protection
+
+**Série :** Naruto
+
+**Pouvoirs et principe :** la maîtrise imaginaire du sable pour créer des abris, des chemins et des barrières protectrices.
+
+**Vêtements et apparence :** longue tunique bordeaux, large écharpe claire, pantalon sombre et grande gourde portée comme accessoire dans le dos ; visage de l’enfant conservé.
+
+**Monde et décors :** un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers. Lieux : académie, terrain d’entraînement, forêt de bambous et cascade.
+
+**Équipements et accessoires :** gourde décorative, nuages de sable stylisés, boucliers et petites constructions de sable.
+
+**Adversaires ou obstacles :** des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent.
+
+**Exemple de mission :** réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires.
+
+## Itachi · illusions et observation
+
+**Série :** Naruto
+
+**Pouvoirs et principe :** l’observation, les illusions visuelles et la patience pour résoudre des énigmes.
+
+**Vêtements et apparence :** long manteau noir décoré de nuages rouges, tenue couvrante, sandales et bandeau métallique porté en accessoire.
+
+**Monde et décors :** un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers. Lieux : académie, terrain d’entraînement, forêt de bambous et cascade.
+
+**Équipements et accessoires :** plumes, reflets, cartes d’indices et illusions d’oiseaux, sans scène effrayante.
+
+**Adversaires ou obstacles :** des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent.
+
+**Exemple de mission :** réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires.
+
+## Jiraiya · voyage et apprentissage
+
+**Série :** Naruto
+
+**Pouvoirs et principe :** la transmission, la découverte du monde et une énergie imaginaire liée à des compagnons amphibiens.
+
+**Vêtements et apparence :** tunique verte sous gilet rouge, protections aux poignets, sandales de voyage et bandeau large ; garder les cheveux de l’enfant.
+
+**Monde et décors :** un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers. Lieux : académie, terrain d’entraînement, forêt de bambous et cascade.
+
+**Équipements et accessoires :** grand rouleau de voyage, cartes, carnet et compagnons crapauds fantastiques bienveillants.
+
+**Adversaires ou obstacles :** des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent.
+
+**Exemple de mission :** réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires.
+
+## Sanji · cuisine et agilité
+
+**Série :** One Piece
+
+**Pouvoirs et principe :** le talent de cuisiner pour ses amis, l’agilité et la précision des mouvements lors d’épreuves.
+
+**Vêtements et apparence :** costume sombre, chemise bleue couvrante, cravate et chaussures de voyage ; visage et cheveux de l’enfant conservés.
+
+**Monde et décors :** un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles. Lieux : bateau d’exploration personnel, marché coloré, crique et île à végétation géante.
+
+**Équipements et accessoires :** ustensiles de cuisine, provisions, carnet de recettes et équipements de voyage ; aucun tabac.
+
+**Adversaires ou obstacles :** un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques.
+
+**Exemple de mission :** réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire.
+
+## Chopper · soin et transformation
+
+**Série :** One Piece
+
+**Pouvoirs et principe :** les soins, la curiosité et des transformations imaginaires adaptées à une mission d’entraide.
+
+**Vêtements et apparence :** grand chapeau rose et bleu avec croix blanche et petites ramures décoratives, tenue couvrante de voyage et sac médical ; conserver le visage de l’enfant.
+
+**Monde et décors :** un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles. Lieux : bateau d’exploration personnel, marché coloré, crique et île à végétation géante.
+
+**Équipements et accessoires :** trousse de secours, plantes, carnet de soin et accessoires d’observation des compagnons.
+
+**Adversaires ou obstacles :** un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques.
+
+**Exemple de mission :** réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire.
+
+## Nico Robin · savoir et mains magiques
+
+**Série :** One Piece
+
+**Pouvoirs et principe :** la lecture d’indices anciens et l’apparition imaginaire de mains pour déplacer des objets et aider les autres.
+
+**Vêtements et apparence :** veste bleue ou violette sur haut couvrant, pantalon de voyage ou jupe sur leggings, chapeau clair et bottes.
+
+**Monde et décors :** un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles. Lieux : bateau d’exploration personnel, marché coloré, crique et île à végétation géante.
+
+**Équipements et accessoires :** livres anciens, cartes, carnet de fouilles et mains lumineuses pour protéger et franchir des obstacles.
+
+**Adversaires ou obstacles :** un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques.
+
+**Exemple de mission :** réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire.
+
+## Franky · inventions et force mécanique
+
+**Série :** One Piece
+
+**Pouvoirs et principe :** la mécanique, la construction et la force de bras robotiques imaginaires pour réparer un bateau.
+
+**Vêtements et apparence :** chemise rouge à motifs sur tee-shirt couvrant, bermuda bleu opaque, ceinture à outils et grands protège-bras mécaniques bleus.
+
+**Monde et décors :** un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles. Lieux : bateau d’exploration personnel, marché coloré, crique et île à végétation géante.
+
+**Équipements et accessoires :** plans de navire, outils de réparation, bras mécaniques et accessoires de construction.
+
+**Adversaires ou obstacles :** un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques.
+
+**Exemple de mission :** réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire.
+
+## Brook · musique et courage
+
+**Série :** One Piece
+
+**Pouvoirs et principe :** la musique, la mémoire et le courage d’accompagner ses amis à travers les épreuves.
+
+**Vêtements et apparence :** costume noir élégant à motifs d’os décoratifs, foulard orange, grand chapeau et chaussures de voyage ; conserver le visage et les cheveux de l’enfant.
+
+**Monde et décors :** un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles. Lieux : bateau d’exploration personnel, marché coloré, crique et île à végétation géante.
+
+**Équipements et accessoires :** violon, partitions, canne de promenade et instruments de musique ; aucune apparence effrayante.
+
+**Adversaires ou obstacles :** un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques.
+
+**Exemple de mission :** réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire.
+
+## Jinbe · eau et sérénité
+
+**Série :** One Piece
+
+**Pouvoirs et principe :** la maîtrise imaginaire des courants, la nage et la sérénité pour guider une équipe.
+
+**Vêtements et apparence :** kimono ocre à motifs géométriques sombres, grande ceinture claire et manteau de voyage ; visage de l’enfant conservé.
+
+**Monde et décors :** un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles. Lieux : bateau d’exploration personnel, marché coloré, crique et île à végétation géante.
+
+**Équipements et accessoires :** cartes des courants, cordages et vagues lumineuses utilisées pour aider les voyageurs.
+
+**Adversaires ou obstacles :** un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques.
+
+**Exemple de mission :** réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire.
+
+## Usopp · imagination et précision
+
+**Série :** One Piece
+
+**Pouvoirs et principe :** l’invention, l’observation à distance et le courage de progresser malgré ses inquiétudes.
+
+**Vêtements et apparence :** salopette de voyage couvrante, foulard ou chapeau uni, lunettes d’observation et sac à outils ; conserver le nez et les traits de l’enfant.
+
+**Monde et décors :** un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles. Lieux : bateau d’exploration personnel, marché coloré, crique et île à végétation géante.
+
+**Équipements et accessoires :** longue-vue, outils bricolés et lanceur fantastique réservé à des cibles d’entraînement, jamais à des personnes.
+
+**Adversaires ou obstacles :** un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques.
+
+**Exemple de mission :** réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire.
+
+## Inosuke · instinct et exploration
+
+**Série :** Demon Slayer
+
+**Pouvoirs et principe :** des sens très développés, l’équilibre et l’instinct pour trouver des chemins dans la nature.
+
+**Vêtements et apparence :** tunique brune couvrante, large ceinture à texture de fourrure, pantalon bleu sombre et masque de sanglier tenu en accessoire pour reconnaître l’enfant.
+
+**Monde et décors :** un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection. Lieux : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous.
+
+**Équipements et accessoires :** deux sabres fantastiques gardés au fourreau et accessoires d’orientation, sans blessure.
+
+**Adversaires ou obstacles :** un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur.
+
+**Exemple de mission :** suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit.
+
+## Giyu Tomioka · eau et concentration
+
+**Série :** Demon Slayer
+
+**Pouvoirs et principe :** la concentration, la maîtrise d’une énergie d’eau imaginaire et une attitude protectrice.
+
+**Vêtements et apparence :** tenue sombre à ceinture claire, haori dont une moitié est bordeaux et l’autre à motifs géométriques verts et jaunes, sandales.
+
+**Monde et décors :** un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection. Lieux : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous.
+
+**Équipements et accessoires :** sabre fantastique au fourreau, vagues lumineuses et matériel de voyage protecteur.
+
+**Adversaires ou obstacles :** un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur.
+
+**Exemple de mission :** suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit.
+
+## Shinobu Kocho · papillons et soin
+
+**Série :** Demon Slayer
+
+**Pouvoirs et principe :** l’agilité, l’observation et la connaissance de plantes imaginaires pour prendre soin des autres.
+
+**Vêtements et apparence :** tenue sombre couvrante sous haori blanc à motifs d’ailes de papillon roses, verts et violets, petit accessoire de papillon.
+
+**Monde et décors :** un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection. Lieux : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous.
+
+**Équipements et accessoires :** trousse de soin, carnet de plantes et sabre fantastique à garde de papillon, conservé au fourreau.
+
+**Adversaires ou obstacles :** un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur.
+
+**Exemple de mission :** suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit.
+
+## Kyojuro Rengoku · flammes et enthousiasme
+
+**Série :** Demon Slayer
+
+**Pouvoirs et principe :** une énergie de flammes imaginaire, l’enthousiasme et le courage d’encourager les autres.
+
+**Vêtements et apparence :** tenue sombre à ceinture blanche, grande cape blanche dont les bordures portent des flammes jaunes et rouges, protections de voyage.
+
+**Monde et décors :** un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection. Lieux : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous.
+
+**Équipements et accessoires :** sabre fantastique au fourreau, flammes lumineuses protectrices et équipement de voyage.
+
+**Adversaires ou obstacles :** un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur.
+
+**Exemple de mission :** suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit.
+
+## Tengen Uzui · rythme et coordination
+
+**Série :** Demon Slayer
+
+**Pouvoirs et principe :** le sens du rythme, l’ouïe et la coordination pour réussir des missions en équipe.
+
+**Vêtements et apparence :** tenue de voyage sombre couvrante, grands bracelets, bandeau clair à pierres décoratives et petites perles, visage de l’enfant conservé.
+
+**Monde et décors :** un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection. Lieux : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous.
+
+**Équipements et accessoires :** deux grands sabres fantastiques au repos, reliés par un lien décoratif, et accessoires de rythme sans usage violent.
+
+**Adversaires ou obstacles :** un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur.
+
+**Exemple de mission :** suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit.
+
+## Mitsuri Kanroji · souplesse et gentillesse
+
+**Série :** Demon Slayer
+
+**Pouvoirs et principe :** la souplesse, une force surprenante et la gentillesse pour protéger ses amis.
+
+**Vêtements et apparence :** tenue sombre couvrante, haori blanc, jupe sur short opaque ou leggings, chaussettes vertes à détails roses ; cheveux de l’enfant conservés.
+
+**Monde et décors :** un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection. Lieux : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous.
+
+**Équipements et accessoires :** sabre fantastique souple représenté au fourreau ou en ruban lumineux protecteur, accessoires de voyage.
+
+**Adversaires ou obstacles :** un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur.
+
+**Exemple de mission :** suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit.
+
+## Muichiro Tokito · brume et précision
+
+**Série :** Demon Slayer
+
+**Pouvoirs et principe :** le calme, la précision et une brume imaginaire qui aide à cacher ou protéger des objets.
+
+**Vêtements et apparence :** tenue sombre à manches et pantalon amples, ceinture blanche, sandales et petite sacoche ; visage de l’enfant conservé.
+
+**Monde et décors :** un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection. Lieux : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous.
+
+**Équipements et accessoires :** sabre fantastique gardé au fourreau, brume lumineuse et cartes d’orientation.
+
+**Adversaires ou obstacles :** un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur.
+
+**Exemple de mission :** suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit.

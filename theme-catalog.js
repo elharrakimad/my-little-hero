@@ -148,29 +148,9 @@ window.MLH_ANIME_SERIES = [
     "ar": "أكاديمية الأبطال"
   },
   {
-    "id": "sailor-moon",
-    "label": "Sailor Moon",
-    "ar": "سيلور مون"
-  },
-  {
     "id": "pokemon",
     "label": "Pokémon",
     "ar": "بوكيمون"
-  },
-  {
-    "id": "cardcaptor-sakura",
-    "label": "Cardcaptor Sakura",
-    "ar": "ساكورا صائدة البطاقات"
-  },
-  {
-    "id": "fairy-tail",
-    "label": "Fairy Tail",
-    "ar": "فيري تيل"
-  },
-  {
-    "id": "fullmetal-alchemist",
-    "label": "Fullmetal Alchemist",
-    "ar": "الخيميائي المعدني"
   },
   {
     "id": "hunter-x-hunter",
@@ -178,44 +158,14 @@ window.MLH_ANIME_SERIES = [
     "ar": "القناص"
   },
   {
-    "id": "one-punch-man",
-    "label": "One-Punch Man",
-    "ar": "ون بنش مان"
-  },
-  {
-    "id": "bleach",
-    "label": "Bleach",
-    "ar": "بليتش"
-  },
-  {
     "id": "yu-gi-oh",
     "label": "Yu-Gi-Oh!",
     "ar": "يوغي يو"
   },
   {
-    "id": "haikyu",
-    "label": "Haikyū!!",
-    "ar": "هايكيو"
-  },
-  {
     "id": "captain-tsubasa",
     "label": "Captain Tsubasa",
     "ar": "الكابتن تسوباسا"
-  },
-  {
-    "id": "saint-seiya",
-    "label": "Saint Seiya",
-    "ar": "سانت سيا"
-  },
-  {
-    "id": "astro-boy",
-    "label": "Astro Boy",
-    "ar": "أسترو بوي"
-  },
-  {
-    "id": "totoro",
-    "label": "Mon voisin Totoro",
-    "ar": "جاري توتورو"
   }
 ];
 window.MLH_THEME_CATALOG = [
@@ -710,28 +660,6 @@ window.MLH_THEME_CATALOG = [
     "seriesAr": "أكاديمية الأبطال"
   },
   {
-    "label": "Sailor Moon · lumière protectrice",
-    "ar": "سيلور مون · الضوء الحامي",
-    "category": "anime",
-    "icon": "🌙",
-    "theme": "🌙 Héros personnalisé : la lumière de la lune et une transformation personnelle pour protéger ses amis. Tenue et apparence : tunique blanche à col marin bleu, jupe plissée bleue sur short opaque, grand nœud rouge, longs gants blancs, bottes rouges et petit diadème doré ; coupe couvrante adaptée à l’enfant. Équipements et accessoires : broche de transformation, sceptre lunaire et lumière protectrice, accessoires de communication étoilés. Adversaires ou obstacles : une souveraine aux cheveux rouges et tenue noire et violette ; créatures d’ombre stylisées. Univers et ambiance : une ville japonaise moderne aux écoles, jardins et observatoires, reliée à un palais lunaire de pierre claire, miroirs, roses et paysages étoilés. Lieux à explorer : école, jardin de roses, observatoire et palais de lumière imaginé. Mission possible : protéger la lumière d’une fête nocturne grâce à l’amitié. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une ville japonaise moderne aux écoles, jardins et observatoires, reliée à un palais lunaire de pierre claire, miroirs, roses et paysages étoilés",
-      "places": "école, jardin de roses, observatoire et palais de lumière imaginé",
-      "objects": "broche de transformation, sceptre lunaire et lumière protectrice, accessoires de communication étoilés",
-      "mission": "protéger la lumière d’une fête nocturne grâce à l’amitié"
-    },
-    "reference": {
-      "costume": "tunique blanche à col marin bleu, jupe plissée bleue sur short opaque, grand nœud rouge, longs gants blancs, bottes rouges et petit diadème doré ; coupe couvrante adaptée à l’enfant",
-      "equipment": "broche de transformation, sceptre lunaire et lumière protectrice, accessoires de communication étoilés",
-      "adversaries": "une souveraine aux cheveux rouges et tenue noire et violette ; créatures d’ombre stylisées"
-    },
-    "series": "sailor-moon",
-    "seriesLabel": "Sailor Moon",
-    "seriesAr": "سيلور مون"
-  },
-  {
     "label": "Sacha et Pikachu · amitié et électricité",
     "ar": "ساشا وبيكاتشو · الصداقة والكهرباء",
     "category": "anime",
@@ -752,72 +680,6 @@ window.MLH_THEME_CATALOG = [
     "series": "pokemon",
     "seriesLabel": "Pokémon",
     "seriesAr": "بوكيمون"
-  },
-  {
-    "label": "Cardcaptor Sakura · cartes et magie",
-    "ar": "ساكورا · البطاقات والسحر",
-    "category": "anime",
-    "icon": "🃏",
-    "theme": "🃏 Héros personnalisé : des cartes magiques originales à retrouver grâce à l’amitié et à l’observation. Tenue et apparence : costume de magicienne rouge, rose et blanc avec cape courte, gants et chapeau décoratif ; version adaptée à l’âge de l’enfant, sans modifier son visage. Équipements et accessoires : sceptre à extrémité ailée ou étoilée, cartes illustrées, petite clé de transformation et carnet. Adversaires ou obstacles : des esprits de cartes incarnant vent, eau, ombre ou illusion plutôt que des méchants ordinaires. Univers et ambiance : une ville scolaire japonaise paisible, école à tour d’horloge, bibliothèque, cerisiers, maison familiale et phénomènes magiques cachés dans le quotidien. Lieux à explorer : école, bibliothèque, parc aux cerisiers et tour de l’horloge. Mission possible : retrouver des cartes égarées en comprenant la particularité de chacune. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une ville scolaire japonaise paisible, école à tour d’horloge, bibliothèque, cerisiers, maison familiale et phénomènes magiques cachés dans le quotidien",
-      "places": "école, bibliothèque, parc aux cerisiers et tour de l’horloge",
-      "objects": "sceptre à extrémité ailée ou étoilée, cartes illustrées, petite clé de transformation et carnet",
-      "mission": "retrouver des cartes égarées en comprenant la particularité de chacune"
-    },
-    "reference": {
-      "costume": "costume de magicienne rouge, rose et blanc avec cape courte, gants et chapeau décoratif ; version adaptée à l’âge de l’enfant, sans modifier son visage",
-      "equipment": "sceptre à extrémité ailée ou étoilée, cartes illustrées, petite clé de transformation et carnet",
-      "adversaries": "des esprits de cartes incarnant vent, eau, ombre ou illusion plutôt que des méchants ordinaires"
-    },
-    "series": "cardcaptor-sakura",
-    "seriesLabel": "Cardcaptor Sakura",
-    "seriesAr": "ساكورا صائدة البطاقات"
-  },
-  {
-    "label": "Natsu · flammes et solidarité",
-    "ar": "ناتسو · اللهب والتضامن",
-    "category": "anime",
-    "icon": "🔥",
-    "theme": "🔥 Héros personnalisé : des flammes magiques bienveillantes pour réchauffer et éclairer le village. Tenue et apparence : gilet sombre à bordures claires, pantalon blanc, ceinture et longue écharpe blanche à motif d’écailles ; garder la coiffure de l’enfant. Équipements et accessoires : flammes fantastiques de protection, sens développés, rouleaux de mission et objets de voyage. Adversaires ou obstacles : des groupes de sorciers rivaux en robes sombres ; des dragons et des enchantements désorganisant la ville. Univers et ambiance : une cité de fantasy aux toits anciens, grande maison de compagnons avec tableau de missions, ports, trains, forêts et montagnes peuplées de magie. Lieux à explorer : grande salle de réunion, port, train ancien et forêt magique. Mission possible : partir avec des amis pour réchauffer un village et réparer son phare. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une cité de fantasy aux toits anciens, grande maison de compagnons avec tableau de missions, ports, trains, forêts et montagnes peuplées de magie",
-      "places": "grande salle de réunion, port, train ancien et forêt magique",
-      "objects": "flammes fantastiques de protection, sens développés, rouleaux de mission et objets de voyage",
-      "mission": "partir avec des amis pour réchauffer un village et réparer son phare"
-    },
-    "reference": {
-      "costume": "gilet sombre à bordures claires, pantalon blanc, ceinture et longue écharpe blanche à motif d’écailles ; garder la coiffure de l’enfant",
-      "equipment": "flammes fantastiques de protection, sens développés, rouleaux de mission et objets de voyage",
-      "adversaries": "des groupes de sorciers rivaux en robes sombres ; des dragons et des enchantements désorganisant la ville"
-    },
-    "series": "fairy-tail",
-    "seriesLabel": "Fairy Tail",
-    "seriesAr": "فيري تيل"
-  },
-  {
-    "label": "Edward Elric · transformation de la matière",
-    "ar": "إدوارد إلريك · تحويل المادة",
-    "category": "anime",
-    "icon": "⚗️",
-    "theme": "⚗️ Héros personnalisé : la transformation imaginaire de la matière pour réparer des objets utiles. Tenue et apparence : long manteau rouge sur tenue noire, gants blancs, ceinture et bottes robustes ; accessoire mécanique argenté sur un avant-bras, sans représenter de blessure. Équipements et accessoires : transformation imaginaire des matériaux, figures géométriques d’alchimie, carnets et outils mécaniques. Adversaires ou obstacles : des silhouettes en longs manteaux noirs avec marques rouges ; des automates et des adversaires manipulant la matière. Univers et ambiance : des villes industrielles anciennes aux gares, trains à vapeur, ateliers, bibliothèques, laboratoires, rues pavées et villages de pierre. Lieux à explorer : gare, atelier mécanique, bibliothèque scientifique et village de pierre. Mission possible : réparer une machine utile en comprenant les matériaux et les conséquences de ses choix. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "des villes industrielles anciennes aux gares, trains à vapeur, ateliers, bibliothèques, laboratoires, rues pavées et villages de pierre",
-      "places": "gare, atelier mécanique, bibliothèque scientifique et village de pierre",
-      "objects": "transformation imaginaire des matériaux, figures géométriques d’alchimie, carnets et outils mécaniques",
-      "mission": "réparer une machine utile en comprenant les matériaux et les conséquences de ses choix"
-    },
-    "reference": {
-      "costume": "long manteau rouge sur tenue noire, gants blancs, ceinture et bottes robustes ; accessoire mécanique argenté sur un avant-bras, sans représenter de blessure",
-      "equipment": "transformation imaginaire des matériaux, figures géométriques d’alchimie, carnets et outils mécaniques",
-      "adversaries": "des silhouettes en longs manteaux noirs avec marques rouges ; des automates et des adversaires manipulant la matière"
-    },
-    "series": "fullmetal-alchemist",
-    "seriesLabel": "Fullmetal Alchemist",
-    "seriesAr": "الخيميائي المعدني"
   },
   {
     "label": "Gon · sens et lien avec la nature",
@@ -864,50 +726,6 @@ window.MLH_THEME_CATALOG = [
     "seriesAr": "القناص"
   },
   {
-    "label": "Saitama · super-force et simplicité",
-    "ar": "سايتاما · القوة الخارقة والبساطة",
-    "category": "anime",
-    "icon": "💪",
-    "theme": "💪 Héros personnalisé : une immense force employée avec simplicité et modestie pour rendre service. Tenue et apparence : combinaison jaune, gants et bottes rouges, ceinture sombre et cape blanche fixée par deux attaches ; conserver le visage et les cheveux de l’enfant. Équipements et accessoires : force et vitesse extraordinaires, grands bonds et équipements ordinaires ; aucune arme nécessaire. Adversaires ou obstacles : des monstres de fantaisie comme un géant en forme de crabe ; un rival extraterrestre à œil central, sans scènes effrayantes. Univers et ambiance : une ville japonaise quotidienne avec immeubles simples, supermarchés, parcs, centres de secours et grands quartiers modernes où surgissent des incidents extraordinaires. Lieux à explorer : immeuble, supermarché, parc public et centre de secours. Mission possible : découvrir qu’une grande force ne remplace ni l’écoute ni la gentillesse. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une ville japonaise quotidienne avec immeubles simples, supermarchés, parcs, centres de secours et grands quartiers modernes où surgissent des incidents extraordinaires",
-      "places": "immeuble, supermarché, parc public et centre de secours",
-      "objects": "force et vitesse extraordinaires, grands bonds et équipements ordinaires ; aucune arme nécessaire",
-      "mission": "découvrir qu’une grande force ne remplace ni l’écoute ni la gentillesse"
-    },
-    "reference": {
-      "costume": "combinaison jaune, gants et bottes rouges, ceinture sombre et cape blanche fixée par deux attaches ; conserver le visage et les cheveux de l’enfant",
-      "equipment": "force et vitesse extraordinaires, grands bonds et équipements ordinaires ; aucune arme nécessaire",
-      "adversaries": "des monstres de fantaisie comme un géant en forme de crabe ; un rival extraterrestre à œil central, sans scènes effrayantes"
-    },
-    "series": "one-punch-man",
-    "seriesLabel": "One-Punch Man",
-    "seriesAr": "ون بنش مان"
-  },
-  {
-    "label": "Ichigo · courage et protection",
-    "ar": "إيتشيغو · الشجاعة والحماية",
-    "category": "anime",
-    "icon": "🛡️",
-    "theme": "🛡️ Héros personnalisé : le courage de protéger ses amis et de surmonter une épreuve sans violence. Tenue et apparence : longue tenue noire superposée à col blanc, ceinture claire et sandales de voyage ; conserver les cheveux et le visage de l’enfant. Équipements et accessoires : grand sabre fantastique à large lame, conservé au fourreau ou utilisé pour protéger sans blesser, et énergie lumineuse. Adversaires ou obstacles : des esprits fantastiques aux masques blancs sur silhouettes sombres ; des rivaux en robes claires, sans effets d’horreur. Univers et ambiance : une petite ville japonaise traversée par une rivière, avec école et ponts, reliée à un monde spirituel de portes monumentales, remparts blancs, jardins et ruelles anciennes. Lieux à explorer : école, pont, ruelle et jardin de passages lumineux. Mission possible : aider des visiteurs imaginaires à retrouver leur chemin en protégeant ses amis. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une petite ville japonaise traversée par une rivière, avec école et ponts, reliée à un monde spirituel de portes monumentales, remparts blancs, jardins et ruelles anciennes",
-      "places": "école, pont, ruelle et jardin de passages lumineux",
-      "objects": "grand sabre fantastique à large lame, conservé au fourreau ou utilisé pour protéger sans blesser, et énergie lumineuse",
-      "mission": "aider des visiteurs imaginaires à retrouver leur chemin en protégeant ses amis"
-    },
-    "reference": {
-      "costume": "longue tenue noire superposée à col blanc, ceinture claire et sandales de voyage ; conserver les cheveux et le visage de l’enfant",
-      "equipment": "grand sabre fantastique à large lame, conservé au fourreau ou utilisé pour protéger sans blesser, et énergie lumineuse",
-      "adversaries": "des esprits fantastiques aux masques blancs sur silhouettes sombres ; des rivaux en robes claires, sans effets d’horreur"
-    },
-    "series": "bleach",
-    "seriesLabel": "Bleach",
-    "seriesAr": "بليتش"
-  },
-  {
     "label": "Yugi · énigmes et stratégie",
     "ar": "يوغي · الألغاز والاستراتيجية",
     "category": "anime",
@@ -930,28 +748,6 @@ window.MLH_THEME_CATALOG = [
     "seriesAr": "يوغي يو"
   },
   {
-    "label": "Hinata (Haikyū!!) · bonds et volley",
-    "ar": "هيناتا · القفز والكرة الطائرة",
-    "category": "anime",
-    "icon": "🏐",
-    "theme": "🏐 Héros personnalisé : des bonds impressionnants et le sens du collectif dans un tournoi de volley. Tenue et apparence : maillot de volley orange et noir, short noir, genouillères et chaussures de salle ; numéro placé par la mise en page si nécessaire. Équipements et accessoires : ballon de volley, filet, plots et tableau tactique ; bonds et réflexes sportifs, aucune arme. Adversaires ou obstacles : pas de méchant : équipes rivales aux maillots distincts, défis sportifs et appréhension de l’échec. Univers et ambiance : un quotidien scolaire japonais de gymnases en parquet, cours d’école, vestiaires, trajets en équipe et salles de tournoi, centré sur les efforts collectifs. Lieux à explorer : gymnase, cour d’école, vestiaire et salle de tournoi. Mission possible : trouver sa place dans une équipe et réussir une action préparée ensemble. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "un quotidien scolaire japonais de gymnases en parquet, cours d’école, vestiaires, trajets en équipe et salles de tournoi, centré sur les efforts collectifs",
-      "places": "gymnase, cour d’école, vestiaire et salle de tournoi",
-      "objects": "ballon de volley, filet, plots et tableau tactique ; bonds et réflexes sportifs, aucune arme",
-      "mission": "trouver sa place dans une équipe et réussir une action préparée ensemble"
-    },
-    "reference": {
-      "costume": "maillot de volley orange et noir, short noir, genouillères et chaussures de salle ; numéro placé par la mise en page si nécessaire",
-      "equipment": "ballon de volley, filet, plots et tableau tactique ; bonds et réflexes sportifs, aucune arme",
-      "adversaries": "pas de méchant : équipes rivales aux maillots distincts, défis sportifs et appréhension de l’échec"
-    },
-    "series": "haikyu",
-    "seriesLabel": "Haikyū!!",
-    "seriesAr": "هايكيو"
-  },
-  {
     "label": "Tsubasa · football et persévérance",
     "ar": "تسوباسا · كرة القدم والمثابرة",
     "category": "anime",
@@ -972,72 +768,6 @@ window.MLH_THEME_CATALOG = [
     "series": "captain-tsubasa",
     "seriesLabel": "Captain Tsubasa",
     "seriesAr": "الكابتن تسوباسا"
-  },
-  {
-    "label": "Seiya · cosmos et constellations",
-    "ar": "سييا · الكون والكوكبات",
-    "category": "anime",
-    "icon": "🌌",
-    "theme": "🌌 Héros personnalisé : une énergie cosmique et une armure personnelle inspirée des constellations. Tenue et apparence : armure argentée à formes de cheval ailé sur sous-vêtement rouge, protections aux épaules, bras et jambes, casque ailé amovible pour montrer le visage. Équipements et accessoires : énergie des constellations, protections et gestes de lumière stylisés ; cartes célestes et emblèmes zodiacaux. Adversaires ou obstacles : des chevaliers rivaux en armures dorées représentant les constellations du zodiaque ; gardiens d’épreuves. Univers et ambiance : un univers de mythologie et de cosmos avec temples de pierre claire, escaliers de montagne, douze maisons zodiacales, ciels étoilés et domaines célestes. Lieux à explorer : temple imaginaire, escalier de montagne, observatoire et jardin étoilé. Mission possible : rallumer des balises célestes en faisant preuve de courage et de solidarité. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "un univers de mythologie et de cosmos avec temples de pierre claire, escaliers de montagne, douze maisons zodiacales, ciels étoilés et domaines célestes",
-      "places": "temple imaginaire, escalier de montagne, observatoire et jardin étoilé",
-      "objects": "énergie des constellations, protections et gestes de lumière stylisés ; cartes célestes et emblèmes zodiacaux",
-      "mission": "rallumer des balises célestes en faisant preuve de courage et de solidarité"
-    },
-    "reference": {
-      "costume": "armure argentée à formes de cheval ailé sur sous-vêtement rouge, protections aux épaules, bras et jambes, casque ailé amovible pour montrer le visage",
-      "equipment": "énergie des constellations, protections et gestes de lumière stylisés ; cartes célestes et emblèmes zodiacaux",
-      "adversaries": "des chevaliers rivaux en armures dorées représentant les constellations du zodiaque ; gardiens d’épreuves"
-    },
-    "series": "saint-seiya",
-    "seriesLabel": "Saint Seiya",
-    "seriesAr": "سانت سيا"
-  },
-  {
-    "label": "Astro Boy · robot et solidarité",
-    "ar": "أسترو بوي · الروبوت والتضامن",
-    "category": "anime",
-    "icon": "🤖",
-    "theme": "🤖 Héros personnalisé : des capacités robotiques et un cœur généreux pour aider les habitants. Tenue et apparence : tenue robotique rétro avec short noir, large ceinture verte et grandes bottes rouges ; ajouter un haut couvrant adapté à l’enfant et conserver son visage. Équipements et accessoires : réacteurs dans les bottes, force mécanique, capteurs et outils intégrés présentés comme équipements d’assistance. Adversaires ou obstacles : de grands robots rivaux aux silhouettes métalliques imposantes, dont un robot sombre à cornes, sans destruction réaliste. Univers et ambiance : une ville futuriste de tours arrondies, routes aériennes, laboratoires, écoles, parcs et robots partageant le quotidien des humains. Lieux à explorer : laboratoire, école, parc suspendu et station de transport aérien. Mission possible : aider des humains et des robots à résoudre un problème ensemble. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une ville futuriste de tours arrondies, routes aériennes, laboratoires, écoles, parcs et robots partageant le quotidien des humains",
-      "places": "laboratoire, école, parc suspendu et station de transport aérien",
-      "objects": "réacteurs dans les bottes, force mécanique, capteurs et outils intégrés présentés comme équipements d’assistance",
-      "mission": "aider des humains et des robots à résoudre un problème ensemble"
-    },
-    "reference": {
-      "costume": "tenue robotique rétro avec short noir, large ceinture verte et grandes bottes rouges ; ajouter un haut couvrant adapté à l’enfant et conserver son visage",
-      "equipment": "réacteurs dans les bottes, force mécanique, capteurs et outils intégrés présentés comme équipements d’assistance",
-      "adversaries": "de grands robots rivaux aux silhouettes métalliques imposantes, dont un robot sombre à cornes, sans destruction réaliste"
-    },
-    "series": "astro-boy",
-    "seriesLabel": "Astro Boy",
-    "seriesAr": "أسترو بوي"
-  },
-  {
-    "label": "Totoro · forêt et bienveillance",
-    "ar": "توتورو · الغابة واللطف",
-    "category": "anime",
-    "icon": "🌳",
-    "theme": "🌳 Héros personnalisé : la découverte d’un grand compagnon forestier gris et rond, au ventre crème à chevrons, avec de longues oreilles et des moustaches. Tenue et apparence : l’enfant porte une tenue de promenade rurale et un chapeau de soleil ; son compagnon est une très grande créature grise et ronde, ventre crème à chevrons sombres, longues oreilles et moustaches. Équipements et accessoires : parapluie, graines, feuilles et petite toupie ; grand véhicule félin fantastique comme moyen de déplacement, aucune arme. Adversaires ou obstacles : aucun méchant : pluie, éloignement, inquiétudes et découverte de l’inconnu constituent les épreuves. Univers et ambiance : une campagne japonaise paisible avec vieille maison en bois, rizières, chemins, arrêt de bus sous la pluie, grand arbre creux et forêt où se cachent des créatures bienveillantes. Lieux à explorer : vieille maison, rizière, sentier de campagne et grand arbre creux. Mission possible : découvrir un compagnon forestier original et prendre soin d’un lieu de vie partagé. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une campagne japonaise paisible avec vieille maison en bois, rizières, chemins, arrêt de bus sous la pluie, grand arbre creux et forêt où se cachent des créatures bienveillantes",
-      "places": "vieille maison, rizière, sentier de campagne et grand arbre creux",
-      "objects": "parapluie, graines, feuilles et petite toupie ; grand véhicule félin fantastique comme moyen de déplacement, aucune arme",
-      "mission": "découvrir un compagnon forestier original et prendre soin d’un lieu de vie partagé"
-    },
-    "reference": {
-      "costume": "l’enfant porte une tenue de promenade rurale et un chapeau de soleil ; son compagnon est une très grande créature grise et ronde, ventre crème à chevrons sombres, longues oreilles et moustaches",
-      "equipment": "parapluie, graines, feuilles et petite toupie ; grand véhicule félin fantastique comme moyen de déplacement, aucune arme",
-      "adversaries": "aucun méchant : pluie, éloignement, inquiétudes et découverte de l’inconnu constituent les épreuves"
-    },
-    "series": "totoro",
-    "seriesLabel": "Mon voisin Totoro",
-    "seriesAr": "جاري توتورو"
   },
   {
     "label": "Le pouvoir de voler pour secourir les oiseaux",
@@ -3172,50 +2902,6 @@ window.MLH_THEME_CATALOG = [
     "seriesAr": "أكاديمية الأبطال"
   },
   {
-    "label": "Sailor Mercury · eau et analyse",
-    "ar": "سيلور ميركوري · الماء والتحليل",
-    "category": "anime",
-    "icon": "💧",
-    "theme": "💧 Héros personnalisé : la maîtrise de l’eau et de la brume, l’analyse et la résolution d’énigmes. Tenue et apparence : tunique blanche à col marin bleu, jupe bleue sur short opaque, nœud bleu, gants blancs et bottes bleues. Équipements et accessoires : petit ordinateur d’analyse, visière transparente, bulles d’eau et brume protectrice. Adversaires ou obstacles : une souveraine aux cheveux rouges et tenue noire et violette ; créatures d’ombre stylisées. Univers et ambiance : une ville japonaise moderne aux écoles, jardins et observatoires, reliée à un palais lunaire de pierre claire, miroirs, roses et paysages étoilés. Lieux à explorer : école, jardin de roses, observatoire et palais de lumière imaginé. Mission possible : protéger la lumière d’une fête nocturne grâce à l’amitié. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une ville japonaise moderne aux écoles, jardins et observatoires, reliée à un palais lunaire de pierre claire, miroirs, roses et paysages étoilés",
-      "places": "école, jardin de roses, observatoire et palais de lumière imaginé",
-      "objects": "petit ordinateur d’analyse, visière transparente, bulles d’eau et brume protectrice",
-      "mission": "protéger la lumière d’une fête nocturne grâce à l’amitié"
-    },
-    "reference": {
-      "costume": "tunique blanche à col marin bleu, jupe bleue sur short opaque, nœud bleu, gants blancs et bottes bleues",
-      "equipment": "petit ordinateur d’analyse, visière transparente, bulles d’eau et brume protectrice",
-      "adversaries": "une souveraine aux cheveux rouges et tenue noire et violette ; créatures d’ombre stylisées"
-    },
-    "series": "sailor-moon",
-    "seriesLabel": "Sailor Moon",
-    "seriesAr": "سيلور مون"
-  },
-  {
-    "label": "Sailor Mars · flammes et intuition",
-    "ar": "سيلور مارس · اللهب والحدس",
-    "category": "anime",
-    "icon": "🔥",
-    "theme": "🔥 Héros personnalisé : des flammes protectrices imaginaires, de l’intuition et une grande détermination. Tenue et apparence : tunique blanche à col rouge, jupe rouge sur short opaque, nœud violet, gants blancs et chaussures rouges. Équipements et accessoires : rubans de papier illustrés, lumière de feu stylisée et accessoires de cérémonie fantastique. Adversaires ou obstacles : une souveraine aux cheveux rouges et tenue noire et violette ; créatures d’ombre stylisées. Univers et ambiance : une ville japonaise moderne aux écoles, jardins et observatoires, reliée à un palais lunaire de pierre claire, miroirs, roses et paysages étoilés. Lieux à explorer : école, jardin de roses, observatoire et palais de lumière imaginé. Mission possible : protéger la lumière d’une fête nocturne grâce à l’amitié. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une ville japonaise moderne aux écoles, jardins et observatoires, reliée à un palais lunaire de pierre claire, miroirs, roses et paysages étoilés",
-      "places": "école, jardin de roses, observatoire et palais de lumière imaginé",
-      "objects": "rubans de papier illustrés, lumière de feu stylisée et accessoires de cérémonie fantastique",
-      "mission": "protéger la lumière d’une fête nocturne grâce à l’amitié"
-    },
-    "reference": {
-      "costume": "tunique blanche à col rouge, jupe rouge sur short opaque, nœud violet, gants blancs et chaussures rouges",
-      "equipment": "rubans de papier illustrés, lumière de feu stylisée et accessoires de cérémonie fantastique",
-      "adversaries": "une souveraine aux cheveux rouges et tenue noire et violette ; créatures d’ombre stylisées"
-    },
-    "series": "sailor-moon",
-    "seriesLabel": "Sailor Moon",
-    "seriesAr": "سيلور مون"
-  },
-  {
     "label": "Ondine (Misty) · eau et compagnons",
     "ar": "أوندين · الماء والرفاق",
     "category": "anime",
@@ -3260,138 +2946,6 @@ window.MLH_THEME_CATALOG = [
     "seriesAr": "بوكيمون"
   },
   {
-    "label": "Tomoyo (Tiffany) · costumes et création",
-    "ar": "تومويو · الأزياء والإبداع",
-    "category": "anime",
-    "icon": "🎥",
-    "theme": "🎥 Héros personnalisé : l’observation, la création de costumes et le talent de raconter l’aventure en images. Tenue et apparence : uniforme scolaire bleu marine et blanc, chapeau de promenade et sac contenant des rubans et accessoires. Équipements et accessoires : petite caméra, carnet de croquis, étoffes et accessoires de spectacle adaptés à l’enfant. Adversaires ou obstacles : des esprits de cartes incarnant vent, eau, ombre ou illusion plutôt que des méchants ordinaires. Univers et ambiance : une ville scolaire japonaise paisible, école à tour d’horloge, bibliothèque, cerisiers, maison familiale et phénomènes magiques cachés dans le quotidien. Lieux à explorer : école, bibliothèque, parc aux cerisiers et tour de l’horloge. Mission possible : retrouver des cartes égarées en comprenant la particularité de chacune. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une ville scolaire japonaise paisible, école à tour d’horloge, bibliothèque, cerisiers, maison familiale et phénomènes magiques cachés dans le quotidien",
-      "places": "école, bibliothèque, parc aux cerisiers et tour de l’horloge",
-      "objects": "petite caméra, carnet de croquis, étoffes et accessoires de spectacle adaptés à l’enfant",
-      "mission": "retrouver des cartes égarées en comprenant la particularité de chacune"
-    },
-    "reference": {
-      "costume": "uniforme scolaire bleu marine et blanc, chapeau de promenade et sac contenant des rubans et accessoires",
-      "equipment": "petite caméra, carnet de croquis, étoffes et accessoires de spectacle adaptés à l’enfant",
-      "adversaries": "des esprits de cartes incarnant vent, eau, ombre ou illusion plutôt que des méchants ordinaires"
-    },
-    "series": "cardcaptor-sakura",
-    "seriesLabel": "Cardcaptor Sakura",
-    "seriesAr": "ساكورا صائدة البطاقات"
-  },
-  {
-    "label": "Meiling · agilité et persévérance",
-    "ar": "ميلينغ · الرشاقة والمثابرة",
-    "category": "anime",
-    "icon": "🥋",
-    "theme": "🥋 Héros personnalisé : l’agilité, la maîtrise de mouvements d’entraînement et la persévérance sans pouvoir magique nécessaire. Tenue et apparence : tunique rouge de style chinois à bordures dorées, pantalon assorti et chaussures souples ; coupe couvrante adaptée à l’enfant. Équipements et accessoires : rubans d’entraînement, objets d’équilibre et sac de voyage, aucune arme nécessaire. Adversaires ou obstacles : des esprits de cartes incarnant vent, eau, ombre ou illusion plutôt que des méchants ordinaires. Univers et ambiance : une ville scolaire japonaise paisible, école à tour d’horloge, bibliothèque, cerisiers, maison familiale et phénomènes magiques cachés dans le quotidien. Lieux à explorer : école, bibliothèque, parc aux cerisiers et tour de l’horloge. Mission possible : retrouver des cartes égarées en comprenant la particularité de chacune. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une ville scolaire japonaise paisible, école à tour d’horloge, bibliothèque, cerisiers, maison familiale et phénomènes magiques cachés dans le quotidien",
-      "places": "école, bibliothèque, parc aux cerisiers et tour de l’horloge",
-      "objects": "rubans d’entraînement, objets d’équilibre et sac de voyage, aucune arme nécessaire",
-      "mission": "retrouver des cartes égarées en comprenant la particularité de chacune"
-    },
-    "reference": {
-      "costume": "tunique rouge de style chinois à bordures dorées, pantalon assorti et chaussures souples ; coupe couvrante adaptée à l’enfant",
-      "equipment": "rubans d’entraînement, objets d’équilibre et sac de voyage, aucune arme nécessaire",
-      "adversaries": "des esprits de cartes incarnant vent, eau, ombre ou illusion plutôt que des méchants ordinaires"
-    },
-    "series": "cardcaptor-sakura",
-    "seriesLabel": "Cardcaptor Sakura",
-    "seriesAr": "ساكورا صائدة البطاقات"
-  },
-  {
-    "label": "Lucy · clés et compagnons célestes",
-    "ar": "لوسي · المفاتيح والرفاق السماويون",
-    "category": "anime",
-    "icon": "🗝️",
-    "theme": "🗝️ Héros personnalisé : des clés magiques qui permettent de rencontrer des compagnons célestes et de résoudre des missions ensemble. Tenue et apparence : tunique blanche et bleue, short opaque ou leggings, ceinture avec étui à clés et bottes confortables. Équipements et accessoires : trousseau de clés dorées, carnet de missions et compagnons fantastiques liés aux constellations. Adversaires ou obstacles : des groupes de sorciers rivaux en robes sombres ; des dragons et des enchantements désorganisant la ville. Univers et ambiance : une cité de fantasy aux toits anciens, grande maison de compagnons avec tableau de missions, ports, trains, forêts et montagnes peuplées de magie. Lieux à explorer : grande salle de réunion, port, train ancien et forêt magique. Mission possible : partir avec des amis pour réchauffer un village et réparer son phare. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une cité de fantasy aux toits anciens, grande maison de compagnons avec tableau de missions, ports, trains, forêts et montagnes peuplées de magie",
-      "places": "grande salle de réunion, port, train ancien et forêt magique",
-      "objects": "trousseau de clés dorées, carnet de missions et compagnons fantastiques liés aux constellations",
-      "mission": "partir avec des amis pour réchauffer un village et réparer son phare"
-    },
-    "reference": {
-      "costume": "tunique blanche et bleue, short opaque ou leggings, ceinture avec étui à clés et bottes confortables",
-      "equipment": "trousseau de clés dorées, carnet de missions et compagnons fantastiques liés aux constellations",
-      "adversaries": "des groupes de sorciers rivaux en robes sombres ; des dragons et des enchantements désorganisant la ville"
-    },
-    "series": "fairy-tail",
-    "seriesLabel": "Fairy Tail",
-    "seriesAr": "فيري تيل"
-  },
-  {
-    "label": "Erza · armures et protection",
-    "ar": "إيرزا · الدروع والحماية",
-    "category": "anime",
-    "icon": "🛡️",
-    "theme": "🛡️ Héros personnalisé : le changement d’équipement fantastique, le courage et la protection de ses partenaires. Tenue et apparence : armure argentée adaptée à l’enfant, tissu bleu, bottes et protections articulées ; casque amovible. Équipements et accessoires : bouclier et différentes armures, épées fantastiques gardées au fourreau ou utilisées pour protéger sans blesser. Adversaires ou obstacles : des groupes de sorciers rivaux en robes sombres ; des dragons et des enchantements désorganisant la ville. Univers et ambiance : une cité de fantasy aux toits anciens, grande maison de compagnons avec tableau de missions, ports, trains, forêts et montagnes peuplées de magie. Lieux à explorer : grande salle de réunion, port, train ancien et forêt magique. Mission possible : partir avec des amis pour réchauffer un village et réparer son phare. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une cité de fantasy aux toits anciens, grande maison de compagnons avec tableau de missions, ports, trains, forêts et montagnes peuplées de magie",
-      "places": "grande salle de réunion, port, train ancien et forêt magique",
-      "objects": "bouclier et différentes armures, épées fantastiques gardées au fourreau ou utilisées pour protéger sans blesser",
-      "mission": "partir avec des amis pour réchauffer un village et réparer son phare"
-    },
-    "reference": {
-      "costume": "armure argentée adaptée à l’enfant, tissu bleu, bottes et protections articulées ; casque amovible",
-      "equipment": "bouclier et différentes armures, épées fantastiques gardées au fourreau ou utilisées pour protéger sans blesser",
-      "adversaries": "des groupes de sorciers rivaux en robes sombres ; des dragons et des enchantements désorganisant la ville"
-    },
-    "series": "fairy-tail",
-    "seriesLabel": "Fairy Tail",
-    "seriesAr": "فيري تيل"
-  },
-  {
-    "label": "Alphonse · armure et bienveillance",
-    "ar": "ألفونس · الدرع واللطف",
-    "category": "anime",
-    "icon": "🦾",
-    "theme": "🦾 Héros personnalisé : la compréhension des matériaux, une grande force et une bienveillance constante. Tenue et apparence : grande armure argentée arrondie avec tablier clair et protections épaisses ; visière ouverte ou casque tenu pour conserver le visage de l’enfant. Équipements et accessoires : gants métalliques, outils d’atelier, carnet et figures géométriques de transformation imaginaire. Adversaires ou obstacles : des silhouettes en longs manteaux noirs avec marques rouges ; des automates et des adversaires manipulant la matière. Univers et ambiance : des villes industrielles anciennes aux gares, trains à vapeur, ateliers, bibliothèques, laboratoires, rues pavées et villages de pierre. Lieux à explorer : gare, atelier mécanique, bibliothèque scientifique et village de pierre. Mission possible : réparer une machine utile en comprenant les matériaux et les conséquences de ses choix. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "des villes industrielles anciennes aux gares, trains à vapeur, ateliers, bibliothèques, laboratoires, rues pavées et villages de pierre",
-      "places": "gare, atelier mécanique, bibliothèque scientifique et village de pierre",
-      "objects": "gants métalliques, outils d’atelier, carnet et figures géométriques de transformation imaginaire",
-      "mission": "réparer une machine utile en comprenant les matériaux et les conséquences de ses choix"
-    },
-    "reference": {
-      "costume": "grande armure argentée arrondie avec tablier clair et protections épaisses ; visière ouverte ou casque tenu pour conserver le visage de l’enfant",
-      "equipment": "gants métalliques, outils d’atelier, carnet et figures géométriques de transformation imaginaire",
-      "adversaries": "des silhouettes en longs manteaux noirs avec marques rouges ; des automates et des adversaires manipulant la matière"
-    },
-    "series": "fullmetal-alchemist",
-    "seriesLabel": "Fullmetal Alchemist",
-    "seriesAr": "الخيميائي المعدني"
-  },
-  {
-    "label": "Winry · mécanique et réparation",
-    "ar": "وينري · الميكانيك والإصلاح",
-    "category": "anime",
-    "icon": "🔧",
-    "theme": "🔧 Héros personnalisé : la mécanique, l’invention et le talent de réparer des équipements utiles. Tenue et apparence : salopette de mécanicienne bleue sur tee-shirt clair couvrant, gants de travail, chaussures solides et foulard uni. Équipements et accessoires : clés, tournevis, plans d’atelier et pièces mécaniques ; outils utilisés uniquement pour réparer. Adversaires ou obstacles : des silhouettes en longs manteaux noirs avec marques rouges ; des automates et des adversaires manipulant la matière. Univers et ambiance : des villes industrielles anciennes aux gares, trains à vapeur, ateliers, bibliothèques, laboratoires, rues pavées et villages de pierre. Lieux à explorer : gare, atelier mécanique, bibliothèque scientifique et village de pierre. Mission possible : réparer une machine utile en comprenant les matériaux et les conséquences de ses choix. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "des villes industrielles anciennes aux gares, trains à vapeur, ateliers, bibliothèques, laboratoires, rues pavées et villages de pierre",
-      "places": "gare, atelier mécanique, bibliothèque scientifique et village de pierre",
-      "objects": "clés, tournevis, plans d’atelier et pièces mécaniques ; outils utilisés uniquement pour réparer",
-      "mission": "réparer une machine utile en comprenant les matériaux et les conséquences de ses choix"
-    },
-    "reference": {
-      "costume": "salopette de mécanicienne bleue sur tee-shirt clair couvrant, gants de travail, chaussures solides et foulard uni",
-      "equipment": "clés, tournevis, plans d’atelier et pièces mécaniques ; outils utilisés uniquement pour réparer",
-      "adversaries": "des silhouettes en longs manteaux noirs avec marques rouges ; des automates et des adversaires manipulant la matière"
-    },
-    "series": "fullmetal-alchemist",
-    "seriesLabel": "Fullmetal Alchemist",
-    "seriesAr": "الخيميائي المعدني"
-  },
-  {
     "label": "Kurapika · réflexion et chaînes de lumière",
     "ar": "كورابيكا · التفكير وسلاسل الضوء",
     "category": "anime",
@@ -3412,94 +2966,6 @@ window.MLH_THEME_CATALOG = [
     "series": "hunter-x-hunter",
     "seriesLabel": "Hunter × Hunter",
     "seriesAr": "القناص"
-  },
-  {
-    "label": "Genos · technologie et énergie",
-    "ar": "جينوس · التكنولوجيا والطاقة",
-    "category": "anime",
-    "icon": "🦾",
-    "theme": "🦾 Héros personnalisé : des capacités mécaniques, une énergie protectrice et le désir de progresser grâce à l’apprentissage. Tenue et apparence : haut sombre couvrant, bras mécaniques argentés et dorés, pantalon sombre et bottes ; visage fidèle à l’enfant. Équipements et accessoires : bras-outils, capteurs et propulsion lumineuse utilisés pour réparer et secourir. Adversaires ou obstacles : des monstres de fantaisie comme un géant en forme de crabe ; un rival extraterrestre à œil central, sans scènes effrayantes. Univers et ambiance : une ville japonaise quotidienne avec immeubles simples, supermarchés, parcs, centres de secours et grands quartiers modernes où surgissent des incidents extraordinaires. Lieux à explorer : immeuble, supermarché, parc public et centre de secours. Mission possible : découvrir qu’une grande force ne remplace ni l’écoute ni la gentillesse. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une ville japonaise quotidienne avec immeubles simples, supermarchés, parcs, centres de secours et grands quartiers modernes où surgissent des incidents extraordinaires",
-      "places": "immeuble, supermarché, parc public et centre de secours",
-      "objects": "bras-outils, capteurs et propulsion lumineuse utilisés pour réparer et secourir",
-      "mission": "découvrir qu’une grande force ne remplace ni l’écoute ni la gentillesse"
-    },
-    "reference": {
-      "costume": "haut sombre couvrant, bras mécaniques argentés et dorés, pantalon sombre et bottes ; visage fidèle à l’enfant",
-      "equipment": "bras-outils, capteurs et propulsion lumineuse utilisés pour réparer et secourir",
-      "adversaries": "des monstres de fantaisie comme un géant en forme de crabe ; un rival extraterrestre à œil central, sans scènes effrayantes"
-    },
-    "series": "one-punch-man",
-    "seriesLabel": "One-Punch Man",
-    "seriesAr": "ون بنش مان"
-  },
-  {
-    "label": "Tatsumaki · lévitation et télékinésie",
-    "ar": "تاتسوماكي · التحليق والتحريك الذهني",
-    "category": "anime",
-    "icon": "🌀",
-    "theme": "🌀 Héros personnalisé : la lévitation et le déplacement d’objets par la pensée pour aider les habitants. Tenue et apparence : tenue noire à manches longues, robe ou tunique couvrante sur leggings et chaussures sobres ; conserver les cheveux de l’enfant. Équipements et accessoires : auras vertes lumineuses, barrières et objets flottants, aucune arme tenue en main. Adversaires ou obstacles : des monstres de fantaisie comme un géant en forme de crabe ; un rival extraterrestre à œil central, sans scènes effrayantes. Univers et ambiance : une ville japonaise quotidienne avec immeubles simples, supermarchés, parcs, centres de secours et grands quartiers modernes où surgissent des incidents extraordinaires. Lieux à explorer : immeuble, supermarché, parc public et centre de secours. Mission possible : découvrir qu’une grande force ne remplace ni l’écoute ni la gentillesse. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une ville japonaise quotidienne avec immeubles simples, supermarchés, parcs, centres de secours et grands quartiers modernes où surgissent des incidents extraordinaires",
-      "places": "immeuble, supermarché, parc public et centre de secours",
-      "objects": "auras vertes lumineuses, barrières et objets flottants, aucune arme tenue en main",
-      "mission": "découvrir qu’une grande force ne remplace ni l’écoute ni la gentillesse"
-    },
-    "reference": {
-      "costume": "tenue noire à manches longues, robe ou tunique couvrante sur leggings et chaussures sobres ; conserver les cheveux de l’enfant",
-      "equipment": "auras vertes lumineuses, barrières et objets flottants, aucune arme tenue en main",
-      "adversaries": "des monstres de fantaisie comme un géant en forme de crabe ; un rival extraterrestre à œil central, sans scènes effrayantes"
-    },
-    "series": "one-punch-man",
-    "seriesLabel": "One-Punch Man",
-    "seriesAr": "ون بنش مان"
-  },
-  {
-    "label": "Rukia · glace et protection",
-    "ar": "روكيا · الجليد والحماية",
-    "category": "anime",
-    "icon": "❄️",
-    "theme": "❄️ Héros personnalisé : une énergie de glace imaginaire, la précision et le courage protecteur. Tenue et apparence : longue tenue noire à col blanc, ceinture claire, sandales et étoffe blanche utilisée comme accessoire. Équipements et accessoires : sabre fantastique blanc gardé au fourreau et flocons stylisés pour créer des passages et des barrières. Adversaires ou obstacles : des esprits fantastiques aux masques blancs sur silhouettes sombres ; des rivaux en robes claires, sans effets d’horreur. Univers et ambiance : une petite ville japonaise traversée par une rivière, avec école et ponts, reliée à un monde spirituel de portes monumentales, remparts blancs, jardins et ruelles anciennes. Lieux à explorer : école, pont, ruelle et jardin de passages lumineux. Mission possible : aider des visiteurs imaginaires à retrouver leur chemin en protégeant ses amis. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une petite ville japonaise traversée par une rivière, avec école et ponts, reliée à un monde spirituel de portes monumentales, remparts blancs, jardins et ruelles anciennes",
-      "places": "école, pont, ruelle et jardin de passages lumineux",
-      "objects": "sabre fantastique blanc gardé au fourreau et flocons stylisés pour créer des passages et des barrières",
-      "mission": "aider des visiteurs imaginaires à retrouver leur chemin en protégeant ses amis"
-    },
-    "reference": {
-      "costume": "longue tenue noire à col blanc, ceinture claire, sandales et étoffe blanche utilisée comme accessoire",
-      "equipment": "sabre fantastique blanc gardé au fourreau et flocons stylisés pour créer des passages et des barrières",
-      "adversaries": "des esprits fantastiques aux masques blancs sur silhouettes sombres ; des rivaux en robes claires, sans effets d’horreur"
-    },
-    "series": "bleach",
-    "seriesLabel": "Bleach",
-    "seriesAr": "بليتش"
-  },
-  {
-    "label": "Renji · énergie et lame articulée",
-    "ar": "رينجي · الطاقة والنصل المفصلي",
-    "category": "anime",
-    "icon": "⚔️",
-    "theme": "⚔️ Héros personnalisé : une grande persévérance et un équipement fantastique articulé pour franchir des obstacles. Tenue et apparence : tenue noire superposée à ceinture claire, bandeau uni et protections de voyage ; cheveux de l’enfant conservés. Équipements et accessoires : arme fantastique segmentée représentée au repos ou dans son fourreau, et énergie lumineuse de protection. Adversaires ou obstacles : des esprits fantastiques aux masques blancs sur silhouettes sombres ; des rivaux en robes claires, sans effets d’horreur. Univers et ambiance : une petite ville japonaise traversée par une rivière, avec école et ponts, reliée à un monde spirituel de portes monumentales, remparts blancs, jardins et ruelles anciennes. Lieux à explorer : école, pont, ruelle et jardin de passages lumineux. Mission possible : aider des visiteurs imaginaires à retrouver leur chemin en protégeant ses amis. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une petite ville japonaise traversée par une rivière, avec école et ponts, reliée à un monde spirituel de portes monumentales, remparts blancs, jardins et ruelles anciennes",
-      "places": "école, pont, ruelle et jardin de passages lumineux",
-      "objects": "arme fantastique segmentée représentée au repos ou dans son fourreau, et énergie lumineuse de protection",
-      "mission": "aider des visiteurs imaginaires à retrouver leur chemin en protégeant ses amis"
-    },
-    "reference": {
-      "costume": "tenue noire superposée à ceinture claire, bandeau uni et protections de voyage ; cheveux de l’enfant conservés",
-      "equipment": "arme fantastique segmentée représentée au repos ou dans son fourreau, et énergie lumineuse de protection",
-      "adversaries": "des esprits fantastiques aux masques blancs sur silhouettes sombres ; des rivaux en robes claires, sans effets d’horreur"
-    },
-    "series": "bleach",
-    "seriesLabel": "Bleach",
-    "seriesAr": "بليتش"
   },
   {
     "label": "Seto Kaiba · stratégie et dragons",
@@ -3546,50 +3012,6 @@ window.MLH_THEME_CATALOG = [
     "seriesAr": "يوغي يو"
   },
   {
-    "label": "Tobio Kageyama · précision des passes",
-    "ar": "توبيو كاغياما · دقة التمريرات",
-    "category": "anime",
-    "icon": "🏐",
-    "theme": "🏐 Héros personnalisé : la précision des passes, l’observation du terrain et l’apprentissage de la confiance en équipe. Tenue et apparence : maillot de volley noir et orange, short noir, genouillères et chaussures de salle. Équipements et accessoires : ballon de volley, filet, tableau tactique et exercices de passe, aucune arme. Adversaires ou obstacles : pas de méchant : équipes rivales aux maillots distincts, défis sportifs et appréhension de l’échec. Univers et ambiance : un quotidien scolaire japonais de gymnases en parquet, cours d’école, vestiaires, trajets en équipe et salles de tournoi, centré sur les efforts collectifs. Lieux à explorer : gymnase, cour d’école, vestiaire et salle de tournoi. Mission possible : trouver sa place dans une équipe et réussir une action préparée ensemble. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "un quotidien scolaire japonais de gymnases en parquet, cours d’école, vestiaires, trajets en équipe et salles de tournoi, centré sur les efforts collectifs",
-      "places": "gymnase, cour d’école, vestiaire et salle de tournoi",
-      "objects": "ballon de volley, filet, tableau tactique et exercices de passe, aucune arme",
-      "mission": "trouver sa place dans une équipe et réussir une action préparée ensemble"
-    },
-    "reference": {
-      "costume": "maillot de volley noir et orange, short noir, genouillères et chaussures de salle",
-      "equipment": "ballon de volley, filet, tableau tactique et exercices de passe, aucune arme",
-      "adversaries": "pas de méchant : équipes rivales aux maillots distincts, défis sportifs et appréhension de l’échec"
-    },
-    "series": "haikyu",
-    "seriesLabel": "Haikyū!!",
-    "seriesAr": "هايكيو"
-  },
-  {
-    "label": "Yū Nishinoya · réflexes et réception",
-    "ar": "يو نيشينويا · رد الفعل والاستقبال",
-    "category": "anime",
-    "icon": "🏐",
-    "theme": "🏐 Héros personnalisé : les réflexes, les réceptions et le courage de soutenir ses partenaires. Tenue et apparence : maillot de libéro orange à détails noirs, short de sport, genouillères et chaussures de salle. Équipements et accessoires : ballon, filet, tapis d’entraînement et exercices de réception, aucune arme. Adversaires ou obstacles : pas de méchant : équipes rivales aux maillots distincts, défis sportifs et appréhension de l’échec. Univers et ambiance : un quotidien scolaire japonais de gymnases en parquet, cours d’école, vestiaires, trajets en équipe et salles de tournoi, centré sur les efforts collectifs. Lieux à explorer : gymnase, cour d’école, vestiaire et salle de tournoi. Mission possible : trouver sa place dans une équipe et réussir une action préparée ensemble. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "un quotidien scolaire japonais de gymnases en parquet, cours d’école, vestiaires, trajets en équipe et salles de tournoi, centré sur les efforts collectifs",
-      "places": "gymnase, cour d’école, vestiaire et salle de tournoi",
-      "objects": "ballon, filet, tapis d’entraînement et exercices de réception, aucune arme",
-      "mission": "trouver sa place dans une équipe et réussir une action préparée ensemble"
-    },
-    "reference": {
-      "costume": "maillot de libéro orange à détails noirs, short de sport, genouillères et chaussures de salle",
-      "equipment": "ballon, filet, tapis d’entraînement et exercices de réception, aucune arme",
-      "adversaries": "pas de méchant : équipes rivales aux maillots distincts, défis sportifs et appréhension de l’échec"
-    },
-    "series": "haikyu",
-    "seriesLabel": "Haikyū!!",
-    "seriesAr": "هايكيو"
-  },
-  {
     "label": "Kojiro Hyuga · puissance et détermination",
     "ar": "كوجيرو هيوغا · القوة والإصرار",
     "category": "anime",
@@ -3634,135 +3056,619 @@ window.MLH_THEME_CATALOG = [
     "seriesAr": "الكابتن تسوباسا"
   },
   {
-    "label": "Shiryu · dragon et protection",
-    "ar": "شيريو · التنين والحماية",
+    "label": "Piccolo · sagesse et énergie",
+    "ar": "بيكولو · الحكمة والطاقة",
     "category": "anime",
-    "icon": "🐉",
-    "theme": "🐉 Héros personnalisé : l’énergie d’une constellation de dragon, la patience et une grande capacité de protection. Tenue et apparence : armure verte et turquoise à motifs de dragon, protections articulées et bouclier rond ; casque amovible et visage de l’enfant conservé. Équipements et accessoires : bouclier, protections et énergie céleste stylisée, accessoires utilisés sans blesser. Adversaires ou obstacles : des chevaliers rivaux en armures dorées représentant les constellations du zodiaque ; gardiens d’épreuves. Univers et ambiance : un univers de mythologie et de cosmos avec temples de pierre claire, escaliers de montagne, douze maisons zodiacales, ciels étoilés et domaines célestes. Lieux à explorer : temple imaginaire, escalier de montagne, observatoire et jardin étoilé. Mission possible : rallumer des balises célestes en faisant preuve de courage et de solidarité. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "icon": "🧘",
+    "theme": "🧘 Héros personnalisé : la concentration, une énergie protectrice et le talent d’accompagner les progrès de ses amis. Tenue et apparence : tunique violette, large ceinture bleue, cape blanche aux épaules structurées, turban blanc amovible et chaussures souples ; conserver le visage de l’enfant. Équipements et accessoires : énergie lumineuse concentrée dans les mains, vol et accessoires d’entraînement ; aucune arme nécessaire. Adversaires ou obstacles : un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique. Univers et ambiance : un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques. Lieux à explorer : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages. Mission possible : s’entraîner avec des amis puis utiliser son énergie pour aider un village. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
     "profile": "",
     "world": {
-      "setting": "un univers de mythologie et de cosmos avec temples de pierre claire, escaliers de montagne, douze maisons zodiacales, ciels étoilés et domaines célestes",
-      "places": "temple imaginaire, escalier de montagne, observatoire et jardin étoilé",
-      "objects": "bouclier, protections et énergie céleste stylisée, accessoires utilisés sans blesser",
-      "mission": "rallumer des balises célestes en faisant preuve de courage et de solidarité"
+      "setting": "un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques",
+      "places": "maison isolée, jardin d’entraînement, arène amicale et vallée de nuages",
+      "objects": "énergie lumineuse concentrée dans les mains, vol et accessoires d’entraînement ; aucune arme nécessaire",
+      "mission": "s’entraîner avec des amis puis utiliser son énergie pour aider un village"
     },
     "reference": {
-      "costume": "armure verte et turquoise à motifs de dragon, protections articulées et bouclier rond ; casque amovible et visage de l’enfant conservé",
-      "equipment": "bouclier, protections et énergie céleste stylisée, accessoires utilisés sans blesser",
-      "adversaries": "des chevaliers rivaux en armures dorées représentant les constellations du zodiaque ; gardiens d’épreuves"
+      "costume": "tunique violette, large ceinture bleue, cape blanche aux épaules structurées, turban blanc amovible et chaussures souples ; conserver le visage de l’enfant",
+      "equipment": "énergie lumineuse concentrée dans les mains, vol et accessoires d’entraînement ; aucune arme nécessaire",
+      "adversaries": "un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique"
     },
-    "series": "saint-seiya",
-    "seriesLabel": "Saint Seiya",
-    "seriesAr": "سانت سيا"
+    "series": "dragon-ball",
+    "seriesLabel": "Dragon Ball",
+    "seriesAr": "دراغون بول"
   },
   {
-    "label": "Hyoga · cygne et glace",
-    "ar": "هيوغا · البجعة والجليد",
+    "label": "Trunks · épée et espoir",
+    "ar": "ترانكس · السيف والأمل",
     "category": "anime",
-    "icon": "❄️",
-    "theme": "❄️ Héros personnalisé : une énergie froide imaginaire, la précision et la persévérance. Tenue et apparence : armure blanche et bleu clair à formes d’ailes de cygne, protections et casque amovible. Équipements et accessoires : glace lumineuse, cristaux et protections célestes pour créer des barrières et des chemins. Adversaires ou obstacles : des chevaliers rivaux en armures dorées représentant les constellations du zodiaque ; gardiens d’épreuves. Univers et ambiance : un univers de mythologie et de cosmos avec temples de pierre claire, escaliers de montagne, douze maisons zodiacales, ciels étoilés et domaines célestes. Lieux à explorer : temple imaginaire, escalier de montagne, observatoire et jardin étoilé. Mission possible : rallumer des balises célestes en faisant preuve de courage et de solidarité. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "icon": "⚔️",
+    "theme": "⚔️ Héros personnalisé : le courage, la rapidité et l’espoir d’améliorer l’avenir grâce à l’entraide. Tenue et apparence : veste courte bleue, haut sombre, pantalon de voyage, ceinture et bottes robustes ; conserver les cheveux de l’enfant. Équipements et accessoires : épée fantastique gardée dans son fourreau, sac de voyage et appareils de navigation. Adversaires ou obstacles : un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique. Univers et ambiance : un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques. Lieux à explorer : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages. Mission possible : s’entraîner avec des amis puis utiliser son énergie pour aider un village. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
     "profile": "",
     "world": {
-      "setting": "un univers de mythologie et de cosmos avec temples de pierre claire, escaliers de montagne, douze maisons zodiacales, ciels étoilés et domaines célestes",
-      "places": "temple imaginaire, escalier de montagne, observatoire et jardin étoilé",
-      "objects": "glace lumineuse, cristaux et protections célestes pour créer des barrières et des chemins",
-      "mission": "rallumer des balises célestes en faisant preuve de courage et de solidarité"
+      "setting": "un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques",
+      "places": "maison isolée, jardin d’entraînement, arène amicale et vallée de nuages",
+      "objects": "épée fantastique gardée dans son fourreau, sac de voyage et appareils de navigation",
+      "mission": "s’entraîner avec des amis puis utiliser son énergie pour aider un village"
     },
     "reference": {
-      "costume": "armure blanche et bleu clair à formes d’ailes de cygne, protections et casque amovible",
-      "equipment": "glace lumineuse, cristaux et protections célestes pour créer des barrières et des chemins",
-      "adversaries": "des chevaliers rivaux en armures dorées représentant les constellations du zodiaque ; gardiens d’épreuves"
+      "costume": "veste courte bleue, haut sombre, pantalon de voyage, ceinture et bottes robustes ; conserver les cheveux de l’enfant",
+      "equipment": "épée fantastique gardée dans son fourreau, sac de voyage et appareils de navigation",
+      "adversaries": "un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique"
     },
-    "series": "saint-seiya",
-    "seriesLabel": "Saint Seiya",
-    "seriesAr": "سانت سيا"
+    "series": "dragon-ball",
+    "seriesLabel": "Dragon Ball",
+    "seriesAr": "دراغون بول"
   },
   {
-    "label": "Uran · curiosité et aide aux animaux",
-    "ar": "أوران · الفضول ومساعدة الحيوانات",
+    "label": "Goten · énergie et amitié",
+    "ar": "غوتين · الطاقة والصداقة",
     "category": "anime",
-    "icon": "🐾",
-    "theme": "🐾 Héros personnalisé : des capacités robotiques, la curiosité et une sensibilité aux besoins des animaux. Tenue et apparence : tunique orange couvrante, leggings sombres et bottes rouges, petits accessoires mécaniques ; visage de l’enfant conservé. Équipements et accessoires : capteurs de recherche, outils de soin et cartes de la ville, aucune arme nécessaire. Adversaires ou obstacles : de grands robots rivaux aux silhouettes métalliques imposantes, dont un robot sombre à cornes, sans destruction réaliste. Univers et ambiance : une ville futuriste de tours arrondies, routes aériennes, laboratoires, écoles, parcs et robots partageant le quotidien des humains. Lieux à explorer : laboratoire, école, parc suspendu et station de transport aérien. Mission possible : aider des humains et des robots à résoudre un problème ensemble. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "icon": "🌟",
+    "theme": "🌟 Héros personnalisé : l’énergie lumineuse, le vol et l’envie d’apprendre en s’amusant avec ses partenaires. Tenue et apparence : tenue d’arts martiaux orange et bleue, ceinture bleue et petites bottes souples ; visage et cheveux de l’enfant conservés. Équipements et accessoires : énergie imaginaire, objets d’entraînement et carnet des petites réussites, aucune arme nécessaire. Adversaires ou obstacles : un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique. Univers et ambiance : un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques. Lieux à explorer : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages. Mission possible : s’entraîner avec des amis puis utiliser son énergie pour aider un village. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
     "profile": "",
     "world": {
-      "setting": "une ville futuriste de tours arrondies, routes aériennes, laboratoires, écoles, parcs et robots partageant le quotidien des humains",
-      "places": "laboratoire, école, parc suspendu et station de transport aérien",
-      "objects": "capteurs de recherche, outils de soin et cartes de la ville, aucune arme nécessaire",
-      "mission": "aider des humains et des robots à résoudre un problème ensemble"
+      "setting": "un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques",
+      "places": "maison isolée, jardin d’entraînement, arène amicale et vallée de nuages",
+      "objects": "énergie imaginaire, objets d’entraînement et carnet des petites réussites, aucune arme nécessaire",
+      "mission": "s’entraîner avec des amis puis utiliser son énergie pour aider un village"
     },
     "reference": {
-      "costume": "tunique orange couvrante, leggings sombres et bottes rouges, petits accessoires mécaniques ; visage de l’enfant conservé",
-      "equipment": "capteurs de recherche, outils de soin et cartes de la ville, aucune arme nécessaire",
-      "adversaries": "de grands robots rivaux aux silhouettes métalliques imposantes, dont un robot sombre à cornes, sans destruction réaliste"
+      "costume": "tenue d’arts martiaux orange et bleue, ceinture bleue et petites bottes souples ; visage et cheveux de l’enfant conservés",
+      "equipment": "énergie imaginaire, objets d’entraînement et carnet des petites réussites, aucune arme nécessaire",
+      "adversaries": "un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique"
     },
-    "series": "astro-boy",
-    "seriesLabel": "Astro Boy",
-    "seriesAr": "أسترو بوي"
+    "series": "dragon-ball",
+    "seriesLabel": "Dragon Ball",
+    "seriesAr": "دراغون بول"
   },
   {
-    "label": "Atlas · électricité et puissance mécanique",
-    "ar": "أطلس · الكهرباء والقوة الآلية",
+    "label": "Krillin · agilité et esprit d’équipe",
+    "ar": "كريلين · الرشاقة وروح الفريق",
     "category": "anime",
-    "icon": "⚡",
-    "theme": "⚡ Héros personnalisé : une grande force mécanique et une énergie électrique à apprendre à maîtriser. Tenue et apparence : armure robotique rouge et sombre, protections articulées et casque amovible montrant le visage de l’enfant. Équipements et accessoires : propulseurs, capteurs et barrières électriques lumineuses utilisées pour protéger les habitants. Adversaires ou obstacles : des machines déréglées, des drones et des obstacles mécaniques ; apprendre à transformer une rivalité en coopération. Univers et ambiance : une ville futuriste de tours arrondies, routes aériennes, laboratoires, écoles, parcs et robots partageant le quotidien des humains. Lieux à explorer : laboratoire, école, parc suspendu et station de transport aérien. Mission possible : aider des humains et des robots à résoudre un problème ensemble. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "icon": "🥋",
+    "theme": "🥋 Héros personnalisé : l’agilité, l’anticipation et une grande fidélité à ses amis dans les défis collectifs. Tenue et apparence : tenue d’arts martiaux orange, sous-vêtement bleu couvrant, ceinture et poignets bleus, chaussures souples ; ne pas modifier les cheveux de l’enfant. Équipements et accessoires : énergie lumineuse, disques fantastiques de protection et matériel d’entraînement, sans blessure. Adversaires ou obstacles : un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique. Univers et ambiance : un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques. Lieux à explorer : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages. Mission possible : s’entraîner avec des amis puis utiliser son énergie pour aider un village. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
     "profile": "",
     "world": {
-      "setting": "une ville futuriste de tours arrondies, routes aériennes, laboratoires, écoles, parcs et robots partageant le quotidien des humains",
-      "places": "laboratoire, école, parc suspendu et station de transport aérien",
-      "objects": "propulseurs, capteurs et barrières électriques lumineuses utilisées pour protéger les habitants",
-      "mission": "aider des humains et des robots à résoudre un problème ensemble"
+      "setting": "un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques",
+      "places": "maison isolée, jardin d’entraînement, arène amicale et vallée de nuages",
+      "objects": "énergie lumineuse, disques fantastiques de protection et matériel d’entraînement, sans blessure",
+      "mission": "s’entraîner avec des amis puis utiliser son énergie pour aider un village"
     },
     "reference": {
-      "costume": "armure robotique rouge et sombre, protections articulées et casque amovible montrant le visage de l’enfant",
-      "equipment": "propulseurs, capteurs et barrières électriques lumineuses utilisées pour protéger les habitants",
-      "adversaries": "des machines déréglées, des drones et des obstacles mécaniques ; apprendre à transformer une rivalité en coopération"
+      "costume": "tenue d’arts martiaux orange, sous-vêtement bleu couvrant, ceinture et poignets bleus, chaussures souples ; ne pas modifier les cheveux de l’enfant",
+      "equipment": "énergie lumineuse, disques fantastiques de protection et matériel d’entraînement, sans blessure",
+      "adversaries": "un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique"
     },
-    "series": "astro-boy",
-    "seriesLabel": "Astro Boy",
-    "seriesAr": "أسترو بوي"
+    "series": "dragon-ball",
+    "seriesLabel": "Dragon Ball",
+    "seriesAr": "دراغون بول"
   },
   {
-    "label": "Satsuki · courage et découverte de la forêt",
-    "ar": "ساتسوكي · الشجاعة واكتشاف الغابة",
+    "label": "C-18 (Android 18) · précision et assurance",
+    "ar": "أندرويد 18 · الدقة والثقة",
     "category": "anime",
-    "icon": "🌳",
-    "theme": "🌳 Héros personnalisé : l’observation, la responsabilité et le courage de découvrir une nature merveilleuse, sans super-pouvoir nécessaire. Tenue et apparence : haut jaune clair, jupe orange sur short opaque ou pantalon adapté, chaussures de promenade et petite sacoche. Équipements et accessoires : parapluie, graines, carnet et vélo de promenade ; grand compagnon forestier gris comme rencontre de l’histoire. Adversaires ou obstacles : aucun méchant : pluie, éloignement, inquiétudes et découverte de l’inconnu constituent les épreuves. Univers et ambiance : une campagne japonaise paisible avec vieille maison en bois, rizières, chemins, arrêt de bus sous la pluie, grand arbre creux et forêt où se cachent des créatures bienveillantes. Lieux à explorer : vieille maison, rizière, sentier de campagne et grand arbre creux. Mission possible : découvrir un compagnon forestier original et prendre soin d’un lieu de vie partagé. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "icon": "🦾",
+    "theme": "🦾 Héros personnalisé : la précision, une endurance mécanique imaginaire et l’assurance pour résoudre une mission. Tenue et apparence : gilet de jean bleu sur haut rayé couvrant, ceinture, jupe ou short sur leggings opaques et bottes ; conserver le visage de l’enfant. Équipements et accessoires : capteurs imaginaires, énergie lumineuse et outils de précision pour aider les habitants. Adversaires ou obstacles : un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique. Univers et ambiance : un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques. Lieux à explorer : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages. Mission possible : s’entraîner avec des amis puis utiliser son énergie pour aider un village. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
     "profile": "",
     "world": {
-      "setting": "une campagne japonaise paisible avec vieille maison en bois, rizières, chemins, arrêt de bus sous la pluie, grand arbre creux et forêt où se cachent des créatures bienveillantes",
-      "places": "vieille maison, rizière, sentier de campagne et grand arbre creux",
-      "objects": "parapluie, graines, carnet et vélo de promenade ; grand compagnon forestier gris comme rencontre de l’histoire",
-      "mission": "découvrir un compagnon forestier original et prendre soin d’un lieu de vie partagé"
+      "setting": "un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques",
+      "places": "maison isolée, jardin d’entraînement, arène amicale et vallée de nuages",
+      "objects": "capteurs imaginaires, énergie lumineuse et outils de précision pour aider les habitants",
+      "mission": "s’entraîner avec des amis puis utiliser son énergie pour aider un village"
     },
     "reference": {
-      "costume": "haut jaune clair, jupe orange sur short opaque ou pantalon adapté, chaussures de promenade et petite sacoche",
-      "equipment": "parapluie, graines, carnet et vélo de promenade ; grand compagnon forestier gris comme rencontre de l’histoire",
-      "adversaries": "aucun méchant : pluie, éloignement, inquiétudes et découverte de l’inconnu constituent les épreuves"
+      "costume": "gilet de jean bleu sur haut rayé couvrant, ceinture, jupe ou short sur leggings opaques et bottes ; conserver le visage de l’enfant",
+      "equipment": "capteurs imaginaires, énergie lumineuse et outils de précision pour aider les habitants",
+      "adversaries": "un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique"
     },
-    "series": "totoro",
-    "seriesLabel": "Mon voisin Totoro",
-    "seriesAr": "جاري توتورو"
+    "series": "dragon-ball",
+    "seriesLabel": "Dragon Ball",
+    "seriesAr": "دراغون بول"
   },
   {
-    "label": "Mei · imagination et rencontres merveilleuses",
-    "ar": "مي · الخيال واللقاءات العجيبة",
+    "label": "Freezer (Frieza) · maîtrise de l’énergie",
+    "ar": "فريزا · التحكم في الطاقة",
     "category": "anime",
-    "icon": "🌱",
-    "theme": "🌱 Héros personnalisé : la curiosité, l’imagination et la capacité de remarquer les petits signes de la nature. Tenue et apparence : robe ou tunique rose à col blanc, short opaque, chapeau de soleil jaune et petite sacoche rouge. Équipements et accessoires : fleurs, graines, feuilles et petit sac ; grand compagnon forestier gris et créatures forestières comme rencontres. Adversaires ou obstacles : aucun méchant : pluie, éloignement, inquiétudes et découverte de l’inconnu constituent les épreuves. Univers et ambiance : une campagne japonaise paisible avec vieille maison en bois, rizières, chemins, arrêt de bus sous la pluie, grand arbre creux et forêt où se cachent des créatures bienveillantes. Lieux à explorer : vieille maison, rizière, sentier de campagne et grand arbre creux. Mission possible : découvrir un compagnon forestier original et prendre soin d’un lieu de vie partagé. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "icon": "🟣",
+    "theme": "🟣 Héros personnalisé : le vol, une énergie puissante et l’apprentissage de son utilisation pour protéger plutôt que dominer. Tenue et apparence : costume fantastique blanc et violet, protections arrondies, gants et longue queue décorative en accessoire ; visage identifiable de l’enfant. Équipements et accessoires : sphères lumineuses, barrières de protection et vol imaginaire, sans arme ni blessure. Adversaires ou obstacles : un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique. Univers et ambiance : un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques. Lieux à explorer : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages. Mission possible : s’entraîner avec des amis puis utiliser son énergie pour aider un village. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
     "profile": "",
     "world": {
-      "setting": "une campagne japonaise paisible avec vieille maison en bois, rizières, chemins, arrêt de bus sous la pluie, grand arbre creux et forêt où se cachent des créatures bienveillantes",
-      "places": "vieille maison, rizière, sentier de campagne et grand arbre creux",
-      "objects": "fleurs, graines, feuilles et petit sac ; grand compagnon forestier gris et créatures forestières comme rencontres",
-      "mission": "découvrir un compagnon forestier original et prendre soin d’un lieu de vie partagé"
+      "setting": "un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques",
+      "places": "maison isolée, jardin d’entraînement, arène amicale et vallée de nuages",
+      "objects": "sphères lumineuses, barrières de protection et vol imaginaire, sans arme ni blessure",
+      "mission": "s’entraîner avec des amis puis utiliser son énergie pour aider un village"
     },
     "reference": {
-      "costume": "robe ou tunique rose à col blanc, short opaque, chapeau de soleil jaune et petite sacoche rouge",
-      "equipment": "fleurs, graines, feuilles et petit sac ; grand compagnon forestier gris et créatures forestières comme rencontres",
-      "adversaries": "aucun méchant : pluie, éloignement, inquiétudes et découverte de l’inconnu constituent les épreuves"
+      "costume": "costume fantastique blanc et violet, protections arrondies, gants et longue queue décorative en accessoire ; visage identifiable de l’enfant",
+      "equipment": "sphères lumineuses, barrières de protection et vol imaginaire, sans arme ni blessure",
+      "adversaries": "un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique"
     },
-    "series": "totoro",
-    "seriesLabel": "Mon voisin Totoro",
-    "seriesAr": "جاري توتورو"
+    "series": "dragon-ball",
+    "seriesLabel": "Dragon Ball",
+    "seriesAr": "دراغون بول"
+  },
+  {
+    "label": "Broly · puissance et calme",
+    "ar": "برولي · القوة والهدوء",
+    "category": "anime",
+    "icon": "💪",
+    "theme": "💪 Héros personnalisé : une force immense à canaliser grâce au calme, à la confiance et à l’amitié. Tenue et apparence : haut sombre couvrant, large étoffe verte à la taille, pantalon violet, bracelets et bottes ; proportions adaptées à l’enfant. Équipements et accessoires : énergie verte lumineuse et grands blocs à déplacer, accessoires de secours et d’entraînement. Adversaires ou obstacles : un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique. Univers et ambiance : un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques. Lieux à explorer : maison isolée, jardin d’entraînement, arène amicale et vallée de nuages. Mission possible : s’entraîner avec des amis puis utiliser son énergie pour aider un village. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un monde de montagnes rocheuses, vallées immenses, maisons arrondies, îles d’entraînement, arènes amicales et villes futuristes aux bâtiments sphériques",
+      "places": "maison isolée, jardin d’entraînement, arène amicale et vallée de nuages",
+      "objects": "énergie verte lumineuse et grands blocs à déplacer, accessoires de secours et d’entraînement",
+      "mission": "s’entraîner avec des amis puis utiliser son énergie pour aider un village"
+    },
+    "reference": {
+      "costume": "haut sombre couvrant, large étoffe verte à la taille, pantalon violet, bracelets et bottes ; proportions adaptées à l’enfant",
+      "equipment": "énergie verte lumineuse et grands blocs à déplacer, accessoires de secours et d’entraînement",
+      "adversaries": "un adversaire extraterrestre blanc et violet à longue queue ; un rival en carapace verte géométrique"
+    },
+    "series": "dragon-ball",
+    "seriesLabel": "Dragon Ball",
+    "seriesAr": "دراغون بول"
+  },
+  {
+    "label": "Kakashi · observation et stratégie",
+    "ar": "كاكاشي · الملاحظة والاستراتيجية",
+    "category": "anime",
+    "icon": "📘",
+    "theme": "📘 Héros personnalisé : l’observation, la stratégie, l’agilité et le talent d’aider une équipe à coopérer. Tenue et apparence : tenue bleu sombre, gilet de protection vert, gants, sandales et bandeau métallique ; masque amovible laissant reconnaître l’enfant. Équipements et accessoires : petit carnet de stratégie, rouleaux, cordages et énergie électrique de protection. Adversaires ou obstacles : des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent. Univers et ambiance : un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers. Lieux à explorer : académie, terrain d’entraînement, forêt de bambous et cascade. Mission possible : réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers",
+      "places": "académie, terrain d’entraînement, forêt de bambous et cascade",
+      "objects": "petit carnet de stratégie, rouleaux, cordages et énergie électrique de protection",
+      "mission": "réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires"
+    },
+    "reference": {
+      "costume": "tenue bleu sombre, gilet de protection vert, gants, sandales et bandeau métallique ; masque amovible laissant reconnaître l’enfant",
+      "equipment": "petit carnet de stratégie, rouleaux, cordages et énergie électrique de protection",
+      "adversaries": "des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent"
+    },
+    "series": "naruto",
+    "seriesLabel": "Naruto",
+    "seriesAr": "ناروتو"
+  },
+  {
+    "label": "Hinata Hyuga · précision et confiance",
+    "ar": "هيناتا هيوغا · الدقة والثقة",
+    "category": "anime",
+    "icon": "💜",
+    "theme": "💜 Héros personnalisé : une observation très fine, des mouvements précis et la confiance qui grandit avec l’entraînement. Tenue et apparence : veste lavande et crème à col montant, pantalon bleu sombre, sandales et petite sacoche ; conserver les yeux et les cheveux de l’enfant. Équipements et accessoires : auras lumineuses aux mains, cartes d’orientation et accessoires d’entraînement, sans arme nécessaire. Adversaires ou obstacles : des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent. Univers et ambiance : un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers. Lieux à explorer : académie, terrain d’entraînement, forêt de bambous et cascade. Mission possible : réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers",
+      "places": "académie, terrain d’entraînement, forêt de bambous et cascade",
+      "objects": "auras lumineuses aux mains, cartes d’orientation et accessoires d’entraînement, sans arme nécessaire",
+      "mission": "réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires"
+    },
+    "reference": {
+      "costume": "veste lavande et crème à col montant, pantalon bleu sombre, sandales et petite sacoche ; conserver les yeux et les cheveux de l’enfant",
+      "equipment": "auras lumineuses aux mains, cartes d’orientation et accessoires d’entraînement, sans arme nécessaire",
+      "adversaries": "des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent"
+    },
+    "series": "naruto",
+    "seriesLabel": "Naruto",
+    "seriesAr": "ناروتو"
+  },
+  {
+    "label": "Rock Lee · effort et persévérance",
+    "ar": "روك لي · الجهد والمثابرة",
+    "category": "anime",
+    "icon": "🥋",
+    "theme": "🥋 Héros personnalisé : la vitesse, l’équilibre et la persévérance par un entraînement progressif, sans pouvoir magique nécessaire. Tenue et apparence : tenue verte couvrante, gilet assorti, guêtres orange et ceinture rouge ; visage et coiffure de l’enfant conservés. Équipements et accessoires : matériel d’équilibre, plots, cordes souples et carnet d’entraînement adapté à l’âge. Adversaires ou obstacles : des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent. Univers et ambiance : un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers. Lieux à explorer : académie, terrain d’entraînement, forêt de bambous et cascade. Mission possible : réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers",
+      "places": "académie, terrain d’entraînement, forêt de bambous et cascade",
+      "objects": "matériel d’équilibre, plots, cordes souples et carnet d’entraînement adapté à l’âge",
+      "mission": "réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires"
+    },
+    "reference": {
+      "costume": "tenue verte couvrante, gilet assorti, guêtres orange et ceinture rouge ; visage et coiffure de l’enfant conservés",
+      "equipment": "matériel d’équilibre, plots, cordes souples et carnet d’entraînement adapté à l’âge",
+      "adversaries": "des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent"
+    },
+    "series": "naruto",
+    "seriesLabel": "Naruto",
+    "seriesAr": "ناروتو"
+  },
+  {
+    "label": "Shikamaru · ombres et réflexion",
+    "ar": "شيكامارو · الظلال والتفكير",
+    "category": "anime",
+    "icon": "♟️",
+    "theme": "♟️ Héros personnalisé : la réflexion, l’anticipation et la manipulation fantastique d’ombres pour sécuriser des passages. Tenue et apparence : haut sombre couvrant, gilet vert, pantalon confortable et sandales, petite pochette de cartes. Équipements et accessoires : jeux de stratégie, rouleaux, cartes et ombres imaginaires utilisées pour retenir des objets, pas des personnes. Adversaires ou obstacles : des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent. Univers et ambiance : un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers. Lieux à explorer : académie, terrain d’entraînement, forêt de bambous et cascade. Mission possible : réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers",
+      "places": "académie, terrain d’entraînement, forêt de bambous et cascade",
+      "objects": "jeux de stratégie, rouleaux, cartes et ombres imaginaires utilisées pour retenir des objets, pas des personnes",
+      "mission": "réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires"
+    },
+    "reference": {
+      "costume": "haut sombre couvrant, gilet vert, pantalon confortable et sandales, petite pochette de cartes",
+      "equipment": "jeux de stratégie, rouleaux, cartes et ombres imaginaires utilisées pour retenir des objets, pas des personnes",
+      "adversaries": "des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent"
+    },
+    "series": "naruto",
+    "seriesLabel": "Naruto",
+    "seriesAr": "ناروتو"
+  },
+  {
+    "label": "Gaara · sable et protection",
+    "ar": "غارا · الرمل والحماية",
+    "category": "anime",
+    "icon": "🏜️",
+    "theme": "🏜️ Héros personnalisé : la maîtrise imaginaire du sable pour créer des abris, des chemins et des barrières protectrices. Tenue et apparence : longue tunique bordeaux, large écharpe claire, pantalon sombre et grande gourde portée comme accessoire dans le dos ; visage de l’enfant conservé. Équipements et accessoires : gourde décorative, nuages de sable stylisés, boucliers et petites constructions de sable. Adversaires ou obstacles : des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent. Univers et ambiance : un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers. Lieux à explorer : académie, terrain d’entraînement, forêt de bambous et cascade. Mission possible : réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers",
+      "places": "académie, terrain d’entraînement, forêt de bambous et cascade",
+      "objects": "gourde décorative, nuages de sable stylisés, boucliers et petites constructions de sable",
+      "mission": "réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires"
+    },
+    "reference": {
+      "costume": "longue tunique bordeaux, large écharpe claire, pantalon sombre et grande gourde portée comme accessoire dans le dos ; visage de l’enfant conservé",
+      "equipment": "gourde décorative, nuages de sable stylisés, boucliers et petites constructions de sable",
+      "adversaries": "des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent"
+    },
+    "series": "naruto",
+    "seriesLabel": "Naruto",
+    "seriesAr": "ناروتو"
+  },
+  {
+    "label": "Itachi · illusions et observation",
+    "ar": "إيتاتشي · الأوهام والملاحظة",
+    "category": "anime",
+    "icon": "🐦",
+    "theme": "🐦 Héros personnalisé : l’observation, les illusions visuelles et la patience pour résoudre des énigmes. Tenue et apparence : long manteau noir décoré de nuages rouges, tenue couvrante, sandales et bandeau métallique porté en accessoire. Équipements et accessoires : plumes, reflets, cartes d’indices et illusions d’oiseaux, sans scène effrayante. Adversaires ou obstacles : des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent. Univers et ambiance : un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers. Lieux à explorer : académie, terrain d’entraînement, forêt de bambous et cascade. Mission possible : réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers",
+      "places": "académie, terrain d’entraînement, forêt de bambous et cascade",
+      "objects": "plumes, reflets, cartes d’indices et illusions d’oiseaux, sans scène effrayante",
+      "mission": "réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires"
+    },
+    "reference": {
+      "costume": "long manteau noir décoré de nuages rouges, tenue couvrante, sandales et bandeau métallique porté en accessoire",
+      "equipment": "plumes, reflets, cartes d’indices et illusions d’oiseaux, sans scène effrayante",
+      "adversaries": "des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent"
+    },
+    "series": "naruto",
+    "seriesLabel": "Naruto",
+    "seriesAr": "ناروتو"
+  },
+  {
+    "label": "Jiraiya · voyage et apprentissage",
+    "ar": "جيرايا · السفر والتعلم",
+    "category": "anime",
+    "icon": "📜",
+    "theme": "📜 Héros personnalisé : la transmission, la découverte du monde et une énergie imaginaire liée à des compagnons amphibiens. Tenue et apparence : tunique verte sous gilet rouge, protections aux poignets, sandales de voyage et bandeau large ; garder les cheveux de l’enfant. Équipements et accessoires : grand rouleau de voyage, cartes, carnet et compagnons crapauds fantastiques bienveillants. Adversaires ou obstacles : des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent. Univers et ambiance : un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers. Lieux à explorer : académie, terrain d’entraînement, forêt de bambous et cascade. Mission possible : réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un village caché dans une vallée boisée, toits de tuiles, portes monumentales, académie, terrain d’entraînement, rivière et cascade, relié à d’autres villages par des sentiers forestiers",
+      "places": "académie, terrain d’entraînement, forêt de bambous et cascade",
+      "objects": "grand rouleau de voyage, cartes, carnet et compagnons crapauds fantastiques bienveillants",
+      "mission": "réussir une mission d’orientation grâce à la coopération et aux doubles imaginaires"
+    },
+    "reference": {
+      "costume": "tunique verte sous gilet rouge, protections aux poignets, sandales de voyage et bandeau large ; garder les cheveux de l’enfant",
+      "equipment": "grand rouleau de voyage, cartes, carnet et compagnons crapauds fantastiques bienveillants",
+      "adversaries": "des ninjas rivaux aux longs manteaux noirs ornés de nuages rouges ; un sorcier pâle aux motifs de serpent"
+    },
+    "series": "naruto",
+    "seriesLabel": "Naruto",
+    "seriesAr": "ناروتو"
+  },
+  {
+    "label": "Sanji · cuisine et agilité",
+    "ar": "سانجي · الطبخ والرشاقة",
+    "category": "anime",
+    "icon": "🍳",
+    "theme": "🍳 Héros personnalisé : le talent de cuisiner pour ses amis, l’agilité et la précision des mouvements lors d’épreuves. Tenue et apparence : costume sombre, chemise bleue couvrante, cravate et chaussures de voyage ; visage et cheveux de l’enfant conservés. Équipements et accessoires : ustensiles de cuisine, provisions, carnet de recettes et équipements de voyage ; aucun tabac. Adversaires ou obstacles : un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques. Univers et ambiance : un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles. Lieux à explorer : bateau d’exploration personnel, marché coloré, crique et île à végétation géante. Mission possible : réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles",
+      "places": "bateau d’exploration personnel, marché coloré, crique et île à végétation géante",
+      "objects": "ustensiles de cuisine, provisions, carnet de recettes et équipements de voyage ; aucun tabac",
+      "mission": "réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire"
+    },
+    "reference": {
+      "costume": "costume sombre, chemise bleue couvrante, cravate et chaussures de voyage ; visage et cheveux de l’enfant conservés",
+      "equipment": "ustensiles de cuisine, provisions, carnet de recettes et équipements de voyage ; aucun tabac",
+      "adversaries": "un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques"
+    },
+    "series": "one-piece",
+    "seriesLabel": "One Piece",
+    "seriesAr": "ون بيس"
+  },
+  {
+    "label": "Chopper · soin et transformation",
+    "ar": "تشوبر · الرعاية والتحول",
+    "category": "anime",
+    "icon": "🩺",
+    "theme": "🩺 Héros personnalisé : les soins, la curiosité et des transformations imaginaires adaptées à une mission d’entraide. Tenue et apparence : grand chapeau rose et bleu avec croix blanche et petites ramures décoratives, tenue couvrante de voyage et sac médical ; conserver le visage de l’enfant. Équipements et accessoires : trousse de secours, plantes, carnet de soin et accessoires d’observation des compagnons. Adversaires ou obstacles : un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques. Univers et ambiance : un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles. Lieux à explorer : bateau d’exploration personnel, marché coloré, crique et île à végétation géante. Mission possible : réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles",
+      "places": "bateau d’exploration personnel, marché coloré, crique et île à végétation géante",
+      "objects": "trousse de secours, plantes, carnet de soin et accessoires d’observation des compagnons",
+      "mission": "réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire"
+    },
+    "reference": {
+      "costume": "grand chapeau rose et bleu avec croix blanche et petites ramures décoratives, tenue couvrante de voyage et sac médical ; conserver le visage de l’enfant",
+      "equipment": "trousse de secours, plantes, carnet de soin et accessoires d’observation des compagnons",
+      "adversaries": "un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques"
+    },
+    "series": "one-piece",
+    "seriesLabel": "One Piece",
+    "seriesAr": "ون بيس"
+  },
+  {
+    "label": "Nico Robin · savoir et mains magiques",
+    "ar": "نيكو روبين · المعرفة والأيدي السحرية",
+    "category": "anime",
+    "icon": "📖",
+    "theme": "📖 Héros personnalisé : la lecture d’indices anciens et l’apparition imaginaire de mains pour déplacer des objets et aider les autres. Tenue et apparence : veste bleue ou violette sur haut couvrant, pantalon de voyage ou jupe sur leggings, chapeau clair et bottes. Équipements et accessoires : livres anciens, cartes, carnet de fouilles et mains lumineuses pour protéger et franchir des obstacles. Adversaires ou obstacles : un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques. Univers et ambiance : un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles. Lieux à explorer : bateau d’exploration personnel, marché coloré, crique et île à végétation géante. Mission possible : réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles",
+      "places": "bateau d’exploration personnel, marché coloré, crique et île à végétation géante",
+      "objects": "livres anciens, cartes, carnet de fouilles et mains lumineuses pour protéger et franchir des obstacles",
+      "mission": "réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire"
+    },
+    "reference": {
+      "costume": "veste bleue ou violette sur haut couvrant, pantalon de voyage ou jupe sur leggings, chapeau clair et bottes",
+      "equipment": "livres anciens, cartes, carnet de fouilles et mains lumineuses pour protéger et franchir des obstacles",
+      "adversaries": "un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques"
+    },
+    "series": "one-piece",
+    "seriesLabel": "One Piece",
+    "seriesAr": "ون بيس"
+  },
+  {
+    "label": "Franky · inventions et force mécanique",
+    "ar": "فرانكي · الاختراعات والقوة الآلية",
+    "category": "anime",
+    "icon": "🔧",
+    "theme": "🔧 Héros personnalisé : la mécanique, la construction et la force de bras robotiques imaginaires pour réparer un bateau. Tenue et apparence : chemise rouge à motifs sur tee-shirt couvrant, bermuda bleu opaque, ceinture à outils et grands protège-bras mécaniques bleus. Équipements et accessoires : plans de navire, outils de réparation, bras mécaniques et accessoires de construction. Adversaires ou obstacles : un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques. Univers et ambiance : un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles. Lieux à explorer : bateau d’exploration personnel, marché coloré, crique et île à végétation géante. Mission possible : réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles",
+      "places": "bateau d’exploration personnel, marché coloré, crique et île à végétation géante",
+      "objects": "plans de navire, outils de réparation, bras mécaniques et accessoires de construction",
+      "mission": "réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire"
+    },
+    "reference": {
+      "costume": "chemise rouge à motifs sur tee-shirt couvrant, bermuda bleu opaque, ceinture à outils et grands protège-bras mécaniques bleus",
+      "equipment": "plans de navire, outils de réparation, bras mécaniques et accessoires de construction",
+      "adversaries": "un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques"
+    },
+    "series": "one-piece",
+    "seriesLabel": "One Piece",
+    "seriesAr": "ون بيس"
+  },
+  {
+    "label": "Brook · musique et courage",
+    "ar": "بروك · الموسيقى والشجاعة",
+    "category": "anime",
+    "icon": "🎻",
+    "theme": "🎻 Héros personnalisé : la musique, la mémoire et le courage d’accompagner ses amis à travers les épreuves. Tenue et apparence : costume noir élégant à motifs d’os décoratifs, foulard orange, grand chapeau et chaussures de voyage ; conserver le visage et les cheveux de l’enfant. Équipements et accessoires : violon, partitions, canne de promenade et instruments de musique ; aucune apparence effrayante. Adversaires ou obstacles : un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques. Univers et ambiance : un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles. Lieux à explorer : bateau d’exploration personnel, marché coloré, crique et île à végétation géante. Mission possible : réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles",
+      "places": "bateau d’exploration personnel, marché coloré, crique et île à végétation géante",
+      "objects": "violon, partitions, canne de promenade et instruments de musique ; aucune apparence effrayante",
+      "mission": "réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire"
+    },
+    "reference": {
+      "costume": "costume noir élégant à motifs d’os décoratifs, foulard orange, grand chapeau et chaussures de voyage ; conserver le visage et les cheveux de l’enfant",
+      "equipment": "violon, partitions, canne de promenade et instruments de musique ; aucune apparence effrayante",
+      "adversaries": "un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques"
+    },
+    "series": "one-piece",
+    "seriesLabel": "One Piece",
+    "seriesAr": "ون بيس"
+  },
+  {
+    "label": "Jinbe · eau et sérénité",
+    "ar": "جينبي · الماء والسكينة",
+    "category": "anime",
+    "icon": "🐋",
+    "theme": "🐋 Héros personnalisé : la maîtrise imaginaire des courants, la nage et la sérénité pour guider une équipe. Tenue et apparence : kimono ocre à motifs géométriques sombres, grande ceinture claire et manteau de voyage ; visage de l’enfant conservé. Équipements et accessoires : cartes des courants, cordages et vagues lumineuses utilisées pour aider les voyageurs. Adversaires ou obstacles : un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques. Univers et ambiance : un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles. Lieux à explorer : bateau d’exploration personnel, marché coloré, crique et île à végétation géante. Mission possible : réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles",
+      "places": "bateau d’exploration personnel, marché coloré, crique et île à végétation géante",
+      "objects": "cartes des courants, cordages et vagues lumineuses utilisées pour aider les voyageurs",
+      "mission": "réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire"
+    },
+    "reference": {
+      "costume": "kimono ocre à motifs géométriques sombres, grande ceinture claire et manteau de voyage ; visage de l’enfant conservé",
+      "equipment": "cartes des courants, cordages et vagues lumineuses utilisées pour aider les voyageurs",
+      "adversaries": "un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques"
+    },
+    "series": "one-piece",
+    "seriesLabel": "One Piece",
+    "seriesAr": "ون بيس"
+  },
+  {
+    "label": "Usopp · imagination et précision",
+    "ar": "أوسوب · الخيال والدقة",
+    "category": "anime",
+    "icon": "🎯",
+    "theme": "🎯 Héros personnalisé : l’invention, l’observation à distance et le courage de progresser malgré ses inquiétudes. Tenue et apparence : salopette de voyage couvrante, foulard ou chapeau uni, lunettes d’observation et sac à outils ; conserver le nez et les traits de l’enfant. Équipements et accessoires : longue-vue, outils bricolés et lanceur fantastique réservé à des cibles d’entraînement, jamais à des personnes. Adversaires ou obstacles : un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques. Univers et ambiance : un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles. Lieux à explorer : bateau d’exploration personnel, marché coloré, crique et île à végétation géante. Mission possible : réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un vaste monde d’océans et d’archipels, îles aux climats contrastés, ports colorés, marchés, falaises, végétation géante et navires de bois à voiles",
+      "places": "bateau d’exploration personnel, marché coloré, crique et île à végétation géante",
+      "objects": "longue-vue, outils bricolés et lanceur fantastique réservé à des cibles d’entraînement, jamais à des personnes",
+      "mission": "réunir un équipage d’amis pour aider une île et découvrir un trésor solidaire"
+    },
+    "reference": {
+      "costume": "salopette de voyage couvrante, foulard ou chapeau uni, lunettes d’observation et sac à outils ; conserver le nez et les traits de l’enfant",
+      "equipment": "longue-vue, outils bricolés et lanceur fantastique réservé à des cibles d’entraînement, jamais à des personnes",
+      "adversaries": "un capitaine pirate rival au nez rouge et accessoires de clown ; des équipages aux pavillons et navires excentriques"
+    },
+    "series": "one-piece",
+    "seriesLabel": "One Piece",
+    "seriesAr": "ون بيس"
+  },
+  {
+    "label": "Inosuke · instinct et exploration",
+    "ar": "إينوسكي · الغريزة والاستكشاف",
+    "category": "anime",
+    "icon": "🐗",
+    "theme": "🐗 Héros personnalisé : des sens très développés, l’équilibre et l’instinct pour trouver des chemins dans la nature. Tenue et apparence : tunique brune couvrante, large ceinture à texture de fourrure, pantalon bleu sombre et masque de sanglier tenu en accessoire pour reconnaître l’enfant. Équipements et accessoires : deux sabres fantastiques gardés au fourreau et accessoires d’orientation, sans blessure. Adversaires ou obstacles : un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur. Univers et ambiance : un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection. Lieux à explorer : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous. Mission possible : suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection",
+      "places": "maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous",
+      "objects": "deux sabres fantastiques gardés au fourreau et accessoires d’orientation, sans blessure",
+      "mission": "suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit"
+    },
+    "reference": {
+      "costume": "tunique brune couvrante, large ceinture à texture de fourrure, pantalon bleu sombre et masque de sanglier tenu en accessoire pour reconnaître l’enfant",
+      "equipment": "deux sabres fantastiques gardés au fourreau et accessoires d’orientation, sans blessure",
+      "adversaries": "un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur"
+    },
+    "series": "demon-slayer",
+    "seriesLabel": "Demon Slayer",
+    "seriesAr": "قاتل الشياطين"
+  },
+  {
+    "label": "Giyu Tomioka · eau et concentration",
+    "ar": "غيو توميوكا · الماء والتركيز",
+    "category": "anime",
+    "icon": "🌊",
+    "theme": "🌊 Héros personnalisé : la concentration, la maîtrise d’une énergie d’eau imaginaire et une attitude protectrice. Tenue et apparence : tenue sombre à ceinture claire, haori dont une moitié est bordeaux et l’autre à motifs géométriques verts et jaunes, sandales. Équipements et accessoires : sabre fantastique au fourreau, vagues lumineuses et matériel de voyage protecteur. Adversaires ou obstacles : un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur. Univers et ambiance : un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection. Lieux à explorer : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous. Mission possible : suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection",
+      "places": "maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous",
+      "objects": "sabre fantastique au fourreau, vagues lumineuses et matériel de voyage protecteur",
+      "mission": "suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit"
+    },
+    "reference": {
+      "costume": "tenue sombre à ceinture claire, haori dont une moitié est bordeaux et l’autre à motifs géométriques verts et jaunes, sandales",
+      "equipment": "sabre fantastique au fourreau, vagues lumineuses et matériel de voyage protecteur",
+      "adversaries": "un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur"
+    },
+    "series": "demon-slayer",
+    "seriesLabel": "Demon Slayer",
+    "seriesAr": "قاتل الشياطين"
+  },
+  {
+    "label": "Shinobu Kocho · papillons et soin",
+    "ar": "شينوبو كوتشو · الفراشات والرعاية",
+    "category": "anime",
+    "icon": "🦋",
+    "theme": "🦋 Héros personnalisé : l’agilité, l’observation et la connaissance de plantes imaginaires pour prendre soin des autres. Tenue et apparence : tenue sombre couvrante sous haori blanc à motifs d’ailes de papillon roses, verts et violets, petit accessoire de papillon. Équipements et accessoires : trousse de soin, carnet de plantes et sabre fantastique à garde de papillon, conservé au fourreau. Adversaires ou obstacles : un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur. Univers et ambiance : un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection. Lieux à explorer : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous. Mission possible : suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection",
+      "places": "maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous",
+      "objects": "trousse de soin, carnet de plantes et sabre fantastique à garde de papillon, conservé au fourreau",
+      "mission": "suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit"
+    },
+    "reference": {
+      "costume": "tenue sombre couvrante sous haori blanc à motifs d’ailes de papillon roses, verts et violets, petit accessoire de papillon",
+      "equipment": "trousse de soin, carnet de plantes et sabre fantastique à garde de papillon, conservé au fourreau",
+      "adversaries": "un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur"
+    },
+    "series": "demon-slayer",
+    "seriesLabel": "Demon Slayer",
+    "seriesAr": "قاتل الشياطين"
+  },
+  {
+    "label": "Kyojuro Rengoku · flammes et enthousiasme",
+    "ar": "كيوجورو رينغوكو · اللهب والحماس",
+    "category": "anime",
+    "icon": "🔥",
+    "theme": "🔥 Héros personnalisé : une énergie de flammes imaginaire, l’enthousiasme et le courage d’encourager les autres. Tenue et apparence : tenue sombre à ceinture blanche, grande cape blanche dont les bordures portent des flammes jaunes et rouges, protections de voyage. Équipements et accessoires : sabre fantastique au fourreau, flammes lumineuses protectrices et équipement de voyage. Adversaires ou obstacles : un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur. Univers et ambiance : un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection. Lieux à explorer : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous. Mission possible : suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection",
+      "places": "maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous",
+      "objects": "sabre fantastique au fourreau, flammes lumineuses protectrices et équipement de voyage",
+      "mission": "suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit"
+    },
+    "reference": {
+      "costume": "tenue sombre à ceinture blanche, grande cape blanche dont les bordures portent des flammes jaunes et rouges, protections de voyage",
+      "equipment": "sabre fantastique au fourreau, flammes lumineuses protectrices et équipement de voyage",
+      "adversaries": "un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur"
+    },
+    "series": "demon-slayer",
+    "seriesLabel": "Demon Slayer",
+    "seriesAr": "قاتل الشياطين"
+  },
+  {
+    "label": "Tengen Uzui · rythme et coordination",
+    "ar": "تينغن أوزوي · الإيقاع والتنسيق",
+    "category": "anime",
+    "icon": "🥁",
+    "theme": "🥁 Héros personnalisé : le sens du rythme, l’ouïe et la coordination pour réussir des missions en équipe. Tenue et apparence : tenue de voyage sombre couvrante, grands bracelets, bandeau clair à pierres décoratives et petites perles, visage de l’enfant conservé. Équipements et accessoires : deux grands sabres fantastiques au repos, reliés par un lien décoratif, et accessoires de rythme sans usage violent. Adversaires ou obstacles : un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur. Univers et ambiance : un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection. Lieux à explorer : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous. Mission possible : suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection",
+      "places": "maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous",
+      "objects": "deux grands sabres fantastiques au repos, reliés par un lien décoratif, et accessoires de rythme sans usage violent",
+      "mission": "suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit"
+    },
+    "reference": {
+      "costume": "tenue de voyage sombre couvrante, grands bracelets, bandeau clair à pierres décoratives et petites perles, visage de l’enfant conservé",
+      "equipment": "deux grands sabres fantastiques au repos, reliés par un lien décoratif, et accessoires de rythme sans usage violent",
+      "adversaries": "un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur"
+    },
+    "series": "demon-slayer",
+    "seriesLabel": "Demon Slayer",
+    "seriesAr": "قاتل الشياطين"
+  },
+  {
+    "label": "Mitsuri Kanroji · souplesse et gentillesse",
+    "ar": "ميتسوري كانروجي · المرونة واللطف",
+    "category": "anime",
+    "icon": "💗",
+    "theme": "💗 Héros personnalisé : la souplesse, une force surprenante et la gentillesse pour protéger ses amis. Tenue et apparence : tenue sombre couvrante, haori blanc, jupe sur short opaque ou leggings, chaussettes vertes à détails roses ; cheveux de l’enfant conservés. Équipements et accessoires : sabre fantastique souple représenté au fourreau ou en ruban lumineux protecteur, accessoires de voyage. Adversaires ou obstacles : un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur. Univers et ambiance : un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection. Lieux à explorer : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous. Mission possible : suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection",
+      "places": "maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous",
+      "objects": "sabre fantastique souple représenté au fourreau ou en ruban lumineux protecteur, accessoires de voyage",
+      "mission": "suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit"
+    },
+    "reference": {
+      "costume": "tenue sombre couvrante, haori blanc, jupe sur short opaque ou leggings, chaussettes vertes à détails roses ; cheveux de l’enfant conservés",
+      "equipment": "sabre fantastique souple représenté au fourreau ou en ruban lumineux protecteur, accessoires de voyage",
+      "adversaries": "un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur"
+    },
+    "series": "demon-slayer",
+    "seriesLabel": "Demon Slayer",
+    "seriesAr": "قاتل الشياطين"
+  },
+  {
+    "label": "Muichiro Tokito · brume et précision",
+    "ar": "مويتشيرو توكيتو · الضباب والدقة",
+    "category": "anime",
+    "icon": "🌫️",
+    "theme": "🌫️ Héros personnalisé : le calme, la précision et une brume imaginaire qui aide à cacher ou protéger des objets. Tenue et apparence : tenue sombre à manches et pantalon amples, ceinture blanche, sandales et petite sacoche ; visage de l’enfant conservé. Équipements et accessoires : sabre fantastique gardé au fourreau, brume lumineuse et cartes d’orientation. Adversaires ou obstacles : un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur. Univers et ambiance : un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection. Lieux à explorer : maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous. Mission possible : suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "profile": "",
+    "world": {
+      "setting": "un Japon traditionnel de montagnes, cèdres, bambous, maisons en bois, routes rurales, trains anciens, neige et lanternes, avec une ambiance de voyage et de protection",
+      "places": "maison de bois, sentier de cèdres, village aux lanternes et forêt de bambous",
+      "objects": "sabre fantastique gardé au fourreau, brume lumineuse et cartes d’orientation",
+      "mission": "suivre une piste parfumée pour retrouver une famille d’animaux avant la nuit"
+    },
+    "reference": {
+      "costume": "tenue sombre à manches et pantalon amples, ceinture blanche, sandales et petite sacoche ; visage de l’enfant conservé",
+      "equipment": "sabre fantastique gardé au fourreau, brume lumineuse et cartes d’orientation",
+      "adversaries": "un adversaire mystérieux en costume sombre et chapeau clair ; créatures nocturnes présentées sans horreur"
+    },
+    "series": "demon-slayer",
+    "seriesLabel": "Demon Slayer",
+    "seriesAr": "قاتل الشياطين"
   }
 ];
