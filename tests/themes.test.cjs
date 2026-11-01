@@ -8,10 +8,10 @@ vm.runInContext(fs.readFileSync('theme-catalog.js','utf8'),context);
 vm.runInContext(fs.readFileSync('themes.js','utf8'),context);
 const {MLH_THEME_CATALOG:catalog,MLH_THEME_CATEGORIES:categories,MLHThemeSearch:search}=context.window;
 
-test('314 distinct themes in 20 bilingual categories, with stable legacy values',()=>{
-  assert.equal(catalog.length,314);assert.equal(categories.length,20);
-  assert.equal(new Set(catalog.map(t=>t.label)).size,314);
-  assert.equal(new Set(catalog.map(t=>t.theme)).size,314);
+test('294 distinct themes in 19 bilingual categories, with stable legacy values',()=>{
+  assert.equal(catalog.length,294);assert.equal(categories.length,19);
+  assert.equal(new Set(catalog.map(t=>t.label)).size,294);
+  assert.equal(new Set(catalog.map(t=>t.theme)).size,294);
   for(const c of categories){assert.ok(c.ar);assert.ok(catalog.filter(t=>t.category===c.id).length>=12);}
   assert.ok(catalog.every(t=>t.ar&&t.icon&&categories.some(c=>c.id===t.category)));
   assert.equal(catalog.find(t=>t.label==='Espace').theme,"🚀 Voyage dans l'espace");
@@ -23,8 +23,8 @@ test('profile suggestions never prevent access to any category or theme',()=>{
   assert.ok(girl.some(t=>t.label==='Fées'));assert.ok(!girl.some(t=>t.label==='Robots'));
   const boy=search.filter(catalog,{gender:'boy'});
   assert.ok(boy.some(t=>t.label==='Robots'));assert.ok(!boy.some(t=>t.label==='Fées'));
-  assert.equal(search.filter(catalog,{gender:'girl',showAll:true}).length,314);
-  assert.equal(search.filter(catalog,{gender:'boy',showAll:true}).length,314);
+  assert.equal(search.filter(catalog,{gender:'girl',showAll:true}).length,294);
+  assert.equal(search.filter(catalog,{gender:'boy',showAll:true}).length,294);
 });
 
 test('search ignores French accents, works in Arabic, and combines category filters',()=>{
@@ -49,13 +49,16 @@ test('distinct superpowers and a dedicated girls category remain accessible to e
 });
 
 
-test('comic and anime inspirations are searchable and keep the personalized child as the hero',()=>{
-  for(const category of ['comics','anime']){
+test('Marvel and DC are absent while anime inspirations keep the personalized child as the hero',()=>{
+  for(const category of ['anime']){
     const rows=search.filter(catalog,{category,showAll:true});
-    assert.equal(rows.length,category==='anime'?55:20);
+    assert.equal(rows.length,55);
     assert.ok(rows.every(t=>t.theme.includes('Héros personnalisé')));
   }
-  assert.ok(search.filter(catalog,{query:'Spider-Man',showAll:true}).some(t=>t.category==='comics'));
+  assert.equal(search.filter(catalog,{query:'Spider-Man',showAll:true}).length,0);
+  assert.ok(!categories.some(c=>c.id==='comics'));
+  assert.ok(!catalog.some(t=>t.category==='comics'));
+  for(const name of ['Batman','Superman','Iron Man','Wonder Woman']) assert.equal(search.filter(catalog,{query:name,showAll:true}).length,0);
   assert.ok(search.filter(catalog,{query:'Naruto',showAll:true}).some(t=>t.category==='anime'));
   assert.ok(search.filter(catalog,{query:'ناروتو',showAll:true}).some(t=>t.category==='anime'));
 });
@@ -63,21 +66,20 @@ test('comic and anime inspirations are searchable and keep the personalized chil
 
 test('displayed inspirations are separate from powers and visual descriptions sent to generation',()=>{
   const names=['Spider-Man','Iron Man','Thor','Hulk','Captain America','Doctor Strange','Black Panther','Ant-Man','Scarlet Witch','Superman','Batman','Wonder Woman','Flash','Aquaman','Green Lantern','Cyborg','Shazam','Supergirl','Zatanna','Goku','Naruto','Luffy','Tanjiro','Deku','Sailor Moon','Sacha','Pikachu','Sakura','Natsu','Edward Elric','Gon','Killua','Saitama','Ichigo','Yugi','Hinata','Tsubasa','Seiya','Astro Boy','Totoro','Sasuke','Vegeta','Gohan','Zoro','Nami','Nezuko','Zenitsu','Bakugo'];
-  const profiles=catalog.filter(t=>['comics','anime'].includes(t.category));
-  assert.equal(profiles.length,75);
-  assert.equal(new Set(profiles.map(t=>t.theme)).size,75);
+  const profiles=catalog.filter(t=>['anime'].includes(t.category));
+  assert.equal(profiles.length,55);
+  assert.equal(new Set(profiles.map(t=>t.theme)).size,55);
   for(const profile of profiles){
     assert.ok(profile.theme.includes('Tenue et apparence :'));
     for(const name of names)assert.ok(!new RegExp('\\b'+name+'\\b','iu').test(profile.theme),profile.label+' leaked '+name);
   }
-  assert.ok(profiles.some(t=>t.label.startsWith('Spider-Man')));
 });
 
 
 test('every inspiration includes a coherent world used by cover and story generation',()=>{
-  const profiles=catalog.filter(t=>['comics','anime'].includes(t.category));
-  assert.equal(profiles.length,75);
-  assert.ok(new Set(profiles.map(t=>t.world.setting)).size>=29);
+  const profiles=catalog.filter(t=>['anime'].includes(t.category));
+  assert.equal(profiles.length,55);
+  assert.ok(new Set(profiles.map(t=>t.world.setting)).size>=9);
   for(const profile of profiles){
     for(const key of ['setting','places','objects','mission']){
       assert.ok(profile.world[key].length>20);
@@ -86,15 +88,13 @@ test('every inspiration includes a coherent world used by cover and story genera
     assert.ok(profile.theme.includes('dès la couverture'));
     assert.ok(profile.theme.includes('toute l’histoire'));
   }
-  const city=profiles.find(t=>t.label.startsWith('Spider-Man'));
-  assert.ok(city.world.setting.includes('métropole verticale'));
   const village=profiles.find(t=>t.label.startsWith('Naruto'));
   assert.ok(village.world.places.includes('académie'));
 });
 
 
 test('all written references include clothing, equipment and opponents or appropriate obstacles',()=>{
-  const profiles=catalog.filter(t=>['comics','anime'].includes(t.category));
+  const profiles=catalog.filter(t=>['anime'].includes(t.category));
   for(const p of profiles){
     for(const key of ['costume','equipment','adversaries']){
       assert.ok(p.reference[key].length>40);
@@ -103,8 +103,6 @@ test('all written references include clothing, equipment and opponents or approp
     assert.ok(p.theme.includes('visage de l’enfant'));
     assert.ok(p.theme.includes('sans blessure ni scène sanglante'));
   }
-  assert.ok(profiles.find(t=>t.label.startsWith('Spider-Man')).reference.costume.includes('rouge et bleue'));
-  assert.ok(profiles.find(t=>t.label.startsWith('Batman')).reference.equipment.includes('grappin'));
   assert.ok(profiles.find(t=>t.label.startsWith('Tsubasa')).reference.adversaries.includes('pas de méchant'));
 });
 
