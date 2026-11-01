@@ -231,7 +231,7 @@ def generate_order(order):
 
         existing_remote = get_remote_generated_for_index(order, index)
 
-        if existing_remote:
+        if existing_remote and not (order.get("generation_progress") or {}).get("rebuild_layout"):
             download_existing_pdf_if_needed(order, index, existing_remote)
             report("upload", f"Livre {index}/{total} déjà enregistré", book_index=index, completed_books=index)
             logging.info(f"⏭️ {index}/{total} déjà terminé — aucune régénération.")
@@ -271,11 +271,15 @@ def generate_order(order):
 
         # Known failed uploads and large color PDFs should be reduced before
         # sending another oversized body through the network.
-        if ((order.get("generation_progress") or {}).get("upload_only")
+        if ((order.get("generation_progress") or {}).get("rebuild_layout")
+                or (order.get("generation_progress") or {}).get("upload_only")
                 or pdf_path.stat().st_size > 8 * 1024 * 1024):
             report("pdf", "Optimisation du PDF conservé avant l’enregistrement — aucun appel IA", book_index=index)
             before = pdf_path.stat().st_size
-            optimize_saved_pdf(pdf_path, order, adventure)
+            if (order.get("generation_progress") or {}).get("rebuild_layout"):
+                optimize_saved_pdf(pdf_path, order, adventure, force_layout=True)
+            else:
+                optimize_saved_pdf(pdf_path, order, adventure)
             logging.info("PDF optimisé pour %s : %d → %d octets", order["order_ref"], before, pdf_path.stat().st_size)
 
         remote_pdf_path = (

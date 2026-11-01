@@ -9,7 +9,7 @@ def is_payload_too_large(error):
     return "413" in str(error) and ("too large" in str(error).lower() or "maximum allowed size" in str(error).lower())
 
 
-def optimize_saved_pdf(pdf_path, order, adventure):
+def optimize_saved_pdf(pdf_path, order, adventure, force_layout=False):
     pdf_path = Path(pdf_path)
     folder = pdf_path.parent
     story = (folder/"story.txt").read_text(encoding="utf-8")
@@ -27,7 +27,7 @@ def optimize_saved_pdf(pdf_path, order, adventure):
             congratulations=keepsake_congratulations(story, adventure["theme"], order["language"]),
             gender=adventure.get("child_gender", ""), language=order["language"], cover=cover,
             book_style=adventure.get("book_style", "coloring"))
-        if candidate.stat().st_size < pdf_path.stat().st_size:
+        if force_layout or candidate.stat().st_size < pdf_path.stat().st_size:
             candidate.replace(pdf_path)
     finally:
         candidate.unlink(missing_ok=True)

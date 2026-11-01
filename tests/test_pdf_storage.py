@@ -58,8 +58,13 @@ class PdfStorageTests(unittest.TestCase):
                 patch.object(order_production,'storage_upload',return_value=None) as upload, \
                 patch.object(order_production,'optimize_saved_pdf',return_value=pdf) as optimize:
                 result=order_production.generate_order(order)
-            self.assertEqual(upload.call_count,1)
-            optimize.assert_called_once_with(pdf,order,order['adventures'][0])
+                self.assertEqual(upload.call_count,1)
+                optimize.assert_called_once_with(pdf,order,order['adventures'][0])
+                # Updating a ready book's layout must not skip its existing remote PDF.
+                order['generation_progress']={'upload_only':True,'rebuild_layout':True}
+                order_production.generate_order(order)
+                self.assertEqual(upload.call_count,2)
+                self.assertTrue(optimize.call_args.kwargs['force_layout'])
             engine.generate_book_from_adventure.assert_not_called()
             self.assertEqual(order['status'],'BOOKS_READY')
             self.assertEqual(result,['orders/TEST/final_books/adventure_01/book_01.pdf'])

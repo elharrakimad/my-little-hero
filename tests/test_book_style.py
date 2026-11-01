@@ -65,6 +65,7 @@ class BookStyleTests(unittest.TestCase):
                     gender_instruction=__import__('child_profile').gender_instruction,
                     visual_reference_instruction=__import__('story_reference').visual_reference_instruction,
                     illustration_direction=illustration_direction,continuity_context=continuity.continuity_context,
+                    page_composition=__import__('book_style').page_composition,
                     reference_paths=continuity.reference_paths,reference_roles=continuity.reference_roles,
                     secondary_reference_folder=anime_cast.secondary_reference_folder,anime_cast_instruction=anime_cast.anime_cast_instruction,
                     client=client,CHILD_GENDER='boy',AGE=12,THEME='Science',BOOK_STYLE=style,NUMBER_OF_PAGES=10,

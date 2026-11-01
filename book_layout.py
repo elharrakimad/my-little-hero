@@ -16,7 +16,7 @@ from reportlab.platypus import Paragraph
 from reportlab.lib.utils import ImageReader
 from arabic_layout import ArabicParagraph, has_arabic
 
-LAYOUT_VERSION = "storybook-a4-v3-arabic"
+LAYOUT_VERSION = "storybook-a4-v4-full-color"
 
 
 @dataclass(frozen=True)
@@ -52,6 +52,10 @@ class Layout:
     body_leading: float = 20
     souvenir_title_size: float = 28
     drawing_height: float = 250
+    color_panel_top: float = 24
+    color_panel_padding: float = 12
+    color_title_band: float = 27
+    color_panel_gap: float = 8
     keepsake: KeepsakeLayout = KeepsakeLayout()
 
     @property
@@ -87,13 +91,13 @@ def paragraph(text, *, size=14, leading=20, title=False, centered=False):
         spaceBefore=0, spaceAfter=0))
 
 
-def split_narrative(text, config=DEFAULT_LAYOUT):
+def split_narrative(text, config=DEFAULT_LAYOUT, text_width=None):
     """Keep every word, fixed 14pt type and fixed image area; add continuation pages."""
     words = re.sub(r"\s+", " ", text).strip().split()
     if not words:
         raise ValueError("Le récit de la page est vide.")
     parts = []
-    width = config.content_width - 14
+    width = text_width if text_width is not None else config.content_width - 14
     while words:
         low, high, best = 1, len(words), 0
         while low <= high:
@@ -130,7 +134,7 @@ def star(canvas, x, y, radius=5):
     canvas.drawPath(path, stroke=1, fill=0)
 
 
-def draw_image(canvas, image, x, y, width, height, compress_color=False):
+def draw_image(canvas, image, x, y, width, height, compress_color=False, full_bleed=False):
     if not Path(image).exists():
         raise FileNotFoundError(image)
     if compress_color:
@@ -147,9 +151,14 @@ def draw_image(canvas, image, x, y, width, height, compress_color=False):
     else:
         source = ImageReader(str(image))
     w, h = source.getSize()
-    scale = min(width / w, height / h)
+    scale = max(width / w, height / h) if full_bleed else min(width / w, height / h)
+    canvas.saveState()
+    if full_bleed:
+        clip = canvas.beginPath(); clip.rect(x, y, width, height)
+        canvas.clipPath(clip, stroke=0, fill=0)
     canvas.drawImage(source, x+(width-w*scale)/2, y+(height-h*scale)/2,
         width=w*scale, height=h*scale, mask="auto")
+    canvas.restoreState()
 
 
 def draw_centered(canvas, text, top, width, *, center, size=14, leading=20, title=False, max_height=None):
@@ -162,6 +171,8 @@ def draw_centered(canvas, text, top, width, *, center, size=14, leading=20, titl
 
 
 def draw_story_page(canvas, title, text, image, number, config=DEFAULT_LAYOUT, book_style="coloring"):
+    if book_style == "colored":
+        return draw_color_story_page(canvas, title, text, image, number, config)
     x, w = config.binding_margin, config.content_width
     text_bottom = config.bottom_margin + config.footer_band
     image_bottom = text_bottom + config.narrative_height + config.image_gap
@@ -186,6 +197,37 @@ def draw_story_page(canvas, title, text, image, number, config=DEFAULT_LAYOUT, b
     star(canvas, config.center, config.bottom_margin-12, 13)
     canvas.setFont("MLHBody", 9)
     canvas.drawCentredString(config.center, config.bottom_margin-15, str(number))
+    canvas.showPage()
+
+
+def draw_color_story_page(canvas, title, text, image, number, config=DEFAULT_LAYOUT):
+    """Full-page scenery with one consistent readable panel in the upper safe area."""
+    x, w = config.binding_margin, config.content_width
+    padding = config.color_panel_padding
+    top = config.height-config.color_panel_top
+    height = config.color_title_band+config.narrative_height+config.color_panel_gap+2*padding
+    if height > config.height*.35:
+        raise ValueError("L’encadré de texte couvre trop l’image : répartir le texte sur une autre page.")
+    draw_image(canvas, image, 0, 0, config.width, config.height, compress_color=True, full_bleed=True)
+    canvas.saveState()
+    canvas.setFillColorRGB(1, .985, .955)
+    canvas.setStrokeColorRGB(.38, .31, .23)
+    canvas.setLineWidth(.6)
+    canvas.roundRect(x, top-height, w, height, 10, fill=1, stroke=1)
+    draw_centered(canvas, title, top-padding, w-2*padding, center=config.center,
+        size=config.title_size, leading=config.title_leading, title=True, max_height=config.color_title_band)
+    narrative = paragraph(text, size=config.body_size, leading=config.body_leading)
+    _, body_height = narrative.wrap(w-2*padding, config.narrative_height)
+    if body_height > config.narrative_height:
+        raise ValueError("Le récit dépasse l’encadré de la page couleur.")
+    narrative.drawOn(canvas, x+padding, top-height+padding+(config.narrative_height-body_height)/2)
+    canvas.setFillColorRGB(1, .985, .955)
+    canvas.circle(config.center, 24, 13, stroke=0, fill=1)
+    star(canvas, config.center, 24, 12)
+    canvas.setFont("MLHBody", 9)
+    canvas.setFillColorRGB(0, 0, 0)
+    canvas.drawCentredString(config.center, 21, str(number))
+    canvas.restoreState()
     canvas.showPage()
 
 
@@ -250,9 +292,11 @@ def build_book_pdf(output, pages, medal, *, child_name, congratulations, gender=
     # The longest title defines one common band for the entire book, still at 23pt.
     continuation = " (تابع)" if language == "العربية" else " (suite)"
     titles = [p["title"] + continuation for p in pages]
+    title_width = config.content_width - (2*config.color_panel_padding if book_style == "colored" else 20)
     title_height = max((paragraph(t, size=config.title_size, leading=config.title_leading,
-        title=True).wrap(config.content_width-20, 10000)[1] for t in titles), default=0)
-    config = replace(config, title_band=max(config.title_band, title_height+18))
+        title=True).wrap(title_width, 10000)[1] for t in titles), default=0)
+    config = replace(config, title_band=max(config.title_band, title_height+18),
+        color_title_band=max(config.color_title_band, title_height))
     if config.height-config.top_margin-config.title_band-(config.bottom_margin+config.footer_band+config.narrative_height+config.image_gap) < 220:
         raise ValueError("Le titre ne laisse plus assez d'espace pour l'illustration.")
     canvas = Canvas(str(output), pagesize=(config.width, config.height), pageCompression=1)
@@ -263,7 +307,8 @@ def build_book_pdf(output, pages, medal, *, child_name, congratulations, gender=
         canvas.showPage()
     number = 0
     for page in pages:
-        for part_number, text in enumerate(split_narrative(page["text"], config)):
+        for part_number, text in enumerate(split_narrative(page["text"], config,
+                text_width=config.content_width-2*config.color_panel_padding if book_style == "colored" else None)):
             number += 1
             title = page["title"] + (continuation if part_number else "")
             draw_story_page(canvas, title, text, page["image"], number, config, book_style=book_style)

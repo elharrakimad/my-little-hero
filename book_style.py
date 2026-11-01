@@ -26,6 +26,16 @@ def illustration_direction(style, age):
         "L’illustration est terminée et prête à lire, pas un dessin à colorier ni une esquisse monochrome.")
 
 
+def page_composition(style):
+    validate_book_style(style)
+    if style == "coloring":
+        return "Composition ouverte en vignette, éléments à distance des bords."
+    return ("Composition plein cadre bord à bord, décor jusqu’aux quatre bords, aucune marge blanche. "
+        "Réserver le tiers supérieur à un décor calme pour le futur encadré de récit, sans visage "
+        "ni action essentielle. Personnages et action dans les deux tiers inférieurs, corps et pieds entiers, "
+        "éléments essentiels éloignés des bords pour un léger recadrage A4. Aucun texte ni encadré dans l’image.")
+
+
 def cover_subtitle(language, style="coloring"):
     validate_book_style(style)
     if style == "colored":

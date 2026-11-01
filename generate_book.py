@@ -8,7 +8,7 @@ from contextlib import ExitStack
 from character_continuity import CAST_INSTRUCTIONS, CHILD_OUTFIT_INSTRUCTION, child_outfit_instruction, cast_from_story, continuity_context, reference_paths, reference_roles
 from anime_cast import anime_cast_instruction, cast_limit, secondary_reference_folder, secondary_reference_path
 from story_language import story_language_instruction, repair_arabic_story, validate_printed_language
-from book_style import illustration_direction, cover_subtitle
+from book_style import illustration_direction, cover_subtitle, page_composition
 from child_profile import gender_instruction
 from age_profile import coloring_instruction
 from story_reference import visual_reference_instruction
@@ -583,7 +583,7 @@ Le décor doit correspondre au thème de l'histoire.
 STYLE
 {illustration_direction(BOOK_STYLE, AGE)}
 - composition verticale et personnage principal clairement visible
-- composition ouverte en vignette, éléments à distance des bords
+{page_composition(BOOK_STYLE)}
 - aucun cadre rectangulaire, aucune bordure, aucun élément coupé
 - limiter les ornements à quelques motifs discrets de l'univers
 - style illustré professionnel, aucun réalisme photographique
