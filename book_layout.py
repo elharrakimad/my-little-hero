@@ -12,8 +12,9 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.platypus import Paragraph
 from reportlab.lib.utils import ImageReader
+from arabic_layout import ArabicParagraph, has_arabic
 
-LAYOUT_VERSION = "storybook-a4-v2"
+LAYOUT_VERSION = "storybook-a4-v3-arabic"
 
 
 @dataclass(frozen=True)
@@ -68,10 +69,16 @@ def register_fonts():
     for name, file in (("MLHBody", "Vera.ttf"), ("MLHBold", "VeraBd.ttf")):
         if name not in pdfmetrics.getRegisteredFontNames():
             pdfmetrics.registerFont(TTFont(name, str(folder / file)))
+    arabic_folder = Path(__file__).resolve().parent / "assets" / "fonts"
+    for name, file in (("MLHArabic", "Amiri-Regular.ttf"), ("MLHArabicBold", "Amiri-Bold.ttf")):
+        if name not in pdfmetrics.getRegisteredFontNames():
+            pdfmetrics.registerFont(TTFont(name, str(arabic_folder / file)))
 
 
-def paragraph(text, *, size=14, leading=20, title=False):
+def paragraph(text, *, size=14, leading=20, title=False, centered=False):
     register_fonts()
+    if has_arabic(text):
+        return ArabicParagraph(text, "MLHArabicBold" if title else "MLHArabic", size, leading, centered or title)
     return Paragraph(escape(str(text)).replace("\n", "<br/>"), ParagraphStyle(
         "MLH", fontName="Times-Bold" if title else "MLHBody", fontSize=size,
         leading=leading, alignment=1, textColor="black", splitLongWords=True,
@@ -99,7 +106,7 @@ def split_narrative(text, config=DEFAULT_LAYOUT):
             raise ValueError("Le récit ne tient pas dans la zone réservée à la taille minimale.")
         # Prefer a sentence boundary, but never discard any content.
         sentence_ends = [i for i in range(max(1, best // 2), best + 1)
-            if re.search(r'[.!?…][»”"\']?$', words[i - 1])]
+            if re.search(r'[.!?؟…][»”"\']?$', words[i - 1])]
         if best < len(words) and sentence_ends:
             best = sentence_ends[-1]
         parts.append(" ".join(words[:best]))
@@ -132,7 +139,7 @@ def draw_image(canvas, image, x, y, width, height):
 
 
 def draw_centered(canvas, text, top, width, *, center, size=14, leading=20, title=False, max_height=None):
-    item = paragraph(text, size=size, leading=leading, title=title)
+    item = paragraph(text, size=size, leading=leading, title=title, centered=True)
     _, height = item.wrap(width, 10000)
     if max_height is not None and height > max_height:
         raise ValueError(f"Texte trop long pour sa zone : {text[:70]}")
@@ -169,6 +176,9 @@ def draw_story_page(canvas, title, text, image, number, config=DEFAULT_LAYOUT):
 
 
 def souvenir_copy(name, gender="", language="Français"):
+    if language == "العربية":
+        return (f"أحسنت، {name}!", "بطلة صغيرة، خيال كبير" if gender == "girl" else "بطل صغير، خيال كبير",
+            "بشجاعتك وألوانك، منحت هذه المغامرة الحياة.", "تخيّل مغامرتك القادمة…", "تلوين:", "التاريخ:")
     if language == "English":
         return (f"Well done, {name}!", "Little hero, big imagination", "With your courage and your colors, you brought this adventure to life.", "Imagine your next adventure…", "Colored by:", "Date:")
     if language == "Español":
@@ -203,9 +213,13 @@ def draw_keepsake_page(canvas, name, congratulations, medal, *, gender="", langu
         star(canvas, xx, yy, 5)
         star(canvas, xx+(-11 if xx>center else 11), yy+(-10 if yy>250 else 10), 2.5)
     canvas.setFillColorRGB(0, 0, 0)
-    canvas.setFont("MLHBody", 11)
-    canvas.drawString(x, k.signature_y, colored_by + " ____________")
-    canvas.drawRightString(x+w, k.signature_y, date + " ____________")
+    if language == "العربية":
+        draw_centered(canvas, colored_by + " ____________", k.signature_y+14, w/2-12, center=x+w*3/4, size=14, leading=18, max_height=20)
+        draw_centered(canvas, date + " ____________", k.signature_y+14, w/2-12, center=x+w/4, size=14, leading=18, max_height=20)
+    else:
+        canvas.setFont("MLHBody", 11)
+        canvas.drawString(x, k.signature_y, colored_by + " ____________")
+        canvas.drawRightString(x+w, k.signature_y, date + " ____________")
     canvas.showPage()
 
 
@@ -214,7 +228,8 @@ def build_book_pdf(output, pages, medal, *, child_name, congratulations, gender=
     output = Path(output)
     output.parent.mkdir(parents=True, exist_ok=True)
     # The longest title defines one common band for the entire book, still at 23pt.
-    titles = [p["title"] + " (suite)" for p in pages]
+    continuation = " (تابع)" if language == "العربية" else " (suite)"
+    titles = [p["title"] + continuation for p in pages]
     title_height = max((paragraph(t, size=config.title_size, leading=config.title_leading,
         title=True).wrap(config.content_width-20, 10000)[1] for t in titles), default=0)
     config = replace(config, title_band=max(config.title_band, title_height+18))
@@ -230,7 +245,7 @@ def build_book_pdf(output, pages, medal, *, child_name, congratulations, gender=
     for page in pages:
         for part_number, text in enumerate(split_narrative(page["text"], config)):
             number += 1
-            title = page["title"] + (" (suite)" if part_number else "")
+            title = page["title"] + (continuation if part_number else "")
             draw_story_page(canvas, title, text, page["image"], number, config)
     draw_keepsake_page(canvas, child_name, congratulations, medal, gender=gender, language=language, config=config)
     canvas.save()

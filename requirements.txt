@@ -2,3 +2,5 @@ streamlit
 openai==3.22.1
 supabase
 reportlab
+arabic-reshaper==3.0.0
+python-bidi==0.6.7

@@ -27,6 +27,8 @@ def keepsake_congratulations(story, theme="", language="Français"):
         return "You completed your mission with courage and imagination!"
     if language == "Español":
         return "¡Has cumplido tu misión con valentía e imaginación!"
+    if language == "العربية":
+        return "لقد أنجزت مهمتك بشجاعة وخيال!"
     if "basket" in theme.casefold():
         return "Tu as mené ton équipe jusqu’au panier décisif. Bravo pour ton courage !"
     return "Tu as accompli ta mission avec courage et imagination !"
