@@ -201,6 +201,19 @@ html { scroll-behavior: auto; }
 .theme-category-group[open] summary:after { content: "−"; }
 .theme-category-group[open] summary { border-bottom: 1px solid var(--line); background: #faf6ff; border-radius: 13px 13px 0 0; }
 .theme-group-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; padding: 15px; }
+.theme-catalog-tools.has-anime-series { grid-template-columns: 1fr 1fr; }
+.theme-series-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 15px; }
+.theme-series-group { min-width: 0; border: 1px solid #e0d1ee; border-radius: 10px; background: white; }
+.theme-series-group[open] { grid-column: 1/-1; }
+.theme-category-group .theme-series-group>summary { min-height: 58px; padding: 12px; font-size: 12px; border-radius: 10px; background: #faf7ff; border: 0; }
+.theme-series-group:not([open])>summary:after { content: "+"; }
+.theme-series-group[open]>summary:after { content: "−"; }
+.theme-series-group .theme-group-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 650px) {
+  .theme-catalog-tools.has-anime-series { grid-template-columns: 1fr; }
+  .theme-series-list { grid-template-columns: 1fr; padding: 10px; }
+  .theme-series-group .theme-group-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 .theme-choice-grid .theme-group-grid button { min-height: 110px; width: 100%; }
 .theme-choice-grid .theme-group-grid button span:last-child { line-height: 1.5; overflow-wrap: anywhere; }
 @media (max-width: 750px) {

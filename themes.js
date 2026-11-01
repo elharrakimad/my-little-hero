@@ -2,14 +2,15 @@
 (function(){
   const normalize=value=>String(value||"").normalize("NFD").replace(/\p{M}/gu,"").toLocaleLowerCase().replace(/[’']/g," ");
   window.MLHThemeSearch={
-    filter(catalog,{query="",category="all",gender="",showAll=false}={}){
+    filter(catalog,{query="",category="all",series="all",gender="",showAll=false}={}){
       const words=normalize(query).split(/\s+/).filter(Boolean);
       const categories=new Map((window.MLH_THEME_CATEGORIES||[]).map(c=>[c.id,c]));
       return catalog.filter(theme=>{
         if(category!=="all"&&theme.category!==category)return false;
+        if(series!=="all"&&theme.series!==series)return false;
         if(!showAll&&gender&&theme.profile&&theme.profile!==gender)return false;
         const group=categories.get(theme.category)||{};
-        const text=normalize([theme.label,theme.ar,theme.theme,group.label,group.ar].join(" "));
+        const text=normalize([theme.label,theme.ar,theme.theme,theme.seriesLabel,theme.seriesAr,group.label,group.ar].join(" "));
         return words.every(word=>text.includes(word));
       });
     }
@@ -22,8 +23,14 @@ document.addEventListener("DOMContentLoaded",()=>{
   const search=document.getElementById("themeSearch"), category=document.getElementById("themeCategory");
   const toggle=document.getElementById("themeScope"), result=document.getElementById("themeResults");
   const empty=document.getElementById("themeEmpty"), reset=document.getElementById("themeReset");
+  const series=document.getElementById("themeSeries"), seriesLabel=document.getElementById("themeSeriesLabel");
   if(!gender||!grid||!catalog||!categories||!search||!category||!toggle)return;
   let showAll=false;
+  const animeSeries=window.MLH_ANIME_SERIES||[], seriesOptions=[];
+  for(const item of animeSeries){
+    const option=document.createElement("option");option.value=item.id;option.textContent=item.label;
+    series?.append(option);seriesOptions.push({option,item});
+  }
   const options=[];
   for(const group of categories){
     const option=document.createElement("option");option.value=group.id;option.textContent=group.label;
@@ -46,13 +53,35 @@ document.addEventListener("DOMContentLoaded",()=>{
     summary.append(title,count);
     const cards=document.createElement("div");cards.className="theme-group-grid";
     const entries=catalog.filter(t=>t.category===group.id).map(buttonFor);
-    entries.forEach(entry=>cards.append(entry.button));
+    const subgroups=[];
+    if(group.id==="anime"&&animeSeries.length){
+      cards.className="theme-series-list";
+      for(const item of animeSeries){
+        const section=document.createElement("details");section.className="theme-series-group";section.dataset.series=item.id;
+        const heading=document.createElement("summary"), name=document.createElement("span"), amount=document.createElement("span");
+        amount.className="theme-category-count";heading.append(name,amount);
+        const container=document.createElement("div");container.className="theme-group-grid";
+        const members=entries.filter(entry=>entry.theme.series===item.id);
+        members.forEach(entry=>container.append(entry.button));
+        section.append(heading,container);cards.append(section);subgroups.push({section,name,amount,item,members});
+      }
+    }else entries.forEach(entry=>cards.append(entry.button));
     details.append(summary,cards);grid.append(details);
-    return {details,title,count,group,entries};
+    return {details,title,count,group,entries,subgroups};
   });
   function render(resetOpen=false){
     const ar=document.documentElement.lang==="ar";
-    const matches=new Set(window.MLHThemeSearch.filter(catalog,{query:search.value,category:category.value,gender:gender.value,showAll}));
+    const isAnime=category.value==="anime";
+    if(seriesLabel){
+      seriesLabel.hidden=!isAnime;
+      seriesLabel.querySelector("span").textContent=ar?"اختيار مسلسل الأنمي":"Choisir une série anime";
+      category.closest(".theme-catalog-tools").classList.toggle("has-anime-series",isAnime);
+    }
+    if(series){
+      series.options[0].textContent=ar?"كل المسلسلات":"Toutes les séries";
+      seriesOptions.forEach(({option,item})=>option.textContent=ar?item.ar:item.label);
+    }
+    const matches=new Set(window.MLHThemeSearch.filter(catalog,{query:search.value,category:category.value,series:isAnime?(series?.value||"all"):"all",gender:gender.value,showAll}));
     search.placeholder=ar?"مثال: تنين، كرة القدم، طبيب بيطري…":"Ex. dragon, football, vétérinaire…";
     category.options[0].textContent=ar?"كل الفئات":"Toutes les catégories";
     options.forEach(({option,group})=>option.textContent=ar?group.ar:group.label);
@@ -67,20 +96,30 @@ document.addEventListener("DOMContentLoaded",()=>{
         if(!entry.button.hidden)count++;
       }
       item.details.hidden=count===0;
+      for(const sub of item.subgroups){
+        const count=sub.members.filter(entry=>!entry.button.hidden).length;
+        sub.section.hidden=count===0;
+        sub.name.textContent=ar?sub.item.ar:sub.item.label;
+        sub.amount.textContent=ar?`${count} شخصيات`:`${count} ${count===1?"personnage":"personnages"}`;
+        if(resetOpen)sub.section.open=!!search.value.trim()||(isAnime&&series?.value!=="all");
+      }
       item.title.textContent=`${item.group.icon} ${ar?item.group.ar:item.group.label}`;
       item.count.textContent=ar?`${count} موضوع`:`${count} ${count===1?"thème":"thèmes"}`;
       if(resetOpen)item.details.open=!!search.value.trim()||category.value!=="all";
     }
-    result.textContent=ar?`${matches.size} موضوع · اختر فئة أو ابحث عن مغامرة. الخاص بك متاح دائمًا.`:`${matches.size} ${matches.size===1?"thème":"thèmes"} · Ouvrez une catégorie ou recherchez une aventure. Votre propre thème reste disponible.`;
+    result.textContent=isAnime
+      ?(ar?`${matches.size} شخصية · اختر مسلسلًا ثم شخصية. موضوعك الخاص متاح دائمًا.`:`${matches.size} personnages · Choisissez une série, puis un personnage. Votre propre thème reste disponible.`)
+      :(ar?`${matches.size} موضوع · اختر فئة أو ابحث عن مغامرة. الخاص بك متاح دائمًا.`:`${matches.size} ${matches.size===1?"thème":"thèmes"} · Ouvrez une catégorie ou recherchez une aventure. Votre propre thème reste disponible.`);
     empty.hidden=matches.size!==0;
     reset.hidden=!search.value&&category.value==="all"&&!showAll;
     reset.textContent=ar?"مسح الفلاتر":"Effacer les filtres";
   }
   search.addEventListener("input",()=>{if(search.value.trim())showAll=true;render(true);});
-  category.addEventListener("change",()=>{if(category.value!=="all")showAll=true;render(true);});
-  toggle.addEventListener("click",()=>{showAll=!showAll;if(!showAll){search.value="";category.value="all";}render(true);});
-  reset.addEventListener("click",()=>{search.value="";category.value="all";showAll=false;render(true);});
-  gender.addEventListener("change",()=>{search.value="";category.value="all";showAll=false;render(true);});
+  category.addEventListener("change",()=>{if(series)series.value="all";if(category.value!=="all")showAll=true;render(true);});
+  series?.addEventListener("change",()=>{showAll=true;render(true);});
+  toggle.addEventListener("click",()=>{showAll=!showAll;if(!showAll){search.value="";category.value="all";if(series)series.value="all";}render(true);});
+  reset.addEventListener("click",()=>{search.value="";category.value="all";if(series)series.value="all";showAll=false;render(true);});
+  gender.addEventListener("change",()=>{search.value="";category.value="all";if(series)series.value="all";showAll=false;render(true);});
   new MutationObserver(()=>render()).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
   render();
 });
