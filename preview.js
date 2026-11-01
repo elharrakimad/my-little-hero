@@ -35,6 +35,13 @@ document.addEventListener("DOMContentLoaded",()=>{
     const button=document.querySelector('[data-step="3"] .next');
     const originalLabel=button?.textContent||"Commencer mon histoire →";
     if(button){button.disabled=true;button.textContent=document.documentElement.lang==="ar"?"جارٍ إنشاء قصته…":"Création de son histoire…";}
+    const waitMessage=document.getElementById("generationWait");
+    if(waitMessage){
+      waitMessage.textContent=document.documentElement.lang==="ar"
+        ?"قد يستغرق إنشاء المعاينة المخصصة بعض الوقت. شكرًا على صبركم، يُرجى إبقاء هذه الصفحة مفتوحة."
+        :"La création de votre aperçu personnalisé peut prendre un peu de temps. Merci de patienter et de garder cette page ouverte.";
+      waitMessage.hidden=false;
+    }
 
     coverStatus.textContent=document.documentElement.lang==="ar"?"نحن ننشئ كتبه…":"Nous créons ses livres…";
     orderButton.disabled=true;
@@ -76,6 +83,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       alert(document.documentElement.lang==="ar"?"تعذر إنشاء الكتب الآن. يرجى المحاولة مرة أخرى.":"La création des livres a échoué. Veuillez réessayer.");
       return false;
     }finally{
+      if(waitMessage)waitMessage.hidden=true;
       if(button){button.disabled=false;button.textContent=originalLabel;}
     }
   };

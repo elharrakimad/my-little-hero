@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=20261031-magic">
-<link rel="stylesheet" href="magic.css?v=20261101-series">
+<link rel="stylesheet" href="magic.css?v=20261101-age-wait">
 </head>
 <body class="magic-site">
 <a class="skip-link" href="#creation">Aller à la création</a>
@@ -103,7 +103,7 @@
       <div class="step-kicker">ÉTAPE 2 SUR 4</div><h3>Parlez-nous de son héros</h3><p class="muted">Ces informations servent à personnaliser son aventure.</p>
       <div class="form-grid">
         <label>Prénom<input id="childName" placeholder="Ex. Yassir"></label>
-        <label>Âge<select id="childAge"><option value="">Choisir</option><option>3 ans</option><option>4 ans</option><option>5 ans</option><option>6 ans</option><option>7 ans</option><option>8 ans</option><option>9 ans</option><option>10 ans</option><option>11 ans</option><option>12 ans</option></select></label>
+        <label>Âge<select id="childAge"><option value="">Choisir</option><option>3 ans</option><option>4 ans</option><option>5 ans</option><option>6 ans</option><option>7 ans</option><option>8 ans</option><option>9 ans</option><option>10 ans</option><option>11 ans</option><option>12 ans</option><option>13 ans</option><option>14 ans</option><option>15 ans</option><option>16 ans</option></select></label>
         <label>Votre enfant<select id="childGender" required><option value="">Choisir</option><option value="girl">Fille</option><option value="boy">Garçon</option></select></label>
         <label>Langue<select id="language"><option>Français</option><option>English</option><option>Español</option><option>العربية</option></select></label>
         <label>Téléphone du parent (obligatoire)<input id="parentPhone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="25" placeholder="Ex. +212 6 12 34 56 78" aria-describedby="parentContactHint"></label>
@@ -143,6 +143,7 @@
         <textarea id="customTheme" rows="4" maxlength="600" aria-describedby="customThemeHint" placeholder="Ex. Une aventure dans un jardin magique pour aider les animaux à retrouver leurs couleurs."></textarea>
         <small>600 caractères maximum. Cette idée sera utilisée pour sa couverture et son histoire.</small>
       </div>
+      <p id="generationWait" class="generation-wait" role="status" aria-live="polite" hidden></p>
       <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Retour</button><button type="button" class="btn btn-primary next">Commencer mon histoire →</button></div>
     </div>
 
@@ -203,6 +204,6 @@
 <script src="theme-catalog.js?v=20261101-no-comics"></script>
 <script src="themes.js?v=20261101-series"></script>
 <script src="script.js?v=20261101-no-comics"></script>
-<script src="preview.js?v=20261031-contact"></script>
+<script src="preview.js?v=20261101-age-wait"></script>
 </body>
 </html>

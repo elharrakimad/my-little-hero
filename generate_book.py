@@ -5,6 +5,7 @@ import html
 import re
 from pathlib import Path
 from child_profile import gender_instruction
+from age_profile import coloring_instruction
 from story_reference import visual_reference_instruction
 from book_layout import build_book_pdf
 from book_content import story_pages, keepsake_congratulations
@@ -229,6 +230,7 @@ Crée une histoire originale de 10 pages.
 INFORMATIONS SUR L'ENFANT
 - Prénom : {NAME}
 - Âge : {AGE} ans
+- Direction des scènes à colorier : {coloring_instruction(AGE)}
 - Thème : {THEME}
 - Langue : {LANGUAGE}
 
@@ -523,12 +525,10 @@ STYLE
 - dessin au trait
 - lignes propres et nettes
 - détails suffisamment riches pour être intéressants
-- détails adaptés à {AGE} ans : formes larges et simples pour les plus jeunes,
-  détails modérés pour les plus grands, jamais de petites zones surchargées
-- espaces suffisamment grands pour être facilement coloriés
+- {coloring_instruction(AGE)}
 - composition verticale
 - personnage principal clairement visible
-- décor détaillé mais facile à colorier
+- décor dont la complexité respecte le niveau de coloriage indiqué ci-dessus
 - style professionnel de livre pour enfants
 - aucun remplissage de couleur
 - fond blanc pur, aucun aplat gris, aucune ombre, aucun dégradé, aucune hachure
@@ -757,6 +757,7 @@ un médaillon circulaire très simple. Ajouter le compagnon uniquement si la sc�
 le mentionne et si cela reste lisible. Tous les traits restent dans le cercle.
 Médaillon entier visible et généreuse marge blanche tout autour.
 Noir et blanc pur, contours nets, larges zones à colorier adaptées à {AGE} ans,
+{coloring_instruction(AGE)}
 fond blanc, aucun gris, aucune ombre, hachure, texture ou aplat noir.
 AUCUN TEXTE, lettre, numéro, titre, ruban, logo ou watermark.
 Les inscriptions et le ruban seront ajoutés par le système PDF.""")

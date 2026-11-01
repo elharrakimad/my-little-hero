@@ -256,6 +256,8 @@ async def preview_cover(
 
     if not name or not age or age_value is None or not selected_themes:
         raise HTTPException(status_code=400, detail="Informations incomplètes.")
+    if not 3 <= age_value <= 16:
+        raise HTTPException(status_code=400, detail="L’âge doit être compris entre 3 et 16 ans.")
 
     resolved_themes = resolve_order_themes(selected_themes, custom_theme)
 

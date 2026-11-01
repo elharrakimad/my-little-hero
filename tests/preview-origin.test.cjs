@@ -47,3 +47,26 @@ test('preview request includes parent contact and the custom description', async
   await window.generateStoryPreview({name:'Test',age:7,gender:'girl',themes:['Science'],photoFile:{},parentPhone:''});
   assert.equal(requested,false);
 });
+
+test('waiting message is visible throughout the request in French and Arabic then clears', async()=>{
+  for(const lang of ['fr','ar']){
+    const node={setAttribute(){},removeAttribute(){}};
+    const wait={hidden:true,textContent:''};
+    const button={disabled:false,textContent:'Commencer mon histoire →'};
+    let finish;
+    const document={addEventListener:(_,fn)=>fn(),documentElement:{lang},
+      getElementById:id=>id==='generationWait'?wait:node,querySelector:()=>button};
+    const window={location:{protocol:'https:'}};
+    vm.runInNewContext(fs.readFileSync('preview.js','utf8'),{window,document,alert(){},console:{error(){}},
+      FormData:class {append(){}},fetch:()=>new Promise(resolve=>{finish=resolve;})});
+    const pending=window.generateStoryPreview({name:'Test',age:'16 ans',gender:'boy',themes:['Science'],photoFile:{},parentPhone:'0612345678'});
+    assert.equal(wait.hidden,false);
+    assert.equal(button.disabled,true);
+    assert.match(wait.textContent,lang==='fr'?/Merci de patienter/:/شكرًا على صبركم/);
+    finish({ok:false,json:async()=>({detail:'Simulated failure without generation'})});
+    await pending;
+    assert.equal(wait.hidden,true);
+    assert.equal(button.disabled,false);
+    assert.equal(button.textContent,'Commencer mon histoire →');
+  }
+});

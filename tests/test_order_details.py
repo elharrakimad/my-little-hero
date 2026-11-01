@@ -69,11 +69,12 @@ class OrderDetailsTests(unittest.TestCase):
             image_file=lambda *args: None, gender_instruction=lambda *args: "",
             generate_title=lambda client, name, age, theme, language, gender: prompts.append(theme) or "Test",
             generate_cover=lambda *args: b"test")
-        params = dict(child_name="Test", child_age="7 ans", language="Français", theme="", themes=json.dumps(["✨ Mon propre thème"]),
+        params = dict(child_name="Test", child_age="16 ans", language="Français", theme="", themes=json.dumps(["✨ Mon propre thème"]),
                       photo=Photo(), child_gender="girl", parent_phone="+212 612 345 678", parent_email="", custom_theme="Un jardin magique")
         result = asyncio.run(self.ns["preview_cover"](**params))
         self.assertTrue(result["ok"])
         row = db.rows[0]
+        self.assertEqual(row["child_age"], 16)
         self.assertEqual(row["parent_phone"], "+212612345678")
         self.assertIsNone(row["parent_email"])
         self.assertEqual(row["adventures"][0]["idea"], "Un jardin magique")
@@ -85,6 +86,14 @@ class OrderDetailsTests(unittest.TestCase):
         with self.assertRaises(RequestError): asyncio.run(self.ns["preview_cover"](**params))
         params["parent_phone"], params["custom_theme"] = "0612345678", ""
         with self.assertRaises(RequestError): asyncio.run(self.ns["preview_cover"](**params))
+
+    def test_age_limits_reject_invalid_orders_before_ai_or_photo_processing(self):
+        self.ns["get_openai_client"] = lambda: self.fail("Invalid age must not start paid work")
+        for age in ("2 ans", "17 ans", "0", "100 ans"):
+            with self.subTest(age=age), self.assertRaises(RequestError) as error:
+                asyncio.run(self.ns["preview_cover"](child_name="Test", child_age=age,
+                    theme="Science", photo=None, child_gender="girl", parent_phone="0612345678"))
+            self.assertIn("3 et 16", error.exception.detail)
 
 
 if __name__ == "__main__":

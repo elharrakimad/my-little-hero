@@ -59,6 +59,7 @@ class BookEngineTests(unittest.TestCase):
                 with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()):
                     namespace = dict(Path=Path, gender_instruction=gender_instruction, client=client,
                         visual_reference_instruction=visual_reference_instruction,
+                        coloring_instruction=__import__("age_profile").coloring_instruction,
                         CHILD_GENDER=gender, NAME="Camille", AGE=7, THEME="Science", LANGUAGE=language,
                         CLIENT_IDEA="", CHILD_QUALITY="", BOOK_TITLE="Titre", NUMBER_OF_PAGES=10,
                         STORY_FILE=str(Path(directory) / "story.txt"))
