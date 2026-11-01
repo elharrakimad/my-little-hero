@@ -13,7 +13,7 @@ from child_profile import gender_instruction
 from age_profile import coloring_instruction
 from story_reference import visual_reference_instruction
 from book_layout import build_book_pdf
-from book_content import story_pages, keepsake_congratulations
+from book_content import story_pages, keepsake_congratulations, normalize_story_structure
 
 from reportlab.lib.pagesizes import A4
 from reportlab.platypus import (
@@ -395,7 +395,7 @@ pour la mission réellement accomplie. Rédige cette phrase dans {LANGUAGE}.
         input=prompt
     )
 
-    story = response.output_text
+    story = normalize_story_structure(response.output_text)
 
     if cast_from_story(story, NUMBER_OF_PAGES, max_characters=cast_limit(THEME)) is None:
         raise ValueError("Fiche des personnages absente : vérifier PERSONNAGES_JSON avant les illustrations.")
@@ -411,6 +411,7 @@ pour la mission réellement accomplie. Rédige cette phrase dans {LANGUAGE}.
 # ============================================================
 
 def get_page(story, page_number):
+    story = normalize_story_structure(story)
     story = re.split(r"(?im)^\s*SOUVENIR\s*$", story, maxsplit=1)[0]
     pattern = rf"PAGE\s+{page_number}(.*?)(?=PAGE\s+{page_number + 1}|$)"
     match = re.search(
@@ -420,6 +421,7 @@ def get_page(story, page_number):
 
 
 def extract_scene(page_content):
+    page_content = normalize_story_structure(page_content)
     match = re.search(
         r"Scène à illustrer\s*:\s*(.*?)(?=\n\s*PAGE\s+\d+|$)",
         page_content,
@@ -429,6 +431,7 @@ def extract_scene(page_content):
 
 
 def extract_title(page_content):
+    page_content = normalize_story_structure(page_content)
     match = re.search(
         r"Titre\s*:\s*(.*?)(?=\n|$)",
         page_content,
@@ -624,7 +627,7 @@ d'un livre jeunesse personnalisé du type choisi.
 
 def ensure_story_language():
     story = Path(STORY_FILE).read_text(encoding="utf-8")
-    corrected = repair_arabic_story(story, LANGUAGE, client, BOOK_TITLE, NUMBER_OF_PAGES)
+    corrected = repair_arabic_story(normalize_story_structure(story), LANGUAGE, client, BOOK_TITLE, NUMBER_OF_PAGES)
     if corrected != story:
         atomic_write_bytes(STORY_FILE, corrected.encode("utf-8"))
 

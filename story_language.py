@@ -8,7 +8,10 @@ ARABIC_LETTER = re.compile(r"[\u0621-\u064a\u066e-\u06d3]")
 
 def story_language_instruction(language):
     if language != "العربية":
-        return f"Tous les titres de page, récits et félicitations doivent être rédigés en {language}."
+        return (f"Tous les titres de page, récits et félicitations doivent être rédigés en {language}. "
+            "Ne traduis jamais les marqueurs techniques : PAGE, Titre, Texte, Scène à illustrer, "
+            "SOUVENIR, Félicitations et PERSONNAGES_JSON. Conserve ces libellés exactement, "
+            "avec chaque valeur après les deux-points sur la même ligne.")
     return ("اكتب جميع عناوين الصفحات ونصوص القصة والتهنئة باللغة العربية الفصحى فقط، "
         "بأسلوب سليم مناسب للعمر. لا تترك أي كلمة فرنسية أو إنجليزية داخل النص العربي. "
         "ترجم الأوصاف مثل rival وcarapace verte إلى العربية، واكتب الأسماء بحروف عربية. "

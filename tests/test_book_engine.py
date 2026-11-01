@@ -1,3 +1,4 @@
+from book_content import normalize_story_structure
 import ast
 import contextlib
 import io
@@ -75,7 +76,7 @@ class BookEngineTests(unittest.TestCase):
                 client = MagicMock()
                 client.responses.create.return_value.output_text = 'PAGE 1\nTitre\nSOUVENIR\nFélicitations : Bravo !\nPERSONNAGES_JSON\n{"characters":[]}'
                 with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()):
-                    namespace = dict(Path=Path, gender_instruction=gender_instruction, client=client,
+                    namespace = dict(normalize_story_structure=normalize_story_structure, Path=Path, gender_instruction=gender_instruction, client=client,
                         visual_reference_instruction=visual_reference_instruction,
                         coloring_instruction=__import__("age_profile").coloring_instruction,
                         illustration_direction=__import__("book_style").illustration_direction,

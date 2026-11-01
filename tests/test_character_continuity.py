@@ -1,3 +1,4 @@
+from book_content import normalize_story_structure
 import ast
 import base64
 import contextlib
@@ -94,7 +95,7 @@ class ContinuityTests(unittest.TestCase):
                 self.assertIn('Image 3:', kw['prompt'])
                 return SimpleNamespace(data=[SimpleNamespace(b64_json=base64.b64encode(b'new image').decode())])
             client.images.edit.side_effect = edit
-            ns = dict(Path=Path, re=__import__('re'), base64=base64, ExitStack=contextlib.ExitStack,
+            ns = dict(normalize_story_structure=normalize_story_structure, Path=Path, re=__import__('re'), base64=base64, ExitStack=contextlib.ExitStack,
                 gender_instruction=gender_instruction, coloring_instruction=coloring_instruction,
                 visual_reference_instruction=visual_reference_instruction,
                 continuity_context=continuity.continuity_context, reference_paths=continuity.reference_paths,

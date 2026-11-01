@@ -1,3 +1,4 @@
+from book_content import normalize_story_structure
 import ast
 import base64
 import contextlib
@@ -61,7 +62,7 @@ class BookStyleTests(unittest.TestCase):
                 (folder/'story.txt').write_text('PAGE 1\nTitre : Aventure\nTexte : Itar découvre une forêt.\nScène à illustrer : Itar seul.\nSOUVENIR\nFélicitations : Bravo !\nPERSONNAGES_JSON\n{"characters":[]}',encoding='utf-8')
                 client=MagicMock()
                 client.images.edit.return_value=SimpleNamespace(data=[SimpleNamespace(b64_json=base64.b64encode(b'image').decode())])
-                ns=dict(Path=Path,re=__import__('re'),base64=base64,ExitStack=contextlib.ExitStack,
+                ns=dict(normalize_story_structure=normalize_story_structure, Path=Path,re=__import__('re'),base64=base64,ExitStack=contextlib.ExitStack,
                     gender_instruction=__import__('child_profile').gender_instruction,
                     visual_reference_instruction=__import__('story_reference').visual_reference_instruction,
                     illustration_direction=illustration_direction,continuity_context=continuity.continuity_context,
