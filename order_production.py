@@ -269,6 +269,15 @@ def generate_order(order):
 
         pdf_path = Path(pdf_path)
 
+        # Known failed uploads and large color PDFs should be reduced before
+        # sending another oversized body through the network.
+        if ((order.get("generation_progress") or {}).get("upload_only")
+                or pdf_path.stat().st_size > 8 * 1024 * 1024):
+            report("pdf", "Optimisation du PDF conservé avant l’enregistrement — aucun appel IA", book_index=index)
+            before = pdf_path.stat().st_size
+            optimize_saved_pdf(pdf_path, order, adventure)
+            logging.info("PDF optimisé pour %s : %d → %d octets", order["order_ref"], before, pdf_path.stat().st_size)
+
         remote_pdf_path = (
             f"orders/{order['order_ref']}/final_books/"
             f"adventure_{index:02d}/book_{index:02d}.pdf"

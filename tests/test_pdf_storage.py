@@ -55,10 +55,10 @@ class PdfStorageTests(unittest.TestCase):
                 patch.object(order_production,'get_supabase_client',return_value=MagicMock()), \
                 patch.object(order_production,'ensure_order_assets',return_value=(Path('ref.png'),[Path('cover.png')])), \
                 patch.object(order_production,'update_order_fields'), \
-                patch.object(order_production,'storage_upload',side_effect=[ValueError("413 Payload too large"),None]) as upload, \
+                patch.object(order_production,'storage_upload',return_value=None) as upload, \
                 patch.object(order_production,'optimize_saved_pdf',return_value=pdf) as optimize:
                 result=order_production.generate_order(order)
-            self.assertEqual(upload.call_count,2)
+            self.assertEqual(upload.call_count,1)
             optimize.assert_called_once_with(pdf,order,order['adventures'][0])
             engine.generate_book_from_adventure.assert_not_called()
             self.assertEqual(order['status'],'BOOKS_READY')
