@@ -546,8 +546,7 @@ RÈGLES IMPORTANTES
 - aucun logo
 - aucune bulle de dialogue
 - aucun watermark
-- aucun personnage provenant d'une œuvre existante
-- ne pas utiliser de personnage sous copyright
+- direction visuelle du thème : {visual_reference_instruction(THEME)}
 - conserver l'apparence de l'enfant
 - conserver l'apparence des personnages récurrents
 - respecter les actions, objets et décors décrits dans la scène

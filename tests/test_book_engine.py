@@ -78,6 +78,13 @@ class BookEngineTests(unittest.TestCase):
             self.assertTrue(any(isinstance(n, ast.Call) and isinstance(n.func, ast.Name)
                 and n.func.id == "gender_instruction" for n in ast.walk(function)), name)
 
+    def test_reference_direction_reaches_interior_pages_as_well_as_cover_and_story(self):
+        tree = ast.parse(Path("generate_book.py").read_text(encoding="utf-8"))
+        for name in ("generate_story", "generate_character_reference", "generate_page", "generate_cover"):
+            function = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == name)
+            self.assertTrue(any(isinstance(n, ast.Call) and isinstance(n.func, ast.Name)
+                and n.func.id == "visual_reference_instruction" for n in ast.walk(function)), name)
+
 
 if __name__ == "__main__":
     unittest.main()
