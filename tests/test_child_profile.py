@@ -38,6 +38,17 @@ class ProfileTests(unittest.TestCase):
     def test_legacy_orders_do_not_infer_gender(self):
         self.assertIn("ne pas le déduire", gender_instruction(""))
 
+    def test_arabic_preview_title_cannot_mix_languages_before_cover_generation(self):
+        functions = self.api_functions(re=__import__("re"))
+        client = MagicMock()
+        for title in ("الرival ذو carapace verte", "Itar والمغامرة", "123"):
+            client.responses.create.return_value = SimpleNamespace(output_text=title)
+            with self.assertRaises(ValueError):
+                functions["generate_title"](client, "إيتار", 12, "Espace", "العربية", "boy")
+        client.responses.create.return_value = SimpleNamespace(output_text="إيتار والمغامرة")
+        self.assertEqual(functions["generate_title"](client, "إيتار", 12, "Espace", "العربية", "boy"), "إيتار والمغامرة")
+        client.images.edit.assert_not_called()
+
 
 if __name__ == "__main__":
     unittest.main()

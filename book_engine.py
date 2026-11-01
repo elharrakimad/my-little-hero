@@ -87,6 +87,9 @@ def generate_book_from_adventure(
     elif progress:
         progress("story", "Histoire existante conservée", page_index=0, page_total=10)
 
+    if progress:
+        progress("story", "Vérification de la langue des titres et du récit", page_index=0, page_total=10)
+    engine.ensure_story_language()
     generated_title = engine.get_book_title().strip()
     if generated_title != engine.BOOK_TITLE.strip():
         raise ValueError(

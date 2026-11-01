@@ -135,7 +135,7 @@ def language_instruction(language: str) -> str:
         "Français": "Écris le titre en français.",
         "English": "Write the title in English.",
         "Español": "Escribe el título en español.",
-        "العربية": "اكتب عنوان الكتاب باللغة العربية.",
+        "العربية": "اكتب عنوان الكتاب بالعربية الفصحى فقط، دون كلمات فرنسية أو إنجليزية. اكتب اسم الطفل بحروف عربية أيضًا.",
     }.get(language, "Écris le titre dans la langue demandée.")
 
 
@@ -167,6 +167,9 @@ Réponds uniquement avec le titre final, sur une seule ligne.
     title = response.output_text.strip().replace("\n", " ").strip('"“”')
     if not title:
         raise ValueError("L'IA n'a pas généré de titre.")
+    if language == "العربية" and (re.search(r"[A-Za-z\u00c0-\u024f\u1e00-\u1eff]", title)
+            or not re.search(r"[\u0621-\u064a\u066e-\u06d3]", title)):
+        raise ValueError("Le titre généré mélange plusieurs langues. Aucune couverture n’a été lancée.")
     return title[:120]
 
 

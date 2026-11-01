@@ -83,6 +83,7 @@ class BookEngineTests(unittest.TestCase):
                         cast_from_story=__import__("character_continuity").cast_from_story,
                         cast_limit=__import__("anime_cast").cast_limit,
                         anime_cast_instruction=__import__("anime_cast").anime_cast_instruction,
+                        story_language_instruction=__import__("story_language").story_language_instruction,
                         CHILD_GENDER=gender, NAME="Camille", AGE=7, THEME="Science", LANGUAGE=language,
                         CLIENT_IDEA="", CHILD_QUALITY="", BOOK_TITLE="Titre", NUMBER_OF_PAGES=10,
                         STORY_FILE=str(Path(directory) / "story.txt"))

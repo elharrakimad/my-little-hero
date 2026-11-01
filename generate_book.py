@@ -7,6 +7,7 @@ from pathlib import Path
 from contextlib import ExitStack
 from character_continuity import CAST_INSTRUCTIONS, CHILD_OUTFIT_INSTRUCTION, cast_from_story, continuity_context, reference_paths, reference_roles
 from anime_cast import anime_cast_instruction, cast_limit, secondary_reference_folder, secondary_reference_path
+from story_language import story_language_instruction, repair_arabic_story, validate_printed_language
 from child_profile import gender_instruction
 from age_profile import coloring_instruction
 from story_reference import visual_reference_instruction
@@ -229,6 +230,7 @@ Tu es un auteur professionnel spécialisé dans les livres
 personnalisés pour enfants.
 
 Crée une histoire originale de 10 pages.
+{story_language_instruction(LANGUAGE)}
 
 INFORMATIONS SUR L'ENFANT
 - Prénom : {NAME}
@@ -628,11 +630,19 @@ d'un véritable livre de coloriage pour enfants.
 
         print(f"✅ Page {page_number} créée : {filename}")
 
+def ensure_story_language():
+    story = Path(STORY_FILE).read_text(encoding="utf-8")
+    corrected = repair_arabic_story(story, LANGUAGE, client, BOOK_TITLE, NUMBER_OF_PAGES)
+    if corrected != story:
+        atomic_write_bytes(STORY_FILE, corrected.encode("utf-8"))
+
+
 def generate_all_pages(progress=None):
     print("\n" + "=" * 60)
     print("🎨 ÉTAPE 3/5 — GÉNÉRATION DES ILLUSTRATIONS")
     print("=" * 60)
 
+    ensure_story_language()
     story = Path(STORY_FILE).read_text(encoding="utf-8")
     generate_secondary_character_references(progress=progress)
 
@@ -827,6 +837,7 @@ Les inscriptions et le ruban seront ajoutés par le système PDF.""")
 
 def generate_pdf():
     story = Path(STORY_FILE).read_text(encoding="utf-8")
+    validate_printed_language(story, LANGUAGE, NUMBER_OF_PAGES)
     pages = story_pages(story, NUMBER_OF_PAGES)
     for page in pages:
         page["image"] = PAGES_FOLDER / f"page_{page["number"]:02d}.png"

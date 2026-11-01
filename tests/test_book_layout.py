@@ -67,6 +67,7 @@ class BookLayoutTests(unittest.TestCase):
             story = folder/"story.txt"
             story.write_text("PAGE 1\nTitre : Le panier décisif\nTexte : Itar encourage son équipe et marque un panier.\nScène à illustrer : Itar au basket.", encoding="utf-8")
             namespace = dict(Path=Path, story_pages=story_pages, keepsake_congratulations=keepsake_congratulations,
+                validate_printed_language=__import__("story_language").validate_printed_language,
                 build_book_pdf=build_book_pdf, STORY_FILE=story, NUMBER_OF_PAGES=1, PAGES_FOLDER=folder,
                 OUTPUT_FILE=folder/"book.pdf", KEEPSAKE_IMAGE=ROOT/"examples/itar/medallion.png", NAME="Itar",
                 THEME="Basket", LANGUAGE="Français", CHILD_GENDER="boy", COVER_FILE=folder/"page_01.png")
