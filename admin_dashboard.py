@@ -4,6 +4,7 @@ from html import escape
 from zoneinfo import ZoneInfo
 import streamlit as st
 from production_status import STAGES
+from order_actions import CANCELLABLE_STATUSES, cancel_order
 
 LABELS = {"WAITING_FOR_PAYMENT": "Paiement à vérifier", "PAID": "En file d'attente",
     "GENERATING": "En production", "GENERATION_INTERRUPTED": "À reprendre",
@@ -27,7 +28,7 @@ def render_progress(order):
     progress = order.get("generation_progress") or {}
     ready = status in {"BOOKS_READY", "SHIPPED", "DELIVERED"}
     percent = 100 if ready else min(99, max(0, int(progress.get("percent", 0))))
-    label = "Production terminée" if ready else "Reprise en file d'attente" if status == "PAID" else progress.get("label") or ("Production interrompue" if status == "GENERATION_INTERRUPTED" else "En attente du démarrage")
+    label = "Commande annulée" if status == "CANCELLED" else "Production terminée" if ready else "Reprise en file d'attente" if status == "PAID" else progress.get("label") or ("Production interrompue" if status == "GENERATION_INTERRUPTED" else "En attente du démarrage")
     st.progress(percent, text=label)
     current = progress.get("failed_stage") if progress.get("stage") == "error" else progress.get("stage")
     keys = [key for key, _ in STAGES]
@@ -82,6 +83,7 @@ def show_dashboard(list_orders, get_db, download_pdf, update_status):
     .mlh-badge.GENERATION_INTERRUPTED{background:#fff0e9;color:#9b3c1f}
     .mlh-badge.BOOKS_READY{background:#e3f5ec;color:#176548}
     .mlh-badge.GENERATING{background:#ece9ff;color:#5140ae}
+    .mlh-badge.CANCELLED{background:#fde8e8;color:#a52b2b}
     .mlh-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin:15px 0}
     .mlh-step{font-size:11px;border-top:3px solid #e5e8f0;padding:8px 3px;color:#8790a3}
     .mlh-step span{display:block;font-size:10px;font-weight:750;margin-bottom:4px}
@@ -93,7 +95,7 @@ def show_dashboard(list_orders, get_db, download_pdf, update_status):
     with st.sidebar:
         st.markdown("### MY LITTLE HERO")
         st.caption("CENTRE DE PRODUCTION")
-        view = st.radio("Espace", ["Toutes les commandes", "Paiements", "Production", "Incidents", "Livres prêts"], label_visibility="collapsed")
+        view = st.radio("Espace", ["Toutes les commandes", "Paiements", "Production", "Incidents", "Livres prêts", "Annulées"], label_visibility="collapsed")
         search = st.text_input("Rechercher", placeholder="Prénom ou référence")
         auto = st.toggle("Actualisation automatique", value=True)
         st.caption("Toutes les 5 secondes pendant que cette page est ouverte.")
@@ -119,7 +121,7 @@ def show_dashboard(list_orders, get_db, download_pdf, update_status):
             col.metric(label, sum(o.get("status") in statuses for o in orders))
         st.caption("Vue synchronisée à " + datetime.now(ZoneInfo("Africa/Casablanca")).strftime("%H:%M:%S") + " · heure du Maroc")
         allowed = {"Paiements": {"WAITING_FOR_PAYMENT"}, "Production": {"PAID", "GENERATING"},
-            "Incidents": {"GENERATION_INTERRUPTED"}, "Livres prêts": {"BOOKS_READY", "SHIPPED", "DELIVERED"}}.get(view)
+            "Incidents": {"GENERATION_INTERRUPTED"}, "Livres prêts": {"BOOKS_READY", "SHIPPED", "DELIVERED"}, "Annulées": {"CANCELLED"}}.get(view)
         filtered = [o for o in orders if (not allowed or o.get("status") in allowed) and
             (not search or search.casefold() in (str(o.get("child_name", ""))+" "+o["order_ref"]).casefold())]
         st.subheader(f"{len(filtered)} commande(s)")
@@ -146,6 +148,9 @@ def show_dashboard(list_orders, get_db, download_pdf, update_status):
                 elif status == "PAID":
                     st.info("Commande en file d’attente. Le serveur la prendra en charge automatiquement ; vous pouvez fermer cette page.")
                     render_progress(order)
+                elif status == "CANCELLED":
+                    st.info("Commande annulée. Elle ne sera plus générée automatiquement. Les fichiers existants sont conservés.")
+                    st.caption("Un appel IA déjà lancé peut encore se terminer et être facturé. Aucun remboursement automatique n’est effectué.")
                 else:
                     render_progress(order)
                 if status == "GENERATION_INTERRUPTED":
@@ -173,4 +178,20 @@ def show_dashboard(list_orders, get_db, download_pdf, update_status):
                 if status == "SHIPPED" and st.button("Marquer comme livrée", key=f"deliver_{ref}"):
                     update_status(order, "DELIVERED")
                     st.rerun()
+                if status in CANCELLABLE_STATUSES:
+                    with st.expander("Annuler la commande"):
+                        st.caption("La commande restera dans l’historique, avec ses fichiers. Aucun remboursement automatique n’est effectué.")
+                        if status == "GENERATING":
+                            st.warning("Le moteur s’arrêtera au prochain point de contrôle. Un appel IA déjà lancé peut se terminer et être facturé.")
+                        confirm_cancel = st.checkbox("Je confirme l’annulation de cette commande.", key=f"cancel_confirm_{ref}")
+                        if st.button("Confirmer l’annulation", key=f"cancel_{ref}", disabled=not confirm_cancel):
+                            try:
+                                cancelled = cancel_order(get_db(), ref, status)
+                            except Exception:
+                                st.error("L’annulation n’a pas pu être enregistrée. Réessayez dans quelques instants.")
+                            else:
+                                if cancelled:
+                                    st.rerun()
+                                else:
+                                    st.warning("Le statut a changé. Actualisez la page avant de confirmer à nouveau.")
     live_orders()

@@ -8,6 +8,7 @@ import threading
 
 from order_production import get_supabase_client, normalize_order
 from production_status import failed_progress
+from order_actions import ProductionStopped
 
 
 def save_journal(path, order_ref):
@@ -42,6 +43,8 @@ def process_once(db, journal, generate):
     order = normalize_order(claimed[0])
     try:
         generate(order)
+    except ProductionStopped:
+        logging.info("Production arrêtée pour %s ; commande et fichiers conservés.", order["order_ref"])
     except Exception as exc:
         logging.exception("Production interrompue pour %s", order["order_ref"])
         # Do not automatically retry costly AI failures. The owner can requeue in Admin.

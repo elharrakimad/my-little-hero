@@ -6,6 +6,7 @@ import re
 import time
 from pathlib import Path
 from production_status import ProgressTracker
+from order_actions import save_production_fields
 
 SUPABASE_BUCKET = "my-little-hero-files"
 ADMIN_WORK_DIR = Path(os.getenv("MLH_WORK_DIR", "worker_orders"))
@@ -80,12 +81,7 @@ def storage_upload(supabase, storage_path: str, local_path: Path, content_type: 
 def update_order_fields(order_ref: str, fields: dict):
     def operation():
         supabase = get_supabase_client()
-        return (
-            supabase.table("orders")
-            .update(fields)
-            .eq("order_ref", order_ref)
-            .execute()
-        )
+        return save_production_fields(supabase, order_ref, fields)
 
     return _retry_storage(
         operation,

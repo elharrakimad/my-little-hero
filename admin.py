@@ -306,10 +306,10 @@ def whatsapp_link(phone):
 
 def update_status(order, status):
     now = datetime.now().isoformat(timespec="seconds")
-    update_order_fields(
-        order["order_ref"],
-        {"status": status},
-    )
+    result = (get_supabase_client().table("orders").update({"status": status})
+        .eq("order_ref", order["order_ref"]).eq("status", order["status"]).execute())
+    if not result.data:
+        return
     order["status"] = status
     order["updated_at"] = now
 
