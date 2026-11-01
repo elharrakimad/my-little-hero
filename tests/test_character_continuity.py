@@ -40,6 +40,22 @@ class ContinuityTests(unittest.TestCase):
         context = continuity.continuity_context(sample_story(), 1)
         self.assertIn('Secondaires présents dans cette scène : aucun', context)
 
+    def test_child_outfit_is_fixed_by_cover_for_story_pages_and_medallion(self):
+        for page in (1, 8, 10):
+            context = continuity.continuity_context(sample_story(), page)
+            self.assertIn(continuity.CHILD_OUTFIT_INSTRUCTION, context)
+            self.assertIn('couverture validée fait autorité', context)
+            self.assertIn('médaillon final', context)
+            self.assertIn('chaussures', context)
+            self.assertIn('motifs', context)
+        with tempfile.TemporaryDirectory() as folder:
+            folder = Path(folder)
+            (folder/'cover.png').write_bytes(b'approved outfit')
+            refs = continuity.reference_paths(sample_story(), 1, folder/'child.png', folder/'cover.png', folder)
+            roles = continuity.reference_roles(refs)
+            self.assertIn('ses vêtements remplacent la tenue neutre', roles)
+            self.assertIn('référence prioritaire et immuable de la tenue', roles)
+
     def test_legacy_stories_reuse_existing_images_without_rewriting_story(self):
         legacy = sample_story().split('PERSONNAGES_JSON')[0]
         with tempfile.TemporaryDirectory() as folder:
@@ -74,6 +90,7 @@ class ContinuityTests(unittest.TestCase):
                 handles.extend(kw['image'])
                 self.assertEqual([Path(h.name).name for h in kw['image']], ['child.png','cover.png','page_02.png'])
                 self.assertIn('Tresse unique', kw['prompt'])
+                self.assertIn(continuity.CHILD_OUTFIT_INSTRUCTION, kw['prompt'])
                 self.assertIn('Image 3:', kw['prompt'])
                 return SimpleNamespace(data=[SimpleNamespace(b64_json=base64.b64encode(b'new image').decode())])
             client.images.edit.side_effect = edit

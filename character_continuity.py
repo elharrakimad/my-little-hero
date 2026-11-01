@@ -4,6 +4,20 @@ from pathlib import Path
 import re
 from anime_cast import secondary_reference_path
 
+CHILD_OUTFIT_INSTRUCTION = (
+    "TENUE FIXE DE L’ENFANT POUR TOUTE L’HISTOIRE : lorsque l’enfant est dessiné, "
+    "la couverture validée fait autorité pour sa tenue, même si la référence de son visage "
+    "porte des vêtements neutres différents. Conserver exactement les mêmes haut, bas, "
+    "manches, chaussures, gants, ceinture, cape, masque, coiffure et accessoires portés, "
+    "avec les mêmes formes, coupes, longueurs, motifs et détails distinctifs. "
+    "En noir et blanc, traduire les couleurs en zones blanches à colorier, sans changer "
+    "les motifs ni remplir les vêtements. Ne pas inventer de changement de costume, "
+    "uniforme, armure, transformation ou accessoire vestimentaire au fil des scènes. "
+    "La pose et l’expression peuvent évoluer ; l’identité et la tenue restent identiques, "
+    "y compris sur le médaillon final. Si aucune couverture n’est fournie, garder la tenue "
+    "de la référence initiale de l’enfant."
+)
+
 CAST_INSTRUCTIONS = """
 PERSONNAGES SECONDAIRES RÉCURRENTS
 Définis une seule apparence immuable pour chaque compagnon, animal ou adversaire :
@@ -59,15 +73,15 @@ def continuity_context(story, page_number, page_total=10):
         present_ids = [c["id"] for c in cast if min(page_number, page_total) in c["pages"]]
         present = "Secondaires présents dans cette scène : " + (", ".join(present_ids) or "aucun")
     return ("FICHE COMMUNE DES PERSONNAGES (identités fixes, ne pas imprimer ce texte) :\n"
-        + profiles + "\n" + present + "\nNe pas fusionner, échanger, rajeunir ou redessiner les identités. "
+        + CHILD_OUTFIT_INSTRUCTION + "\n" + profiles + "\n" + present + "\nNe pas fusionner, échanger, rajeunir ou redessiner les identités. "
         "Les poses et expressions peuvent changer ; les visages, coiffures, silhouettes, tenues et accessoires restent fixes.")
 
 
 def reference_paths(story, page_number, reference, cover, pages_folder, page_total=10, secondary_folder=None):
     """Keep the child's image first; use first appearances instead of drifting copies."""
-    result = [(Path(reference), "Identité prioritaire de l’enfant principal : conserver son visage et sa coiffure.")]
+    result = [(Path(reference), "Identité prioritaire de l’enfant principal : conserver son visage et sa coiffure. Si la couverture est fournie, ses vêtements remplacent la tenue neutre de cette référence.")]
     if cover and Path(cover).is_file() and Path(cover).stat().st_size:
-        result.append((Path(cover), "Couverture validée : apparence des personnages déjà visibles, tenues et univers ; ignorer son texte et ses couleurs pour le coloriage."))
+        result.append((Path(cover), "Couverture validée : référence prioritaire et immuable de la tenue de l’enfant, de ses chaussures et accessoires, ainsi que de l’univers et des secondaires visibles. Ignorer le texte ; conserver tous les motifs et détails de la tenue en contours noirs sur fond blanc."))
     cast = cast_from_story(story, page_total)
     if cast is None:
         anchors = list(range(1, min(page_number, page_total + 1)))

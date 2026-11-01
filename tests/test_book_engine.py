@@ -79,6 +79,7 @@ class BookEngineTests(unittest.TestCase):
                         visual_reference_instruction=visual_reference_instruction,
                         coloring_instruction=__import__("age_profile").coloring_instruction,
                         CAST_INSTRUCTIONS=__import__("character_continuity").CAST_INSTRUCTIONS,
+                        CHILD_OUTFIT_INSTRUCTION=__import__("character_continuity").CHILD_OUTFIT_INSTRUCTION,
                         cast_from_story=__import__("character_continuity").cast_from_story,
                         cast_limit=__import__("anime_cast").cast_limit,
                         anime_cast_instruction=__import__("anime_cast").anime_cast_instruction,

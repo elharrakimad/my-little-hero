@@ -5,7 +5,7 @@ import html
 import re
 from pathlib import Path
 from contextlib import ExitStack
-from character_continuity import CAST_INSTRUCTIONS, cast_from_story, continuity_context, reference_paths, reference_roles
+from character_continuity import CAST_INSTRUCTIONS, CHILD_OUTFIT_INSTRUCTION, cast_from_story, continuity_context, reference_paths, reference_roles
 from anime_cast import anime_cast_instruction, cast_limit, secondary_reference_folder, secondary_reference_path
 from child_profile import gender_instruction
 from age_profile import coloring_instruction
@@ -361,6 +361,8 @@ d'une page à l'autre.
 Ne change pas son âge, son apparence générale,
 sa coiffure ou ses caractéristiques principales
 entre les différentes scènes.
+{CHILD_OUTFIT_INSTRUCTION}
+N’écris aucune scène exigeant de changer les vêtements ou accessoires portés par l’enfant.
 
 À LA FIN DE L'HISTOIRE
 La PAGE 10 doit terminer l'aventure avec une conclusion positive
