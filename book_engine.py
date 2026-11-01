@@ -71,6 +71,13 @@ def generate_book_from_adventure(
     if not engine.BOOK_TITLE:
         raise ValueError("Titre de livre manquant.")
 
+    # The approved cover must be available as a visual anchor before interiors.
+    if preview_cover_path:
+        preview_cover = Path(preview_cover_path)
+        if not preview_cover.exists():
+            raise FileNotFoundError(f"Couverture d'aperçu introuvable : {preview_cover}")
+        shutil.copy2(preview_cover, engine.COVER_FILE)
+
     print(f"📚 Titre définitif : {engine.BOOK_TITLE}")
 
     if not Path(engine.STORY_FILE).exists() or not Path(engine.STORY_FILE).stat().st_size:
@@ -86,18 +93,10 @@ def generate_book_from_adventure(
             "Le titre de PAGE 1 ne correspond pas au titre choisi dans l'aperçu."
         )
 
-    engine.generate_all_pages(progress=progress)
-
-    if preview_cover_path:
-        preview_cover = Path(preview_cover_path)
-        if not preview_cover.exists():
-            raise FileNotFoundError(
-                f"Couverture d'aperçu introuvable : {preview_cover}"
-            )
-        shutil.copy2(preview_cover, engine.COVER_FILE)
-        print(f"🖼️ Couverture validée réutilisée : {preview_cover}")
-    else:
+    if not preview_cover_path:
         engine.generate_cover()
+
+    engine.generate_all_pages(progress=progress)
 
     if progress:
         progress("pdf", "Création du médaillon souvenir personnalisé", page_index=10, page_total=10)

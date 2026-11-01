@@ -4,6 +4,8 @@ import hashlib
 import html
 import re
 from pathlib import Path
+from contextlib import ExitStack
+from character_continuity import CAST_INSTRUCTIONS, cast_from_story, continuity_context, reference_paths, reference_roles
 from child_profile import gender_instruction
 from age_profile import coloring_instruction
 from story_reference import visual_reference_instruction
@@ -375,6 +377,7 @@ Après la scène de PAGE 10, ajoute ce bloc distinct, sans nouvelle page d'histo
 SOUVENIR
 Félicitations : une phrase de 110 caractères maximum qui félicite l'enfant
 pour la mission réellement accomplie. Rédige cette phrase dans {LANGUAGE}.
+{CAST_INSTRUCTIONS}
 """
 
     response = client.responses.create(
@@ -383,6 +386,9 @@ pour la mission réellement accomplie. Rédige cette phrase dans {LANGUAGE}.
     )
 
     story = response.output_text
+
+    if cast_from_story(story, NUMBER_OF_PAGES) is None:
+        raise ValueError("Fiche des personnages absente : vérifier PERSONNAGES_JSON avant les illustrations.")
 
     atomic_write_bytes(STORY_FILE, story.encode("utf-8"))
 
@@ -473,10 +479,10 @@ def generate_page(page_number, page_content):
         f"❌ Image de référence introuvable : {REFERENCE_IMAGE}"
     )
 
-    reference_image = None
-
-    try:
-        reference_image = open(REFERENCE_IMAGE, "rb")
+    story = Path(STORY_FILE).read_text(encoding="utf-8")
+    references = reference_paths(story, page_number, REFERENCE_IMAGE, COVER_FILE, PAGES_FOLDER, NUMBER_OF_PAGES)
+    with ExitStack() as stack:
+        reference_images = [stack.enter_context(path.open("rb")) for path, _ in references]
 
         prompt = f"""
 {gender_instruction(CHILD_GENDER)}
@@ -500,6 +506,12 @@ visuels établis dans les pages précédentes.
 
 Si des personnages secondaires récurrents apparaissent dans la scène,
 conserve également leur apparence de manière cohérente.
+
+{continuity_context(story, page_number, NUMBER_OF_PAGES)}
+RÔLE DES IMAGES DE RÉFÉRENCE :
+{reference_roles(references)}
+Les premières apparitions font autorité pour les secondaires. Ne remplace pas
+un compagnon par un autre et n'ajoute pas toute la distribution à chaque page.
 
 THÈME DU LIVRE :
 {THEME}
@@ -558,7 +570,7 @@ d'un véritable livre de coloriage pour enfants.
 
         result = client.images.edit(
             model="gpt-image-2",
-            image=[reference_image],
+            image=reference_images,
             prompt=prompt,
             size="1024x1536",
             quality="medium"
@@ -570,11 +582,6 @@ d'un véritable livre de coloriage pour enfants.
         atomic_write_bytes(filename, image_bytes)
 
         print(f"✅ Page {page_number} créée : {filename}")
-
-    finally:
-        if reference_image is not None:
-            reference_image.close()
-
 
 def generate_all_pages(progress=None):
     print("\n" + "=" * 60)
@@ -745,13 +752,18 @@ def generate_keepsake_medallion():
     if REUSE_EXISTING_FILES and Path(KEEPSAKE_IMAGE).exists():
         return
     pages = story_pages(Path(STORY_FILE).read_text(encoding="utf-8"), NUMBER_OF_PAGES)
-    with open(REFERENCE_IMAGE, "rb") as reference:
+    story = Path(STORY_FILE).read_text(encoding="utf-8")
+    references = reference_paths(story, NUMBER_OF_PAGES+1, REFERENCE_IMAGE, COVER_FILE, PAGES_FOLDER, NUMBER_OF_PAGES)
+    with ExitStack() as stack:
+        reference_images = [stack.enter_context(path.open("rb")) for path, _ in references]
         result = client.images.edit(
-            model="gpt-image-2", image=[reference], size="1024x1024", quality="medium",
+            model="gpt-image-2", image=reference_images, size="1024x1024", quality="medium",
             prompt=f"""Crée uniquement le médaillon souvenir à colorier de {NAME}, {AGE} ans.
 {gender_instruction(CHILD_GENDER)}
 Conserve exactement le personnage de référence : visage, coiffure, âge, apparence.
 Univers : {THEME}. Mission accomplie : {pages[-1]["scene"]}.
+{continuity_context(story, NUMBER_OF_PAGES, NUMBER_OF_PAGES)}
+{reference_roles(references)}
 Personnage principal fier et souriant, au centre, buste ou corps en entier dans
 un médaillon circulaire très simple. Ajouter le compagnon uniquement si la scène
 le mentionne et si cela reste lisible. Tous les traits restent dans le cercle.

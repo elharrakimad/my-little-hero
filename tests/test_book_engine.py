@@ -12,6 +12,24 @@ from story_reference import visual_reference_instruction
 
 
 class BookEngineTests(unittest.TestCase):
+    def test_approved_cover_is_available_before_any_interior_illustration(self):
+        engine = MagicMock()
+        engine.get_book_title.side_effect = lambda: engine.BOOK_TITLE
+        engine.generate_pdf.side_effect = lambda: Path(engine.OUTPUT_FILE).write_bytes(b"completed pdf")
+        with patch.dict("sys.modules", {"generate_book": engine}):
+            wrapper = runpy.run_path("book_engine.py")["generate_book_from_adventure"]
+        with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()):
+            directory = Path(directory)
+            cover = directory / "approved.png"
+            cover.write_bytes(b"approved cover")
+            def pages(**kwargs):
+                self.assertEqual(Path(engine.COVER_FILE).read_bytes(), b"approved cover")
+            engine.generate_all_pages.side_effect = pages
+            wrapper(child_name="Camille", age=7, theme="Science", language="Français",
+                client_idea="", child_quality="", book_title="Titre", reference_path="reference.png",
+                output_dir=directory/"book", preview_cover_path=cover)
+            engine.generate_cover.assert_not_called()
+
     def test_interrupted_book_reuses_story_and_finishes_pdf_atomically(self):
         engine = MagicMock()
         engine.get_book_title.side_effect = lambda: engine.BOOK_TITLE
@@ -55,11 +73,13 @@ class BookEngineTests(unittest.TestCase):
         for gender, expected in (("girl", "une fille"), ("boy", "un garçon")):
             for language in ("Français", "العربية", "English", "Español"):
                 client = MagicMock()
-                client.responses.create.return_value.output_text = "PAGE 1\nTitre"
+                client.responses.create.return_value.output_text = 'PAGE 1\nTitre\nSOUVENIR\nFélicitations : Bravo !\nPERSONNAGES_JSON\n{"characters":[]}'
                 with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()):
                     namespace = dict(Path=Path, gender_instruction=gender_instruction, client=client,
                         visual_reference_instruction=visual_reference_instruction,
                         coloring_instruction=__import__("age_profile").coloring_instruction,
+                        CAST_INSTRUCTIONS=__import__("character_continuity").CAST_INSTRUCTIONS,
+                        cast_from_story=__import__("character_continuity").cast_from_story,
                         CHILD_GENDER=gender, NAME="Camille", AGE=7, THEME="Science", LANGUAGE=language,
                         CLIENT_IDEA="", CHILD_QUALITY="", BOOK_TITLE="Titre", NUMBER_OF_PAGES=10,
                         STORY_FILE=str(Path(directory) / "story.txt"))
