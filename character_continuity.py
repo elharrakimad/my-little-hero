@@ -3,12 +3,13 @@ import json
 from pathlib import Path
 import re
 from anime_cast import secondary_reference_path
+from character_identity import IDENTITY_INSTRUCTION
 
 CHILD_OUTFIT_INSTRUCTION = (
     "TENUE FIXE DE L’ENFANT POUR TOUTE L’HISTOIRE : lorsque l’enfant est dessiné, "
     "la couverture validée fait autorité pour sa tenue, même si la référence de son visage "
     "porte des vêtements neutres différents. Conserver exactement les mêmes haut, bas, "
-    "manches, chaussures, gants, ceinture, cape, masque, coiffure et accessoires portés, "
+    "manches, chaussures, gants, ceinture, cape, masque et accessoires portés, "
     "avec les mêmes formes, coupes, longueurs, motifs et détails distinctifs. "
     "En noir et blanc, traduire les couleurs en zones blanches à colorier, sans changer "
     "les motifs ni remplir les vêtements. Ne pas inventer de changement de costume, "
@@ -81,13 +82,13 @@ def continuity_context(story, page_number, page_total=10, book_style="coloring")
         present_ids = [c["id"] for c in cast if min(page_number, page_total) in c["pages"]]
         present = "Secondaires présents dans cette scène : " + (", ".join(present_ids) or "aucun")
     return ("FICHE COMMUNE DES PERSONNAGES (identités fixes, ne pas imprimer ce texte) :\n"
-        + child_outfit_instruction(book_style) + "\n" + profiles + "\n" + present + "\nNe pas fusionner, échanger, rajeunir ou redessiner les identités. "
+        + child_outfit_instruction(book_style) + "\n" + profiles + "\n" + present + "\n" + IDENTITY_INSTRUCTION + "\nNe pas fusionner, échanger, rajeunir ou redessiner les identités. "
         "Les poses et expressions peuvent changer ; les visages, coiffures, silhouettes, tenues et accessoires restent fixes.")
 
 
 def reference_paths(story, page_number, reference, cover, pages_folder, page_total=10, secondary_folder=None, book_style="coloring"):
     """Keep the child's image first; use first appearances instead of drifting copies."""
-    result = [(Path(reference), "Identité prioritaire de l’enfant principal : conserver son visage et sa coiffure. Si la couverture est fournie, ses vêtements remplacent la tenue neutre de cette référence.")]
+    result = [(Path(reference), "Identité prioritaire de l’enfant principal : conserver exactement son visage et sa coiffure, y compris si la scène, le thème ou la couverture les contredisent. Si la couverture est fournie, ses vêtements remplacent la tenue neutre de cette référence.")]
     if cover and Path(cover).is_file() and Path(cover).stat().st_size:
         result.append((Path(cover), "Couverture validée : référence prioritaire et immuable de la tenue de l’enfant, de ses chaussures et accessoires, ainsi que de l’univers et des secondaires visibles. Ignorer le texte ; conserver tous les motifs et détails de la tenue en contours noirs sur fond blanc."))
         if book_style == "colored":

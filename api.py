@@ -12,6 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from openai import OpenAI
 from supabase import create_client
 from child_profile import gender_instruction
+from character_identity import IDENTITY_INSTRUCTION
 from story_reference import visual_reference_instruction
 from anime_cast import anime_cast_instruction
 from book_style import validate_book_style, cover_subtitle
@@ -183,6 +184,7 @@ Crée la couverture couleur professionnelle d'un livre jeunesse personnalisé.
 Utilise l'image fournie comme référence principale du personnage.
 Le personnage doit rester reconnaissable : même visage général,
 même coiffure, même âge apparent et même apparence générale.
+{IDENTITY_INSTRUCTION}
 
 PERSONNAGE : {name}, {age} ans
 THÈME : {theme}
@@ -289,6 +291,7 @@ L'enfant s'appelle {name} et a {age} ans.
 
 IMPORTANT : conserver les traits généraux du visage, la coiffure,
 l'apparence générale reconnaissable et l'âge apparent.
+{IDENTITY_INSTRUCTION}
 Créer un personnage original, avec une tenue simple et neutre.
 Illustration jeunesse professionnelle, composition verticale,
 personnage visible en entier, arrière-plan simple.

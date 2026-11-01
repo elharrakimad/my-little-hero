@@ -9,6 +9,7 @@ import json
 import re
 import unittest
 import uuid
+from character_identity import IDENTITY_INSTRUCTION
 
 
 class RequestError(Exception):
@@ -22,7 +23,7 @@ def production_namespace():
     functions = [n for n in tree.body if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef)) and n.name in names]
     for function in functions:
         function.decorator_list = []
-    ns = dict(re=re, json=json, HTTPException=RequestError, Form=lambda default: default,
+    ns = dict(IDENTITY_INSTRUCTION=IDENTITY_INSTRUCTION, re=re, json=json, HTTPException=RequestError, Form=lambda default: default,
               File=lambda default: default, UploadFile=object, base64=base64,
               MAX_PHOTO_BYTES=8*1024*1024, datetime=datetime, uuid=uuid, validate_book_style=__import__("book_style").validate_book_style)
     exec(compile(ast.Module(body=functions, type_ignores=[]), "api.py", "exec"), ns)

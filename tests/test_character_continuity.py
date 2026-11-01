@@ -25,6 +25,20 @@ def sample_story():
 
 
 class ContinuityTests(unittest.TestCase):
+    def test_initial_identity_has_priority_on_every_page_and_keepsake_in_both_styles(self):
+        from character_identity import IDENTITY_INSTRUCTION
+        with tempfile.TemporaryDirectory() as directory:
+            folder = Path(directory)
+            (folder/'child.png').write_bytes(b'initial identity')
+            (folder/'cover.png').write_bytes(b'outfit')
+            for style in ('coloring', 'colored'):
+                for page in range(1, 12):
+                    refs = continuity.reference_paths(sample_story(), page, folder/'child.png',
+                        folder/'cover.png', folder, book_style=style)
+                    self.assertEqual(refs[0][0].read_bytes(), b'initial identity')
+                    self.assertIn('la couverture les contredisent', refs[0][1])
+                    self.assertIn(IDENTITY_INSTRUCTION, continuity.continuity_context(sample_story(), page, book_style=style))
+
     def test_recurring_friend_uses_first_appearance_after_a_long_absence(self):
         with tempfile.TemporaryDirectory() as folder:
             folder = Path(folder)

@@ -10,6 +10,7 @@ from anime_cast import anime_cast_instruction, cast_limit, secondary_reference_f
 from story_language import story_language_instruction, repair_arabic_story, validate_printed_language
 from book_style import illustration_direction, cover_subtitle, page_composition
 from child_profile import gender_instruction
+from character_identity import IDENTITY_INSTRUCTION, STORY_IDENTITY_INSTRUCTION
 from age_profile import coloring_instruction
 from story_reference import visual_reference_instruction
 from book_layout import build_book_pdf
@@ -196,6 +197,7 @@ IMPORTANT :
 - aucun texte, logo ou watermark
 
 Cette image servira de référence pour toutes les illustrations du livre.
+{IDENTITY_INSTRUCTION}
 """
 
         result = client.images.edit(
@@ -260,6 +262,7 @@ ses actions et ses décisions plutôt que de simplement la mentionner.
 PERSONNAGE PRINCIPAL
 L'enfant doit être le personnage principal de l'histoire, héros ou héroïne selon le choix indiqué.
 Son prénom doit apparaître naturellement dans l'histoire.
+{STORY_IDENTITY_INSTRUCTION}
 
 OBJECTIF
 Créer une histoire amusante, captivante, éducative et adaptée à l'âge
@@ -695,6 +698,7 @@ Le personnage doit rester reconnaissable :
 - même âge apparent
 
 Le personnage principal est l'enfant du livre.
+{IDENTITY_INSTRUCTION}
 
 THÈME :
 {THEME}

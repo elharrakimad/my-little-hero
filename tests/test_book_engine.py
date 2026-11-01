@@ -1,4 +1,5 @@
 from book_content import normalize_story_structure
+from character_identity import STORY_IDENTITY_INSTRUCTION
 import ast
 import contextlib
 import io
@@ -76,7 +77,7 @@ class BookEngineTests(unittest.TestCase):
                 client = MagicMock()
                 client.responses.create.return_value.output_text = 'PAGE 1\nTitre\nSOUVENIR\nFélicitations : Bravo !\nPERSONNAGES_JSON\n{"characters":[]}'
                 with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()):
-                    namespace = dict(normalize_story_structure=normalize_story_structure, Path=Path, gender_instruction=gender_instruction, client=client,
+                    namespace = dict(STORY_IDENTITY_INSTRUCTION=STORY_IDENTITY_INSTRUCTION, normalize_story_structure=normalize_story_structure, Path=Path, gender_instruction=gender_instruction, client=client,
                         visual_reference_instruction=visual_reference_instruction,
                         coloring_instruction=__import__("age_profile").coloring_instruction,
                         illustration_direction=__import__("book_style").illustration_direction,
@@ -94,6 +95,7 @@ class BookEngineTests(unittest.TestCase):
                     exec(compile(ast.Module(body=[atomic], type_ignores=[]), "generate_book.py", "exec"), namespace)
                     exec(compile(ast.Module(body=[function], type_ignores=[]), "generate_book.py", "exec"), namespace)
                     namespace["generate_story"]()
+                    self.assertIn(STORY_IDENTITY_INSTRUCTION, client.responses.create.call_args.kwargs['input'])
                     prompt = client.responses.create.call_args.kwargs["input"]
                     self.assertIn(expected, prompt)
                     self.assertIn(language, prompt)
