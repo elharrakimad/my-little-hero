@@ -54,6 +54,11 @@ document.addEventListener("DOMContentLoaded",()=>{
     const cards=document.createElement("div");cards.className="theme-group-grid";
     const entries=catalog.filter(t=>t.category===group.id).map(buttonFor);
     const subgroups=[];
+    let inspirationNote=null;
+    if(group.id==="anime"){
+      inspirationNote=document.createElement("p");
+      inspirationNote.className="anime-inspiration-note";
+    }
     if(group.id==="anime"&&animeSeries.length){
       cards.className="theme-series-list";
       for(const item of animeSeries){
@@ -66,8 +71,10 @@ document.addEventListener("DOMContentLoaded",()=>{
         section.append(heading,container);cards.append(section);subgroups.push({section,name,amount,item,members});
       }
     }else entries.forEach(entry=>cards.append(entry.button));
-    details.append(summary,cards);grid.append(details);
-    return {details,title,count,group,entries,subgroups};
+    details.append(summary);
+    if(inspirationNote)details.append(inspirationNote);
+    details.append(cards);grid.append(details);
+    return {details,title,count,group,entries,subgroups,inspirationNote};
   });
   function render(resetOpen=false){
     const ar=document.documentElement.lang==="ar";
@@ -89,6 +96,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     toggle.setAttribute("aria-pressed",String(showAll));
     custom.label.textContent=ar?custom.theme.ar:custom.theme.label;
     for(const item of groups){
+      if(item.inspirationNote)item.inspirationNote.textContent=ar
+        ?"المغامرات مستوحاة من عوالم وأجواء مسلسلات الأنمي هذه. الشخصيات تكييفات مخصصة وليست نسخًا مطابقة للشخصيات الأصلية."
+        :"Les aventures proposées s’inspirent des mondes et des ambiances de ces anime. Les personnages sont des adaptations personnalisées et ne sont pas des reproductions identiques.";
       let count=0;
       for(const entry of item.entries){
         entry.button.hidden=!matches.has(entry.theme);
