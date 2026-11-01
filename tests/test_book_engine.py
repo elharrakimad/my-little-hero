@@ -80,6 +80,8 @@ class BookEngineTests(unittest.TestCase):
                         coloring_instruction=__import__("age_profile").coloring_instruction,
                         CAST_INSTRUCTIONS=__import__("character_continuity").CAST_INSTRUCTIONS,
                         cast_from_story=__import__("character_continuity").cast_from_story,
+                        cast_limit=__import__("anime_cast").cast_limit,
+                        anime_cast_instruction=__import__("anime_cast").anime_cast_instruction,
                         CHILD_GENDER=gender, NAME="Camille", AGE=7, THEME="Science", LANGUAGE=language,
                         CLIENT_IDEA="", CHILD_QUALITY="", BOOK_TITLE="Titre", NUMBER_OF_PAGES=10,
                         STORY_FILE=str(Path(directory) / "story.txt"))

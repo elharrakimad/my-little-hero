@@ -82,6 +82,8 @@ class ContinuityTests(unittest.TestCase):
                 visual_reference_instruction=visual_reference_instruction,
                 continuity_context=continuity.continuity_context, reference_paths=continuity.reference_paths,
                 reference_roles=continuity.reference_roles, client=client, CHILD_GENDER='boy', AGE=10, THEME='Forêt',
+                secondary_reference_folder=__import__('anime_cast').secondary_reference_folder,
+                anime_cast_instruction=__import__('anime_cast').anime_cast_instruction,
                 PAGES_FOLDER=folder, STORY_FILE=folder/'story.txt', COVER_FILE=folder/'cover.png',
                 REFERENCE_IMAGE=folder/'child.png', REUSE_EXISTING_FILES=True, NUMBER_OF_PAGES=10)
             exec(compile(functions, 'generate_book.py', 'exec'), ns)

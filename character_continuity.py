@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 import re
+from anime_cast import secondary_reference_path
 
 CAST_INSTRUCTIONS = """
 PERSONNAGES SECONDAIRES RÉCURRENTS
@@ -22,14 +23,14 @@ Ces métadonnées ne font pas partie du texte imprimé du livre.
 """
 
 
-def cast_from_story(story, page_total=10):
+def cast_from_story(story, page_total=10, max_characters=6):
     parts = re.split(r"(?m)^\s*PERSONNAGES_JSON\s*$", story, maxsplit=1)
     if len(parts) == 1:
         return None  # Legacy stories keep their original text and illustrations.
     try:
         data = json.loads(parts[1].strip())
         rows = data["characters"]
-        if not isinstance(rows, list) or len(rows) > 6:
+        if not isinstance(rows, list) or len(rows) > max_characters:
             raise ValueError
         ids = set()
         for row in rows:
@@ -43,7 +44,7 @@ def cast_from_story(story, page_total=10):
                 raise ValueError
         return rows
     except (ValueError, TypeError, KeyError, AttributeError) as exc:
-        raise ValueError("Fiche des personnages invalide : vérifier PERSONNAGES_JSON avant les illustrations.") from exc
+        raise ValueError(f"Fiche des personnages invalide : maximum {max_characters} secondaires. Vérifier PERSONNAGES_JSON avant les illustrations.") from exc
 
 
 def continuity_context(story, page_number, page_total=10):
@@ -62,7 +63,7 @@ def continuity_context(story, page_number, page_total=10):
         "Les poses et expressions peuvent changer ; les visages, coiffures, silhouettes, tenues et accessoires restent fixes.")
 
 
-def reference_paths(story, page_number, reference, cover, pages_folder, page_total=10):
+def reference_paths(story, page_number, reference, cover, pages_folder, page_total=10, secondary_folder=None):
     """Keep the child's image first; use first appearances instead of drifting copies."""
     result = [(Path(reference), "Identité prioritaire de l’enfant principal : conserver son visage et sa coiffure.")]
     if cover and Path(cover).is_file() and Path(cover).stat().st_size:
@@ -72,6 +73,13 @@ def reference_paths(story, page_number, reference, cover, pages_folder, page_tot
         anchors = list(range(1, min(page_number, page_total + 1)))
     else:
         target = min(page_number, page_total)
+        if secondary_folder:
+            for character in cast:
+                if target in character["pages"]:
+                    path = secondary_reference_path(secondary_folder, character)
+                    if not path.is_file() or not path.stat().st_size:
+                        raise FileNotFoundError(f"Référence du personnage {character['name']} introuvable.")
+                    result.append((path, f"Référence dédiée prioritaire du personnage {character['id']} ({character['name']}) : conserver exactement cette identité, sa tenue et ses accessoires."))
         anchors = sorted({min(c["pages"]) for c in cast if target in c["pages"] and min(c["pages"]) < page_number})
     for number in anchors:
         path = Path(pages_folder) / f"page_{number:02d}.png"

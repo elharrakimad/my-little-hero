@@ -13,6 +13,7 @@ from openai import OpenAI
 from supabase import create_client
 from child_profile import gender_instruction
 from story_reference import visual_reference_instruction
+from anime_cast import anime_cast_instruction
 
 app = FastAPI(title="My Little Hero API", version="0.1.0")
 
@@ -196,6 +197,7 @@ avec l'enfant clairement au premier plan et un décor riche inspiré du thème.
 STYLE : illustration professionnelle de livre jeunesse, très colorée,
 chaleureuse, joyeuse, composition verticale, rendu premium.
 {visual_reference_instruction(theme)}
+{anime_cast_instruction(theme)}
 Aucun watermark ni texte supplémentaire.
 
 AFFICHER EXACTEMENT CES TEXTES :

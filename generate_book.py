@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 from contextlib import ExitStack
 from character_continuity import CAST_INSTRUCTIONS, cast_from_story, continuity_context, reference_paths, reference_roles
+from anime_cast import anime_cast_instruction, cast_limit, secondary_reference_folder, secondary_reference_path
 from child_profile import gender_instruction
 from age_profile import coloring_instruction
 from story_reference import visual_reference_instruction
@@ -377,7 +378,8 @@ Après la scène de PAGE 10, ajoute ce bloc distinct, sans nouvelle page d'histo
 SOUVENIR
 Félicitations : une phrase de 110 caractères maximum qui félicite l'enfant
 pour la mission réellement accomplie. Rédige cette phrase dans {LANGUAGE}.
-{CAST_INSTRUCTIONS}
+{CAST_INSTRUCTIONS.replace('six personnages secondaires', 'deux personnages secondaires') if cast_limit(THEME) == 2 else CAST_INSTRUCTIONS}
+{anime_cast_instruction(THEME)}
 """
 
     response = client.responses.create(
@@ -387,7 +389,7 @@ pour la mission réellement accomplie. Rédige cette phrase dans {LANGUAGE}.
 
     story = response.output_text
 
-    if cast_from_story(story, NUMBER_OF_PAGES) is None:
+    if cast_from_story(story, NUMBER_OF_PAGES, max_characters=cast_limit(THEME)) is None:
         raise ValueError("Fiche des personnages absente : vérifier PERSONNAGES_JSON avant les illustrations.")
 
     atomic_write_bytes(STORY_FILE, story.encode("utf-8"))
@@ -457,6 +459,45 @@ def get_book_title():
 
 
 
+def generate_secondary_character_references(progress=None):
+    folder = secondary_reference_folder(THEME, PAGES_FOLDER)
+    if folder is None:
+        return
+    story = Path(STORY_FILE).read_text(encoding="utf-8")
+    cast = cast_from_story(story, NUMBER_OF_PAGES, max_characters=2)
+    if cast is None:
+        # Never rewrite a legacy story or invent paid reference calls on a resume.
+        return
+    folder.mkdir(parents=True, exist_ok=True)
+    for index, character in enumerate(cast, 1):
+        output = secondary_reference_path(folder, character)
+        if output.is_file() and output.stat().st_size:
+            continue
+        if progress:
+            progress("illustrations", f"Référence du personnage secondaire {index}/{len(cast)} : {character['name']}", page_index=0, page_total=NUMBER_OF_PAGES)
+        references = [(Path(REFERENCE_IMAGE), "Enfant principal : ne pas le reproduire comme personnage secondaire.")]
+        if Path(COVER_FILE).is_file():
+            references.append((Path(COVER_FILE), "Couverture validée : reprendre l’apparence du secondaire s’il y est déjà visible."))
+        first = Path(PAGES_FOLDER) / f"page_{min(character['pages']):02d}.png"
+        if first.is_file() and first.stat().st_size:
+            references.append((first, "Première apparition conservée : préserver l’identité visuelle déjà dessinée."))
+        with ExitStack() as stack:
+            images = [stack.enter_context(path.open("rb")) for path, _ in references]
+            result = client.images.edit(model="gpt-image-2", image=images, size="1024x1536", quality="medium",
+                prompt=f"""Crée la fiche de référence visuelle d’UN SEUL personnage secondaire du livre.
+Personnage : {character['name']}. Identité fixe : {character['appearance']}.
+Univers : {THEME}.
+{reference_roles(references)}
+Une seule vue en pied, visage bien visible, pose neutre, tous les accessoires caractéristiques visibles.
+Ce n’est pas l’enfant principal. Aucun autre personnage, aucune foule ni silhouette.
+Respecter l’apparence déjà visible sur la couverture ou la première apparition, si ce personnage y est identifiable.
+Cette image restera la référence fixe pour toutes les pages et le médaillon.
+{coloring_instruction(AGE)}
+Fond blanc, aucun décor, ombre, gris, aplat noir, cadre, texte, lettre, numéro ou logo.
+""")
+        atomic_write_bytes(output, base64.b64decode(result.data[0].b64_json))
+
+
 def generate_page(page_number, page_content):
     filename = PAGES_FOLDER / f"page_{page_number:02d}.png"
 
@@ -480,7 +521,8 @@ def generate_page(page_number, page_content):
     )
 
     story = Path(STORY_FILE).read_text(encoding="utf-8")
-    references = reference_paths(story, page_number, REFERENCE_IMAGE, COVER_FILE, PAGES_FOLDER, NUMBER_OF_PAGES)
+    references = reference_paths(story, page_number, REFERENCE_IMAGE, COVER_FILE, PAGES_FOLDER, NUMBER_OF_PAGES,
+        secondary_folder=secondary_reference_folder(THEME, PAGES_FOLDER))
     with ExitStack() as stack:
         reference_images = [stack.enter_context(path.open("rb")) for path, _ in references]
 
@@ -508,9 +550,10 @@ Si des personnages secondaires récurrents apparaissent dans la scène,
 conserve également leur apparence de manière cohérente.
 
 {continuity_context(story, page_number, NUMBER_OF_PAGES)}
+{anime_cast_instruction(THEME)}
 RÔLE DES IMAGES DE RÉFÉRENCE :
 {reference_roles(references)}
-Les premières apparitions font autorité pour les secondaires. Ne remplace pas
+Les références dédiées des secondaires font autorité, puis leurs premières apparitions. Ne remplace pas
 un compagnon par un autre et n'ajoute pas toute la distribution à chaque page.
 
 THÈME DU LIVRE :
@@ -589,6 +632,7 @@ def generate_all_pages(progress=None):
     print("=" * 60)
 
     story = Path(STORY_FILE).read_text(encoding="utf-8")
+    generate_secondary_character_references(progress=progress)
 
     for page_number in range(1, NUMBER_OF_PAGES + 1):
         page_content = get_page(story, page_number)
@@ -677,6 +721,7 @@ Les textes doivent être grands, lisibles et bien intégrés
 dans le design.
 
 {visual_reference_instruction(THEME)}
+{anime_cast_instruction(THEME)}
 """
 
         result = client.images.edit(
@@ -753,7 +798,8 @@ def generate_keepsake_medallion():
         return
     pages = story_pages(Path(STORY_FILE).read_text(encoding="utf-8"), NUMBER_OF_PAGES)
     story = Path(STORY_FILE).read_text(encoding="utf-8")
-    references = reference_paths(story, NUMBER_OF_PAGES+1, REFERENCE_IMAGE, COVER_FILE, PAGES_FOLDER, NUMBER_OF_PAGES)
+    references = reference_paths(story, NUMBER_OF_PAGES+1, REFERENCE_IMAGE, COVER_FILE, PAGES_FOLDER, NUMBER_OF_PAGES,
+        secondary_folder=secondary_reference_folder(THEME, PAGES_FOLDER))
     with ExitStack() as stack:
         reference_images = [stack.enter_context(path.open("rb")) for path, _ in references]
         result = client.images.edit(
@@ -763,6 +809,7 @@ def generate_keepsake_medallion():
 Conserve exactement le personnage de référence : visage, coiffure, âge, apparence.
 Univers : {THEME}. Mission accomplie : {pages[-1]["scene"]}.
 {continuity_context(story, NUMBER_OF_PAGES, NUMBER_OF_PAGES)}
+{anime_cast_instruction(THEME)}
 {reference_roles(references)}
 Personnage principal fier et souriant, au centre, buste ou corps en entier dans
 un médaillon circulaire très simple. Ajouter le compagnon uniquement si la scène
@@ -807,8 +854,8 @@ def main():
         generate_story()
         BOOK_TITLE = get_book_title()
         print(f"📚 Titre généré : {BOOK_TITLE}")
-        generate_all_pages()
         generate_cover()
+        generate_all_pages()
 
     generate_keepsake_medallion()
     generate_pdf()
