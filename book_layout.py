@@ -4,6 +4,8 @@ from pathlib import Path
 from html import escape
 import math
 import re
+import io
+from PIL import Image as PILImage
 import reportlab
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle
@@ -128,10 +130,22 @@ def star(canvas, x, y, radius=5):
     canvas.drawPath(path, stroke=1, fill=0)
 
 
-def draw_image(canvas, image, x, y, width, height):
+def draw_image(canvas, image, x, y, width, height, compress_color=False):
     if not Path(image).exists():
         raise FileNotFoundError(image)
-    source = ImageReader(str(image))
+    if compress_color:
+        with PILImage.open(image) as original:
+            rgb = PILImage.new("RGB", original.size, "white")
+            if "A" in original.getbands():
+                rgb.paste(original.convert("RGB"), mask=original.getchannel("A"))
+            else:
+                rgb.paste(original.convert("RGB"))
+            encoded = io.BytesIO()
+            rgb.save(encoded, format="JPEG", quality=92, subsampling=0)
+            encoded.seek(0)
+            source = ImageReader(encoded)
+    else:
+        source = ImageReader(str(image))
     w, h = source.getSize()
     scale = min(width / w, height / h)
     canvas.drawImage(source, x+(width-w*scale)/2, y+(height-h*scale)/2,
@@ -147,7 +161,7 @@ def draw_centered(canvas, text, top, width, *, center, size=14, leading=20, titl
     return height
 
 
-def draw_story_page(canvas, title, text, image, number, config=DEFAULT_LAYOUT):
+def draw_story_page(canvas, title, text, image, number, config=DEFAULT_LAYOUT, book_style="coloring"):
     x, w = config.binding_margin, config.content_width
     text_bottom = config.bottom_margin + config.footer_band
     image_bottom = text_bottom + config.narrative_height + config.image_gap
@@ -167,7 +181,7 @@ def draw_story_page(canvas, title, text, image, number, config=DEFAULT_LAYOUT):
     draw_centered(canvas, title, title_top, w-20, center=config.center,
         size=config.title_size, leading=config.title_leading, title=True,
         max_height=config.title_band-16)
-    draw_image(canvas, image, x, image_bottom, w, image_top-image_bottom)
+    draw_image(canvas, image, x, image_bottom, w, image_top-image_bottom, compress_color=book_style == "colored")
     narrative.drawOn(canvas, x+7, text_bottom+(config.narrative_height-height)/2)
     star(canvas, config.center, config.bottom_margin-12, 13)
     canvas.setFont("MLHBody", 9)
@@ -199,7 +213,7 @@ def draw_keepsake_page(canvas, name, congratulations, medal, *, gender="", langu
     draw_centered(canvas, title, config.height-config.top_margin, w, center=center,
         size=config.souvenir_title_size, leading=34, title=True, max_height=68)
     draw_centered(canvas, congratulations, k.congratulations_top, w-26, center=center, size=config.body_size, leading=19, max_height=38)
-    draw_image(canvas, medal, center-k.medal_size/2, k.medal_bottom, k.medal_size, k.medal_size)
+    draw_image(canvas, medal, center-k.medal_size/2, k.medal_bottom, k.medal_size, k.medal_size, compress_color=book_style == "colored")
     # Outline ribbon, with white fill only. Every inscription is actual PDF text.
     canvas.setLineWidth(.85)
     canvas.setFillColorRGB(1, 1, 1)
@@ -245,14 +259,14 @@ def build_book_pdf(output, pages, medal, *, child_name, congratulations, gender=
     canvas.setTitle(f"{child_name} - " + ("livre de contes illustrés" if book_style == "colored" else "livre de contes à colorier"))
     canvas.setAuthor("My Little Hero")
     if cover:
-        draw_image(canvas, cover, 0, 0, config.width, config.height)
+        draw_image(canvas, cover, 0, 0, config.width, config.height, compress_color=True)
         canvas.showPage()
     number = 0
     for page in pages:
         for part_number, text in enumerate(split_narrative(page["text"], config)):
             number += 1
             title = page["title"] + (continuation if part_number else "")
-            draw_story_page(canvas, title, text, page["image"], number, config)
+            draw_story_page(canvas, title, text, page["image"], number, config, book_style=book_style)
     draw_keepsake_page(canvas, child_name, congratulations, medal, gender=gender, language=language, config=config, book_style=book_style)
     canvas.save()
     return output

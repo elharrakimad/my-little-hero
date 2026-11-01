@@ -8,6 +8,7 @@ from pathlib import Path
 from production_status import ProgressTracker
 from order_actions import save_production_fields
 from book_style import book_output_dir
+from pdf_storage import is_payload_too_large, optimize_saved_pdf
 
 SUPABASE_BUCKET = "my-little-hero-files"
 ADMIN_WORK_DIR = Path(os.getenv("MLH_WORK_DIR", "worker_orders"))
@@ -248,6 +249,8 @@ def generate_order(order):
             report("pdf", f"PDF du livre {index}/{total} conservé — aucune régénération", book_index=index, page_index=10, page_total=10)
             pdf_path = expected_pdf
         else:
+            if (order.get("generation_progress") or {}).get("upload_only"):
+                raise FileNotFoundError("Le PDF conservé est absent. Reprise limitée à l’enregistrement : aucun appel IA ne sera lancé.")
             pdf_path = generate_book_from_adventure(
                 child_name=order["child_name"],
                 age=int(order["age"]),
@@ -272,12 +275,18 @@ def generate_order(order):
         )
 
         report("upload", f"Envoi du PDF {index}/{total} vers le stockage privé", book_index=index)
-        storage_upload(
-            supabase,
-            remote_pdf_path,
-            pdf_path,
-            "application/pdf",
-        )
+        try:
+            storage_upload(supabase, remote_pdf_path, pdf_path, "application/pdf")
+        except Exception as exc:
+            if not is_payload_too_large(exc):
+                raise
+            report("pdf", "Optimisation du PDF existant pour le stockage — aucun appel IA", book_index=index)
+            before = pdf_path.stat().st_size
+            optimize_saved_pdf(pdf_path, order, adventure)
+            after = pdf_path.stat().st_size
+            logging.info("PDF optimisé pour %s : %d → %d octets", order["order_ref"], before, after)
+            report("upload", "Enregistrement du PDF optimisé — images existantes conservées", book_index=index)
+            storage_upload(supabase, remote_pdf_path, pdf_path, "application/pdf")
 
         if remote_pdf_path not in generated_files:
             generated_files.append(remote_pdf_path)
