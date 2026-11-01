@@ -31,9 +31,9 @@ def page_composition(style):
     if style == "coloring":
         return "Composition ouverte en vignette, éléments à distance des bords."
     return ("Composition plein cadre bord à bord, décor jusqu’aux quatre bords, aucune marge blanche. "
-        "Réserver le tiers supérieur à un décor calme pour le futur encadré de récit, sans visage "
-        "ni action essentielle. Personnages et action dans les deux tiers inférieurs, corps et pieds entiers, "
-        "éléments essentiels éloignés des bords pour un léger recadrage A4. Aucun texte ni encadré dans l’image.")
+        "L’image occupe sa propre page, sans aucun titre, récit, numéro ou encadré. "
+        "Utiliser librement toute la hauteur pour l’action. Personnages entiers, visages et pieds visibles, "
+        "éléments essentiels éloignés des bords pour un léger recadrage A4.")
 
 
 def cover_subtitle(language, style="coloring"):

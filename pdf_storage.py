@@ -26,7 +26,8 @@ def optimize_saved_pdf(pdf_path, order, adventure, force_layout=False):
         build_book_pdf(candidate, pages, medal, child_name=order["child_name"],
             congratulations=keepsake_congratulations(story, adventure["theme"], order["language"]),
             gender=adventure.get("child_gender", ""), language=order["language"], cover=cover,
-            book_style=adventure.get("book_style", "coloring"))
+            book_style=adventure.get("book_style", "coloring"),
+            narrative_background=folder/"narrative_background_v1.png")
         if force_layout or candidate.stat().st_size < pdf_path.stat().st_size:
             candidate.replace(pdf_path)
     finally:

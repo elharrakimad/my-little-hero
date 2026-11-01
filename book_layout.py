@@ -16,7 +16,7 @@ from reportlab.platypus import Paragraph
 from reportlab.lib.utils import ImageReader
 from arabic_layout import ArabicParagraph, has_arabic
 
-LAYOUT_VERSION = "storybook-a4-v4-full-color"
+LAYOUT_VERSION = "storybook-a4-v5-color-spreads"
 
 
 @dataclass(frozen=True)
@@ -32,6 +32,21 @@ class KeepsakeLayout:
     next_adventure_top: float = 392
     drawing_bottom: float = 100
     signature_y: float = 77
+
+
+@dataclass(frozen=True)
+class ColorTextLayout:
+    margin: float = 70
+    title_top: float = 150
+    title_size: float = 27
+    title_leading: float = 33
+    title_max_height: float = 99
+    divider_top: float = 258
+    body_top: float = 286
+    body_bottom: float = 90
+    body_size: float = 17
+    body_leading: float = 27
+    footer_y: float = 42
 
 
 @dataclass(frozen=True)
@@ -52,10 +67,7 @@ class Layout:
     body_leading: float = 20
     souvenir_title_size: float = 28
     drawing_height: float = 250
-    color_panel_top: float = 24
-    color_panel_padding: float = 12
-    color_title_band: float = 27
-    color_panel_gap: float = 8
+    color_text: ColorTextLayout = ColorTextLayout()
     keepsake: KeepsakeLayout = KeepsakeLayout()
 
     @property
@@ -81,13 +93,13 @@ def register_fonts():
             pdfmetrics.registerFont(TTFont(name, str(arabic_folder / file)))
 
 
-def paragraph(text, *, size=14, leading=20, title=False, centered=False):
+def paragraph(text, *, size=14, leading=20, title=False, centered=False, serif=False, alignment=None):
     register_fonts()
     if has_arabic(text):
         return ArabicParagraph(text, "MLHArabicBold" if title else "MLHArabic", size, leading, centered or title)
     return Paragraph(escape(str(text)).replace("\n", "<br/>"), ParagraphStyle(
-        "MLH", fontName="Times-Bold" if title else "MLHBody", fontSize=size,
-        leading=leading, alignment=1, textColor="black", splitLongWords=True,
+        "MLH", fontName="Times-Bold" if title else "Times-Roman" if serif else "MLHBody", fontSize=size,
+        leading=leading, alignment=1 if alignment is None else alignment, textColor="black", splitLongWords=True,
         spaceBefore=0, spaceAfter=0))
 
 
@@ -200,33 +212,58 @@ def draw_story_page(canvas, title, text, image, number, config=DEFAULT_LAYOUT, b
     canvas.showPage()
 
 
-def draw_color_story_page(canvas, title, text, image, number, config=DEFAULT_LAYOUT):
-    """Full-page scenery with one consistent readable panel in the upper safe area."""
-    x, w = config.binding_margin, config.content_width
-    padding = config.color_panel_padding
-    top = config.height-config.color_panel_top
-    height = config.color_title_band+config.narrative_height+config.color_panel_gap+2*padding
-    if height > config.height*.35:
-        raise ValueError("L’encadré de texte couvre trop l’image : répartir le texte sur une autre page.")
+def draw_narrative_background(canvas, image, background, config):
+    if background and Path(background).is_file():
+        draw_image(canvas, background, 0, 0, config.width, config.height, compress_color=True, full_bleed=True)
+        return
+    # Offline fallback for reformatting an already finished book: no AI call.
+    with PILImage.open(image) as source:
+        color = source.convert("RGB").resize((1, 1)).getpixel((0, 0))
+    accent = tuple(.18 + component/255*.28 for component in color)
+    canvas.setFillColorRGB(.985, .979, .952)
+    canvas.rect(0, 0, config.width, config.height, fill=1, stroke=0)
+    canvas.setStrokeColorRGB(*accent)
+    canvas.setLineWidth(.7)
+    for x, y, direction in ((24, 30, 1), (config.width-24, config.height-30, -1)):
+        path = canvas.beginPath()
+        path.moveTo(x, y); path.curveTo(x+direction*26,y+direction*30,x+direction*18,y+direction*80,x+direction*38,y+direction*115)
+        canvas.drawPath(path, stroke=1)
+        for index in range(4):
+            xx, yy = x+direction*(12+index*5), y+direction*(24+index*22)
+            leaf = canvas.beginPath(); leaf.moveTo(xx,yy)
+            leaf.curveTo(xx+direction*22,yy+direction*2,xx+direction*25,yy+direction*16,xx+direction*30,yy+direction*20)
+            leaf.curveTo(xx+direction*12,yy+direction*25,xx+direction*3,yy+direction*12,xx,yy)
+            canvas.setFillColorRGB(*(c*.45+.50 for c in accent))
+            canvas.drawPath(leaf,fill=1,stroke=0)
+    canvas.setStrokeColorRGB(.68,.55,.32)
+    canvas.line(config.width/2-34, config.height-104, config.width/2+34, config.height-104)
+    star(canvas,config.width/2,config.height-104,6)
+
+
+def draw_color_story_page(canvas, title, text, image, number, config=DEFAULT_LAYOUT, background=None):
+    """One wordless image page, then one coordinated narrative page."""
     draw_image(canvas, image, 0, 0, config.width, config.height, compress_color=True, full_bleed=True)
+    canvas.showPage()
     canvas.saveState()
-    canvas.setFillColorRGB(1, .985, .955)
-    canvas.setStrokeColorRGB(.38, .31, .23)
-    canvas.setLineWidth(.6)
-    canvas.roundRect(x, top-height, w, height, 10, fill=1, stroke=1)
-    draw_centered(canvas, title, top-padding, w-2*padding, center=config.center,
-        size=config.title_size, leading=config.title_leading, title=True, max_height=config.color_title_band)
-    narrative = paragraph(text, size=config.body_size, leading=config.body_leading)
-    _, body_height = narrative.wrap(w-2*padding, config.narrative_height)
-    if body_height > config.narrative_height:
-        raise ValueError("Le récit dépasse l’encadré de la page couleur.")
-    narrative.drawOn(canvas, x+padding, top-height+padding+(config.narrative_height-body_height)/2)
-    canvas.setFillColorRGB(1, .985, .955)
-    canvas.circle(config.center, 24, 13, stroke=0, fill=1)
-    star(canvas, config.center, 24, 12)
-    canvas.setFont("MLHBody", 9)
-    canvas.setFillColorRGB(0, 0, 0)
-    canvas.drawCentredString(config.center, 21, str(number))
+    draw_narrative_background(canvas, image, background, config)
+    style = config.color_text
+    width = config.width-2*style.margin
+    heading = paragraph(title,size=style.title_size,leading=style.title_leading,title=True)
+    _, heading_height = heading.wrap(width,1000)
+    if heading_height>style.title_max_height:
+        raise ValueError("Titre trop long pour la page de récit.")
+    heading.drawOn(canvas,style.margin,config.height-style.title_top-heading_height)
+    canvas.setStrokeColorRGB(.68,.55,.32)
+    canvas.setLineWidth(.7)
+    canvas.line(config.width/2-30,config.height-style.divider_top,config.width/2+30,config.height-style.divider_top)
+    narrative = paragraph(text,size=style.body_size,leading=style.body_leading,serif=True,alignment=0)
+    _, body_height = narrative.wrap(width,10000)
+    if body_height>config.height-style.body_top-style.body_bottom:
+        raise ValueError("Récit trop long pour sa page dédiée : répartir le texte sans réduire la police.")
+    narrative.drawOn(canvas,style.margin,config.height-style.body_top-body_height)
+    canvas.setFillColorRGB(.18,.29,.22)
+    canvas.setFont("MLHBody",11)
+    canvas.drawCentredString(config.width/2,style.footer_y,str(number*2))
     canvas.restoreState()
     canvas.showPage()
 
@@ -285,33 +322,43 @@ def draw_keepsake_page(canvas, name, congratulations, medal, *, gender="", langu
     canvas.showPage()
 
 
-def build_book_pdf(output, pages, medal, *, child_name, congratulations, gender="", language="Français", cover=None, config=DEFAULT_LAYOUT, book_style="coloring"):
+def build_book_pdf(output, pages, medal, *, child_name, congratulations, gender="", language="Français", cover=None, config=DEFAULT_LAYOUT, book_style="coloring", narrative_background=None):
     register_fonts()
     output = Path(output)
     output.parent.mkdir(parents=True, exist_ok=True)
     # The longest title defines one common band for the entire book, still at 23pt.
     continuation = " (تابع)" if language == "العربية" else " (suite)"
     titles = [p["title"] + continuation for p in pages]
-    title_width = config.content_width - (2*config.color_panel_padding if book_style == "colored" else 20)
+    title_width = config.content_width-20
     title_height = max((paragraph(t, size=config.title_size, leading=config.title_leading,
         title=True).wrap(title_width, 10000)[1] for t in titles), default=0)
-    config = replace(config, title_band=max(config.title_band, title_height+18),
-        color_title_band=max(config.color_title_band, title_height))
-    if config.height-config.top_margin-config.title_band-(config.bottom_margin+config.footer_band+config.narrative_height+config.image_gap) < 220:
+    config = replace(config, title_band=max(config.title_band, title_height+18))
+    if book_style == "coloring" and config.height-config.top_margin-config.title_band-(config.bottom_margin+config.footer_band+config.narrative_height+config.image_gap) < 220:
         raise ValueError("Le titre ne laisse plus assez d'espace pour l'illustration.")
     canvas = Canvas(str(output), pagesize=(config.width, config.height), pageCompression=1)
     canvas.setTitle(f"{child_name} - " + ("livre de contes illustrés" if book_style == "colored" else "livre de contes à colorier"))
     canvas.setAuthor("My Little Hero")
+    if book_style == "colored":
+        canvas._doc.Catalog.setPageLayout("TwoPageRight" if cover else "TwoPageLeft")
+        canvas.setViewerPreference("Direction", "R2L" if language == "العربية" else "L2R")
     if cover:
         draw_image(canvas, cover, 0, 0, config.width, config.height, compress_color=True)
         canvas.showPage()
     number = 0
     for page in pages:
-        for part_number, text in enumerate(split_narrative(page["text"], config,
-                text_width=config.content_width-2*config.color_panel_padding if book_style == "colored" else None)):
+        if book_style == "colored":
+            c = config.color_text
+            color_config = replace(config,body_size=c.body_size,body_leading=c.body_leading,narrative_height=config.height-c.body_top-c.body_bottom)
+            parts = split_narrative(page["text"],color_config,text_width=config.width-2*c.margin)
+        else:
+            parts = split_narrative(page["text"],config)
+        for part_number, text in enumerate(parts):
             number += 1
             title = page["title"] + (continuation if part_number else "")
-            draw_story_page(canvas, title, text, page["image"], number, config, book_style=book_style)
+            if book_style == "colored":
+                draw_color_story_page(canvas,title,text,page["image"],number,config,background=narrative_background)
+            else:
+                draw_story_page(canvas,title,text,page["image"],number,config)
     draw_keepsake_page(canvas, child_name, congratulations, medal, gender=gender, language=language, config=config, book_style=book_style)
     canvas.save()
     return output

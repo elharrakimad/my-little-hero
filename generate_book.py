@@ -57,6 +57,7 @@ PAGES_FOLDER = Path("pages")
 COVER_FILE = "cover.png"
 OUTPUT_FILE = f"{NAME}_Livre_Personnalise.pdf"
 KEEPSAKE_IMAGE = "keepsake_medallion_v2.png"
+NARRATIVE_BACKGROUND = "narrative_background_v1.png"
 
 NUMBER_OF_PAGES = 10
 
@@ -127,6 +128,7 @@ def prepare_project():
         Path(COVER_FILE).unlink(missing_ok=True)
         Path(STORY_FILE).unlink(missing_ok=True)
         Path(REFERENCE_IMAGE).unlink(missing_ok=True)
+        Path(NARRATIVE_BACKGROUND).unlink(missing_ok=True)
 
     SIGNATURE_FILE.write_text(current_signature, encoding="utf-8")
     return False
@@ -824,6 +826,28 @@ Les inscriptions et le ruban seront ajoutés par le système PDF.""")
     atomic_write_bytes(KEEPSAKE_IMAGE, base64.b64decode(result.data[0].b64_json))
 
 
+def generate_narrative_background():
+    if BOOK_STYLE != "colored" or (Path(NARRATIVE_BACKGROUND).is_file() and Path(NARRATIVE_BACKGROUND).stat().st_size):
+        return
+    with ExitStack() as stack:
+        inputs = [stack.enter_context(Path(COVER_FILE).open("rb"))]
+        first = Path(PAGES_FOLDER)/"page_01.png"
+        if first.is_file():
+            inputs.append(stack.enter_context(first.open("rb")))
+        result = client.images.edit(model="gpt-image-2", image=inputs, size="1024x1536", quality="medium",
+            prompt=f"""Crée uniquement le fond décoratif d’une page de récit jeunesse A4 portrait.
+Les images fournies donnent la palette et l’univers du livre : {THEME}.
+Reprendre uniquement les couleurs, paysages et motifs de décor, sans reprendre les personnages.
+Centre très clair et calme, ivoire chaud ou teinte pastel assortie, pour lire un titre et un récit.
+Les 75 pour cent centraux doivent rester libres et extrêmement clairs.
+Petits motifs et paysages légers dans les coins et le long des bords, inspirés de cet univers.
+Décoration délicate d’édition jeunesse, sans grand cadre rectangulaire ni encadré.
+AUCUN personnage, visage, silhouette, photo, texte, lettre, numéro, titre, logo ou watermark.
+Le système PDF ajoutera toutes les inscriptions. Une seule page décorative, pas une double page.
+""")
+    atomic_write_bytes(NARRATIVE_BACKGROUND,base64.b64decode(result.data[0].b64_json))
+
+
 def generate_pdf():
     story = Path(STORY_FILE).read_text(encoding="utf-8")
     validate_printed_language(story, LANGUAGE, NUMBER_OF_PAGES)
@@ -832,7 +856,8 @@ def generate_pdf():
         page["image"] = PAGES_FOLDER / f"page_{page["number"]:02d}.png"
     return build_book_pdf(OUTPUT_FILE, pages, KEEPSAKE_IMAGE, child_name=NAME,
         congratulations=keepsake_congratulations(story, THEME, LANGUAGE),
-        gender=CHILD_GENDER, language=LANGUAGE, cover=COVER_FILE, book_style=BOOK_STYLE)
+        gender=CHILD_GENDER, language=LANGUAGE, cover=COVER_FILE, book_style=BOOK_STYLE,
+        narrative_background=globals().get("NARRATIVE_BACKGROUND") if BOOK_STYLE == "colored" else None)
 
 
 
@@ -858,6 +883,7 @@ def main():
         print(f"📚 Titre généré : {BOOK_TITLE}")
         generate_cover()
         generate_all_pages()
+        generate_narrative_background()
 
     generate_keepsake_medallion()
     generate_pdf()

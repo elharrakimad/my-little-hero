@@ -68,6 +68,7 @@ def generate_book_from_adventure(
     engine.PAGES_FOLDER = pages_dir
     engine.COVER_FILE = str(output_dir / "cover.png")
     engine.KEEPSAKE_IMAGE = str(output_dir / "keepsake_medallion_v2.png")
+    engine.NARRATIVE_BACKGROUND = str(output_dir / "narrative_background_v1.png")
     engine.OUTPUT_FILE = str(final_pdf.with_suffix(".building.pdf"))
 
     engine.REUSE_EXISTING_FILES = True
@@ -104,6 +105,11 @@ def generate_book_from_adventure(
         engine.generate_cover()
 
     engine.generate_all_pages(progress=progress)
+
+    if book_style == "colored":
+        if progress:
+            progress("pdf", "Création du fond assorti aux pages de récit", page_index=10, page_total=10)
+        engine.generate_narrative_background()
 
     if progress:
         progress("pdf", "Création du médaillon souvenir personnalisé", page_index=10, page_total=10)
