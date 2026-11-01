@@ -1,4 +1,4 @@
-# Fiches descriptives des 55 inspirations anime
+# Fiches descriptives des 52 inspirations anime
 
 Intitulés visibles au client ; descriptions de génération sans les noms. Les versions de référence sont adaptées à un livre jeunesse et conservent les traits de l’enfant.
 
@@ -130,22 +130,6 @@ Intitulés visibles au client ; descriptions de génération sans les noms. Les 
 **Adversaires ou obstacles :** un rival réservé aux longs cheveux noirs et décorations de perles ; des adversaires de parcours et de tournois.
 
 **Exemple de mission :** maîtriser son énergie pour franchir un parcours avec ses amis.
-
-## Yugi · énigmes et stratégie
-
-**Série :** Yu-Gi-Oh!
-
-**Pouvoirs et principe :** des jeux de cartes originaux, des énigmes et de la stratégie coopérative.
-
-**Vêtements et apparence :** veste d’uniforme bleue ou violette, pantalon sombre, cape de veste sur les épaules et pendentif pyramidal doré ; conserver la coiffure naturelle de l’enfant.
-
-**Monde et décors :** une ville moderne avec boutique de jeux, école, musée d’antiquités, grands tournois et décors évoquant les temples et énigmes de l’Égypte ancienne. Lieux : boutique de jeux, école, musée et salle de tournoi amical.
-
-**Équipements et accessoires :** cartes de jeu, puzzle doré, plateau ou dispositif de duel ; apparitions fantastiques d’un magicien en armure violette et d’un dragon blanc aux yeux bleus.
-
-**Adversaires ou obstacles :** un illusionniste en veste rouge aux longs cheveux clairs et œil doré stylisé ; des rivaux stratèges.
-
-**Exemple de mission :** résoudre des énigmes avec équité et préférer la coopération à la victoire facile.
 
 ## Tsubasa · football et persévérance
 
@@ -370,38 +354,6 @@ Intitulés visibles au client ; descriptions de génération sans les noms. Les 
 **Adversaires ou obstacles :** un illusionniste de carnaval aux vêtements colorés et motifs de carte sur le visage ; des concurrents d’épreuves.
 
 **Exemple de mission :** traverser plusieurs milieux naturels en aidant leurs habitants et en développant ses sens.
-
-## Seto Kaiba · stratégie et dragons
-
-**Série :** Yu-Gi-Oh!
-
-**Pouvoirs et principe :** la stratégie, l’anticipation et l’invention d’outils de jeu fantastiques.
-
-**Vêtements et apparence :** long manteau blanc à col relevé sur tenue bleue et sombre, pantalon confortable et bottes.
-
-**Monde et décors :** une ville moderne avec boutique de jeux, école, musée d’antiquités, grands tournois et décors évoquant les temples et énigmes de l’Égypte ancienne. Lieux : boutique de jeux, école, musée et salle de tournoi amical.
-
-**Équipements et accessoires :** cartes, plateau de duel et apparition fantastique d’un dragon blanc aux yeux bleus.
-
-**Adversaires ou obstacles :** un illusionniste en veste rouge aux longs cheveux clairs et œil doré stylisé ; des rivaux stratèges.
-
-**Exemple de mission :** résoudre des énigmes avec équité et préférer la coopération à la victoire facile.
-
-## Joey Wheeler · courage et cartes
-
-**Série :** Yu-Gi-Oh!
-
-**Pouvoirs et principe :** la ténacité, l’amitié et l’apprentissage de stratégies de jeu équitables.
-
-**Vêtements et apparence :** veste verte sur tee-shirt blanc, pantalon sombre et chaussures de sport, sac à cartes.
-
-**Monde et décors :** une ville moderne avec boutique de jeux, école, musée d’antiquités, grands tournois et décors évoquant les temples et énigmes de l’Égypte ancienne. Lieux : boutique de jeux, école, musée et salle de tournoi amical.
-
-**Équipements et accessoires :** cartes, plateau de jeu et apparition fantastique d’un dragon noir aux yeux rouges.
-
-**Adversaires ou obstacles :** un illusionniste en veste rouge aux longs cheveux clairs et œil doré stylisé ; des rivaux stratèges.
-
-**Exemple de mission :** résoudre des énigmes avec équité et préférer la coopération à la victoire facile.
 
 ## Kojiro Hyuga · puissance et détermination
 

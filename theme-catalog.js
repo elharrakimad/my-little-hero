@@ -152,11 +152,6 @@ window.MLH_ANIME_SERIES = [
     "ar": "القناص"
   },
   {
-    "id": "yu-gi-oh",
-    "label": "Yu-Gi-Oh!",
-    "ar": "يوغي يو"
-  },
-  {
     "id": "captain-tsubasa",
     "label": "Captain Tsubasa",
     "ar": "الكابتن تسوباسا"
@@ -338,28 +333,6 @@ window.MLH_THEME_CATALOG = [
     "series": "hunter-x-hunter",
     "seriesLabel": "Hunter × Hunter",
     "seriesAr": "القناص"
-  },
-  {
-    "label": "Yugi · énigmes et stratégie",
-    "ar": "يوغي · الألغاز والاستراتيجية",
-    "category": "anime",
-    "icon": "🧩",
-    "theme": "🧩 Héros personnalisé : des jeux de cartes originaux, des énigmes et de la stratégie coopérative. Tenue et apparence : veste d’uniforme bleue ou violette, pantalon sombre, cape de veste sur les épaules et pendentif pyramidal doré ; conserver la coiffure naturelle de l’enfant. Équipements et accessoires : cartes de jeu, puzzle doré, plateau ou dispositif de duel ; apparitions fantastiques d’un magicien en armure violette et d’un dragon blanc aux yeux bleus. Adversaires ou obstacles : un illusionniste en veste rouge aux longs cheveux clairs et œil doré stylisé ; des rivaux stratèges. Univers et ambiance : une ville moderne avec boutique de jeux, école, musée d’antiquités, grands tournois et décors évoquant les temples et énigmes de l’Égypte ancienne. Lieux à explorer : boutique de jeux, école, musée et salle de tournoi amical. Mission possible : résoudre des énigmes avec équité et préférer la coopération à la victoire facile. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une ville moderne avec boutique de jeux, école, musée d’antiquités, grands tournois et décors évoquant les temples et énigmes de l’Égypte ancienne",
-      "places": "boutique de jeux, école, musée et salle de tournoi amical",
-      "objects": "cartes de jeu, puzzle doré, plateau ou dispositif de duel ; apparitions fantastiques d’un magicien en armure violette et d’un dragon blanc aux yeux bleus",
-      "mission": "résoudre des énigmes avec équité et préférer la coopération à la victoire facile"
-    },
-    "reference": {
-      "costume": "veste d’uniforme bleue ou violette, pantalon sombre, cape de veste sur les épaules et pendentif pyramidal doré ; conserver la coiffure naturelle de l’enfant",
-      "equipment": "cartes de jeu, puzzle doré, plateau ou dispositif de duel ; apparitions fantastiques d’un magicien en armure violette et d’un dragon blanc aux yeux bleus",
-      "adversaries": "un illusionniste en veste rouge aux longs cheveux clairs et œil doré stylisé ; des rivaux stratèges"
-    },
-    "series": "yu-gi-oh",
-    "seriesLabel": "Yu-Gi-Oh!",
-    "seriesAr": "يوغي يو"
   },
   {
     "label": "Tsubasa · football et persévérance",
@@ -2580,50 +2553,6 @@ window.MLH_THEME_CATALOG = [
     "series": "hunter-x-hunter",
     "seriesLabel": "Hunter × Hunter",
     "seriesAr": "القناص"
-  },
-  {
-    "label": "Seto Kaiba · stratégie et dragons",
-    "ar": "سيتو كايبا · الاستراتيجية والتنانين",
-    "category": "anime",
-    "icon": "🐉",
-    "theme": "🐉 Héros personnalisé : la stratégie, l’anticipation et l’invention d’outils de jeu fantastiques. Tenue et apparence : long manteau blanc à col relevé sur tenue bleue et sombre, pantalon confortable et bottes. Équipements et accessoires : cartes, plateau de duel et apparition fantastique d’un dragon blanc aux yeux bleus. Adversaires ou obstacles : un illusionniste en veste rouge aux longs cheveux clairs et œil doré stylisé ; des rivaux stratèges. Univers et ambiance : une ville moderne avec boutique de jeux, école, musée d’antiquités, grands tournois et décors évoquant les temples et énigmes de l’Égypte ancienne. Lieux à explorer : boutique de jeux, école, musée et salle de tournoi amical. Mission possible : résoudre des énigmes avec équité et préférer la coopération à la victoire facile. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une ville moderne avec boutique de jeux, école, musée d’antiquités, grands tournois et décors évoquant les temples et énigmes de l’Égypte ancienne",
-      "places": "boutique de jeux, école, musée et salle de tournoi amical",
-      "objects": "cartes, plateau de duel et apparition fantastique d’un dragon blanc aux yeux bleus",
-      "mission": "résoudre des énigmes avec équité et préférer la coopération à la victoire facile"
-    },
-    "reference": {
-      "costume": "long manteau blanc à col relevé sur tenue bleue et sombre, pantalon confortable et bottes",
-      "equipment": "cartes, plateau de duel et apparition fantastique d’un dragon blanc aux yeux bleus",
-      "adversaries": "un illusionniste en veste rouge aux longs cheveux clairs et œil doré stylisé ; des rivaux stratèges"
-    },
-    "series": "yu-gi-oh",
-    "seriesLabel": "Yu-Gi-Oh!",
-    "seriesAr": "يوغي يو"
-  },
-  {
-    "label": "Joey Wheeler · courage et cartes",
-    "ar": "جوي ويلر · الشجاعة والبطاقات",
-    "category": "anime",
-    "icon": "🃏",
-    "theme": "🃏 Héros personnalisé : la ténacité, l’amitié et l’apprentissage de stratégies de jeu équitables. Tenue et apparence : veste verte sur tee-shirt blanc, pantalon sombre et chaussures de sport, sac à cartes. Équipements et accessoires : cartes, plateau de jeu et apparition fantastique d’un dragon noir aux yeux rouges. Adversaires ou obstacles : un illusionniste en veste rouge aux longs cheveux clairs et œil doré stylisé ; des rivaux stratèges. Univers et ambiance : une ville moderne avec boutique de jeux, école, musée d’antiquités, grands tournois et décors évoquant les temples et énigmes de l’Égypte ancienne. Lieux à explorer : boutique de jeux, école, musée et salle de tournoi amical. Mission possible : résoudre des énigmes avec équité et préférer la coopération à la victoire facile. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
-    "profile": "",
-    "world": {
-      "setting": "une ville moderne avec boutique de jeux, école, musée d’antiquités, grands tournois et décors évoquant les temples et énigmes de l’Égypte ancienne",
-      "places": "boutique de jeux, école, musée et salle de tournoi amical",
-      "objects": "cartes, plateau de jeu et apparition fantastique d’un dragon noir aux yeux rouges",
-      "mission": "résoudre des énigmes avec équité et préférer la coopération à la victoire facile"
-    },
-    "reference": {
-      "costume": "veste verte sur tee-shirt blanc, pantalon sombre et chaussures de sport, sac à cartes",
-      "equipment": "cartes, plateau de jeu et apparition fantastique d’un dragon noir aux yeux rouges",
-      "adversaries": "un illusionniste en veste rouge aux longs cheveux clairs et œil doré stylisé ; des rivaux stratèges"
-    },
-    "series": "yu-gi-oh",
-    "seriesLabel": "Yu-Gi-Oh!",
-    "seriesAr": "يوغي يو"
   },
   {
     "label": "Kojiro Hyuga · puissance et détermination",

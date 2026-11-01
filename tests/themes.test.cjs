@@ -8,10 +8,10 @@ vm.runInContext(fs.readFileSync('theme-catalog.js','utf8'),context);
 vm.runInContext(fs.readFileSync('themes.js','utf8'),context);
 const {MLH_THEME_CATALOG:catalog,MLH_THEME_CATEGORIES:categories,MLHThemeSearch:search}=context.window;
 
-test('294 distinct themes in 19 bilingual categories, with stable legacy values',()=>{
-  assert.equal(catalog.length,294);assert.equal(categories.length,19);
-  assert.equal(new Set(catalog.map(t=>t.label)).size,294);
-  assert.equal(new Set(catalog.map(t=>t.theme)).size,294);
+test('291 distinct themes in 19 bilingual categories, with stable legacy values',()=>{
+  assert.equal(catalog.length,291);assert.equal(categories.length,19);
+  assert.equal(new Set(catalog.map(t=>t.label)).size,291);
+  assert.equal(new Set(catalog.map(t=>t.theme)).size,291);
   for(const c of categories){assert.ok(c.ar);assert.ok(catalog.filter(t=>t.category===c.id).length>=12);}
   assert.ok(catalog.every(t=>t.ar&&t.icon&&categories.some(c=>c.id===t.category)));
   assert.equal(catalog.find(t=>t.label==='Espace').theme,"🚀 Voyage dans l'espace");
@@ -23,8 +23,8 @@ test('profile suggestions never prevent access to any category or theme',()=>{
   assert.ok(girl.some(t=>t.label==='Fées'));assert.ok(!girl.some(t=>t.label==='Robots'));
   const boy=search.filter(catalog,{gender:'boy'});
   assert.ok(boy.some(t=>t.label==='Robots'));assert.ok(!boy.some(t=>t.label==='Fées'));
-  assert.equal(search.filter(catalog,{gender:'girl',showAll:true}).length,294);
-  assert.equal(search.filter(catalog,{gender:'boy',showAll:true}).length,294);
+  assert.equal(search.filter(catalog,{gender:'girl',showAll:true}).length,291);
+  assert.equal(search.filter(catalog,{gender:'boy',showAll:true}).length,291);
 });
 
 test('search ignores French accents, works in Arabic, and combines category filters',()=>{
@@ -52,7 +52,7 @@ test('distinct superpowers and a dedicated girls category remain accessible to e
 test('Marvel and DC are absent while anime inspirations keep the personalized child as the hero',()=>{
   for(const category of ['anime']){
     const rows=search.filter(catalog,{category,showAll:true});
-    assert.equal(rows.length,55);
+    assert.equal(rows.length,52);
     assert.ok(rows.every(t=>t.theme.includes('Héros personnalisé')));
   }
   assert.equal(search.filter(catalog,{query:'Spider-Man',showAll:true}).length,0);
@@ -67,8 +67,8 @@ test('Marvel and DC are absent while anime inspirations keep the personalized ch
 test('displayed inspirations are separate from powers and visual descriptions sent to generation',()=>{
   const names=['Spider-Man','Iron Man','Thor','Hulk','Captain America','Doctor Strange','Black Panther','Ant-Man','Scarlet Witch','Superman','Batman','Wonder Woman','Flash','Aquaman','Green Lantern','Cyborg','Shazam','Supergirl','Zatanna','Goku','Naruto','Luffy','Tanjiro','Deku','Sailor Moon','Sacha','Pikachu','Sakura','Natsu','Edward Elric','Gon','Killua','Saitama','Ichigo','Yugi','Hinata','Tsubasa','Seiya','Astro Boy','Totoro','Sasuke','Vegeta','Gohan','Zoro','Nami','Nezuko','Zenitsu','Bakugo'];
   const profiles=catalog.filter(t=>['anime'].includes(t.category));
-  assert.equal(profiles.length,55);
-  assert.equal(new Set(profiles.map(t=>t.theme)).size,55);
+  assert.equal(profiles.length,52);
+  assert.equal(new Set(profiles.map(t=>t.theme)).size,52);
   for(const profile of profiles){
     assert.ok(profile.theme.includes('Tenue et apparence :'));
     for(const name of names)assert.ok(!new RegExp('\\b'+name+'\\b','iu').test(profile.theme),profile.label+' leaked '+name);
@@ -78,7 +78,7 @@ test('displayed inspirations are separate from powers and visual descriptions se
 
 test('every inspiration includes a coherent world used by cover and story generation',()=>{
   const profiles=catalog.filter(t=>['anime'].includes(t.category));
-  assert.equal(profiles.length,55);
+  assert.equal(profiles.length,52);
   assert.ok(new Set(profiles.map(t=>t.world.setting)).size>=9);
   for(const profile of profiles){
     for(const key of ['setting','places','objects','mission']){
@@ -107,10 +107,10 @@ test('all written references include clothing, equipment and opponents or approp
 });
 
 
-test('only the nine requested anime series remain, with ten characters in each priority series',()=>{
+test('only the eight requested anime series remain, with ten characters in each priority series',()=>{
   const series=context.window.MLH_ANIME_SERIES;
-  assert.equal(series.length,9);
-  const expected=['dragon-ball','naruto','one-piece','demon-slayer','my-hero-academia','pokemon','hunter-x-hunter','yu-gi-oh','captain-tsubasa'];
+  assert.equal(series.length,8);
+  const expected=['dragon-ball','naruto','one-piece','demon-slayer','my-hero-academia','pokemon','hunter-x-hunter','captain-tsubasa'];
   assert.deepEqual(Array.from(series,g=>g.id),expected);
   const major=new Set(expected.slice(0,4));
   for(const group of series){
@@ -143,3 +143,8 @@ test('removed series cannot appear in anime filters or search results',()=>{
     assert.ok(search.filter(catalog,{category:'anime',query:name,showAll:true}).length>0,name);
   }
 });
+
+ test('Yu-Gi-Oh and its characters are absent from filters and search',()=>{
+  assert.ok(!context.window.MLH_ANIME_SERIES.some(s=>s.id==='yu-gi-oh'));
+  for(const query of ['Yu-Gi-Oh','Yugi','Seto Kaiba','Joey Wheeler']) assert.equal(search.filter(catalog,{query,showAll:true}).length,0,query);
+ });
