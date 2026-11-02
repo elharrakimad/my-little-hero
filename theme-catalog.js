@@ -19,6 +19,12 @@ window.MLH_THEME_CATEGORIES = [
     "icon": "🎌"
   },
   {
+    "id": "video-games",
+    "label": "Inspirations jeux vidéo",
+    "ar": "مغامرات مستوحاة من ألعاب الفيديو",
+    "icon": "🎮"
+  },
+  {
     "id": "magic",
     "label": "Magie et royaumes",
     "ar": "السحر والممالك",
@@ -155,6 +161,48 @@ window.MLH_ANIME_SERIES = [
     "id": "captain-tsubasa",
     "label": "Captain Tsubasa",
     "ar": "الكابتن تسوباسا"
+  }
+];
+window.MLH_GAME_SERIES = [
+  {
+    "id": "game-minecraft",
+    "label": "Minecraft",
+    "ar": "ماينكرافت"
+  },
+  {
+    "id": "game-super-mario",
+    "label": "Super Mario",
+    "ar": "سوبر ماريو"
+  },
+  {
+    "id": "game-sonic",
+    "label": "Sonic",
+    "ar": "سونيك"
+  },
+  {
+    "id": "game-zelda",
+    "label": "The Legend of Zelda",
+    "ar": "أسطورة زيلدا"
+  },
+  {
+    "id": "game-animal-crossing",
+    "label": "Animal Crossing",
+    "ar": "أنيمال كروسينغ"
+  },
+  {
+    "id": "game-kirby",
+    "label": "Kirby",
+    "ar": "كيربي"
+  },
+  {
+    "id": "game-splatoon",
+    "label": "Splatoon",
+    "ar": "سبلاتون"
+  },
+  {
+    "id": "game-roblox",
+    "label": "Roblox",
+    "ar": "روبلوكس"
   }
 ];
 window.MLH_THEME_CATALOG = [
@@ -3213,5 +3261,533 @@ window.MLH_THEME_CATALOG = [
     "series": "demon-slayer",
     "seriesLabel": "Demon Slayer",
     "seriesAr": "قاتل الشياطين"
+  },
+  {
+    "label": "Bâtisseur du village",
+    "ar": "بنّاء القرية",
+    "category": "video-games",
+    "icon": "🏡",
+    "theme": "🏡 Héros personnalisé : Bâtisseur du village. Inspiration ludique originale. Tenue et apparence : veste d’exploration, pantalon pratique et bottes, sans changer le visage ni les cheveux. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des paysages cubiques, forêts géométriques, cavernes lumineuses et villages de bâtisseurs. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : reconstruire un village avec des blocs colorés et des ponts solides. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-minecraft",
+    "seriesLabel": "Minecraft",
+    "seriesAr": "ماينكرافت",
+    "world": {
+      "setting": "des paysages cubiques, forêts géométriques, cavernes lumineuses et villages de bâtisseurs",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "reconstruire un village avec des blocs colorés et des ponts solides"
+    },
+    "reference": {
+      "costume": "veste d’exploration, pantalon pratique et bottes, sans changer le visage ni les cheveux",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Explorateur des cavernes",
+    "ar": "مستكشف الكهوف",
+    "category": "video-games",
+    "icon": "💎",
+    "theme": "💎 Héros personnalisé : Explorateur des cavernes. Inspiration ludique originale. Tenue et apparence : veste d’exploration, pantalon pratique et bottes, sans changer le visage ni les cheveux. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des paysages cubiques, forêts géométriques, cavernes lumineuses et villages de bâtisseurs. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : retrouver des cristaux lumineux dans un réseau de cavernes. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-minecraft",
+    "seriesLabel": "Minecraft",
+    "seriesAr": "ماينكرافت",
+    "world": {
+      "setting": "des paysages cubiques, forêts géométriques, cavernes lumineuses et villages de bâtisseurs",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "retrouver des cristaux lumineux dans un réseau de cavernes"
+    },
+    "reference": {
+      "costume": "veste d’exploration, pantalon pratique et bottes, sans changer le visage ni les cheveux",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Gardien de la forêt cubique",
+    "ar": "حارس الغابة المكعبة",
+    "category": "video-games",
+    "icon": "🌳",
+    "theme": "🌳 Héros personnalisé : Gardien de la forêt cubique. Inspiration ludique originale. Tenue et apparence : veste d’exploration, pantalon pratique et bottes, sans changer le visage ni les cheveux. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des paysages cubiques, forêts géométriques, cavernes lumineuses et villages de bâtisseurs. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : protéger une forêt géométrique et guider les animaux vers un abri. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-minecraft",
+    "seriesLabel": "Minecraft",
+    "seriesAr": "ماينكرافت",
+    "world": {
+      "setting": "des paysages cubiques, forêts géométriques, cavernes lumineuses et villages de bâtisseurs",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "protéger une forêt géométrique et guider les animaux vers un abri"
+    },
+    "reference": {
+      "costume": "veste d’exploration, pantalon pratique et bottes, sans changer le visage ni les cheveux",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Aventure des jardins magiques",
+    "ar": "مغامرة الحدائق السحرية",
+    "category": "video-games",
+    "icon": "🍄",
+    "theme": "🍄 Héros personnalisé : Aventure des jardins magiques. Inspiration ludique originale. Tenue et apparence : salopette d’aventurier et chaussures souples, sans logo ni moustache ajoutée. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des royaumes de jardins fantastiques, collines arrondies, plateformes et châteaux joyeux. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : rétablir les couleurs de jardins fantastiques. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-super-mario",
+    "seriesLabel": "Super Mario",
+    "seriesAr": "سوبر ماريو",
+    "world": {
+      "setting": "des royaumes de jardins fantastiques, collines arrondies, plateformes et châteaux joyeux",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "rétablir les couleurs de jardins fantastiques"
+    },
+    "reference": {
+      "costume": "salopette d’aventurier et chaussures souples, sans logo ni moustache ajoutée",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Course des étoiles",
+    "ar": "سباق النجوم",
+    "category": "video-games",
+    "icon": "⭐",
+    "theme": "⭐ Héros personnalisé : Course des étoiles. Inspiration ludique originale. Tenue et apparence : salopette d’aventurier et chaussures souples, sans logo ni moustache ajoutée. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des royaumes de jardins fantastiques, collines arrondies, plateformes et châteaux joyeux. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : franchir des plateformes et réunir des étoiles pour éclairer un village. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-super-mario",
+    "seriesLabel": "Super Mario",
+    "seriesAr": "سوبر ماريو",
+    "world": {
+      "setting": "des royaumes de jardins fantastiques, collines arrondies, plateformes et châteaux joyeux",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "franchir des plateformes et réunir des étoiles pour éclairer un village"
+    },
+    "reference": {
+      "costume": "salopette d’aventurier et chaussures souples, sans logo ni moustache ajoutée",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Le château des surprises",
+    "ar": "قلعة المفاجآت",
+    "category": "video-games",
+    "icon": "🏰",
+    "theme": "🏰 Héros personnalisé : Le château des surprises. Inspiration ludique originale. Tenue et apparence : salopette d’aventurier et chaussures souples, sans logo ni moustache ajoutée. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des royaumes de jardins fantastiques, collines arrondies, plateformes et châteaux joyeux. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : résoudre les énigmes d’un château pour libérer une fête enchantée. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-super-mario",
+    "seriesLabel": "Super Mario",
+    "seriesAr": "سوبر ماريو",
+    "world": {
+      "setting": "des royaumes de jardins fantastiques, collines arrondies, plateformes et châteaux joyeux",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "résoudre les énigmes d’un château pour libérer une fête enchantée"
+    },
+    "reference": {
+      "costume": "salopette d’aventurier et chaussures souples, sans logo ni moustache ajoutée",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "La course du vent",
+    "ar": "سباق الرياح",
+    "category": "video-games",
+    "icon": "💨",
+    "theme": "💨 Héros personnalisé : La course du vent. Inspiration ludique originale. Tenue et apparence : tenue sportive, gants et baskets de course ; garder une apparence humaine conforme à la référence. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des îles verdoyantes aux pistes sinueuses, ruines aériennes et machines fantaisistes. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : utiliser sa vitesse pour livrer un message avant une tempête. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-sonic",
+    "seriesLabel": "Sonic",
+    "seriesAr": "سونيك",
+    "world": {
+      "setting": "des îles verdoyantes aux pistes sinueuses, ruines aériennes et machines fantaisistes",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "utiliser sa vitesse pour livrer un message avant une tempête"
+    },
+    "reference": {
+      "costume": "tenue sportive, gants et baskets de course ; garder une apparence humaine conforme à la référence",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Les cristaux de l’île",
+    "ar": "بلورات الجزيرة",
+    "category": "video-games",
+    "icon": "💠",
+    "theme": "💠 Héros personnalisé : Les cristaux de l’île. Inspiration ludique originale. Tenue et apparence : tenue sportive, gants et baskets de course ; garder une apparence humaine conforme à la référence. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des îles verdoyantes aux pistes sinueuses, ruines aériennes et machines fantaisistes. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : retrouver des cristaux qui alimentent les lumières d’une île. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-sonic",
+    "seriesLabel": "Sonic",
+    "seriesAr": "سونيك",
+    "world": {
+      "setting": "des îles verdoyantes aux pistes sinueuses, ruines aériennes et machines fantaisistes",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "retrouver des cristaux qui alimentent les lumières d’une île"
+    },
+    "reference": {
+      "costume": "tenue sportive, gants et baskets de course ; garder une apparence humaine conforme à la référence",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Sauvetage des petits animaux",
+    "ar": "إنقاذ الحيوانات الصغيرة",
+    "category": "video-games",
+    "icon": "🐾",
+    "theme": "🐾 Héros personnalisé : Sauvetage des petits animaux. Inspiration ludique originale. Tenue et apparence : tenue sportive, gants et baskets de course ; garder une apparence humaine conforme à la référence. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des îles verdoyantes aux pistes sinueuses, ruines aériennes et machines fantaisistes. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : ouvrir des abris mécaniques et ramener des animaux chez eux. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-sonic",
+    "seriesLabel": "Sonic",
+    "seriesAr": "سونيك",
+    "world": {
+      "setting": "des îles verdoyantes aux pistes sinueuses, ruines aériennes et machines fantaisistes",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "ouvrir des abris mécaniques et ramener des animaux chez eux"
+    },
+    "reference": {
+      "costume": "tenue sportive, gants et baskets de course ; garder une apparence humaine conforme à la référence",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Le temple des énigmes",
+    "ar": "معبد الألغاز",
+    "category": "video-games",
+    "icon": "🧩",
+    "theme": "🧩 Héros personnalisé : Le temple des énigmes. Inspiration ludique originale. Tenue et apparence : tunique de voyage, bottes et sacoche ; conserver les oreilles, le visage et les cheveux de la référence. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des plaines anciennes, forêts mystérieuses, temples à énigmes et villages paisibles. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : réactiver les mécanismes d’un temple en observant les symboles. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-zelda",
+    "seriesLabel": "The Legend of Zelda",
+    "seriesAr": "أسطورة زيلدا",
+    "world": {
+      "setting": "des plaines anciennes, forêts mystérieuses, temples à énigmes et villages paisibles",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "réactiver les mécanismes d’un temple en observant les symboles"
+    },
+    "reference": {
+      "costume": "tunique de voyage, bottes et sacoche ; conserver les oreilles, le visage et les cheveux de la référence",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "La forêt des lumières",
+    "ar": "غابة الأنوار",
+    "category": "video-games",
+    "icon": "🌲",
+    "theme": "🌲 Héros personnalisé : La forêt des lumières. Inspiration ludique originale. Tenue et apparence : tunique de voyage, bottes et sacoche ; conserver les oreilles, le visage et les cheveux de la référence. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des plaines anciennes, forêts mystérieuses, temples à énigmes et villages paisibles. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : suivre des lumières pour retrouver le chemin d’un village. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-zelda",
+    "seriesLabel": "The Legend of Zelda",
+    "seriesAr": "أسطورة زيلدا",
+    "world": {
+      "setting": "des plaines anciennes, forêts mystérieuses, temples à énigmes et villages paisibles",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "suivre des lumières pour retrouver le chemin d’un village"
+    },
+    "reference": {
+      "costume": "tunique de voyage, bottes et sacoche ; conserver les oreilles, le visage et les cheveux de la référence",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Le souffle des montagnes",
+    "ar": "نسيم الجبال",
+    "category": "video-games",
+    "icon": "🪂",
+    "theme": "🪂 Héros personnalisé : Le souffle des montagnes. Inspiration ludique originale. Tenue et apparence : tunique de voyage, bottes et sacoche ; conserver les oreilles, le visage et les cheveux de la référence. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des plaines anciennes, forêts mystérieuses, temples à énigmes et villages paisibles. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : traverser des montagnes et réparer un ancien signal de secours. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-zelda",
+    "seriesLabel": "The Legend of Zelda",
+    "seriesAr": "أسطورة زيلدا",
+    "world": {
+      "setting": "des plaines anciennes, forêts mystérieuses, temples à énigmes et villages paisibles",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "traverser des montagnes et réparer un ancien signal de secours"
+    },
+    "reference": {
+      "costume": "tunique de voyage, bottes et sacoche ; conserver les oreilles, le visage et les cheveux de la référence",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Mon île accueillante",
+    "ar": "جزيرتي الجميلة",
+    "category": "video-games",
+    "icon": "🏝️",
+    "theme": "🏝️ Héros personnalisé : Mon île accueillante. Inspiration ludique originale. Tenue et apparence : tenue de promenade et petit sac ; garder le personnage humain de référence. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : une île accueillante avec plages, vergers, petites maisons et voisins animaux originaux. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : préparer l’accueil d’un nouveau voisin sur une île. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-animal-crossing",
+    "seriesLabel": "Animal Crossing",
+    "seriesAr": "أنيمال كروسينغ",
+    "world": {
+      "setting": "une île accueillante avec plages, vergers, petites maisons et voisins animaux originaux",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "préparer l’accueil d’un nouveau voisin sur une île"
+    },
+    "reference": {
+      "costume": "tenue de promenade et petit sac ; garder le personnage humain de référence",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "La fête du village",
+    "ar": "احتفال القرية",
+    "category": "video-games",
+    "icon": "🎉",
+    "theme": "🎉 Héros personnalisé : La fête du village. Inspiration ludique originale. Tenue et apparence : tenue de promenade et petit sac ; garder le personnage humain de référence. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : une île accueillante avec plages, vergers, petites maisons et voisins animaux originaux. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : organiser une fête avec des décorations fabriquées ensemble. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-animal-crossing",
+    "seriesLabel": "Animal Crossing",
+    "seriesAr": "أنيمال كروسينغ",
+    "world": {
+      "setting": "une île accueillante avec plages, vergers, petites maisons et voisins animaux originaux",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "organiser une fête avec des décorations fabriquées ensemble"
+    },
+    "reference": {
+      "costume": "tenue de promenade et petit sac ; garder le personnage humain de référence",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Le jardin des saisons",
+    "ar": "حديقة الفصول",
+    "category": "video-games",
+    "icon": "🌷",
+    "theme": "🌷 Héros personnalisé : Le jardin des saisons. Inspiration ludique originale. Tenue et apparence : tenue de promenade et petit sac ; garder le personnage humain de référence. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : une île accueillante avec plages, vergers, petites maisons et voisins animaux originaux. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : créer un jardin où chaque saison a sa place. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-animal-crossing",
+    "seriesLabel": "Animal Crossing",
+    "seriesAr": "أنيمال كروسينغ",
+    "world": {
+      "setting": "une île accueillante avec plages, vergers, petites maisons et voisins animaux originaux",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "créer un jardin où chaque saison a sa place"
+    },
+    "reference": {
+      "costume": "tenue de promenade et petit sac ; garder le personnage humain de référence",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Le royaume des rêves",
+    "ar": "مملكة الأحلام",
+    "category": "video-games",
+    "icon": "☁️",
+    "theme": "☁️ Héros personnalisé : Le royaume des rêves. Inspiration ludique originale. Tenue et apparence : tenue d’exploration douce et confortable ; ne pas transformer l’enfant en créature ronde. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des îles de nuages, prairies pastel, collines gourmandes et palais de rêves. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : réunir des fragments de rêve pour rendre le sommeil à un royaume. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-kirby",
+    "seriesLabel": "Kirby",
+    "seriesAr": "كيربي",
+    "world": {
+      "setting": "des îles de nuages, prairies pastel, collines gourmandes et palais de rêves",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "réunir des fragments de rêve pour rendre le sommeil à un royaume"
+    },
+    "reference": {
+      "costume": "tenue d’exploration douce et confortable ; ne pas transformer l’enfant en créature ronde",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Les étoiles gourmandes",
+    "ar": "النجوم اللذيذة",
+    "category": "video-games",
+    "icon": "🍰",
+    "theme": "🍰 Héros personnalisé : Les étoiles gourmandes. Inspiration ludique originale. Tenue et apparence : tenue d’exploration douce et confortable ; ne pas transformer l’enfant en créature ronde. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des îles de nuages, prairies pastel, collines gourmandes et palais de rêves. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : retrouver les ingrédients d’un goûter magique en partageant. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-kirby",
+    "seriesLabel": "Kirby",
+    "seriesAr": "كيربي",
+    "world": {
+      "setting": "des îles de nuages, prairies pastel, collines gourmandes et palais de rêves",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "retrouver les ingrédients d’un goûter magique en partageant"
+    },
+    "reference": {
+      "costume": "tenue d’exploration douce et confortable ; ne pas transformer l’enfant en créature ronde",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Le palais des nuages",
+    "ar": "قصر السحاب",
+    "category": "video-games",
+    "icon": "🏯",
+    "theme": "🏯 Héros personnalisé : Le palais des nuages. Inspiration ludique originale. Tenue et apparence : tenue d’exploration douce et confortable ; ne pas transformer l’enfant en créature ronde. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des îles de nuages, prairies pastel, collines gourmandes et palais de rêves. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : réparer les passerelles d’un palais suspendu. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-kirby",
+    "seriesLabel": "Kirby",
+    "seriesAr": "كيربي",
+    "world": {
+      "setting": "des îles de nuages, prairies pastel, collines gourmandes et palais de rêves",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "réparer les passerelles d’un palais suspendu"
+    },
+    "reference": {
+      "costume": "tenue d’exploration douce et confortable ; ne pas transformer l’enfant en créature ronde",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "La ville des couleurs",
+    "ar": "مدينة الألوان",
+    "category": "video-games",
+    "icon": "🎨",
+    "theme": "🎨 Héros personnalisé : La ville des couleurs. Inspiration ludique originale. Tenue et apparence : veste sportive, baskets et équipement de peinture ludique sans arme réaliste. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : une ville artistique aux places colorées, ateliers créatifs et parcours sportifs. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : rendre ses couleurs à un quartier grâce à une œuvre collective. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-splatoon",
+    "seriesLabel": "Splatoon",
+    "seriesAr": "سبلاتون",
+    "world": {
+      "setting": "une ville artistique aux places colorées, ateliers créatifs et parcours sportifs",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "rendre ses couleurs à un quartier grâce à une œuvre collective"
+    },
+    "reference": {
+      "costume": "veste sportive, baskets et équipement de peinture ludique sans arme réaliste",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Le défi des artistes",
+    "ar": "تحدي الفنانين",
+    "category": "video-games",
+    "icon": "🖌️",
+    "theme": "🖌️ Héros personnalisé : Le défi des artistes. Inspiration ludique originale. Tenue et apparence : veste sportive, baskets et équipement de peinture ludique sans arme réaliste. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : une ville artistique aux places colorées, ateliers créatifs et parcours sportifs. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : réussir un parcours de peinture en équipe sans viser de personnes. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-splatoon",
+    "seriesLabel": "Splatoon",
+    "seriesAr": "سبلاتون",
+    "world": {
+      "setting": "une ville artistique aux places colorées, ateliers créatifs et parcours sportifs",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "réussir un parcours de peinture en équipe sans viser de personnes"
+    },
+    "reference": {
+      "costume": "veste sportive, baskets et équipement de peinture ludique sans arme réaliste",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Le festival des fresques",
+    "ar": "مهرجان الجداريات",
+    "category": "video-games",
+    "icon": "🖼️",
+    "theme": "🖼️ Héros personnalisé : Le festival des fresques. Inspiration ludique originale. Tenue et apparence : veste sportive, baskets et équipement de peinture ludique sans arme réaliste. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : une ville artistique aux places colorées, ateliers créatifs et parcours sportifs. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : créer une grande fresque qui raconte l’amitié du quartier. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-splatoon",
+    "seriesLabel": "Splatoon",
+    "seriesAr": "سبلاتون",
+    "world": {
+      "setting": "une ville artistique aux places colorées, ateliers créatifs et parcours sportifs",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "créer une grande fresque qui raconte l’amitié du quartier"
+    },
+    "reference": {
+      "costume": "veste sportive, baskets et équipement de peinture ludique sans arme réaliste",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Le parcours des champions",
+    "ar": "مسار الأبطال",
+    "category": "video-games",
+    "icon": "🏁",
+    "theme": "🏁 Héros personnalisé : Le parcours des champions. Inspiration ludique originale. Tenue et apparence : tenue d’aventure personnalisée sans logo ; visage et coiffure inchangés, sans transformation en avatar générique. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des mondes de construction imaginaires, parcours de plateformes et villes créées ensemble. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : franchir un parcours de plateformes en aidant les autres. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-roblox",
+    "seriesLabel": "Roblox",
+    "seriesAr": "روبلوكس",
+    "world": {
+      "setting": "des mondes de construction imaginaires, parcours de plateformes et villes créées ensemble",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "franchir un parcours de plateformes en aidant les autres"
+    },
+    "reference": {
+      "costume": "tenue d’aventure personnalisée sans logo ; visage et coiffure inchangés, sans transformation en avatar générique",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "La ville à inventer",
+    "ar": "المدينة المبتكرة",
+    "category": "video-games",
+    "icon": "🏙️",
+    "theme": "🏙️ Héros personnalisé : La ville à inventer. Inspiration ludique originale. Tenue et apparence : tenue d’aventure personnalisée sans logo ; visage et coiffure inchangés, sans transformation en avatar générique. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des mondes de construction imaginaires, parcours de plateformes et villes créées ensemble. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : construire une ville inclusive avec des ponts et des jardins. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-roblox",
+    "seriesLabel": "Roblox",
+    "seriesAr": "روبلوكس",
+    "world": {
+      "setting": "des mondes de construction imaginaires, parcours de plateformes et villes créées ensemble",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "construire une ville inclusive avec des ponts et des jardins"
+    },
+    "reference": {
+      "costume": "tenue d’aventure personnalisée sans logo ; visage et coiffure inchangés, sans transformation en avatar générique",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "La mission des explorateurs",
+    "ar": "مهمة المستكشفين",
+    "category": "video-games",
+    "icon": "🗺️",
+    "theme": "🗺️ Héros personnalisé : La mission des explorateurs. Inspiration ludique originale. Tenue et apparence : tenue d’aventure personnalisée sans logo ; visage et coiffure inchangés, sans transformation en avatar générique. Équipements et accessoires : outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste. Adversaires ou obstacles : énigmes, passages à réparer et défis de coopération, sans violence ni blessure. Univers et ambiance : des mondes de construction imaginaires, parcours de plateformes et villes créées ensemble. Lieux à explorer : sentiers, places accueillantes et lieux de découverte cohérents avec ce monde. Mission possible : résoudre une chasse aux indices dans plusieurs mondes imaginaires. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-roblox",
+    "seriesLabel": "Roblox",
+    "seriesAr": "روبلوكس",
+    "world": {
+      "setting": "des mondes de construction imaginaires, parcours de plateformes et villes créées ensemble",
+      "places": "sentiers, places accueillantes et lieux de découverte cohérents avec ce monde",
+      "objects": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "mission": "résoudre une chasse aux indices dans plusieurs mondes imaginaires"
+    },
+    "reference": {
+      "costume": "tenue d’aventure personnalisée sans logo ; visage et coiffure inchangés, sans transformation en avatar générique",
+      "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
+      "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
   }
 ];

@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded",()=>{
   const series=document.getElementById("themeSeries"), seriesLabel=document.getElementById("themeSeriesLabel");
   if(!gender||!grid||!catalog||!categories||!search||!category||!toggle)return;
   let showAll=false;
-  const animeSeries=window.MLH_ANIME_SERIES||[], seriesOptions=[];
-  for(const item of animeSeries){
+  const animeSeries=window.MLH_ANIME_SERIES||[], gameSeries=window.MLH_GAME_SERIES||[], seriesOptions=[];
+  for(const item of [...animeSeries,...gameSeries]){
     const option=document.createElement("option");option.value=item.id;option.textContent=item.label;
     series?.append(option);seriesOptions.push({option,item});
   }
@@ -55,13 +55,14 @@ document.addEventListener("DOMContentLoaded",()=>{
     const entries=catalog.filter(t=>t.category===group.id).map(buttonFor);
     const subgroups=[];
     let inspirationNote=null;
-    if(group.id==="anime"){
+    if(["anime","video-games"].includes(group.id)){
       inspirationNote=document.createElement("p");
       inspirationNote.className="anime-inspiration-note";
     }
-    if(group.id==="anime"&&animeSeries.length){
+    const groupSeries=group.id==="anime"?animeSeries:group.id==="video-games"?gameSeries:[];
+    if(groupSeries.length){
       cards.className="theme-series-list";
-      for(const item of animeSeries){
+      for(const item of groupSeries){
         const section=document.createElement("details");section.className="theme-series-group";section.dataset.series=item.id;
         const heading=document.createElement("summary"), name=document.createElement("span"), amount=document.createElement("span");
         amount.className="theme-category-count";heading.append(name,amount);
@@ -78,17 +79,17 @@ document.addEventListener("DOMContentLoaded",()=>{
   });
   function render(resetOpen=false){
     const ar=document.documentElement.lang==="ar";
-    const isAnime=category.value==="anime";
+    const isAnime=category.value==="anime", isGame=category.value==="video-games", hasSeries=isAnime||isGame;
     if(seriesLabel){
-      seriesLabel.hidden=!isAnime;
-      seriesLabel.querySelector("span").textContent=ar?"اختيار مسلسل الأنمي":"Choisir une série anime";
-      category.closest(".theme-catalog-tools").classList.toggle("has-anime-series",isAnime);
+      seriesLabel.hidden=!hasSeries;
+      seriesLabel.querySelector("span").textContent=isGame?(ar?"اختيار عالم اللعبة":"Choisir un univers de jeu"):(ar?"اختيار مسلسل الأنمي":"Choisir une série anime");
+      category.closest(".theme-catalog-tools").classList.toggle("has-anime-series",hasSeries);
     }
     if(series){
-      series.options[0].textContent=ar?"كل المسلسلات":"Toutes les séries";
-      seriesOptions.forEach(({option,item})=>option.textContent=ar?item.ar:item.label);
+      series.options[0].textContent=isGame?(ar?"كل الألعاب":"Tous les jeux"):(ar?"كل المسلسلات":"Toutes les séries");
+      seriesOptions.forEach(({option,item})=>{option.textContent=ar?item.ar:item.label;option.hidden=isGame?!gameSeries.includes(item):!animeSeries.includes(item);});
     }
-    const matches=new Set(window.MLHThemeSearch.filter(catalog,{query:search.value,category:category.value,series:isAnime?(series?.value||"all"):"all",gender:gender.value,showAll}));
+    const matches=new Set(window.MLHThemeSearch.filter(catalog,{query:search.value,category:category.value,series:hasSeries?(series?.value||"all"):"all",gender:gender.value,showAll}));
     search.placeholder=ar?"مثال: تنين، كرة القدم، طبيب بيطري…":"Ex. dragon, football, vétérinaire…";
     category.options[0].textContent=ar?"كل الفئات":"Toutes les catégories";
     options.forEach(({option,group})=>option.textContent=ar?group.ar:group.label);
@@ -96,7 +97,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     toggle.setAttribute("aria-pressed",String(showAll));
     custom.label.textContent=ar?custom.theme.ar:custom.theme.label;
     for(const item of groups){
-      if(item.inspirationNote)item.inspirationNote.textContent=ar
+      if(item.inspirationNote)item.inspirationNote.textContent=item.group.id==="video-games"
+        ?(ar?"مغامرات أصلية مخصصة مستوحاة من أجواء هذه الألعاب. يحتفظ البطل بوجه الطفل، والشخصيات ليست نسخًا مطابقة.":"Des aventures originales personnalisées inspirées des ambiances de ces jeux. Le héros garde le visage de votre enfant ; les personnages ne sont pas des reproductions identiques.")
+        :ar
         ?"المغامرات مستوحاة من عوالم وأجواء مسلسلات الأنمي هذه. الشخصيات تكييفات مخصصة وليست نسخًا مطابقة للشخصيات الأصلية."
         :"Les aventures proposées s’inspirent des mondes et des ambiances de ces anime. Les personnages sont des adaptations personnalisées et ne sont pas des reproductions identiques.";
       let count=0;
@@ -110,8 +113,8 @@ document.addEventListener("DOMContentLoaded",()=>{
         const count=sub.members.filter(entry=>!entry.button.hidden).length;
         sub.section.hidden=count===0;
         sub.name.textContent=ar?sub.item.ar:sub.item.label;
-        sub.amount.textContent=ar?`${count} شخصيات`:`${count} ${count===1?"personnage":"personnages"}`;
-        if(resetOpen)sub.section.open=!!search.value.trim()||(isAnime&&series?.value!=="all");
+        sub.amount.textContent=item.group.id==="video-games"?(ar?`${count} مغامرات`:`${count} aventures`):(ar?`${count} شخصيات`:`${count} ${count===1?"personnage":"personnages"}`);
+        if(resetOpen)sub.section.open=!!search.value.trim()||(hasSeries&&series?.value!=="all");
       }
       item.title.textContent=`${item.group.icon} ${ar?item.group.ar:item.group.label}`;
       item.count.textContent=ar?`${count} موضوع`:`${count} ${count===1?"thème":"thèmes"}`;

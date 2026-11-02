@@ -8,10 +8,10 @@ vm.runInContext(fs.readFileSync('theme-catalog.js','utf8'),context);
 vm.runInContext(fs.readFileSync('themes.js','utf8'),context);
 const {MLH_THEME_CATALOG:catalog,MLH_THEME_CATEGORIES:categories,MLHThemeSearch:search}=context.window;
 
-test('291 distinct themes in 19 bilingual categories, with stable legacy values',()=>{
-  assert.equal(catalog.length,291);assert.equal(categories.length,19);
-  assert.equal(new Set(catalog.map(t=>t.label)).size,291);
-  assert.equal(new Set(catalog.map(t=>t.theme)).size,291);
+test('315 distinct themes in 20 bilingual categories, with stable legacy values',()=>{
+  assert.equal(catalog.length,315);assert.equal(categories.length,20);
+  assert.equal(new Set(catalog.map(t=>t.label)).size,315);
+  assert.equal(new Set(catalog.map(t=>t.theme)).size,315);
   for(const c of categories){assert.ok(c.ar);assert.ok(catalog.filter(t=>t.category===c.id).length>=12);}
   assert.ok(catalog.every(t=>t.ar&&t.icon&&categories.some(c=>c.id===t.category)));
   assert.equal(catalog.find(t=>t.label==='Espace').theme,"🚀 Voyage dans l'espace");
@@ -23,8 +23,8 @@ test('profile suggestions never prevent access to any category or theme',()=>{
   assert.ok(girl.some(t=>t.label==='Fées'));assert.ok(!girl.some(t=>t.label==='Robots'));
   const boy=search.filter(catalog,{gender:'boy'});
   assert.ok(boy.some(t=>t.label==='Robots'));assert.ok(!boy.some(t=>t.label==='Fées'));
-  assert.equal(search.filter(catalog,{gender:'girl',showAll:true}).length,291);
-  assert.equal(search.filter(catalog,{gender:'boy',showAll:true}).length,291);
+  assert.equal(search.filter(catalog,{gender:'girl',showAll:true}).length,315);
+  assert.equal(search.filter(catalog,{gender:'boy',showAll:true}).length,315);
 });
 
 test('search ignores French accents, works in Arabic, and combines category filters',()=>{
@@ -148,3 +148,20 @@ test('removed series cannot appear in anime filters or search results',()=>{
   assert.ok(!context.window.MLH_ANIME_SERIES.some(s=>s.id==='yu-gi-oh'));
   for(const query of ['Yu-Gi-Oh','Yugi','Seto Kaiba','Joey Wheeler']) assert.equal(search.filter(catalog,{query,showAll:true}).length,0,query);
  });
+
+
+test('video game adventures are grouped in eight bilingual worlds and searchable without altering anime',()=>{
+  const games=context.window.MLH_GAME_SERIES;
+  assert.equal(games.length,8);
+  const rows=search.filter(catalog,{category:'video-games',showAll:true});
+  assert.equal(rows.length,24);
+  for(const game of games){
+    assert.ok(game.ar);
+    const entries=search.filter(catalog,{category:'video-games',series:game.id,showAll:true});
+    assert.equal(entries.length,3);
+    assert.ok(entries.every(t=>t.seriesLabel===game.label&&t.ar&&t.world.mission&&t.reference.costume));
+    assert.equal(search.filter(catalog,{query:game.label,category:'video-games',showAll:true}).length,3);
+  }
+  assert.equal(search.filter(catalog,{category:'anime',showAll:true}).length,52);
+  assert.ok(rows.every(t=>t.theme.includes('référence initiale')&&t.theme.includes('couverture fixe sa tenue')));
+});
