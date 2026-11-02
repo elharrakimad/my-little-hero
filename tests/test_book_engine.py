@@ -11,6 +11,7 @@ from unittest.mock import MagicMock, patch
 
 from child_profile import gender_instruction
 from story_reference import visual_reference_instruction
+from game_story import game_story_instruction
 
 
 class BookEngineTests(unittest.TestCase):
@@ -79,6 +80,7 @@ class BookEngineTests(unittest.TestCase):
                 with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()):
                     namespace = dict(STORY_IDENTITY_INSTRUCTION=STORY_IDENTITY_INSTRUCTION, normalize_story_structure=normalize_story_structure, Path=Path, gender_instruction=gender_instruction, client=client,
                         visual_reference_instruction=visual_reference_instruction,
+                        game_story_instruction=game_story_instruction,
                         coloring_instruction=__import__("age_profile").coloring_instruction,
                         illustration_direction=__import__("book_style").illustration_direction,
                         child_outfit_instruction=__import__("character_continuity").child_outfit_instruction,

@@ -13,6 +13,7 @@ from child_profile import gender_instruction
 from character_identity import IDENTITY_INSTRUCTION, STORY_IDENTITY_INSTRUCTION
 from age_profile import coloring_instruction
 from story_reference import visual_reference_instruction
+from game_story import game_story_instruction
 from book_layout import build_book_pdf
 from book_content import story_pages, keepsake_congratulations, normalize_story_structure
 
@@ -263,6 +264,7 @@ PERSONNAGE PRINCIPAL
 L'enfant doit être le personnage principal de l'histoire, héros ou héroïne selon le choix indiqué.
 Son prénom doit apparaître naturellement dans l'histoire.
 {STORY_IDENTITY_INSTRUCTION}
+{game_story_instruction(THEME)}
 
 OBJECTIF
 Créer une histoire amusante, captivante, éducative et adaptée à l'âge
