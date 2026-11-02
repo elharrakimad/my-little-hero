@@ -179,3 +179,13 @@ test('comics offer 24 bilingual inspirations in eight worlds, isolated from anim
   assert.equal(search.filter(catalog,{category:'anime',showAll:true}).length,52);
   assert.equal(search.filter(catalog,{category:'video-games',showAll:true}).length,51);
 });
+
+
+test('Miles inspiration specifies the spider costume, powers and urban world while retaining child identity',()=>{
+ const miles=catalog.find(t=>t.label.startsWith('Miles Morales'));
+ for(const detail of ['combinaison de super-héros noire ajustée','toile rouge','araignée rouge','pas d’éclair','visage et cheveux de l’enfant'])assert.ok(miles.reference.costume.includes(detail));
+ assert.ok(miles.world.setting.includes('Brooklyn'));
+ assert.ok(miles.reference.equipment.includes('fils de toile'));
+ assert.ok(miles.theme.includes('sans lui donner le visage ou les cheveux de Miles Morales'));
+ for(const value of [miles.reference.costume,miles.reference.equipment,miles.world.setting,miles.world.mission])assert.ok(miles.theme.includes(value));
+});

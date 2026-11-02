@@ -4503,21 +4503,21 @@ window.MLH_THEME_CATALOG = [
     "label": "Miles Morales · énergie et discrétion",
     "ar": "مايلز موراليس · الطاقة والتخفي",
     "category": "comics",
-    "icon": "⚡",
-    "theme": "⚡ Héros personnalisé : discrétion et impulsions lumineuses protectrices. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue noire et rouge avec veste courte, sans modifier les cheveux. Équipements et accessoires : discrétion et impulsions lumineuses protectrices, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une grande ville verticale, ponts suspendus, toits et laboratoires de quartier. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "icon": "🕸️",
+    "theme": "🕸️ Héros personnalisé : aventure urbaine inspirée de Miles Morales, énergie et discrétion. Tenue et apparence : combinaison de super-héros noire ajustée, grands empiècements rouges aux épaules et aux doigts, motifs fins de toile rouge, emblème d’araignée rouge stylisée sur la poitrine et le dos, gants noirs et rouges, chaussures légères noires et rouges ; pas de veste ni de cape, pas d’éclair sur la poitrine ; visage et cheveux de l’enfant visibles, masque retiré. Équipements et accessoires : agilité acrobatique, adhérence aux murs, fils de toile souples projetés par les poignets pour se balancer et secourir, camouflage temporaire et petites impulsions bioélectriques bleutées autour des mains ; ne pas transformer ces pouvoirs en boule magique dorée. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une métropole contemporaine inspirée de Brooklyn, façades de briques, escaliers de secours métalliques, toits avec réservoirs d’eau, métro aérien, fresques urbaines et ponts suspendus ; pas de cité médiévale ni de château fantastique. Lieux à explorer : toits de quartier, ruelles aux fresques, escaliers de secours, stations de métro aérien et grand pont urbain. Mission possible : retrouver une balise cachée entre les toits et aider les habitants avec agilité, discrétion et entraide. Garder le visage de l’enfant comme personnage principal, sans lui donner le visage ou les cheveux de Miles Morales. La référence initiale fixe son identité ; la couverture fixe sa tenue pendant toute l’histoire. Dès la couverture et pendant toute l’histoire, privilégier les poses acrobatiques, la toile et les décors urbains cohérents. Conserver le même costume, ses motifs et ses accessoires sur chaque page et le médaillon final. En coloriage, représenter le noir du costume par des zones blanches délimitées à colorier, sans aplats noirs massifs. Sans blessure ni scène sanglante ; deux secondaires maximum. Aucun nom de franchise ni texte ajouté dans les illustrations.",
     "profile": "",
     "series": "comics-spider",
     "seriesLabel": "Spider-Man et ses alliés",
     "seriesAr": "سبايدر مان وحلفاؤه",
     "world": {
-      "setting": "une grande ville verticale, ponts suspendus, toits et laboratoires de quartier",
-      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
-      "objects": "discrétion et impulsions lumineuses protectrices",
-      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+      "setting": "une métropole contemporaine inspirée de Brooklyn, façades de briques, escaliers de secours métalliques, toits avec réservoirs d’eau, métro aérien, fresques urbaines et ponts suspendus ; pas de cité médiévale ni de château fantastique",
+      "places": "toits de quartier, ruelles aux fresques, escaliers de secours, stations de métro aérien et grand pont urbain",
+      "objects": "agilité acrobatique, adhérence aux murs, fils de toile souples projetés par les poignets pour se balancer et secourir, camouflage temporaire et petites impulsions bioélectriques bleutées autour des mains ; ne pas transformer ces pouvoirs en boule magique dorée",
+      "mission": "retrouver une balise cachée entre les toits et aider les habitants avec agilité, discrétion et entraide"
     },
     "reference": {
-      "costume": "tenue noire et rouge avec veste courte, sans modifier les cheveux",
-      "equipment": "discrétion et impulsions lumineuses protectrices",
+      "costume": "combinaison de super-héros noire ajustée, grands empiècements rouges aux épaules et aux doigts, motifs fins de toile rouge, emblème d’araignée rouge stylisée sur la poitrine et le dos, gants noirs et rouges, chaussures légères noires et rouges ; pas de veste ni de cape, pas d’éclair sur la poitrine ; visage et cheveux de l’enfant visibles, masque retiré",
+      "equipment": "agilité acrobatique, adhérence aux murs, fils de toile souples projetés par les poignets pour se balancer et secourir, camouflage temporaire et petites impulsions bioélectriques bleutées autour des mains ; ne pas transformer ces pouvoirs en boule magique dorée",
       "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
     }
   },
