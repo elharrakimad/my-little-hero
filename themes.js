@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded",()=>{
   const series=document.getElementById("themeSeries"), seriesLabel=document.getElementById("themeSeriesLabel");
   if(!gender||!grid||!catalog||!categories||!search||!category||!toggle)return;
   let showAll=false;
-  const animeSeries=window.MLH_ANIME_SERIES||[], gameSeries=window.MLH_GAME_SERIES||[], seriesOptions=[];
-  for(const item of [...animeSeries,...gameSeries]){
+  const animeSeries=window.MLH_ANIME_SERIES||[], gameSeries=window.MLH_GAME_SERIES||[], comicsSeries=window.MLH_COMICS_SERIES||[], seriesOptions=[];
+  for(const item of [...animeSeries,...gameSeries,...comicsSeries]){
     const option=document.createElement("option");option.value=item.id;option.textContent=item.label;
     series?.append(option);seriesOptions.push({option,item});
   }
@@ -55,11 +55,11 @@ document.addEventListener("DOMContentLoaded",()=>{
     const entries=catalog.filter(t=>t.category===group.id).map(buttonFor);
     const subgroups=[];
     let inspirationNote=null;
-    if(["anime","video-games"].includes(group.id)){
+    if(["anime","video-games","comics"].includes(group.id)){
       inspirationNote=document.createElement("p");
       inspirationNote.className="anime-inspiration-note";
     }
-    const groupSeries=group.id==="anime"?animeSeries:group.id==="video-games"?gameSeries:[];
+    const groupSeries=group.id==="anime"?animeSeries:group.id==="video-games"?gameSeries:group.id==="comics"?comicsSeries:[];
     if(groupSeries.length){
       cards.className="theme-series-list";
       for(const item of groupSeries){
@@ -79,15 +79,15 @@ document.addEventListener("DOMContentLoaded",()=>{
   });
   function render(resetOpen=false){
     const ar=document.documentElement.lang==="ar";
-    const isAnime=category.value==="anime", isGame=category.value==="video-games", hasSeries=isAnime||isGame;
+    const isAnime=category.value==="anime", isGame=category.value==="video-games", isComics=category.value==="comics", hasSeries=isAnime||isGame||isComics;
     if(seriesLabel){
       seriesLabel.hidden=!hasSeries;
-      seriesLabel.querySelector("span").textContent=isGame?(ar?"اختيار عالم اللعبة":"Choisir un univers de jeu"):(ar?"اختيار مسلسل الأنمي":"Choisir une série anime");
+      seriesLabel.querySelector("span").textContent=isComics?(ar?"اختيار عالم القصص المصورة":"Choisir un univers comics"):isGame?(ar?"اختيار عالم اللعبة":"Choisir un univers de jeu"):(ar?"اختيار مسلسل الأنمي":"Choisir une série anime");
       category.closest(".theme-catalog-tools").classList.toggle("has-anime-series",hasSeries);
     }
     if(series){
-      series.options[0].textContent=isGame?(ar?"كل الألعاب":"Tous les jeux"):(ar?"كل المسلسلات":"Toutes les séries");
-      seriesOptions.forEach(({option,item})=>{option.textContent=ar?item.ar:item.label;option.hidden=isGame?!gameSeries.includes(item):!animeSeries.includes(item);});
+      series.options[0].textContent=isComics?(ar?"كل العوالم":"Tous les univers"):isGame?(ar?"كل الألعاب":"Tous les jeux"):(ar?"كل المسلسلات":"Toutes les séries");
+      seriesOptions.forEach(({option,item})=>{option.textContent=ar?item.ar:item.label;option.hidden=!(isGame?gameSeries:isComics?comicsSeries:animeSeries).includes(item);});
     }
     const matches=new Set(window.MLHThemeSearch.filter(catalog,{query:search.value,category:category.value,series:hasSeries?(series?.value||"all"):"all",gender:gender.value,showAll}));
     search.placeholder=ar?"مثال: تنين، كرة القدم، طبيب بيطري…":"Ex. dragon, football, vétérinaire…";
@@ -97,7 +97,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     toggle.setAttribute("aria-pressed",String(showAll));
     custom.label.textContent=ar?custom.theme.ar:custom.theme.label;
     for(const item of groups){
-      if(item.inspirationNote)item.inspirationNote.textContent=item.group.id==="video-games"
+      if(item.inspirationNote)item.inspirationNote.textContent=item.group.id==="comics"
+        ?(ar?"مغامرات مخصصة مستوحاة من أجواء القصص المصورة. يحتفظ البطل بوجه الطفل، والشخصيات تكييفات وليست نسخًا مطابقة.":"Des aventures personnalisées inspirées des mondes des comics. Le héros garde le visage de votre enfant ; les personnages sont des adaptations et non des reproductions identiques.")
+        :item.group.id==="video-games"
         ?(ar?"مغامرات أصلية مخصصة مستوحاة من أجواء هذه الألعاب. يحتفظ البطل بوجه الطفل، والشخصيات ليست نسخًا مطابقة.":"Des aventures originales personnalisées inspirées des ambiances de ces jeux. Le héros garde le visage de votre enfant ; les personnages ne sont pas des reproductions identiques.")
         :ar
         ?"المغامرات مستوحاة من عوالم وأجواء مسلسلات الأنمي هذه. الشخصيات تكييفات مخصصة وليست نسخًا مطابقة للشخصيات الأصلية."
@@ -120,7 +122,9 @@ document.addEventListener("DOMContentLoaded",()=>{
       item.count.textContent=ar?`${count} موضوع`:`${count} ${count===1?"thème":"thèmes"}`;
       if(resetOpen)item.details.open=!!search.value.trim()||category.value!=="all";
     }
-    result.textContent=isAnime
+    result.textContent=isComics
+      ?(ar?`${matches.size} شخصية · اختر عالمًا ثم بطلًا للإلهام. موضوعك الخاص متاح دائمًا.`:`${matches.size} personnages · Choisissez un univers, puis un héros d’inspiration. Votre propre thème reste disponible.`)
+      :isAnime
       ?(ar?`${matches.size} شخصية · اختر مسلسلًا ثم شخصية. موضوعك الخاص متاح دائمًا.`:`${matches.size} personnages · Choisissez une série, puis un personnage. Votre propre thème reste disponible.`)
       :(ar?`${matches.size} موضوع · اختر فئة أو ابحث عن مغامرة. الخاص بك متاح دائمًا.`:`${matches.size} ${matches.size===1?"thème":"thèmes"} · Ouvrez une catégorie ou recherchez une aventure. Votre propre thème reste disponible.`);
     empty.hidden=matches.size!==0;

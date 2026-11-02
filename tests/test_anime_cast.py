@@ -21,6 +21,25 @@ def cast_story(count=2):
 
 
 class AnimeCastTests(unittest.TestCase):
+    def test_comics_share_fixed_two_secondary_policy_but_games_do_not(self):
+        from game_story import game_themes
+        self.assertEqual(anime_cast.cast_limit(next(iter(game_themes()))), 6)
+        comics = anime_cast.anime_themes('comics')
+        self.assertEqual(len(comics), 72)
+        for theme in comics:
+            self.assertFalse(anime_cast.is_anime_theme(theme))
+            self.assertEqual(anime_cast.cast_limit(theme), 2)
+            self.assertIn('RÈGLE COMICS', anime_cast.anime_cast_instruction(theme))
+            self.assertIn('Deux personnages secondaires au maximum', anime_cast.anime_cast_instruction(theme))
+            self.assertIsNotNone(anime_cast.secondary_reference_folder(theme, Path('book/pages')))
+        with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()):
+            ns, client = self.namespace(Path(directory), cast_story())
+            ns['THEME'] = next(iter(comics))
+            ns['generate_secondary_character_references']()
+            self.assertEqual(client.images.edit.call_count, 2)
+            ns['generate_secondary_character_references']()
+            self.assertEqual(client.images.edit.call_count, 2)
+
     def test_all_anime_catalogue_values_get_two_secondary_limit_only(self):
         self.assertTrue(anime_cast.anime_themes())
         for theme in anime_cast.anime_themes():

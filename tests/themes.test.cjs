@@ -8,10 +8,10 @@ vm.runInContext(fs.readFileSync('theme-catalog.js','utf8'),context);
 vm.runInContext(fs.readFileSync('themes.js','utf8'),context);
 const {MLH_THEME_CATALOG:catalog,MLH_THEME_CATEGORIES:categories,MLHThemeSearch:search}=context.window;
 
-test('342 distinct themes in 20 bilingual categories, with stable legacy values',()=>{
-  assert.equal(catalog.length,342);assert.equal(categories.length,20);
-  assert.equal(new Set(catalog.map(t=>t.label)).size,342);
-  assert.equal(new Set(catalog.map(t=>t.theme)).size,342);
+test('366 distinct themes in 21 bilingual categories, with stable legacy values',()=>{
+  assert.equal(catalog.length,366);assert.equal(categories.length,21);
+  assert.equal(new Set(catalog.map(t=>t.label)).size,366);
+  assert.equal(new Set(catalog.map(t=>t.theme)).size,366);
   for(const c of categories){assert.ok(c.ar);assert.ok(catalog.filter(t=>t.category===c.id).length>=12);}
   assert.ok(catalog.every(t=>t.ar&&t.icon&&categories.some(c=>c.id===t.category)));
   assert.equal(catalog.find(t=>t.label==='Espace').theme,"🚀 Voyage dans l'espace");
@@ -23,8 +23,8 @@ test('profile suggestions never prevent access to any category or theme',()=>{
   assert.ok(girl.some(t=>t.label==='Fées'));assert.ok(!girl.some(t=>t.label==='Robots'));
   const boy=search.filter(catalog,{gender:'boy'});
   assert.ok(boy.some(t=>t.label==='Robots'));assert.ok(!boy.some(t=>t.label==='Fées'));
-  assert.equal(search.filter(catalog,{gender:'girl',showAll:true}).length,342);
-  assert.equal(search.filter(catalog,{gender:'boy',showAll:true}).length,342);
+  assert.equal(search.filter(catalog,{gender:'girl',showAll:true}).length,366);
+  assert.equal(search.filter(catalog,{gender:'boy',showAll:true}).length,366);
 });
 
 test('search ignores French accents, works in Arabic, and combines category filters',()=>{
@@ -49,16 +49,16 @@ test('distinct superpowers and a dedicated girls category remain accessible to e
 });
 
 
-test('Marvel and DC are absent while anime inspirations keep the personalized child as the hero',()=>{
+test('anime inspirations remain intact while comics are available separately',()=>{
   for(const category of ['anime']){
     const rows=search.filter(catalog,{category,showAll:true});
     assert.equal(rows.length,52);
     assert.ok(rows.every(t=>t.theme.includes('Héros personnalisé')));
   }
-  assert.equal(search.filter(catalog,{query:'Spider-Man',showAll:true}).length,0);
-  assert.ok(!categories.some(c=>c.id==='comics'));
-  assert.ok(!catalog.some(t=>t.category==='comics'));
-  for(const name of ['Batman','Superman','Iron Man','Wonder Woman']) assert.equal(search.filter(catalog,{query:name,showAll:true}).length,0);
+  assert.ok(search.filter(catalog,{query:'Spider-Man',category:'comics',showAll:true}).length>0);
+  assert.ok(categories.some(c=>c.id==='comics'));
+  assert.equal(catalog.filter(t=>t.category==='comics').length,24);
+  for(const name of ['Batman','Superman','Iron Man','Wonder Woman']) assert.ok(search.filter(catalog,{query:name,category:'comics',showAll:true}).length>0);
   assert.ok(search.filter(catalog,{query:'Naruto',showAll:true}).some(t=>t.category==='anime'));
   assert.ok(search.filter(catalog,{query:'ناروتو',showAll:true}).some(t=>t.category==='anime'));
 });
@@ -164,4 +164,18 @@ test('video game adventures are grouped in seventeen bilingual worlds and search
   }
   assert.equal(search.filter(catalog,{category:'anime',showAll:true}).length,52);
   assert.ok(rows.every(t=>t.theme.includes('référence initiale')&&t.theme.includes('couverture fixe sa tenue')));
+});
+
+
+test('comics offer 24 bilingual inspirations in eight worlds, isolated from anime and games',()=>{
+  const series=context.window.MLH_COMICS_SERIES;
+  assert.equal(series.length,8);
+  for(const group of series){
+    const rows=search.filter(catalog,{category:'comics',series:group.id,showAll:true});
+    assert.equal(rows.length,3);
+    assert.ok(rows.every(t=>t.ar&&t.reference.costume&&t.world.setting&&t.theme.includes('visage de l’enfant')));
+    assert.equal(search.filter(catalog,{category:'comics',query:group.ar,showAll:true}).length,3);
+  }
+  assert.equal(search.filter(catalog,{category:'anime',showAll:true}).length,52);
+  assert.equal(search.filter(catalog,{category:'video-games',showAll:true}).length,51);
 });

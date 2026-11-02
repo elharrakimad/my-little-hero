@@ -19,6 +19,12 @@ window.MLH_THEME_CATEGORIES = [
     "icon": "🎌"
   },
   {
+    "id": "comics",
+    "label": "Inspirations comics",
+    "ar": "إلهام من أبطال القصص المصورة",
+    "icon": "🦸"
+  },
+  {
     "id": "video-games",
     "label": "Inspirations jeux vidéo",
     "ar": "مغامرات مستوحاة من ألعاب الفيديو",
@@ -248,6 +254,48 @@ window.MLH_GAME_SERIES = [
     "id": "game-splatoon",
     "label": "Splatoon",
     "ar": "سبلاتون"
+  }
+];
+window.MLH_COMICS_SERIES = [
+  {
+    "id": "comics-spider",
+    "label": "Spider-Man et ses alliés",
+    "ar": "سبايدر مان وحلفاؤه"
+  },
+  {
+    "id": "comics-bat",
+    "label": "Batman et ses alliés",
+    "ar": "باتمان وحلفاؤه"
+  },
+  {
+    "id": "comics-super",
+    "label": "Superman et sa famille",
+    "ar": "سوبرمان وعائلته"
+  },
+  {
+    "id": "comics-armor",
+    "label": "Iron Man et les héros en armure",
+    "ar": "آيرون مان وأبطال الدروع"
+  },
+  {
+    "id": "comics-thunder",
+    "label": "Thor et les mondes légendaires",
+    "ar": "ثور والعوالم الأسطورية"
+  },
+  {
+    "id": "comics-justice",
+    "label": "Justice League",
+    "ar": "فرقة العدالة"
+  },
+  {
+    "id": "comics-speed",
+    "label": "Flash et les héros de la vitesse",
+    "ar": "فلاش وأبطال السرعة"
+  },
+  {
+    "id": "comics-xmen",
+    "label": "X-Men",
+    "ar": "إكس مان"
   }
 ];
 window.MLH_THEME_CATALOG = [
@@ -4427,6 +4475,534 @@ window.MLH_THEME_CATALOG = [
       "costume": "tenue de voyage originale et accessoires d’exploration, cheveux inchangés",
       "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
       "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Spider-Man · agilité et entraide",
+    "ar": "سبايدر مان · الرشاقة والتعاون",
+    "category": "comics",
+    "icon": "🕸️",
+    "theme": "🕸️ Héros personnalisé : agilité, liens souples de secours et déplacements entre les toits. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue sportive rouge et bleue, motifs géométriques originaux, visage visible. Équipements et accessoires : agilité, liens souples de secours et déplacements entre les toits, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une grande ville verticale, ponts suspendus, toits et laboratoires de quartier. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-spider",
+    "seriesLabel": "Spider-Man et ses alliés",
+    "seriesAr": "سبايدر مان وحلفاؤه",
+    "world": {
+      "setting": "une grande ville verticale, ponts suspendus, toits et laboratoires de quartier",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "agilité, liens souples de secours et déplacements entre les toits",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue sportive rouge et bleue, motifs géométriques originaux, visage visible",
+      "equipment": "agilité, liens souples de secours et déplacements entre les toits",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Miles Morales · énergie et discrétion",
+    "ar": "مايلز موراليس · الطاقة والتخفي",
+    "category": "comics",
+    "icon": "⚡",
+    "theme": "⚡ Héros personnalisé : discrétion et impulsions lumineuses protectrices. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue noire et rouge avec veste courte, sans modifier les cheveux. Équipements et accessoires : discrétion et impulsions lumineuses protectrices, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une grande ville verticale, ponts suspendus, toits et laboratoires de quartier. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-spider",
+    "seriesLabel": "Spider-Man et ses alliés",
+    "seriesAr": "سبايدر مان وحلفاؤه",
+    "world": {
+      "setting": "une grande ville verticale, ponts suspendus, toits et laboratoires de quartier",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "discrétion et impulsions lumineuses protectrices",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue noire et rouge avec veste courte, sans modifier les cheveux",
+      "equipment": "discrétion et impulsions lumineuses protectrices",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Spider-Gwen · acrobatie et rythme",
+    "ar": "سبايدر غوين · الأكروبات والإيقاع",
+    "category": "comics",
+    "icon": "🤸",
+    "theme": "🤸 Héros personnalisé : acrobaties et coordination rythmique. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue blanche et violette avec capuche rabattue et visage découvert. Équipements et accessoires : acrobaties et coordination rythmique, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une grande ville verticale, ponts suspendus, toits et laboratoires de quartier. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-spider",
+    "seriesLabel": "Spider-Man et ses alliés",
+    "seriesAr": "سبايدر مان وحلفاؤه",
+    "world": {
+      "setting": "une grande ville verticale, ponts suspendus, toits et laboratoires de quartier",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "acrobaties et coordination rythmique",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue blanche et violette avec capuche rabattue et visage découvert",
+      "equipment": "acrobaties et coordination rythmique",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Batman · enquête et ingéniosité",
+    "ar": "باتمان · التحري والابتكار",
+    "category": "comics",
+    "icon": "🦇",
+    "theme": "🦇 Héros personnalisé : observation, gadgets de secours et résolution d’énigmes. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : combinaison sombre, cape courte et ceinture d’outils, visage identifiable. Équipements et accessoires : observation, gadgets de secours et résolution d’énigmes, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une métropole nocturne, tours anciennes, ateliers secrets et jardins sur les toits. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-bat",
+    "seriesLabel": "Batman et ses alliés",
+    "seriesAr": "باتمان وحلفاؤه",
+    "world": {
+      "setting": "une métropole nocturne, tours anciennes, ateliers secrets et jardins sur les toits",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "observation, gadgets de secours et résolution d’énigmes",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "combinaison sombre, cape courte et ceinture d’outils, visage identifiable",
+      "equipment": "observation, gadgets de secours et résolution d’énigmes",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Robin · adresse et coopération",
+    "ar": "روبن · المهارة والتعاون",
+    "category": "comics",
+    "icon": "🎯",
+    "theme": "🎯 Héros personnalisé : adresse, équilibre et travail d’équipe. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tunique rouge et verte, cape jaune courte et bottes. Équipements et accessoires : adresse, équilibre et travail d’équipe, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une métropole nocturne, tours anciennes, ateliers secrets et jardins sur les toits. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-bat",
+    "seriesLabel": "Batman et ses alliés",
+    "seriesAr": "باتمان وحلفاؤه",
+    "world": {
+      "setting": "une métropole nocturne, tours anciennes, ateliers secrets et jardins sur les toits",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "adresse, équilibre et travail d’équipe",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tunique rouge et verte, cape jaune courte et bottes",
+      "equipment": "adresse, équilibre et travail d’équipe",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Batgirl · déduction et technologie",
+    "ar": "باتغيرل · الاستنتاج والتقنية",
+    "category": "comics",
+    "icon": "💻",
+    "theme": "💻 Héros personnalisé : déduction, cartographie et outils numériques. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue violette et dorée, cape courte et sacoche technique. Équipements et accessoires : déduction, cartographie et outils numériques, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une métropole nocturne, tours anciennes, ateliers secrets et jardins sur les toits. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-bat",
+    "seriesLabel": "Batman et ses alliés",
+    "seriesAr": "باتمان وحلفاؤه",
+    "world": {
+      "setting": "une métropole nocturne, tours anciennes, ateliers secrets et jardins sur les toits",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "déduction, cartographie et outils numériques",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue violette et dorée, cape courte et sacoche technique",
+      "equipment": "déduction, cartographie et outils numériques",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Superman · force et bienveillance",
+    "ar": "سوبرمان · القوة والطيبة",
+    "category": "comics",
+    "icon": "🦸",
+    "theme": "🦸 Héros personnalisé : vol et force utilisés uniquement pour secourir. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue bleue et rouge avec cape, symbole personnel original sans logo connu. Équipements et accessoires : vol et force utilisés uniquement pour secourir, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une cité lumineuse, une campagne accueillante et des observatoires parmi les nuages. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-super",
+    "seriesLabel": "Superman et sa famille",
+    "seriesAr": "سوبرمان وعائلته",
+    "world": {
+      "setting": "une cité lumineuse, une campagne accueillante et des observatoires parmi les nuages",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "vol et force utilisés uniquement pour secourir",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue bleue et rouge avec cape, symbole personnel original sans logo connu",
+      "equipment": "vol et force utilisés uniquement pour secourir",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Supergirl · courage et envol",
+    "ar": "سوبرغيرل · الشجاعة والتحليق",
+    "category": "comics",
+    "icon": "☀️",
+    "theme": "☀️ Héros personnalisé : vol, courage et protection des habitants. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue bleue et rouge avec cape légère et chaussures pratiques. Équipements et accessoires : vol, courage et protection des habitants, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une cité lumineuse, une campagne accueillante et des observatoires parmi les nuages. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-super",
+    "seriesLabel": "Superman et sa famille",
+    "seriesAr": "سوبرمان وعائلته",
+    "world": {
+      "setting": "une cité lumineuse, une campagne accueillante et des observatoires parmi les nuages",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "vol, courage et protection des habitants",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue bleue et rouge avec cape légère et chaussures pratiques",
+      "equipment": "vol, courage et protection des habitants",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Superboy · énergie et découverte",
+    "ar": "سوبربوي · الطاقة والاكتشاف",
+    "category": "comics",
+    "icon": "💪",
+    "theme": "💪 Héros personnalisé : maîtrise d’une force nouvelle et entraide. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : veste de héros, tenue sportive bleue et rouge et bottes. Équipements et accessoires : maîtrise d’une force nouvelle et entraide, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une cité lumineuse, une campagne accueillante et des observatoires parmi les nuages. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-super",
+    "seriesLabel": "Superman et sa famille",
+    "seriesAr": "سوبرمان وعائلته",
+    "world": {
+      "setting": "une cité lumineuse, une campagne accueillante et des observatoires parmi les nuages",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "maîtrise d’une force nouvelle et entraide",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "veste de héros, tenue sportive bleue et rouge et bottes",
+      "equipment": "maîtrise d’une force nouvelle et entraide",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Iron Man · invention et envol",
+    "ar": "آيرون مان · الاختراع والطيران",
+    "category": "comics",
+    "icon": "🤖",
+    "theme": "🤖 Héros personnalisé : invention, vol assisté et réparation de machines. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : armure légère rouge et dorée au casque ouvert laissant voir le visage. Équipements et accessoires : invention, vol assisté et réparation de machines, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une ville futuriste, ateliers d’invention, laboratoires lumineux et plateformes aériennes. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-armor",
+    "seriesLabel": "Iron Man et les héros en armure",
+    "seriesAr": "آيرون مان وأبطال الدروع",
+    "world": {
+      "setting": "une ville futuriste, ateliers d’invention, laboratoires lumineux et plateformes aériennes",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "invention, vol assisté et réparation de machines",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "armure légère rouge et dorée au casque ouvert laissant voir le visage",
+      "equipment": "invention, vol assisté et réparation de machines",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "War Machine · protection et précision",
+    "ar": "وور ماشين · الحماية والدقة",
+    "category": "comics",
+    "icon": "🛡️",
+    "theme": "🛡️ Héros personnalisé : protection et stabilisation des structures sans armement. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : armure grise et argentée, outils de secours et casque ouvert. Équipements et accessoires : protection et stabilisation des structures sans armement, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une ville futuriste, ateliers d’invention, laboratoires lumineux et plateformes aériennes. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-armor",
+    "seriesLabel": "Iron Man et les héros en armure",
+    "seriesAr": "آيرون مان وأبطال الدروع",
+    "world": {
+      "setting": "une ville futuriste, ateliers d’invention, laboratoires lumineux et plateformes aériennes",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "protection et stabilisation des structures sans armement",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "armure grise et argentée, outils de secours et casque ouvert",
+      "equipment": "protection et stabilisation des structures sans armement",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Rescue · sauvetage et technologie",
+    "ar": "ريسكيو · الإنقاذ والتقنية",
+    "category": "comics",
+    "icon": "🔧",
+    "theme": "🔧 Héros personnalisé : sauvetage aérien et technologies protectrices. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : armure bleue et argentée, éclairages doux et casque ouvert. Équipements et accessoires : sauvetage aérien et technologies protectrices, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une ville futuriste, ateliers d’invention, laboratoires lumineux et plateformes aériennes. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-armor",
+    "seriesLabel": "Iron Man et les héros en armure",
+    "seriesAr": "آيرون مان وأبطال الدروع",
+    "world": {
+      "setting": "une ville futuriste, ateliers d’invention, laboratoires lumineux et plateformes aériennes",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "sauvetage aérien et technologies protectrices",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "armure bleue et argentée, éclairages doux et casque ouvert",
+      "equipment": "sauvetage aérien et technologies protectrices",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Thor · tonnerre et courage",
+    "ar": "ثور · الرعد والشجاعة",
+    "category": "comics",
+    "icon": "🔨",
+    "theme": "🔨 Héros personnalisé : lumière du tonnerre utilisée pour alimenter et protéger. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tunique d’aventure, cape courte et outil fantastique de réparation. Équipements et accessoires : lumière du tonnerre utilisée pour alimenter et protéger, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : des royaumes célestes, ponts lumineux, bibliothèques anciennes et montagnes de nuages. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-thunder",
+    "seriesLabel": "Thor et les mondes légendaires",
+    "seriesAr": "ثور والعوالم الأسطورية",
+    "world": {
+      "setting": "des royaumes célestes, ponts lumineux, bibliothèques anciennes et montagnes de nuages",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "lumière du tonnerre utilisée pour alimenter et protéger",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tunique d’aventure, cape courte et outil fantastique de réparation",
+      "equipment": "lumière du tonnerre utilisée pour alimenter et protéger",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Loki · illusions et malice",
+    "ar": "لوكي · الأوهام والمرح",
+    "category": "comics",
+    "icon": "✨",
+    "theme": "✨ Héros personnalisé : illusions lumineuses et résolution astucieuse d’énigmes. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tunique verte et dorée, manteau court et accessoires originaux. Équipements et accessoires : illusions lumineuses et résolution astucieuse d’énigmes, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : des royaumes célestes, ponts lumineux, bibliothèques anciennes et montagnes de nuages. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-thunder",
+    "seriesLabel": "Thor et les mondes légendaires",
+    "seriesAr": "ثور والعوالم الأسطورية",
+    "world": {
+      "setting": "des royaumes célestes, ponts lumineux, bibliothèques anciennes et montagnes de nuages",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "illusions lumineuses et résolution astucieuse d’énigmes",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tunique verte et dorée, manteau court et accessoires originaux",
+      "equipment": "illusions lumineuses et résolution astucieuse d’énigmes",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Valkyrie · bravoure et exploration",
+    "ar": "فالكيري · البسالة والاستكشاف",
+    "category": "comics",
+    "icon": "🪽",
+    "theme": "🪽 Héros personnalisé : exploration aérienne et protection des voyageurs. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue de voyage claire, bottes et cape légère. Équipements et accessoires : exploration aérienne et protection des voyageurs, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : des royaumes célestes, ponts lumineux, bibliothèques anciennes et montagnes de nuages. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-thunder",
+    "seriesLabel": "Thor et les mondes légendaires",
+    "seriesAr": "ثور والعوالم الأسطورية",
+    "world": {
+      "setting": "des royaumes célestes, ponts lumineux, bibliothèques anciennes et montagnes de nuages",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "exploration aérienne et protection des voyageurs",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue de voyage claire, bottes et cape légère",
+      "equipment": "exploration aérienne et protection des voyageurs",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Wonder Woman · courage et vérité",
+    "ar": "وندر وومان · الشجاعة والصدق",
+    "category": "comics",
+    "icon": "🛡️",
+    "theme": "🛡️ Héros personnalisé : courage, vérité et liens lumineux de protection. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue héroïque rouge, bleue et dorée adaptée à l’âge, bracelets protecteurs. Équipements et accessoires : courage, vérité et liens lumineux de protection, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : un réseau de cités fantastiques, îles anciennes, refuges sous-marins et stations spatiales. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-justice",
+    "seriesLabel": "Justice League",
+    "seriesAr": "فرقة العدالة",
+    "world": {
+      "setting": "un réseau de cités fantastiques, îles anciennes, refuges sous-marins et stations spatiales",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "courage, vérité et liens lumineux de protection",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue héroïque rouge, bleue et dorée adaptée à l’âge, bracelets protecteurs",
+      "equipment": "courage, vérité et liens lumineux de protection",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Aquaman · gardien des océans",
+    "ar": "أكوامان · حارس المحيطات",
+    "category": "comics",
+    "icon": "🌊",
+    "theme": "🌊 Héros personnalisé : exploration sous-marine et protection des animaux marins. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue d’exploration aquatique verte et dorée, outil de navigation. Équipements et accessoires : exploration sous-marine et protection des animaux marins, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : un réseau de cités fantastiques, îles anciennes, refuges sous-marins et stations spatiales. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-justice",
+    "seriesLabel": "Justice League",
+    "seriesAr": "فرقة العدالة",
+    "world": {
+      "setting": "un réseau de cités fantastiques, îles anciennes, refuges sous-marins et stations spatiales",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "exploration sous-marine et protection des animaux marins",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue d’exploration aquatique verte et dorée, outil de navigation",
+      "equipment": "exploration sous-marine et protection des animaux marins",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Green Lantern · imagination lumineuse",
+    "ar": "غرين لانترن · الخيال المضيء",
+    "category": "comics",
+    "icon": "💚",
+    "theme": "💚 Héros personnalisé : création de formes lumineuses pour franchir des obstacles. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue verte et sombre et bracelet lumineux au dessin original. Équipements et accessoires : création de formes lumineuses pour franchir des obstacles, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : un réseau de cités fantastiques, îles anciennes, refuges sous-marins et stations spatiales. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-justice",
+    "seriesLabel": "Justice League",
+    "seriesAr": "فرقة العدالة",
+    "world": {
+      "setting": "un réseau de cités fantastiques, îles anciennes, refuges sous-marins et stations spatiales",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "création de formes lumineuses pour franchir des obstacles",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue verte et sombre et bracelet lumineux au dessin original",
+      "equipment": "création de formes lumineuses pour franchir des obstacles",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Flash · vitesse et responsabilité",
+    "ar": "فلاش · السرعة والمسؤولية",
+    "category": "comics",
+    "icon": "⚡",
+    "theme": "⚡ Héros personnalisé : super-vitesse pour aider les habitants en toute sécurité. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue sportive rouge et dorée, visage visible et baskets. Équipements et accessoires : super-vitesse pour aider les habitants en toute sécurité, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : des villes dynamiques, pistes d’entraînement et tunnels de lumière fantastiques. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-speed",
+    "seriesLabel": "Flash et les héros de la vitesse",
+    "seriesAr": "فلاش وأبطال السرعة",
+    "world": {
+      "setting": "des villes dynamiques, pistes d’entraînement et tunnels de lumière fantastiques",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "super-vitesse pour aider les habitants en toute sécurité",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue sportive rouge et dorée, visage visible et baskets",
+      "equipment": "super-vitesse pour aider les habitants en toute sécurité",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Kid Flash · réflexes et confiance",
+    "ar": "كيد فلاش · ردود الفعل والثقة",
+    "category": "comics",
+    "icon": "🏃",
+    "theme": "🏃 Héros personnalisé : réflexes et maîtrise progressive de la vitesse. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue sportive jaune et rouge, chaussures souples. Équipements et accessoires : réflexes et maîtrise progressive de la vitesse, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : des villes dynamiques, pistes d’entraînement et tunnels de lumière fantastiques. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-speed",
+    "seriesLabel": "Flash et les héros de la vitesse",
+    "seriesAr": "فلاش وأبطال السرعة",
+    "world": {
+      "setting": "des villes dynamiques, pistes d’entraînement et tunnels de lumière fantastiques",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "réflexes et maîtrise progressive de la vitesse",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue sportive jaune et rouge, chaussures souples",
+      "equipment": "réflexes et maîtrise progressive de la vitesse",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Impulse · élan et patience",
+    "ar": "إمبالس · الحماس والصبر",
+    "category": "comics",
+    "icon": "💨",
+    "theme": "💨 Héros personnalisé : accélération contrôlée et apprentissage de la patience. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue blanche et rouge, lunettes relevées pour garder le regard visible. Équipements et accessoires : accélération contrôlée et apprentissage de la patience, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : des villes dynamiques, pistes d’entraînement et tunnels de lumière fantastiques. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-speed",
+    "seriesLabel": "Flash et les héros de la vitesse",
+    "seriesAr": "فلاش وأبطال السرعة",
+    "world": {
+      "setting": "des villes dynamiques, pistes d’entraînement et tunnels de lumière fantastiques",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "accélération contrôlée et apprentissage de la patience",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue blanche et rouge, lunettes relevées pour garder le regard visible",
+      "equipment": "accélération contrôlée et apprentissage de la patience",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Wolverine · endurance et protection",
+    "ar": "وولفرين · التحمل والحماية",
+    "category": "comics",
+    "icon": "🐾",
+    "theme": "🐾 Héros personnalisé : endurance, sens de l’orientation et protection sans griffes ni blessures. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue jaune et bleue, gants souples et bottes. Équipements et accessoires : endurance, sens de l’orientation et protection sans griffes ni blessures, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une école de talents extraordinaires, jardins d’entraînement et laboratoires de découverte. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-xmen",
+    "seriesLabel": "X-Men",
+    "seriesAr": "إكس مان",
+    "world": {
+      "setting": "une école de talents extraordinaires, jardins d’entraînement et laboratoires de découverte",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "endurance, sens de l’orientation et protection sans griffes ni blessures",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue jaune et bleue, gants souples et bottes",
+      "equipment": "endurance, sens de l’orientation et protection sans griffes ni blessures",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Storm · météo et équilibre",
+    "ar": "ستورم · الطقس والتوازن",
+    "category": "comics",
+    "icon": "🌦️",
+    "theme": "🌦️ Héros personnalisé : maîtrise douce du vent et de la pluie pour aider la nature. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue de voyage claire avec cape légère, cheveux inchangés. Équipements et accessoires : maîtrise douce du vent et de la pluie pour aider la nature, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une école de talents extraordinaires, jardins d’entraînement et laboratoires de découverte. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-xmen",
+    "seriesLabel": "X-Men",
+    "seriesAr": "إكس مان",
+    "world": {
+      "setting": "une école de talents extraordinaires, jardins d’entraînement et laboratoires de découverte",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "maîtrise douce du vent et de la pluie pour aider la nature",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue de voyage claire avec cape légère, cheveux inchangés",
+      "equipment": "maîtrise douce du vent et de la pluie pour aider la nature",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
+    }
+  },
+  {
+    "label": "Cyclops · lumière et précision",
+    "ar": "سايكلوبس · الضوء والدقة",
+    "category": "comics",
+    "icon": "🔴",
+    "theme": "🔴 Héros personnalisé : guidage de faisceaux lumineux pour résoudre des mécanismes. Aventure originale inspirée de l’imaginaire des comics. Tenue et apparence : tenue bleue et dorée, lunettes techniques transparentes laissant voir les yeux. Équipements et accessoires : guidage de faisceaux lumineux pour résoudre des mécanismes, adaptés à un usage de secours. Adversaires ou obstacles : pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant. Univers et ambiance : une école de talents extraordinaires, jardins d’entraînement et laboratoires de découverte. Lieux à explorer : quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit. Mission possible : aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son visage et sa coiffure ; ne jamais les remplacer par ceux d’un personnage connu. La couverture fixe sa tenue pendant toute l’histoire. Reprendre ces références dès la couverture et pendant toute l’histoire. Personnages et emblèmes originaux, sans logo existant, sans blessure ni scène sanglante. Deux personnages secondaires au maximum avec identités visuelles fixes.",
+    "profile": "",
+    "series": "comics-xmen",
+    "seriesLabel": "X-Men",
+    "seriesAr": "إكس مان",
+    "world": {
+      "setting": "une école de talents extraordinaires, jardins d’entraînement et laboratoires de découverte",
+      "places": "quartiers, ateliers et lieux d’exploration cohérents avec le monde décrit",
+      "objects": "guidage de faisceaux lumineux pour résoudre des mécanismes",
+      "mission": "aider des habitants et résoudre une mission originale par la coopération et la maîtrise de ses talents"
+    },
+    "reference": {
+      "costume": "tenue bleue et dorée, lunettes techniques transparentes laissant voir les yeux",
+      "equipment": "guidage de faisceaux lumineux pour résoudre des mécanismes",
+      "adversaries": "pannes, énigmes, obstacles naturels et rival original non violent, sans reprendre de méchant existant"
     }
   }
 ];

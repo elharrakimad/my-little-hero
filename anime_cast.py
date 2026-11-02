@@ -1,16 +1,16 @@
-"""Anime-specific cast policy, resolved from the same catalogue as the website."""
+"""Anime and comics cast policies, resolved from the website's shared catalogue."""
 from functools import lru_cache
 import hashlib
 import json
 from pathlib import Path
 
 
-@lru_cache(maxsize=1)
-def anime_themes():
+@lru_cache(maxsize=2)
+def anime_themes(category="anime"):
     source = (Path(__file__).resolve().parent / "theme-catalog.js").read_text(encoding="utf-8")
     data = source.split("window.MLH_THEME_CATALOG =", 1)[1].lstrip()
     rows, _ = json.JSONDecoder().raw_decode(data)
-    return frozenset(value for row in rows if row["category"] == "anime"
+    return frozenset(value for row in rows if row["category"] == category
         for value in (row["theme"], row["label"], row["ar"]))
 
 
@@ -18,12 +18,16 @@ def is_anime_theme(theme):
     return str(theme).strip() in anime_themes()
 
 
+def is_reference_theme(theme):
+    return is_anime_theme(theme) or str(theme).strip() in anime_themes("comics")
+
+
 def cast_limit(theme):
-    return 2 if is_anime_theme(theme) else 6
+    return 2 if is_reference_theme(theme) else 6
 
 
 def anime_cast_instruction(theme, book_style="coloring"):
-    if not is_anime_theme(theme):
+    if not is_reference_theme(theme):
         return ""
     instruction = ("RÈGLE ANIME : l’enfant est le héros principal. Deux personnages secondaires au maximum "
         "dans tout le livre, couverture comprise, et pas seulement par page. Ce total inclut amis, "
@@ -32,11 +36,13 @@ def anime_cast_instruction(theme, book_style="coloring"):
         "le demande. Pour chacun, fixer visage, âge apparent, coiffure, silhouette, tenue, chaussures, "
         "accessoires et détails caractéristiques de son univers anime, lisibles en noir et blanc. "
         "Ne jamais transformer l’enfant principal en un personnage secondaire.")
+    if not is_anime_theme(theme):
+        instruction = instruction.replace("RÈGLE ANIME", "RÈGLE COMICS").replace("univers anime", "univers comics")
     return instruction.replace("lisibles en noir et blanc", "cohérents en couleur") if book_style == "colored" else instruction
 
 
 def secondary_reference_folder(theme, pages_folder):
-    return Path(pages_folder).parent / "secondary_references" if is_anime_theme(theme) else None
+    return Path(pages_folder).parent / "secondary_references" if is_reference_theme(theme) else None
 
 
 def secondary_reference_path(folder, character):
