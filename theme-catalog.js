@@ -170,14 +170,64 @@ window.MLH_GAME_SERIES = [
     "ar": "ماينكرافت"
   },
   {
+    "id": "game-roblox",
+    "label": "Roblox",
+    "ar": "روبلوكس"
+  },
+  {
+    "id": "game-fortnite",
+    "label": "Fortnite",
+    "ar": "فورتنايت"
+  },
+  {
+    "id": "game-ea-sports-fc",
+    "label": "EA Sports FC / FIFA",
+    "ar": "إي أي سبورتس إف سي / فيفا"
+  },
+  {
     "id": "game-super-mario",
     "label": "Super Mario",
     "ar": "سوبر ماريو"
   },
   {
+    "id": "game-pokemon",
+    "label": "Pokémon",
+    "ar": "بوكيمون"
+  },
+  {
     "id": "game-sonic",
     "label": "Sonic",
     "ar": "سونيك"
+  },
+  {
+    "id": "game-rocket-league",
+    "label": "Rocket League",
+    "ar": "روكيت ليغ"
+  },
+  {
+    "id": "game-among-us",
+    "label": "Among Us",
+    "ar": "أمونغ أس"
+  },
+  {
+    "id": "game-brawl-stars",
+    "label": "Brawl Stars",
+    "ar": "براول ستارز"
+  },
+  {
+    "id": "game-clash-royale",
+    "label": "Clash Royale",
+    "ar": "كلاش رويال"
+  },
+  {
+    "id": "game-fall-guys",
+    "label": "Fall Guys",
+    "ar": "فول غايز"
+  },
+  {
+    "id": "game-genshin-impact",
+    "label": "Genshin Impact",
+    "ar": "غينشين إمباكت"
   },
   {
     "id": "game-zelda",
@@ -198,11 +248,6 @@ window.MLH_GAME_SERIES = [
     "id": "game-splatoon",
     "label": "Splatoon",
     "ar": "سبلاتون"
-  },
-  {
-    "id": "game-roblox",
-    "label": "Roblox",
-    "ar": "روبلوكس"
   }
 ];
 window.MLH_THEME_CATALOG = [
@@ -3788,6 +3833,600 @@ window.MLH_THEME_CATALOG = [
       "costume": "tenue d’aventure personnalisée sans logo ; visage et coiffure inchangés, sans transformation en avatar générique",
       "equipment": "outils créatifs et objets de découverte adaptés à l’âge, sans logo ni arme réaliste",
       "adversaries": "énigmes, passages à réparer et défis de coopération, sans violence ni blessure"
+    }
+  },
+  {
+    "label": "Les bâtisseurs de l’île",
+    "ar": "بنّاؤو الجزيرة",
+    "category": "video-games",
+    "icon": "🧱",
+    "theme": "🧱 Héros personnalisé : Les bâtisseurs de l’île. Inspiration ludique originale. Tenue et apparence : veste d’exploration, pantalon pratique et sac à outils créatifs. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : une île d’aventure avec constructions créatives, tyroliennes, véhicules et repères lumineux. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : bâtir des passerelles et des abris pour réunir les habitants. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-fortnite",
+    "seriesLabel": "Fortnite",
+    "seriesAr": "فورتنايت",
+    "world": {
+      "setting": "une île d’aventure avec constructions créatives, tyroliennes, véhicules et repères lumineux",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "bâtir des passerelles et des abris pour réunir les habitants"
+    },
+    "reference": {
+      "costume": "veste d’exploration, pantalon pratique et sac à outils créatifs",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Le rallye de l’île",
+    "ar": "رالي الجزيرة",
+    "category": "video-games",
+    "icon": "🏎️",
+    "theme": "🏎️ Héros personnalisé : Le rallye de l’île. Inspiration ludique originale. Tenue et apparence : veste d’exploration, pantalon pratique et sac à outils créatifs. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : une île d’aventure avec constructions créatives, tyroliennes, véhicules et repères lumineux. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : réussir un rallye amical en coopérant sur des circuits inventés. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-fortnite",
+    "seriesLabel": "Fortnite",
+    "seriesAr": "فورتنايت",
+    "world": {
+      "setting": "une île d’aventure avec constructions créatives, tyroliennes, véhicules et repères lumineux",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "réussir un rallye amical en coopérant sur des circuits inventés"
+    },
+    "reference": {
+      "costume": "veste d’exploration, pantalon pratique et sac à outils créatifs",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "La mission des balises",
+    "ar": "مهمة المنارات",
+    "category": "video-games",
+    "icon": "📡",
+    "theme": "📡 Héros personnalisé : La mission des balises. Inspiration ludique originale. Tenue et apparence : veste d’exploration, pantalon pratique et sac à outils créatifs. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : une île d’aventure avec constructions créatives, tyroliennes, véhicules et repères lumineux. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : rallumer des balises pour guider une équipe avant une tempête. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-fortnite",
+    "seriesLabel": "Fortnite",
+    "seriesAr": "فورتنايت",
+    "world": {
+      "setting": "une île d’aventure avec constructions créatives, tyroliennes, véhicules et repères lumineux",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "rallumer des balises pour guider une équipe avant une tempête"
+    },
+    "reference": {
+      "costume": "veste d’exploration, pantalon pratique et sac à outils créatifs",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Le but de la victoire",
+    "ar": "هدف الفوز",
+    "category": "video-games",
+    "icon": "⚽",
+    "theme": "⚽ Héros personnalisé : Le but de la victoire. Inspiration ludique originale. Tenue et apparence : maillot original sans logo de club, short, chaussettes et chaussures de football. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des terrains de football, centres d’entraînement et stades de tournoi accueillants. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : aider son équipe à marquer grâce à une belle passe collective. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-ea-sports-fc",
+    "seriesLabel": "EA Sports FC / FIFA",
+    "seriesAr": "إي أي سبورتس إف سي / فيفا",
+    "world": {
+      "setting": "des terrains de football, centres d’entraînement et stades de tournoi accueillants",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "aider son équipe à marquer grâce à une belle passe collective"
+    },
+    "reference": {
+      "costume": "maillot original sans logo de club, short, chaussettes et chaussures de football",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Capitaine au grand cœur",
+    "ar": "قائد بقلب كبير",
+    "category": "video-games",
+    "icon": "🏅",
+    "theme": "🏅 Héros personnalisé : Capitaine au grand cœur. Inspiration ludique originale. Tenue et apparence : maillot original sans logo de club, short, chaussettes et chaussures de football. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des terrains de football, centres d’entraînement et stades de tournoi accueillants. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : redonner confiance à une équipe et accueillir un nouveau joueur. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-ea-sports-fc",
+    "seriesLabel": "EA Sports FC / FIFA",
+    "seriesAr": "إي أي سبورتس إف سي / فيفا",
+    "world": {
+      "setting": "des terrains de football, centres d’entraînement et stades de tournoi accueillants",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "redonner confiance à une équipe et accueillir un nouveau joueur"
+    },
+    "reference": {
+      "costume": "maillot original sans logo de club, short, chaussettes et chaussures de football",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "La finale des amis",
+    "ar": "نهائي الأصدقاء",
+    "category": "video-games",
+    "icon": "🏆",
+    "theme": "🏆 Héros personnalisé : La finale des amis. Inspiration ludique originale. Tenue et apparence : maillot original sans logo de club, short, chaussettes et chaussures de football. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des terrains de football, centres d’entraînement et stades de tournoi accueillants. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : préparer une finale où le respect compte autant que le résultat. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-ea-sports-fc",
+    "seriesLabel": "EA Sports FC / FIFA",
+    "seriesAr": "إي أي سبورتس إف سي / فيفا",
+    "world": {
+      "setting": "des terrains de football, centres d’entraînement et stades de tournoi accueillants",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "préparer une finale où le respect compte autant que le résultat"
+    },
+    "reference": {
+      "costume": "maillot original sans logo de club, short, chaussettes et chaussures de football",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Le compagnon des étoiles",
+    "ar": "رفيق النجوم",
+    "category": "video-games",
+    "icon": "🌟",
+    "theme": "🌟 Héros personnalisé : Le compagnon des étoiles. Inspiration ludique originale. Tenue et apparence : veste d’explorateur, baskets et sac de voyage sans logo. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des sentiers de découverte, villages accueillants et réserves de créatures fantastiques originales. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : rencontrer une créature originale et l’aider à retrouver sa famille. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-pokemon",
+    "seriesLabel": "Pokémon",
+    "seriesAr": "بوكيمون",
+    "world": {
+      "setting": "des sentiers de découverte, villages accueillants et réserves de créatures fantastiques originales",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "rencontrer une créature originale et l’aider à retrouver sa famille"
+    },
+    "reference": {
+      "costume": "veste d’explorateur, baskets et sac de voyage sans logo",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Les gardiens de la réserve",
+    "ar": "حرّاس المحمية",
+    "category": "video-games",
+    "icon": "🌿",
+    "theme": "🌿 Héros personnalisé : Les gardiens de la réserve. Inspiration ludique originale. Tenue et apparence : veste d’explorateur, baskets et sac de voyage sans logo. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des sentiers de découverte, villages accueillants et réserves de créatures fantastiques originales. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : restaurer une réserve naturelle avec son compagnon fantastique. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-pokemon",
+    "seriesLabel": "Pokémon",
+    "seriesAr": "بوكيمون",
+    "world": {
+      "setting": "des sentiers de découverte, villages accueillants et réserves de créatures fantastiques originales",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "restaurer une réserve naturelle avec son compagnon fantastique"
+    },
+    "reference": {
+      "costume": "veste d’explorateur, baskets et sac de voyage sans logo",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Le voyage des créatures",
+    "ar": "رحلة المخلوقات",
+    "category": "video-games",
+    "icon": "🐾",
+    "theme": "🐾 Héros personnalisé : Le voyage des créatures. Inspiration ludique originale. Tenue et apparence : veste d’explorateur, baskets et sac de voyage sans logo. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des sentiers de découverte, villages accueillants et réserves de créatures fantastiques originales. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : découvrir les talents de créatures originales sans combat. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-pokemon",
+    "seriesLabel": "Pokémon",
+    "seriesAr": "بوكيمون",
+    "world": {
+      "setting": "des sentiers de découverte, villages accueillants et réserves de créatures fantastiques originales",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "découvrir les talents de créatures originales sans combat"
+    },
+    "reference": {
+      "costume": "veste d’explorateur, baskets et sac de voyage sans logo",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Le ballon géant",
+    "ar": "الكرة العملاقة",
+    "category": "video-games",
+    "icon": "⚽",
+    "theme": "⚽ Héros personnalisé : Le ballon géant. Inspiration ludique originale. Tenue et apparence : combinaison sportive et casque laissant voir le visage hors des courses. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des arènes de sport automobile avec ballon géant, rampes et tribunes festives. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : guider un ballon géant jusqu’au but avec une petite voiture sportive. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-rocket-league",
+    "seriesLabel": "Rocket League",
+    "seriesAr": "روكيت ليغ",
+    "world": {
+      "setting": "des arènes de sport automobile avec ballon géant, rampes et tribunes festives",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "guider un ballon géant jusqu’au but avec une petite voiture sportive"
+    },
+    "reference": {
+      "costume": "combinaison sportive et casque laissant voir le visage hors des courses",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Le turbo de l’amitié",
+    "ar": "قوة الصداقة",
+    "category": "video-games",
+    "icon": "🚗",
+    "theme": "🚗 Héros personnalisé : Le turbo de l’amitié. Inspiration ludique originale. Tenue et apparence : combinaison sportive et casque laissant voir le visage hors des courses. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des arènes de sport automobile avec ballon géant, rampes et tribunes festives. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : apprendre à coordonner les passes dans une équipe de pilotes. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-rocket-league",
+    "seriesLabel": "Rocket League",
+    "seriesAr": "روكيت ليغ",
+    "world": {
+      "setting": "des arènes de sport automobile avec ballon géant, rampes et tribunes festives",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "apprendre à coordonner les passes dans une équipe de pilotes"
+    },
+    "reference": {
+      "costume": "combinaison sportive et casque laissant voir le visage hors des courses",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "La coupe des pilotes",
+    "ar": "كأس السائقين",
+    "category": "video-games",
+    "icon": "🏆",
+    "theme": "🏆 Héros personnalisé : La coupe des pilotes. Inspiration ludique originale. Tenue et apparence : combinaison sportive et casque laissant voir le visage hors des courses. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des arènes de sport automobile avec ballon géant, rampes et tribunes festives. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : réussir un tournoi amical en respectant les autres équipes. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-rocket-league",
+    "seriesLabel": "Rocket League",
+    "seriesAr": "روكيت ليغ",
+    "world": {
+      "setting": "des arènes de sport automobile avec ballon géant, rampes et tribunes festives",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "réussir un tournoi amical en respectant les autres équipes"
+    },
+    "reference": {
+      "costume": "combinaison sportive et casque laissant voir le visage hors des courses",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "L’énigme de la station",
+    "ar": "لغز المحطة",
+    "category": "video-games",
+    "icon": "🔎",
+    "theme": "🔎 Héros personnalisé : L’énigme de la station. Inspiration ludique originale. Tenue et apparence : combinaison spatiale dont le casque transparent conserve le visage visible. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : une station spatiale aux salles techniques, couloirs lumineux et fenêtres sur les étoiles. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : chercher les indices d’une panne sans accuser ses compagnons. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-among-us",
+    "seriesLabel": "Among Us",
+    "seriesAr": "أمونغ أس",
+    "world": {
+      "setting": "une station spatiale aux salles techniques, couloirs lumineux et fenêtres sur les étoiles",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "chercher les indices d’une panne sans accuser ses compagnons"
+    },
+    "reference": {
+      "costume": "combinaison spatiale dont le casque transparent conserve le visage visible",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "L’équipe des réparateurs",
+    "ar": "فريق الإصلاح",
+    "category": "video-games",
+    "icon": "🔧",
+    "theme": "🔧 Héros personnalisé : L’équipe des réparateurs. Inspiration ludique originale. Tenue et apparence : combinaison spatiale dont le casque transparent conserve le visage visible. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : une station spatiale aux salles techniques, couloirs lumineux et fenêtres sur les étoiles. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : réparer les circuits de la station en partageant les tâches. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-among-us",
+    "seriesLabel": "Among Us",
+    "seriesAr": "أمونغ أس",
+    "world": {
+      "setting": "une station spatiale aux salles techniques, couloirs lumineux et fenêtres sur les étoiles",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "réparer les circuits de la station en partageant les tâches"
+    },
+    "reference": {
+      "costume": "combinaison spatiale dont le casque transparent conserve le visage visible",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Le signal mystérieux",
+    "ar": "الإشارة الغامضة",
+    "category": "video-games",
+    "icon": "📡",
+    "theme": "📡 Héros personnalisé : Le signal mystérieux. Inspiration ludique originale. Tenue et apparence : combinaison spatiale dont le casque transparent conserve le visage visible. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : une station spatiale aux salles techniques, couloirs lumineux et fenêtres sur les étoiles. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : identifier un signal étrange grâce à l’observation et à la coopération. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-among-us",
+    "seriesLabel": "Among Us",
+    "seriesAr": "أمونغ أس",
+    "world": {
+      "setting": "une station spatiale aux salles techniques, couloirs lumineux et fenêtres sur les étoiles",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "identifier un signal étrange grâce à l’observation et à la coopération"
+    },
+    "reference": {
+      "costume": "combinaison spatiale dont le casque transparent conserve le visage visible",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Le défi des étoiles",
+    "ar": "تحدي النجوم",
+    "category": "video-games",
+    "icon": "⭐",
+    "theme": "⭐ Héros personnalisé : Le défi des étoiles. Inspiration ludique originale. Tenue et apparence : tenue sportive d’aventurier et équipement de jeu non dangereux. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des arènes ludiques, décors de fête et parcours de défis aux couleurs vives. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : réunir des étoiles dans une compétition de coopération. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-brawl-stars",
+    "seriesLabel": "Brawl Stars",
+    "seriesAr": "براول ستارز",
+    "world": {
+      "setting": "des arènes ludiques, décors de fête et parcours de défis aux couleurs vives",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "réunir des étoiles dans une compétition de coopération"
+    },
+    "reference": {
+      "costume": "tenue sportive d’aventurier et équipement de jeu non dangereux",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Les champions de l’entraide",
+    "ar": "أبطال التعاون",
+    "category": "video-games",
+    "icon": "🤝",
+    "theme": "🤝 Héros personnalisé : Les champions de l’entraide. Inspiration ludique originale. Tenue et apparence : tenue sportive d’aventurier et équipement de jeu non dangereux. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des arènes ludiques, décors de fête et parcours de défis aux couleurs vives. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : aider ses partenaires à franchir des obstacles ludiques. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-brawl-stars",
+    "seriesLabel": "Brawl Stars",
+    "seriesAr": "براول ستارز",
+    "world": {
+      "setting": "des arènes ludiques, décors de fête et parcours de défis aux couleurs vives",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "aider ses partenaires à franchir des obstacles ludiques"
+    },
+    "reference": {
+      "costume": "tenue sportive d’aventurier et équipement de jeu non dangereux",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Le coffre des talents",
+    "ar": "صندوق المواهب",
+    "category": "video-games",
+    "icon": "🎁",
+    "theme": "🎁 Héros personnalisé : Le coffre des talents. Inspiration ludique originale. Tenue et apparence : tenue sportive d’aventurier et équipement de jeu non dangereux. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des arènes ludiques, décors de fête et parcours de défis aux couleurs vives. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : résoudre des épreuves pour découvrir le talent de chaque ami. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-brawl-stars",
+    "seriesLabel": "Brawl Stars",
+    "seriesAr": "براول ستارز",
+    "world": {
+      "setting": "des arènes ludiques, décors de fête et parcours de défis aux couleurs vives",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "résoudre des épreuves pour découvrir le talent de chaque ami"
+    },
+    "reference": {
+      "costume": "tenue sportive d’aventurier et équipement de jeu non dangereux",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Le stratège des tours",
+    "ar": "خبير الأبراج",
+    "category": "video-games",
+    "icon": "♟️",
+    "theme": "♟️ Héros personnalisé : Le stratège des tours. Inspiration ludique originale. Tenue et apparence : tunique de stratège et cape courte sans emblème existant. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des royaumes fantaisistes, tours colorées et arènes de stratégie amicale. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : organiser les équipes pour réparer les tours d’un royaume. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-clash-royale",
+    "seriesLabel": "Clash Royale",
+    "seriesAr": "كلاش رويال",
+    "world": {
+      "setting": "des royaumes fantaisistes, tours colorées et arènes de stratégie amicale",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "organiser les équipes pour réparer les tours d’un royaume"
+    },
+    "reference": {
+      "costume": "tunique de stratège et cape courte sans emblème existant",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Les ponts du royaume",
+    "ar": "جسور المملكة",
+    "category": "video-games",
+    "icon": "🌉",
+    "theme": "🌉 Héros personnalisé : Les ponts du royaume. Inspiration ludique originale. Tenue et apparence : tunique de stratège et cape courte sans emblème existant. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des royaumes fantaisistes, tours colorées et arènes de stratégie amicale. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : trouver un plan pour relier deux villages séparés. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-clash-royale",
+    "seriesLabel": "Clash Royale",
+    "seriesAr": "كلاش رويال",
+    "world": {
+      "setting": "des royaumes fantaisistes, tours colorées et arènes de stratégie amicale",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "trouver un plan pour relier deux villages séparés"
+    },
+    "reference": {
+      "costume": "tunique de stratège et cape courte sans emblème existant",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Le tournoi des couronnes",
+    "ar": "بطولة التيجان",
+    "category": "video-games",
+    "icon": "👑",
+    "theme": "👑 Héros personnalisé : Le tournoi des couronnes. Inspiration ludique originale. Tenue et apparence : tunique de stratège et cape courte sans emblème existant. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des royaumes fantaisistes, tours colorées et arènes de stratégie amicale. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : gagner un tournoi d’énigmes grâce à la patience et à l’entraide. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-clash-royale",
+    "seriesLabel": "Clash Royale",
+    "seriesAr": "كلاش رويال",
+    "world": {
+      "setting": "des royaumes fantaisistes, tours colorées et arènes de stratégie amicale",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "gagner un tournoi d’énigmes grâce à la patience et à l’entraide"
+    },
+    "reference": {
+      "costume": "tunique de stratège et cape courte sans emblème existant",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "La course des obstacles",
+    "ar": "سباق الحواجز",
+    "category": "video-games",
+    "icon": "🏁",
+    "theme": "🏁 Héros personnalisé : La course des obstacles. Inspiration ludique originale. Tenue et apparence : tenue sportive confortable, visage humain conforme à la référence et non avatar anonyme. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des parcours d’obstacles gonflables, tapis colorés et plateformes souples. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : réussir un parcours en se relevant avec bonne humeur. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-fall-guys",
+    "seriesLabel": "Fall Guys",
+    "seriesAr": "فول غايز",
+    "world": {
+      "setting": "des parcours d’obstacles gonflables, tapis colorés et plateformes souples",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "réussir un parcours en se relevant avec bonne humeur"
+    },
+    "reference": {
+      "costume": "tenue sportive confortable, visage humain conforme à la référence et non avatar anonyme",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Les plateformes surprises",
+    "ar": "المنصات المفاجئة",
+    "category": "video-games",
+    "icon": "🎈",
+    "theme": "🎈 Héros personnalisé : Les plateformes surprises. Inspiration ludique originale. Tenue et apparence : tenue sportive confortable, visage humain conforme à la référence et non avatar anonyme. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des parcours d’obstacles gonflables, tapis colorés et plateformes souples. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : comprendre le rythme de plateformes mobiles pour guider les amis. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-fall-guys",
+    "seriesLabel": "Fall Guys",
+    "seriesAr": "فول غايز",
+    "world": {
+      "setting": "des parcours d’obstacles gonflables, tapis colorés et plateformes souples",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "comprendre le rythme de plateformes mobiles pour guider les amis"
+    },
+    "reference": {
+      "costume": "tenue sportive confortable, visage humain conforme à la référence et non avatar anonyme",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "La couronne du fair-play",
+    "ar": "تاج الروح الرياضية",
+    "category": "video-games",
+    "icon": "👑",
+    "theme": "👑 Héros personnalisé : La couronne du fair-play. Inspiration ludique originale. Tenue et apparence : tenue sportive confortable, visage humain conforme à la référence et non avatar anonyme. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : des parcours d’obstacles gonflables, tapis colorés et plateformes souples. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : terminer une course où aider un concurrent devient la vraie victoire. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-fall-guys",
+    "seriesLabel": "Fall Guys",
+    "seriesAr": "فول غايز",
+    "world": {
+      "setting": "des parcours d’obstacles gonflables, tapis colorés et plateformes souples",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "terminer une course où aider un concurrent devient la vraie victoire"
+    },
+    "reference": {
+      "costume": "tenue sportive confortable, visage humain conforme à la référence et non avatar anonyme",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Le voyage des éléments",
+    "ar": "رحلة العناصر",
+    "category": "video-games",
+    "icon": "✨",
+    "theme": "✨ Héros personnalisé : Le voyage des éléments. Inspiration ludique originale. Tenue et apparence : tenue de voyage originale et accessoires d’exploration, cheveux inchangés. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : un monde fantastique de cités anciennes, montagnes, jardins et énigmes élémentaires. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : utiliser des phénomènes naturels pour réparer les chemins d’une vallée. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-genshin-impact",
+    "seriesLabel": "Genshin Impact",
+    "seriesAr": "غينشين إمباكت",
+    "world": {
+      "setting": "un monde fantastique de cités anciennes, montagnes, jardins et énigmes élémentaires",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "utiliser des phénomènes naturels pour réparer les chemins d’une vallée"
+    },
+    "reference": {
+      "costume": "tenue de voyage originale et accessoires d’exploration, cheveux inchangés",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "La cité des vents",
+    "ar": "مدينة الرياح",
+    "category": "video-games",
+    "icon": "🍃",
+    "theme": "🍃 Héros personnalisé : La cité des vents. Inspiration ludique originale. Tenue et apparence : tenue de voyage originale et accessoires d’exploration, cheveux inchangés. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : un monde fantastique de cités anciennes, montagnes, jardins et énigmes élémentaires. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : retrouver la source d’un vent qui dérègle une cité. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-genshin-impact",
+    "seriesLabel": "Genshin Impact",
+    "seriesAr": "غينشين إمباكت",
+    "world": {
+      "setting": "un monde fantastique de cités anciennes, montagnes, jardins et énigmes élémentaires",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "retrouver la source d’un vent qui dérègle une cité"
+    },
+    "reference": {
+      "costume": "tenue de voyage originale et accessoires d’exploration, cheveux inchangés",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
+    }
+  },
+  {
+    "label": "Le jardin des cristaux",
+    "ar": "حديقة البلورات",
+    "category": "video-games",
+    "icon": "💎",
+    "theme": "💎 Héros personnalisé : Le jardin des cristaux. Inspiration ludique originale. Tenue et apparence : tenue de voyage originale et accessoires d’exploration, cheveux inchangés. Équipements et accessoires : objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge. Adversaires ou obstacles : énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure. Univers et ambiance : un monde fantastique de cités anciennes, montagnes, jardins et énigmes élémentaires. Lieux à explorer : lieux de découverte et espaces de coopération cohérents avec le monde décrit. Mission possible : rétablir l’équilibre d’un jardin lumineux grâce à l’observation. Garder le visage de l’enfant comme personnage principal. La référence initiale fixe son identité et sa coiffure ; la couverture fixe sa tenue pendant toute l’histoire. Créer une aventure originale adaptée à son âge, dès la couverture et pendant toute l’histoire, sans reproduire de personnage existant ni ajouter de logo. Aucun nom de franchise dans les inscriptions du livre.",
+    "profile": "",
+    "series": "game-genshin-impact",
+    "seriesLabel": "Genshin Impact",
+    "seriesAr": "غينشين إمباكت",
+    "world": {
+      "setting": "un monde fantastique de cités anciennes, montagnes, jardins et énigmes élémentaires",
+      "places": "lieux de découverte et espaces de coopération cohérents avec le monde décrit",
+      "objects": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "mission": "rétablir l’équilibre d’un jardin lumineux grâce à l’observation"
+    },
+    "reference": {
+      "costume": "tenue de voyage originale et accessoires d’exploration, cheveux inchangés",
+      "equipment": "objets créatifs, accessoires de découverte et équipements ludiques adaptés à l’âge",
+      "adversaries": "énigmes, pannes, parcours sportifs et défis de coopération, sans arme réaliste ni blessure"
     }
   }
 ];

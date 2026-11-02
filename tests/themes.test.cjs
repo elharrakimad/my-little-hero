@@ -8,10 +8,10 @@ vm.runInContext(fs.readFileSync('theme-catalog.js','utf8'),context);
 vm.runInContext(fs.readFileSync('themes.js','utf8'),context);
 const {MLH_THEME_CATALOG:catalog,MLH_THEME_CATEGORIES:categories,MLHThemeSearch:search}=context.window;
 
-test('315 distinct themes in 20 bilingual categories, with stable legacy values',()=>{
-  assert.equal(catalog.length,315);assert.equal(categories.length,20);
-  assert.equal(new Set(catalog.map(t=>t.label)).size,315);
-  assert.equal(new Set(catalog.map(t=>t.theme)).size,315);
+test('342 distinct themes in 20 bilingual categories, with stable legacy values',()=>{
+  assert.equal(catalog.length,342);assert.equal(categories.length,20);
+  assert.equal(new Set(catalog.map(t=>t.label)).size,342);
+  assert.equal(new Set(catalog.map(t=>t.theme)).size,342);
   for(const c of categories){assert.ok(c.ar);assert.ok(catalog.filter(t=>t.category===c.id).length>=12);}
   assert.ok(catalog.every(t=>t.ar&&t.icon&&categories.some(c=>c.id===t.category)));
   assert.equal(catalog.find(t=>t.label==='Espace').theme,"🚀 Voyage dans l'espace");
@@ -23,8 +23,8 @@ test('profile suggestions never prevent access to any category or theme',()=>{
   assert.ok(girl.some(t=>t.label==='Fées'));assert.ok(!girl.some(t=>t.label==='Robots'));
   const boy=search.filter(catalog,{gender:'boy'});
   assert.ok(boy.some(t=>t.label==='Robots'));assert.ok(!boy.some(t=>t.label==='Fées'));
-  assert.equal(search.filter(catalog,{gender:'girl',showAll:true}).length,315);
-  assert.equal(search.filter(catalog,{gender:'boy',showAll:true}).length,315);
+  assert.equal(search.filter(catalog,{gender:'girl',showAll:true}).length,342);
+  assert.equal(search.filter(catalog,{gender:'boy',showAll:true}).length,342);
 });
 
 test('search ignores French accents, works in Arabic, and combines category filters',()=>{
@@ -150,11 +150,11 @@ test('removed series cannot appear in anime filters or search results',()=>{
  });
 
 
-test('video game adventures are grouped in eight bilingual worlds and searchable without altering anime',()=>{
+test('video game adventures are grouped in seventeen bilingual worlds and searchable without altering anime',()=>{
   const games=context.window.MLH_GAME_SERIES;
-  assert.equal(games.length,8);
+  assert.equal(games.length,17);
   const rows=search.filter(catalog,{category:'video-games',showAll:true});
-  assert.equal(rows.length,24);
+  assert.equal(rows.length,51);
   for(const game of games){
     assert.ok(game.ar);
     const entries=search.filter(catalog,{category:'video-games',series:game.id,showAll:true});

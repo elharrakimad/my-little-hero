@@ -130,7 +130,7 @@ const T={
     "CHOISIS SON UNIVERS":"اختر عالمه","Une aventure pour":"مغامرة لكل","chaque imagination":"خيال","chaque enfant":"طفل",
     "Des mondes très différents pour que chaque enfant trouve son aventure.":"عوالم متنوعة جدًا ليجد كل طفل مغامرته.",
     "Et si son imagination choisissait la prochaine mission ?":"ماذا لو اختار خياله المهمة القادمة؟",
-    "Et ce n'est qu'un aperçu.":"وهذا مجرد جزء من الخيارات.","315 univers sont disponibles pendant la création.":"315 عالمًا متاح أثناء الإنشاء.",
+    "Et ce n'est qu'un aperçu.":"وهذا مجرد جزء من الخيارات.","342 univers sont disponibles pendant la création.":"342 عالمًا متاح أثناء الإنشاء.",
     "Plus de 30 univers possibles":"أكثر من 30 عالمًا ممكنًا","Le choix complet sera disponible pendant la création.":"ستتوفر جميع الاختيارات أثناء الإنشاء.",
     "NOS 3 EXPÉRIENCES":"تجاربنا الثلاث","NOS PACKS":"باقاتنا","Choisissez son":"اختر","niveau d'aventure":"مستوى المغامرة",
     "Une première aventure, une collection de deux mondes ou le cadeau complet.":"مغامرة أولى، أو مجموعة من عالمين، أو الهدية الكاملة.",
