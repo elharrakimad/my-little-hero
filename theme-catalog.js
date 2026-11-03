@@ -410,22 +410,22 @@ window.MLH_THEME_CATALOG = [
     "seriesAr": "أكاديمية الأبطال"
   },
   {
-    "label": "Sacha et Pikachu · amitié et électricité",
-    "ar": "ساشا وبيكاتشو · الصداقة والكهرباء",
+    "label": "Sacha · amitié et créatures originales",
+    "ar": "ساشا · الصداقة والمخلوقات المبتكرة",
     "category": "anime",
-    "icon": "⚡",
-    "theme": "⚡ Héros personnalisé : une amitié avec un petit compagnon jaune aux oreilles pointues, aux joues rouges et à la queue en éclair, capable de produire une électricité lumineuse. Tenue et apparence : veste de voyage bleue et blanche, casquette rouge et blanche, pantalon confortable et petit sac ; le compagnon est une petite créature jaune aux longues oreilles à pointes noires, joues rouges et queue en éclair. Équipements et accessoires : carnet électronique d’observation, petites capsules de transport, objets de soin et électricité lumineuse du compagnon. Adversaires ou obstacles : un trio farceur en uniformes blancs, gants et bottes noirs et insigne rouge, accompagné d’un animal parlant ; leurs pièges restent inoffensifs. Univers et ambiance : un monde de petites villes, laboratoires, centres de soin, routes, hautes herbes, forêts et arènes amicales où vivent de nombreuses créatures fantastiques. Lieux à explorer : prairie, forêt, centre de soin animalier et petit laboratoire. Mission possible : voyager avec son compagnon pour retrouver un habitat adapté à une créature perdue. Garder le visage de l’enfant comme personnage principal. Reprendre ces références visuelles dès la couverture et pendant toute l’histoire, avec des décors cohérents et des actions variées. Adapter les détails à l’âge ; les équipements fantastiques servent à protéger ou franchir des obstacles, sans blessure ni scène sanglante. Ne pas inscrire les noms de personnages ou de franchises dans les images.",
+    "icon": "🌿",
+    "theme": "🌿 Héros personnalisé : amitié et découverte de créatures véritablement originales. Tenue et apparence : veste de voyage bleue et blanche, casquette rouge et blanche, pantalon confortable et petit sac ; garder le visage et les cheveux de l’enfant. Équipements et accessoires : carnet d’observation, objets de soin et compagnon original Lumo : petit quadrupède turquoise aux oreilles rondes, crête courte violette en forme de feuille, queue violette en plume, trois taches ovales blanches sur chaque flanc et yeux ronds ; sa queue libère une douce poussière lumineuse qui éclaire les chemins et réveille les plantes. Adversaires ou obstacles : énigmes d’observation, sentiers à retrouver et habitats naturels à restaurer ; aucun trio de personnages existants. Univers et ambiance : une région originale de prairies lumineuses, villages-jardins, laboratoires botaniques et forêts où chaque créature possède un habitat particulier. Lieux à explorer : prairie de fleurs argentées, forêt de graines bleues, laboratoire botanique et jardin souterrain. Mission possible : aider une créature perdue à retrouver son habitat avec Lumo grâce à l’observation, aux soins et à l’entraide. Le compagnon est Lumo, avec cette silhouette, ces couleurs, ces marques et ce pouvoir de lumière végétale fixes dès la couverture et pendant toute l’histoire. Ne pas reproduire une créature existante. Garder le visage de l’enfant comme personnage principal. Deux personnages secondaires maximum. Préserver les mêmes tenues et identités sur chaque page et le médaillon. Adapter les détails à l’âge, sans blessure ni scène sanglante. Ne pas inscrire les noms de franchises dans les images.",
     "profile": "",
     "world": {
-      "setting": "un monde de petites villes, laboratoires, centres de soin, routes, hautes herbes, forêts et arènes amicales où vivent de nombreuses créatures fantastiques",
-      "places": "prairie, forêt, centre de soin animalier et petit laboratoire",
-      "objects": "carnet électronique d’observation, petites capsules de transport, objets de soin et électricité lumineuse du compagnon",
-      "mission": "voyager avec son compagnon pour retrouver un habitat adapté à une créature perdue"
+      "setting": "une région originale de prairies lumineuses, villages-jardins, laboratoires botaniques et forêts où chaque créature possède un habitat particulier",
+      "places": "prairie de fleurs argentées, forêt de graines bleues, laboratoire botanique et jardin souterrain",
+      "objects": "carnet d’observation, objets de soin et compagnon original Lumo : petit quadrupède turquoise aux oreilles rondes, crête courte violette en forme de feuille, queue violette en plume, trois taches ovales blanches sur chaque flanc et yeux ronds ; sa queue libère une douce poussière lumineuse qui éclaire les chemins et réveille les plantes",
+      "mission": "aider une créature perdue à retrouver son habitat avec Lumo grâce à l’observation, aux soins et à l’entraide"
     },
     "reference": {
-      "costume": "veste de voyage bleue et blanche, casquette rouge et blanche, pantalon confortable et petit sac ; le compagnon est une petite créature jaune aux longues oreilles à pointes noires, joues rouges et queue en éclair",
-      "equipment": "carnet électronique d’observation, petites capsules de transport, objets de soin et électricité lumineuse du compagnon",
-      "adversaries": "un trio farceur en uniformes blancs, gants et bottes noirs et insigne rouge, accompagné d’un animal parlant ; leurs pièges restent inoffensifs"
+      "costume": "veste de voyage bleue et blanche, casquette rouge et blanche, pantalon confortable et petit sac ; garder le visage et les cheveux de l’enfant",
+      "equipment": "carnet d’observation, objets de soin et compagnon original Lumo : petit quadrupède turquoise aux oreilles rondes, crête courte violette en forme de feuille, queue violette en plume, trois taches ovales blanches sur chaque flanc et yeux ronds ; sa queue libère une douce poussière lumineuse qui éclaire les chemins et réveille les plantes",
+      "adversaries": "énigmes d’observation, sentiers à retrouver et habitats naturels à restaurer ; aucun trio de personnages existants"
     },
     "series": "pokemon",
     "seriesLabel": "Pokémon",

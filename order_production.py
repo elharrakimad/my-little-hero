@@ -259,6 +259,7 @@ def generate_order(order):
                 client_idea=adventure.get("idea", ""),
                 child_gender=adventure.get("child_gender", ""),
                 book_style=adventure.get("book_style", "coloring"),
+                companion_revision=adventure.get("companion_revision", ""),
                 child_quality=adventure.get("quality", ""),
                 book_title=title,
                 reference_path=reference_path,

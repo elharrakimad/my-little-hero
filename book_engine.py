@@ -33,6 +33,7 @@ def generate_book_from_adventure(
     child_gender: str = "",
     book_style: str = "coloring",
     progress=None,
+    companion_revision: str = "",
 ) -> Path:
     """Génère le livre complet d'une aventure avec un titre imposé."""
     if child_gender not in {"", "girl", "boy"}:
@@ -100,6 +101,12 @@ def generate_book_from_adventure(
         raise ValueError(
             "Le titre de PAGE 1 ne correspond pas au titre choisi dans l'aperçu."
         )
+
+    if companion_revision:
+        if companion_revision != 'lumo-v1':
+            raise ValueError('Révision du compagnon inconnue.')
+        from companion_revision import prepare_revision
+        prepare_revision(engine, output_dir, language, progress)
 
     if not preview_cover_path:
         engine.generate_cover()
