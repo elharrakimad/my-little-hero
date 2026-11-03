@@ -67,6 +67,10 @@ def main():
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         from order_production import generate_order
         db = get_supabase_client()
+        maintenance = os.getenv('MLH_CLEANUP_PLAN', '').strip()
+        if maintenance:
+            from storage_maintenance import cleanup_completed_books
+            cleanup_completed_books(db, directory, maintenance)
         journal = directory / "active_job.json"
         recover_job(db, journal)
         stopping = threading.Event()
