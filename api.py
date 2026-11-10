@@ -11,6 +11,7 @@ from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from openai import OpenAI
 from supabase import create_client
+from packs import get_pack
 from child_profile import gender_instruction
 from character_identity import IDENTITY_INSTRUCTION
 from story_reference import visual_reference_instruction
@@ -69,6 +70,7 @@ def resolve_order_themes(themes, custom_theme=""):
 
 
 def save_order_to_supabase(order_ref, name, age, language, pack, covers, reference_bytes, cover_files, child_gender="", parent_phone="", parent_email="", book_style="coloring"):
+    offer = get_pack(pack)
     supabase = get_supabase_client()
     bucket = "my-little-hero-files"
     root = f"orders/{order_ref}"
@@ -91,7 +93,7 @@ def save_order_to_supabase(order_ref, name, age, language, pack, covers, referen
         adventures.append({
             "number": index,
             "child_gender": child_gender,
-            "book_style": validate_book_style(book_style),
+            "book_style": cover.get("book_style", validate_book_style(book_style)),
             "theme": cover.get("theme", ""),
             "idea": cover.get("idea", ""),
             "quality": "",
@@ -106,9 +108,9 @@ def save_order_to_supabase(order_ref, name, age, language, pack, covers, referen
         "child_name": name,
         "child_age": age,
         "language": language,
-        "pack": {1: "LITTLE HERO", 2: "SUPER HERO", 3: "ULTIMATE HERO"}.get(pack, "LITTLE HERO"),
+        "pack": offer["name"],
         "adventure_count": len(covers),
-        "total_price": {1: 99, 2: 179, 3: 249}.get(pack, 99),
+        "total_price": offer["price"],
         "status": "WAITING_FOR_PAYMENT",
         "adventures": adventures,
         "reference_path": reference_path,
@@ -234,9 +236,14 @@ async def preview_cover(
     parent_email: str = Form(""),
     custom_theme: str = Form(""),
     book_style: str = Form("coloring"),
+    pack_id: int = Form(1),
 ):
     try:
         book_style = validate_book_style(book_style)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    try:
+        offer = get_pack(pack_id)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     parent_phone, parent_email = validate_parent_contact(parent_phone, parent_email)
@@ -258,7 +265,9 @@ async def preview_cover(
             selected_themes = []
     if not selected_themes and selected_theme:
         selected_themes = [selected_theme]
-    selected_themes = selected_themes[:3]
+    if len(selected_themes) != len(offer["styles"]):
+        raise HTTPException(status_code=400, detail="Le nombre d’aventures ne correspond pas au pack.")
+    styles = [book_style] if pack_id == 1 else offer["styles"]
 
     if not name or not age or age_value is None or not selected_themes:
         raise HTTPException(status_code=400, detail="Informations incomplètes.")
@@ -304,7 +313,7 @@ Aucun texte, logo ou watermark. Aucun personnage ou univers protégé.
 
         covers = []
         cover_bytes_list = []
-        for selected_theme, client_idea in resolved_themes:
+        for (selected_theme, client_idea), book_style in zip(resolved_themes, styles):
             title = generate_title(client, name, age, selected_theme, language, child_gender)
             cover_bytes = generate_cover(
                 client, reference_bytes, name, age, selected_theme, language, title, child_gender, book_style
@@ -312,17 +321,20 @@ Aucun texte, logo ou watermark. Aucun personnage ou univers protégé.
             cover_bytes_list.append(cover_bytes)
             covers.append({
                 "title": title,
+                "book_style": book_style,
                 "theme": selected_theme,
                 "idea": client_idea,
                 "cover_data_url": "data:image/png;base64," + base64.b64encode(cover_bytes).decode("ascii"),
             })
 
         order_ref = datetime.now().strftime("MLH-%Y%m%d-%H%M%S-") + uuid.uuid4().hex[:6].upper()
-        save_order_to_supabase(order_ref, name, age_value, language, len(selected_themes), covers, reference_bytes, cover_bytes_list, child_gender, parent_phone, parent_email, book_style)
+        save_order_to_supabase(order_ref, name, age_value, language, pack_id, covers, reference_bytes, cover_bytes_list, child_gender, parent_phone, parent_email, book_style)
 
         return {
             "ok": True,
             "order_ref": order_ref,
+            "pack_id": pack_id,
+            "total_price": offer["price"],
             "covers": covers,
         }
 

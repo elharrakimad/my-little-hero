@@ -23,7 +23,7 @@ def production_namespace():
     functions = [n for n in tree.body if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef)) and n.name in names]
     for function in functions:
         function.decorator_list = []
-    ns = dict(IDENTITY_INSTRUCTION=IDENTITY_INSTRUCTION, re=re, json=json, HTTPException=RequestError, Form=lambda default: default,
+    ns = dict(get_pack=__import__("packs").get_pack, IDENTITY_INSTRUCTION=IDENTITY_INSTRUCTION, re=re, json=json, HTTPException=RequestError, Form=lambda default: default,
               File=lambda default: default, UploadFile=object, base64=base64,
               MAX_PHOTO_BYTES=8*1024*1024, datetime=datetime, uuid=uuid, validate_book_style=__import__("book_style").validate_book_style)
     exec(compile(ast.Module(body=functions, type_ignores=[]), "api.py", "exec"), ns)
@@ -80,18 +80,55 @@ class OrderDetailsTests(unittest.TestCase):
         self.assertIsNone(row["parent_email"])
         self.assertEqual(row["adventures"][0]["idea"], "Un jardin magique")
         self.assertIn("Un jardin magique", prompts[0])
-        self.assertEqual(row["total_price"], 99)
+        self.assertEqual(row["total_price"], 79)
         self.assertEqual(row["status"], "WAITING_FOR_PAYMENT")
         self.assertEqual(row["adventures"][0]["book_style"], "coloring")
         params["book_style"] = "colored"
         asyncio.run(self.ns["preview_cover"](**params))
         self.assertEqual(db.rows[1]["adventures"][0]["book_style"], "colored")
-        self.assertEqual(db.rows[1]["total_price"], 99)
+        self.assertEqual(db.rows[1]["total_price"], 79)
         params["parent_phone"] = ""
         self.ns["get_openai_client"] = lambda: self.fail("Invalid contact must fail before paid work")
         with self.assertRaises(RequestError): asyncio.run(self.ns["preview_cover"](**params))
         params["parent_phone"], params["custom_theme"] = "0612345678", ""
         with self.assertRaises(RequestError): asyncio.run(self.ns["preview_cover"](**params))
+
+    def test_all_packs_use_server_prices_and_production_styles(self):
+        class Database:
+            def __init__(self): self.storage = self; self.rows = []
+            def from_(self, bucket): return self
+            def upload(self, *args, **kwargs): pass
+            def table(self, name): return self
+            def insert(self, row): self.rows.append(row); return self
+            def execute(self): pass
+        class Photo:
+            content_type = "image/png"
+            filename = "test.png"
+            async def read(self): return b"test"
+        db = Database()
+        self.ns.update(get_supabase_client=lambda: db,
+            get_openai_client=lambda: SimpleNamespace(images=SimpleNamespace(edit=lambda **kw: SimpleNamespace(data=[SimpleNamespace(b64_json="dGVzdA==")]))),
+            image_file=lambda *args: None, gender_instruction=lambda *args: "",
+            generate_title=lambda *args: "Test", generate_cover=lambda *args: b"test")
+        from packs import PACKS
+        for pack_id, offer in PACKS.items():
+            with self.subTest(pack=offer["name"]):
+                params = dict(child_name="Test", child_age="7", language="Français",
+                    themes=json.dumps(["Science"] * len(offer["styles"])), photo=Photo(),
+                    child_gender="boy", parent_phone="0612345678", pack_id=pack_id,
+                    book_style="coloring")  # Physical formats must override this client choice.
+                asyncio.run(self.ns["preview_cover"](**params))
+                row = db.rows[-1]
+                self.assertEqual(row["pack"], offer["name"])
+                self.assertEqual(row["total_price"], offer["price"])
+                self.assertEqual(row["adventure_count"], len(offer["styles"]))
+                self.assertEqual([a["book_style"] for a in row["adventures"]], offer["styles"])
+                self.assertEqual(row["status"], "WAITING_FOR_PAYMENT")
+        self.ns["get_openai_client"] = lambda: self.fail("Invalid pack must not incur generation cost")
+        for pack_id, themes in [(0, ["Science"]), (6, ["Science"]), (4, ["Science"]), (1, ["A", "B"]), (5, ["A", "B", "C"])]:
+            with self.subTest(pack=pack_id, themes=themes), self.assertRaises(RequestError):
+                asyncio.run(self.ns["preview_cover"](child_name="Test", child_age="7", photo=None,
+                    child_gender="boy", parent_phone="0612345678", pack_id=pack_id, themes=json.dumps(themes)))
 
     def test_age_limits_reject_invalid_orders_before_ai_or_photo_processing(self):
         self.ns["get_openai_client"] = lambda: self.fail("Invalid age must not start paid work")

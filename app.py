@@ -1,3 +1,5 @@
+from packs import PACKS
+from book_style import cover_subtitle
 import streamlit as st
 import streamlit.components.v1 as components
 from pathlib import Path
@@ -75,17 +77,10 @@ def get_order_number():
         )
     return st.session_state.order_number
 
-PRICES = {
-    1: {"digital": 99, "print": 179, "both": 229},
-    2: {"digital": 179, "print": 339, "both": 389},
-    3: {"digital": 249, "print": 479, "both": 529},
-}
-
-FORMAT_NAMES = {
-    "digital": "💻 Digital",
-    "print": "📚 Imprimé",
-    "both": "🎁 Coffret cadeau",
-}
+PRICES = {i: {fmt: p["price"] for fmt in ("digital", "print", "both")} for i, p in PACKS.items()}
+FORMAT_NAMES = {"digital": "PDF", "print": "Livre + PDF", "both": "Deux livres + PDF"}
+def adventure_count(pack):
+    return len(PACKS[pack]["styles"])
 
 THEMES = [
     # 🌟 Aventures fantastiques
@@ -137,18 +132,8 @@ THEMES = [
 
 LANGUAGES = ["Français", "English", "Español", "العربية"]
 
-PACK_NAMES = {
-    1: "LITTLE HERO",
-    2: "SUPER HERO",
-    3: "ULTIMATE HERO",
-}
-
-PACK_ICONS = {
-    1: "🌟",
-    2: "⭐",
-    3: "👑",
-}
-
+PACK_NAMES = {i: p["name"] for i, p in PACKS.items()}
+PACK_ICONS = {i: "📚" for i in PACKS}
 
 # ------------------------------------------------------------
 # SESSION STATE
@@ -284,17 +269,9 @@ Réponds uniquement avec le titre final, sur une seule ligne.
     return title[:120]
 
 
-def generate_cover(reference_bytes, name, age, theme, idea, quality, language, book_title):
+def generate_cover(reference_bytes, name, age, theme, idea, quality, language, book_title, book_style="coloring"):
     client = OpenAI()
-    if language == "English":
-        subtitle_text = "Personalized Coloring Book"
-    elif language == "Español":
-        subtitle_text = "Libro de colorear personalizado"
-    elif language == "العربية":
-        subtitle_text = "كتاب تلوين مخصص"
-    else:
-        subtitle_text = "Livre de coloriage personnalisé"
-
+    subtitle_text = cover_subtitle(language, book_style)
     title_text = book_title
 
     result = client.images.edit(
@@ -344,7 +321,7 @@ def save_order_metadata():
     preview_dir = Path("orders") / f"preview_{st.session_state.preview_id}"
     preview_dir.mkdir(parents=True, exist_ok=True)
 
-    selected_adventures = list(st.session_state.adventures[:st.session_state.pack])
+    selected_adventures = list(st.session_state.adventures[:adventure_count(st.session_state.pack)])
     order_number = get_order_number()
     storage_root = f"orders/{order_number}"
 
@@ -395,6 +372,7 @@ def save_order_metadata():
         order["adventures"].append({
             "number": i,
             "child_gender": st.session_state.child_gender,
+            "book_style": PACKS[st.session_state.pack]["styles"][i-1],
             "theme": theme,
             "idea": adventure["idea"],
             "quality": adventure["quality"],
@@ -413,7 +391,7 @@ def save_order_metadata():
         "child_age": st.session_state.age,
         "language": st.session_state.language,
         "pack": PACK_NAMES[st.session_state.pack],
-        "adventure_count": st.session_state.pack,
+        "adventure_count": adventure_count(st.session_state.pack),
         "total_price": PRICES[st.session_state.pack][st.session_state.format],
         "status": "WAITING_FOR_PAYMENT",
         "adventures": order["adventures"],
@@ -473,7 +451,7 @@ def create_preview_covers():
 
     # IMPORTANT : le nombre de couvertures doit toujours être égal au nombre
     # d'aventures sélectionnées.
-    selected_adventures = list(st.session_state.adventures[:st.session_state.pack])
+    selected_adventures = list(st.session_state.adventures[:adventure_count(st.session_state.pack)])
     cover_paths = []
     total = len(selected_adventures)
 
@@ -504,6 +482,7 @@ def create_preview_covers():
                     adventure["quality"],
                     st.session_state.language,
                     adventure["title"],
+                    PACKS[st.session_state.pack]["styles"][i-1],
                 )
             cover_path.write_bytes(cover_bytes)
 
@@ -926,15 +905,10 @@ if st.session_state.step == 1:
         unsafe_allow_html=True
     )
 
-    cols = st.columns(3)
+    cols = st.columns(5)
 
-    descriptions = {
-        1: "1 aventure personnalisée pour ton petit héros.",
-        2: "2 aventures personnalisées, un même héros.",
-        3: "3 aventures personnalisées — le cadeau complet.",
-    }
-
-    for col, number in zip(cols, [1, 2, 3]):
+    descriptions = {i: p["contents"] for i, p in PACKS.items()}
+    for col, number in zip(cols, PACKS):
         with col:
             selected = st.session_state.pack == number
             popular = number == 3
@@ -945,9 +919,7 @@ if st.session_state.step == 1:
                     {PACK_ICONS[number]} {PACK_NAMES[number]}
                 </div>
                 <div class="offer-desc">{descriptions[number]}</div>
-                <div class="offer-price">💻 Digital — <strong>{PRICES[number]['digital']} DH</strong></div>
-                <div class="offer-price">📚 Imprimé — <strong>{PRICES[number]['print']} DH</strong></div>
-                <div class="offer-price">🎁 Coffret cadeau — <strong>{PRICES[number]['both']} DH</strong></div>
+                <div class="offer-price"><strong>{PACKS[number]['price']} DH</strong> · Livraison séparée</div>
             </div>
             """, unsafe_allow_html=True)
 
@@ -957,25 +929,19 @@ if st.session_state.step == 1:
                 use_container_width=True
             ):
                 st.session_state.pack = number
+                st.session_state.preview_id = ""
+                st.session_state.cover_paths = []
                 st.rerun()
 
-    st.markdown("### 🎁 Comment veux-tu recevoir tes aventures ?")
-
-    st.session_state.format = st.radio(
-        "Format",
-        ["digital", "print", "both"],
-        horizontal=True,
-        format_func=lambda x: FORMAT_NAMES[x],
-        index=["digital", "print", "both"].index(st.session_state.format)
-    )
+    st.session_state.format = "digital" if st.session_state.pack == 1 else "print" if st.session_state.pack in (2, 3) else "both"
 
     price = PRICES[st.session_state.pack][st.session_state.format]
 
     st.markdown(f"""
     <div class="summary">
-        <b>Pack choisi :</b> {PACK_NAMES[st.session_state.pack]} — {st.session_state.pack} aventure(s)<br>
+        <b>Pack choisi :</b> {PACK_NAMES[st.session_state.pack]} — {adventure_count(st.session_state.pack)} aventure(s)<br>
         <b>Format :</b> {FORMAT_NAMES[st.session_state.format]}
-        <div class="total">{price} DH</div>
+        <div class="total">{price} DH · Livraison séparée</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -992,7 +958,7 @@ elif st.session_state.step == 2:
 
     st.markdown('<div class="section-title">🧒 Présente-nous ton petit héros</div>', unsafe_allow_html=True)
     st.markdown(
-        '<div class="section-text">Une seule photo suffit, même pour un pack de 3 aventures.</div>',
+        '<div class="section-text">Une seule photo suffit, même pour un pack de deux livres.</div>',
         unsafe_allow_html=True
     )
 
@@ -1094,17 +1060,18 @@ elif st.session_state.step == 2:
 elif st.session_state.step == 3:
 
     pack = st.session_state.pack
+    count = adventure_count(pack)
 
     st.markdown('<div class="section-title">📚 Imagine ses aventures</div>', unsafe_allow_html=True)
     st.markdown(
-        f'<div class="section-text">{PACK_NAMES[pack]} — {pack} aventure(s) pour {st.session_state.child_name}.</div>',
+        f'<div class="section-text">{PACK_NAMES[pack]} — {count} aventure(s) pour {st.session_state.child_name}.</div>',
         unsafe_allow_html=True
     )
 
-    # Synchronisation stricte : 1 pack = 1/2/3 aventures.
+    # Synchronisation stricte : le catalogue détermine le nombre de livres.
     # On conserve les aventures déjà saisies et on ajoute/supprime uniquement
     # ce qui est nécessaire.
-    while len(st.session_state.adventures) < pack:
+    while len(st.session_state.adventures) < count:
         st.session_state.adventures.append({
             "theme": THEMES[0],
             "custom": "",
@@ -1112,15 +1079,15 @@ elif st.session_state.step == 3:
             "quality": ""
         })
 
-    if len(st.session_state.adventures) > pack:
-        st.session_state.adventures = st.session_state.adventures[:pack]
+    if len(st.session_state.adventures) > count:
+        st.session_state.adventures = st.session_state.adventures[:count]
 
     show_all_themes = st.checkbox("Voir tous les thèmes", value=False)
     girl_themes = ("fées", "licorne", "enchanté", "sirènes", "artistique", "musicale", "Danse", "pâtisserie", "mode")
     boy_themes = ("Dragon", "pirates", "espace", "robots", "dinosaures", "football", "basket", "Course", "secrète", "Chevalier", "Super héros", "sportif")
     excluded = boy_themes if st.session_state.child_gender == "girl" else girl_themes
     available_themes = THEMES if show_all_themes else [t for t in THEMES if not any(word in t for word in excluded)]
-    for i in range(pack):
+    for i in range(count):
         if st.session_state.adventures[i]["theme"] not in available_themes:
             st.session_state.adventures[i]["theme"] = available_themes[0]
             st.session_state.pop(f"adventure_theme_{i}", None)
@@ -1164,7 +1131,7 @@ elif st.session_state.step == 3:
         )
         st.session_state.adventures[i]["quality"] = quality
 
-        if i < pack - 1:
+        if i < count - 1:
             st.divider()
 
     st.write("")
@@ -1202,12 +1169,13 @@ elif st.session_state.step == 3:
 elif st.session_state.step == 4:
 
     pack = st.session_state.pack
+    count = adventure_count(pack)
     fmt = st.session_state.format
     price = PRICES[pack][fmt]
     name = st.session_state.child_name
     adventures = st.session_state.adventures
     # Liste exacte des aventures correspondant au pack sélectionné.
-    selected_adventures = list(adventures[:pack])
+    selected_adventures = list(adventures[:count])
 
     st.markdown(
         f'<div class="section-title">🎉 {PACK_NAMES[pack]} — Voici les couvertures de tes livres</div>',
@@ -1468,10 +1436,10 @@ elif st.session_state.step == 4:
 
     # Contrôle silencieux utile pendant le développement.
     # Le client ne voit pas ce détail.
-    if len(cover_paths) != pack:
+    if len(cover_paths) != count:
         st.error(
             f"Une couverture manque. {len(cover_paths)} couverture(s) générée(s) "
-            f"sur {pack} demandée(s)."
+            f"sur {count} demandée(s)."
         )
 
     st.markdown("""
@@ -1489,10 +1457,10 @@ elif st.session_state.step == 4:
     st.markdown(f"""
     <div class="summary">
         <b>Héros :</b> {name}<br>
-        <b>Pack :</b> {PACK_NAMES[pack]} — {pack} aventure(s)<br>
+        <b>Pack :</b> {PACK_NAMES[pack]} — {count} aventure(s)<br>
         <b>Format :</b> {FORMAT_NAMES[fmt]}<br>
         <b>Langue :</b> {st.session_state.language}
-        <div class="total">Total : {price} DH</div>
+        <div class="total">Total hors livraison : {price} DH</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -1512,7 +1480,7 @@ elif st.session_state.step == 4:
 
             details = []
 
-            for i, adventure in enumerate(adventures[:pack], start=1):
+            for i, adventure in enumerate(adventures[:count], start=1):
                 theme = (
                     adventure["custom"]
                     if adventure["theme"] == "✨ Mon propre thème"
@@ -1534,9 +1502,10 @@ elif st.session_state.step == 4:
                 f"📧 E-mail : {st.session_state.customer_email}\n"
                 f"🎂 Âge : {st.session_state.age} ans\n"
                 f"🌍 Langue : {st.session_state.language}\n"
-                f"📦 Pack : {pack} aventure(s)\n"
+                f"📦 Pack : {PACK_NAMES[pack]} — {count} aventure(s)\n"
                 f"🎁 Format : {FORMAT_NAMES[fmt]}\n"
-                f"💰 Total : {price} DH\n\n"
+                f"💰 Total hors livraison : {price} DH\n"
+                f"Contenu : {PACKS[pack]['contents']}\nLivraison séparée, confirmée avant paiement.\n\n"
                 + "\n\n".join(details)
                 + "\n\nJe souhaite valider ma commande."
             )

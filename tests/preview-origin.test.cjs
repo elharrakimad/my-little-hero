@@ -71,3 +71,20 @@ test('waiting message is visible throughout the request in French and Arabic the
     assert.equal(button.textContent,'Commencer mon histoire →');
   }
 });
+
+test('server quote must match the selected offer before WhatsApp is enabled', async()=>{
+ for(const quotedPrice of [249,179]){
+  const button={disabled:false,setAttribute(){},removeAttribute(){}};
+  const node={hidden:false,innerHTML:'',textContent:'',appendChild(){},setAttribute(){}};
+  const window={location:{protocol:'https:'},MLH_PACKS:{4:{price:249}}};
+  const document={addEventListener:(_,fn)=>fn(),documentElement:{lang:'fr'},
+   getElementById:id=>id==='orderButton'?button:node,querySelector:()=>null,
+   createElement:()=>({appendChild(){}})};
+  vm.runInNewContext(fs.readFileSync('preview.js','utf8'),{window,document,alert(){},console:{error(){}},
+   FormData:class {append(){}},fetch:async()=>({ok:true,json:async()=>({pack_id:4,total_price:quotedPrice,order_ref:'MLH-TEST',covers:[{title:'Science',cover_data_url:'data:image/png;base64,dGVzdA=='}]})})});
+  const ok=await window.generateStoryPreview({pack:4,name:'Test',age:7,gender:'boy',themes:['Science','Nature'],photoFile:{},parentPhone:'0612345678'});
+  assert.equal(ok,quotedPrice===249);
+  assert.equal(button.disabled,quotedPrice!==249);
+  assert.equal(window.MLH_ORDER_REF,quotedPrice===249?'MLH-TEST':'');
+ }
+});

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   orderButton.disabled=true;
   orderButton.setAttribute("aria-disabled","true");
 
-  window.generateStoryPreview=async({name,age,language,gender,themes,photoFile,parentPhone,parentEmail,customTheme,bookStyle="coloring"})=>{
+  window.generateStoryPreview=async({name,age,language,gender,themes,photoFile,parentPhone,parentEmail,customTheme,pack=1,bookStyle="coloring"})=>{
     if(window.location.protocol==="file:"){
       alert(document.documentElement.lang==="ar"
         ?"لإنشاء كتاب، افتح الموقع https://my-little-hero.online بدلاً من ملف HTML على جهازك."
@@ -20,7 +20,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     }
     if(!name||!age||!gender||!photoFile||!themes?.length||!parentPhone)return false;
 
+    window.MLH_ORDER_REF="";
     const form=new FormData();
+    form.append("pack_id",String(pack));
     form.append("child_name",name);
     form.append("child_age",age);
     form.append("child_gender",gender);
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       let data={};
       try{data=await response.json();}catch(_){data={};}
       if(!response.ok)throw new Error(data.detail||"Erreur de génération.");
+      if(data.pack_id!==pack||data.total_price!==window.MLH_PACKS?.[pack]?.price)throw new Error("Le catalogue du serveur doit être mis à jour. Contactez-nous sur WhatsApp avant paiement.");
       if(!Array.isArray(data.covers)||!data.covers.length)throw new Error("Aucune couverture générée.");
 
       data.covers.forEach((cover,index)=>{
@@ -73,6 +76,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         titleList.appendChild(title);
       });
 
+      window.MLH_ORDER_REF=data.order_ref;
       coverBox.hidden=false;
       coverStatus.textContent=document.documentElement.lang==="ar"?"كتبك جاهزة للمعاينة.":"Vos livres sont prêts à être découverts.";
       orderButton.disabled=false;

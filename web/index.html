@@ -1,103 +1,103 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<base href="../">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="My Little Hero — des histoires personnalisées où chaque enfant devient le héros de sa propre aventure.">
+<meta name="theme-color" content="#5b4bdb">
 <title>My Little Hero — Ton enfant devient le héros</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20261031-magic">
+<link rel="stylesheet" href="magic.css?v=20261101-anime-notice">
 </head>
-<body>
+<body class="magic-site">
+<a class="skip-link" href="#creation">Aller à la création</a>
 <header class="site-header">
-  <a class="brand" href="#top" aria-label="My Little Hero"><img class="brand-logo" src="assets/logo.png" alt="My Little Hero"></a>
-  <nav>
-    <a href="#how">Comment ça marche</a>
-    <a href="#adventures">Aventures</a>
-    <a href="#packs">Packs</a>
-  </nav>
+  <a class="brand" href="#top" aria-label="My Little Hero"><img class="brand-logo" src="web/assets/logo.png" alt="My Little Hero"></a>
+  <nav aria-label="Navigation principale"><a href="#how">Comment ça marche</a><a href="#adventures">Aventures</a><a href="#inside">Le livre</a><a href="#packs">Packs</a><a href="#faq">FAQ</a></nav>
   <div id="siteLanguageToggle" aria-label="Choisir la langue"><button type="button" data-lang="fr" class="active" onclick="window.setMyLittleHeroLanguage && window.setMyLittleHeroLanguage('fr')">FR</button><span></span><button type="button" data-lang="ar" onclick="window.setMyLittleHeroLanguage && window.setMyLittleHeroLanguage('ar')">العربية</button></div>
-  <button class="btn btn-dark nav-cta" data-open-creation>Créer mon aventure</button>
+  <details class="mobile-menu"><summary aria-label="Ouvrir le menu">☰</summary><nav aria-label="Navigation mobile"><a href="#adventures">Aventures</a><a href="#how">Comment ça marche</a><a href="#inside">Le livre</a><a href="#packs">Packs</a><a href="#faq">FAQ</a></nav></details>
+  <button type="button" class="btn btn-dark nav-cta" data-open-creation>Créer son aventure</button>
 </header>
 
 <main id="top">
 <section class="hero">
   <div class="hero-copy">
-    <div class="eyebrow">✨ UNE AVENTURE RIEN QU'À LUI</div>
-    <h1>Et si votre enfant devenait <span>le héros</span> de sa propre histoire&nbsp;?</h1>
-    <p class="hero-text">Une histoire personnalisée, inspirée de sa photo et de ses passions, puis transformée en aventure à colorier.</p>
-    <div class="hero-actions">
-      <button class="btn btn-primary btn-large" data-open-creation>Créer son aventure <span>→</span></button>
-      <a class="text-link" href="#how">Découvrir le concept ↓</a>
-    </div>
-    <div class="trust-row">
-      <span>✓ Personnalisé</span><span>✓ À partir de 99 DH</span><span>✓ Digital ou imprimé</span>
-    </div>
+    <div class="eyebrow"><span class="little-star" aria-hidden="true">✦</span> UNE HISTOIRE CRÉÉE RIEN QUE POUR LUI</div>
+    <h1>Votre enfant devient <span>le héros</span> de sa propre histoire.</h1>
+    <p class="hero-text">À partir de son prénom, de son âge et de sa photo, nous imaginons une aventure originale à colorier ou déjà illustrée en couleur, à garder comme souvenir.</p>
+    <div class="hero-actions"><button type="button" class="btn btn-primary btn-large" data-open-creation>Créer son livre <span aria-hidden="true">↗</span></button><a class="text-link" href="#inside">Feuilleter la magie <span aria-hidden="true">↓</span></a></div>
+    <div class="trust-row"><span>✓ Personnalisé</span><span>✓ Dès 79 DH</span><span>✓ Digital ou imprimé</span></div>
   </div>
   <div class="hero-visual">
-    <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
-    <div class="spark spark-a">✦</div><div class="spark spark-b">✧</div>
+    <div class="magic-orbit" aria-hidden="true"></div><span class="magic-star star-one" aria-hidden="true">✦</span><span class="magic-star star-two" aria-hidden="true">✧</span><span class="magic-star star-three" aria-hidden="true">✶</span>
+    <div class="visual-kicker">PETIT HÉROS. GRANDE AVENTURE.</div>
     <div class="hero-books-3d">
-      <div class="hero-book book-back"><img src="assets/cover_01.png" alt="Livre personnalisé My Little Hero"></div>
-      <div class="hero-book book-middle"><img src="assets/cover_02.png" alt="Livre personnalisé My Little Hero"></div>
-      <div class="hero-book book-front"><img src="assets/cover_03.png" alt="Livre personnalisé My Little Hero"></div>
+      <div class="hero-book book-back"><img src="web/assets/cover_01.png" alt="Exemple de couverture personnalisée My Little Hero" fetchpriority="high" width="190" height="295"></div>
+      <div class="hero-book book-middle"><img src="web/assets/cover_02.png" alt="Un autre univers pour son livre personnalisé" width="190" height="295"></div>
+      <div class="hero-book book-front"><img src="web/assets/cover_03.png" alt="Exemple d’aventure à personnaliser" width="190" height="295"></div>
     </div>
-    <div class="hero-note"><span>🎨</span><div><b>À colorier</b><small>10 pages par aventure</small></div></div>
-    <div class="hero-badge"><b>3</b><span>aventures possibles</span></div>
+    <div class="hero-note"><span aria-hidden="true">✎</span><div><b>À colorier ou en couleur</b><small>10 scènes par aventure</small></div></div>
+    <div class="hero-badge"><span aria-hidden="true">✦</span><b>Son prénom.<br>Son aventure.</b></div>
   </div>
+</section>
+
+<section class="mini-proof" aria-label="Les essentiels"><div><b>01</b><span>Un héros à son image</span></div><div><b>+200</b><span>univers possibles</span></div><div><b>21</b><span>catégories disponibles</span></div><div><b>∞</b><span>De l’imagination à colorier</span></div></section>
+
+<section class="section adventures" id="adventures">
+  <div class="section-heading center"><div class="eyebrow">CHOISIS SON UNIVERS</div><h2>Une aventure pour <span>chaque imagination</span></h2><p>Des mondes très différents pour que chaque enfant trouve son aventure.</p></div>
+<div class="world-grid">
+ <a class="world-card world-magic" href="#creation" data-open-creation><div class="world-art" aria-hidden="true"><svg viewBox="0 0 260 160"><circle cx="130" cy="80" r="68" fill="#e0d3ff"/><path d="M67 134V72h34v62m58 0V72h34v62M99 134V87h62v47" fill="#fff7ee" stroke="#443083" stroke-width="4"/><path d="M60 73l24-38 24 38m44 0l24-38 24 38M112 86l18-43 18 43" fill="#ff9775" stroke="#443083" stroke-width="4" stroke-linejoin="round"/><path d="M119 134v-22a11 11 0 0122 0v22" fill="#b89bf4" stroke="#443083" stroke-width="4"/><path d="M129 42V18l24 8-24 8" fill="#ffcd50" stroke="#443083" stroke-width="3"/><path d="M40 35v18m-9-9h18m166 49v16m-8-8h16" stroke="#fff" stroke-width="4"/><circle cx="211" cy="31" r="5" fill="#ffcd50"/></svg></div><div class="world-copy"><span>01 / IMAGINER</span><h3>Un peu de magie</h3><p>Royaumes, dragons et rencontres enchantées.</p><b class="world-arrow" aria-label="Créer son aventure">↗</b></div></a>
+ <a class="world-card world-space" href="#creation" data-open-creation><div class="world-art" aria-hidden="true"><svg viewBox="0 0 260 160"><circle cx="130" cy="80" r="68" fill="#b7e5ff"/><g transform="rotate(27 130 80)"><path d="M111 105V66q0-31 19-45 19 14 19 45v39z" fill="#fff" stroke="#24467c" stroke-width="4"/><path d="M111 83l-22 29h22m38-29l22 29h-22" fill="#ff9076" stroke="#24467c" stroke-width="4"/><circle cx="130" cy="64" r="12" fill="#7ad2ed" stroke="#24467c" stroke-width="4"/><path d="M119 112l11 25 11-25" fill="#ffd45e" stroke="#24467c" stroke-width="4"/></g><ellipse cx="49" cy="45" rx="28" ry="7" transform="rotate(-22 49 45)" fill="none" stroke="#fff" stroke-width="3"/><circle cx="49" cy="45" r="13" fill="#ffd45e"/><path d="M204 111v18m-9-9h18m-3-90v12m-6-6h12" stroke="#fff" stroke-width="4"/></svg></div><div class="world-copy"><span>02 / EXPLORER</span><h3>Cap sur l’inconnu</h3><p>Espace, océans et mondes extraordinaires.</p><b class="world-arrow" aria-label="Créer son aventure">↗</b></div></a>
+ <a class="world-card world-wild" href="#creation" data-open-creation><div class="world-art" aria-hidden="true"><svg viewBox="0 0 260 160"><circle cx="130" cy="80" r="68" fill="#f9da80"/><path d="M62 121q35-9 45-42l17-28q7-12 22-12h32q12 0 12 12v15h-32l-3 28 19 23v21h-20l-13-28-10 28h-20v-25q-30 29-61 23z" fill="#6ac5aa" stroke="#295853" stroke-width="4" stroke-linejoin="round"/><circle cx="169" cy="51" r="3" fill="#295853"/><path d="M150 83l20 8m-42-40l-9-13-7 21-10-5-4 23" fill="#ff987a" stroke="#295853" stroke-width="3" stroke-linejoin="round"/><path d="M40 42v18m-9-9h18m167 43v16m-8-8h16" stroke="#fff" stroke-width="4"/></svg></div><div class="world-copy"><span>03 / OSER</span><h3>L’aventure en grand</h3><p>Dinosaures, animaux et défis passionnants.</p><b class="world-arrow" aria-label="Créer son aventure">↗</b></div></a>
+</div>
+  <div class="theme-showcase">
+    <button type="button" class="theme-pill" data-open-creation>🧙 Monde magique</button><button type="button" class="theme-pill" data-open-creation>🦄 Licorne</button><button type="button" class="theme-pill" data-open-creation>🚀 Espace</button><button type="button" class="theme-pill" data-open-creation>🦖 Dinosaures</button><button type="button" class="theme-pill" data-open-creation>🏴‍☠️ Pirates</button><button type="button" class="theme-pill" data-open-creation>🌊 Sous-marin</button><button type="button" class="theme-pill" data-open-creation>⚽ Football</button><button type="button" class="theme-pill" data-open-creation>🕵️ Détective</button><button type="button" class="theme-pill" data-open-creation>🤖 Robots</button><button type="button" class="theme-pill" data-open-creation>🏰 Chevalier</button><button type="button" class="theme-pill" data-open-creation>🎨 Art</button><button type="button" class="theme-pill" data-open-creation>🍰 Pâtisserie</button><button type="button" class="theme-pill" data-open-creation>✨ Son propre thème</button>
+  </div>
+  <div class="adventure-note"><span>✨</span><div><b>Et ce n'est qu'un aperçu.</b><br><small>366 univers sont disponibles pendant la création.</small></div></div>
 </section>
 
 <section class="section how" id="how">
-  <div class="section-heading"><div class="eyebrow">COMMENT ÇA MARCHE</div><h2>Simple pour vous.<br><span>Magique pour lui.</span></h2><p>En quelques étapes, nous créons une aventure unique à son image.</p></div>
+  <div class="section-heading center"><div class="eyebrow">COMMENT ÇA MARCHE</div><h2>Simple pour vous.<br><span>Magique pour lui.</span></h2><p>Quelques choix suffisent pour lancer la création de son aventure.</p></div>
   <div class="steps">
-    <article><i>01</i><div class="step-icon step-icon-illustration"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="18" width="44" height="32" rx="7" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="34" r="10" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 18l4-7h12l4 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><circle cx="32" cy="34" r="4" fill="currentColor"/><path d="M46 25h.01" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M49 10v9M44.5 14.5h9" stroke="#ffd45e" stroke-width="3" stroke-linecap="round"/></svg></div><h3>Son prénom & sa photo</h3><p>Vous nous donnez les informations de votre petit héros.</p></article>
-    <article><i>02</i><div class="step-icon step-icon-illustration"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 15l15-6 18 6 15-6v40l-15 6-18-6-15 6z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M23 9v40M41 15v40" fill="none" stroke="currentColor" stroke-width="3"/><path d="M15 38c5-7 9-11 14-13 4-2 8-1 12 3" fill="none" stroke="#5b4bdb" stroke-width="3" stroke-linecap="round"/><circle cx="42" cy="26" r="4" fill="#ff8d83"/></svg></div><h3>Son aventure</h3><p>Choisissez son univers : espace, dinosaures, magie, football et plus.</p></article>
+    <article><i>01</i><div class="step-icon step-icon-illustration"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="18" width="44" height="32" rx="7" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="34" r="10" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 18l4-7h12l4 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><circle cx="32" cy="34" r="4" fill="currentColor"/><path d="M46 25h.01" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M49 10v9M44.5 14.5h9" stroke="#ffd45e" stroke-width="3" stroke-linecap="round"/></svg></div><h3>Son prénom & sa photo</h3><p>Indiquez les informations de votre petit héros et ajoutez sa photo.</p></article>
+    <article><i>02</i><div class="step-icon step-icon-illustration"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 15l15-6 18 6 15-6v40l-15 6-18-6-15 6z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M23 9v40M41 15v40" fill="none" stroke="currentColor" stroke-width="3"/><path d="M15 38c5-7 9-11 14-13 4-2 8-1 12 3" fill="none" stroke="#5b4bdb" stroke-width="3" stroke-linecap="round"/><circle cx="42" cy="26" r="4" fill="#ff8d83"/></svg></div><h3>Son univers</h3><p>Choisissez parmi nos aventures : magie, espace, dinosaures, sport et bien plus.</p></article>
     <article><i>03</i><div class="step-icon step-icon-illustration"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M34 8c-5 10-9 17-16 23-6 6-5 15 2 20 8 6 18 3 23-4 6-8 5-17-1-24-3-4-5-8-8-15z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M34 8c2 5 5 10 9 15" fill="none" stroke="#5b4bdb" stroke-width="3" stroke-linecap="round"/><path d="M45 10l3-6M52 15l7-2M51 25l7 3" stroke="#ffd45e" stroke-width="3" stroke-linecap="round"/><circle cx="27" cy="35" r="2.5" fill="#ff8d83"/><circle cx="37" cy="42" r="2.5" fill="#5b4bdb"/></svg></div><h3>Nous créons son livre</h3><p>Son personnage devient le héros d'une histoire originale et illustrée.</p></article>
-    <article><i>04</i><div class="step-icon step-icon-illustration"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M11 44c0-18 12-30 27-30 10 0 17 5 17 12 0 9-8 14-18 14H25c-7 0-11 2-14 4z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><circle cx="25" cy="27" r="4" fill="#ffd45e"/><circle cx="35" cy="22" r="4" fill="#ff8d83"/><circle cx="44" cy="28" r="4" fill="#5b4bdb"/><path d="M18 48c4 5 9 7 15 7 7 0 13-3 17-8" fill="none" stroke="#5b4bdb" stroke-width="3" stroke-linecap="round"/><path d="M39 48l6 6 7-9" fill="none" stroke="#5b4bdb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Il donne vie à l'histoire</h3><p>Il reçoit son aventure et peut colorier chaque page.</p></article>
+    <article><i>04</i><div class="step-icon step-icon-illustration"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M11 44c0-18 12-30 27-30 10 0 17 5 17 12 0 9-8 14-18 14H25c-7 0-11 2-14 4z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><circle cx="25" cy="27" r="4" fill="#ffd45e"/><circle cx="35" cy="22" r="4" fill="#ff8d83"/><circle cx="44" cy="28" r="4" fill="#5b4bdb"/><path d="M18 48c4 5 9 7 15 7 7 0 13-3 17-8" fill="none" stroke="#5b4bdb" stroke-width="3" stroke-linecap="round"/><path d="M39 48l6 6 7-9" fill="none" stroke="#5b4bdb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Il vit son aventure</h3><p>Il lit son histoire en couleur ou lui donne vie en la coloriant.</p></article>
   </div>
 </section>
 
-<section class="section adventures" id="adventures">
-  <div class="section-heading center"><div class="eyebrow">CHOISIS SON UNIVERS</div><h2>Une aventure pour <span>chaque enfant</span></h2><p>Et si son imagination choisissait la prochaine mission&nbsp;?</p></div>
-  <div class="theme-showcase">
-    <button class="theme-pill">🧙 Monde magique</button><button class="theme-pill">🦄 Licorne</button><button class="theme-pill">🚀 Espace</button><button class="theme-pill">🦖 Dinosaures</button>
-    <button class="theme-pill">🏴‍☠️ Pirates</button><button class="theme-pill">🌊 Sous-marin</button><button class="theme-pill">⚽ Football</button><button class="theme-pill">🕵️ Détective</button>
-    <button class="theme-pill">🤖 Robots</button><button class="theme-pill">🏰 Chevalier</button><button class="theme-pill">🎨 Art</button><button class="theme-pill">✨ Son propre thème</button>
-  </div>
-  <div class="adventure-note"><span>💡</span><div><b>Plus de 30 univers possibles</b><br><small>Le choix complet sera disponible pendant la création.</small></div></div>
+<section class="section inside" id="inside">
+ <div class="inside-art"><span class="sample-label">APERÇU ILLUSTRATIF</span><div class="sample-cover"><img src="web/assets/cover_02.png" alt="Exemple de couverture en couleur" loading="lazy" width="190" height="295"></div><div class="sample-page"><span class="sample-page-stars" aria-hidden="true">✧ &nbsp; ✦ &nbsp; ✧</span><b>Une mission extraordinaire</b><img src="assets/coloring-space.svg" alt="Illustration d’une fusée à colorier, exemple d’ambiance spatiale" loading="lazy" width="320" height="360"><div class="sample-lines" aria-hidden="true"><i></i><i></i><i></i></div><span class="sample-page-number" aria-hidden="true">☆ 1 ☆</span></div><span class="pencil" aria-hidden="true"></span></div>
+ <div class="inside-copy"><div class="eyebrow">DE LA PREMIÈRE À LA DERNIÈRE PAGE</div><h2>Une histoire à vivre.<br><span>Un monde à découvrir.</span></h2><p>Un livre dont il est le personnage principal, à lire en couleur ou à personnaliser avec ses crayons.</p><ul class="inside-features"><li><span aria-hidden="true">01</span><div><h3>Son personnage, son histoire</h3><p>Son prénom et sa photo inspirent une aventure personnalisée.</p></div></li><li><span aria-hidden="true">02</span><div><h3>La magie continue sur le papier</h3><p>Des illustrations à colorier ou déjà en couleur pour prolonger son aventure.</p></div></li><li><span aria-hidden="true">03</span><div><h3>À garder, à partager, à offrir</h3><p>PDF à imprimer, livre imprimé ou coffret cadeau : à vous de choisir.</p></div></li></ul><a class="text-link" href="#packs">Découvrir les formules <span aria-hidden="true">↗</span></a></div>
 </section>
 
 <section class="section packs" id="packs">
-  <div class="section-heading center"><div class="eyebrow">NOS PACKS</div><h2>Choisissez son <span>niveau d'aventure</span></h2><p>Une aventure, plusieurs aventures, ou le cadeau qui fait vraiment plaisir.</p></div>
+  <div class="section-heading center"><div class="eyebrow">NOS 5 PACKS</div><h2>Choisissez son <span>niveau d'aventure</span></h2><p>Une première aventure, une collection de deux mondes ou le cadeau complet.</p></div>
   <div class="pricing-grid">
-    <article class="price-card">
-      <div class="pack-icon pack-icon-art"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 7l5.5 17.5L55 30l-17.5 5.5L32 53l-5.5-17.5L9 30l17.5-5.5z" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="30" r="5" fill="#ffd45e"/></svg></div><h3>LITTLE HERO</h3><p>1 aventure personnalisée</p><div class="price">99 <small>DH</small></div><ul><li>✓ Livre digital</li><li>✓ 10 pages personnalisées</li><li>✓ Illustrations à colorier</li></ul><button class="btn btn-outline full" data-pack="1">Choisir ce pack</button></article>
-    <article class="price-card featured"><div class="popular">LE PLUS CHOISI</div><div class="pack-icon pack-icon-art"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 7l5 17 17 5-17 5-5 23-5-23-17-5 17-5z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M51 9v10M46 14h10" stroke="#ff8d83" stroke-width="3" stroke-linecap="round"/></svg></div><h3>SUPER HERO</h3><p>2 aventures personnalisées</p><div class="price">179 <small>DH</small></div><ul><li>✓ 2 livres personnalisés</li><li>✓ 20 pages d'aventures</li><li>✓ Deux univers au choix</li></ul><button class="btn btn-primary full" data-pack="2">Choisir ce pack</button></article>
-    <article class="price-card"><div class="pack-icon pack-icon-art"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 7l5.5 17.5L55 30l-17.5 5.5L32 53l-5.5-17.5L9 30l17.5-5.5z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M48 43l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="none" stroke="#ff8d83" stroke-width="3"/></svg></div><h3>ULTIMATE HERO</h3><p>3 aventures personnalisées</p><div class="price">249 <small>DH</small></div><ul><li>✓ 3 livres personnalisés</li><li>✓ 30 pages d'aventures</li><li>✓ Le cadeau ultime</li></ul><button class="btn btn-outline full" data-pack="3">Choisir ce pack</button></article>
+<article class="price-card"><h3>Digital</h3><div class="price">79 <small>DH</small></div><p>PDF personnalisé à imprimer</p><p>Livraison séparée.</p><button type="button" class="btn btn-primary full" data-pack="1">Choisir Digital →</button></article>
+<article class="price-card"><h3>Petit Artiste</h3><div class="price">149 <small>DH</small></div><p>Livre A4 à colorier + PDF</p><p>Livraison séparée.</p><button type="button" class="btn btn-primary full" data-pack="2">Choisir Petit Artiste →</button></article>
+<article class="price-card"><h3>Mon Histoire</h3><div class="price">199 <small>DH</small></div><p>Livre A5 couleur + PDF</p><p>Livraison séparée.</p><button type="button" class="btn btn-primary full" data-pack="3">Choisir Mon Histoire →</button></article>
+<article class="price-card"><h3>Super Héros</h3><div class="price">249 <small>DH</small></div><p>Livre A5 couleur + livre A4 coloriage + PDF. Sans crayons ni emballage cadeau</p><p>Livraison séparée.</p><button type="button" class="btn btn-primary full" data-pack="4">Choisir Super Héros →</button></article>
+<article class="price-card"><h3>Ultimate Hero</h3><div class="price">349 <small>DH</small></div><p>Deux livres : A5 couleur + A4 coloriage + crayons + boîte rigide personnalisée + carte cadeau + PDF</p><p>Livraison séparée.</p><button type="button" class="btn btn-primary full" data-pack="5">Choisir Ultimate Hero →</button></article>
   </div>
-  <p class="pricing-footnote">Imprimé et Coffret cadeau disponibles lors de la commande.</p>
-</section>
-
-<section class="section emotional">
-  <div class="emotional-card">
-    <div><div class="eyebrow">PLUS QU'UN COLORIAGE</div><h2>Un souvenir qu'il pourra<br><span>garder longtemps.</span></h2><p>Son prénom. Son visage. Son imagination. Son histoire. Une création pensée pour lui, et un moment de complicité à partager.</p><button class="btn btn-light" data-open-creation>Créer son histoire →</button></div>
-    <div class="quote-card"><span>“</span><p>Dans cette histoire, c'est moi le héros !</p><small>— votre petit héros</small></div>
-  </div>
+  <p class="pricing-footnote">Livraison facturée séparément et confirmée avec notre équipe avant paiement.</p>
 </section>
 
 <section class="section creation-section" id="creation">
   <div class="creation-heading"><div class="eyebrow">CRÉEZ SON AVENTURE</div><h2>Construisons son livre <span>ensemble.</span></h2><p>Vous choisissez. Nous créons. Il s'évade.</p></div>
   <div class="wizard">
-    <div class="wizard-progress"><div class="progress-track"><span id="progressBar"></span></div><div class="steps-labels"><span class="active">1. Pack</span><span>2. Héros</span><span>3. Aventure</span><span>4. Aperçu</span></div></div>
+    <div class="wizard-progress"><div class="progress-track"><span id="progressBar" role="progressbar" aria-label="Étape de création" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1"></span></div><div class="steps-labels"><span class="active">1. Pack</span><span>2. Héros</span><span>3. Aventure</span><span>4. Aperçu</span></div></div>
 
     <div class="wizard-card" data-step="1">
-      <div class="step-kicker">ÉTAPE 1 SUR 4</div><h3>Choisissez votre pack</h3><p class="muted">Vous pourrez modifier votre choix à tout moment.</p>
-      <div class="choice-grid">
-        <button type="button" class="choice" data-wizard-pack="1"><b>Little Hero</b><span>1 aventure · 99 DH</span></button>
-        <button type="button" class="choice" data-wizard-pack="2"><b>Super Hero</b><span>2 aventures · 179 DH</span></button>
-        <button type="button" class="choice" data-wizard-pack="3"><b>Ultimate Hero</b><span>3 aventures · 249 DH</span></button>
+      <div class="step-kicker">ÉTAPE 1 SUR 4</div><h3>Choisissez son expérience</h3><p class="muted">Prix du pack hors livraison. Livraison séparée.</p>
+      <div class="choice-grid"><button type="button" class="choice" data-wizard-pack="1"><b>Digital</b><span>79 DH · PDF personnalisé à imprimer</span></button><button type="button" class="choice" data-wizard-pack="2"><b>Petit Artiste</b><span>149 DH · Livre A4 à colorier + PDF</span></button><button type="button" class="choice" data-wizard-pack="3"><b>Mon Histoire</b><span>199 DH · Livre A5 couleur + PDF</span></button><button type="button" class="choice" data-wizard-pack="4"><b>Super Héros</b><span>249 DH · Livre A5 couleur + livre A4 coloriage + PDF. Sans crayons ni emballage cadeau</span></button><button type="button" class="choice" data-wizard-pack="5"><b>Ultimate Hero</b><span>349 DH · Deux livres : A5 couleur + A4 coloriage + crayons + boîte rigide personnalisée + carte cadeau + PDF</span></button>
+
+
+
       </div>
       <div class="wizard-actions"><span></span><button type="button" class="btn btn-primary next">Continuer →</button></div>
     </div>
@@ -106,10 +106,16 @@
       <div class="step-kicker">ÉTAPE 2 SUR 4</div><h3>Parlez-nous de son héros</h3><p class="muted">Ces informations servent à personnaliser son aventure.</p>
       <div class="form-grid">
         <label>Prénom<input id="childName" placeholder="Ex. Yassir"></label>
-        <label>Âge<select id="childAge"><option value="">Choisir</option><option>3 ans</option><option>4 ans</option><option>5 ans</option><option>6 ans</option><option>7 ans</option><option>8 ans</option><option>9 ans</option><option>10 ans</option><option>11 ans</option><option>12 ans</option></select></label>
+        <label>Âge<select id="childAge"><option value="">Choisir</option><option>3 ans</option><option>4 ans</option><option>5 ans</option><option>6 ans</option><option>7 ans</option><option>8 ans</option><option>9 ans</option><option>10 ans</option><option>11 ans</option><option>12 ans</option><option>13 ans</option><option>14 ans</option><option>15 ans</option><option>16 ans</option></select></label>
+        <label>Votre enfant<select id="childGender" required><option value="">Choisir</option><option value="girl">Fille</option><option value="boy">Garçon</option></select></label>
+        <label>Type de livre<select id="bookStyle"><option value="coloring">Histoire à colorier</option><option value="colored">Histoire déjà en couleur</option></select></label>
         <label>Langue<select id="language"><option>Français</option><option>English</option><option>Español</option><option>العربية</option></select></label>
+        <label>Téléphone du parent (obligatoire)<input id="parentPhone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="25" placeholder="Ex. +212 6 12 34 56 78" aria-describedby="parentContactHint"></label>
+        <label>E-mail du parent (facultatif)<input id="parentEmail" type="email" autocomplete="email" maxlength="254" placeholder="Ex. parent@exemple.com"></label>
         <label>Photo de l'enfant<input id="childPhoto" type="file" accept="image/jpeg,image/png,image/webp"></label>
       </div>
+      <p class="muted">À colorier : 10 pages d’histoire. En couleur : 20 pages, image et récit séparés. Hors couverture et page souvenir. Les formats sont inclus selon le pack choisi.</p>
+      <p class="muted" id="parentContactHint">Votre téléphone nous permet de vous contacter pour votre commande. Ajoutez l’indicatif du pays si nécessaire.</p>
       <div class="photo-preview" id="photoPreview" hidden><img id="photoPreviewImg" alt="Aperçu"><div><b>Photo sélectionnée ✓</b><span>Elle servira à créer son personnage.</span></div></div>
       <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Retour</button><button type="button" class="btn btn-primary next">Continuer →</button></div>
     </div>
@@ -117,39 +123,94 @@
     <div class="wizard-card" data-step="3" hidden>
       <div class="step-kicker">ÉTAPE 3 SUR 4</div><h3>Quelle sera sa mission&nbsp;?</h3><p class="muted" id="themeInstruction">Choisissez 1 aventure.</p>
       <div class="adventure-slots" id="adventureSlots"></div>
+      <div class="theme-catalog-tools">
+        <label for="themeSearch">Rechercher un thème<input id="themeSearch" type="search" autocomplete="off" placeholder="Ex. dragon, football, vétérinaire…"></label>
+        <label for="themeCategory">Choisir une catégorie<select id="themeCategory"><option value="all">Toutes les catégories</option></select></label>
+        <label for="themeSeries" id="themeSeriesLabel" hidden><span>Choisir une série anime</span><select id="themeSeries"><option value="all">Toutes les séries</option></select></label>
+        <button type="button" class="btn btn-ghost" id="themeScope" aria-pressed="false">Voir tous les thèmes (366)</button>
+      </div>
+      <p id="themeResults" class="theme-results" role="status" aria-live="polite"></p>
+      <p id="themeEmpty" class="theme-empty" hidden>Aucun thème trouvé. Essayez un autre mot ou créez votre propre thème.</p>
+      <button type="button" id="themeReset" class="theme-reset" hidden>Effacer les filtres</button>
       <div class="theme-choice-grid">
         <button type="button" data-theme="🧙 Monde magique" data-theme-label="Monde magique"><span class="theme-icon" aria-hidden="true">🧙</span><span>Monde magique</span></button><button type="button" data-theme="🧚 Royaume des fées" data-theme-label="Fées"><span class="theme-icon" aria-hidden="true">🧚</span><span>Fées</span></button><button type="button" data-theme="🦄 Aventure avec une licorne" data-theme-label="Licorne"><span class="theme-icon" aria-hidden="true">🦄</span><span>Licorne</span></button><button type="button" data-theme="👑 Royaume enchanté" data-theme-label="Royaume"><span class="theme-icon" aria-hidden="true">👑</span><span>Royaume</span></button>
         <button type="button" data-theme="🐉 Dragon et royaume fantastique" data-theme-label="Dragon"><span class="theme-icon" aria-hidden="true">🐉</span><span>Dragon</span></button><button type="button" data-theme="🏴‍☠️ Aventure de pirates" data-theme-label="Pirates"><span class="theme-icon" aria-hidden="true">🏴‍☠️</span><span>Pirates</span></button><button type="button" data-theme="🗺️ Chasse au trésor" data-theme-label="Trésor"><span class="theme-icon" aria-hidden="true">🗺️</span><span>Trésor</span></button><button type="button" data-theme="🚀 Voyage dans l'espace" data-theme-label="Espace"><span class="theme-icon" aria-hidden="true">🚀</span><span>Espace</span></button>
         <button type="button" data-theme="🤖 Mission avec des robots" data-theme-label="Robots"><span class="theme-icon" aria-hidden="true">🤖</span><span>Robots</span></button><button type="button" data-theme="🦖 Aventure avec les dinosaures" data-theme-label="Dinosaures"><span class="theme-icon" aria-hidden="true">🦖</span><span>Dinosaures</span></button><button type="button" data-theme="🌊 Aventure sous-marine" data-theme-label="Sous-marin"><span class="theme-icon" aria-hidden="true">🌊</span><span>Sous-marin</span></button><button type="button" data-theme="🧜‍♀️ Royaume des sirènes" data-theme-label="Sirènes"><span class="theme-icon" aria-hidden="true">🧜‍♀️</span><span>Sirènes</span></button>
-        <button type="button" data-theme="🌳 Forêt mystérieuse" data-theme-label="Forêt"><span class="theme-icon" aria-hidden="true">🌳</span><span>Forêt</span></button><button type="button" data-theme="🦁 Safari et animaux sauvages" data-theme-label="Safari"><span class="theme-icon" aria-hidden="true">🦁</span><span>Safari</span></button><button type="button" data-theme="⚽ Aventure football" data-theme-label="Football"><span class="theme-icon" aria-hidden="true">⚽</span><span>Football</span></button><button type="button" data-theme="🏀 Défi de basket" data-theme-label="Basket"><span class="theme-icon" aria-hidden="true">🏀</span><span>Basket</span></button>
-        <button type="button" data-theme="🏎️ Course et vitesse" data-theme-label="Course"><span class="theme-icon" aria-hidden="true">🏎️</span><span>Course</span></button><button type="button" data-theme="🕵️ Jeune détective" data-theme-label="Détective"><span class="theme-icon" aria-hidden="true">🕵️</span><span>Détective</span></button><button type="button" data-theme="🥷 Mission secrète" data-theme-label="Mission secrète"><span class="theme-icon" aria-hidden="true">🥷</span><span>Mission secrète</span></button><button type="button" data-theme="🏰 Chevalier et château" data-theme-label="Chevalier"><span class="theme-icon" aria-hidden="true">🏰</span><span>Chevalier</span></button>
-        <button type="button" data-theme="🎨 Aventure artistique" data-theme-label="Art"><span class="theme-icon" aria-hidden="true">🎨</span><span>Art</span></button><button type="button" data-theme="🎵 Aventure musicale" data-theme-label="Musique"><span class="theme-icon" aria-hidden="true">🎵</span><span>Musique</span></button><button type="button" data-theme="💃 Danse et spectacle" data-theme-label="Danse"><span class="theme-icon" aria-hidden="true">💃</span><span>Danse</span></button><button type="button" data-theme="🍰 Aventure de pâtisserie" data-theme-label="Pâtisserie"><span class="theme-icon" aria-hidden="true">🍰</span><span>Pâtisserie</span></button>
-        <button type="button" data-theme="👗 Création de mode" data-theme-label="Mode"><span class="theme-icon" aria-hidden="true">👗</span><span>Mode</span></button><button type="button" data-theme="🧪 Mission scientifique" data-theme-label="Science"><span class="theme-icon" aria-hidden="true">🧪</span><span>Science</span></button><button type="button" data-theme="⏳ Voyage dans le temps" data-theme-label="Temps"><span class="theme-icon" aria-hidden="true">⏳</span><span>Temps</span></button><button type="button" data-theme="✨ Mon propre thème" data-theme-label="Mon propre thème"><span class="theme-icon" aria-hidden="true">✨</span><span>Mon propre thème</span></button>
+        <button type="button" data-theme="🌳 Forêt mystérieuse" data-theme-label="Forêt"><span class="theme-icon" aria-hidden="true">🌳</span><span>Forêt</span></button><button type="button" data-theme="🦁 Safari et animaux sauvages" data-theme-label="Safari"><span class="theme-icon" aria-hidden="true">🦁</span><span>Safari</span></button><button type="button" data-theme="🐾 Mission de sauvetage des animaux" data-theme-label="Sauvetage"><span class="theme-icon" aria-hidden="true">🐾</span><span>Sauvetage</span></button><button type="button" data-theme="⚽ Aventure football" data-theme-label="Football"><span class="theme-icon" aria-hidden="true">⚽</span><span>Football</span></button>
+        <button type="button" data-theme="🏀 Défi de basket" data-theme-label="Basket"><span class="theme-icon" aria-hidden="true">🏀</span><span>Basket</span></button><button type="button" data-theme="🏎️ Course et vitesse" data-theme-label="Course"><span class="theme-icon" aria-hidden="true">🏎️</span><span>Course</span></button><button type="button" data-theme="🕵️ Jeune détective" data-theme-label="Détective"><span class="theme-icon" aria-hidden="true">🕵️</span><span>Détective</span></button><button type="button" data-theme="🥷 Mission secrète" data-theme-label="Mission secrète"><span class="theme-icon" aria-hidden="true">🥷</span><span>Mission secrète</span></button>
+        <button type="button" data-theme="🏰 Chevalier et château" data-theme-label="Chevalier"><span class="theme-icon" aria-hidden="true">🏰</span><span>Chevalier</span></button><button type="button" data-theme="🎨 Aventure artistique" data-theme-label="Art"><span class="theme-icon" aria-hidden="true">🎨</span><span>Art</span></button><button type="button" data-theme="🎵 Aventure musicale" data-theme-label="Musique"><span class="theme-icon" aria-hidden="true">🎵</span><span>Musique</span></button><button type="button" data-theme="💃 Danse et spectacle" data-theme-label="Danse"><span class="theme-icon" aria-hidden="true">💃</span><span>Danse</span></button>
+        <button type="button" data-theme="🍰 Aventure de pâtisserie" data-theme-label="Pâtisserie"><span class="theme-icon" aria-hidden="true">🍰</span><span>Pâtisserie</span></button><button type="button" data-theme="👗 Création de mode" data-theme-label="Mode"><span class="theme-icon" aria-hidden="true">👗</span><span>Mode</span></button><button type="button" data-theme="🧪 Mission scientifique" data-theme-label="Science"><span class="theme-icon" aria-hidden="true">🧪</span><span>Science</span></button><button type="button" data-theme="⏳ Voyage dans le temps" data-theme-label="Temps"><span class="theme-icon" aria-hidden="true">⏳</span><span>Temps</span></button>
+        <button type="button" data-theme="✨ Mon propre thème" data-theme-label="Mon propre thème"><span class="theme-icon" aria-hidden="true">✨</span><span>Mon propre thème</span></button>
       </div>
-      <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Retour</button><button type="button" class="btn btn-primary next">Voir mon aperçu →</button></div>
+      <div id="customThemeBox" class="custom-theme-box" hidden>
+        <label for="customTheme">Décrivez son thème personnalisé</label>
+        <p id="customThemeHint">Indiquez l’univers, la mission et les personnages que votre enfant aimerait retrouver.</p>
+        <textarea id="customTheme" rows="4" maxlength="600" aria-describedby="customThemeHint" placeholder="Ex. Une aventure dans un jardin magique pour aider les animaux à retrouver leurs couleurs."></textarea>
+        <small>600 caractères maximum. Cette idée sera utilisée pour sa couverture et son histoire.</small>
+      </div>
+      <p id="generationWait" class="generation-wait" role="status" aria-live="polite" hidden></p>
+      <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Retour</button><button type="button" class="btn btn-primary next">Commencer mon histoire →</button></div>
     </div>
 
     <div class="wizard-card preview-card" data-step="4" hidden>
-      <div class="step-kicker">ÉTAPE 4 SUR 4</div><h3>Son aventure est prête à être créée</h3><p class="muted">Vérifiez les informations avant de valider.</p>
-      <div class="preview-layout">
-        <div class="preview-book"><span class="preview-star">★</span><b id="previewTitle">Mon aventure</b><small id="previewTheme">Choisissez un univers</small></div>
-        <div class="summary">
-          <div><span>Héros</span><b id="summaryName">Votre enfant</b></div><div><span>Âge</span><b id="summaryAge">—</b></div><div><span>Langue</span><b id="summaryLang">Français</b></div><div><span>Pack</span><b id="summaryPack">Little Hero</b></div>
-          <div class="summary-adventures" id="summaryAdventures"></div><div class="total"><span>Total estimé</span><b id="summaryPrice">99 DH</b></div>
-        </div>
+      <div class="step-kicker">ÉTAPE 4 SUR 4</div>
+      <h3>Vos aperçus sont prêts</h3>
+      <p class="muted" id="coverStatus">Nous allons créer la couverture de votre livre. Cela peut prendre quelques instants.</p>
+
+      <div id="generatedCoverBox" class="generated-cover-box" hidden>
+        <div class="generated-books-3d" id="generatedBooks"></div>
+        <div class="generated-cover-title-list" id="generatedCoverTitleList"></div>
       </div>
-      <div class="privacy-note">🔒 Vos informations et la photo de votre enfant sont utilisées uniquement pour préparer sa commande.</div>
-      <div class="wizard-actions"><button type="button" class="btn btn-ghost back">← Modifier</button><button type="button" class="btn btn-primary" id="orderButton">💬 Valider ma commande</button></div>
-      <p class="order-hint">La validation finale se fera avec notre équipe sur WhatsApp.</p>
+
+      <div class="summary">
+        <div><span>Héros</span><b id="summaryName">Votre enfant</b></div>
+        <div><span>Votre enfant</span><b id="summaryGender">—</b></div>
+        <div><span>Âge</span><b id="summaryAge">—</b></div>
+        <div><span>Type de livre</span><b id="summaryBookStyle">Histoire à colorier</b></div>
+        <div><span>Langue</span><b id="summaryLang">Français</b></div>
+        <div><span>Téléphone du parent</span><b id="summaryPhone">—</b></div>
+        <div><span>E-mail du parent</span><b id="summaryEmail">—</b></div>
+        <div><span>Pack</span><b id="summaryPack">Digital</b></div>
+        <div class="summary-adventures" id="summaryAdventures"></div>
+        <div><span>Contenu</span><b id="summaryContents">PDF personnalisé à imprimer</b></div><p>Livraison séparée, confirmée avant paiement.</p><div class="total"><span>Total hors livraison</span><b id="summaryPrice">79 DH</b></div>
+      </div>
+
+      <div class="privacy-note">🔒 La photo et les informations de votre enfant sont utilisées uniquement pour préparer sa commande.</div>
+      <div class="whatsapp-note">💬 Votre aperçu est prêt. Validez maintenant votre commande sur WhatsApp pour confirmer le format et finaliser avec notre équipe.</div>
+
+      <div class="wizard-actions">
+        <button type="button" class="btn btn-ghost back">← Modifier</button>
+        <button type="button" class="btn btn-whatsapp" id="orderButton" disabled>💬 Valider ma commande sur WhatsApp</button>
+      </div>
     </div>
   </div>
 </section>
-</main>
 
+<section class="section emotional">
+  <div class="emotional-card"><div><div class="eyebrow">PLUS QU'UN COLORIAGE</div><h2>Un souvenir qu'il pourra <span>garder longtemps.</span></h2><p>Son prénom. Son visage. Son imagination. Son histoire. Une création pensée pour lui, et un moment de complicité à partager.</p><button type="button" class="btn btn-light" data-open-creation>Créer son histoire →</button></div><div class="quote-card"><span>“</span><p>Dans cette histoire, c'est moi le héros !</p><small>— votre petit héros</small></div></div>
+</section>
+
+<section class="section faq" id="faq">
+  <div class="section-heading center"><div class="eyebrow">QUESTIONS FRÉQUENTES</div><h2>Tout ce qu'il faut savoir <span>avant de créer.</span></h2><p>Une question ? Vous pouvez aussi nous écrire directement sur WhatsApp.</p></div>
+  <div class="faq-grid">
+    <details open><summary>À partir de quel âge ?<span>+</span></summary><p>Les aventures sont pensées pour les enfants à partir de 3 ans, avec une histoire adaptée à leur âge.</p></details>
+    <details><summary>Quel type de photo dois-je envoyer ?<span>+</span></summary><p>Une photo claire de votre enfant, de préférence avec le visage bien visible. Les formats JPG, PNG et WEBP sont acceptés.</p></details>
+    <details><summary>Quels formats puis-je commander ?<span>+</span></summary><p>Choisissez parmi nos cinq packs. Livraison facturée séparément, confirmée sur WhatsApp avant paiement.</p></details>
+    <details><summary>Comment se passe la commande ?<span>+</span></summary><p>Vous remplissez le formulaire, puis cliquez sur « Commander sur WhatsApp ». Notre équipe vous confirme les détails et la suite de la commande.</p></details>
+    <details><summary>Mon enfant peut-il choisir plusieurs univers ?<span>+</span></summary><p>Digital, Petit Artiste et Mon Histoire comprennent un livre. Super Héros et Ultimate Hero comprennent un livre couleur et un livre de coloriage. Vous choisissez les univers pendant la création.</p></details>
+    <details><summary>La photo de mon enfant est-elle publique ?<span>+</span></summary><p>Non. La photo est utilisée pour préparer la commande et n'est pas destinée à être publiée sur le site.</p></details>
+  </div>
+  <div class="faq-cta"><span>💬</span><div><b>Vous préférez nous parler directement ?</b><small>Notre équipe peut vous accompagner pour choisir le bon pack.</small></div><a class="btn btn-primary" href="https://wa.me/212603983800" target="_blank" rel="noopener">WhatsApp</a></div>
+</section>
+</main>
 <footer>
-  <div class="footer-inner"><a class="brand" href="#top"><span class="brand-star">★</span><span>My Little <b>Hero</b></span></a><p>Des histoires personnalisées où chaque enfant devient le héros de son propre monde.</p><div class="footer-links"><a href="#how">Comment ça marche</a><a href="#packs">Packs</a><a href="#creation">Créer</a></div></div>
-  <small>© 2026 My Little Hero · Tous droits réservés</small>
+  <div class="footer-inner"><a class="brand" href="#top"><span class="brand-mark">✦</span><span>My Little <b>Hero</b></span></a><p>Des histoires personnalisées où chaque enfant devient le héros de son propre monde.</p><div class="footer-links"><a href="#how">Comment ça marche</a><a href="#packs">Packs</a><a href="#faq">FAQ</a><a href="#creation">Créer</a></div></div>
+  <small>© 2026 My Little Hero · Tous droits réservés · <a href="https://wa.me/212603983800" target="_blank" rel="noopener">WhatsApp</a></small>
 </footer>
-<script src="script.js?v=20261031-ultimate"></script>
+<script src="theme-catalog.js?v=20261103-lumo"></script>
+<script src="themes.js?v=20261102-comics"></script>
+<script src="packs.js?v=20261110"></script>
+<script src="script.js?v=20261110-packs"></script>
+<script src="preview.js?v=20261110-packs"></script>
 </body>
 </html>

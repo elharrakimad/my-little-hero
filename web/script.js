@@ -1,37 +1,115 @@
-document.addEventListener("DOMContentLoaded",()=>{
-const state={pack:1,price:99,name:"",age:"",language:"Français",photo:"",themes:[]};
-const packNames={1:"Little Hero",2:"Super Hero",3:"Ultimate Hero"};
-const prices={1:99,2:179,3:249};
-const creation=document.getElementById("creation");
-const cards=[...document.querySelectorAll(".wizard-card")];
-const labels=[...document.querySelectorAll(".steps-labels span")];
-const bar=document.getElementById("progressBar");
-let step=1;
-const maxThemes=()=>state.pack;
-function render(){cards.forEach((c,i)=>c.hidden=i+1!==step);bar.style.width=(step*25)+"%";labels.forEach((x,i)=>x.classList.toggle("active",i+1===step));}
-function openCreation(pack=1){state.pack=Number(pack);state.price=prices[state.pack];state.themes=[];document.querySelectorAll(".choice").forEach(x=>x.classList.toggle("selected",Number(x.dataset.wizardPack)===state.pack));creation.hidden=false;creation.scrollIntoView({behavior:"smooth",block:"start"});step=1;updateAdventureUI();render();}
-document.querySelectorAll("[data-open-creation]").forEach(b=>b.addEventListener("click",()=>openCreation(state.pack)));
-document.querySelectorAll("[data-pack]").forEach(b=>b.addEventListener("click",()=>openCreation(b.dataset.pack)));
-document.querySelectorAll("[data-wizard-pack]").forEach(b=>b.addEventListener("click",()=>{state.pack=Number(b.dataset.wizardPack);state.price=prices[state.pack];state.themes=[];document.querySelectorAll(".choice").forEach(x=>x.classList.toggle("selected",x===b));updateAdventureUI();updatePreview();}));
-const photoInput=document.getElementById("childPhoto");
-photoInput.addEventListener("change",e=>{const file=e.target.files[0];if(!file)return;if(file.size>8*1024*1024){alert("La photo doit faire moins de 8 Mo.");photoInput.value="";return}const reader=new FileReader();reader.onload=()=>{state.photo=reader.result;document.getElementById("photoPreviewImg").src=state.photo;document.getElementById("photoPreview").hidden=false};reader.readAsDataURL(file);});
-document.querySelectorAll(".theme-choice-grid button").forEach(b=>b.addEventListener("click",()=>{const theme=b.dataset.theme;if(state.themes.includes(theme)){state.themes=state.themes.filter(x=>x!==theme)}else{if(state.themes.length>=maxThemes()){alert("Votre pack contient "+maxThemes()+" aventure"+(maxThemes()>1?"s":"")+".");return}state.themes.push(theme)}document.querySelectorAll(".theme-choice-grid button").forEach(x=>x.classList.toggle("selected",state.themes.includes(x.dataset.theme)));updateAdventureUI();updatePreview();}));
-function themeLabel(v){return v.replace(/^\s*[\p{Extended_Pictographic}\p{Emoji_Presentation}\uFE0F]+\s*/u,"").trim()}function updateAdventureUI(){const n=maxThemes();document.getElementById("themeInstruction").textContent="Choisissez exactement "+n+" aventure"+(n>1?"s":"")+".";document.getElementById("adventureSlots").innerHTML=Array.from({length:n},(_,i)=>'<span class="adventure-slot '+(state.themes[i]?"done":"")+'">Aventure '+(i+1)+(state.themes[i]?" · "+themeLabel(state.themes[i]):" · à choisir")+"</span>").join("");}
-document.querySelectorAll(".next").forEach(b=>b.addEventListener("click",()=>{if(step===2){state.name=document.getElementById("childName").value.trim();state.age=document.getElementById("childAge").value;state.language=document.getElementById("language").value;if(!state.name||!state.age){alert("Veuillez renseigner le prénom et l'âge de votre enfant.");return}}if(step===3&&state.themes.length!==maxThemes()){alert("Choisissez exactement "+maxThemes()+" aventure"+(maxThemes()>1?"s":"")+" pour continuer.");return}if(step<4)step++;updatePreview();render();}));
-document.querySelectorAll(".back").forEach(b=>b.addEventListener("click",()=>{if(step>1)step--;render();}));
-function updatePreview(){document.getElementById("summaryName").textContent=state.name||"Votre enfant";document.getElementById("summaryAge").textContent=state.age||"—";document.getElementById("summaryLang").textContent=state.language;document.getElementById("summaryPack").textContent=packNames[state.pack];document.getElementById("summaryPrice").textContent=state.price+" DH";document.getElementById("previewTitle").textContent=state.name?state.name+" et ses aventures":"Mon aventure";document.getElementById("previewTheme").textContent=state.themes.length?state.themes.map(themeLabel).join(" · "):"Choisissez un univers";document.getElementById("summaryAdventures").innerHTML=state.themes.map((x,i)=>'<div><b>Aventure '+(i+1)+":</b> "+x+"</div>").join("");}
-\nLa connexion WhatsApp sera activée avec le numéro My Little Hero avant la mise en ligne.");return}window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(msg),"_blank");});
-updateAdventureUI();updatePreview();render();
-});
+document.addEventListener("DOMContentLoaded",()=>{const state={pack:1,price:79,name:"",age:"",language:"Français",gender:"",bookStyle:"coloring",photo:"",themes:[],parentPhone:"",parentEmail:"",customTheme:""};const packNames=Object.fromEntries(Object.entries(window.MLH_PACKS).map(([k,p])=>[k,p.name]));const prices=Object.fromEntries(Object.entries(window.MLH_PACKS).map(([k,p])=>[k,p.price]));const phone="212603983800";const creation=document.getElementById("creation");const cards=[...document.querySelectorAll(".wizard-card")];const labels=[...document.querySelectorAll(".steps-labels span")];const bar=document.getElementById("progressBar");let step=1;const maxThemes=()=>window.MLH_PACKS[state.pack].styles.length;function render(){cards.forEach((c,i)=>c.hidden=i+1!==step);bar.style.width=(step*25)+"%";bar.setAttribute("aria-valuenow",String(step));labels.forEach((x,i)=>x.classList.toggle("active",i+1===step))}function openCreation(pack=1){state.pack=Number(pack);state.price=prices[state.pack];state.themes=[];document.querySelectorAll(".choice").forEach(x=>x.classList.toggle("selected",Number(x.dataset.wizardPack)===state.pack));creation.hidden=false;creation.scrollIntoView({behavior:"smooth",block:"start"});step=1;updateAdventureUI();updatePreview();render()}document.querySelectorAll("[data-open-creation]").forEach(b=>b.addEventListener("click",()=>openCreation(state.pack)));document.querySelectorAll("[data-pack]").forEach(b=>b.addEventListener("click",()=>openCreation(b.dataset.pack)));document.querySelectorAll("[data-wizard-pack]").forEach(b=>b.addEventListener("click",()=>{state.pack=Number(b.dataset.wizardPack);state.price=prices[state.pack];state.themes=[];document.querySelectorAll(".choice").forEach(x=>x.classList.toggle("selected",x===b));updateAdventureUI();updatePreview()}));document.getElementById("childGender").addEventListener("change",()=>{state.gender=document.getElementById("childGender").value;state.themes=[];document.querySelectorAll(".theme-choice-grid button").forEach(x=>x.classList.remove("selected"));updateAdventureUI();updatePreview()});document.getElementById("bookStyle").addEventListener("change",()=>{state.bookStyle=document.getElementById("bookStyle").value;updatePreview()});const customInput=document.getElementById("customTheme");customInput.addEventListener("input",()=>{state.customTheme=customInput.value.trim();updateAdventureUI();updatePreview()});const photoInput=document.getElementById("childPhoto");photoInput.addEventListener("change",e=>{const file=e.target.files[0];if(!file)return;if(file.size>8*1024*1024){alert("La photo doit faire moins de 8 Mo.");photoInput.value="";return}const reader=new FileReader();reader.onload=()=>{state.photo=reader.result;document.getElementById("photoPreviewImg").src=state.photo;document.getElementById("photoPreview").hidden=false};reader.readAsDataURL(file)});document.querySelectorAll(".theme-choice-grid button").forEach(b=>b.addEventListener("click",()=>{const theme=b.dataset.theme;if(state.themes.includes(theme)){state.themes=state.themes.filter(x=>x!==theme)}else{if(state.themes.length>=maxThemes()){alert("Votre pack contient "+maxThemes()+" aventure"+(maxThemes()>1?"s":"")+" .");return}state.themes.push(theme)}document.querySelectorAll(".theme-choice-grid button").forEach(x=>x.classList.toggle("selected",state.themes.includes(x.dataset.theme)));updateAdventureUI();updatePreview();if(theme==="✨ Mon propre thème"&&state.themes.includes(theme))document.getElementById("customTheme").focus()}));function escapeMarkup(v){return String(v).replace(/[&<>\"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;", "'":"&#39;"}[c]))}function themeLabel(v){if(v==="✨ Mon propre thème"&&state.customTheme)return state.customTheme;const localized=window.MLH_THEME_CATALOG?.find(t=>t.theme===v);if(localized)return document.documentElement.lang==="ar"?localized.ar:localized.label;return v.replace(/^\s*[\p{Extended_Pictographic}\p{Emoji_Presentation}\uFE0F]+\s*/u,"").trim()}function updateAdventureUI(){const custom=state.themes.includes("✨ Mon propre thème"),ar=document.documentElement.lang==="ar";document.getElementById("customThemeBox").hidden=!custom;document.getElementById("customTheme").required=custom;const n=maxThemes();document.getElementById("themeInstruction").textContent=ar?"اختر "+n+" مغامرة للمتابعة.":"Choisissez exactement "+n+" aventure"+(n>1?"s":"")+".";document.getElementById("adventureSlots").innerHTML=Array.from({length:n},(_,i)=>'<span class="adventure-slot '+(state.themes[i]?"done":"")+'">'+(ar?"مغامرة ":"Aventure ")+(i+1)+(state.themes[i]?" · "+escapeMarkup(themeLabel(state.themes[i])):(ar?" · للاختيار":" · à choisir"))+"</span>").join("")}document.querySelectorAll(".next").forEach(b=>b.addEventListener("click",async()=>{const currentStep=Number(b.closest(".wizard-card")?.dataset.step||step);if(currentStep===2){state.name=document.getElementById("childName").value.trim();state.age=document.getElementById("childAge").value;state.language=document.getElementById("language").value;state.gender=document.getElementById("childGender").value;const phoneField=document.getElementById("parentPhone"),emailField=document.getElementById("parentEmail");state.parentPhone=phoneField.value.trim();state.parentEmail=emailField.value.trim();const digits=state.parentPhone.replace(/\D/g,"");if(!/^\+?[0-9() .-]+$/.test(state.parentPhone)||digits.length<7||digits.length>15){phoneField.setCustomValidity(document.documentElement.lang==="ar"?"رقم هاتف صالح مطلوب.":"Un numéro de téléphone valide est obligatoire.");phoneField.reportValidity();phoneField.focus();return}phoneField.setCustomValidity("");if(!emailField.checkValidity()||(state.parentEmail&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.parentEmail))){emailField.setCustomValidity(document.documentElement.lang==="ar"?"يرجى التحقق من البريد الإلكتروني.":"Veuillez vérifier votre adresse e-mail.");emailField.reportValidity();emailField.focus();return}emailField.setCustomValidity("");const photoFile=photoInput.files?.[0];if(!state.name||!state.age||!state.gender||!photoFile){alert("Veuillez renseigner le prénom, l'âge, fille ou garçon et la photo de votre enfant.");return}}if(currentStep===3){state.customTheme=document.getElementById("customTheme").value.trim();if(state.themes.includes("✨ Mon propre thème")&&!state.customTheme){const field=document.getElementById("customTheme");field.setCustomValidity(document.documentElement.lang==="ar"?"صف الموضوع الذي ترغب فيه.":"Décrivez votre thème personnalisé pour continuer.");field.reportValidity();field.focus();return}if(state.themes.length!==maxThemes()){alert("Choisissez exactement "+maxThemes()+" aventure"+(maxThemes()>1?"s":"")+" pour continuer.");return}if(window.generateStoryPreview){b.disabled=true;const ok=await window.generateStoryPreview({name:state.name,age:state.age,language:state.language,gender:state.gender,pack:state.pack,bookStyle:state.bookStyle,themes:state.themes,parentPhone:state.parentPhone,parentEmail:state.parentEmail,customTheme:state.themes.includes("✨ Mon propre thème")?state.customTheme:"",photoFile:photoInput.files?.[0]});b.disabled=false;if(!ok)return;}}if(step<4)step++;updatePreview();render();focusCurrentStep()}));document.querySelectorAll(".back").forEach(b=>b.addEventListener("click",()=>{if(step>1)step--;render();focusCurrentStep()}));function focusCurrentStep(){const card=cards[step-1],heading=card?.querySelector("h3");if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});card.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})}}function updatePreview(){const offer=window.MLH_PACKS[state.pack];if(state.pack!==1)state.bookStyle=offer.styles[0];document.getElementById("bookStyle").value=state.bookStyle;document.getElementById("bookStyle").disabled=state.pack!==1;document.getElementById("summaryBookStyle").textContent=offer.styles.length===2?"A5 couleur + A4 coloriage":document.documentElement.lang==="ar"?(state.bookStyle==="colored"?"قصة ملونة جاهزة":"قصة للتلوين"):(state.bookStyle==="colored"?"Histoire déjà en couleur":"Histoire à colorier");document.getElementById("summaryPhone").textContent=state.parentPhone||"—";document.getElementById("summaryEmail").textContent=state.parentEmail||"—";document.getElementById("summaryGender").textContent=state.gender==="girl"?(document.documentElement.lang==="ar"?"بنت":"Fille"):state.gender==="boy"?(document.documentElement.lang==="ar"?"ولد":"Garçon"):"—";document.getElementById("summaryName").textContent=state.name||"Votre enfant";document.getElementById("summaryAge").textContent=state.age||"—";document.getElementById("summaryLang").textContent=state.language;document.getElementById("summaryPack").textContent=packNames[state.pack];document.getElementById("summaryContents").textContent=offer.contents;document.getElementById("summaryPrice").textContent=state.price+" DH";const previewTitle=document.getElementById("previewTitle");if(previewTitle)previewTitle.textContent=state.name?state.name+" et ses aventures":"Mon aventure";const previewTheme=document.getElementById("previewTheme");if(previewTheme)previewTheme.textContent=state.themes.length?state.themes.map(themeLabel).join(" · "):"Choisissez un univers";document.getElementById("summaryAdventures").innerHTML=state.themes.map((x,i)=>"<div><b>"+(document.documentElement.lang==="ar"?"مغامرة ":"Aventure ")+(i+1)+":</b> "+escapeMarkup(themeLabel(x))+"</div>").join("")}document.getElementById("orderButton").addEventListener("click",()=>{const msg="Bonjour My Little Hero\nJe souhaite commander une aventure personnalisée.\n\nHéros : "+(state.name||"À préciser")+"\nEnfant : "+(state.gender==="girl"?"Fille":"Garçon")+"\nÂge : "+(state.age||"À préciser")+"\nLangue : "+state.language+"\nType de livre : "+(state.bookStyle==="colored"?"Histoire déjà en couleur":"Histoire à colorier")+""+"\nPack : "+packNames[state.pack]+"\nAventures : "+(state.themes.map(themeLabel).join(", ")||"À choisir")+"\nTéléphone du parent : "+state.parentPhone+(state.parentEmail?"\nE-mail du parent : "+state.parentEmail:"")+"\nPrix du pack hors livraison : "+state.price+" DH\nContenu : "+window.MLH_PACKS[state.pack].contents+"\nLivraison : séparée, à confirmer avant paiement.\nRéférence : "+(window.MLH_ORDER_REF||"À confirmer")+"\nPhoto : je l'enverrai dans cette conversation WhatsApp.\n\nJe souhaite valider ma commande.";window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(msg),"_blank")});document.addEventListener("mlh:language-change",()=>{updateAdventureUI();updatePreview()});updateAdventureUI();updatePreview();render()});
 const T={
+    "catégories disponibles":"فئات متاحة",
+    "scènes par aventure":"مشاهد لكل مغامرة",
+    "✓ À colorier ou déjà en couleur":"✓ للتلوين أو بالألوان الجاهزة",
+    "Il vit son aventure":"يعيش مغامرته",
+    "Il lit son histoire en couleur ou lui donne vie en la coloriant.":"يقرأ قصته بالألوان أو يمنحها الحياة بتلوينها.",
+    "Un monde à découvrir.":"عالم يكتشفه.",
+    "Un livre dont il est le personnage principal, à lire en couleur ou à personnaliser avec ses crayons.":"كتاب يكون فيه الشخصية الرئيسية، يقرؤه بالألوان أو يبدع فيه بأقلامه.",
+    "Des illustrations à colorier ou déjà en couleur pour prolonger son aventure.":"رسومات للتلوين أو بالألوان الجاهزة لتمتد متعة المغامرة.",
+    "À colorier : 10 pages d’histoire. En couleur : 20 pages, image et récit séparés. Hors couverture et page souvenir. Les thèmes et tarifs restent identiques.":"للتلوين: 10 صفحات للقصة. بالألوان: 20 صفحة، الصورة والسرد في صفحتين منفصلتين، دون الغلاف وصفحة الذكرى. المواضيع والأسعار نفسها.",
+
+    "Type de livre":"نوع الكتاب","Histoire à colorier":"قصة للتلوين","Histoire déjà en couleur":"قصة ملونة جاهزة","À colorier ou en couleur":"للتلوين أو بالألوان",
+    "Rechercher un thème":"البحث عن موضوع",
+    "Choisir une catégorie":"اختيار فئة",
+    "Toutes les catégories":"كل الفئات",
+    "Aucun thème trouvé. Essayez un autre mot ou créez votre propre thème.":"لم نعثر على موضوع. جرّب كلمة أخرى أو أنشئ موضوعك الخاص.",
+    "Effacer les filtres":"مسح الفلاتر",
+    "Téléphone du parent (obligatoire)":"هاتف الوالد (إجباري)",
+    "E-mail du parent (facultatif)":"البريد الإلكتروني للوالد (اختياري)",
+    "Votre téléphone nous permet de vous contacter pour votre commande. Ajoutez l’indicatif du pays si nécessaire.":"يسمح لنا رقم هاتفك بالتواصل معك بشأن طلبك. أضف رمز البلد عند الحاجة.",
+    "Décrivez son thème personnalisé":"صف موضوعه الخاص",
+    "Indiquez l’univers, la mission et les personnages que votre enfant aimerait retrouver.":"حدد العالم والمهمة والشخصيات التي يرغب طفلك في رؤيتها.",
+    "600 caractères maximum. Cette idée sera utilisée pour sa couverture et son histoire.":"600 حرف كحد أقصى. ستُستخدم هذه الفكرة لإنشاء الغلاف والقصة.",
+    "Téléphone du parent":"هاتف الوالد",
+    "E-mail du parent":"البريد الإلكتروني للوالد",
+    "✓ Personnalisé":"✓ مخصص",
+    "✓ Digital ou imprimé":"✓ رقمي أو مطبوع",
+    "⭐ LE PLUS CHOISI":"⭐ الأكثر اختيارًا",
+    "✓ 1 aventure de 10 scènes":"✓ مغامرة واحدة من 10 مشاهد",
+    "✓ 2 aventures de 10 scènes":"✓ مغامرتان من 10 مشاهد",
+    "✓ Son personnage personnalisé":"✓ شخصية مخصصة له",
+    "✓ À colorier ou déjà en couleur":"✓ للتلوين أو بالألوان الجاهزة",
+    "✓ Deux univers au choix":"✓ عالمان للاختيار",
+    "✓ Deux livres personnalisés":"✓ كتابان مخصصان",
+    "✓ Trois univers au choix":"✓ ثلاثة عوالم للاختيار",
+    "✓ Trois livres personnalisés":"✓ ثلاثة كتب مخصصة",
+    "Choisir Ultimate Hero →":"اختر Ultimate Hero ←",
+    "QUESTIONS FRÉQUENTES":"الأسئلة الشائعة",
+    "Tout ce qu'il faut savoir":"كل ما تحتاج لمعرفته",
+    "avant de créer.":"قبل إنشاء الكتاب.",
+    "Une question ? Vous pouvez aussi nous écrire directement sur WhatsApp.":"لديك سؤال؟ يمكنك مراسلتنا مباشرة عبر واتساب.",
+    "À partir de quel âge ?":"لأي عمر تناسب هذه الكتب؟",
+    "Les aventures sont pensées pour les enfants à partir de 3 ans, avec une histoire adaptée à leur âge.":"المغامرات مخصصة للأطفال من عمر 3 سنوات، بقصص تناسب أعمارهم.",
+    "Quel type de photo dois-je envoyer ?":"ما نوع الصورة التي أرسلها؟",
+    "Une photo claire de votre enfant, de préférence avec le visage bien visible. Les formats JPG, PNG et WEBP sont acceptés.":"صورة واضحة لطفلك، ويفضل أن يظهر الوجه بوضوح. نقبل JPG وPNG وWEBP.",
+    "Quels formats puis-je commander ?":"ما النسخ التي يمكنني طلبها؟",
+    "Vous pouvez choisir le livre digital, le livre imprimé ou la formule Coffret cadeau. Le choix final est confirmé sur WhatsApp.":"يمكنك اختيار الكتاب الرقمي أو المطبوع أو صندوق الهدايا. يتم تأكيد الاختيار عبر واتساب.",
+    "Comment se passe la commande ?":"كيف يتم الطلب؟",
+    "Vous remplissez le formulaire, puis cliquez sur « Commander sur WhatsApp ». Notre équipe vous confirme les détails et la suite de la commande.":"املأ النموذج ثم أكّد طلبك عبر واتساب. يؤكد فريقنا التفاصيل والخطوات التالية.",
+    "Mon enfant peut-il choisir plusieurs univers ?":"هل يمكن لطفلي اختيار أكثر من عالم؟",
+    "La photo de mon enfant est-elle publique ?":"هل صورة طفلي متاحة للجميع؟",
+    "Non. La photo est utilisée pour préparer la commande et n'est pas destinée à être publiée sur le site.":"لا. تُستخدم الصورة لإعداد الطلب ولا تُنشر على الموقع.",
+    "Vous préférez nous parler directement ?":"هل تفضل التحدث إلينا مباشرة؟",
+    "Notre équipe peut vous accompagner pour choisir le bon pack.":"يمكن لفريقنا مساعدتك في اختيار الباقة المناسبة.",
+    "Des histoires personnalisées où chaque enfant devient le héros de son propre monde.":"قصص مخصصة يصبح فيها كل طفل بطل عالمه الخاص.",
+    "🧙 Monde magique":"🧙 العالم السحري",
+    "🦄 Licorne":"🦄 اليونيكورن",
+    "🚀 Espace":"🚀 الفضاء",
+    "🦖 Dinosaures":"🦖 الديناصورات",
+    "🏴‍☠️ Pirates":"🏴‍☠️ القراصنة",
+    "🌊 Sous-marin":"🌊 العالم تحت الماء",
+    "⚽ Football":"⚽ كرة القدم",
+    "🕵️ Détective":"🕵️ المحقق",
+    "🤖 Robots":"🤖 الروبوتات",
+    "🏰 Chevalier":"🏰 الفارس",
+    "🎨 Art":"🎨 الفن",
+    "🍰 Pâtisserie":"🍰 الحلويات",
+    "✨ Son propre thème":"✨ موضوعه الخاص",
+    "Aller à la création":"الانتقال إلى إنشاء الكتاب",
+    "Le livre":"الكتاب",
+    "Feuilleter la magie":"اكتشف سحر الكتاب",
+    "PETIT HÉROS. GRANDE AVENTURE.":"بطل صغير. مغامرة كبيرة.",
+    "Son prénom.":"اسمه.",
+    "Son aventure.":"مغامرته.",
+    "Un héros à son image":"بطل يشبهه",
+    "De l’imagination à colorier":"خيال ينبض بالألوان",
+    "01 / IMAGINER":"01 / تخيّل",
+    "02 / EXPLORER":"02 / استكشف",
+    "03 / OSER":"03 / انطلق",
+    "Un peu de magie":"لمسة من السحر",
+    "Cap sur l’inconnu":"نحو المجهول",
+    "L’aventure en grand":"مغامرة بلا حدود",
+    "Royaumes, dragons et rencontres enchantées.":"ممالك وتنانين ولقاءات ساحرة.",
+    "Espace, océans et mondes extraordinaires.":"الفضاء والمحيطات وعوالم استثنائية.",
+    "Dinosaures, animaux et défis passionnants.":"ديناصورات وحيوانات وتحديات مشوقة.",
+    "APERÇU ILLUSTRATIF":"مثال توضيحي",
+    "Une mission extraordinaire":"مهمة استثنائية",
+    "DE LA PREMIÈRE À LA DERNIÈRE PAGE":"من أول صفحة إلى آخر صفحة",
+    "Une histoire à vivre.":"قصة تعيشها.",
+    "Un monde à découvrir.":"عالم يكتشفه.",
+    "Un livre dont il est le personnage principal, à lire en couleur ou à personnaliser avec ses crayons.":"كتاب يكون فيه الشخصية الرئيسية، يقرؤه بالألوان أو يبدع فيه بأقلامه.",
+    "Son personnage, son histoire":"شخصيته وقصته",
+    "Son prénom et sa photo inspirent une aventure personnalisée.":"اسمه وصورته يلهمان مغامرة مخصصة له.",
+    "La magie continue sur le papier":"السحر يستمر على الورق",
+    "Des illustrations à colorier ou déjà en couleur pour prolonger son aventure.":"رسومات للتلوين أو بالألوان الجاهزة لتمتد متعة المغامرة.",
+    "À garder, à partager, à offrir":"ذكرى تحتفظ بها أو تشاركها أو تهديها",
+    "PDF à imprimer, livre imprimé ou coffret cadeau : à vous de choisir.":"ملف PDF للطباعة أو كتاب مطبوع أو صندوق هدايا: الخيار لكم.",
+    "Découvrir les formules":"اكتشف الخيارات",
+    "Vos livres sont prêts":"معاينة كتبكم جاهزة",
+    "Vos aperçus sont prêts":"معاينة كتبكم جاهزة",
+    "Total hors livraison":"المجموع دون التوصيل",
+    "La photo et les informations de votre enfant sont utilisées uniquement pour préparer sa commande.":"تُستخدم صورة طفلك ومعلوماته فقط لإعداد طلبه.",
+    "💬 Votre aperçu est prêt. Validez maintenant votre commande sur WhatsApp pour confirmer le format et finaliser avec notre équipe.":"💬 المعاينة جاهزة. أكّد طلبك عبر واتساب لاختيار النسخة وإتمام الطلب مع فريقنا.",
+    "Nous allons créer la couverture de votre livre. Cela peut prendre quelques instants.":"سننشئ غلاف كتابك. قد يستغرق ذلك بعض الوقت.",
     "Comment ça marche":"كيف يعمل؟","Aventures":"المغامرات","Packs":"الباقات","FAQ":"الأسئلة الشائعة",
     "Créer son aventure":"أنشئ مغامرته","Créer mon aventure":"أنشئ مغامرتك","UNE HISTOIRE CRÉÉE RIEN QUE POUR LUI":"قصة صُنعت خصيصًا له","✨ UNE HISTOIRE CRÉÉE RIEN QUE POUR LUI":"قصة صُنعت خصيصًا له",
     "UNE AVENTURE RIEN QU'À LUI":"مغامرة صُنعت خصيصًا له","Votre enfant devient":"طفلك يصبح","le héros":"البطل",
-    "de sa propre histoire.":"في قصته الخاصة.","À partir de son prénom, de son âge et de sa photo, nous imaginons une aventure originale qu'il pourra ensuite colorier et garder comme souvenir.":"انطلاقًا من اسمه وعمره وصورته، نصمم له مغامرة أصلية يمكنه تلوينها والاحتفاظ بها كذكرى.",
+    "de sa propre histoire.":"في قصته الخاصة.","À partir de son prénom, de son âge et de sa photo, nous imaginons une aventure originale à colorier ou déjà illustrée en couleur, à garder comme souvenir.":"انطلاقًا من اسمه وعمره وصورته، نصمم له مغامرة أصلية للتلوين أو مصورة بالألوان، يحتفظ بها كذكرى.",
     "Une histoire personnalisée, inspirée de sa photo et de ses passions, puis transformée en aventure à colorier.":"قصة مخصصة مستوحاة من صورته واهتماماته، ثم تتحول إلى مغامرة يمكنه تلوينها.",
     "Créer son livre":"أنشئ كتابه","Créer son aventure":"أنشئ مغامرته","Découvrir le concept ↓":"اكتشف الفكرة ↓",
-    "Personnalisé":"مخصص","Dès 99 DH":"ابتداءً من 99 درهم","À partir de 99 DH":"ابتداءً من 99 درهم","Digital ou imprimé":"رقمي أو مطبوع",
-    "À colorier":"للتلوين","10 pages par aventure":"10 صفحات لكل مغامرة","aventures possibles":"مغامرات ممكنة",
+    "À colorier":"للتلوين","10 scènes par aventure":"10 مشاهد لكل مغامرة","aventures possibles":"مغامرات ممكنة",
     "univers possibles":"عوالم ممكنة","pages par aventure":"صفحات لكل مغامرة","packs au choix":"باقات للاختيار",
     "créé avec soin":"مصمم بعناية","COMMENT ÇA MARCHE":"كيف يعمل؟","Simple pour vous.":"بسيط بالنسبة لكم.","Magique pour lui.":"ساحر بالنسبة له.",
     "Quelques choix suffisent pour lancer la création de son aventure.":"بضعة اختيارات تكفي لبدء إنشاء مغامرته.",
@@ -41,21 +119,20 @@ const T={
     "Son univers":"عالمه","Choisissez parmi nos aventures : magie, espace, dinosaures, sport et bien plus.":"اختر من بين مغامراتنا: السحر والفضاء والديناصورات والرياضة وغيرها.",
     "Choisissez son univers : espace, dinosaures, magie, football et plus.":"اختر عالمه: الفضاء والديناصورات والسحر وكرة القدم وغيرها.",
     "Nous créons son livre":"نصمم كتابه","Son personnage devient le héros d'une histoire originale et illustrée.":"تتحول شخصيته إلى بطل قصة أصلية ومصورة.",
-    "Il devient l'artiste":"يصبح هو الفنان","Il découvre son aventure et donne vie aux pages en les coloriant.":"يكتشف مغامرته ويمنح الصفحات حياة من خلال تلوينها.",
+    "Il vit son aventure":"يعيش مغامرته","Il lit son histoire en couleur ou lui donne vie en la coloriant.":"يقرأ قصته بالألوان أو يمنحها الحياة بتلوينها.",
     "Il donne vie à l'histoire":"يمنح القصة حياة","Il reçoit son aventure et peut colorier chaque page.":"يتلقى مغامرته ويمكنه تلوين كل صفحة.",
     "CHOISIS SON UNIVERS":"اختر عالمه","Une aventure pour":"مغامرة لكل","chaque imagination":"خيال","chaque enfant":"طفل",
     "Des mondes très différents pour que chaque enfant trouve son aventure.":"عوالم متنوعة جدًا ليجد كل طفل مغامرته.",
     "Et si son imagination choisissait la prochaine mission ?":"ماذا لو اختار خياله المهمة القادمة؟",
-    "Et ce n'est qu'un aperçu.":"وهذا مجرد جزء من الخيارات.","Plus de 30 univers sont disponibles pendant la création.":"أكثر من 30 عالمًا متاح أثناء الإنشاء.",
+    "Et ce n'est qu'un aperçu.":"وهذا مجرد جزء من الخيارات.","366 univers sont disponibles pendant la création.":"366 عالمًا متاح أثناء الإنشاء.",
     "Plus de 30 univers possibles":"أكثر من 30 عالمًا ممكنًا","Le choix complet sera disponible pendant la création.":"ستتوفر جميع الاختيارات أثناء الإنشاء.",
-    "NOS 3 EXPÉRIENCES":"تجاربنا الثلاث","NOS PACKS":"باقاتنا","Choisissez son":"اختر","niveau d'aventure":"مستوى المغامرة",
+    "NOS PACKS":"باقاتنا","Choisissez son":"اختر","niveau d'aventure":"مستوى المغامرة",
     "Une première aventure, une collection de deux mondes ou le cadeau complet.":"مغامرة أولى، أو مجموعة من عالمين، أو الهدية الكاملة.",
     "Une aventure, plusieurs aventures, ou le cadeau qui fait vraiment plaisir.":"مغامرة واحدة، عدة مغامرات، أو الهدية المثالية.",
     "POUR COMMENCER":"للبدء","LE PLUS CHOISI":"الأكثر اختيارًا","LE CADEAU":"الهدية",
     "01 AVENTURE":"01 مغامرة","02 AVENTURES":"02 مغامرتان","03 AVENTURES":"03 مغامرات",
     "Son premier livre personnalisé.":"كتابه الشخصي الأول.","Deux univers pour prolonger le plaisir.":"عالمان لمزيد من المتعة.","La collection complète à offrir.":"المجموعة الكاملة كهدية.",
     "digital":"رقمي","Digital":"رقمي","Imprimé":"مطبوع","Coffret cadeau":"صندوق هدايا",
-    "1 aventure de 10 pages":"مغامرة واحدة من 10 صفحات","2 aventures de 10 pages":"مغامرتان من 10 صفحات","3 aventures de 10 pages":"3 مغامرات من 10 صفحات",
     "Son personnage personnalisé":"شخصيته مخصصة","Deux univers au choix":"عالمان للاختيار","Deux livres personnalisés":"كتابان مخصصان",
     "Trois univers au choix":"ثلاثة عوالم للاختيار","Trois livres personnalisés":"ثلاثة كتب مخصصة","Illustrations à colorier":"رسومات للتلوين",
     "Le format imprimé et le format Coffret cadeau sont finalisés avec notre équipe lors de la commande.":"يتم تأكيد النسخة المطبوعة ونسخة صندوق هدايا مع فريقنا عند الطلب.",
@@ -66,11 +143,10 @@ const T={
     "CRÉEZ SON AVENTURE":"أنشئ مغامرته","Construisons son livre":"لنبنِ كتابه","ensemble.":"معًا.","Vous choisissez. Nous créons. Il s'évade.":"أنتم تختارون. نحن نصمم. وهو ينطلق في المغامرة.",
     "1. Pack":"1. الباقة","2. Héros":"2. البطل","3. Aventure":"3. المغامرة","4. Aperçu":"4. المعاينة",
     "ÉTAPE 1 SUR 4":"الخطوة 1 من 4","ÉTAPE 2 SUR 4":"الخطوة 2 من 4","ÉTAPE 3 SUR 4":"الخطوة 3 من 4","ÉTAPE 4 SUR 4":"الخطوة 4 من 4",
-    "Choisissez son expérience":"اختر تجربته","Choisissez votre pack":"اختر باقتك","Le prix affiché ici correspond au format digital.":"السعر المعروض هنا يخص النسخة الرقمية.",
     "Vous pourrez modifier votre choix à tout moment.":"يمكنك تعديل اختيارك في أي وقت.",
-    "Continuer →":"متابعة →","Retour":"رجوع","Modifier":"تعديل","Voir mon aperçu →":"عرض المعاينة →",
+    "Continuer →":"متابعة →","Retour":"رجوع","Modifier":"تعديل","Voir mon aperçu →":"عرض المعاينة →","Commencer mon histoire →":"ابدأ قصته →",
     "Parlez-nous de son héros":"حدثنا عن بطلك","Ces informations servent à personnaliser son aventure.":"تُستخدم هذه المعلومات لتخصيص مغامرته.",
-    "Prénom":"الاسم","Âge":"العمر","Choisir":"اختيار","Langue":"اللغة","Photo de l'enfant":"صورة الطفل","Photo sélectionnée ✓":"تم اختيار الصورة ✓",
+    "Prénom":"الاسم","Votre enfant":"طفلك","Fille":"بنت","Garçon":"ولد","Âge":"العمر","Choisir":"اختيار","Langue":"اللغة","Photo de l'enfant":"صورة الطفل","Photo sélectionnée ✓":"تم اختيار الصورة ✓",
     "Elle servira à créer son personnage.":"ستُستخدم لإنشاء شخصيته.","Quelle sera sa mission ?":"ما مهمته؟","Choisissez 1 aventure.":"اختر مغامرة واحدة.",
     "Choisissez exactement 1 aventure pour continuer.":"اختر مغامرة واحدة بالضبط للمتابعة.","Choisissez exactement":"اختر بالضبط",
     "Son aventure est prête à être créée":"مغامرته جاهزة للإنشاء","Vérifiez les informations avant de valider.":"تحقق من المعلومات قبل التأكيد.",
@@ -79,9 +155,8 @@ const T={
     "Valider ma commande":"تأكيد طلبي","Valider ma commande sur WhatsApp":"تأكيد طلبي عبر واتساب","La validation finale se fera avec notre équipe sur WhatsApp.":"سيتم تأكيد الطلب النهائي مع فريقنا عبر واتساب.",
     "Créer":"إنشاء","Tous droits réservés":"جميع الحقوق محفوظة",
     "Monde magique":"العالم السحري","Fées":"الجنيات","Licorne":"اليونيكورن","Royaume":"المملكة","Dragon":"التنين","Pirates":"القراصنة","Trésor":"الكنز","Espace":"الفضاء","Robots":"الروبوتات","Dinosaures":"الديناصورات","Sous-marin":"العالم تحت الماء","Sirènes":"حوريات البحر","Forêt":"الغابة","Safari":"السفاري","Sauvetage":"إنقاذ الحيوانات","Football":"كرة القدم","Basket":"كرة السلة","Course":"السباق","Détective":"المحقق","Mission secrète":"مهمة سرية","Chevalier":"الفارس","Art":"الفن","Musique":"الموسيقى","Danse":"الرقص","Pâtisserie":"الحلويات","Mode":"الأزياء","Science":"العلوم","Temps":"السفر عبر الزمن","Mon propre thème":"موضوعي الخاص",
-    "1 aventure · dès 99 DH":"مغامرة واحدة · ابتداءً من 99 درهم","2 aventures · dès 179 DH":"مغامرتان · ابتداءً من 179 درهم","3 aventures · dès 249 DH":"3 مغامرات · ابتداءً من 249 درهم",
-    "1 aventure · 99 DH":"مغامرة واحدة · 99 درهم","2 aventures · 179 DH":"مغامرتان · 179 درهم","3 aventures · 249 DH":"3 مغامرات · 249 درهم"
   };
+  Object.assign(T,{"✓ Dès 79 DH": "✓ ابتداءً من 79 درهم", "NOS 5 PACKS": "باقاتنا الخمس", "Prix du pack hors livraison. Livraison séparée.": "سعر الباقة دون التوصيل. التوصيل منفصل.", "Livraison séparée.": "التوصيل منفصل.", "Livraison séparée, confirmée avant paiement.": "التوصيل منفصل، يؤكد قبل الدفع.", "Contenu": "المحتوى", "PDF personnalisé à imprimer": "ملف PDF مخصص للطباعة", "Livre A4 à colorier + PDF": "كتاب A4 للتلوين + PDF", "Livre A5 couleur + PDF": "كتاب A5 بالألوان + PDF", "Livre A5 couleur + livre A4 coloriage + PDF. Sans crayons ni emballage cadeau": "كتاب A5 بالألوان + كتاب A4 للتلوين + PDF. دون أقلام أو تغليف هدايا", "Deux livres : A5 couleur + A4 coloriage + crayons + boîte rigide personnalisée + carte cadeau + PDF": "كتابان: A5 بالألوان وA4 للتلوين + أقلام + علبة صلبة مخصصة + بطاقة هدية + PDF"});
   const themeAr={"Monde magique":"العالم السحري","Fées":"الجنيات","Licorne":"اليونيكورن","Royaume":"المملكة","Dragon":"التنين","Pirates":"القراصنة","Trésor":"الكنز","Espace":"الفضاء","Robots":"الروبوتات","Dinosaures":"الديناصورات","Sous-marin":"العالم تحت الماء","Sirènes":"حوريات البحر","Forêt":"الغابة","Safari":"السفاري","Sauvetage":"إنقاذ الحيوانات","Football":"كرة القدم","Basket":"كرة السلة","Course":"السباق","Détective":"المحقق","Mission secrète":"مهمة سرية","Chevalier":"الفارس","Art":"الفن","Musique":"الموسيقى","Danse":"الرقص","Pâtisserie":"الحلويات","Mode":"الأزياء","Science":"العلوم","Temps":"السفر عبر الزمن","Mon propre thème":"موضوعي الخاص"};
 
 (function(){
@@ -114,18 +189,22 @@ const T={
     nodes.forEach(n=>{
       if(!originals.has(n))originals.set(n,n.nodeValue);
       const base=norm(originals.get(n));
-      if(base)n.nodeValue=ar?(T[base]||base):base;
+      if(base){
+        const original=originals.get(n), leading=original.match(/^\s*/)[0], trailing=original.match(/\s*$/)[0];
+        n.nodeValue=leading+(ar?(T[base]||base):base)+trailing;
+      }
     });
     applyHeadings(ar);
     document.querySelectorAll("[data-theme-label]").forEach(b=>{
       const label=b.dataset.themeLabel,s=b.querySelector("span:last-child");
-      if(s)s.textContent=ar?(themeAr[label]||label):label;
+      if(s)s.textContent=ar?(themeAr[label]||window.MLH_THEME_CATALOG?.find(t=>t.label===label)?.ar||label):label;
     });
     const toggle=document.getElementById("siteLanguageToggle");
     if(toggle){
       const fr=toggle.querySelector("[data-lang='fr']"),a=toggle.querySelector("[data-lang='ar']");
       if(fr)fr.classList.toggle("active",!ar);if(a)a.classList.toggle("active",ar);
     }
+    document.dispatchEvent(new Event("mlh:language-change"));
     translating=false;
   }
   window.setMyLittleHeroLanguage=translate;
@@ -153,9 +232,22 @@ const T={
       if(localStorage.getItem("mlh-site-language")!=="ar")return;
       e.preventDefault();e.stopImmediatePropagation();
       const g=id=>document.getElementById(id)?.textContent?.trim()||"";
-      const msg="مرحبًا My Little Hero\nأرغب في طلب مغامرة مخصصة لطفلي.\n\nالبطل: "+(g("summaryName")||"يحدد لاحقًا")+"\nالعمر: "+(g("summaryAge")||"يحدد لاحقًا")+"\nاللغة: العربية\nالباقة: "+g("summaryPack")+"\nالسعر الرقمي: "+g("summaryPrice")+"\n\nأرغب في تأكيد طلبي.";
+      const msg="مرحبًا My Little Hero\nأرغب في طلب مغامرة مخصصة لطفلي.\n\nالبطل: "+(g("summaryName")||"يحدد لاحقًا")+"\nالطفل: "+(document.getElementById("childGender").value==="girl"?"بنت":"ولد")+"\nالعمر: "+(g("summaryAge")||"يحدد لاحقًا")+"\nاللغة: العربية\nالباقة: "+g("summaryPack")+"\nهاتف الوالد: "+g("summaryPhone")+(document.getElementById("parentEmail").value.trim()?"\nالبريد الإلكتروني: "+g("summaryEmail"):"")+"\nالمغامرات: "+g("summaryAdventures")+"\nالسعر دون التوصيل: "+g("summaryPrice")+"\nالتوصيل منفصل، يؤكد قبل الدفع.\nمرجع الطلب: "+(window.MLH_ORDER_REF||"—")+"\n\nأرغب في تأكيد طلبي.";
       window.open("https://wa.me/212603983800?text="+encodeURIComponent(msg),"_blank");
     },true);
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",setup);else setup();
 })();
+
+// Close the mobile navigation after choosing a destination.
+document.addEventListener("DOMContentLoaded",()=>{
+  const menu=document.querySelector(".mobile-menu");
+  menu?.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{menu.open=false;}));
+  document.addEventListener("keydown",event=>{if(event.key==="Escape"&&menu?.open){menu.open=false;menu.querySelector("summary").focus();}});
+});
+
+document.addEventListener("DOMContentLoaded",()=>{
+  for(const id of ["parentPhone","parentEmail","customTheme"]){
+    document.getElementById(id)?.addEventListener("input",event=>event.target.setCustomValidity(""));
+  }
+});
