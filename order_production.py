@@ -8,7 +8,16 @@ from pathlib import Path
 from production_status import ProgressTracker
 from order_actions import save_production_fields
 from book_style import book_output_dir
-from pdf_storage import is_payload_too_large, optimize_saved_pdf
+
+
+def is_payload_too_large(error):
+    from pdf_storage import is_payload_too_large as check
+    return check(error)
+
+
+def optimize_saved_pdf(*args, **kwargs):
+    from pdf_storage import optimize_saved_pdf as optimize
+    return optimize(*args, **kwargs)
 
 SUPABASE_BUCKET = "my-little-hero-files"
 ADMIN_WORK_DIR = Path(os.getenv("MLH_WORK_DIR", "worker_orders"))

@@ -4,7 +4,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from generation_worker import process_once, recover_job, save_journal
+from generation_worker import process_once, recover_job, save_journal, generate_isolated, run_maintenance
+from order_actions import ProductionStopped
 
 
 class Database:
@@ -89,6 +90,46 @@ class WorkerTests(unittest.TestCase):
         with self.assertRaises(ConnectionError):
             process_once(self.db, self.journal, lambda _: None)
         self.assertTrue(self.journal.exists())
+
+    def test_isolated_generation_waits_and_reports_failure_without_automatic_ai_retry(self):
+        for code in (0, 2, -9):
+            with self.subTest(code=code), patch('generation_worker.subprocess.run', return_value=SimpleNamespace(returncode=code)) as run:
+                if code == 0:
+                    generate_isolated({'order_ref': 'ONE'})
+                elif code == 2:
+                    with self.assertRaises(ProductionStopped): generate_isolated({'order_ref': 'ONE'})
+                else:
+                    with self.assertRaises(RuntimeError): generate_isolated({'order_ref': 'ONE'})
+                self.assertEqual(run.call_count, 1)
+                self.assertEqual(run.call_args.args[0][-1], 'ONE')
+
+    def test_maintenance_outage_does_not_break_worker(self):
+        with patch('storage_maintenance.cleanup_delivered_books', side_effect=ConnectionError('offline')), self.assertLogs(level='ERROR'):
+            run_maintenance(self.db, self.journal.parent)
+
+    def test_queue_parent_does_not_load_image_or_ai_engine(self):
+        import subprocess
+        import sys
+        result = subprocess.run([sys.executable, '-c',
+            'import generation_worker, sys; '
+            'assert "book_layout" not in sys.modules; '
+            'assert "generate_book" not in sys.modules; '
+            'assert "openai" not in sys.modules'], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_maintenance_can_be_disabled(self):
+        with patch.dict('os.environ', {'MLH_AUTO_CLEANUP': '0'}), patch('storage_maintenance.cleanup_delivered_books') as cleanup:
+            run_maintenance(self.db, self.journal.parent)
+            cleanup.assert_not_called()
+
+    def test_child_progress_is_preserved_on_failure(self):
+        def failed(order):
+            self.db.rows[0]['generation_progress'] = {'stage': 'illustrations', 'page_index': 8, 'percent': 70}
+            raise RuntimeError('child stopped')
+        with self.assertLogs(level='ERROR'):
+            process_once(self.db, self.journal, failed)
+        self.assertEqual(self.db.rows[0]['generation_progress']['failed_stage'], 'illustrations')
+        self.assertEqual(self.db.rows[0]['generation_progress']['page_index'], 8)
 
 
 if __name__ == "__main__":

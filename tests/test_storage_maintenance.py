@@ -5,7 +5,7 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import MagicMock
 
-from storage_maintenance import cleanup_completed_books
+from storage_maintenance import cleanup_completed_books, cleanup_delivered_books, verify_private_pdf
 
 
 class StorageMaintenanceTests(unittest.TestCase):
@@ -70,3 +70,78 @@ class StorageMaintenanceTests(unittest.TestCase):
             for invalid in (plan+[plan[0]], [dict(order_ref='../other', index=1)]):
                 with self.assertRaises(ValueError):
                     cleanup_completed_books(db, root, json.dumps(invalid))
+
+    def test_auto_cleanup_only_delivered_and_never_originals_or_remote_files(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            plan, db, rows, protected = self.setup_plan(root)
+            rows[plan[0]['order_ref']]['status'] = 'DELIVERED'
+            rows[plan[1]['order_ref']]['status'] = 'SHIPPED'
+            rows[plan[2]['order_ref']]['status'] = 'GENERATING'
+            checked = []
+            def verify(remote):
+                checked.append(remote)
+                return {'bytes': 100, 'sha256': 'verified', 'pages': 12}
+            result = cleanup_delivered_books(db, root, verify=verify)
+            self.assertEqual(len(result['books']), 1)
+            self.assertEqual(len(checked), 1)
+            self.assertFalse((root/plan[0]['order_ref']/'final_books'/'adventure_01').exists())
+            self.assertTrue((root/plan[0]['order_ref']/'reference.png').exists())
+            for item in plan[1:]:
+                self.assertTrue((root/item['order_ref']/'final_books'/'adventure_01').exists())
+            self.assertTrue(protected.exists())
+            self.assertEqual(cleanup_delivered_books(db, root, verify=verify)['books'], [])
+            db.table.return_value.update.assert_not_called()
+            db.storage.from_.assert_not_called()
+
+    def test_auto_cleanup_failure_preserves_entire_batch_and_dry_run_never_removes(self):
+        for mode in ('dry', 'bad_backup', 'active'):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as folder:
+                root = Path(folder)
+                plan, db, rows, _ = self.setup_plan(root)
+                for row in rows.values(): row['status'] = 'DELIVERED'
+                verify = MagicMock(return_value={'bytes': 100, 'pages': 12, 'sha256': 'ok'})
+                if mode == 'active': (root/'active_job.json').write_text('{}')
+                if mode == 'bad_backup':
+                    verify.side_effect = [{'bytes': 100}] * 4 + [ValueError('bad PDF')]
+                    with self.assertRaises(ValueError): cleanup_delivered_books(db, root, verify=verify)
+                else:
+                    cleanup_delivered_books(db, root, verify=verify, dry_run=mode == 'dry')
+                for item in plan:
+                    self.assertTrue((root/item['order_ref']/'final_books'/'adventure_01').exists())
+                if mode == 'active': verify.assert_not_called()
+
+    def test_changed_status_and_unsafe_paths_block_deletion(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            plan, db, rows, _ = self.setup_plan(root)
+            row = rows[plan[0]['order_ref']]
+            row['status'] = 'DELIVERED'
+            def verify(remote):
+                row['status'] = 'GENERATING'
+                return {'sha256': 'ok'}
+            with self.assertRaises(ValueError): cleanup_delivered_books(db, root, verify=verify)
+            self.assertTrue((root/plan[0]['order_ref']/'final_books'/'adventure_01').exists())
+            from storage_maintenance import _cache_path
+            with self.assertRaises(ValueError): _cache_path(root, '../outside', 1)
+
+    def test_streamed_verification_parses_pdf_and_rejects_truncation(self):
+        import io
+        from unittest.mock import patch
+        from pypdf import PdfWriter
+        writer = PdfWriter()
+        writer.add_blank_page(width=100, height=100)
+        content = io.BytesIO()
+        writer.write(content)
+        data = content.getvalue()
+        class Response(io.BytesIO):
+            def read(self, size=-1):
+                self.assert_bounded(size)
+                return super().read(size)
+            def assert_bounded(self, size):
+                if size != 65536: raise AssertionError('unbounded download')
+        with patch.dict('os.environ', {'SUPABASE_URL': 'https://example.com', 'SUPABASE_SECRET_KEY': 'test'}):
+            with patch('urllib.request.urlopen', return_value=Response(data)):
+                self.assertEqual(verify_private_pdf('orders/test.pdf')['pages'], 1)
+            with patch('urllib.request.urlopen', return_value=Response(data[:-20])):
+                with self.assertRaises(ValueError): verify_private_pdf('orders/test.pdf')

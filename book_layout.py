@@ -4,7 +4,7 @@ from pathlib import Path
 from html import escape
 import math
 import re
-import io
+import tempfile
 from PIL import Image as PILImage
 import reportlab
 from reportlab.lib.pagesizes import A4
@@ -13,7 +13,6 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.platypus import Paragraph
-from reportlab.lib.utils import ImageReader
 from arabic_layout import ArabicParagraph, has_arabic
 
 LAYOUT_VERSION = "storybook-a4-v5-color-spreads"
@@ -150,19 +149,28 @@ def draw_image(canvas, image, x, y, width, height, compress_color=False, full_bl
     if not Path(image).exists():
         raise FileNotFoundError(image)
     if compress_color:
-        with PILImage.open(image) as original:
-            rgb = PILImage.new("RGB", original.size, "white")
-            if "A" in original.getbands():
-                rgb.paste(original.convert("RGB"), mask=original.getchannel("A"))
-            else:
-                rgb.paste(original.convert("RGB"))
-            encoded = io.BytesIO()
-            rgb.save(encoded, format="JPEG", quality=92, subsampling=0)
-            encoded.seek(0)
-            source = ImageReader(encoded)
-    else:
-        source = ImageReader(str(image))
-    w, h = source.getSize()
+        # Keep only JPEG filenames between pages, not decoded RGB images.
+        key = (str(Path(image).resolve()), Path(image).stat().st_mtime_ns)
+        cache = canvas._mlh_jpeg_cache
+        if key not in cache:
+            jpeg = Path(canvas._mlh_jpeg_directory) / f"image_{len(cache)}.jpg"
+            with PILImage.open(image) as original:
+                rgb = PILImage.new("RGB", original.size, "white")
+                try:
+                    with original.convert("RGB") as converted:
+                        if "A" in original.getbands():
+                            with original.getchannel("A") as alpha:
+                                rgb.paste(converted, mask=alpha)
+                        else:
+                            rgb.paste(converted)
+                    rgb.save(jpeg, format="JPEG", quality=92, subsampling=0)
+                finally:
+                    rgb.close()
+            cache[key] = jpeg
+        return draw_image(canvas, cache[key], x, y, width, height, full_bleed=full_bleed)
+    with PILImage.open(image) as bounds:
+        w, h = bounds.size
+    source = str(image)
     scale = max(width / w, height / h) if full_bleed else min(width / w, height / h)
     canvas.saveState()
     if full_bleed:
@@ -336,29 +344,32 @@ def build_book_pdf(output, pages, medal, *, child_name, congratulations, gender=
     if book_style == "coloring" and config.height-config.top_margin-config.title_band-(config.bottom_margin+config.footer_band+config.narrative_height+config.image_gap) < 220:
         raise ValueError("Le titre ne laisse plus assez d'espace pour l'illustration.")
     canvas = Canvas(str(output), pagesize=(config.width, config.height), pageCompression=1)
-    canvas.setTitle(f"{child_name} - " + ("livre de contes illustrés" if book_style == "colored" else "livre de contes à colorier"))
-    canvas.setAuthor("My Little Hero")
-    if book_style == "colored":
-        canvas._doc.Catalog.setPageLayout("TwoPageRight" if cover else "TwoPageLeft")
-        canvas.setViewerPreference("Direction", "R2L" if language == "العربية" else "L2R")
-    if cover:
-        draw_image(canvas, cover, 0, 0, config.width, config.height, compress_color=True)
-        canvas.showPage()
-    number = 0
-    for page in pages:
+    with tempfile.TemporaryDirectory(prefix="mlh-pdf-") as jpeg_directory:
+        canvas._mlh_jpeg_directory = jpeg_directory
+        canvas._mlh_jpeg_cache = {}
+        canvas.setTitle(f"{child_name} - " + ("livre de contes illustrés" if book_style == "colored" else "livre de contes à colorier"))
+        canvas.setAuthor("My Little Hero")
         if book_style == "colored":
-            c = config.color_text
-            color_config = replace(config,body_size=c.body_size,body_leading=c.body_leading,narrative_height=config.height-c.body_top-c.body_bottom)
-            parts = split_narrative(page["text"],color_config,text_width=config.width-2*c.margin)
-        else:
-            parts = split_narrative(page["text"],config)
-        for part_number, text in enumerate(parts):
-            number += 1
-            title = page["title"] + (continuation if part_number else "")
+            canvas._doc.Catalog.setPageLayout("TwoPageRight" if cover else "TwoPageLeft")
+            canvas.setViewerPreference("Direction", "R2L" if language == "العربية" else "L2R")
+        if cover:
+            draw_image(canvas, cover, 0, 0, config.width, config.height, compress_color=True)
+            canvas.showPage()
+        number = 0
+        for page in pages:
             if book_style == "colored":
-                draw_color_story_page(canvas,title,text,page["image"],number,config,background=narrative_background)
+                c = config.color_text
+                color_config = replace(config,body_size=c.body_size,body_leading=c.body_leading,narrative_height=config.height-c.body_top-c.body_bottom)
+                parts = split_narrative(page["text"],color_config,text_width=config.width-2*c.margin)
             else:
-                draw_story_page(canvas,title,text,page["image"],number,config)
-    draw_keepsake_page(canvas, child_name, congratulations, medal, gender=gender, language=language, config=config, book_style=book_style)
-    canvas.save()
-    return output
+                parts = split_narrative(page["text"],config)
+            for part_number, text in enumerate(parts):
+                number += 1
+                title = page["title"] + (continuation if part_number else "")
+                if book_style == "colored":
+                    draw_color_story_page(canvas,title,text,page["image"],number,config,background=narrative_background)
+                else:
+                    draw_story_page(canvas,title,text,page["image"],number,config)
+        draw_keepsake_page(canvas, child_name, congratulations, medal, gender=gender, language=language, config=config, book_style=book_style)
+        canvas.save()
+        return output
