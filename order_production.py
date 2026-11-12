@@ -232,6 +232,8 @@ def generate_order(order):
     total = len(order["adventures"])
 
     for index, adventure in enumerate(order["adventures"], start=1):
+        from paired_books import is_paired_coloring, build_paired_coloring
+        paired_coloring = is_paired_coloring(order, index, adventure)
         title = (adventure.get("title") or "").strip()
         if not title:
             raise ValueError(f"Le titre de l'aventure {index} est manquant.")
@@ -260,28 +262,33 @@ def generate_order(order):
         else:
             if (order.get("generation_progress") or {}).get("upload_only"):
                 raise FileNotFoundError("Le PDF conservé est absent. Reprise limitée à l’enregistrement : aucun appel IA ne sera lancé.")
-            pdf_path = generate_book_from_adventure(
-                child_name=order["child_name"],
-                age=int(order["age"]),
-                theme=adventure["theme"],
-                language=order["language"],
-                client_idea=adventure.get("idea", ""),
-                child_gender=adventure.get("child_gender", ""),
-                book_style=adventure.get("book_style", "coloring"),
-                companion_revision=adventure.get("companion_revision", ""),
-                child_quality=adventure.get("quality", ""),
-                book_title=title,
-                reference_path=reference_path,
-                output_dir=adventure_dir,
-                preview_cover_path=preview_covers[index - 1],
-                progress=lambda stage, label, **details: report(stage, label, book_index=index, **details),
-            )
+            if paired_coloring:
+                pdf_path = build_paired_coloring(final_dir/'adventure_01'/'colored',
+                    adventure_dir, expected_pdf,
+                    progress=lambda stage, label, **details: report(stage, label, book_index=index, **details))
+            else:
+                pdf_path = generate_book_from_adventure(
+                    child_name=order["child_name"],
+                    age=int(order["age"]),
+                    theme=adventure["theme"],
+                    language=order["language"],
+                    client_idea=adventure.get("idea", ""),
+                    child_gender=adventure.get("child_gender", ""),
+                    book_style=adventure.get("book_style", "coloring"),
+                    companion_revision=adventure.get("companion_revision", ""),
+                    child_quality=adventure.get("quality", ""),
+                    book_title=title,
+                    reference_path=reference_path,
+                    output_dir=adventure_dir,
+                    preview_cover_path=preview_covers[index - 1],
+                    progress=lambda stage, label, **details: report(stage, label, book_index=index, **details),
+                )
 
         pdf_path = Path(pdf_path)
 
         # Known failed uploads and large color PDFs should be reduced before
         # sending another oversized body through the network.
-        if ((order.get("generation_progress") or {}).get("rebuild_layout")
+        if not paired_coloring and ((order.get("generation_progress") or {}).get("rebuild_layout")
                 or (order.get("generation_progress") or {}).get("upload_only")
                 or pdf_path.stat().st_size > 8 * 1024 * 1024):
             report("pdf", "Optimisation du PDF conservé avant l’enregistrement — aucun appel IA", book_index=index)
@@ -301,7 +308,7 @@ def generate_order(order):
         try:
             storage_upload(supabase, remote_pdf_path, pdf_path, "application/pdf")
         except Exception as exc:
-            if not is_payload_too_large(exc):
+            if paired_coloring or not is_payload_too_large(exc):
                 raise
             report("pdf", "Optimisation du PDF existant pour le stockage — aucun appel IA", book_index=index)
             before = pdf_path.stat().st_size

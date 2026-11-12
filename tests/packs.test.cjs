@@ -35,10 +35,10 @@ for(const offer of catalogue)test(`${offer.name}: selection, preview payload, su
  for(const [id,value] of Object.entries({childName:'Adam',childAge:'7 ans',language:'Français',childGender:'boy',parentPhone:'0612345678'}))get(id).value=value;
  get('childPhoto').files=[{}];
  await next[1].events.click();
- for(let i=0;i<offer.styles.length;i++)themes[i].events.click();
+ for(let i=0;i<offer.theme_count;i++)themes[i].events.click();
  await next[2].events.click();
  assert.equal(payload.pack,offer.id);
- assert.equal(payload.themes.length,offer.styles.length);
+ assert.equal(payload.themes.length,offer.theme_count);
  assert.equal(payload.bookStyle,offer.styles[0]);
  get('orderButton').events.click();
  const message=decodeURIComponent(url);

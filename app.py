@@ -82,6 +82,15 @@ FORMAT_NAMES = {"digital": "PDF", "print": "Livre imprimé", "both": "Deux livre
 def adventure_count(pack):
     return len(PACKS[pack]["styles"])
 
+def theme_count(pack):
+    return PACKS[pack]["theme_count"]
+
+def selected_book_adventures():
+    pack = st.session_state.pack
+    selected = list(st.session_state.adventures[:theme_count(pack)])
+    return selected * 2 if PACKS[pack].get("paired_story") else selected
+
+
 THEMES = [
     # 🌟 Aventures fantastiques
     "🧙 Monde magique",
@@ -321,7 +330,7 @@ def save_order_metadata():
     preview_dir = Path("orders") / f"preview_{st.session_state.preview_id}"
     preview_dir.mkdir(parents=True, exist_ok=True)
 
-    selected_adventures = list(st.session_state.adventures[:adventure_count(st.session_state.pack)])
+    selected_adventures = selected_book_adventures()
     order_number = get_order_number()
     storage_root = f"orders/{order_number}"
 
@@ -380,6 +389,8 @@ def save_order_metadata():
             "title": adventure.get("title", ""),
         })
 
+    if PACKS[st.session_state.pack].get("paired_story"):
+        order["adventures"][1].update(paired_version="same-scenes-v1", shared_story_from=1, image_only=True)
     order["cover_paths"] = remote_cover_paths
 
     # Supabase is now the source of truth for online orders.
@@ -452,7 +463,7 @@ def create_preview_covers():
 
     # IMPORTANT : le nombre de couvertures doit toujours être égal au nombre
     # d'aventures sélectionnées.
-    selected_adventures = list(st.session_state.adventures[:adventure_count(st.session_state.pack)])
+    selected_adventures = selected_book_adventures()
     cover_paths = []
     total = len(selected_adventures)
 
@@ -472,6 +483,9 @@ def create_preview_covers():
                     st.session_state.language,
                 )
 
+        if i == 2 and PACKS[st.session_state.pack].get("paired_story"):
+            import shutil
+            shutil.copyfile(cover_paths[0], cover_path)
         if not cover_path.exists():
             with st.status(f"🎨 Création de la couverture {i}/{total}...", expanded=False):
                 cover_bytes = generate_cover(
@@ -1061,7 +1075,7 @@ elif st.session_state.step == 2:
 elif st.session_state.step == 3:
 
     pack = st.session_state.pack
-    count = adventure_count(pack)
+    count = theme_count(pack)
 
     st.markdown('<div class="section-title">📚 Imagine ses aventures</div>', unsafe_allow_html=True)
     st.markdown(

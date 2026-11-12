@@ -7,7 +7,8 @@
     "styles": [
       "coloring"
     ],
-    "pdf_included": true
+    "pdf_included": true,
+    "theme_count": 1
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "styles": [
       "coloring"
     ],
-    "pdf_included": false
+    "pdf_included": false,
+    "theme_count": 1
   },
   {
     "id": 3,
@@ -27,28 +29,33 @@
     "styles": [
       "colored"
     ],
-    "pdf_included": false
+    "pdf_included": false,
+    "theme_count": 1
   },
   {
     "id": 4,
     "name": "Super Héros",
     "price": 249,
-    "contents": "Livre A5 couleur + livre A4 coloriage + PDF",
+    "contents": "Livre A5 couleur + livre A4 de la même histoire à colorier, images pleine page sans texte + PDF",
     "styles": [
       "colored",
       "coloring"
     ],
-    "pdf_included": true
+    "pdf_included": true,
+    "theme_count": 1,
+    "paired_story": true
   },
   {
     "id": 5,
     "name": "Ultimate Hero",
     "price": 349,
-    "contents": "Deux livres : A5 couleur + A4 coloriage + crayons + boîte rigide personnalisée + carte cadeau + PDF",
+    "contents": "Deux livres : A5 couleur + A4 de la même histoire à colorier, images pleine page sans texte + crayons + boîte rigide personnalisée + carte cadeau + PDF",
     "styles": [
       "colored",
       "coloring"
     ],
-    "pdf_included": true
+    "pdf_included": true,
+    "theme_count": 1,
+    "paired_story": true
   }
 ]

@@ -10,7 +10,7 @@
 
 Livraison séparée : montant confirmé avec le client avant paiement. `total_price` reste le prix du pack hors livraison. Aucun frais de livraison inventé, aucune modification des commandes existantes.
 
-Les packs à deux livres demandent deux univers : le premier est produit en couleur, le second en coloriage. Le worker utilise `adventures[].book_style`. Le PDF couleur peut être imprimé au format A5 ; le PDF coloriage au format A4.
+Les nouveaux packs à deux livres demandent un seul univers : la même histoire est produite en couleur, puis ses dix scènes deviennent un cahier à colorier pleine page sans aucun texte, couverture ni souvenir. Les anciennes commandes ne sont pas modifiées. Le worker utilise `adventures[].book_style`. Le PDF couleur peut être imprimé au format A5 ; le PDF coloriage au format A4.
 
 Le parcours existant reste aperçu → commande WAITING_FOR_PAYMENT → confirmation WhatsApp → validation du paiement par l’équipe. Il n’y a pas de passerelle de paiement automatisée dans ce dépôt.
 
@@ -19,3 +19,5 @@ Déploiement : mettre à jour l’API (api.py, packs.py, packs.json) et Streamli
 Tests sans frais IA ni écritures en production : unittest tests/test_order_details.py et tests/test_child_profile.py ; node --test tests/packs.test.cjs tests/preview-origin.test.cjs.
 
 Les PDF internes nécessaires à l’impression sont conservés pour Petit Artiste et Mon Histoire ; ils ne sont pas inclus dans les livrables client. Le catalogue pdf_included et le champ adventures[].digital_copy_included indiquent cette distinction.
+
+Les nouveaux packs Super Héros et Ultimate Hero portent paired_version=same-scenes-v1 sur leur second livre. La production réutilise le story.txt exact et dérive les dessins des illustrations couleur sans nouvel appel IA. Un manifeste lie chaque dessin à l’empreinte de sa source.

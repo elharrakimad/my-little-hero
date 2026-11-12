@@ -107,15 +107,18 @@ class OrderDetailsTests(unittest.TestCase):
             filename = "test.png"
             async def read(self): return b"test"
         db = Database()
+        title_calls, cover_calls = [], []
         self.ns.update(get_supabase_client=lambda: db,
             get_openai_client=lambda: SimpleNamespace(images=SimpleNamespace(edit=lambda **kw: SimpleNamespace(data=[SimpleNamespace(b64_json="dGVzdA==")]))),
             image_file=lambda *args: None, gender_instruction=lambda *args: "",
-            generate_title=lambda *args: "Test", generate_cover=lambda *args: b"test")
+            generate_title=lambda *args: title_calls.append(args) or "Test",
+            generate_cover=lambda *args: cover_calls.append(args) or b"test")
         from packs import PACKS
         for pack_id, offer in PACKS.items():
             with self.subTest(pack=offer["name"]):
+                before_titles, before_covers = len(title_calls), len(cover_calls)
                 params = dict(child_name="Test", child_age="7", language="Français",
-                    themes=json.dumps(["Science"] * len(offer["styles"])), photo=Photo(),
+                    themes=json.dumps(["Science"] * offer["theme_count"]), photo=Photo(),
                     child_gender="boy", parent_phone="0612345678", pack_id=pack_id,
                     book_style="coloring")  # Physical formats must override this client choice.
                 asyncio.run(self.ns["preview_cover"](**params))
@@ -126,8 +129,19 @@ class OrderDetailsTests(unittest.TestCase):
                 self.assertEqual([a["book_style"] for a in row["adventures"]], offer["styles"])
                 self.assertEqual(row["status"], "WAITING_FOR_PAYMENT")
                 self.assertEqual(row["adventures"][0]["digital_copy_included"], pack_id not in (2, 3))
+                if pack_id in (4, 5):
+                    self.assertEqual(len(title_calls)-before_titles, 1)
+                    self.assertEqual(len(cover_calls)-before_covers, 1)
+                    first, second = row["adventures"]
+                    self.assertEqual(first["title"], second["title"])
+                    self.assertEqual(first["theme"], second["theme"])
+                    self.assertTrue(second["image_only"])
+                    self.assertEqual(second["shared_story_from"], 1)
+                    self.assertEqual(second["paired_version"], "same-scenes-v1")
+                else:
+                    self.assertNotIn("image_only", row["adventures"][0])
         self.ns["get_openai_client"] = lambda: self.fail("Invalid pack must not incur generation cost")
-        for pack_id, themes in [(0, ["Science"]), (6, ["Science"]), (4, ["Science"]), (1, ["A", "B"]), (5, ["A", "B", "C"])]:
+        for pack_id, themes in [(0, ["Science"]), (6, ["Science"]), (4, ["Science", "Nature"]), (1, ["A", "B"]), (5, ["A", "B", "C"])]:
             with self.subTest(pack=pack_id, themes=themes), self.assertRaises(RequestError):
                 asyncio.run(self.ns["preview_cover"](child_name="Test", child_age="7", photo=None,
                     child_gender="boy", parent_phone="0612345678", pack_id=pack_id, themes=json.dumps(themes)))

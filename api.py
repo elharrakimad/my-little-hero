@@ -100,6 +100,8 @@ def save_order_to_supabase(order_ref, name, age, language, pack, covers, referen
             "quality": "",
             "title": cover.get("title", ""),
         })
+        if offer.get("paired_story") and index == 2:
+            adventures[-1].update(paired_version="same-scenes-v1", shared_story_from=1, image_only=True)
 
     row = {
         "order_ref": order_ref,
@@ -266,7 +268,7 @@ async def preview_cover(
             selected_themes = []
     if not selected_themes and selected_theme:
         selected_themes = [selected_theme]
-    if len(selected_themes) != len(offer["styles"]):
+    if len(selected_themes) != offer.get("theme_count", len(offer["styles"])):
         raise HTTPException(status_code=400, detail="Le nombre d’aventures ne correspond pas au pack.")
     if pack_id == 1 and book_style != "coloring":
         raise HTTPException(status_code=400, detail="Le pack Digital comprend uniquement une histoire à colorier.")
@@ -316,11 +318,15 @@ Aucun texte, logo ou watermark. Aucun personnage ou univers protégé.
 
         covers = []
         cover_bytes_list = []
-        for (selected_theme, client_idea), book_style in zip(resolved_themes, styles):
-            title = generate_title(client, name, age, selected_theme, language, child_gender)
-            cover_bytes = generate_cover(
-                client, reference_bytes, name, age, selected_theme, language, title, child_gender, book_style
-            )
+        for book_index, book_style in enumerate(styles):
+            selected_theme, client_idea = resolved_themes[0 if offer.get("paired_story") else book_index]
+            if book_index and offer.get("paired_story"):
+                title, cover_bytes = covers[0]["title"], cover_bytes_list[0]
+            else:
+                title = generate_title(client, name, age, selected_theme, language, child_gender)
+                cover_bytes = generate_cover(
+                    client, reference_bytes, name, age, selected_theme, language, title, child_gender, book_style
+                )
             cover_bytes_list.append(cover_bytes)
             covers.append({
                 "title": title,

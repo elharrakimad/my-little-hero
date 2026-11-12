@@ -10,6 +10,8 @@ def is_payload_too_large(error):
 
 
 def optimize_saved_pdf(pdf_path, order, adventure, force_layout=False):
+    if adventure.get('paired_version'):
+        raise ValueError('Le cahier sans texte ne doit pas utiliser la mise en page avec récit.')
     pdf_path = Path(pdf_path)
     folder = pdf_path.parent
     story = (folder/"story.txt").read_text(encoding="utf-8")
