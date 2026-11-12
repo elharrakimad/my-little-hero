@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from unittest.mock import MagicMock, patch
 
-from paired_books import build_paired_coloring, is_paired_coloring, PAIR_VERSION
+from paired_books import build_paired_coloring, is_paired_coloring, PAIR_VERSION, validate_clean_lineart, color_to_lineart
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -22,6 +22,20 @@ def source_book(folder):
 
 
 class PairedBooksTests(unittest.TestCase):
+    def setUp(self):
+        # Offline fixture only. Production uses images.edit, never an edge filter.
+        from PIL import Image, ImageDraw
+        def clean_fixture(source, target, **kwargs):
+            with Image.open(source) as original:
+                image = Image.new('L', original.size, 255)
+            draw = ImageDraw.Draw(image)
+            draw.ellipse((100,100,500,700),outline=0,width=7)
+            image.save(target)
+            image.close()
+        self.redraw = patch('paired_books.color_to_lineart', side_effect=clean_fixture)
+        self.redraw.start()
+        self.addCleanup(self.redraw.stop)
+
     def test_ten_full_bleed_images_without_any_visible_text_or_extra_pages(self):
         import pdfplumber
         from PIL import Image
@@ -47,7 +61,7 @@ class PairedBooksTests(unittest.TestCase):
                 self.assertEqual({value for _, value in image.getcolors()}, {0, 255})
                 with Image.open(source/'pages/page_01.png') as original:
                     self.assertEqual(image.size, original.size)
-            # Resume reuses existing conversions, without AI or a different scene.
+            # Resume reuses checked outputs, without paying for the pages again.
             with patch('paired_books.color_to_lineart') as convert:
                 build_paired_coloring(source, output, pdf)
                 convert.assert_not_called()
@@ -102,3 +116,65 @@ class PairedBooksTests(unittest.TestCase):
             self.assertEqual(len(files), 2)
             convert.assert_called_once()
             engine.generate_book_from_adventure.assert_not_called()
+
+    def test_quality_gate_rejects_texture_noise_and_gray_shading(self):
+        from PIL import Image, ImageDraw
+        import random
+        for kind in ('noise', 'gray'):
+            with self.subTest(kind=kind):
+                image=Image.new('L',(300,400),255)
+                if kind == 'noise':
+                    pixels=image.load()
+                    rng=random.Random(41)
+                    for _ in range(24000): pixels[rng.randrange(300),rng.randrange(400)]=0
+                else:
+                    ImageDraw.Draw(image).rectangle((0,0,299,200),fill=130)
+                with self.assertRaises(ValueError): validate_clean_lineart(image)
+                image.close()
+
+    def test_actual_redraw_uses_source_reference_and_clean_line_prompt(self):
+        import base64,io
+        from types import SimpleNamespace
+        from PIL import Image,ImageDraw
+        with tempfile.TemporaryDirectory() as directory:
+            directory=Path(directory)
+            source=directory/'source.png'
+            Image.new('RGB',(400,600),'red').save(source)
+            image=Image.new('L',(400,600),255)
+            ImageDraw.Draw(image).ellipse((50,50,350,550),outline=0,width=5)
+            encoded=io.BytesIO();image.save(encoded,format='PNG');image.close()
+            client=MagicMock()
+            client.images.edit.return_value=SimpleNamespace(data=[SimpleNamespace(b64_json=base64.b64encode(encoded.getvalue()).decode())])
+            target=directory/'clean.png'
+            color_to_lineart(source,target,scene='Une princesse règle un moulin.',client=client)
+            self.assertTrue(target.exists())
+            args=client.images.edit.call_args.kwargs
+            self.assertIn('PAS un filtre',args['prompt'])
+            self.assertIn('Aucun texte',args['prompt'])
+            self.assertIn('Une princesse règle un moulin.',args['prompt'])
+            self.assertEqual(args['image'][0].name,str(source))
+            self.assertTrue(args['image'][0].closed)
+
+    def test_interruption_reuses_verified_pages_and_never_old_filter_output(self):
+        from PIL import Image,ImageDraw
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);source=source_book(root/'source');out=root/'out'
+            calls=[]
+            def redraw(src,target,**kwargs):
+                calls.append(src.name)
+                if len(calls)==3: raise RuntimeError('interrupted')
+                image=Image.new('L',(400,600),255)
+                ImageDraw.Draw(image).ellipse((50,50,350,550),outline=0,width=5)
+                image.save(target);image.close()
+            with patch('paired_books.color_to_lineart',side_effect=redraw):
+                with self.assertRaises(RuntimeError):build_paired_coloring(source,out,out/'book.pdf')
+            self.assertTrue((out/'pages/page_01.verified.json').exists())
+            self.assertFalse((out/'book.pdf').exists())
+            with patch('paired_books.color_to_lineart',side_effect=redraw) as resumed:
+                build_paired_coloring(source,out,out/'book.pdf')
+                self.assertEqual(resumed.call_count,8)
+            # Old filtered images have no v2 checkpoint and must be redrawn.
+            (out/'pages/page_01.verified.json').unlink()
+            with patch('paired_books.color_to_lineart',side_effect=redraw) as repair:
+                build_paired_coloring(source,out,out/'book.pdf')
+                self.assertEqual(repair.call_count,1)

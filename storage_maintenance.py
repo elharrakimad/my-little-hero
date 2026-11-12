@@ -73,7 +73,7 @@ def cleanup_delivered_books(db, root, *, max_books=5, verify=verify_private_pdf,
     root = Path(root).resolve(strict=True)
     if not 1 <= max_books <= 50:
         raise ValueError('Lot de nettoyage invalide.')
-    if (root / 'active_job.json').exists():
+    if (root / 'active_job.json').exists() or any(root.glob('repair_*.lock')):
         logging.info('AUTO_CLEANUP différé : production active ou récupération nécessaire.')
         return {'books': [], 'deferred': True}
     targets = []
@@ -91,9 +91,12 @@ def cleanup_delivered_books(db, root, *, max_books=5, verify=verify_private_pdf,
         for index, path in enumerate(paths, 1):
             if not path.is_dir() or not any(path.iterdir()):
                 continue
-            remote = f'orders/{ref}/final_books/adventure_{index:02d}/book_{index:02d}.pdf'
-            if remote not in (rows[0].get('generated_files') or []):
+            prefix = f'orders/{ref}/final_books/adventure_{index:02d}/'
+            allowed = {prefix+f'book_{index:02d}.pdf', prefix+f'book_{index:02d}_clean_v2.pdf'}
+            remotes = [p for p in (rows[0].get('generated_files') or []) if p in allowed]
+            if len(remotes) != 1:
                 raise ValueError(f'Sauvegarde non déclarée : {ref}, livre {index}.')
+            remote = remotes[0]
             backup = verify(remote)
             size = sum(p.stat().st_size for p in path.rglob('*') if p.is_file())
             targets.append(dict(order_ref=ref, index=index, local_bytes=size, backup=backup))
@@ -105,7 +108,7 @@ def cleanup_delivered_books(db, root, *, max_books=5, verify=verify_private_pdf,
     removed = []
     for item in targets:
         if not dry_run:
-            if (root / 'active_job.json').exists():
+            if (root / 'active_job.json').exists() or any(root.glob('repair_*.lock')):
                 raise ValueError('Production démarrée pendant le nettoyage.')
             rows = db.table('orders').select('status').eq('order_ref', item['order_ref']).execute().data
             if len(rows or []) != 1 or rows[0]['status'] != 'DELIVERED':

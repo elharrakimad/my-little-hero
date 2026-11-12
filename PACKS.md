@@ -20,4 +20,6 @@ Tests sans frais IA ni écritures en production : unittest tests/test_order_deta
 
 Les PDF internes nécessaires à l’impression sont conservés pour Petit Artiste et Mon Histoire ; ils ne sont pas inclus dans les livrables client. Le catalogue pdf_included et le champ adventures[].digital_copy_included indiquent cette distinction.
 
-Les nouveaux packs Super Héros et Ultimate Hero portent paired_version=same-scenes-v1 sur leur second livre. La production réutilise le story.txt exact et dérive les dessins des illustrations couleur sans nouvel appel IA. Un manifeste lie chaque dessin à l’empreinte de sa source.
+Les nouveaux packs Super Héros et Ultimate Hero portent paired_version=same-scenes-v1 sur leur second livre. La production réutilise le story.txt exact et fait redessiner les mêmes scènes couleur en vrais contours de coloriage propres par le modèle image, sans réécrire l’histoire. Un manifeste lie chaque dessin à l’empreinte de sa source.
+
+Correction clean-redraw-v2 : aucun filtre de détection de contours. Chaque dessin est redessiné depuis sa scène couleur, puis contrôlé contre le bruit et les ombres. Un checkpoint par page évite de refacturer les pages déjà terminées après une interruption. Une sortie refusée bloque la publication au lieu de livrer un cahier bruité.

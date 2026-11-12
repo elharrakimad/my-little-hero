@@ -255,6 +255,11 @@ def generate_order(order):
             f"{_safe_filename(order['child_name'])}_"
             f"{_safe_filename(title)}.pdf"
         )
+        if paired_coloring:
+            from paired_books import RENDER_VERSION
+            adventure_dir = adventure_dir / RENDER_VERSION
+            adventure_dir.mkdir(exist_ok=True)
+            expected_pdf = adventure_dir / 'book_02_clean_v2.pdf'
 
         if expected_pdf.exists() and expected_pdf.stat().st_size > 0:
             report("pdf", f"PDF du livre {index}/{total} conservé — aucune régénération", book_index=index, page_index=10, page_total=10)

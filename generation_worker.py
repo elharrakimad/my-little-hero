@@ -111,11 +111,21 @@ def main():
         while not stopping.is_set():
             # Infrastructure/claim errors exit the process, retaining the journal.
             # Render restarts it; resume uses existing story, images and PDFs.
-            worked = process_once(db, journal, generate_isolated)
-            if not worked:
-                if time.monotonic() >= next_cleanup:
+            # A manual repair and a queued order must never render concurrently.
+            with (directory/'production_gate.lock').open('a') as gate:
+                try:
+                    fcntl.flock(gate, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                except BlockingIOError:
+                    stopping.wait(10)
+                    continue
+                # Owning the gate proves no repair is running; recover stale markers.
+                for repair_marker in directory.glob('repair_*.lock'):
+                    repair_marker.unlink()
+                worked = process_once(db, journal, generate_isolated)
+                if not worked and time.monotonic() >= next_cleanup:
                     run_maintenance(db, directory)
                     next_cleanup = time.monotonic() + 300
+            if not worked:
                 stopping.wait(10)
 
 

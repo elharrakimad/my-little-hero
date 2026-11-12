@@ -161,6 +161,13 @@ def show_dashboard(list_orders, get_db, download_pdf, update_status):
                         st.rerun()
                 if order.get("generated_files"):
                     for index, path in enumerate(order["generated_files"], 1):
+                        # A repaired file gets a different storage path. Never serve
+                        # bytes prepared for the previous version from this session.
+                        cache_key = f"pdf_{ref}_{index}"
+                        source_key = cache_key + '_source'
+                        if st.session_state.get(source_key) != path:
+                            st.session_state.pop(cache_key, None)
+                            st.session_state[source_key] = path
                         if st.button(f"Préparer le téléchargement du livre {index}", key=f"prepare_{ref}_{index}"):
                             try:
                                 pdf = download_pdf(order, index, path)
