@@ -84,9 +84,10 @@ class OrderDetailsTests(unittest.TestCase):
         self.assertEqual(row["status"], "WAITING_FOR_PAYMENT")
         self.assertEqual(row["adventures"][0]["book_style"], "coloring")
         params["book_style"] = "colored"
+        params["pack_id"] = 3
         asyncio.run(self.ns["preview_cover"](**params))
         self.assertEqual(db.rows[1]["adventures"][0]["book_style"], "colored")
-        self.assertEqual(db.rows[1]["total_price"], 79)
+        self.assertEqual(db.rows[1]["total_price"], 199)
         params["parent_phone"] = ""
         self.ns["get_openai_client"] = lambda: self.fail("Invalid contact must fail before paid work")
         with self.assertRaises(RequestError): asyncio.run(self.ns["preview_cover"](**params))
@@ -124,6 +125,7 @@ class OrderDetailsTests(unittest.TestCase):
                 self.assertEqual(row["adventure_count"], len(offer["styles"]))
                 self.assertEqual([a["book_style"] for a in row["adventures"]], offer["styles"])
                 self.assertEqual(row["status"], "WAITING_FOR_PAYMENT")
+                self.assertEqual(row["adventures"][0]["digital_copy_included"], pack_id not in (2, 3))
         self.ns["get_openai_client"] = lambda: self.fail("Invalid pack must not incur generation cost")
         for pack_id, themes in [(0, ["Science"]), (6, ["Science"]), (4, ["Science"]), (1, ["A", "B"]), (5, ["A", "B", "C"])]:
             with self.subTest(pack=pack_id, themes=themes), self.assertRaises(RequestError):
@@ -137,6 +139,14 @@ class OrderDetailsTests(unittest.TestCase):
                 asyncio.run(self.ns["preview_cover"](child_name="Test", child_age=age,
                     theme="Science", photo=None, child_gender="girl", parent_phone="0612345678"))
             self.assertIn("3 et 16", error.exception.detail)
+
+    def test_digital_cannot_request_a_colored_story(self):
+        self.ns["get_openai_client"] = lambda: self.fail("Digital color must fail before paid work")
+        with self.assertRaises(RequestError) as error:
+            asyncio.run(self.ns["preview_cover"](child_name="Test", child_age="7", theme="Science",
+                photo=None, child_gender="boy", parent_phone="0612345678", pack_id=1, book_style="colored"))
+        self.assertEqual(error.exception.status_code, 400)
+        self.assertIn("Digital", error.exception.detail)
 
     def test_invalid_book_style_is_rejected_before_any_ai_work(self):
         self.ns["get_openai_client"] = lambda: self.fail("Invalid style must not start paid work")

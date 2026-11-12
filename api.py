@@ -94,6 +94,7 @@ def save_order_to_supabase(order_ref, name, age, language, pack, covers, referen
             "number": index,
             "child_gender": child_gender,
             "book_style": cover.get("book_style", validate_book_style(book_style)),
+            "digital_copy_included": offer["pdf_included"],
             "theme": cover.get("theme", ""),
             "idea": cover.get("idea", ""),
             "quality": "",
@@ -267,7 +268,9 @@ async def preview_cover(
         selected_themes = [selected_theme]
     if len(selected_themes) != len(offer["styles"]):
         raise HTTPException(status_code=400, detail="Le nombre d’aventures ne correspond pas au pack.")
-    styles = [book_style] if pack_id == 1 else offer["styles"]
+    if pack_id == 1 and book_style != "coloring":
+        raise HTTPException(status_code=400, detail="Le pack Digital comprend uniquement une histoire à colorier.")
+    styles = offer["styles"]
 
     if not name or not age or age_value is None or not selected_themes:
         raise HTTPException(status_code=400, detail="Informations incomplètes.")

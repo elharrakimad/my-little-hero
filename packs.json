@@ -3,28 +3,31 @@
     "id": 1,
     "name": "Digital",
     "price": 79,
-    "contents": "PDF personnalisé à imprimer",
+    "contents": "PDF personnalisé à colorier et à imprimer",
     "styles": [
       "coloring"
-    ]
+    ],
+    "pdf_included": true
   },
   {
     "id": 2,
     "name": "Petit Artiste",
     "price": 149,
-    "contents": "Livre A4 à colorier + PDF",
+    "contents": "Livre A4 à colorier",
     "styles": [
       "coloring"
-    ]
+    ],
+    "pdf_included": false
   },
   {
     "id": 3,
     "name": "Mon Histoire",
     "price": 199,
-    "contents": "Livre A5 couleur + PDF",
+    "contents": "Livre A5 couleur",
     "styles": [
       "colored"
-    ]
+    ],
+    "pdf_included": false
   },
   {
     "id": 4,
@@ -34,7 +37,8 @@
     "styles": [
       "colored",
       "coloring"
-    ]
+    ],
+    "pdf_included": true
   },
   {
     "id": 5,
@@ -44,6 +48,7 @@
     "styles": [
       "colored",
       "coloring"
-    ]
+    ],
+    "pdf_included": true
   }
 ]

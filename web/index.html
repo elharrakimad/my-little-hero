@@ -78,9 +78,9 @@
 <section class="section packs" id="packs">
   <div class="section-heading center"><div class="eyebrow">NOS 5 PACKS</div><h2>Choisissez son <span>niveau d'aventure</span></h2><p>Une première aventure, une collection de deux mondes ou le cadeau complet.</p></div>
   <div class="pricing-grid">
-<article class="price-card"><h3>Digital</h3><div class="price">79 <small>DH</small></div><p>PDF personnalisé à imprimer</p><p>Livraison séparée.</p><button type="button" class="btn btn-primary full" data-pack="1">Choisir Digital →</button></article>
-<article class="price-card"><h3>Petit Artiste</h3><div class="price">149 <small>DH</small></div><p>Livre A4 à colorier + PDF</p><p>Livraison séparée.</p><button type="button" class="btn btn-primary full" data-pack="2">Choisir Petit Artiste →</button></article>
-<article class="price-card"><h3>Mon Histoire</h3><div class="price">199 <small>DH</small></div><p>Livre A5 couleur + PDF</p><p>Livraison séparée.</p><button type="button" class="btn btn-primary full" data-pack="3">Choisir Mon Histoire →</button></article>
+<article class="price-card"><h3>Digital</h3><div class="price">79 <small>DH</small></div><p>PDF personnalisé à colorier et à imprimer</p><p>Livraison séparée.</p><button type="button" class="btn btn-primary full" data-pack="1">Choisir Digital →</button></article>
+<article class="price-card"><h3>Petit Artiste</h3><div class="price">149 <small>DH</small></div><p>Livre A4 à colorier</p><p>Livraison séparée.</p><button type="button" class="btn btn-primary full" data-pack="2">Choisir Petit Artiste →</button></article>
+<article class="price-card"><h3>Mon Histoire</h3><div class="price">199 <small>DH</small></div><p>Livre A5 couleur</p><p>Livraison séparée.</p><button type="button" class="btn btn-primary full" data-pack="3">Choisir Mon Histoire →</button></article>
 <article class="price-card"><h3>Super Héros</h3><div class="price">249 <small>DH</small></div><p>Livre A5 couleur + livre A4 coloriage + PDF</p><p>Livraison séparée.</p><button type="button" class="btn btn-primary full" data-pack="4">Choisir Super Héros →</button></article>
 <article class="price-card"><h3>Ultimate Hero</h3><div class="price">349 <small>DH</small></div><p>Deux livres : A5 couleur + A4 coloriage + crayons + boîte rigide personnalisée + carte cadeau + PDF</p><p>Livraison séparée.</p><button type="button" class="btn btn-primary full" data-pack="5">Choisir Ultimate Hero →</button></article>
   </div>
@@ -94,7 +94,7 @@
 
     <div class="wizard-card" data-step="1">
       <div class="step-kicker">ÉTAPE 1 SUR 4</div><h3>Choisissez son expérience</h3><p class="muted">Prix du pack hors livraison. Livraison séparée.</p>
-      <div class="choice-grid"><button type="button" class="choice" data-wizard-pack="1"><b>Digital</b><span>79 DH · PDF personnalisé à imprimer</span></button><button type="button" class="choice" data-wizard-pack="2"><b>Petit Artiste</b><span>149 DH · Livre A4 à colorier + PDF</span></button><button type="button" class="choice" data-wizard-pack="3"><b>Mon Histoire</b><span>199 DH · Livre A5 couleur + PDF</span></button><button type="button" class="choice" data-wizard-pack="4"><b>Super Héros</b><span>249 DH · Livre A5 couleur + livre A4 coloriage + PDF</span></button><button type="button" class="choice" data-wizard-pack="5"><b>Ultimate Hero</b><span>349 DH · Deux livres : A5 couleur + A4 coloriage + crayons + boîte rigide personnalisée + carte cadeau + PDF</span></button>
+      <div class="choice-grid"><button type="button" class="choice" data-wizard-pack="1"><b>Digital</b><span>79 DH · PDF personnalisé à colorier et à imprimer</span></button><button type="button" class="choice" data-wizard-pack="2"><b>Petit Artiste</b><span>149 DH · Livre A4 à colorier</span></button><button type="button" class="choice" data-wizard-pack="3"><b>Mon Histoire</b><span>199 DH · Livre A5 couleur</span></button><button type="button" class="choice" data-wizard-pack="4"><b>Super Héros</b><span>249 DH · Livre A5 couleur + livre A4 coloriage + PDF</span></button><button type="button" class="choice" data-wizard-pack="5"><b>Ultimate Hero</b><span>349 DH · Deux livres : A5 couleur + A4 coloriage + crayons + boîte rigide personnalisée + carte cadeau + PDF</span></button>
 
 
 
@@ -108,7 +108,7 @@
         <label>Prénom<input id="childName" placeholder="Ex. Yassir"></label>
         <label>Âge<select id="childAge"><option value="">Choisir</option><option>3 ans</option><option>4 ans</option><option>5 ans</option><option>6 ans</option><option>7 ans</option><option>8 ans</option><option>9 ans</option><option>10 ans</option><option>11 ans</option><option>12 ans</option><option>13 ans</option><option>14 ans</option><option>15 ans</option><option>16 ans</option></select></label>
         <label>Votre enfant<select id="childGender" required><option value="">Choisir</option><option value="girl">Fille</option><option value="boy">Garçon</option></select></label>
-        <label>Type de livre<select id="bookStyle"><option value="coloring">Histoire à colorier</option><option value="colored">Histoire déjà en couleur</option></select></label>
+        <label>Type de livre<select id="bookStyle" disabled><option value="coloring">Histoire à colorier</option><option value="colored">Histoire déjà en couleur</option></select></label>
         <label>Langue<select id="language"><option>Français</option><option>English</option><option>Español</option><option>العربية</option></select></label>
         <label>Téléphone du parent (obligatoire)<input id="parentPhone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="25" placeholder="Ex. +212 6 12 34 56 78" aria-describedby="parentContactHint"></label>
         <label>E-mail du parent (facultatif)<input id="parentEmail" type="email" autocomplete="email" maxlength="254" placeholder="Ex. parent@exemple.com"></label>
@@ -172,7 +172,7 @@
         <div><span>E-mail du parent</span><b id="summaryEmail">—</b></div>
         <div><span>Pack</span><b id="summaryPack">Digital</b></div>
         <div class="summary-adventures" id="summaryAdventures"></div>
-        <div><span>Contenu</span><b id="summaryContents">PDF personnalisé à imprimer</b></div><p>Livraison séparée, confirmée avant paiement.</p><div class="total"><span>Total hors livraison</span><b id="summaryPrice">79 DH</b></div>
+        <div><span>Contenu</span><b id="summaryContents">PDF personnalisé à colorier et à imprimer</b></div><p>Livraison séparée, confirmée avant paiement.</p><div class="total"><span>Total hors livraison</span><b id="summaryPrice">79 DH</b></div>
       </div>
 
       <div class="privacy-note">🔒 La photo et les informations de votre enfant sont utilisées uniquement pour préparer sa commande.</div>
@@ -209,8 +209,8 @@
 </footer>
 <script src="theme-catalog.js?v=20261103-lumo"></script>
 <script src="themes.js?v=20261102-comics"></script>
-<script src="packs.js?v=20261112-copy"></script>
-<script src="script.js?v=20261112-copy"></script>
+<script src="packs.js?v=20261112-formats"></script>
+<script src="script.js?v=20261112-formats"></script>
 <script src="preview.js?v=20261110-packs"></script>
 </body>
 </html>

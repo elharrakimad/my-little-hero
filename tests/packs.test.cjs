@@ -28,6 +28,7 @@ for(const offer of catalogue)test(`${offer.name}: selection, preview payload, su
  vm.runInNewContext(fs.readFileSync('script.js','utf8').split('\n')[0],{window,document,alert:m=>assert.fail(m)});
  packButtons[offer.id-1].events.click();
  assert.equal(get('summaryPack').textContent,offer.name);
+ assert.equal(get('bookStyle').disabled,true);
  assert.equal(get('summaryPrice').textContent,`${offer.price} DH`);
  assert.equal(get('summaryContents').textContent,offer.contents);
  await next[0].events.click();
@@ -44,4 +45,15 @@ for(const offer of catalogue)test(`${offer.name}: selection, preview payload, su
  assert.ok(message.includes(offer.contents));
  assert.ok(message.includes(`${offer.price} DH`));
  assert.match(message,/Livraison : séparée/);
+});
+
+test('Digital is coloring-only and printed single-book packs exclude customer PDFs',()=>{
+ assert.deepEqual(catalogue[0].styles,['coloring']);
+ assert.match(catalogue[0].contents,/colorier/);
+ for(const id of [2,3]){
+  const pack=catalogue.find(p=>p.id===id);
+  assert.equal(pack.pdf_included,false);
+  assert.doesNotMatch(pack.contents,/PDF/);
+ }
+ for(const id of [1,4,5])assert.equal(catalogue.find(p=>p.id===id).pdf_included,true);
 });

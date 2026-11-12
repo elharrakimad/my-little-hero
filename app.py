@@ -78,7 +78,7 @@ def get_order_number():
     return st.session_state.order_number
 
 PRICES = {i: {fmt: p["price"] for fmt in ("digital", "print", "both")} for i, p in PACKS.items()}
-FORMAT_NAMES = {"digital": "PDF", "print": "Livre + PDF", "both": "Deux livres + PDF"}
+FORMAT_NAMES = {"digital": "PDF", "print": "Livre imprimé", "both": "Deux livres + PDF"}
 def adventure_count(pack):
     return len(PACKS[pack]["styles"])
 
@@ -373,6 +373,7 @@ def save_order_metadata():
             "number": i,
             "child_gender": st.session_state.child_gender,
             "book_style": PACKS[st.session_state.pack]["styles"][i-1],
+            "digital_copy_included": PACKS[st.session_state.pack]["pdf_included"],
             "theme": theme,
             "idea": adventure["idea"],
             "quality": adventure["quality"],
@@ -1446,7 +1447,7 @@ elif st.session_state.step == 4:
     <div class="lock-box">
         <div class="lock-title">🔒 Le livre complet est réservé à la commande</div>
         <div class="lock-text">
-            Après validation de la commande, nous préparons les PDF complets.
+            Après validation de la commande, nous préparons les livres et les fichiers inclus dans votre pack.
             Pour les commandes imprimées, les livres sont ensuite regroupés dans un seul colis.
         </div>
     </div>

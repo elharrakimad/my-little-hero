@@ -2,9 +2,9 @@
 
 `packs.json` est le catalogue serveur. `packs.js` en reprend les données pour le navigateur ; le test `tests/packs.test.cjs` vérifie leur égalité et les grilles HTML.
 
-- Digital : 79 DH, PDF, choix couleur ou coloriage.
-- Petit Artiste : 149 DH, A4 coloriage + PDF.
-- Mon Histoire : 199 DH, A5 couleur + PDF.
+- Digital : 79 DH, PDF à colorier uniquement.
+- Petit Artiste : 149 DH, A4 coloriage, sans PDF client.
+- Mon Histoire : 199 DH, A5 couleur, sans PDF client.
 - Super Héros : 249 DH, A5 couleur + A4 coloriage + PDF, sans crayons ni emballage cadeau.
 - Ultimate Hero : 349 DH, ces deux livres + crayons + boîte rigide personnalisée + carte cadeau + PDF.
 
@@ -17,3 +17,5 @@ Le parcours existant reste aperçu → commande WAITING_FOR_PAYMENT → confirma
 Déploiement : mettre à jour l’API (api.py, packs.py, packs.json) et Streamlit, puis les fichiers statiques. Le navigateur vérifie le pack et le montant retournés par l’API avant d’activer la commande ; un ancien serveur ne permet pas de confirmer un montant erroné. Vérifier le déploiement séparément du push Git.
 
 Tests sans frais IA ni écritures en production : unittest tests/test_order_details.py et tests/test_child_profile.py ; node --test tests/packs.test.cjs tests/preview-origin.test.cjs.
+
+Les PDF internes nécessaires à l’impression sont conservés pour Petit Artiste et Mon Histoire ; ils ne sont pas inclus dans les livrables client. Le catalogue pdf_included et le champ adventures[].digital_copy_included indiquent cette distinction.
