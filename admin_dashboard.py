@@ -96,7 +96,7 @@ def show_dashboard(list_orders, get_db, download_pdf, update_status):
     with st.sidebar:
         st.markdown("### MY LITTLE HERO")
         st.caption("CENTRE DE PRODUCTION")
-        view = st.radio("Espace", ["Toutes les commandes", "Paiements", "Production", "Incidents", "Livres prêts", "Annulées"], label_visibility="collapsed")
+        view = st.radio("Espace", ["Flux du site", "Toutes les commandes", "Paiements", "Production", "Incidents", "Livres prêts", "Annulées"], label_visibility="collapsed")
         search = st.text_input("Rechercher", placeholder="Prénom ou référence")
         auto = st.toggle("Actualisation automatique", value=True)
         st.caption("Toutes les 5 secondes pendant que cette page est ouverte.")
@@ -111,6 +111,10 @@ def show_dashboard(list_orders, get_db, download_pdf, update_status):
 
     @st.fragment(run_every=5 if auto else None)
     def live_orders():
+        if view == 'Flux du site':
+            from analytics_dashboard import render_analytics
+            render_analytics(get_db)
+            return
         try:
             orders = list_orders()
         except Exception:

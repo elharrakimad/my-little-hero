@@ -17,6 +17,8 @@ from character_identity import IDENTITY_INSTRUCTION
 from story_reference import visual_reference_instruction
 from anime_cast import anime_cast_instruction
 from book_style import validate_book_style, cover_subtitle
+from site_analytics import validate_event
+from pydantic import BaseModel, ConfigDict, Field
 
 app = FastAPI(title="My Little Hero API", version="0.1.0")
 
@@ -35,6 +37,28 @@ app.add_middleware(
 )
 
 MAX_PHOTO_BYTES = 8 * 1024 * 1024
+
+
+class SiteEvent(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    event_id: str = Field(max_length=36)
+    session_id: str = Field(max_length=36)
+    event_name: str = Field(max_length=32)
+    pack_id: Optional[int] = Field(default=None, strict=True, ge=1, le=5)
+    duration_ms: Optional[int] = Field(default=None, strict=True, ge=0, le=3600000)
+
+
+@app.post('/api/events', status_code=202)
+def collect_event(event: SiteEvent):
+    try:
+        row = validate_event(event.model_dump())
+    except (ValueError, TypeError, AttributeError) as exc:
+        raise HTTPException(status_code=400, detail='Événement invalide') from exc
+    try:
+        get_supabase_client().table('site_events').upsert(row, on_conflict='event_id', ignore_duplicates=True).execute()
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail='Suivi indisponible') from exc
+    return {'ok': True}
 
 
 def get_supabase_client():

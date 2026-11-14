@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded",()=>{
     }
     if(!name||!age||!gender||!photoFile||!themes?.length||!parentPhone)return false;
 
+
+    window.mlhTrack?.('adventure_selected', {pack_id: pack});
+    window.mlhTrack?.('preview_started', {pack_id: pack});
+    const analyticsStarted = Date.now();
     window.MLH_ORDER_REF="";
     const form=new FormData();
     form.append("pack_id",String(pack));
@@ -81,8 +85,10 @@ document.addEventListener("DOMContentLoaded",()=>{
       coverStatus.textContent=document.documentElement.lang==="ar"?"كتبك جاهزة للمعاينة.":"Vos livres sont prêts à être découverts.";
       orderButton.disabled=false;
       orderButton.removeAttribute("aria-disabled");
+      window.mlhTrack?.('preview_succeeded', {pack_id: pack, duration_ms: Math.min(3600000, Math.round(Date.now() - analyticsStarted))});
       return true;
     }catch(error){
+      window.mlhTrack?.('preview_failed', {pack_id: pack});
       console.error(error);
       coverStatus.textContent=document.documentElement.lang==="ar"?"تعذر إنشاء المعاينة.":"Impossible de créer l’aperçu."; 
       alert(document.documentElement.lang==="ar"?"تعذر إنشاء الكتب الآن. يرجى المحاولة مرة أخرى.":"La création des livres a échoué. Veuillez réessayer.");
